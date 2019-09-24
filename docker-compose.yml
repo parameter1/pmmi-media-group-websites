@@ -1,0 +1,143 @@
+version: '3.7'
+
+x-node-defaults: &node
+  tty: true
+  init: true
+  image: node:10.15
+  entrypoint: ["node"]
+  working_dir: /root
+  restart: always
+  volumes:
+    - ./:/root:cached
+    - ./node_modules:/root/node_modules:delegated
+    - yarn-cache:/.yarn-cache
+
+x-env-defaults: &env
+  NEW_RELIC_ENABLED: ${NEW_RELIC_ENABLED-0}
+  NEW_RELIC_LICENSE_KEY: ${NEW_RELIC_LICENSE_KEY-(unset)}
+  NODE_ENV: development
+  # @todo the recaptcha values should be removed (?) once contact-us is moved to core.
+  RECAPTCHA_SECRET_KEY: ${RECAPTCHA_SECRET_KEY-(unset)}
+  # @todo the sendgrid values should be removed once the @base-cms/mailer service is created.
+  SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
+  SENDGRID_DEV_TO: developer@endeavorb2b.com
+  YARN_CACHE_FOLDER: /.yarn-cache
+
+x-env-aerilon: &env-aerilon-staging
+  GRAPHQL_URI: ${GRAPHQL_URI-https://aerilon.graphql-staging.base-cms.io}
+  OEMBED_URI: ${OEMBED_URI-https://aerilon.oembed-staging.base-cms.io}
+  RSS_URI: ${RSS_URI-https://aerilon.rss-staging.base-cms.io}
+  SITEMAPS_URI: ${SITEMAPS_URI-https://aerilon.sitemaps-staging.base-cms.io}
+
+x-env-development: &env-development
+  GRAPHQL_URI: ${GRAPHQL_URI-http://host.docker.internal:10002}
+  OEMBED_URI: ${OEMBED_URI-http://host.docker.internal:10013}
+  RSS_URI: ${RSS_URI-http://host.docker.internal:10011}
+  SITEMAPS_URI: ${SITEMAPS_URI-http://host.docker.internal:10009}
+
+x-site-command: &site-cmd
+  entrypoint: ["node_modules/.bin/basecms-website"]
+  command: ["dev", "index.js"]
+
+volumes:
+  yarn-cache: {}
+
+services:
+  terminal:
+    <<: *node
+    working_dir: /root
+    entrypoint: ["/bin/bash"]
+    environment:
+      <<: *env
+
+  yarn:
+    <<: *node
+    working_dir: /root
+    entrypoint: ["yarn"]
+    environment:
+      <<: *env
+
+  automationworld:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/automationworld
+    environment:
+      <<: *env
+      <<: *env-aerilon-staging
+      PORT: 80
+      EXPOSED_PORT: 9710
+      LIVERELOAD_PORT: 19710
+      TENANT_KEY: pmmi_all
+      CDN_IMAGE_HOSTNAME: img.automationworld.com
+      CDN_ASSET_HOSTNAME: cdn.automationworld.com
+    ports:
+      - "9710:80"
+      - "19710:19710"
+
+  packworld:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/packworld
+    environment:
+      <<: *env
+      <<: *env-aerilon-staging
+      PORT: 80
+      EXPOSED_PORT: 9711
+      LIVERELOAD_PORT: 19711
+      TENANT_KEY: pmmi_all
+      CDN_IMAGE_HOSTNAME: img.packworld.com
+      CDN_ASSET_HOSTNAME: cdn.packworld.com
+    ports:
+      - "9711:80"
+      - "19711:19711"
+
+  healhcarepackaging:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/healhcarepackaging
+    environment:
+      <<: *env
+      <<: *env-aerilon-staging
+      PORT: 80
+      EXPOSED_PORT: 9712
+      LIVERELOAD_PORT: 19712
+      TENANT_KEY: pmmi_all
+      CDN_IMAGE_HOSTNAME: img.healhcarepackaging.com
+      CDN_ASSET_HOSTNAME: cdn.healhcarepackaging.com
+    ports:
+      - "9712:80"
+      - "19712:19712"
+
+  profoodworld:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/profoodworld
+    environment:
+      <<: *env
+      <<: *env-aerilon-staging
+      PORT: 80
+      EXPOSED_PORT: 9713
+      LIVERELOAD_PORT: 19713
+      TENANT_KEY: pmmi_all
+      CDN_IMAGE_HOSTNAME: img.profoodworld.com
+      CDN_ASSET_HOSTNAME: cdn.profoodworld.com
+    ports:
+      - "9713:80"
+      - "19713:19713"
+
+  oemmagazine:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/oemmagazine
+    environment:
+      <<: *env
+      <<: *env-aerilon-staging
+      PORT: 80
+      EXPOSED_PORT: 9714
+      LIVERELOAD_PORT: 19714
+      TENANT_KEY: pmmi_all
+      CDN_IMAGE_HOSTNAME: img.oemmagazine.org
+      CDN_ASSET_HOSTNAME: cdn.oemmagazine.org
+    ports:
+      - "9714:80"
+      - "19714:19714"
