@@ -91,10 +91,10 @@ services:
       - "9711:80"
       - "19711:19711"
 
-  healhcarepackaging:
+  healthcarepackaging:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/healhcarepackaging
+    working_dir: /root/sites/healthcarepackaging
     environment:
       <<: *env
       <<: *env-aerilon-staging
@@ -102,8 +102,8 @@ services:
       EXPOSED_PORT: 9712
       LIVERELOAD_PORT: 19712
       TENANT_KEY: pmmi_all
-      CDN_IMAGE_HOSTNAME: img.healhcarepackaging.com
-      CDN_ASSET_HOSTNAME: cdn.healhcarepackaging.com
+      CDN_IMAGE_HOSTNAME: img.healthcarepackaging.com
+      CDN_ASSET_HOSTNAME: cdn.healthcarepackaging.com
     ports:
       - "9712:80"
       - "19712:19712"
