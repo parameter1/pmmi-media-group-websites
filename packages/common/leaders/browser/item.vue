@@ -1,6 +1,6 @@
 <template>
   <li class="leaders__item">
-    <button class="btn btn-link btn-block text-left" @click="toggle" label="Click to view items">
+    <button class="btn btn-link btn-block text-left" label="Click to view items" @click="toggle">
       <component :is="icon" :modifiers="iconModifiers" />
       {{ name }}
     </button>
@@ -14,7 +14,12 @@
       <li v-else-if="!items.length" class="leaders__item-list-item">
         No results found.
       </li>
-      <li v-else v-for="content in items" :key="content.id" class="leaders__item-list-item">
+      <li
+        v-for="content in items"
+        v-else
+        :key="content.id"
+        class="leaders__item-list-item"
+      >
         <a :href="content.canonicalPath" :title="content.name">
           {{ content.name }}
         </a>
@@ -39,6 +44,7 @@ export default {
     },
     name: {
       type: String,
+      required: true,
     },
     limit: {
       type: Number,
@@ -78,16 +84,16 @@ export default {
         });
         if (res.ok) {
           const items = await res.json();
-          // this.items = items;
+          this.items = items;
         } else {
-          // throw new Error(res.statusText);
+          throw new Error(res.statusText);
         }
       } catch (e) {
         this.error = e.message;
       } finally {
-        // this.loading = false;
+        this.loading = false;
       }
-    }
+    },
   },
 };
 </script>
