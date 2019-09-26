@@ -1,0 +1,7 @@
+{
+  "tags": {
+    "leaders-block-index": {
+      "template": "./index.marko"
+    }
+  }
+}

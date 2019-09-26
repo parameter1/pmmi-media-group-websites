@@ -40,6 +40,15 @@ $ const { id, alias, name, pageNode } = data;
       <website-content-hero-flow nodes=nodes />
     </marko-web-query>
 
+    <div class="row">
+      <div class="col-lg-8 mb-block">
+        <leaders-block-index />
+      </div>
+      <div class="col-lg-4 mb-block page-rail">
+        <marko-web-gam-display-ad id="gpt-ad-rail2" />
+      </div>
+    </div>
+
   </@page>
   <@below-page>
     <marko-web-resolve-page|{ data: section }| node=pageNode>

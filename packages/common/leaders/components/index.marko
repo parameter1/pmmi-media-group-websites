@@ -1,0 +1,36 @@
+import queryFragment from "../graphql/fragments/section";
+
+$ const { sectionId } = input;
+$ const logo = input.logo || 'https://www.automationworld.com/sites/default/files/lip/lia_block_logo.png';
+
+<marko-web-query|{ node: leaders }| name="website-section" params={ alias: 'leaders', queryFragment }>
+  $ const nodes = leaders.children.edges.map(({ node }) => node);
+  <marko-web-node-list modifiers=['centered']>
+    <@header>
+      <img src=logo alt="logo" />
+    </@header>
+    <@body>
+      Browse these leading suppliers:
+    </@body>
+    <@nodes nodes=nodes>
+      <ul class="leaders__items">
+        <for|node| of=nodes>
+          <if(node.children && node.children.edges && node.children.edges.length)>
+            <li class="leaders__category">
+              <label class="leaders__category-label">${name}</label>
+              <ul class="leaders__items">
+                $ const items = node.children.edges.map(({ node: item }) => item);
+                <for|item| of=items>
+                  <marko-web-browser-component name="CommonLeadersItem" props={ id: item.id, name: item.name } />
+                </for>
+              </ul>
+            </li>
+          </if>
+          <else>
+            <marko-web-browser-component name="CommonLeadersItem" props={ id: node.id, name: node.name } />
+          </else>
+        </for>
+      </ul>
+    </@nodes>
+  </marko-web-node-list>
+</marko-web-query>
