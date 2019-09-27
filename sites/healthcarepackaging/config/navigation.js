@@ -1,5 +1,5 @@
 module.exports = {
-  primary: {
+  secondary: {
     items: [
       { href: '/subscribe', label: 'Subscribe' },
       { href: '/machinery-materials', label: 'Machinery & materials' },
@@ -8,15 +8,6 @@ module.exports = {
       { href: '/issues', label: 'Issues' },
       { href: '/events', label: 'Events' },
       { href: '/downloads', label: 'Downloads' },
-    ],
-  },
-  secondary: {
-    items: [
-      { href: '/subscribe', label: 'Subscribe' },
-      { href: '/magazine', label: 'Magazine' },
-      { href: '/videos', label: 'Videos' },
-      { href: '/white-papers', label: 'White Papers' },
-      { href: '/webcasts', label: 'Webcasts' },
     ],
   },
   tertiary: {
