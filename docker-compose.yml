@@ -68,8 +68,7 @@ services:
       EXPOSED_PORT: 9710
       LIVERELOAD_PORT: 19710
       TENANT_KEY: pmmi_all
-      CDN_IMAGE_HOSTNAME: img.automationworld.com
-      CDN_ASSET_HOSTNAME: cdn.automationworld.com
+      SITE_ID: 5d88cecaf175132c008b4567
     ports:
       - "9710:80"
       - "19710:19710"
@@ -85,8 +84,7 @@ services:
       EXPOSED_PORT: 9711
       LIVERELOAD_PORT: 19711
       TENANT_KEY: pmmi_all
-      CDN_IMAGE_HOSTNAME: img.packworld.com
-      CDN_ASSET_HOSTNAME: cdn.packworld.com
+      SITE_ID: 5d88cedef175132c008b456b
     ports:
       - "9711:80"
       - "19711:19711"
@@ -102,8 +100,7 @@ services:
       EXPOSED_PORT: 9712
       LIVERELOAD_PORT: 19712
       TENANT_KEY: pmmi_all
-      CDN_IMAGE_HOSTNAME: img.healthcarepackaging.com
-      CDN_ASSET_HOSTNAME: cdn.healthcarepackaging.com
+      SITE_ID: 5d88cef7f175132c008b456f
     ports:
       - "9712:80"
       - "19712:19712"
@@ -119,8 +116,7 @@ services:
       EXPOSED_PORT: 9713
       LIVERELOAD_PORT: 19713
       TENANT_KEY: pmmi_all
-      CDN_IMAGE_HOSTNAME: img.profoodworld.com
-      CDN_ASSET_HOSTNAME: cdn.profoodworld.com
+      SITE_ID: 5d88cf1af175132c008b4577
     ports:
       - "9713:80"
       - "19713:19713"
@@ -136,8 +132,7 @@ services:
       EXPOSED_PORT: 9714
       LIVERELOAD_PORT: 19714
       TENANT_KEY: pmmi_all
-      CDN_IMAGE_HOSTNAME: img.oemmagazine.org
-      CDN_ASSET_HOSTNAME: cdn.oemmagazine.org
+      SITE_ID: 5d88cf05f175132c008b4573
     ports:
       - "9714:80"
       - "19714:19714"
