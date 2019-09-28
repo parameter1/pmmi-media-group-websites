@@ -10,8 +10,10 @@ $theme-site-navbar-primary-bg-color: $primary;
 $theme-site-navbar-logo-height: 45px;
 $theme-site-navbar-logo-height-sm: 25px;
 
+$enable-rounded: false;
+
 $theme-site-header-breakpoints: (
-  hide-primary: 832px,
+  hide-primary: 10000px,
   hide-secondary: 906px,
   small-logo: 1015px,
   small-text-primary: 932px,
