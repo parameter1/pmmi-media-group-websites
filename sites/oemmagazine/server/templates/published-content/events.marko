@@ -16,8 +16,6 @@ $ const now = (new Date()).valueOf();
     </marko-web-gtm-default-context>
   </@head>
   <@above-container>
-    <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "wa" }) />
-    <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin" }) />
   </@above-container>
   <@page>
     <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "lb1" }) modifiers=["top-of-page"] />
@@ -52,6 +50,5 @@ $ const now = (new Date()).valueOf();
     />
   </@below-page>
   <@foot>
-    <marko-web-gam-fixed-ad-bottom ...GAM.getAdUnit({ name: "lb2" }) refresh-interval=0 />
   </@foot>
 </marko-web-default-page-layout>
