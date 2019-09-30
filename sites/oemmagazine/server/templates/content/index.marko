@@ -28,8 +28,6 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
   <@above-container>
     <marko-web-resolve-page|{ data: content }| node=pageNode>
       $ const aliases = hierarchyAliases(content.primarySection);
-      <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "wa", aliases }) />
-      <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin", aliases }) />
     </marko-web-resolve-page>
 
   </@above-container>
@@ -125,7 +123,6 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
   <@foot>
     <marko-web-resolve-page|{ data: content }| node=pageNode>
       $ const aliases = hierarchyAliases(content.primarySection);
-      <marko-web-gam-fixed-ad-bottom ...GAM.getAdUnit({ name: "lb2", aliases }) refresh-interval=0 />
     </marko-web-resolve-page>
   </@foot>
 </marko-web-content-page-layout>
