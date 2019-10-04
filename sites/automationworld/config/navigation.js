@@ -1,12 +1,10 @@
 module.exports = {
   secondary: {
     items: [
-      { href: '/subscribe', label: 'Subscribe' },
+      { href: 'https://pmmi.dragonforms.com/PAWnew?pk=AWMagNav&oly_enc_id=@{encrypted_customer_id}@', label: 'Subscribe', target: '_blank' },
       { href: '/products', label: 'Products' },
       { href: '/factory', label: 'Factory' },
       { href: '/process', label: 'Process' },
-      { href: '/events', label: 'Events' },
-      { href: '/downloads', label: 'Downloads' },
     ],
   },
   tertiary: {
@@ -16,9 +14,12 @@ module.exports = {
   },
   footer: {
     items: [
-      { href: '/page/about-us', label: 'About Us' },
-      { href: '/contact-us', label: 'Contact Us' },
       { href: '/page/advertise', label: 'Advertise' },
+      { href: '/page/about', label: 'About' },
+      { href: '/contact-us', label: 'Contact' },
+      { href: '/page/privacy', label: 'Privacy' },
+      { href: '/page/terms-of-use', label: 'Terms of Use' },
+      { href: '/page/advertising-terms-conditions', label: 'Advertising Terms & Conditions' },
     ],
   },
   menu: [
@@ -33,21 +34,28 @@ module.exports = {
     {
       label: 'Resources',
       items: [
-        { href: '/blogs', label: 'Commentary' },
         { href: '/magazine', label: 'Magazine' },
-        { href: '/videos', label: 'Videos' },
-        { href: '/white-papers', label: 'White Papers' },
-        { href: '/webcasts', label: 'Webcasts' },
         { href: '/events', label: 'Events' },
+        { href: '/downloads', label: 'Downloads' },
+        { href: '/leaders', label: 'Leaders' },
+        { href: '/videos', label: 'Videos' },
+        { href: '/podcasts', label: 'Podcasts' },
+        { href: '/playbooks', label: 'Playbooks' },
+        { href: '/tactical-briefs', label: 'Tactical Briefs' },
+        { href: '/channels', label: 'Channels' },
+        { href: '/webinars', label: 'Webinars' },
       ],
     },
     {
       label: 'User Tools',
       items: [
-        { href: '/subscribe', label: 'Subscribe' },
+        { href: 'https://pmmi.dragonforms.com/PAWnew?pk=AWMagNav&oly_enc_id=@{encrypted_customer_id}@', label: 'Subscribe', target: '_blank' },
         { href: '/page/advertise', label: 'Advertise' },
-        { href: '/page/about-us', label: 'About Us' },
-        { href: '/contact-us', label: 'Contact Us' },
+        { href: '/page/about', label: 'About' },
+        { href: '/contact-us', label: 'Contact' },
+        { href: '/page/privacy', label: 'Privacy' },
+        { href: '/page/terms-of-use', label: 'Terms of Use' },
+        { href: '/page/advertising-terms-conditions', label: 'Advertising Terms & Conditions' },
       ],
     },
   ],

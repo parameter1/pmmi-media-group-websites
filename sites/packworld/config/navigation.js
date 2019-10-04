@@ -1,12 +1,10 @@
 module.exports = {
   secondary: {
     items: [
-      { href: '/subscribe', label: 'Subscribe' },
+      { href: 'https://pmmi.dragonforms.com/PPFWnew?pk=PFWMagNav&oly_enc_id=@{encrypted_customer_id}@', label: 'Subscribe', target: '_blank' },
       { href: '/machinery', label: 'Machinery' },
       { href: '/design', label: 'Design' },
       { href: '/issues', label: 'Issues' },
-      { href: '/events', label: 'Events' },
-      { href: '/downloads', label: 'Downloads' },
     ],
   },
   tertiary: {
@@ -16,9 +14,12 @@ module.exports = {
   },
   footer: {
     items: [
-      { href: '/page/about-us', label: 'About Us' },
-      { href: '/contact-us', label: 'Contact Us' },
       { href: '/page/advertise', label: 'Advertise' },
+      { href: '/page/about', label: 'About' },
+      { href: '/contact-us', label: 'Contact' },
+      { href: '/page/privacy', label: 'Privacy' },
+      { href: '/page/terms-of-use', label: 'Terms of Use' },
+      { href: '/page/advertising-terms-conditions', label: 'Advertising Terms & Conditions' },
     ],
   },
   menu: [
@@ -33,21 +34,27 @@ module.exports = {
     {
       label: 'Resources',
       items: [
-        { href: '/blogs', label: 'Commentary' },
         { href: '/magazine', label: 'Magazine' },
-        { href: '/videos', label: 'Videos' },
-        { href: '/white-papers', label: 'White Papers' },
-        { href: '/webcasts', label: 'Webcasts' },
+        { href: '/contract-packaging', label: 'Contract Packaging' },
         { href: '/events', label: 'Events' },
+        { href: '/downloads', label: 'Downloads' },
+        { href: '/leaders', label: 'Leaders' },
+        { href: '/videos', label: 'Videos' },
+        { href: '/podcasts', label: 'Podcasts' },
+        { href: '/education', label: 'Education' },
+        { href: '/hall-of-fame', label: 'Hall of Fame' },
       ],
     },
     {
       label: 'User Tools',
       items: [
-        { href: '/subscribe', label: 'Subscribe' },
+        { href: 'https://pmmi.dragonforms.com/PPFWnew?pk=PFWMagNav&oly_enc_id=@{encrypted_customer_id}@', label: 'Subscribe', target: '_blank' },
         { href: '/page/advertise', label: 'Advertise' },
-        { href: '/page/about-us', label: 'About Us' },
-        { href: '/contact-us', label: 'Contact Us' },
+        { href: '/page/about', label: 'About' },
+        { href: '/contact-us', label: 'Contact' },
+        { href: '/page/privacy', label: 'Privacy' },
+        { href: '/page/terms-of-use', label: 'Terms of Use' },
+        { href: '/page/advertising-terms-conditions', label: 'Advertising Terms & Conditions' },
       ],
     },
   ],
