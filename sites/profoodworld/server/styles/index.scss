@@ -1,27 +1,30 @@
-$primary: #8fad0d;
-$secondary: #495057;
+$primary: #000;
+$secondary: #32bbe8;
 $light: #e9ecef;
 $dark: #212529;
 $info: #6c757d;
 
-$theme-site-navbar-secondary-bg-color: #002645;
+$theme-site-navbar-secondary-bg-color: $primary;
 $theme-site-navbar-primary-bg-color: $primary;
 
-$theme-site-navbar-logo-height: 45px;
-$theme-site-navbar-logo-height-sm: 25px;
+$theme-font-family-sans-serif: "IBM Plex Sans", sans-serif;
+$theme-font-family-serif: "Source Serif Pro", serif;
+$theme-font-family-page-title: $theme-font-family-sans-serif;
 
 $enable-rounded: false;
 
+$theme-site-navbar-logo-height: 30px;
+$theme-site-navbar-logo-height-sm: 25px;
+
 $theme-site-header-breakpoints: (
   hide-primary: 10000px,
-  hide-secondary: 906px,
-  small-logo: 1015px,
-  small-text-primary: 932px,
-  small-text-secondary: 1105px
+  hide-secondary: 610px,
+  hide-tertiary: 0,
+  small-logo: 667px,
+  small-text-primary: 10000px,
+  small-text-secondary: 740px
 );
 
-@import "../../node_modules/@base-cms/marko-web-gam/scss/fixed-ad-bottom";
-@import "../../node_modules/@base-cms/marko-web-reveal-ad/scss/reveal-ad";
 @import "../../node_modules/@base-cms/marko-web-theme-default/skins/orion/skin";
 // @todo this should be remove once contact us is in core
 @import "../../node_modules/@base-cms-websites/package-common/scss/contact-us-form";
