@@ -5,22 +5,23 @@ module.exports = {
   company: 'PMMI Media Group',
   logos: {
     navbar: {
-      src: 'https://base.imgix.net/files/base/pmmi/all/aw_logo.png?h=45',
+      src: 'https://base.imgix.net/files/base/pmmi/aw/aw_logo.png?h=45',
       srcset: [
-        'https://base.imgix.net/files/base/pmmi/all/aw_logo.png?h=90 2x',
+        'https://base.imgix.net/files/base/pmmi/aw/aw_logo.png?h=90 2x',
       ],
     },
     footer: {
-      src: 'https://base.imgix.net/files/base/pmmi/all/aw_logo.png?h=60',
+      src: 'https://base.imgix.net/files/base/pmmi/aw/aw_logo.png?h=60',
       srcset: [
-        'https://base.imgix.net/files/base/pmmi/all/aw_logo.png?h=120 2x',
+        'https://base.imgix.net/files/base/pmmi/aw/aw_logo.png?h=120 2x',
       ],
     },
   },
   socialMediaLinks: [
-    { provider: 'facebook', href: 'https://www.facebook.com/pages/Automation-World/239807359613' },
+    { provider: 'facebook', href: 'https://www.facebook.com/AutomationWorldMag' },
     { provider: 'twitter', href: 'https://www.twitter.com/automationworld' },
-    { provider: 'linkedin', href: 'https://www.linkedin.com/groups/Automation-World-2063159?gid=2063159&trk=hb_side_g' },
+    { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/automation-world' },
+    { provider: 'instagram', href: 'https://www.instagram.com/automation_world' },
   ],
   gtm: {
     containerId: 'GTM-T9B9PZ2',
