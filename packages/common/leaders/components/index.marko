@@ -1,11 +1,17 @@
+import { getAsArray } from "@base-cms/object-path";
 import queryFragment from "../graphql/fragments/section";
 
 $ const { sectionId } = input;
 $ const logo = input.logo || 'https://www.automationworld.com/sites/default/files/lip/lia_block_logo.png';
+$ const modifiers = [
+  'centered',
+  'nodes-flex-row',
+  ...getAsArray(input, 'modifiers'),
+];
 
 <marko-web-query|{ node: leaders }| name="website-section" params={ alias: 'leaders', queryFragment }>
   $ const nodes = leaders.children.edges.map(({ node }) => node);
-  <marko-web-node-list modifiers=['centered']>
+  <marko-web-node-list modifiers=modifiers>
     <@header>
       <img src=logo alt="logo" />
     </@header>

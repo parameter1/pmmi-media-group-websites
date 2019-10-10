@@ -1,13 +1,4 @@
 .leaders {
-  &__container {
-    display: flex;
-    flex-direction: column;
-    min-height: auto;
-  }
-  &__header {
-    text-align: center;
-    background-color: $primary;
-  }
   &__items {
     display: flex;
     flex-direction: column;
@@ -38,6 +29,21 @@
       &__footer,
       &__body {
         text-align: center;
+      }
+    }
+  }
+  &--header-secondary {
+    #{ $self } {
+      &__header {
+        background-color: $secondary;
+      }
+    }
+  }
+  &--header-white {
+    #{ $self } {
+      &__header {
+        background-color: $white;
+        border-bottom: $theme-card-header-border-size solid rgba(0, 0, 0, .125);
       }
     }
   }
