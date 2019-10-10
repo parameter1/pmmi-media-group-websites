@@ -10,6 +10,11 @@ query LeadersScheduledContent($input:WebsiteScheduledContentQueryInput!) {
         siteContext {
           path
         }
+        ... on SocialLinkable {
+          socialLinks {
+            provider
+          }
+        }
       }
     }
   }

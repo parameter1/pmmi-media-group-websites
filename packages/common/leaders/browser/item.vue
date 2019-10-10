@@ -22,6 +22,7 @@
       >
         <a :href="content.siteContext.path" :title="content.name">
           {{ content.name }}
+          <IconYoutube v-if="content.showIcon" />
         </a>
       </li>
     </ul>
@@ -29,13 +30,16 @@
 </template>
 
 <script>
+import { getAsArray } from '@base-cms/object-path';
 import IconDash from '@base-cms/marko-web-icons/browser/dash.vue';
 import IconPlus from '@base-cms/marko-web-icons/browser/plus.vue';
+import IconYoutube from '@base-cms/marko-web-icons/browser/youtube.vue';
 
 export default {
   components: {
     IconDash,
     IconPlus,
+    IconYoutube,
   },
   props: {
     id: {
@@ -84,7 +88,10 @@ export default {
         });
         if (res.ok) {
           const items = await res.json();
-          this.items = items;
+          this.items = items.map(item => {
+            item.showIcon = getAsArray(item, 'socialLinks').some(({ provider }) => provider === 'youtube');
+            return item;
+          });
         } else {
           throw new Error(res.statusText);
         }
