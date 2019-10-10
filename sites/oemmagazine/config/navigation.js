@@ -5,6 +5,8 @@ module.exports = {
       { href: '/technology', label: 'Technology' },
       { href: '/products', label: 'Products' },
       { href: '/oem-issues', label: 'OEM Issues' },
+      { href: '/events', label: 'Events' },
+      { href: '/downloads', label: 'Downloads' },
     ],
   },
   tertiary: {
