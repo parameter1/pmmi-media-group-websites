@@ -37,7 +37,7 @@ module.exports = {
         { href: '/magazine', label: 'Magazine' },
         { href: '/events', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
-        { href: '/leaders', label: 'Leaders' },
+        { href: '/leaders', label: 'Leadership in Automation' },
         { href: '/videos', label: 'Videos' },
         { href: '/podcasts', label: 'Podcasts' },
         { href: '/playbooks', label: 'Playbooks' },
