@@ -23,10 +23,10 @@ module.exports = {
     { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/profoodworld' },
   ],
   gtm: {
-    containerId: 'GTM-NHJNQPG',
+    containerId: 'GTM-MW8Q9VC',
   },
   wufoo: {
-    userName: 'xxxxx',
+    userName: 'pmmimediagroup',
   },
   magazines: {
     description: '',

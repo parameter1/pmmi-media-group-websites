@@ -23,10 +23,10 @@ module.exports = {
     { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/packaging-world' },
   ],
   gtm: {
-    containerId: 'GTM-KKJXPMG',
+    containerId: 'GTM-TK8WXJR',
   },
   wufoo: {
-    userName: 'xxxxx',
+    userName: 'pmmimediagroup',
   },
   magazines: {
     description: '',

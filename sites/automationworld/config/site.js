@@ -24,10 +24,10 @@ module.exports = {
     { provider: 'instagram', href: 'https://www.instagram.com/automation_world' },
   ],
   gtm: {
-    containerId: 'GTM-T9B9PZ2',
+    containerId: 'GTM-NM2MBTG',
   },
   wufoo: {
-    userName: 'xxxxx',
+    userName: 'pmmimediagroup',
   },
   magazines: {
     description: '',
