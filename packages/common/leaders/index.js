@@ -19,9 +19,13 @@ module.exports = (app) => {
     const variables = {
       input: {
         sectionId,
-      },
-      pagination: {
-        limit,
+        pagination: {
+          limit,
+        },
+        sort: {
+          field: 'name',
+          order: 'asc',
+        },
       },
     };
     try {
