@@ -7,7 +7,9 @@ query LeadersScheduledContent($input:WebsiteScheduledContentQueryInput!) {
       node {
         id
         name
-        canonicalPath
+        siteContext {
+          path
+        }
       }
     }
   }

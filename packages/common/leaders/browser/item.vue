@@ -20,7 +20,7 @@
         :key="content.id"
         class="leaders__item-list-item"
       >
-        <a :href="content.canonicalPath" :title="content.name">
+        <a :href="content.siteContext.path" :title="content.name">
           {{ content.name }}
         </a>
       </li>
