@@ -5,7 +5,7 @@ import queryFragment from "../../graphql/fragments/content-list";
 $ const { config } = out.global;
 
 $ const type = "published-content";
-$ const title = "Webcasts";
+$ const title = "Webinars";
 $ const description = defaultDescription(title, config);
 
 <marko-web-default-page-layout type=type title=title description=description>
@@ -17,7 +17,8 @@ $ const description = defaultDescription(title, config);
   <@above-container>
   </@above-container>
   <@page>
-    <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "lb1" }) modifiers=["top-of-page"] />
+    <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "leaderboard" }) modifiers=["top-of-page"] />
+    <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "article-top-below-head" }) modifiers=["top-of-page"] />
     <marko-web-page-wrapper class="mb-block">
       <@section>
         <div class="row">

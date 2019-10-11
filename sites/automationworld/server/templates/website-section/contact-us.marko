@@ -12,12 +12,9 @@ $ const { id, alias, name, pageNode } = data;
     <!-- @todo this should be removed once contact us is in core -->
     <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script>
   </@head>
-  <@above-container>
-    <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "wa" }) />
-    <marko-web-gam-out-of-page-ad ...GAM.getAdUnit({ name: "reskin" }) />
-  </@above-container>
   <@page>
-    <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "lb1" }) modifiers=["top-of-page"] />
+    <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "leaderboard" }) modifiers=["top-of-page"] />
+    <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "article-top-below-head" }) modifiers=["top-of-page"] />
 
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       <marko-web-page-wrapper>
