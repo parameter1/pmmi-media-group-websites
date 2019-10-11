@@ -6,6 +6,8 @@ module.exports = {
       { href: '/markets', label: 'Markets' },
       { href: '/logistics-distribution', label: 'Logistics / Cold Chain' },
       { href: '/issues', label: 'Issues' },
+      { href: '/events', label: 'Events' },
+      { href: '/downloads', label: 'Downloads' },
     ],
   },
   tertiary: {

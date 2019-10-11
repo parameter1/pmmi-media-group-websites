@@ -23,10 +23,10 @@ module.exports = {
     { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/oem-magazine' },
   ],
   gtm: {
-    containerId: 'GTM-MLGVVFW',
+    containerId: 'GTM-M596Q98',
   },
   wufoo: {
-    userName: 'xxxxx',
+    userName: 'pmmimediagroup',
   },
   magazines: {
     description: '',

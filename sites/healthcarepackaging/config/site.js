@@ -23,10 +23,10 @@ module.exports = {
     { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/healthcare-packaging' },
   ],
   gtm: {
-    containerId: 'GTM-KKJXPMG',
+    containerId: 'GTM-T7LSZ5W',
   },
   wufoo: {
-    userName: 'xxxxx',
+    userName: 'pmmimediagroup',
   },
   magazines: {
     description: '',

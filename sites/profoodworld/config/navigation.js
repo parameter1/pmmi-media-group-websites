@@ -5,6 +5,8 @@ module.exports = {
       { href: '/processing-equipment', label: 'Processing Equipment' },
       { href: '/automation', label: 'Automation' },
       { href: '/food-safety', label: 'Food safety' },
+      { href: '/events', label: 'Events' },
+      { href: '/downloads', label: 'Downloads' },
     ],
   },
   tertiary: {
@@ -37,7 +39,7 @@ module.exports = {
         { href: '/magazine', label: 'Magazine' },
         { href: '/events', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
-        { href: '/leaders', label: 'Leaders' },
+        { href: '/leaders', label: 'Leaders in Packaging' },
         { href: '/global-250', label: 'Global 250' },
         { href: '/awards', label: 'Awards' },
         { href: '/videos', label: 'Videos' },
