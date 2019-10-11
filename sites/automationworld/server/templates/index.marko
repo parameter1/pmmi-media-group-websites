@@ -13,8 +13,14 @@ $ const { id, alias, name, pageNode } = data;
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ const aliases = hierarchyAliases(section);
       $ const adSlots = {
-          "gpt-ad-lb1":   GAM.getAdUnit({ name: "lb1", aliases }),
-        }
+        "gpt-ad-leaderboard":   GAM.getAdUnit({ name: "leaderboard", aliases }),
+        "gpt-ad-home-top-below-head":   GAM.getAdUnit({ name: "home-top-below-head", aliases }),
+        "gpt-ad-home-01-right": GAM.getAdUnit({ name: "home-01-right", aliases }),
+        "gpt-ad-imu_1": GAM.getAdUnit({ name: "imu_1", aliases }),
+        "gpt-ad-home-leaders-vote-btn": GAM.getAdUnit({ name: "home-leaders-vote-btn", aliases }),
+        "gpt-ad-home-02-right": GAM.getAdUnit({ name: "home-02-right", aliases }),
+        "gpt-ad-home-03-right": GAM.getAdUnit({ name: "home-03-right", aliases }),
+      }
        <marko-web-gam-slots slots=adSlots />
     </marko-web-resolve-page>
   </@head>
@@ -24,11 +30,11 @@ $ const { id, alias, name, pageNode } = data;
     </marko-web-resolve-page>
   </@above-container>
   <@page>
-    <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page"] />
+    <marko-web-gam-display-ad id="gpt-ad-leaderboard" modifiers=["top-of-page"] />
+    <marko-web-gam-display-ad id="gpt-ad-home-top-below-head" modifiers=["top-of-page"] />
 
     <marko-web-query|{ nodes }|
       name="website-optioned-content"
-      params={ sectionId: id, optionId: 30002, limit: 5, requiresImage: true, queryFragment }
     >
       <website-content-hero-flow nodes=nodes />
     </marko-web-query>

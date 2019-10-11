@@ -18,9 +18,13 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
     <marko-web-resolve-page|{ data: content }| node=pageNode>
       $ const aliases = hierarchyAliases(content.primarySection);
       $ const adSlots = {
-        "gpt-ad-lb1":   GAM.getAdUnit({ name: "lb1", aliases }),
-        "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
-        "gpt-ad-rail2": GAM.getAdUnit({ name: "rail2", aliases }),
+        "gpt-ad-leaderboard":   GAM.getAdUnit({ name: "leaderboard", aliases }),
+        "gpt-ad-article-top-below-head":   GAM.getAdUnit({ name: "article-top-below-head", aliases }),
+        "gpt-ad-article-01-right": GAM.getAdUnit({ name: "article-01-right", aliases }),
+        "gpt-ad-imu_1": GAM.getAdUnit({ name: "imu_1", aliases }),
+        "gpt-ad-article-leaders-vote-btn": GAM.getAdUnit({ name: "article-leaders-vote-btn", aliases }),
+        "gpt-ad-article-02-right": GAM.getAdUnit({ name: "article-02-right", aliases }),
+        "gpt-ad-article-03-right": GAM.getAdUnit({ name: "article-03-right", aliases }),
       }
        <marko-web-gam-slots slots=adSlots />
     </marko-web-resolve-page>
@@ -32,7 +36,8 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
 
   </@above-container>
   <@page>
-    <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page"] />
+    <marko-web-gam-display-ad id="gpt-ad-leaderboard" modifiers=["top-of-page"] />
+    <marko-web-gam-display-ad id="gpt-ad-article-top-below-head" modifiers=["top-of-page"] />
     <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
       $ const section = resolved.getAsObject("primarySection");
       <marko-web-page-wrapper>
@@ -81,21 +86,14 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
                   <@link class="btn btn-lg btn-primary" />
                 </default-theme-content-download>
               </if>
+              <div id="Article-BILibrary"></div>
             </default-theme-page-contents>
             <aside class="col-lg-4 page-rail">
-              <marko-web-gam-display-ad id="gpt-ad-rail1" />
-              <marko-web-gam-display-ad id="gpt-ad-rail2" />
-              <marko-web-resolve-page|{ data: content }| node=pageNode>
-                $ const aliases = hierarchyAliases(content.primarySection);
-                <website-related-content-block
-                  id=id
-                  type=type
-                  section-id=section.id
-                  section-name=section.name
-                  query-fragment=queryFragment
-                >
-                </website-related-content-block>
-              </marko-web-resolve-page>
+              <marko-web-gam-display-ad id="gpt-ad-article-01-right" />
+              <marko-web-gam-display-ad id="gpt-ad-imu_1" />
+              <marko-web-gam-display-ad id="gpt-ad-article-leaders-vote-btn" />
+              <marko-web-gam-display-ad id="gpt-ad-article-02-right" />
+              <marko-web-gam-display-ad id="gpt-ad-article-03-right" />
             </aside>
           </div>
         </@section>
