@@ -1,0 +1,61 @@
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+import { getAsObject } from "@base-cms/object-path";
+import queryFragment from "../../graphql/fragments/content-list";
+import GAM from "../../../config/gam";
+import CompanyContentStandard from './company/content-standard.marko';
+import CompanyContentLeader from './company/content-leader.marko';
+
+$ const { id, type, pageNode } = data;
+
+<marko-web-content-page-layout id=id type=type>
+  <@head>
+    <marko-web-gtm-content-context|{ context }| id=id>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-content-context>
+    <marko-web-gam-targeting key-values={ cont_id: id, cont_type: type } />
+    <marko-web-resolve-page|{ data: content }| node=pageNode>
+      $ const aliases = hierarchyAliases(content.primarySection);
+      $ const adSlots = {
+        "gpt-ad-lb1":   GAM.getAdUnit({ name: "lb1", aliases }),
+        "gpt-ad-rail1": GAM.getAdUnit({ name: "rail1", aliases }),
+        "gpt-ad-rail2": GAM.getAdUnit({ name: "rail2", aliases }),
+      }
+       <marko-web-gam-slots slots=adSlots />
+    </marko-web-resolve-page>
+  </@head>
+  <@above-container>
+    <marko-web-resolve-page|{ data: content }| node=pageNode>
+      $ const aliases = hierarchyAliases(content.primarySection);
+    </marko-web-resolve-page>
+
+  </@above-container>
+  <@page>
+    <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page"] />
+    <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
+      $ const section = resolved.getAsObject("primarySection");
+      $ const template = content.isLeader ? CompanyContentLeader : CompanyContentStandard;
+      <${template} content=content section=section />
+    </marko-web-resolve-page>
+  </@page>
+  <@below-page>
+    <marko-web-resolve-page|{ resolved, data: content }| node=pageNode>
+      $ const section = resolved.getAsObject("primarySection");
+      $ const aliases = hierarchyAliases(section);
+      <website-content-load-more-block
+        id=id
+        type=type
+        name=content.name
+        aliases=aliases
+        section-id=section.id
+        section-name=section.name
+        section-skip=5
+      >
+      </website-content-load-more-block>
+    </marko-web-resolve-page>
+  </@below-page>
+  <@foot>
+    <marko-web-resolve-page|{ data: content }| node=pageNode>
+      $ const aliases = hierarchyAliases(content.primarySection);
+    </marko-web-resolve-page>
+  </@foot>
+</marko-web-content-page-layout>
