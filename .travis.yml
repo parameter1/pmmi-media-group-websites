@@ -27,25 +27,25 @@ jobs:
 
     - stage: deploy
       name: Automation World
-      script: deploy/index.js automationworld aerilon
+      script: deploy/index.js automationworld caprica
       install: skip
 
     - stage: deploy
       name: Packaging World
-      script: deploy/index.js packworld aerilon
+      script: deploy/index.js packworld caprica
       install: skip
 
     - stage: deploy
       name: Healthcare Packaging
-      script: deploy/index.js healthcarepackaging aerilon
+      script: deploy/index.js healthcarepackaging caprica
       install: skip
 
     - stage: deploy
       name: Pro Food World
-      script: deploy/index.js profoodworld aerilon
+      script: deploy/index.js profoodworld caprica
       install: skip
 
     - stage: deploy
       name: OEM Magazine
-      script: deploy/index.js oemmagazine aerilon
+      script: deploy/index.js oemmagazine caprica
       install: skip
