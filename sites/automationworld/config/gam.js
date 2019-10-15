@@ -25,7 +25,7 @@ config
     { name: 'home-01-right', path: 'aw-home-01-right' },
     { name: 'home-leaders-vote-btn', path: 'aw-home-leaders-vote-btn' },
     { name: 'home-02-right', path: 'aw-home-02-right' },
-    { name: 'home-02-right', path: 'aw-home-03-right' },
+    { name: 'home-03-right', path: 'aw-home-03-right' },
     { name: 'home-04-left', path: 'aw-home-04-left' },
     { name: 'imu1', size: [300, 250], path: 'aw_imu_1' },
     { name: 'imu2', size: [300, 250], path: 'aw_imu_2' },
