@@ -2,6 +2,7 @@ import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
 import queryFragment from "../graphql/fragments/content-list";
 import latestIssueFragment from "../graphql/fragments/magazine-latest-issue";
 import GAM from "../../config/gam";
+import nxConfig from "../../config/native-x";
 
 $ const { id, alias, name, pageNode } = data;
 
@@ -46,6 +47,74 @@ $ const { id, alias, name, pageNode } = data;
         <div class="ad-container ad-container--in-card">
           <div id="home-01-right" />
         </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 mb-block">
+        <marko-web-query|{ nodes }|
+          name="website-optioned-content"
+          params={ sectionAlias: "home", optionName: "Pinned", limit: 2, skip: 1, requiresImage: true, queryFragment }
+        >
+          <default-theme-card-deck-flow cols=2 nodes=nodes>
+            <@slot|{ node, index }|>
+              <website-content-card-node
+                image-width=340
+                node=node
+              />
+            </@slot>
+          </default-theme-card-deck-flow>
+        </marko-web-query>
+
+        <div class="row">
+          <div class="col-lg-6 mb-block">
+            <marko-web-query|{ nodes }|
+              name="all-published-content"
+              params={
+                limit: 1,
+                contentTypes: ['Podcast'],
+                requiresImage: true,
+                queryFragment
+              }
+            >
+              <website-content-card-node
+                image-width=340
+                node=nodes[0]
+              />
+            </marko-web-query>
+          </div>
+          <div class="col-lg-6 mb-block">
+            <marko-web-query|{ nodes }|
+              name="website-optioned-content"
+              params={
+                sectionAlias: "home",
+                optionName: "Pinned",
+                limit: 1,
+                skip: 3,
+                requiresImage: true,
+                queryFragment
+              }
+            >
+              <marko-web-native-x-render|{ node: nxNode, linkAttrs, containerAttrs }|
+                name="syndicated-content"
+                section-name="Sponsored"
+                when=true
+                node=nodes[0]
+                config=nxConfig
+              >
+                <website-content-card-node
+                  image-width=340
+                  node=nxNode
+                  attrs=containerAttrs
+                  link-attrs=linkAttrs
+                />
+              </marko-web-native-x-render>
+            </marko-web-query>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-block page-rail">
+        <marko-web-gam-display-ad id="gpt-ad-home-skyscraper" modifiers=["in-card"] />
       </div>
     </div>
 
