@@ -88,9 +88,9 @@ export default {
         });
         if (res.ok) {
           const items = await res.json();
-          this.items = items.map(item => {
-            item.showIcon = getAsArray(item, 'socialLinks').some(({ provider }) => provider === 'youtube');
-            return item;
+          this.items = items.map((item) => {
+            const showIcon = getAsArray(item, 'socialLinks').some(({ provider }) => provider === 'youtube');
+            return { ...item, showIcon };
           });
         } else {
           throw new Error(res.statusText);
