@@ -23,11 +23,11 @@ x-env-defaults: &env
   SENDGRID_DEV_TO: developer@endeavorb2b.com
   YARN_CACHE_FOLDER: /.yarn-cache
 
-x-env-aerilon: &env-aerilon-staging
-  GRAPHQL_URI: ${GRAPHQL_URI-https://aerilon.graphql-staging.base-cms.io}
-  OEMBED_URI: ${OEMBED_URI-https://aerilon.oembed-staging.base-cms.io}
-  RSS_URI: ${RSS_URI-https://aerilon.rss-staging.base-cms.io}
-  SITEMAPS_URI: ${SITEMAPS_URI-https://aerilon.sitemaps-staging.base-cms.io}
+x-env-caprica: &env-caprica-staging
+  GRAPHQL_URI: ${GRAPHQL_URI-https://caprica.graphql-staging.base-cms.io}
+  OEMBED_URI: ${OEMBED_URI-https://caprica.oembed-staging.base-cms.io}
+  RSS_URI: ${RSS_URI-https://caprica.rss-staging.base-cms.io}
+  SITEMAPS_URI: ${SITEMAPS_URI-https://caprica.sitemaps-staging.base-cms.io}
 
 x-env-development: &env-development
   GRAPHQL_URI: ${GRAPHQL_URI-http://host.docker.internal:10002}
@@ -63,7 +63,7 @@ services:
     working_dir: /root/sites/automationworld
     environment:
       <<: *env
-      <<: *env-aerilon-staging
+      <<: *env-caprica-staging
       PORT: 80
       EXPOSED_PORT: 9710
       LIVERELOAD_PORT: 19710
@@ -79,7 +79,7 @@ services:
     working_dir: /root/sites/packworld
     environment:
       <<: *env
-      <<: *env-aerilon-staging
+      <<: *env-caprica-staging
       PORT: 80
       EXPOSED_PORT: 9711
       LIVERELOAD_PORT: 19711
@@ -95,7 +95,7 @@ services:
     working_dir: /root/sites/healthcarepackaging
     environment:
       <<: *env
-      <<: *env-aerilon-staging
+      <<: *env-caprica-staging
       PORT: 80
       EXPOSED_PORT: 9712
       LIVERELOAD_PORT: 19712
@@ -111,7 +111,7 @@ services:
     working_dir: /root/sites/profoodworld
     environment:
       <<: *env
-      <<: *env-aerilon-staging
+      <<: *env-caprica-staging
       PORT: 80
       EXPOSED_PORT: 9713
       LIVERELOAD_PORT: 19713
@@ -127,7 +127,7 @@ services:
     working_dir: /root/sites/oemmagazine
     environment:
       <<: *env
-      <<: *env-aerilon-staging
+      <<: *env-caprica-staging
       PORT: 80
       EXPOSED_PORT: 9714
       LIVERELOAD_PORT: 19714
