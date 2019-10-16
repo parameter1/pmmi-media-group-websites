@@ -9,13 +9,13 @@ $ const {
 
 <marko-web-query|{ node: leaders }| name="website-section" params={ alias, queryFragment }>
   $ const nodes = leaders.children.edges.map(({ node }) => node);
-  <marko-web-node-list modifiers=['nodes-flex-row']>
-    <@header modifiers=['centered']>
+  <marko-web-node-list modifiers=["nodes-flex-row"]>
+    <@header modifiers=["centered"]>
       <if(src)>
         <img src=src alt=alt />
       </if>
     </@header>
-    <@body modifiers=['centered']>
+    <@body modifiers=["centered"]>
       Browse these leading suppliers:
     </@body>
     <@nodes nodes=nodes>
