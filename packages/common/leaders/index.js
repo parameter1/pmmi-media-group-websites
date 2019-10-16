@@ -13,7 +13,7 @@ module.exports = (app) => {
   app.post('/__leaders-content', json(), asyncRoute(async (req, res) => {
     const { apollo } = req;
     const { sectionId } = req.body;
-    const limit = req.body.limit || 10;
+    const limit = req.body.limit || 0;
 
     const variables = {
       input: {
