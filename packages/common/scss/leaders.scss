@@ -9,10 +9,8 @@
 }
 
 .node-list {
-  $self: &;
   &__header,
   &__body {
-    $self: &;
     &--centered {
       text-align: center;
     }
