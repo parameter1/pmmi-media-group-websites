@@ -80,6 +80,7 @@ fragment ContentPageFragment on Content {
   }
   ... on ContentCompany {
     email
+    isLeader: hasWebsiteSchedule(input: { sectionAlias: "leaders" })
   }
   ... on SocialLinkable {
     socialLinks {

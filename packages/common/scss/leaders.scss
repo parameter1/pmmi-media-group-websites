@@ -1,0 +1,18 @@
+.leaders {
+  &__item {
+    .btn-link:hover,
+    .btn-link:active,
+    .btn-link:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+.node-list {
+  &__header,
+  &__body {
+    &--centered {
+      text-align: center;
+    }
+  }
+}

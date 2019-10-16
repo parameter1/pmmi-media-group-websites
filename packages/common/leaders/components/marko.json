@@ -1,0 +1,10 @@
+{
+  "tags": {
+    "leaders-block-index": {
+      "template": "./index.marko",
+      "@section-alias": "string",
+      "@logo-src": "string",
+      "@logo-alt": "string"
+    }
+  }
+}

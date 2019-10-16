@@ -1,0 +1,49 @@
+import { getAsArray } from "@base-cms/object-path";
+import queryFragment from "../graphql/fragments/section";
+
+$ const {
+  sectionAlias: alias,
+  logoSrc: src,
+  logoAlt: alt,
+} = input;
+
+<marko-web-query|{ node: leaders }| name="website-section" params={ alias, queryFragment }>
+  $ const nodes = getAsArray(leaders, 'children.edges').map(({ node }) => node);
+  <marko-web-node-list modifiers=["nodes-flex-row"]>
+    <@header modifiers=["centered"]>
+      <if(src)>
+        <img src=src alt=alt />
+      </if>
+    </@header>
+    <@body modifiers=["centered"]>
+      Browse these leading suppliers:
+    </@body>
+    <@nodes nodes=nodes>
+      $ const mid = Math.floor(nodes.length / 2)
+      $ const groups = [
+        [...nodes.slice(0, mid)],
+        [...nodes.slice(mid, nodes.length)],
+      ];
+      <div class="row">
+        <for|group| of=groups>
+          <ul class="col-lg-6 mb-block list-unstyled">
+            <for|node| of=group>
+              $ const children = getAsArray(node, 'children.edges').map(({ node: item }) => item);
+              <if(children.length)>
+                <li class="leaders__category">
+                  <label class="leaders__category-label">${node.name}</label>
+                </li>
+                <for|item| of=children>
+                  <marko-web-browser-component name="CommonLeadersItem" props={ id: item.id, name: item.name } />
+                </for>
+              </if>
+              <else>
+                <marko-web-browser-component name="CommonLeadersItem" props={ id: node.id, name: node.name } />
+              </else>
+            </for>
+          </ul>
+        </for>
+      </div>
+    </@nodes>
+  </marko-web-node-list>
+</marko-web-query>
