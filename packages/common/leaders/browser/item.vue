@@ -61,6 +61,7 @@ export default {
       error: null,
       items: [],
       expanded: false,
+      promise: null,
     };
   },
   computed: {
@@ -71,7 +72,7 @@ export default {
   methods: {
     toggle() {
       this.expanded = !this.expanded;
-      if (!this.items.length) this.loadItems();
+      if (!this.promise && this.expanded) this.promise = this.loadItems();
     },
     async loadItems() {
       const { limit, id: sectionId } = this;
@@ -83,7 +84,10 @@ export default {
           body: JSON.stringify({ limit, sectionId }),
           headers: { 'Content-Type': 'application/json' },
         });
-        if (!res.ok) throw new Error(res.statusText);
+        if (!res.ok) {
+          this.promise = null;
+          throw new Error(res.statusText);
+        }
         const items = await res.json();
         this.items = items.map((item) => {
           const showIcon = getAsArray(item, 'socialLinks').some(({ provider }) => provider === 'youtube');
