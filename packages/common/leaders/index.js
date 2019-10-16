@@ -1,5 +1,5 @@
 const { asyncRoute } = require('@base-cms/utils');
-const bodyParser = require('body-parser');
+const { json } = require('body-parser');
 const query = require('./graphql/queries/section-content');
 
 const { error } = console;
@@ -11,7 +11,7 @@ const exception = (message, code = 400) => {
 };
 
 module.exports = (app) => {
-  app.post('/__leaders-content', bodyParser.json(), asyncRoute(async (req, res) => {
+  app.post('/__leaders-content', json(), asyncRoute(async (req, res) => {
     const { apollo } = req;
     const { sectionId } = req.body;
     const limit = req.body.limit || 10;
