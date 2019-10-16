@@ -9,7 +9,7 @@
         Loading...
       </li>
       <li v-else-if="error" class="leaders__item-list-item">
-        Unable to load items: {{ error }}
+        Unable to load items: {{ error.message }}
       </li>
       <li v-else-if="!items.length" class="leaders__item-list-item">
         No results found.
@@ -58,7 +58,7 @@ export default {
   data() {
     return {
       loading: false,
-      error: false,
+      error: null,
       items: [],
       expanded: false,
     };
@@ -81,22 +81,20 @@ export default {
       const { limit, id: sectionId } = this;
       try {
         this.loading = true;
+        this.error = null;
         const res = await fetch('/__leaders-content', {
           method: 'post',
           body: JSON.stringify({ limit, sectionId }),
           headers: { 'Content-Type': 'application/json' },
         });
-        if (res.ok) {
-          const items = await res.json();
-          this.items = items.map((item) => {
-            const showIcon = getAsArray(item, 'socialLinks').some(({ provider }) => provider === 'youtube');
-            return { ...item, showIcon };
-          });
-        } else {
-          throw new Error(res.statusText);
-        }
+        if (!res.ok) throw new Error(res.statusText);
+        const items = await res.json();
+        this.items = items.map((item) => {
+          const showIcon = getAsArray(item, 'socialLinks').some(({ provider }) => provider === 'youtube');
+          return { ...item, showIcon };
+        });
       } catch (e) {
-        this.error = e.message;
+        this.error = e;
       } finally {
         this.loading = false;
       }
