@@ -48,7 +48,8 @@
       "@aliases": "array"
     },
     "@nodes": "array",
-    "@aliases": "array"
+    "@aliases": "array",
+    "@ad-index": "number"
   },
   "<website-magazine-issue-archive-flow>": {
     "template": "./magazine-issue-archive.marko",

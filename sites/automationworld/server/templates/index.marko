@@ -180,10 +180,26 @@ $ const { id, alias, name, pageNode } = data;
           <website-content-list-flow nodes=nodes>
             <@header>
               Video
-              <!-- <marko-web-link href="/process">Process</marko-web-link> -->
             </@header>
           </website-content-list-flow>
         </marko-web-query>
+      </div>
+    </div>
+
+    <marko-web-query|{ nodes }|
+      name="website-optioned-content"
+      params={ sectionAlias: "home", optionName: "Pinned", limit: 5, skip: 4, requiresImage: true, queryFragment }
+    >
+      <website-content-card-deck-flow nodes=nodes ad-index=1>
+        <@native-x index=2 name="load-more" />
+      </website-content-card-deck-flow>
+    </marko-web-query>
+
+    <div class="row">
+      <div class="col-lg-12 mb-block page-rail">
+        <div class="ad-container ad-container--in-card">
+          <div id="home-bottom-wide" />
+        </div>
       </div>
     </div>
 
@@ -191,12 +207,13 @@ $ const { id, alias, name, pageNode } = data;
   <@below-page>
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ const aliases = hierarchyAliases(section);
+      $ const nativeX = { index: 1, name: "load-more" };
       <marko-web-load-more
         component-name="content-load-more-flow"
-        component-input={ aliases }
+        component-input={ nativeX, adIndex: 2 }
         fragment-name="content-list"
         query-name="website-scheduled-content"
-        query-params={ sectionId: id, limit: 14, skip: 5, requiresImage: true }
+        query-params={ sectionId: id, limit: 11, skip: 9, requiresImage: true }
         max-pages=0
         page-input={ for: "website-section", id }
       />
