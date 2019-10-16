@@ -190,7 +190,7 @@ $ const { id, alias, name, pageNode } = data;
       name="website-optioned-content"
       params={ sectionAlias: "home", optionName: "Pinned", limit: 5, skip: 4, requiresImage: true, queryFragment }
     >
-      <website-content-card-deck-flow nodes=nodes ad-index=1>
+      <website-content-card-deck-flow nodes=nodes ad-index=1 ad-name="imu1" >
         <@native-x index=2 name="load-more" />
       </website-content-card-deck-flow>
     </marko-web-query>
@@ -210,7 +210,7 @@ $ const { id, alias, name, pageNode } = data;
       $ const nativeX = { index: 1, name: "load-more" };
       <marko-web-load-more
         component-name="content-load-more-flow"
-        component-input={ nativeX, adIndex: 2 }
+        component-input={ aliases, nativeX, adIndex: 2, adName: "imu2" }
         fragment-name="content-list"
         query-name="website-scheduled-content"
         query-params={ sectionId: id, limit: 11, skip: 9, requiresImage: true }
