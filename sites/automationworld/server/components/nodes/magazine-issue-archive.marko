@@ -18,7 +18,7 @@ $ const alt = `${publication.name} ${issue.name}`;
     fluid=true
     ar="3:4"
     width=defaultValue(input.imageWidth, 400)
-    link={ href: get(issue, "siteContext.path"), title: alt }
+    link={ href: issue.canonicalPath, title: alt }
   />
   <@body>
     <@title tag="h5" show=defaultValue(input.withTitle, true)>
