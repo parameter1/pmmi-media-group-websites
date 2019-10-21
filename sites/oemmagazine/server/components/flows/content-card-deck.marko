@@ -2,7 +2,7 @@ import { getAsArray, getAsObject } from "@base-cms/object-path";
 import GAM from "../../../config/gam";
 import nxConfig from "../../../config/native-x";
 
-$ const { aliases } = input;
+$ const { aliases, adIndex, adName } = input;
 $ const nodes = getAsArray(input, "nodes");
 $ const nativeX = getAsObject(input, "nativeX");
 
@@ -23,11 +23,10 @@ $ const nativeX = getAsObject(input, "nativeX");
         />
       </marko-web-native-x-render>
     </@slot>
-    <@slot position="after" index=1>
-      <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "load-more", size: [300, 250], aliases }) modifiers=["in-card"] />
-    </@slot>
-    <@slot position="after" index=6>
-      <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "load-more", size: [300, 250], aliases }) modifiers=["in-card"] />
-    </@slot>
+    <if(adIndex)>
+      <@slot position="after" index=adIndex>
+        <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: adName, size: [300, 250], aliases }) modifiers=["in-card"] />
+      </@slot>
+    </if>
   </default-theme-card-deck-flow>
 </if>
