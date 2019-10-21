@@ -7,9 +7,7 @@ fragment MagazineIssuePageFragment on MagazineIssue {
   name
   description
   digitalEditionUrl
-  siteContext {
-    path
-  }
+  canonicalPath
   coverImage {
     id
     src
@@ -18,9 +16,7 @@ fragment MagazineIssuePageFragment on MagazineIssue {
     id
     name
     subscribeUrl
-    siteContext {
-      path
-    }
+    canonicalPath
   }
 }
 

@@ -18,16 +18,12 @@ fragment ContentPageFragment on Content {
     id
     name
     alias
-    siteContext {
-      path
-    }
+    canonicalPath
     hierarchy {
       id
       name
       alias
-      siteContext {
-        path
-      }
+      canonicalPath
     }
   }
   primaryImage {

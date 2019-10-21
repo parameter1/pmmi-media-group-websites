@@ -25,9 +25,7 @@ fragment WebsiteContentListFragment on Content {
     id
     name
     fullName
-    siteContext {
-      path
-    }
+    canonicalPath
   }
   primaryImage {
     id

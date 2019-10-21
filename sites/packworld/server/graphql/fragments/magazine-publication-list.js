@@ -5,9 +5,7 @@ module.exports = gql`
 fragment MagazinePublicationListFragment on MagazinePublication {
   id
   name
-  siteContext {
-    path
-  }
+  canonicalPath
 }
 
 `;

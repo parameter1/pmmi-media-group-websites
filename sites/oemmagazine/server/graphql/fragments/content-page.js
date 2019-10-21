@@ -18,16 +18,12 @@ fragment ContentPageFragment on Content {
     id
     name
     alias
-    siteContext {
-      path
-    }
+    canonicalPath
     hierarchy {
       id
       name
       alias
-      siteContext {
-        path
-      }
+      canonicalPath
     }
   }
   primaryImage {
@@ -88,6 +84,7 @@ fragment ContentPageFragment on Content {
   }
   ... on ContentCompany {
     email
+    isLeader: hasWebsiteSchedule(input: { sectionAlias: "leaders" })
   }
   ... on SocialLinkable {
     socialLinks {
