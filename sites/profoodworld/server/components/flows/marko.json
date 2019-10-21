@@ -38,7 +38,9 @@
       "@aliases": "array"
     },
     "@nodes": "array",
-    "@aliases": "array"
+    "@aliases": "array",
+    "@ad-index": "number",
+    "@ad-name": "string"
   },
   "<website-content-card-deck-flow>": {
     "template": "./content-card-deck.marko",
