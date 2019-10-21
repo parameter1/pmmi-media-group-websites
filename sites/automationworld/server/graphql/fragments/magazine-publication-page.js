@@ -6,7 +6,9 @@ fragment MagazinePublicationPageFragment on MagazinePublication {
   id
   name
   description
-  canonicalPath
+  siteContext {
+    path
+  }
 }
 
 `;

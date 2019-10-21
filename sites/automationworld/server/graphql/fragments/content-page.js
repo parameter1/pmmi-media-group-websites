@@ -10,18 +10,24 @@ fragment ContentPageFragment on Content {
   company {
     id
     name
-    canonicalPath
+    siteContext {
+      path
+    }
   }
   primarySection {
     id
     name
     alias
-    canonicalPath
+    siteContext {
+      path
+    }
     hierarchy {
       id
       name
       alias
-      canonicalPath
+      siteContext {
+        path
+      }
     }
   }
   primaryImage {
@@ -58,7 +64,9 @@ fragment ContentPageFragment on Content {
         node {
           id
           name
-          canonicalPath
+          siteContext {
+            path
+          }
         }
       }
     }
@@ -99,7 +107,9 @@ fragment ContentPageFragment on Content {
           id
           name
           type
-          canonicalPath
+          siteContext {
+            path
+          }
         }
       }
     }
@@ -109,7 +119,9 @@ fragment ContentPageFragment on Content {
           id
           name
           type
-          canonicalPath
+          siteContext {
+            path
+          }
         }
       }
     }
@@ -119,7 +131,9 @@ fragment ContentPageFragment on Content {
           id
           name
           type
-          canonicalPath
+          siteContext {
+            path
+          }
         }
       }
     }
