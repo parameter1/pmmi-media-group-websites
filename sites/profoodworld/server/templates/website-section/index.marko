@@ -12,7 +12,7 @@ $ const { id, alias, name, pageNode } = data;
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ const aliases = hierarchyAliases(section);
       $ const adSlots = {
-          "gpt-ad-lb1":   GAM.getAdUnit({ name: "lb1", aliases }),
+          "gpt-ad-lb1":   GAM.getAdUnit({ name: "leaderboard", aliases }),
         }
        <marko-web-gam-slots slots=adSlots />
     </marko-web-resolve-page>
@@ -27,7 +27,7 @@ $ const { id, alias, name, pageNode } = data;
 
     <marko-web-query|{ nodes }|
       name="website-optioned-content"
-      params={ sectionId: id, optionId: 30010, limit: 5, requiresImage: true, queryFragment }
+      params={ sectionId: id, optionId: "Pinned", limit: 5, requiresImage: true, queryFragment }
     >
       <website-content-hero-flow nodes=nodes />
     </marko-web-query>
