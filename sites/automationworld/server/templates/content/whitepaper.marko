@@ -34,7 +34,18 @@ $ const displayPrimaryImage = ["whitepaper", "media-gallery", "contact"].include
                 <marko-web-content-embed-code block-name=blockName obj=content />
               </if>
               <else-if(displayPrimaryImage)>
-                <marko-web-page-image width=500 obj=content.primaryImage />
+                $ const isLogo = get(content, "primaryImage.isLogo");
+                <if(isLogo)>
+                  <marko-web-page-image
+                    modifiers=["primary-image-inline"]
+                    obj=content.primaryImage
+                    fluid=false
+                    width=250
+                  />
+                </if>
+                <else>
+                  <marko-web-page-image width=500 obj=content.primaryImage />
+                </else>
               </else-if>
               <marko-web-content-body|{ value }| block-name=blockName obj=content>
                 <marko-web-page-image
