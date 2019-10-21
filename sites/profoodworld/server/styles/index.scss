@@ -29,3 +29,7 @@ $theme-site-header-breakpoints: (
 // @todo this should be remove once contact us is in core
 @import "../../node_modules/@base-cms-websites/package-common/scss/contact-us-form";
 @import "../../node_modules/@base-cms-websites/package-common/scss/leaders";
+
+.page-rail {
+  text-align: center;
+}
