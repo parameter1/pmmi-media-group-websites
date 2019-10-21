@@ -1,0 +1,36 @@
+import { getAsArray } from "@base-cms/object-path";
+import queryFragment from "../graphql/fragments/sections";
+
+$ const {
+  sectionAlias,
+  logoSrc: src,
+  logoAlt: alt,
+} = input;
+
+$ const taxonomyIds = getAsArray(input, 'taxonomyIds');
+
+<if(!taxonomyIds.length)>
+  <leaders-block-index section-alias=sectionAlias logo-src=src logo-alt=alt columns=1 />
+</if>
+<else>
+  <marko-web-query|{ nodes }| name="website-sections" params={ taxonomyIds, queryFragment }>
+    $ const sections = nodes.filter(node => getAsArray(node, 'hierarchy').some(({ alias }) => alias === sectionAlias));
+    <if(sections.length)>
+      <marko-web-node-list>
+        <@header modifiers=["centered"]>
+          <if(src)>
+            <img src=src alt=alt class="leaders__logo" />
+          </if>
+        </@header>
+        <@nodes nodes=sections>
+          <for|node| of=sections>
+            <marko-web-browser-component name="CommonLeadersItemStatic" props={ id: node.id, name: node.name } />
+          </for>
+        </@nodes>
+      </marko-web-node-list>
+    </if>
+    <else>
+      <leaders-block-index section-alias=sectionAlias logo-src=src logo-alt=alt columns=1 />
+    </else>
+  </marko-web-query>
+</else>
