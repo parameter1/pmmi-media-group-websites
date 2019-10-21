@@ -36,12 +36,14 @@ $ const { id, alias, name, pageNode } = data;
   <@below-page>
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ const aliases = hierarchyAliases(section);
+      $ const nativeX = { index: 1, name: "load-more" };
       <marko-web-load-more
         component-name="content-load-more-flow"
-        component-input={ aliases }
+        component-input={ aliases, nativeX, adIndex: 2, adName: "rail2" }
         fragment-name="content-list"
         query-name="website-scheduled-content"
-        query-params={ sectionId: id, limit: 14, skip: 5 }
+        query-params={ sectionId: id, limit: 14, skip: 5}
+        max-pages=0
         page-input={ for: "website-section", id }
       />
     </marko-web-resolve-page>
