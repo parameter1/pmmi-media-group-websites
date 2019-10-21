@@ -5,9 +5,7 @@ module.exports = gql`
 fragment MagazineIssueArchiveFragment on MagazineIssue {
   id
   name
-  siteContext {
-    path
-  }
+  canonicalPath
   coverImage {
     id
     src
