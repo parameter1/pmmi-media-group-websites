@@ -1,4 +1,7 @@
 .leaders {
+  &__logo {
+    max-width: 100%;
+  }
   &__item {
     .btn-link:hover,
     .btn-link:active,
