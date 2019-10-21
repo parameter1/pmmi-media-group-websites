@@ -5,7 +5,11 @@
       "@section-alias": "string",
       "@logo-src": "string",
       "@logo-alt": "string",
-      "@body-text": "string"
+      "@body-text": "string",
+      "@columns": {
+        "type": "number",
+        "default-value": 2
+      }
     }
   }
 }
