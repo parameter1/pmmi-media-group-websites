@@ -20,6 +20,8 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
       $ const adSlots = {
         "gpt-ad-leaderboard": GAM.getAdUnit({ name: "leaderboard", aliases }),
         "gpt-ad-article-top-below-head": GAM.getAdUnit({ name: "article-top-below-head", aliases }),
+        "gpt-ad-imu1": GAM.getAdUnit({ name: "imu1", aliases, size: [300, 250]}),
+        "gpt-ad-skyscraper": GAM.getAdUnit({ name: "skyscraper", aliases, size: [300, 600]}),
       }
        <marko-web-gam-slots slots=adSlots />
     </marko-web-resolve-page>
@@ -90,7 +92,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
             </default-theme-page-contents>
 
             <aside class="col-lg-4 page-rail">
-              <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "imu1", aliases }) />
+              <marko-web-gam-display-ad id="gpt-ad-imu1" />
 
               <!-- Div for Leaders Button -->
               <div id="article-leaders-vote-btn" />
@@ -126,7 +128,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
               </marko-web-query>
             </div>
             <div class="col-lg-4 page-rail">
-              <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "skyscraper", aliases }) />
+              <marko-web-gam-display-ad id="gpt-ad-skyscraper" />
             </div>
           </div>
 
