@@ -27,7 +27,7 @@ $ const { id, alias, name, pageNode } = data;
 
     <marko-web-query|{ nodes }|
       name="website-optioned-content"
-      params={ sectionId: id, optionId: 30004, limit: 5, requiresImage: true, queryFragment }
+      params={ sectionId: id, optionName: "Pinned", limit: 5, requiresImage: true, queryFragment }
     >
       <website-content-hero-flow nodes=nodes />
     </marko-web-query>
@@ -39,7 +39,7 @@ $ const { id, alias, name, pageNode } = data;
       $ const nativeX = { index: 1, name: "load-more" };
       <marko-web-load-more
         component-name="content-load-more-flow"
-        component-input={ aliases, nativeX, adIndex: 2, adName: "rail2" }
+        component-input={ aliases, nativeX, adIndex: 2, adName: "ium2" }
         fragment-name="content-list"
         query-name="website-scheduled-content"
         query-params={ sectionId: id, limit: 14, skip: 5}
