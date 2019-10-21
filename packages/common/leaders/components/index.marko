@@ -5,6 +5,7 @@ $ const {
   sectionAlias: alias,
   logoSrc: src,
   logoAlt: alt,
+  bodyText,
 } = input;
 
 <marko-web-query|{ node: leaders }| name="website-section" params={ alias, queryFragment }>
@@ -15,9 +16,9 @@ $ const {
         <img src=src alt=alt />
       </if>
     </@header>
-    <@body modifiers=["centered"]>
-      Browse these leading suppliers:
-    </@body>
+    <if(bodyText)>
+      <@body modifiers=["centered"] value=bodyText />
+    </if>
     <@nodes nodes=nodes>
       $ const mid = Math.floor(nodes.length / 2)
       $ const groups = [
