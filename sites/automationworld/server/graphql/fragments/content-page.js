@@ -10,7 +10,9 @@ fragment ContentPageFragment on Content {
   company {
     id
     name
-    canonicalPath
+    siteContext {
+      path
+    }
   }
   primarySection {
     id
@@ -58,7 +60,9 @@ fragment ContentPageFragment on Content {
         node {
           id
           name
-          canonicalPath
+          siteContext {
+            path
+          }
         }
       }
     }
@@ -99,7 +103,9 @@ fragment ContentPageFragment on Content {
           id
           name
           type
-          canonicalPath
+          siteContext {
+            path
+          }
         }
       }
     }
@@ -109,7 +115,9 @@ fragment ContentPageFragment on Content {
           id
           name
           type
-          canonicalPath
+          siteContext {
+            path
+          }
         }
       }
     }
@@ -119,7 +127,9 @@ fragment ContentPageFragment on Content {
           id
           name
           type
-          canonicalPath
+          siteContext {
+            path
+          }
         }
       }
     }
