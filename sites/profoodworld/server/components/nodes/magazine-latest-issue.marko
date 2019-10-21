@@ -1,4 +1,4 @@
-import { getAsObject } from "@base-cms/object-path";
+import { getAsObject, get } from "@base-cms/object-path";
 import { defaultValue } from "@base-cms/marko-web/utils";
 
 $ const issue = getAsObject(input, "node");
@@ -17,7 +17,7 @@ $ const linkTitle = `${publication.name} ${issue.name}`;
     fluid=true
     ar="3:4"
     width=(input.imageWidth || 300)
-    link={ href: issue.canonicalPath, title: linkTitle }
+    link={ href: get(issue, "siteContext.path"), title: linkTitle }
   />
   <@body>
     <@title tag="h5">
