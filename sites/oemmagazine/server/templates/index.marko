@@ -14,7 +14,7 @@ $ const { id, alias, name, pageNode } = data;
       $ const aliases = hierarchyAliases(section);
       $ const adSlots = {
           "gpt-ad-lb1":   GAM.getAdUnit({ name: "leaderboard", aliases }),
-          "gpt-ad-htbh": GAM.getAdUnit({ name: "home-top-below-head", aliases }),
+          "gpt-ad-home-top-below-head": GAM.getAdUnit({ name: "home-top-below-head", aliases }),
           "gpt-ad-skyscraper": GAM.getAdUnit({ name: "skyscraper", aliases }),
         }
        <marko-web-gam-slots slots=adSlots />
@@ -27,7 +27,7 @@ $ const { id, alias, name, pageNode } = data;
   </@above-container>
   <@page>
     <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page"] />
-    <marko-web-gam-display-ad id="gpt-ad-htbh" />
+    <marko-web-gam-display-ad id="gpt-ad-home-top-below-head" />
 
     <marko-web-query|{ nodes }|
       name="website-optioned-content"
@@ -75,7 +75,7 @@ $ const { id, alias, name, pageNode } = data;
 
     <div class="row">
       <div class="col-lg-4 mb-block">
-        <div id="home-03-right" />
+        <div id="home-03-tall-left" />
       </div>
       <div class="col-lg-4 mb-block">
         <marko-web-query|{ nodes }|
@@ -119,7 +119,7 @@ $ const { id, alias, name, pageNode } = data;
       <div class="col-lg-4 mb-block">
         <marko-web-query|{ nodes }|
           name="all-published-content"
-          params={ contentTypes: ["Video"], limit: 5, queryFragment }
+          params={ contentTypes: ["Video"], limit: 4, queryFragment }
         >
           <website-content-list-flow nodes=nodes>
             <@header>
@@ -129,7 +129,7 @@ $ const { id, alias, name, pageNode } = data;
         </marko-web-query>
       </div>
       <div class="col-lg-4 mb-block">
-        <div id="home-04-tall-left" />
+        <div id="home-04-tall-right" />
       </div>
     </div>
 
@@ -143,10 +143,8 @@ $ const { id, alias, name, pageNode } = data;
     </marko-web-query>
 
     <div class="row">
-      <div class="col-lg-12 mb-block page-rail">
-        <div class="ad-container ad-container--in-card">
-          <div id="home-bottom-wide" />
-        </div>
+      <div class="col-lg-12 mb-block">
+        <div id="home-bottom-wide" />
       </div>
     </div>
 
