@@ -33,8 +33,8 @@ $ const {
 <else-if(sectionId)>
   <marko-web-load-more
     header=`More in ${sectionName}`
-    component-name="content-load-more-flow"
-    component-input={ aliases, nativeX: input.nativeX }
+    component-name="content-card-deck-flow"
+    component-input={ aliases, nativeX: input.nativeX, adIndex: input.adIndex, adName: input.adName }
     fragment-name="content-list"
     query-name="website-scheduled-content"
     query-params={ sectionId, excludeContentIds: [id], limit: 14, skip: sectionSkip }

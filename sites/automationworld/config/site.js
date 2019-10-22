@@ -25,6 +25,7 @@ module.exports = {
   ],
   gtm: {
     containerId: 'GTM-NM2MBTG',
+    slotPrefix: 'aw',
   },
   wufoo: {
     userName: 'pmmimediagroup',

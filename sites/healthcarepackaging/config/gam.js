@@ -15,8 +15,6 @@ config
 config
   .setAliasAdUnits('default', [
     { name: 'leaderboard', templateName: 'leaderboard', path: 'hcp_leaderboard' },
-    { name: 'article-top-below-head', templateName: 'leaderboard', path: 'hcp-article-top-below-head' },
-    { name: 'home-top-below-head', templateName: 'leaderboard', path: 'hcp-home-top-below-head' },
     { name: 'imu1', size: [300, 250], path: 'hcp_imu_1' },
     { name: 'imu2', size: [300, 250], path: 'hcp_imu_2' },
     { name: 'skyscraper', options: { size: [300, 600] }, path: 'hcp_skyscraper' },

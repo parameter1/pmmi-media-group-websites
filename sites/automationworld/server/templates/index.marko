@@ -4,6 +4,7 @@ import latestIssueFragment from "../graphql/fragments/magazine-latest-issue";
 import GAM from "../../config/gam";
 import nxConfig from "../../config/native-x";
 
+$ const { site } = out.global;
 $ const { id, alias, name, pageNode } = data;
 
 <marko-web-website-section-page-layout id=id alias=alias name=name>
@@ -14,16 +15,17 @@ $ const { id, alias, name, pageNode } = data;
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ const aliases = hierarchyAliases(section);
       $ const adSlots = {
-        "gpt-ad-leaderboard":         GAM.getAdUnit({ name: "leaderboard", aliases }),
-        "gpt-ad-home-top-below-head": GAM.getAdUnit({ name: "home-top-below-head", aliases }),
-        "gpt-ad-home-skyscraper":     GAM.getAdUnit({ name: "skyscraper", aliases }),
+        "gpt-ad-leaderboard":     GAM.getAdUnit({ name: "leaderboard", aliases }),
+        "gpt-ad-home-skyscraper": GAM.getAdUnit({ name: "skyscraper", aliases, size: [300, 600] }),
       };
        <marko-web-gam-slots slots=adSlots />
     </marko-web-resolve-page>
   </@head>
+  <@above-container>
+    <marko-web-gam-display-ad id="gpt-ad-leaderboard" modifiers=["above-container"] />
+    <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-top-below-head" modifiers=["above-container"] />
+  </@above-container>
   <@page>
-    <marko-web-gam-display-ad id="gpt-ad-leaderboard" modifiers=["top-of-page"] />
-    <marko-web-gam-display-ad id="gpt-ad-home-top-below-head" modifiers=["top-of-page"] />
 
     <div class="row">
       <div class="col-lg-8 mb-block">
@@ -35,9 +37,7 @@ $ const { id, alias, name, pageNode } = data;
         </marko-web-query>
       </div>
       <div class="col-lg-4 mb-block page-rail">
-        <div class="ad-container ad-container--in-card">
-          <div id="home-01-right" />
-        </div>
+        <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-01-right" />
       </div>
     </div>
 
@@ -119,11 +119,9 @@ $ const { id, alias, name, pageNode } = data;
         />
       </div>
       <div class="col-lg-4 mb-block page-rail">
-        <div class="ad-container ad-container--in-card d-flex flex-column">
-          <div id="home-leaders-vote-btn" />
-          <div id="home-02-right" />
-          <div id="home-03-right" />
-        </div>
+        <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-leaders-vote-btn" />
+        <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-02-right" />
+        <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-03-right" />
       </div>
     </div>
 
@@ -168,9 +166,7 @@ $ const { id, alias, name, pageNode } = data;
 
     <div class="row">
       <div class="col-lg-4 mb-block page-rail">
-        <div class="ad-container ad-container--in-card">
-          <div id="home-04-tall-left" />
-        </div>
+        <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-04-tall-left" />
       </div>
       <div class="col-lg-8 mb-block">
         <marko-web-query|{ nodes }|
@@ -195,13 +191,7 @@ $ const { id, alias, name, pageNode } = data;
       </website-content-card-deck-flow>
     </marko-web-query>
 
-    <div class="row">
-      <div class="col-lg-12 mb-block page-rail">
-        <div class="ad-container ad-container--in-card">
-          <div id="home-bottom-wide" />
-        </div>
-      </div>
-    </div>
+    <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-bottom-wide" />
 
   </@page>
   <@below-page>

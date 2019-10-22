@@ -24,6 +24,7 @@ module.exports = {
   ],
   gtm: {
     containerId: 'GTM-M596Q98',
+    slotPrefix: 'oem',
   },
   wufoo: {
     userName: 'pmmimediagroup',

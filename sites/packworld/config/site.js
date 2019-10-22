@@ -24,6 +24,7 @@ module.exports = {
   ],
   gtm: {
     containerId: 'GTM-TK8WXJR',
+    slotPrefix: 'pw',
   },
   wufoo: {
     userName: 'pmmimediagroup',

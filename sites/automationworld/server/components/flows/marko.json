@@ -50,7 +50,8 @@
     "@nodes": "array",
     "@aliases": "array",
     "@ad-index": "number",
-    "@ad-name": "string"
+    "@ad-name": "string",
+    "@ad-position": "string"
   },
   "<website-magazine-issue-archive-flow>": {
     "template": "./magazine-issue-archive.marko",

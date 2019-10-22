@@ -5,6 +5,7 @@ import nxConfig from "../../../config/native-x";
 $ const { aliases, adIndex, adName } = input;
 $ const nodes = getAsArray(input, "nodes");
 $ const nativeX = getAsObject(input, "nativeX");
+$ const adPosition = input.adPosition || "after";
 
 <if(nodes.length)>
   <default-theme-card-deck-flow cols=3 nodes=nodes>
@@ -23,8 +24,8 @@ $ const nativeX = getAsObject(input, "nativeX");
         />
       </marko-web-native-x-render>
     </@slot>
-    <if(adIndex)>
-      <@slot position="after" index=adIndex>
+    <if(adIndex !== null)>
+      <@slot position=adPosition index=adIndex>
         <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: adName, size: [300, 250], aliases }) modifiers=["in-card"] />
       </@slot>
     </if>
