@@ -1,5 +1,9 @@
 .leaders {
+  &__logo {
+    max-width: 100%;
+  }
   &__item {
+    text-align: left;
     .btn-link:hover,
     .btn-link:active,
     .btn-link:focus {

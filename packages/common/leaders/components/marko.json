@@ -4,7 +4,19 @@
       "template": "./index.marko",
       "@section-alias": "string",
       "@logo-src": "string",
-      "@logo-alt": "string"
+      "@logo-alt": "string",
+      "@body-text": "string",
+      "@columns": {
+        "type": "number",
+        "default-value": 2
+      }
+    },
+    "leaders-block-contextual": {
+      "template": "./contextual.marko",
+      "@section-alias": "string",
+      "@logo-src": "string",
+      "@logo-alt": "string",
+      "@taxonomy-ids": "array"
     }
   }
 }
