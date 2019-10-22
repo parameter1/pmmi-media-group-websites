@@ -1,7 +1,7 @@
 module.exports = {
   secondary: {
     items: [
-      { href: 'https://pmmi.dragonforms.com/PPWnew?pk=PWMagNav&oly_enc_id=@{encrypted_customer_id}@ ', label: 'Subscribe', target: '_blank' },
+      { href: 'https://pmmi.dragonforms.com/PPWnew?pk=PWMagNav&oly_enc_id=@{encrypted_customer_id}@', label: 'Subscribe', target: '_blank' },
       { href: '/processing-equipment', label: 'Processing Equipment' },
       { href: '/automation', label: 'Automation' },
       { href: '/food-safety', label: 'Food safety' },
