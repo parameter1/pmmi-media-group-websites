@@ -14,6 +14,14 @@ fragment ContentPageFragment on Content {
       path
     }
   }
+  taxonomy {
+    edges {
+      node {
+        id
+        type
+      }
+    }
+  }
   primarySection {
     id
     name
