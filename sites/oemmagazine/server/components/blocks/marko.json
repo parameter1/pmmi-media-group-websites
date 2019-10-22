@@ -19,6 +19,8 @@
       "@name": "string",
       "@aliases": "array"
     },
+    "@adIndex" : "number",
+    "@adName" : "string",
     "@id": "number",
     "@type": "string",
     "@name": "string",
