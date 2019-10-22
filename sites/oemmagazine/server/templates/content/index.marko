@@ -19,22 +19,17 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
       $ const aliases = hierarchyAliases(content.primarySection);
       $ const adSlots = {
         "gpt-ad-leaderboard": GAM.getAdUnit({ name: "leaderboard", aliases }),
-        "gpt-ad-article-top-below-head": GAM.getAdUnit({ name: "article-top-below-head", aliases }),
         "gpt-ad-imu1": GAM.getAdUnit({ name: "imu1", aliases, size: [300, 250]}),
-        "gpt-ad-skyscraper": GAM.getAdUnit({ name: "skyscraper", aliases, size: [300, 600]}),
+        "gpt-ad-skyscraper": GAM.getAdUnit({ name: "skyscraper", aliases, size: [300, 600] }),
       }
        <marko-web-gam-slots slots=adSlots />
     </marko-web-resolve-page>
   </@head>
   <@above-container>
-    <marko-web-resolve-page|{ data: content }| node=pageNode>
-      $ const aliases = hierarchyAliases(content.primarySection);
-    </marko-web-resolve-page>
-
+    <marko-web-gam-display-ad id="gpt-ad-leaderboard" modifiers=["above-container"] />
+    <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-top-below-head" modifiers=["above-container"] />
   </@above-container>
   <@page>
-    <marko-web-gam-display-ad id="gpt-ad-leaderboard" modifiers=["top-of-page"] />
-    <marko-web-gam-display-ad id="gpt-ad-article-top-below-head" modifiers=["top-of-page"] />
 
     <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
       $ const section = resolved.getAsObject("primarySection");
@@ -97,8 +92,10 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
                 </default-theme-content-download>
               </if>
 
+              <!-- @todo Companies in this article -->
+
               <!-- Div for BI Library -->
-              <div id="article-bilibrary"></div>
+              <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-bilibrary" />
 
             </default-theme-page-contents>
 
@@ -106,7 +103,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
               <marko-web-gam-display-ad id="gpt-ad-imu1" />
 
               <!-- Div for Leaders Button -->
-              <div id="article-leaders-vote-btn" />
+              <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-leaders-vote-btn" />
 
               <!-- Leaders block here -->
               <leaders-block-contextual
@@ -117,38 +114,45 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
               />
 
               <!-- Div for Audience -->
-              <div id="article-01-right" />
+              <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-01-right" />
 
               <!-- Div for Control Systems Integrators Report -->
-              <div id="article-02-right" />
+              <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-02-right" />
 
               <!-- Div for Marketing -->
-              <div id="article-03-right" />
+              <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-03-right" />
 
             </aside>
           </div>
 
-          <div class="row">
-            <div class="col-lg-8 mb-block">
-              <marko-web-query|{ nodes }|
-                name="website-scheduled-content"
-                params={ sectionAlias: section.alias, limit: 4, queryFragment }
-              >
-                <default-theme-card-deck-flow cols=2 nodes=nodes>
-                  <@slot|{ node, index }|>
-                    <website-content-card-node
-                      image-width=340
-                      node=node
-                    />
-                  </@slot>
-                </default-theme-card-deck-flow>
-              </marko-web-query>
-            </div>
-            <div class="col-lg-4 page-rail">
-              <marko-web-gam-display-ad id="gpt-ad-skyscraper" />
-            </div>
-          </div>
+        </@section>
+      </marko-web-page-wrapper>
 
+      <!-- @todo Videos from [Company Name] block, if company and content.isLeader -->
+
+      <div class="row mt-4">
+        <div class="col-lg-8">
+          <marko-web-query|{ nodes }|
+            name="website-scheduled-content"
+            params={ sectionAlias: section.alias, limit: 4, queryFragment }
+          >
+            <default-theme-card-deck-flow cols=2 nodes=nodes>
+              <@slot|{ node, index }|>
+                <website-content-card-node
+                  image-width=340
+                  node=node
+                />
+              </@slot>
+            </default-theme-card-deck-flow>
+          </marko-web-query>
+        </div>
+        <div class="col-lg-4 page-rail">
+          <marko-web-gam-display-ad id="gpt-ad-skyscraper" modifiers=["in-card"] />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
           <marko-web-query|{ nodes }|
             name="website-scheduled-content"
             params={ sectionAlias: section.alias, limit: 3, skip: 4, queryFragment }
@@ -157,30 +161,32 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
               <@native-x index=1 name="load-more" />
             </website-content-card-deck-flow>
           </marko-web-query>
+        </div>
+      </div>
 
-          <div class="row">
-            <div class="col-lg-4 page-rail">
-              <div class="ad-container ad-container--in-card">
-                <div id="article-04-left" />
-              </div>
-            </div>
-            <div class="col-lg-8 mb-block">
-              <marko-web-query|{ nodes }|
-                name="website-scheduled-content"
-                params={ sectionAlias: section.alias, limit: 2, skip: 7, queryFragment }
-              >
-                <default-theme-card-deck-flow cols=2 nodes=nodes>
-                  <@slot|{ node, index }|>
-                    <website-content-card-node
-                      image-width=340
-                      node=node
-                    />
-                  </@slot>
-                </default-theme-card-deck-flow>
-              </marko-web-query>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-lg-4 page-rail">
+          <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-04-left" />
+        </div>
+        <div class="col-lg-8">
+          <marko-web-query|{ nodes }|
+            name="website-scheduled-content"
+            params={ sectionAlias: section.alias, limit: 2, skip: 7, queryFragment }
+          >
+            <default-theme-card-deck-flow cols=2 nodes=nodes>
+              <@slot|{ node, index }|>
+                <website-content-card-node
+                  image-width=340
+                  node=node
+                />
+              </@slot>
+            </default-theme-card-deck-flow>
+          </marko-web-query>
+        </div>
+      </div>
 
+      <div class="row">
+        <div class="col-lg-12">
           <marko-web-query|{ nodes }|
             name="website-scheduled-content"
             params={ sectionAlias: section.alias, limit: 3, skip: 9, queryFragment }
@@ -189,23 +195,27 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
               <@native-x index=2 name="load-more" />
             </website-content-card-deck-flow>
           </marko-web-query>
+        </div>
+      </div>
 
-          <!-- Div for Audience -->
-          <div class="row">
-            <div class="col-lg-12 mb-block page-rail">
-              <div id="article-bottom-wide" />
-            </div>
-          </div>
+      <!-- Div for Audience -->
+      <div class="row">
+        <div class="col-lg-12 mb-4">
+          <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-bottom-wide" />
+        </div>
+      </div>
 
+      <div class="row">
+        <div class="col-lg-12">
           <marko-web-query|{ nodes }|
             name="website-scheduled-content"
             params={ sectionAlias: section.alias, limit: 8, skip: 12, queryFragment }
           >
             <website-content-card-deck-flow nodes=nodes ad-index=4 ad-name="imu2" />
           </marko-web-query>
+        </div>
+      </div>
 
-        </@section>
-      </marko-web-page-wrapper>
     </marko-web-resolve-page>
   </@page>
   <@below-page>
