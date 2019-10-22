@@ -2,7 +2,9 @@ import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
 import queryFragment from "../graphql/fragments/content-list";
 import latestIssueFragment from "../graphql/fragments/magazine-latest-issue";
 import GAM from "../../config/gam";
+import nxConfig from "../../config/native-x";
 
+$ const { site } = out.global;
 $ const { id, alias, name, pageNode } = data;
 
 <marko-web-website-section-page-layout id=id alias=alias name=name>
@@ -13,21 +15,17 @@ $ const { id, alias, name, pageNode } = data;
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ const aliases = hierarchyAliases(section);
       $ const adSlots = {
-          "gpt-ad-lb1":   GAM.getAdUnit({ name: "leaderboard", aliases }),
-          "gpt-ad-home-top-below-head":   GAM.getAdUnit({ name: "home-top-below-head", aliases }),
-          "gpt-ad-skyscraper": GAM.getAdUnit({ name: "skyscraper", aliases }),
-        }
+        "gpt-ad-leaderboard":     GAM.getAdUnit({ name: "leaderboard", aliases }),
+        "gpt-ad-home-skyscraper": GAM.getAdUnit({ name: "skyscraper", aliases, size: [300, 600] }),
+      };
        <marko-web-gam-slots slots=adSlots />
     </marko-web-resolve-page>
   </@head>
   <@above-container>
-    <marko-web-resolve-page|{ data: section }| node=pageNode>
-      $ const aliases = hierarchyAliases(section);
-    </marko-web-resolve-page>
+    <marko-web-gam-display-ad id="gpt-ad-leaderboard" modifiers=["above-container"] />
+    <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-top-below-head" modifiers=["above-container"] />
   </@above-container>
   <@page>
-    <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page"] />
-    <marko-web-gam-display-ad id="gpt-ad-home-top-below-head" />
 
     <marko-web-query|{ nodes }|
       name="website-optioned-content"
@@ -51,10 +49,9 @@ $ const { id, alias, name, pageNode } = data;
             </@slot>
           </default-theme-card-deck-flow>
         </marko-web-query>
-
       </div>
       <div class="col-lg-4 mb-block page-rail">
-        <marko-web-gam-display-ad id="gpt-ad-skyscraper" />
+        <marko-web-gam-display-ad id="gpt-ad-home-skyscraper" modifiers=["in-card"] />
       </div>
     </div>
 
@@ -68,8 +65,9 @@ $ const { id, alias, name, pageNode } = data;
         />
       </div>
       <div class="col-lg-4 mb-block page-rail">
-        <div id="home-02-right" />
-        <div id="home-03-right" />
+        <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-leaders-vote-btn" />
+        <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-02-right" />
+        <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-03-right" />
       </div>
     </div>
 
@@ -113,10 +111,8 @@ $ const { id, alias, name, pageNode } = data;
     </div>
 
     <div class="row">
-      <div class="col-lg-4 mb-block page-rail">
-        <div class="ad-container ad-container--in-card">
-          <div id="home-04-tall-left" />
-        </div>
+      <div class="col-lg-4 page-rail">
+        <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-04-tall-left" modifiers=["in-card"] />
       </div>
       <div class="col-lg-8 mb-block">
         <marko-web-query|{ nodes }|
@@ -125,7 +121,7 @@ $ const { id, alias, name, pageNode } = data;
         >
           <website-content-list-flow nodes=nodes>
             <@header>
-              Video
+              <marko-web-link href="/videos">Videos</marko-web-link>
             </@header>
           </website-content-list-flow>
         </marko-web-query>
@@ -136,17 +132,12 @@ $ const { id, alias, name, pageNode } = data;
       name="website-optioned-content"
       params={ sectionAlias: "home", optionName: "Pinned", limit: 5, skip: 9, requiresImage: true, queryFragment }
     >
-      <website-content-card-deck-flow nodes=nodes ad-index=1 ad-name="imu1" >
+      <website-content-card-deck-flow nodes=nodes ad-index=1 ad-position="after" ad-name="imu1" >
         <@native-x index=2 name="load-more" />
       </website-content-card-deck-flow>
     </marko-web-query>
 
-
-    <div class="row">
-      <div class="col-lg-12 mb-block">
-        <div id="home-bottom-wide" />
-      </div>
-    </div>
+    <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-bottom-wide" />
 
   </@page>
   <@below-page>
@@ -158,7 +149,7 @@ $ const { id, alias, name, pageNode } = data;
         component-input={ aliases, nativeX, adIndex: 2, adName: "imu2" }
         fragment-name="content-list"
         query-name="website-scheduled-content"
-        query-params={ sectionId: id, limit: 14, skip: 14, requiresImage: true }
+        query-params={ sectionId: id, limit: 11, skip: 14, requiresImage: true }
         max-pages=0
         page-input={ for: "website-section", id }
       />
