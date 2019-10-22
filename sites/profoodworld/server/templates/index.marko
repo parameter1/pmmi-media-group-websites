@@ -13,8 +13,9 @@ $ const { id, alias, name, pageNode } = data;
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ const aliases = hierarchyAliases(section);
       $ const adSlots = {
-          "gpt-ad-lb1":   GAM.getAdUnit({ name: "lb1", aliases }),
-          "gpt-ad-rail2": GAM.getAdUnit({ name: "rail2", aliases }),
+          "gpt-ad-lb1":   GAM.getAdUnit({ name: "leaderboard", aliases }),
+          "gpt-ad-home-top-below-head":   GAM.getAdUnit({ name: "home-top-below-head", aliases }),
+          "gpt-ad-skyscraper": GAM.getAdUnit({ name: "skyscraper", aliases }),
         }
        <marko-web-gam-slots slots=adSlots />
     </marko-web-resolve-page>
@@ -26,13 +27,36 @@ $ const { id, alias, name, pageNode } = data;
   </@above-container>
   <@page>
     <marko-web-gam-display-ad id="gpt-ad-lb1" modifiers=["top-of-page"] />
+    <marko-web-gam-display-ad id="gpt-ad-home-top-below-head" />
 
     <marko-web-query|{ nodes }|
       name="website-optioned-content"
-      params={ sectionId: id, optionId: 30010, limit: 5, requiresImage: true, queryFragment }
+      params={ sectionId: id, optionName: "Pinned", limit: 5, requiresImage: true, queryFragment }
     >
       <website-content-hero-flow nodes=nodes />
     </marko-web-query>
+
+    <div class="row">
+      <div class="col-lg-8 mb-block">
+        <marko-web-query|{ nodes }|
+          name="website-optioned-content"
+          params={ sectionAlias: "home", optionName: "Pinned", limit: 4, skip: 5, requiresImage: true, queryFragment }
+        >
+          <default-theme-card-deck-flow cols=2 nodes=nodes>
+            <@slot|{ node, index }|>
+              <website-content-card-node
+                image-width=340
+                node=node
+              />
+            </@slot>
+          </default-theme-card-deck-flow>
+        </marko-web-query>
+
+      </div>
+      <div class="col-lg-4 mb-block page-rail">
+        <marko-web-gam-display-ad id="gpt-ad-skyscraper" />
+      </div>
+    </div>
 
     <div class="row">
       <div class="col-lg-8 mb-block">
@@ -44,7 +68,83 @@ $ const { id, alias, name, pageNode } = data;
         />
       </div>
       <div class="col-lg-4 mb-block page-rail">
-        <marko-web-gam-display-ad id="gpt-ad-rail2" />
+        <div id="home-02-right" />
+        <div id="home-03-right" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 mb-block">
+        <marko-web-query|{ nodes }|
+          name="website-scheduled-content"
+          params={ sectionAlias: "processing-equipment", limit: 4, queryFragment }
+        >
+          <website-content-list-flow nodes=nodes>
+            <@header>
+              <marko-web-link href="/processing-equipment">Processing Equipment</marko-web-link>
+            </@header>
+          </website-content-list-flow>
+        </marko-web-query>
+      </div>
+      <div class="col-lg-4 mb-block">
+        <marko-web-query|{ nodes }|
+          name="website-scheduled-content"
+          params={ sectionAlias: "automation", limit: 4, queryFragment }
+        >
+          <website-content-list-flow nodes=nodes>
+            <@header>
+              <marko-web-link href="/automation">Automation</marko-web-link>
+            </@header>
+          </website-content-list-flow>
+        </marko-web-query>
+      </div>
+      <div class="col-lg-4 mb-block">
+        <marko-web-query|{ nodes }|
+          name="website-scheduled-content"
+          params={ sectionAlias: "food-safety", limit: 4, queryFragment }
+        >
+          <website-content-list-flow nodes=nodes>
+            <@header>
+              <marko-web-link href="/food-safety">Food Safety</marko-web-link>
+            </@header>
+          </website-content-list-flow>
+        </marko-web-query>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 mb-block page-rail">
+        <div class="ad-container ad-container--in-card">
+          <div id="home-04-tall-left" />
+        </div>
+      </div>
+      <div class="col-lg-8 mb-block">
+        <marko-web-query|{ nodes }|
+          name="all-published-content"
+          params={ contentTypes: ["Video"], limit: 5, queryFragment }
+        >
+          <website-content-list-flow nodes=nodes>
+            <@header>
+              Video
+            </@header>
+          </website-content-list-flow>
+        </marko-web-query>
+      </div>
+    </div>
+
+    <marko-web-query|{ nodes }|
+      name="website-optioned-content"
+      params={ sectionAlias: "home", optionName: "Pinned", limit: 5, skip: 9, requiresImage: true, queryFragment }
+    >
+      <website-content-card-deck-flow nodes=nodes ad-index=1 ad-name="imu1" >
+        <@native-x index=2 name="load-more" />
+      </website-content-card-deck-flow>
+    </marko-web-query>
+
+
+    <div class="row">
+      <div class="col-lg-12 mb-block">
+        <div id="home-bottom-wide" />
       </div>
     </div>
 
@@ -52,12 +152,13 @@ $ const { id, alias, name, pageNode } = data;
   <@below-page>
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ const aliases = hierarchyAliases(section);
+      $ const nativeX = { index: 1, name: "load-more" };
       <marko-web-load-more
         component-name="content-load-more-flow"
-        component-input={ aliases }
+        component-input={ aliases, nativeX, adIndex: 2, adName: "imu2" }
         fragment-name="content-list"
         query-name="website-scheduled-content"
-        query-params={ sectionId: id, limit: 14, skip: 5 }
+        query-params={ sectionId: id, limit: 14, skip: 14, requiresImage: true }
         max-pages=0
         page-input={ for: "website-section", id }
       />
