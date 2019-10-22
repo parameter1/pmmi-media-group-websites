@@ -1,5 +1,5 @@
 import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
-import { getAsObject, get } from "@base-cms/object-path";
+import { getAsObject, get, getAsArray } from "@base-cms/object-path";
 import queryFragment from "../../graphql/fragments/content-list";
 import GAM from "../../../config/gam";
 
@@ -109,6 +109,12 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
               <div id="article-leaders-vote-btn" />
 
               <!-- Leaders block here -->
+              <leaders-block-contextual
+                section-alias="leaders"
+                logo-src="https://base.imgix.net/files/base/pmmi/all/leaders/oem.png"
+                logo-alt="OEM Tech Trendsetters"
+                taxonomy-ids=getAsArray(content, 'taxonomy.edges').map(({ node }) => node.id)
+              />
 
               <!-- Div for Audience -->
               <div id="article-01-right" />
