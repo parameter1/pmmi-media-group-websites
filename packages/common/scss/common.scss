@@ -25,6 +25,9 @@
 }
 
 .marko-web-gtm-slot {
+  &:empty {
+    display: none;
+  }
   &--above-container {
     &:not(:empty) {
       margin-top: map-get($spacers, block);
