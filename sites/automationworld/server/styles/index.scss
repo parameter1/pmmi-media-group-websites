@@ -25,11 +25,4 @@ $theme-site-header-breakpoints: (
   small-text-secondary: 740px
 );
 
-@import "../../node_modules/@base-cms/marko-web-theme-default/skins/orion/skin";
-// @todo this should be remove once contact us is in core
-@import "../../node_modules/@base-cms-websites/package-common/scss/contact-us-form";
-@import "../../node_modules/@base-cms-websites/package-common/scss/leaders";
-
-.page-rail {
-  text-align: center;
-}
+@import "../../node_modules/@base-cms-websites/package-common/scss/common";

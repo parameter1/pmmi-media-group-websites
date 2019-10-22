@@ -1,0 +1,45 @@
+@import "../../node_modules/@base-cms/marko-web-theme-default/skins/orion/skin";
+@import "./contact-us-form"; // @todo this should be remove once contact us is in core
+@import "./leaders";
+
+.page-rail {
+  text-align: center;
+}
+
+.ad-container {
+  &--above-container {
+    padding-top: calculate-navbar-height-for(default);
+  }
+}
+
+.document-container {
+  padding-top: 0;
+  margin-top: -1.4rem;
+}
+
+.gtm-slot {
+  &--in-card {
+    display: flex;
+    justify-content: center;
+    min-height: 100%;
+    > div {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+  &--top-of-page {
+    margin-bottom: $theme-ad-margin;
+  }
+  text-align: center;
+}
+
+.gtm-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+  > div {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
