@@ -1,6 +1,6 @@
 {
   "name": "@base-cms-websites/profoodworld",
-  "version": "1.0.0-alpha.11",
+  "version": "1.0.0-alpha.12",
   "author": "Josh Worden <josh@limit0.io>",
   "repository": "https://github.com/base-cms-websites/pmmi-media-group/tree/master/sites/profoodworld",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
-    "@base-cms-websites/package-common": "^1.0.0-alpha.10",
+    "@base-cms-websites/package-common": "^1.0.0-alpha.12",
     "@base-cms/marko-core": "^1.0.0-beta.8",
     "@base-cms/marko-web": "^1.0.0-beta.8",
     "@base-cms/marko-web-gam": "^1.0.0-beta.4",
