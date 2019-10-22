@@ -7,14 +7,14 @@ $ const {
   logoAlt: alt,
 } = input;
 
-$ const taxonomyIds = getAsArray(input, 'taxonomyIds');
+$ const taxonomyIds = getAsArray(input, "taxonomyIds");
 
 <if(!taxonomyIds.length)>
   <leaders-block-index section-alias=sectionAlias logo-src=src logo-alt=alt columns=1 />
 </if>
 <else>
   <marko-web-query|{ nodes }| name="website-sections" params={ taxonomyIds, queryFragment }>
-    $ const sections = nodes.filter(node => getAsArray(node, 'hierarchy').some(({ alias }) => alias === sectionAlias));
+    $ const sections = nodes.filter(node => getAsArray(node, "hierarchy").some(({ alias }) => alias === sectionAlias));
     <if(sections.length)>
       <marko-web-node-list>
         <@header modifiers=["centered"]>

@@ -4,7 +4,7 @@ module.exports = gql`
 fragment LeadersSectionsFragment on WebsiteSection {
   id
   name
-  hierarchy{
+  hierarchy {
     id
     alias
   }

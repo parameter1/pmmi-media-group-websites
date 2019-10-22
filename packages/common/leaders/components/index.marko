@@ -10,7 +10,7 @@ $ const {
 } = input;
 
 <marko-web-query|{ node: leaders }| name="website-section" params={ alias, queryFragment }>
-  $ const nodes = getAsArray(leaders, 'children.edges').map(({ node }) => node);
+  $ const nodes = getAsArray(leaders, "children.edges").map(({ node }) => node);
   <marko-web-node-list>
     <@header modifiers=["centered"]>
       <if(src)>
@@ -21,7 +21,7 @@ $ const {
       <@body modifiers=["centered"] value=bodyText />
     </if>
     <@nodes nodes=nodes>
-      $ const colClass = columns === 2 ? 'col-lg-6 mb-block list-unstyled' : 'col list-unstyled';
+      $ const colClass = columns === 2 ? "col-lg-6 mb-block list-unstyled" : "col list-unstyled";
       $ const mid = Math.floor(nodes.length / 2)
       $ const groups = columns == 2 ? [
         [...nodes.slice(0, mid)],
@@ -31,7 +31,7 @@ $ const {
         <for|group| of=groups>
           <ul class=colClass>
             <for|node| of=group>
-              $ const children = getAsArray(node, 'children.edges').map(({ node: item }) => item);
+              $ const children = getAsArray(node, "children.edges").map(({ node: item }) => item);
               <if(children.length)>
                 <li class="leaders__category">
                   <label class="leaders__category-label">${node.name}</label>
