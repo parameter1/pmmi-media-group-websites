@@ -38,9 +38,7 @@
       "@aliases": "array"
     },
     "@nodes": "array",
-    "@aliases": "array",
-    "@adIndex" : "number",
-    "@adName" : "string"
+    "@aliases": "array"
   },
   "<website-content-card-deck-flow>": {
     "template": "./content-card-deck.marko",
@@ -52,7 +50,8 @@
     "@nodes": "array",
     "@aliases": "array",
     "@ad-index": "number",
-    "@ad-name": "string"
+    "@ad-name": "string",
+    "@ad-position": "string"
   },
   "<website-magazine-issue-archive-flow>": {
     "template": "./magazine-issue-archive.marko",
