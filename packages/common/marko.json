@@ -2,17 +2,5 @@
   "taglib-id": "@base-cms-websites/package-common",
   "taglib-imports": [
     "./leaders/components/marko.json"
-  ],
-  "tags": {
-    "gtm-slot": {
-      "template": "./gtm-slot/index.marko",
-      "@prefix": "string",
-      "@key": "string",
-      "@class": "string",
-      "@modifiers": "array"
-    },
-    "gtm-group": {
-      "template": "./gtm-slot/group.marko"
-    }
-  }
+  ]
 }

@@ -762,11 +762,12 @@
     "@base-cms/object-path" "^1.0.0-beta.4"
     "@base-cms/utils" "^1.0.0-beta.4"
 
-"@base-cms/marko-web-gtm@^1.0.0-beta.7":
-  version "1.0.0-beta.7"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-gtm/-/marko-web-gtm-1.0.0-beta.7.tgz#69ca688d81bc9ed9cc79858acfaf85644328c352"
-  integrity sha512-jfdzVe9qaRq45i56nROwivsbnbBx4ikHQUfPdMebF1IKBh9lkdCc9mvABqAK2hiia/V3m1pLV9nHTvPNu1GgHw==
+"@base-cms/marko-web-gtm@^1.0.0-beta.10":
+  version "1.0.0-beta.10"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-gtm/-/marko-web-gtm-1.0.0-beta.10.tgz#9c08c0d3999e1a7a102c5ee3e47e2a49d714aaaf"
+  integrity sha512-FWzMxJ/V/jbG6U9N3SdMsOtj3BAXkSUEPxA153gDy/zcyLQfACXd6cnmLhfWfOVX0ujyQIyFi05/C6geoos2IQ==
   dependencies:
+    "@base-cms/inflector" "^1.0.0-beta.1"
     "@base-cms/object-path" "^1.0.0-beta.4"
     "@base-cms/utils" "^1.0.0-beta.4"
     graphql "^14.5.4"

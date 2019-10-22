@@ -1,4 +1,5 @@
 @import "../../node_modules/@base-cms/marko-web-theme-default/skins/orion/skin";
+@import "../../node_modules/@base-cms/marko-web-gtm/scss/slot";
 @import "./contact-us-form"; // @todo this should be remove once contact us is in core
 @import "./leaders";
 
@@ -13,37 +14,20 @@
 }
 
 .document-container {
-}
-
-.gtm-slot {
-  &--in-card {
-    display: flex;
-    justify-content: center;
-    min-height: 100%;
-    > div {
-      margin-top: auto;
-      margin-bottom: auto;
-    }
   &--header {
     max-width: 100%;
     padding-right: 0;
     padding-left: 0;
   }
-  &--top-of-page {
-    margin-bottom: $theme-ad-margin;
   &:not(&--header) {
     padding-top: 0;
   }
-  text-align: center;
 }
 
-.gtm-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100%;
-  > div {
-    margin-top: auto;
-    margin-bottom: auto;
+.marko-web-gtm-slot {
+  &--above-container {
+    &:not(:empty) {
+      margin-top: map-get($spacers, block);
+    }
   }
 }
