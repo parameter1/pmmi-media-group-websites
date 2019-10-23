@@ -14,7 +14,7 @@ config
 
 config
   .setAliasAdUnits('default', [
-    { name: 'leaderboard', templateName: 'leaderboard', path: 'pfw_leaderboard' },
+    { name: 'leaderboard', templateName: 'leaderboard', path: 'pfw_leaderoard' },
     { name: 'article-top-below-head', templateName: 'leaderboard', path: 'pfw-article-top-below-head' },
     { name: 'home-top-below-head', templateName: 'leaderboard', path: 'pfw-home-top-below-head' },
     { name: 'imu1', size: [300, 250], path: 'pfw_imu' },
