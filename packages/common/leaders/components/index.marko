@@ -11,7 +11,7 @@ $ const {
 
 <marko-web-query|{ node: leaders }| name="website-section" params={ alias, queryFragment }>
   $ const nodes = getAsArray(leaders, "children.edges").map(({ node }) => node);
-  <marko-web-node-list>
+  <marko-web-node-list modifiers=["leaders"]>
     <@header modifiers=["centered"]>
       <if(src)>
         <img src=src alt=alt class="leaders__logo" />
