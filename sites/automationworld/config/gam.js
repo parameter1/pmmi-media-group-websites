@@ -17,7 +17,7 @@ config
     { name: 'leaderboard', templateName: 'leaderboard', path: 'aw_leaderboard' },
     { name: 'imu1', size: [300, 250], path: 'aw_imu_1' },
     { name: 'imu2', size: [300, 250], path: 'aw_imu_2' },
-    { name: 'skyscraper', options: { size: [300, 600] }, path: 'aw_fdtskyscraper' },
+    { name: 'skyscraper', options: { size: [300, 600] }, path: 'aw_skyscraper' },
   ]);
 
 module.exports = config;
