@@ -16,7 +16,7 @@ $ const taxonomyIds = getAsArray(input, "taxonomyIds");
   <marko-web-query|{ nodes }| name="website-sections" params={ taxonomyIds, queryFragment } collapsible=false>
     $ const sections = nodes.filter(node => getAsArray(node, "hierarchy").some(({ alias }) => alias === sectionAlias));
     <if(sections.length)>
-      <marko-web-node-list>
+      <marko-web-node-list modifiers=["leaders"]>
         <@header modifiers=["centered"]>
           <if(src)>
             <img src=src alt=alt class="leaders__logo" />
