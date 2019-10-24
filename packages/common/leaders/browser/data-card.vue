@@ -1,5 +1,5 @@
 <template>
-  <div class="ldc-modal">
+  <div :class="classNames">
     <div class="row">
       <div class="ldc-left col-lg-4">
         <div class="row">
@@ -54,6 +54,10 @@
 
 export default {
   props: {
+    expanded: {
+      type: Boolean,
+      default: false,
+    },
     name: {
       type: String,
       required: true,
@@ -93,6 +97,11 @@ export default {
     },
     contactAlt() {
       return `${this.contactName} headshot`;
+    },
+    classNames() {
+      const classes = ['ldc-modal'];
+      if (this.expanded) classes.push('ldc-modal--expanded');
+      return classes;
     }
   },
 };

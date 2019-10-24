@@ -26,28 +26,48 @@
 
 .ldc-modal {
   @include theme-card();
+  box-shadow: 0 3px 9px rgba(0, 0, 0, .35);
+  border: none;
   position: absolute;
-  right: 4rem;
-  bottom: 0;
+  right: 100%;
   z-index: 10;
-  max-height: 600px;
-  margin: 1.5rem;
-  overflow: scroll;
+  height: auto;
+  max-height: 100vh;
+  overflow-y: scroll;
   font-size: 80%;
   font-weight: 400;
   background-color: #eff0f1;
-  & .row {
-    margin: 0;
-  }
-  @include media-breakpoint-up(lg) {
-    width: 800px;
-  }
-  @include media-breakpoint-down(md) {
-    width: 600px;
-  }
-  @include media-breakpoint-down(sm) {
-    width: 300px;
-  }
+  width: 75vh;
+  padding-right: .5rem;
+  transform: translateY(50%);
+
+  // position: absolute;
+  // right: 4rem;
+  // bottom: 0;
+  // z-index: 10;
+  // display: none;
+  // max-height: 600px;
+  // margin: 1.5rem;
+  // overflow: scroll;
+  // font-size: 80%;
+  // font-weight: 400;
+  // background-color: #eff0f1;
+  // & .row {
+  //   margin: 0;
+  // }
+  // @include media-breakpoint-up(lg) {
+  //   width: 800px;
+  // }
+  // @include media-breakpoint-down(md) {
+  //   width: 600px;
+  // }
+  // @include media-breakpoint-down(sm) {
+  //   width: 300px;
+  // }
+
+  // &--expanded {
+  //   display: block;
+  // }
 }
 
 

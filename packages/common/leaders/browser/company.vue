@@ -1,18 +1,18 @@
 <template>
-  <li class="leaders__item-list-item">
-    <a :href="get(company, 'siteContext.path')" :title="get(company, 'name')" @mouseenter="show" @mouseleave="hide">
+  <li class="leaders__item-list-item" @mouseenter="show" @mouseleave="hide">
+    <a :href="get(company, 'siteContext.path')" :title="get(company, 'name')">
       {{ get(company, 'name') }}
       <IconYoutube v-if="company.showIcon" />
     </a>
     <DataCard
       v-if="expanded"
       :logoSrc="logoSrc"
-      :contactSrc="contactSrc"
+      :contact-src="contactSrc"
       :website="website"
       :name="get(company, 'name')"
-      :productSummary="get(company, 'productSummary')"
-      :contactName="get(contact, 'name')"
-      :contactTitle="get(contact, 'title')"
+      :product-summary="get(company, 'productSummary')"
+      :contact-name="get(contact, 'name')"
+      :contact-title="get(contact, 'title')"
       :path="get(company, 'siteContext.path')"
       :teaser="get(company, 'teaser')"
     />
