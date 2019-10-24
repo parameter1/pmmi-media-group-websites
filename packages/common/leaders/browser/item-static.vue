@@ -11,17 +11,12 @@
       <li v-else-if="!items.length" class="leaders__item-list-item">
         No results found.
       </li>
-      <li
+      <Company
         v-for="content in items"
         v-else
         :key="content.id"
-        class="leaders__item-list-item"
-      >
-        <a :href="content.siteContext.path" :title="content.name">
-          {{ content.name }}
-          <IconYoutube v-if="content.showIcon" />
-        </a>
-      </li>
+        :company="content"
+      />
     </ul>
   </div>
 </template>
@@ -29,10 +24,12 @@
 <script>
 import { getAsArray } from '@base-cms/object-path';
 import IconYoutube from '@base-cms/marko-web-icons/browser/youtube.vue';
+import Company from './company.vue';
 
 export default {
   components: {
     IconYoutube,
+    Company,
   },
   props: {
     id: {
