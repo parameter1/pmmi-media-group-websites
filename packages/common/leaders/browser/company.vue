@@ -4,16 +4,30 @@
       {{ get(company, 'name') }}
       <IconYoutube v-if="company.showIcon" />
     </a>
+    <DataCard
+      v-if="expanded"
+      :logoSrc="logoSrc"
+      :contactSrc="contactSrc"
+      :website="website"
+      :name="get(company, 'name')"
+      :productSummary="get(company, 'productSummary')"
+      :contactName="get(contact, 'name')"
+      :contactTitle="get(contact, 'title')"
+      :path="get(company, 'siteContext.path')"
+      :teaser="get(company, 'teaser')"
+    />
   </li>
 </template>
 
 <script>
 import { getAsArray, get } from '@base-cms/object-path';
 import IconYoutube from '@base-cms/marko-web-icons/browser/youtube.vue';
+import DataCard from './data-card.vue';
 
 export default {
   components: {
     IconYoutube,
+    DataCard,
   },
   props: {
     company: {

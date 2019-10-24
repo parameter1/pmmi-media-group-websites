@@ -23,3 +23,77 @@
     }
   }
 }
+
+.ldc-modal {
+  @include theme-card();
+  position: absolute;
+  right: 4rem;
+  bottom: 0;
+  z-index: 10;
+  max-height: 600px;
+  margin: 1.5rem;
+  overflow: scroll;
+  font-size: 80%;
+  font-weight: 400;
+  background-color: #eff0f1;
+  & .row {
+    margin: 0;
+  }
+  @include media-breakpoint-up(lg) {
+    width: 800px;
+  }
+  @include media-breakpoint-down(md) {
+    width: 600px;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 300px;
+  }
+}
+
+
+.ldc-left,
+.ldc-right {
+  @include make-col-ready();
+  padding: .5rem;
+}
+
+.ldc-left {
+  padding: .5rem;
+  &__logo,
+  &__buttons {
+    @include make-col-ready();
+    width: 50%;
+  }
+  &__logo {
+    width: 100px;
+    padding: 0;
+    margin: 0;
+    // clip-path: circle(40px at center);
+    & > img {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__contact {
+    margin-top: auto;
+    margin-bottom: auto;
+    & > p > span::before {
+      margin-left: -.25rem;
+      content: ", ";
+    }
+  }
+  & .row:not(:last-child) {
+    padding-bottom: .5rem;
+    margin-bottom: .5rem;
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+.ldc-right {
+  background-color: #fff;
+}

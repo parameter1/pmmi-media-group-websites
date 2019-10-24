@@ -15,6 +15,26 @@ query LeadersScheduledContent($input:WebsiteScheduledContentQueryInput!) {
             provider
           }
         }
+        primaryImage {
+          src
+        }
+        ... on ContentCompany {
+          productSummary
+          publicContacts {
+            edges {
+              node {
+                id
+                name
+                title
+                primaryImage {
+                  src
+                }
+              }
+            }
+          }
+          teaser
+          website
+        }
       }
     }
   }
