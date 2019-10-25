@@ -16,10 +16,25 @@
 }
 
 .node-list {
+  $self: &;
   &__header,
   &__body {
     &--centered {
       text-align: center;
+    }
+  }
+  &--leaders {
+    #{ $self }__header {
+      background-color: $leaders-header-background-color;
+    }
+    .leaders {
+      &__item,
+      &__item-list-item {
+        button,
+        a:not(.btn) {
+          color: $leaders-link-color;
+        }
+      }
     }
   }
 }

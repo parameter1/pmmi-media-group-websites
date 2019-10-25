@@ -34,25 +34,10 @@ $theme-site-header-breakpoints: (
   small-text-secondary: 740px
 );
 
-@import "../../node_modules/@base-cms-websites/package-common/scss/common";
+$leaders-header-background-color: $light-bg-color;
+$leaders-link-color: #780116;
 
-.node-list {
-  $self: &;
-  &--leaders {
-    #{ $self }__header {
-      background-color: $light-bg-color;
-    }
-    .leaders {
-      &__item,
-      &__item-list-item {
-        button,
-        a {
-          color: #780116;
-        }
-      }
-    }
-  }
-}
+@import "../../node_modules/@base-cms-websites/package-common/scss/common";
 
 .load-more-trigger > button:hover {
   background-color: $light-bg-color;
