@@ -15,8 +15,9 @@ query LeadersScheduledContent($input:WebsiteScheduledContentQueryInput!) {
             provider
           }
         }
-        primaryImage {
-          src
+        primaryImage{
+          id
+          src(input: { options: { auto: "format", fillColor: "fff", fit: "fill", h: 100, w: 100, pad: 5, mask: "ellipse" } })
         }
         ... on ContentCompany {
           productSummary
@@ -27,7 +28,8 @@ query LeadersScheduledContent($input:WebsiteScheduledContentQueryInput!) {
                 name
                 title
                 primaryImage {
-                  src
+                  id
+                  src(input: { options: { auto: "format", h: 50, w: 50, mask: "ellipse", fit: "facearea", facepad: 3 } })
                 }
               }
             }

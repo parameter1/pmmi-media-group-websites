@@ -3,11 +3,9 @@
     <div class="row">
       <div class="ldc-left col-lg-4">
         <div class="row">
-          <div class="col-6">
-            <div class="ldc-left__logo">
-              <img v-if="logoSrc" :src="logoSrc" :title="name" :alt="logoAlt" />
-              <span v-else>{{ name }}</span>
-            </div>
+          <div class="ldc-left__logo col-6">
+            <img v-if="logoSrc" :src="logoSrc" :title="name" :alt="logoAlt" />
+            <h6 v-else>{{ name }}</h6>
           </div>
           <div class="ldc-left__buttons col-6">
             <a v-if="website" :href="website" class="btn btn-block btn-sm btn-primary text-center" target="_blank">Visit Site</a>
@@ -23,7 +21,7 @@
           </div>
         </div>
         <div v-if="contactName" class="row">
-          <div v-if="contactSrc" class="col-3">
+          <div v-if="contactSrc" class="col-3 my-auto">
             <img :src="contactSrc" :title="contactName" :alt="contactAlt" />
           </div>
           <div class="ldc-left__contact col">

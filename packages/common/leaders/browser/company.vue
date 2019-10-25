@@ -6,8 +6,8 @@
     </a>
     <DataCard
       v-if="expanded"
-      :logoSrc="logoSrc"
-      :contact-src="contactSrc"
+      :logoSrc="get(this.company, 'primaryImage.src')"
+      :contact-src="get(this.contact, 'primaryImage.src')"
       :website="website"
       :name="get(company, 'name')"
       :product-summary="get(company, 'productSummary')"
@@ -41,16 +41,8 @@ export default {
     };
   },
   computed: {
-    logoSrc() {
-      const src = get(this.company, 'primaryImage.src');
-      if (src) return src.replace(/auto=format.*$/, 'auto=format&fill-color=fff&fit=fill&h=100&pad=5&w=100');
-    },
     contact() {
       return getAsArray(this.company, 'publicContacts.edges').map(({ node }) => node).shift();
-    },
-    contactSrc() {
-      const src = get(this.contact, 'primaryImage.src');
-      if (src) return src.replace(/auto=format.*$/, 'auto=format&h=50&w=50');
     },
     website() {
       const url = get(this.company, 'website');
