@@ -34,9 +34,9 @@ query LeadersScheduledContent($input:WebsiteScheduledContentQueryInput!) {
               }
             }
           }
-          teaser(input:{maxLength:0})
+          teaser(input: { maxLength: 0 })
           website
-          promotions: relatedContent(input:{queryTypes:[company], includeContentTypes:[Promotion]}){
+          promotions: relatedContent(input:{ queryTypes: [company], includeContentTypes: [Promotion] }){
             edges {
               node {
                 id
