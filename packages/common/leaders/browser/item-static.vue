@@ -16,6 +16,7 @@
         v-else
         :key="content.id"
         :company="content"
+        grow="right"
       />
     </ul>
   </div>
@@ -69,10 +70,7 @@ export default {
         throw new Error(res.statusText);
       }
       const items = await res.json();
-      this.items = items.map((item) => {
-        const showIcon = getAsArray(item, 'socialLinks').some(({ provider }) => provider === 'youtube');
-        return { ...item, showIcon };
-      });
+      this.items = items;
     } catch (e) {
       this.error = e;
     } finally {

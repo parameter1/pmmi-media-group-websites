@@ -20,6 +20,7 @@
         :key="content.id"
         class="leaders__item-list-item"
         :company="content"
+        grow="left"
       />
     </ul>
   </li>
@@ -85,10 +86,7 @@ export default {
           throw new Error(res.statusText);
         }
         const items = await res.json();
-        this.items = items.map((item) => {
-          const showIcon = getAsArray(item, 'socialLinks').some(({ provider }) => provider === 'youtube');
-          return { ...item, showIcon };
-        });
+        this.items = items;
       } catch (e) {
         this.error = e;
       } finally {

@@ -34,7 +34,7 @@ query LeadersScheduledContent($input:WebsiteScheduledContentQueryInput!) {
               }
             }
           }
-          teaser
+          teaser(input:{maxLength:0})
           website
           promotions: relatedContent(input:{queryTypes:[company], includeContentTypes:[Promotion]}){
             edges {
@@ -43,11 +43,30 @@ query LeadersScheduledContent($input:WebsiteScheduledContentQueryInput!) {
                 name
                 primaryImage{
                   id
-                  src(input: { options: { auto: "format", fit: "crop", h: 60, w: 110 } })
+                  src(input: { options: { auto: "format", fit: "crop", h: 90, w: 120 } })
                 }
                 ... on ContentPromotion {
                   linkUrl
                   linkText
+                }
+              }
+            }
+          }
+          youtube {
+            username
+            channelId
+          }
+          youtubeVideos(input: { limit: 4 }) {
+            items {
+              snippet {
+                title
+                thumbnails {
+                  default {
+                    url
+                  }
+                }
+                resourceId {
+                  videoId
                 }
               }
             }

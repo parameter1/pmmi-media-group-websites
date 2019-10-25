@@ -27,7 +27,6 @@
 .ldc-modal {
   @include theme-card();
   position: absolute;
-  right: 4rem;
   bottom: 0;
   z-index: 10;
   max-height: 600px;
@@ -50,8 +49,21 @@
     width: 300px;
   }
 
+  & hr {
+    width: 100%;
+  }
+
+  &--grow-left {
+    left: 0;
+  }
+  &--grow-right {
+    right: 0;
+  }
   &--expanded {
     display: block;
+  }
+  &--compact {
+    width: 300px;
   }
 }
 
@@ -59,6 +71,9 @@
 .ldc-left,
 .ldc-right {
   @include make-col-ready();
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: .5rem;
 }
 
@@ -105,23 +120,16 @@
       content: ", ";
     }
   }
-  & .row:not(:last-child) {
-    padding-bottom: .5rem;
-    margin-bottom: .5rem;
-    border-bottom: 1px solid #ccc;
-  }
 }
 
 .ldc-right {
   background-color: #fff;
-  & .row:not(:last-child) {
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #ccc;
-  }
 }
 
 .ldc-content {
+  &__header {
+    padding-bottom: .5rem;
+  }
   &__list {
     display: flex;
     justify-content: space-between;

@@ -1,64 +1,49 @@
 <template>
   <div :class="classNames">
     <div class="row">
-      <div class="ldc-left col-lg-4">
-        <div class="row">
-          <div class="ldc-left__logo col-6">
-            <img v-if="logoSrc" :src="logoSrc" :title="name" :alt="logoAlt" />
-            <h6 v-else>{{ name }}</h6>
-          </div>
-          <div class="ldc-left__buttons col-6">
-            <a v-if="website" :href="website" class="btn btn-block btn-sm btn-primary text-center" target="_blank">Visit Site</a>
-            <a :href="path" class="btn btn-block btn-sm btn-secondary text-center">View Profile</a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <p v-if="productSummary">
-              <strong>{{ productSummary }}</strong>
-            </p>
-            <p v-if="teaser">{{ teaser }}</p>
-          </div>
-        </div>
-        <div v-if="contactName" class="row">
-          <div v-if="contactSrc" class="col-3 my-auto">
-            <img :src="contactSrc" :title="contactName" :alt="contactAlt" />
-          </div>
-          <div class="ldc-left__contact col">
-            <p>
-              {{ contactName }}
-              <span v-if="contactTitle">{{ contactTitle }}</span>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="ldc-right col-lg-8">
-        <div v-if="promotions.length" class="row">
-          <div class="col">
-            <PromotionList :promotions="promotions" :path="path" :name="name" />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            Featured Videos
-          </div>
-        </div>
-      </div>
+      <Profile
+        :compact="compact"
+        :logo-src="logoSrc"
+        :contact-src="contactSrc"
+        :website="website"
+        :name="name"
+        :product-summary="productSummary"
+        :contact-name="contactName"
+        :contact-title="contactTitle"
+        :path="path"
+        :teaser="teaser"
+      />
+      <Content
+        v-if="!compact"
+        :name="name"
+        :path="path"
+        :youtube="youtube"
+        :youtube-videos="youtubeVideos"
+        :promotions="promotions"
+      />
     </div>
   </div>
 </template>
 
 <script>
-import PromotionList from './promotion-list.vue';
+import { get, getAsArray } from '@base-cms/object-path';
+
+import Profile from './data-card-profile.vue';
+import Content from './data-card-content.vue';
 
 export default {
   components: {
-    PromotionList,
+    Profile,
+    Content,
   },
   props: {
     expanded: {
       type: Boolean,
       default: false,
+    },
+    grow: {
+      type: String,
+      default: 'right',
     },
     name: {
       type: String,
@@ -92,22 +77,34 @@ export default {
     promotions: {
       type: Array,
     },
+    youtube: {
+      type: Object,
+    },
+    youtubeVideos: {
+      type: Object,
+    },
   },
   data() {
     return {};
   },
   computed: {
-    logoAlt() {
-      return `${this.name} logo`;
-    },
-    contactAlt() {
-      return `${this.contactName} headshot`;
+    compact() {
+      return !getAsArray(this.youtubeVideos, 'items').length && !this.promotions.length;
     },
     classNames() {
-      const classes = ['ldc-modal'];
+      const classes = ['ldc-modal', `ldc-modal--grow-${this.grow}`];
       if (this.expanded) classes.push('ldc-modal--expanded');
+      if (this.compact) classes.push('ldc-modal--compact');
       return classes;
-    }
+    },
+  },
+  methods: {
+    get(object, path) {
+      return get(object, path);
+    },
+    getAsArray(object, path) {
+      return getAsArray(object, path);
+    },
   },
 };
 </script>
