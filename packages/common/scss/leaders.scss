@@ -114,4 +114,28 @@
 
 .ldc-right {
   background-color: #fff;
+  & .row:not(:last-child) {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+.ldc-content {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__more {
+    float: right;
+  }
+  &__list-item {
+    display: flex;
+    flex-direction: column;
+    max-width: 110px;
+    & img {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
 }

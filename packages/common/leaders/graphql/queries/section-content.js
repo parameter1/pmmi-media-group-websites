@@ -36,6 +36,22 @@ query LeadersScheduledContent($input:WebsiteScheduledContentQueryInput!) {
           }
           teaser
           website
+          promotions: relatedContent(input:{queryTypes:[company], includeContentTypes:[Promotion]}){
+            edges {
+              node {
+                id
+                name
+                primaryImage{
+                  id
+                  src(input: { options: { auto: "format", fit: "crop", h: 60, w: 110 } })
+                }
+                ... on ContentPromotion {
+                  linkUrl
+                  linkText
+                }
+              }
+            }
+          }
         }
       }
     }

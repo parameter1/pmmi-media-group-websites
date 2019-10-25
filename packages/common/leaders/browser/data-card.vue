@@ -33,9 +33,9 @@
         </div>
       </div>
       <div class="ldc-right col-lg-8">
-        <div class="row">
+        <div v-if="promotions.length" class="row">
           <div class="col">
-            Featured Products
+            <PromotionList :promotions="promotions" :path="path" :name="name" />
           </div>
         </div>
         <div class="row">
@@ -49,8 +49,12 @@
 </template>
 
 <script>
+import PromotionList from './promotion-list.vue';
 
 export default {
+  components: {
+    PromotionList,
+  },
   props: {
     expanded: {
       type: Boolean,
@@ -84,6 +88,9 @@ export default {
     },
     website: {
       type: String,
+    },
+    promotions: {
+      type: Array,
     },
   },
   data() {

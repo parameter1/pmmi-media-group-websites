@@ -11,6 +11,7 @@
       :website="website"
       :name="get(company, 'name')"
       :product-summary="get(company, 'productSummary')"
+      :promotions="promotions"
       :contact-name="get(contact, 'name')"
       :contact-title="get(contact, 'title')"
       :path="get(company, 'siteContext.path')"
@@ -43,6 +44,9 @@ export default {
   computed: {
     contact() {
       return getAsArray(this.company, 'publicContacts.edges').map(({ node }) => node).shift();
+    },
+    promotions() {
+      return getAsArray(this.company, 'promotions.edges').map(({ node }) => node);
     },
     website() {
       const url = get(this.company, 'website');
