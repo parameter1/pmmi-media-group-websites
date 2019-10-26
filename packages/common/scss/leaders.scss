@@ -10,13 +10,155 @@
       text-decoration: none;
     }
   }
+  &__item-list-item {
+    position: relative;
+  }
 }
 
 .node-list {
+  $self: &;
   &__header,
   &__body {
     &--centered {
       text-align: center;
+    }
+  }
+  &--leaders {
+    #{ $self }__header {
+      background-color: $leaders-header-background-color;
+    }
+    .leaders {
+      &__item,
+      &__item-list-item {
+        button,
+        a:not(.btn) {
+          color: $leaders-link-color;
+        }
+      }
+    }
+  }
+}
+
+.ldc-modal {
+  @include theme-card();
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  max-height: 600px;
+  margin: 1.5rem;
+  overflow: scroll;
+  font-size: 80%;
+  font-weight: 400;
+  background-color: #eff0f1;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, .35);
+  & .row {
+    margin: 0;
+  }
+  @include media-breakpoint-up(lg) {
+    width: 800px;
+  }
+  @include media-breakpoint-down(md) {
+    width: 600px;
+  }
+  @include media-breakpoint-down(sm) {
+    width: 300px;
+  }
+
+  & hr {
+    width: 100%;
+  }
+
+  &--grow-left {
+    left: 0;
+  }
+  &--grow-right {
+    right: 0;
+  }
+  &--expanded {
+    display: block;
+  }
+  &--compact {
+    width: 300px;
+  }
+}
+
+
+.ldc-left,
+.ldc-right {
+  @include make-col-ready();
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: .5rem;
+}
+
+.ldc-left {
+  padding: .5rem;
+  &__logo,
+  &__buttons {
+    @include make-col-ready();
+    width: 50%;
+  }
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    & > h6 {
+      margin: 0;
+    }
+    & > img {
+      display: block;
+      width: 100px;
+      height: 100px;
+      margin: auto;
+      margin-bottom: auto;
+      border: 3px solid #fff;
+      border-radius: 100px;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, .5);
+    }
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__contact {
+    margin-top: auto;
+    margin-bottom: auto;
+    & > p > span::before {
+      margin-left: -.25rem;
+      content: ", ";
+    }
+  }
+}
+
+.ldc-right {
+  background-color: #fff;
+}
+
+.ldc-content {
+  &__header {
+    padding-bottom: .5rem;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__more {
+    float: right;
+  }
+  &__list-item {
+    display: flex;
+    flex-direction: column;
+    max-width: 110px;
+    & img {
+      margin-right: auto;
+      margin-left: auto;
     }
   }
 }
