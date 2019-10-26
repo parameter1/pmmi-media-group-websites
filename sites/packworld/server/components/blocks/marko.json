@@ -31,5 +31,12 @@
   },
   "<website-magazine-publications-block>": {
     "template": "./magazine-publications.marko"
+  },
+  "<website-content-featured-companies>": {
+    "template": "./featured-companies.marko",
+    "@content-id": {
+      "type": "number",
+      "required": true
+    }
   }
 }
