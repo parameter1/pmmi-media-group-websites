@@ -1,0 +1,24 @@
+import queryFragment from "../../graphql/fragments/featured-companies";
+
+$ const { contentId } = input;
+
+<marko-web-query|{ nodes }|
+  name="related-published-content"
+  params={ contentId, limit: 20, queryFragment, includeContentTypes: ["Company"] }
+>
+  <marko-web-node-list class="mt-3">
+    <@header>Companies in this article</@header>
+    <@nodes nodes=nodes>
+      <@slot|{ node, index }|>
+        <marko-web-node type=`${node.type}-content` flush=true>
+          <@body>
+            <@title tag="h5">
+              $ const linkAttrs = { ...(node.isLeader && node.website && { href: node.website, target: "_blank" }) };
+              <marko-web-content-short-name tag=null obj=node link=linkAttrs />
+            </@title>
+          </@body>
+        </marko-web-node>
+      </@slot>
+    </@nodes>
+  </marko-web-node-list>
+</marko-web-query>

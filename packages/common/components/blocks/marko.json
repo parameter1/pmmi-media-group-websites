@@ -1,0 +1,11 @@
+{
+  "tags": {
+    "common-featured-companies": {
+      "template": "./featured-companies.marko",
+      "@content-id": {
+        "type": "number",
+        "required": true
+      }
+    }
+  }
+}

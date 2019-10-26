@@ -92,7 +92,9 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
                 </default-theme-content-download>
               </if>
 
-              <!-- @todo Companies in this article -->
+              <if(["article", "blog", "news", "press-release"].includes(content.type))>
+                <common-featured-companies content-id=content.id />
+              </if>
 
               <!-- Div for BI Library -->
               <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-bilibrary" class="mt-3" />

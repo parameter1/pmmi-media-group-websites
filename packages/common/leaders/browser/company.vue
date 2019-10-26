@@ -9,7 +9,7 @@
       :grow="grow"
       :logo-src="get(company, 'primaryImage.src')"
       :contact-src="get(contact, 'primaryImage.src')"
-      :website="website"
+      :website="get(company, 'website')"
       :name="get(company, 'name')"
       :product-summary="get(company, 'productSummary')"
       :youtube="get(company, 'youtube')"
@@ -57,10 +57,6 @@ export default {
     },
     videos() {
       return getAsArray(this.company, 'videos.edges').map(({ node }) => node);
-    },
-    website() {
-      const url = get(this.company, 'website');
-      return /^http/.test(url) ? url : `https://${url}`;
     },
     showIcon() {
       return get(this.company, 'youtube.username') || get(this.company, 'youtube.channelId');
