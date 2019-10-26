@@ -21,7 +21,7 @@ module.exports = {
       { href: '/contact-us', label: 'Contact' },
       { href: '/page/privacy', label: 'Privacy' },
       { href: '/page/terms-of-use', label: 'Terms of Use' },
-      { href: '/page/advertising-terms-conditions', label: 'Advertising Terms & Conditions' },
+      { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
     ],
   },
   menu: [
@@ -52,7 +52,7 @@ module.exports = {
         { href: '/contact-us', label: 'Contact' },
         { href: '/page/privacy', label: 'Privacy' },
         { href: '/page/terms-of-use', label: 'Terms of Use' },
-        { href: '/page/advertising-terms-conditions', label: 'Advertising Terms & Conditions' },
+        { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
       ],
     },
   ],
