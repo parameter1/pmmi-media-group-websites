@@ -2,7 +2,14 @@
   <div class="ldc-content">
     <div class="ldc-content__header">
       Featured {{ name }} Videos
-      <a :href="path" title="View more videos" target="_blank" class="ldc-content__more">View more videos &gt;</a>
+      <a
+        :href="path"
+        title="View more videos"
+        target="_blank"
+        class="ldc-content__more"
+      >
+        View more videos &gt;
+      </a>
     </div>
     <div class="ldc-content__list">
       <VideoListItem
@@ -36,6 +43,7 @@ export default {
     },
     videos: {
       type: Array,
+      default: () => ([]),
     },
   },
   data() {
@@ -44,7 +52,7 @@ export default {
   methods: {
     get(object, path) {
       return get(object, path);
-    }
+    },
   },
 };
 </script>

@@ -2,11 +2,25 @@
   <div :class="classNames">
     <div class="row">
       <div class="ldc-left__logo col-6">
-        <img v-if="logoSrc" :src="logoSrc" :title="name" :alt="logoAlt" />
-        <h6 v-else>{{ name }}</h6>
+        <img
+          v-if="logoSrc"
+          :src="logoSrc"
+          :title="name"
+          :alt="logoAlt"
+        >
+        <h6 v-else>
+          {{ name }}
+        </h6>
       </div>
       <div class="ldc-left__buttons col-6">
-        <a v-if="website" :href="website" class="btn btn-block btn-sm btn-primary text-center" target="_blank">Visit Site</a>
+        <a
+          v-if="website"
+          :href="website"
+          class="btn btn-block btn-sm btn-primary text-center"
+          target="_blank"
+        >
+          Visit Site
+        </a>
         <a :href="path" class="btn btn-block btn-sm btn-secondary text-center">View Profile</a>
       </div>
     </div>
@@ -16,13 +30,15 @@
         <p v-if="productSummary">
           <strong>{{ productSummary }}</strong>
         </p>
-        <p v-if="teaser">{{ teaser }}</p>
+        <p v-if="teaser">
+          {{ teaser }}
+        </p>
       </div>
     </div>
     <hr v-if="contactName">
     <div v-if="contactName" class="row">
       <div v-if="contactSrc" class="col-3 my-auto">
-        <img :src="contactSrc" :title="contactName" :alt="contactAlt" />
+        <img :src="contactSrc" :title="contactName" :alt="contactAlt">
       </div>
       <div class="ldc-left__contact col">
         <p>
@@ -47,6 +63,7 @@ export default {
     },
     logoSrc: {
       type: String,
+      default: null,
     },
     path: {
       type: String,
@@ -54,21 +71,27 @@ export default {
     },
     productSummary: {
       type: String,
+      default: null,
     },
     contactName: {
       type: String,
+      default: null,
     },
     contactSrc: {
       type: String,
+      default: null,
     },
     contactTitle: {
       type: String,
+      default: null,
     },
     teaser: {
       type: String,
+      default: null,
     },
     website: {
       type: String,
+      default: null,
     },
   },
   computed: {

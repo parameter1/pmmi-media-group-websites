@@ -36,12 +36,15 @@ export default {
     },
     promotions: {
       type: Array,
+      default: () => ([]),
     },
     youtube: {
       type: Object,
+      default: () => ({}),
     },
     youtubeVideos: {
       type: Object,
+      default: () => ({}),
     },
   },
   data() {
@@ -57,8 +60,8 @@ export default {
           linkText: get(video, 'snippet.title'),
           linkUrl,
           imageSrc: get(video, 'snippet.thumbnails.default.url'),
-        }
-      })
+        };
+      });
     },
     videosPath() {
       const username = get(this.youtube, 'username');

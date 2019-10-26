@@ -2,7 +2,13 @@
   <div class="ldc-content">
     <div class="ldc-content__header">
       Featured {{ name }} Products
-      <a :href="path" title="View more products" class="ldc-content__more">View more products &gt;</a>
+      <a
+        :href="path"
+        title="View more products"
+        class="ldc-content__more"
+      >
+        View more products &gt;
+      </a>
     </div>
     <div class="ldc-content__list">
       <PromotionListItem
@@ -36,6 +42,7 @@ export default {
     },
     promotions: {
       type: Array,
+      default: () => ([]),
     },
   },
   data() {
@@ -44,7 +51,7 @@ export default {
   methods: {
     get(object, path) {
       return get(object, path);
-    }
+    },
   },
 };
 </script>

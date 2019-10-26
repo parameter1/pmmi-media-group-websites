@@ -1,6 +1,8 @@
 <template>
   <div class="text-left">
-    <p class="mb-1 ml-3 font-weight-bold">{{ name }}:</p>
+    <p class="mb-1 ml-3 font-weight-bold">
+      {{ name }}:
+    </p>
     <ul class="leaders__item-list">
       <li v-if="loading" class="leaders__item-list-item">
         Loading...
@@ -23,13 +25,10 @@
 </template>
 
 <script>
-import { getAsArray } from '@base-cms/object-path';
-import IconYoutube from '@base-cms/marko-web-icons/browser/youtube.vue';
 import Company from './company.vue';
 
 export default {
   components: {
-    IconYoutube,
     Company,
   },
   props: {

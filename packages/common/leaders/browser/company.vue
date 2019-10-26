@@ -7,14 +7,14 @@
     <DataCard
       v-if="expanded"
       :grow="grow"
-      :logoSrc="get(this.company, 'primaryImage.src')"
-      :contact-src="get(this.contact, 'primaryImage.src')"
+      :logo-src="get(company, 'primaryImage.src')"
+      :contact-src="get(contact, 'primaryImage.src')"
       :website="website"
       :name="get(company, 'name')"
       :product-summary="get(company, 'productSummary')"
       :promotions="promotions"
       :youtube="get(company, 'youtube')"
-      :youtubeVideos="get(company, 'youtubeVideos')"
+      :youtube-videos="get(company, 'youtubeVideos')"
       :contact-name="get(contact, 'name')"
       :contact-title="get(contact, 'title')"
       :path="get(company, 'siteContext.path')"
@@ -41,7 +41,7 @@ export default {
     grow: {
       type: String,
       default: 'right',
-    }
+    },
   },
   data() {
     return {
@@ -57,7 +57,7 @@ export default {
     },
     website() {
       const url = get(this.company, 'website');
-      if (url) return /^http/.test(url) ? url : `https://${url}`;
+      return /^http/.test(url) ? url : `https://${url}`;
     },
     showIcon() {
       return get(this.company, 'youtube.username') || get(this.company, 'youtube.channelId');
@@ -72,7 +72,7 @@ export default {
     },
     hide() {
       this.expanded = false;
-    }
+    },
   },
 };
 </script>

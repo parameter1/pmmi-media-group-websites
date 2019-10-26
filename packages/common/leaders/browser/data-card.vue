@@ -55,33 +55,43 @@ export default {
     },
     logoSrc: {
       type: String,
+      default: null,
     },
     productSummary: {
       type: String,
+      default: null,
     },
     contactName: {
       type: String,
+      default: null,
     },
     contactSrc: {
       type: String,
+      default: null,
     },
     contactTitle: {
       type: String,
+      default: null,
     },
     teaser: {
       type: String,
+      default: null,
     },
     website: {
       type: String,
+      default: null,
     },
     promotions: {
       type: Array,
+      default: () => ([]),
     },
     youtube: {
       type: Object,
+      default: () => ({}),
     },
     youtubeVideos: {
       type: Object,
+      default: () => ({}),
     },
   },
   data() {

@@ -1,10 +1,15 @@
 <template>
-  <a v-if="url" target="_blank" :href="url" :title="text">
-    <img v-if="src" :src="src" :alt="text" />
+  <a
+    v-if="url"
+    target="_blank"
+    :href="url"
+    :title="text"
+  >
+    <img v-if="src" :src="src" :alt="text">
     <span>{{ text }}</span>
   </a>
   <div v-else>
-    <img v-if="src" :src="src" :alt="text" />
+    <img v-if="src" :src="src" :alt="text">
     <span>{{ text }}</span>
   </div>
 </template>
@@ -19,9 +24,11 @@ export default {
     },
     url: {
       type: String,
+      default: null,
     },
     src: {
       type: String,
+      default: null,
     },
   },
   data() {

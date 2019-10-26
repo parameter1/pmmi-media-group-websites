@@ -27,7 +27,6 @@
 </template>
 
 <script>
-import { getAsArray } from '@base-cms/object-path';
 import IconDash from '@base-cms/marko-web-icons/browser/dash.vue';
 import IconPlus from '@base-cms/marko-web-icons/browser/plus.vue';
 import Company from './company.vue';
