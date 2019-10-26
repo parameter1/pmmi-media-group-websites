@@ -4,7 +4,7 @@ module.exports = {
       { href: 'https://pmmi.dragonforms.com/loading.do?pk=PFWMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=PPFWnew', label: 'Subscribe', target: '_blank' },
       { href: '/processing-equipment', label: 'Processing Equipment' },
       { href: '/automation', label: 'Automation' },
-      { href: '/food-safety', label: 'Food safety' },
+      { href: '/food-safety', label: 'Food Safety' },
       { href: '/events', label: 'Events' },
       { href: '/downloads', label: 'Downloads' },
     ],
@@ -30,7 +30,7 @@ module.exports = {
       items: [
         { href: '/processing-equipment', label: 'Processing Equipment' },
         { href: '/automation', label: 'Automation' },
-        { href: '/food-safety', label: 'Food safety' },
+        { href: '/food-safety', label: 'Food Safety' },
       ],
     },
     {
