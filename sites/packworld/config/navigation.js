@@ -40,11 +40,10 @@ module.exports = {
         { href: '/contract-packaging', label: 'Contract Packaging' },
         { href: '/events', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
-        { href: '/leaders', label: 'Leaders' },
+        { href: '/leaders', label: 'Leaders in Packaging' },
         { href: '/videos', label: 'Videos' },
-        { href: '/podcasts', label: 'Podcasts' },
-        { href: '/education', label: 'Education' },
         { href: '/hall-of-fame', label: 'Hall of Fame' },
+        { href: '/webinars', label: 'Webinars' },
       ],
     },
     {

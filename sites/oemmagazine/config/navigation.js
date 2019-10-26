@@ -1,7 +1,7 @@
 module.exports = {
   secondary: {
     items: [
-      { href: 'https://pmmi.dragonforms.com/OEMnew?pk=OEMMagNav&oly_enc_id=@{encrypted_customer_id}@', label: 'Subscribe', target: '_blank' },
+      { href: 'https://pmmi.dragonforms.com/init.do?pk=OEMMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=OEMnew', label: 'Subscribe', target: '_blank' },
       { href: '/technology', label: 'Technology' },
       { href: '/products', label: 'Products' },
       { href: '/oem-issues', label: 'OEM Issues' },
@@ -46,7 +46,7 @@ module.exports = {
     {
       label: 'User Tools',
       items: [
-        { href: 'https://pmmi.dragonforms.com/OEMnew?pk=OEMMagNav&oly_enc_id=@{encrypted_customer_id}@', label: 'Subscribe', target: '_blank' },
+        { href: 'https://pmmi.dragonforms.com/init.do?pk=OEMMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=OEMnew', label: 'Subscribe', target: '_blank' },
         { href: '/page/advertise', label: 'Advertise' },
         { href: '/page/about', label: 'About' },
         { href: '/contact-us', label: 'Contact' },

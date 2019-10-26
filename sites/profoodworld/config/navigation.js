@@ -1,7 +1,7 @@
 module.exports = {
   secondary: {
     items: [
-      { href: 'https://pmmi.dragonforms.com/PPWnew?pk=PWMagNav&oly_enc_id=@{encrypted_customer_id}@', label: 'Subscribe', target: '_blank' },
+      { href: 'https://pmmi.dragonforms.com/loading.do?pk=PFWMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=PPFWnew', label: 'Subscribe', target: '_blank' },
       { href: '/processing-equipment', label: 'Processing Equipment' },
       { href: '/automation', label: 'Automation' },
       { href: '/food-safety', label: 'Food safety' },
@@ -39,18 +39,18 @@ module.exports = {
         { href: '/magazine', label: 'Magazine' },
         { href: '/events', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
-        { href: '/leaders', label: 'Leaders in Packaging' },
+        { href: '/leaders', label: 'Leaders in Processing' },
         { href: '/global-250', label: 'Global 250' },
         { href: '/awards', label: 'Awards' },
         { href: '/videos', label: 'Videos' },
         { href: '/webinars', label: 'Webinars' },
-        { href: '/opx-leadership-network', label: 'OpX Leadership Network' },
+        { href: 'https://www.opxleadershipnetwork.org', label: 'OpX Leadership Network', target: '_blank' },
       ],
     },
     {
       label: 'User Tools',
       items: [
-        { href: 'https://pmmi.dragonforms.com/PPWnew?pk=PWMagNav&oly_enc_id=@{encrypted_customer_id}@ ', label: 'Subscribe', target: '_blank' },
+        { href: 'https://pmmi.dragonforms.com/loading.do?pk=PFWMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=PPFWnew ', label: 'Subscribe', target: '_blank' },
         { href: '/page/advertise', label: 'Advertise' },
         { href: '/page/about', label: 'About' },
         { href: '/contact-us', label: 'Contact' },
