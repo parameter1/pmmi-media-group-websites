@@ -1,6 +1,6 @@
 {
   "tags": {
-    "pmmi-featured-companies": {
+    "common-featured-companies": {
       "template": "./featured-companies.marko",
       "@content-id": {
         "type": "number",
