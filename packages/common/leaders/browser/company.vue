@@ -12,9 +12,9 @@
       :website="website"
       :name="get(company, 'name')"
       :product-summary="get(company, 'productSummary')"
-      :promotions="promotions"
       :youtube="get(company, 'youtube')"
-      :youtube-videos="get(company, 'youtubeVideos')"
+      :promotions="promotions"
+      :videos="videos"
       :contact-name="get(contact, 'name')"
       :contact-title="get(contact, 'title')"
       :path="get(company, 'siteContext.path')"
@@ -54,6 +54,9 @@ export default {
     },
     promotions() {
       return getAsArray(this.company, 'promotions.edges').map(({ node }) => node);
+    },
+    videos() {
+      return getAsArray(this.company, 'videos.edges').map(({ node }) => node);
     },
     website() {
       const url = get(this.company, 'website');

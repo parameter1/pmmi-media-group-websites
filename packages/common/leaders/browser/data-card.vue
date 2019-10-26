@@ -18,7 +18,7 @@
         :name="name"
         :path="path"
         :youtube="youtube"
-        :youtube-videos="youtubeVideos"
+        :videos="videos"
         :promotions="promotions"
       />
     </div>
@@ -26,8 +26,6 @@
 </template>
 
 <script>
-import { get, getAsArray } from '@base-cms/object-path';
-
 import Profile from './data-card-profile.vue';
 import Content from './data-card-content.vue';
 
@@ -85,11 +83,11 @@ export default {
       type: Array,
       default: () => ([]),
     },
-    youtube: {
-      type: Object,
-      default: () => ({}),
+    videos: {
+      type: Array,
+      default: () => ([]),
     },
-    youtubeVideos: {
+    youtube: {
       type: Object,
       default: () => ({}),
     },
@@ -99,21 +97,13 @@ export default {
   },
   computed: {
     compact() {
-      return !getAsArray(this.youtubeVideos, 'items').length && !this.promotions.length;
+      return !this.videos.length && !this.promotions.length;
     },
     classNames() {
       const classes = ['ldc-modal', `ldc-modal--grow-${this.grow}`];
       if (this.expanded) classes.push('ldc-modal--expanded');
       if (this.compact) classes.push('ldc-modal--compact');
       return classes;
-    },
-  },
-  methods: {
-    get(object, path) {
-      return get(object, path);
-    },
-    getAsArray(object, path) {
-      return getAsArray(object, path);
     },
   },
 };

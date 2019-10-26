@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { get, getAsArray } from '@base-cms/object-path';
+import { get } from '@base-cms/object-path';
 
 import PromotionList from './promotion-list.vue';
 import VideoList from './video-list.vue';
@@ -38,11 +38,11 @@ export default {
       type: Array,
       default: () => ([]),
     },
-    youtube: {
-      type: Object,
-      default: () => ({}),
+    videos: {
+      type: Array,
+      default: () => ([]),
     },
-    youtubeVideos: {
+    youtube: {
       type: Object,
       default: () => ({}),
     },
@@ -51,18 +51,6 @@ export default {
     return {};
   },
   computed: {
-    videos() {
-      const videos = getAsArray(this.youtubeVideos, 'items');
-      return videos.map((video) => {
-        const id = get(video, 'snippet.resourceId.videoId');
-        const linkUrl = `https://youtu.be/${id}`;
-        return {
-          linkText: get(video, 'snippet.title'),
-          linkUrl,
-          imageSrc: get(video, 'snippet.thumbnails.default.url'),
-        };
-      });
-    },
     videosPath() {
       const username = get(this.youtube, 'username');
       if (username) return `https://youtube.com/user/${username}`;
@@ -74,9 +62,6 @@ export default {
   methods: {
     get(object, path) {
       return get(object, path);
-    },
-    getAsArray(object, path) {
-      return getAsArray(object, path);
     },
   },
 };

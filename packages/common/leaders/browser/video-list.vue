@@ -16,9 +16,9 @@
         v-for="video in videos"
         :key="video.id"
         class="ldc-content__list-item"
-        :url="video.linkUrl"
-        :text="video.linkText"
-        :src="video.imageSrc"
+        :url="video.url"
+        :text="video.title"
+        :src="video.thumbnail"
       />
     </div>
   </div>

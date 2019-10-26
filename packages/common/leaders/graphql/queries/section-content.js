@@ -56,18 +56,13 @@ query LeadersScheduledContent($input:WebsiteScheduledContentQueryInput!) {
             username
             channelId
           }
-          youtubeVideos(input: { limit: 4 }) {
-            items {
-              snippet {
+          videos: youtubeVideos(input: { pagination: { limit: 4 } }) {
+            edges {
+              node {
+                id
+                url
                 title
-                thumbnails {
-                  default {
-                    url
-                  }
-                }
-                resourceId {
-                  videoId
-                }
+                thumbnail
               }
             }
           }
