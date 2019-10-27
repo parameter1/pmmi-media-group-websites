@@ -41,7 +41,7 @@ module.exports = {
         { href: '/magazine', label: 'Magazine' },
         { href: '/events', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
-        { href: '/premier-suppliers', label: 'Premier Suppliers' },
+        { href: '/leaders', label: 'Premier Suppliers' },
         { href: '/videos', label: 'Videos' },
         { href: '/hall-of-fame', label: 'Hall of Fame' },
       ],
