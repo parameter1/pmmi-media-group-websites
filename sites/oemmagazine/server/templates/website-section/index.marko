@@ -2,6 +2,7 @@ import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
 import queryFragment from "../../graphql/fragments/content-list";
 import GAM from "../../../config/gam";
 
+$ const { site } = out.global;
 $ const { id, alias, name, pageNode } = data;
 
 <marko-web-website-section-page-layout id=id alias=alias name=name>
@@ -17,9 +18,11 @@ $ const { id, alias, name, pageNode } = data;
        <marko-web-gam-slots slots=adSlots />
     </marko-web-resolve-page>
   </@head>
+  <@above-container>
+    <marko-web-gam-display-ad id="gpt-ad-leaderboard" modifiers=["above-container"] />
+    <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-top-below-head" modifiers=["above-container"] />
+  </@above-container>
   <@page>
-    <marko-web-gam-display-ad id="gpt-ad-leaderboard" modifiers=["top-of-page"] />
-
     <marko-web-query|{ nodes }|
       name="website-optioned-content"
       params={ sectionId: id, optionName: "Pinned", limit: 5, requiresImage: true, queryFragment }
