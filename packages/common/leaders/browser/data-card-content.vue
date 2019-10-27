@@ -5,7 +5,7 @@
         <PromotionList :promotions="promotions" :path="path" :name="name" />
       </div>
     </div>
-    <hr v-if="videos.length">
+    <hr v-if="videos.length && promotions.length">
     <div v-if="videos.length" class="row">
       <div class="col">
         <VideoList :videos="videos" :path="videosPath" :name="name" />
