@@ -209,9 +209,4 @@ $ const { id, alias, name, pageNode } = data;
       />
     </marko-web-resolve-page>
   </@below-page>
-  <@foot>
-    <marko-web-resolve-page|{ data: section }| node=pageNode>
-      $ const aliases = hierarchyAliases(section);
-    </marko-web-resolve-page>
-  </@foot>
 </marko-web-website-section-page-layout>

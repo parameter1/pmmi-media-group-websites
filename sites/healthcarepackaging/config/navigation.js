@@ -1,7 +1,7 @@
 module.exports = {
   secondary: {
     items: [
-      { href: 'https://pmmi.dragonforms.com/HCPnew?pk=HCPMagNav&oly_enc_id=@{encrypted_customer_id}@', label: 'Subscribe', target: '_blank' },
+      { href: 'https://pmmi.dragonforms.com/loading.do?pk=HCPMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=HCPnew', label: 'Subscribe', target: '_blank' },
       { href: '/machinery-materials', label: 'Machinery & Materials' },
       { href: '/markets', label: 'Markets' },
       { href: '/logistics-distribution', label: 'Logistics / Cold Chain' },
@@ -17,12 +17,12 @@ module.exports = {
   },
   footer: {
     items: [
-      { href: '/page/advertise', label: 'Advertise' },
-      { href: '/page/about', label: 'About' },
-      { href: '/contact-us', label: 'Contact' },
-      { href: '/page/privacy', label: 'Privacy' },
-      { href: '/page/terms-of-use', label: 'Terms of Use' },
-      { href: '/page/advertising-terms-conditions', label: 'Advertising Terms & Conditions' },
+      { href: 'https://www.pmmimediagroup.com/hcp/healthcare-packaging', label: 'Advertise', target: '_blank' },
+      { href: '/page/hcp-about-us', label: 'About' },
+      { href: '/page/hcp-contact-us', label: 'Contact' },
+      { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy', target: '_blank' },
+      { href: '/page/hcp-terms-use', label: 'Terms of Use' },
+      { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
     ],
   },
   menu: [
@@ -43,20 +43,19 @@ module.exports = {
         { href: '/downloads', label: 'Downloads' },
         { href: '/premier-suppliers', label: 'Premier Suppliers' },
         { href: '/videos', label: 'Videos' },
-        { href: '/playbooks', label: 'Playbooks' },
         { href: '/hall-of-fame', label: 'Hall of Fame' },
       ],
     },
     {
       label: 'User Tools',
       items: [
-        { href: 'https://pmmi.dragonforms.com/HCPnew?pk=HCPMagNav&oly_enc_id=@{encrypted_customer_id}@', label: 'Subscribe', target: '_blank' },
-        { href: '/page/advertise', label: 'Advertise' },
-        { href: '/page/about', label: 'About' },
-        { href: '/contact-us', label: 'Contact' },
-        { href: '/page/privacy', label: 'Privacy' },
-        { href: '/page/terms-of-use', label: 'Terms of Use' },
-        { href: '/page/advertising-terms-conditions', label: 'Advertising Terms & Conditions' },
+        { href: 'https://pmmi.dragonforms.com/loading.do?pk=HCPMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=HCPnew', label: 'Subscribe', target: '_blank' },
+        { href: 'https://www.pmmimediagroup.com/hcp/healthcare-packaging', label: 'Advertise', target: '_blank' },
+        { href: '/page/hcp-about-us', label: 'About' },
+        { href: '/page/hcp-contact-us', label: 'Contact' },
+        { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy', target: '_blank' },
+        { href: '/page/hcp-terms-use', label: 'Terms of Use' },
+        { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
       ],
     },
   ],

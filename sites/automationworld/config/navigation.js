@@ -1,10 +1,12 @@
 module.exports = {
   secondary: {
     items: [
-      { href: 'https://pmmi.dragonforms.com/PAWnew?pk=AWMagNav&oly_enc_id=@{encrypted_customer_id}@', label: 'Subscribe', target: '_blank' },
+      { href: 'https://pmmi.dragonforms.com/loading.do?pk=AWMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=PAWnew', label: 'Subscribe', target: '_blank' },
       { href: '/products', label: 'Products' },
       { href: '/factory', label: 'Factory' },
       { href: '/process', label: 'Process' },
+      { href: '/events', label: 'Events' },
+      { href: '/downloads', label: 'Downloads' },
     ],
   },
   tertiary: {
@@ -14,12 +16,12 @@ module.exports = {
   },
   footer: {
     items: [
-      { href: '/page/advertise', label: 'Advertise' },
-      { href: '/page/about', label: 'About' },
-      { href: '/contact-us', label: 'Contact' },
-      { href: '/page/privacy', label: 'Privacy' },
-      { href: '/page/terms-of-use', label: 'Terms of Use' },
-      { href: '/page/advertising-terms-conditions', label: 'Advertising Terms & Conditions' },
+      { href: 'https://www.pmmimediagroup.com/aw/automation-world', label: 'Advertise', target: '_blank' },
+      { href: '/page/aw-about-us', label: 'About' },
+      { href: '/page/aw-contact-us', label: 'Contact' },
+      { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy', target: '_blank' },
+      { href: '/page/aw-terms-use', label: 'Terms of Use' },
+      { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
     ],
   },
   menu: [
@@ -40,22 +42,19 @@ module.exports = {
         { href: '/leaders', label: 'Leadership in Automation' },
         { href: '/videos', label: 'Videos' },
         { href: '/podcasts', label: 'Podcasts' },
-        { href: '/playbooks', label: 'Playbooks' },
-        { href: '/tactical-briefs', label: 'Tactical Briefs' },
-        { href: '/channels', label: 'Channels' },
         { href: '/webinars', label: 'Webinars' },
       ],
     },
     {
       label: 'User Tools',
       items: [
-        { href: 'https://pmmi.dragonforms.com/PAWnew?pk=AWMagNav&oly_enc_id=@{encrypted_customer_id}@', label: 'Subscribe', target: '_blank' },
-        { href: '/page/advertise', label: 'Advertise' },
-        { href: '/page/about', label: 'About' },
-        { href: '/contact-us', label: 'Contact' },
-        { href: '/page/privacy', label: 'Privacy' },
-        { href: '/page/terms-of-use', label: 'Terms of Use' },
-        { href: '/page/advertising-terms-conditions', label: 'Advertising Terms & Conditions' },
+        { href: 'https://pmmi.dragonforms.com/loading.do?pk=AWMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=PAWnew', label: 'Subscribe', target: '_blank' },
+        { href: 'https://www.pmmimediagroup.com/aw/automation-world', label: 'Advertise', target: '_blank' },
+        { href: '/page/aw-about-us', label: 'About' },
+        { href: '/page/aw-contact-us', label: 'Contact' },
+        { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy', target: '_blank' },
+        { href: '/page/aw-terms-use', label: 'Terms of Use' },
+        { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
       ],
     },
   ],

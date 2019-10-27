@@ -14,7 +14,6 @@ $ const { id, alias, name, pageNode } = data;
   </@head>
   <@page>
     <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "leaderboard" }) modifiers=["top-of-page"] />
-    <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "article-top-below-head" }) modifiers=["top-of-page"] />
 
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       <marko-web-page-wrapper>
