@@ -1,0 +1,39 @@
+import { getAsObject, get } from "@base-cms/object-path";
+
+$ const content = getAsObject(input, "node");
+$ const primaryImage = getAsObject(content, "primaryImage");
+$ const withTitle = input.withTitle != null ? input.withTitle : true;
+
+$ const { linkAttrs } = input;
+
+<marko-web-node
+  type="contact-content"
+  image-position="left"
+  card=false
+  full-height=false
+  attrs=input.attrs
+>
+  <@image
+    src=primaryImage.src
+    alt=primaryImage.alt
+    image-modifiers=["headshot"]
+    width=100
+    ar="1:1"
+    link={ attrs: linkAttrs }
+  />
+  <@body>
+    <@title tag="h5" modifiers=input.titleModifiers>
+      <marko-web-obj-text type="content" obj=content field="name" tag=null link={ attrs: linkAttrs } />
+    </@title>
+    <@text modifiers=["teaser"] show=(withTitle && content.title)>
+      <marko-web-obj-text type="content" obj=content field="title" tag=null />
+    </@text>
+    <@footer>
+      <@right>
+        <if(input.withEmail && content.email)>
+          <marko-web-content-public-email block-name=blockName obj=content link=true class="btn btn-sm btn-primary btn-block" />
+        </if>
+      </@right>
+    </@footer>
+  </@body>
+</marko-web-node>
