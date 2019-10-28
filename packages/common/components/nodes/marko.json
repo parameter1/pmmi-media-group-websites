@@ -6,7 +6,8 @@
     },
     "common-author-card-node": {
       "template": "./author-card.marko",
-      "@node": "object"
+      "@node": "object",
+      "@with-email": "boolean"
     }
   }
 }

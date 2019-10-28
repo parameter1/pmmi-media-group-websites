@@ -17,6 +17,7 @@ $ const { linkAttrs } = input;
     src=primaryImage.src
     alt=primaryImage.alt
     image-modifiers=["headshot"]
+    options={ fit: "facearea", facepad: 2 }
     width=100
     ar="1:1"
     link={ attrs: linkAttrs }
@@ -30,8 +31,8 @@ $ const { linkAttrs } = input;
     </@text>
     <@footer>
       <@right>
-        <if(input.withEmail && content.email)>
-          <marko-web-content-public-email block-name=blockName obj=content link=true class="btn btn-sm btn-primary btn-block" />
+        <if(input.withEmail && content.publicEmail)>
+          <a href=`mailto:${content.publicEmail}` class="btn btn-sm btn-primary">Email</a>
         </if>
       </@right>
     </@footer>
