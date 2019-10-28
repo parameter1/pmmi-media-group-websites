@@ -1,0 +1,8 @@
+{
+  "tags": {
+    "common-youtube-card-node": {
+      "template": "./youtube-card.marko",
+      "@node": "object"
+    }
+  }
+}
