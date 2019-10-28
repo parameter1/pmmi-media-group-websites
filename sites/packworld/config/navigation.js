@@ -42,7 +42,7 @@ module.exports = {
         { href: '/downloads', label: 'Downloads' },
         { href: '/leaders', label: 'Leaders in Packaging' },
         { href: '/videos', label: 'Videos' },
-        { href: '/hall-of-fame', label: 'Hall of Fame' },
+        { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
         { href: '/webinars', label: 'Webinars' },
       ],
     },
