@@ -6,6 +6,10 @@
         "type": "number",
         "required": true
       }
+    },
+    "common-company-details": {
+      "template": "./company-details.marko",
+      "@company": "object"
     }
   }
 }
