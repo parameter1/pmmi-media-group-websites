@@ -144,29 +144,25 @@ $ const { id, type, pageNode } = data;
           </marko-web-node-list>
 
           <marko-web-query|{ nodes }|
-            name="all-published-content"
-            params={ contentTypes: ["PressRelease"], limit: 3, queryFragment }
+            name="all-company-content"
+            params={ companyId: id, includeContentTypes: ["Article"], limit: 3, queryFragment }
           >
-            <div class="mt-block">
-              <website-content-list-flow nodes=nodes>
-                <@header>
-                  Case Studies
-                </@header>
-              </website-content-list-flow>
-            </div>
+            <website-content-list-flow nodes=nodes class="mt-block" inner-justified=false>
+              <@header>
+                Case Studies
+              </@header>
+            </website-content-list-flow>
           </marko-web-query>
 
           <marko-web-query|{ nodes }|
-            name="all-published-content"
-            params={ contentTypes: ["News"], limit: 5, queryFragment }
+            name="all-company-content"
+            params={ companyId: id, includeContentTypes: ["News", "PressRelease"], limit: 5, queryFragment }
           >
-            <div class="mt-block">
-              <website-content-list-flow nodes=nodes>
-                <@header>
-                  Company News
-                </@header>
-              </website-content-list-flow>
-            </div>
+            <website-content-list-flow nodes=nodes class="mt-block" inner-justified=false>
+              <@header>
+                Company News
+              </@header>
+            </website-content-list-flow>
           </marko-web-query>
         </div>
       </div>
