@@ -778,6 +778,11 @@
   resolved "https://registry.yarnpkg.com/@base-cms/marko-web-icons/-/marko-web-icons-1.0.0-beta.1.tgz#dfcc9e6e50e629bfee5475c2e97be66fbb68f9d8"
   integrity sha512-x6wYLka8cCHAObnv3dIopeZZdcpTTvT5oYdnT0hv4L/eKjcAUeOSLn+BY1BYf88yrpxGk7RDOsKtHuKX5O3ruQ==
 
+"@base-cms/marko-web-icons@^1.0.0-beta.15":
+  version "1.0.0-beta.15"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-icons/-/marko-web-icons-1.0.0-beta.15.tgz#3ecfe52f2f763d2a2be5667319c79e1ec1007202"
+  integrity sha512-Z1k7KZE4d1Wx6C28GvNeh6lzGXFPqc2yH51Ug10SynMNydI/qPwXFvQavxedGBA967qRekSIaTDx1zbM3n6hLA==
+
 "@base-cms/marko-web-native-x@^1.0.0-beta.7":
   version "1.0.0-beta.7"
   resolved "https://registry.yarnpkg.com/@base-cms/marko-web-native-x/-/marko-web-native-x-1.0.0-beta.7.tgz#bf9c725aec1eabd7c0a2037b2c82a138f9364e1c"
