@@ -6,7 +6,7 @@ module.exports = {
       { href: '/design', label: 'Design' },
       { href: '/issues', label: 'Issues' },
       { href: '/page/pw-event-calendar', label: 'Events' },
-      { href: '/downloads', label: 'Downloads' },
+      // { href: '/downloads', label: 'Downloads' },
     ],
   },
   tertiary: {
@@ -39,7 +39,7 @@ module.exports = {
         { href: '/magazine', label: 'Magazine' },
         { href: '/contract-packaging', label: 'Contract Packaging' },
         { href: '/page/pw-event-calendar', label: 'Events' },
-        { href: '/downloads', label: 'Downloads' },
+        // { href: '/downloads', label: 'Downloads' },
         { href: '/leaders', label: 'Leaders in Packaging' },
         { href: '/videos', label: 'Videos' },
         { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },

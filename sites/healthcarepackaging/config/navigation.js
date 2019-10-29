@@ -7,7 +7,7 @@ module.exports = {
       { href: '/logistics-distribution', label: 'Logistics / Cold Chain' },
       { href: '/issues', label: 'Issues' },
       { href: '/page/hcp-event-calendar', label: 'Events' },
-      { href: '/downloads', label: 'Downloads' },
+      // { href: '/downloads', label: 'Downloads' },
     ],
   },
   tertiary: {
@@ -40,7 +40,7 @@ module.exports = {
       items: [
         { href: '/magazine', label: 'Magazine' },
         { href: '/page/hcp-event-calendar', label: 'Events' },
-        { href: '/downloads', label: 'Downloads' },
+        // { href: '/downloads', label: 'Downloads' },
         { href: '/leaders', label: 'Premier Suppliers' },
         { href: '/videos', label: 'Videos' },
         { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
