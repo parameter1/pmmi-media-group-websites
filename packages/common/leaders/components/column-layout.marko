@@ -3,12 +3,14 @@ import { getAsArray } from "@base-cms/object-path";
 $ const columns = input.columns || 2;
 $ const nodes = getAsArray(input, "nodes");
 
-$ const colClass = columns === 2 ? "col-md-6 mb-block list-unstyled" : "col list-unstyled";
-$ const mid = Math.ceil(nodes.length / 2)
-$ const groups = columns == 2 ? [
-  [...nodes.slice(0, mid)],
-  [...nodes.slice(mid, nodes.length)],
-] : [nodes];
+$ const colClass = (columns = 2) => {
+  if (columns === 2) return "col-md-6 mb-block list-unstyled";
+  if (columns === 3) return "col-sm-12 col-md-6 col-lg-4 mb-block list-unstyled";
+  return "col list-unstyled";
+};
+
+$ const chunk = (arr = [], n) => arr.length ? [arr.slice(0, n), ...chunk(arr.slice(n), n)] : [];
+$ const groups = chunk(nodes, Math.ceil(nodes.length / columns));
 
 <if(nodes.length)>
   <if(input.label)>
@@ -20,10 +22,15 @@ $ const groups = columns == 2 ? [
   </if>
   <div class="row">
     <for|items| of=groups>
-      <ul class=colClass>
-        <for|{ id, name }| of=items>
-          <marko-web-browser-component name="CommonLeadersItem" props={ id, name } />
-        </for>
+      <ul class=colClass(columns)>
+        <if(input.renderBody)>
+          <${input.renderBody} items=items colClass=colClass />
+        </if>
+        <else>
+          <for|{ id, name }| of=items>
+            <marko-web-browser-component name="CommonLeadersItem" props={ id, name } />
+          </for>
+        </else>
       </ul>
     </for>
   </div>
