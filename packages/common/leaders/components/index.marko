@@ -15,6 +15,11 @@ $ const {
       <if(src)>
         <img src=src alt=alt class="leaders__logo" />
       </if>
+      <if(columns > 1)>
+        <div class="leaders__callout">
+          Browse these <strong class="d-block">leading suppliers</strong>
+        </div>
+      </if>
     </@header>
     <@nodes nodes=nodes>
       $ const colClass = columns === 2 ? "col-lg-6 mb-block list-unstyled" : "col list-unstyled";
