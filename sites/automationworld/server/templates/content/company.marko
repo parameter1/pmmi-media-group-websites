@@ -1,4 +1,4 @@
-import { getAsArray } from "@base-cms/object-path";
+import { getAsArray, get } from "@base-cms/object-path";
 import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
 import queryFragment from "../../graphql/fragments/content-list";
 
@@ -111,7 +111,7 @@ $ const { id, type, pageNode } = data;
 
         </div>
         <div class="col-lg-4 mb-3 mb-lg-0">
-          $ const contacts = getAsArray(content, 'contacts.edges').map(({ node }) => node);
+          $ const contacts = getAsArray(content, "contacts.edges").map(({ node }) => node);
           <marko-web-node-list collapsible=false class="mt-block">
             <@header>
               Key Contact<if(contacts.length > 1)>s</if>
@@ -123,7 +123,7 @@ $ const { id, type, pageNode } = data;
             </@nodes>
           </marko-web-node-list>
 
-          $ const videos = getAsArray(content, 'videos.edges').map(({ node }) => node);
+          $ const videos = getAsArray(content, "videos.edges").map(({ node }) => node);
           <marko-web-node-list class="mt-block">
             <@header>
               Featured Videos
@@ -136,7 +136,8 @@ $ const { id, type, pageNode } = data;
               </for>
             </@nodes>
             <@footer>
-              <a href=content.youtube.url target="_blank" rel="noopener" class="btn btn-sm btn-block btn-secondary">
+              $ const url = get(content, "youtube.url");
+              <a href=url target="_blank" rel="noopener" class="btn btn-sm btn-block btn-secondary">
                 View all videos &gt;
               </a>
             </@footer>
