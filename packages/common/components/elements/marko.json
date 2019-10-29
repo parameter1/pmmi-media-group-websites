@@ -6,7 +6,7 @@
     },
     "common-image-slider": {
       "template": "./image-slider.marko",
-      "@iamges" : "array"
+      "@images" : "array"
     }
   }
 }
