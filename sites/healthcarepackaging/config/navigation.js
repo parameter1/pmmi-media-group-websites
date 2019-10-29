@@ -6,7 +6,7 @@ module.exports = {
       { href: '/markets', label: 'Markets' },
       { href: '/logistics-distribution', label: 'Logistics / Cold Chain' },
       { href: '/issues', label: 'Issues' },
-      { href: '/events', label: 'Events' },
+      { href: '/page/hcp-event-calendar', label: 'Events' },
       { href: '/downloads', label: 'Downloads' },
     ],
   },
@@ -39,7 +39,7 @@ module.exports = {
       label: 'Resources',
       items: [
         { href: '/magazine', label: 'Magazine' },
-        { href: '/events', label: 'Events' },
+        { href: '/page/hcp-event-calendar', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
         { href: '/leaders', label: 'Premier Suppliers' },
         { href: '/videos', label: 'Videos' },
