@@ -3,6 +3,9 @@
     "common-company-logo": {
       "template": "./company-logo.marko",
       "@content": "object"
+    },
+    "common-image-slider": {
+      "template": "./image-slider.marko"
     }
   }
 }
