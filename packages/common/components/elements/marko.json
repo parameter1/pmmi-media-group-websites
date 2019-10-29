@@ -1,0 +1,8 @@
+{
+  "tags": {
+    "common-company-logo": {
+      "template": "./company-logo.marko",
+      "@content": "object"
+    }
+  }
+}

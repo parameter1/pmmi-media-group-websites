@@ -1,0 +1,13 @@
+{
+  "tags": {
+    "common-youtube-card-node": {
+      "template": "./youtube-card.marko",
+      "@node": "object"
+    },
+    "common-author-card-node": {
+      "template": "./author-card.marko",
+      "@node": "object",
+      "@with-email": "boolean"
+    }
+  }
+}

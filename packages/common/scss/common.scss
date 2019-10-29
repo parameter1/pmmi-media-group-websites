@@ -1,6 +1,7 @@
 @import "../../node_modules/@base-cms/marko-web-theme-default/skins/orion/skin";
 @import "../../node_modules/@base-cms/marko-web-gtm/scss/slot";
 @import "./contact-us-form"; // @todo this should be remove once contact us is in core
+@import "./company-page";
 @import "./leaders";
 
 .page-rail {
@@ -38,6 +39,15 @@
   &--above-container {
     &:not(:empty) {
       margin-top: map-get($spacers, block);
+    }
+  }
+}
+
+.node {
+  $self: &;
+  &--image-headshot {
+    #{ $self }__image-inner-wrapper {
+      box-shadow: none;
     }
   }
 }

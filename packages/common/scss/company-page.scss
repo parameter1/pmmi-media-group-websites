@@ -1,0 +1,24 @@
+.ldp {
+  display: flex;
+  align-items: center;
+  &__logo {
+    img {
+      margin-right: 2rem;
+      border: 3px solid #fff;
+      border-radius: 100px;
+      box-shadow: inset 0 0 5px rgba(0, 0, 0, .5);
+    }
+  }
+  &__label {
+    display: block;
+    color: $gray-600;
+    text-transform: uppercase;
+    &--bottom-border {
+      padding-bottom: .25rem;
+      border-bottom: 1px solid rgba(0, 0, 0, .25);
+    }
+    &:not(:first-child) {
+      margin-top: 1.5rem;
+    }
+  }
+}

@@ -1,0 +1,184 @@
+import { getAsArray, get } from "@base-cms/object-path";
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+import queryFragment from "../../graphql/fragments/content-list";
+
+$ const { site } = out.global;
+$ const { id, type, pageNode } = data;
+
+<marko-web-content-page-layout id=id type=type>
+  <@head>
+    <marko-web-gtm-content-context|{ context }| id=id>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-content-context>
+  </@head>
+  <@page>
+    <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
+      <marko-web-page-wrapper>
+        <@section>
+          <div class="row">
+            <div class="col-md-9 col-sm-12 col-lg-10">
+              <div class="ldp">
+                <div class="ldp__logo">
+                  <common-company-logo content=content />
+                </div>
+                <div class="ldp__title">
+                  <marko-web-content-name tag="h1" class="page-wrapper__title" obj=content />
+                  <marko-web-content-city-state-zip tag="p" class="text-small text-muted" obj=content />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-lg-2 col-sm-12 justify-content-center d-flex flex-column px-3 py-3">
+              <div class="ldp__social">
+                <marko-web-content-website obj=content link={ class: "btn btn-sm btn-primary btn-block" }>
+                  Visit Site
+                </marko-web-content-website>
+                <div class="mt-2 d-flex justify-content-around">
+                  <for|item| of=content.socialLinks>
+                    <default-theme-social-icon-link
+                      label=item.label
+                      provider=item.provider
+                      href=item.url
+                      modifiers=["dark", "lg"]
+                    />
+                  </for>
+                </div>
+              </div>
+            </div>
+          </div>
+        </@section>
+      </marko-web-page-wrapper>
+
+      <div class="row">
+        <div class="col-lg-8 mb-3 mb-lg-0">
+
+          <marko-web-node-list collapsible=false class="mt-block">
+            <@header>
+              Company Overview
+            </@header>
+            <@body>
+              <label class="ldp__label">About ${content.name}</label>
+              <marko-web-content-teaser tag="p" obj=content />
+              <label class="ldp__label">Product Summary</label>
+              <marko-web-obj-text tag="p" obj=content field="productSummary" type="content" html=true />
+            </@body>
+          </marko-web-node-list>
+
+          <marko-web-node-list collapsible=false class="mt-block">
+            <@header>
+              <if(content.isLeader)>Leaders in Packaging</if>
+              <else>Company Details</else>
+            </@header>
+            <@body>
+              <label class="ldp__label ldp__label--bottom-border">At-a-glance</label>
+              <common-company-details company=content />
+
+              <label class="ldp__label ldp__label--bottom-border">Contact</label>
+              $ const { socialLinks, ...contentSansSocial } = content;
+              <default-theme-content-contact-details obj=contentSansSocial />
+
+              <label class="ldp__label ldp__label--bottom-border">More info on ${content.name}</label>
+              <marko-web-content-body obj=content />
+            </@body>
+          </marko-web-node-list>
+
+          <marko-web-query|{ nodes }|
+            name="all-company-content"
+            params={
+              companyId: id,
+              includeContentTypes: ["Product"],
+              queryFragment,
+            }
+          >
+            <marko-web-node-list class="mt-block">
+              <@header>
+                Products
+              </@header>
+              <@nodes|{ nodes: items }| nodes=nodes>
+                <default-theme-card-deck-flow cols=2 nodes=items>
+                  <@slot|{ node, index }|>
+                    <website-content-card-node
+                      image-width=340
+                      node=node
+                    />
+                  </@slot>
+                </default-theme-card-deck-flow>
+              </@nodes>
+            </marko-web-node-list>
+          </marko-web-query>
+
+        </div>
+        <div class="col-lg-4 mb-3 mb-lg-0">
+          $ const contacts = getAsArray(content, "contacts.edges").map(({ node }) => node);
+          <marko-web-node-list collapsible=false class="mt-block">
+            <@header>
+              Key Contact<if(contacts.length > 1)>s</if>
+            </@header>
+            <@nodes|{ nodes }| nodes=contacts>
+              <for|node| of=nodes>
+                <common-author-card-node node=node with-email=true />
+              </for>
+            </@nodes>
+          </marko-web-node-list>
+
+          $ const videos = getAsArray(content, "videos.edges").map(({ node }) => node);
+          <marko-web-node-list class="mt-block">
+            <@header>
+              Featured Videos
+            </@header>
+            <@nodes|{ nodes }| nodes=videos>
+              <for|node| of=nodes>
+                <div class="node-list__node">
+                  <common-youtube-card-node node=node />
+                </div>
+              </for>
+            </@nodes>
+            <@footer>
+              $ const url = get(content, "youtube.url");
+              <a href=url target="_blank" rel="noopener" class="btn btn-sm btn-block btn-secondary">
+                View all videos &gt;
+              </a>
+            </@footer>
+          </marko-web-node-list>
+
+          <marko-web-query|{ nodes }|
+            name="all-company-content"
+            params={ companyId: id, includeContentTypes: ["Article"], limit: 3, queryFragment }
+          >
+            <website-content-list-flow nodes=nodes class="mt-block" inner-justified=false>
+              <@header>
+                Case Studies
+              </@header>
+            </website-content-list-flow>
+          </marko-web-query>
+
+          <marko-web-query|{ nodes }|
+            name="all-company-content"
+            params={ companyId: id, includeContentTypes: ["News", "PressRelease"], limit: 5, queryFragment }
+          >
+            <website-content-list-flow nodes=nodes class="mt-block" inner-justified=false>
+              <@header>
+                Company News
+              </@header>
+            </website-content-list-flow>
+          </marko-web-query>
+        </div>
+      </div>
+
+    </marko-web-resolve-page>
+  </@page>
+  <@below-page>
+    <marko-web-resolve-page|{ resolved, data: content }| node=pageNode>
+      $ const section = resolved.getAsObject("primarySection");
+      $ const aliases = hierarchyAliases(section);
+      <marko-web-load-more
+        header=`More from ${content.name}`
+        component-name="content-load-more-flow"
+        component-input={ aliases, limit: 9 }
+        fragment-name="content-list"
+        query-name="all-company-content"
+        query-params={ companyId: id, limit: 9, includeContentTypes: ["Article", "Blog", "PressRelease", "News", "Product", "Webinar", "Whitepaper"] }
+        page-input={ for: "content", id, type }
+      />
+    </marko-web-resolve-page>
+  </@below-page>
+</marko-web-content-page-layout>
