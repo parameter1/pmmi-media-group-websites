@@ -108,6 +108,16 @@ $leaders-label-color: $gray-600;
 
 .node-list {
   $self: &;
+  &__header {
+    &--leadership-company-videos {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      a {
+        font-size: .8rem;
+      }
+    }
+  }
   &__header,
   &__body {
     &--centered {

@@ -13,11 +13,11 @@ $ const { contentId } = input;
         $ const videos = getAsArray(company, "videos.edges").map(({ node }) => node);
         <if(videos.length)>
           <marko-web-node-list class="mt-block" collapsible=false>
-            <@header>
-              Videos from ${company.name}
-              <a target="_blank" href=get(company, "youtube.url") rel="noopener" class="small float-right py-1">
+            <@header modifiers=["leadership-company-videos"]>
+              <span>Videos from ${company.name}</span>
+              <marko-web-link target="_blank" href=get(company, "youtube.url")>
                 View all videos
-              </a>
+              </marko-web-link>
             </@header>
             <@body>
               <default-theme-card-deck-flow cols=3 nodes=videos>
