@@ -16,6 +16,7 @@
       "@name": "string",
       "@aliases": "array"
     },
+    "@class": "string",
     "@nodes": "array",
     "@display-image": {
       "type": "boolean",
