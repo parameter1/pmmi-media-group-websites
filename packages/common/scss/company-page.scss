@@ -20,7 +20,7 @@
   }
   &__label {
     display: block;
-    color: rgba(0, 0, 0, .54);
+    color: $gray-600;
     text-transform: uppercase;
     &--with-hr {
       padding-bottom: .25rem;
