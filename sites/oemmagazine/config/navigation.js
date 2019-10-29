@@ -5,7 +5,7 @@ module.exports = {
       { href: '/technology', label: 'Technology' },
       { href: '/products', label: 'Products' },
       { href: '/oem-issues', label: 'OEM Issues' },
-      { href: '/events', label: 'Events' },
+      { href: '/page/oem-event-calendar', label: 'Events' },
       { href: '/downloads', label: 'Downloads' },
     ],
   },
@@ -37,7 +37,7 @@ module.exports = {
       label: 'Resources',
       items: [
         { href: '/magazine', label: 'Magazine' },
-        { href: '/events', label: 'Events' },
+        { href: '/page/oem-event-calendar', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
         { href: '/leaders', label: 'Tech Trendsetters' },
         { href: '/videos', label: 'Videos' },

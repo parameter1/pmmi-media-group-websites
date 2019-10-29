@@ -5,7 +5,7 @@ module.exports = {
       { href: '/products', label: 'Products' },
       { href: '/factory', label: 'Factory' },
       { href: '/process', label: 'Process' },
-      { href: '/events', label: 'Events' },
+      { href: '/page/aw-event-calendar', label: 'Events' },
       { href: '/downloads', label: 'Downloads' },
     ],
   },
@@ -37,7 +37,7 @@ module.exports = {
       label: 'Resources',
       items: [
         { href: '/magazine', label: 'Magazine' },
-        { href: '/events', label: 'Events' },
+        { href: '/page/aw-event-calendar', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
         { href: '/leaders', label: 'Leadership in Automation' },
         { href: '/videos', label: 'Videos' },

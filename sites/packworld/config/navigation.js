@@ -5,7 +5,7 @@ module.exports = {
       { href: '/machinery', label: 'Machinery' },
       { href: '/design', label: 'Design' },
       { href: '/issues', label: 'Issues' },
-      { href: '/events', label: 'Events' },
+      { href: '/page/pw-event-calendar', label: 'Events' },
       { href: '/downloads', label: 'Downloads' },
     ],
   },
@@ -38,7 +38,7 @@ module.exports = {
       items: [
         { href: '/magazine', label: 'Magazine' },
         { href: '/contract-packaging', label: 'Contract Packaging' },
-        { href: '/events', label: 'Events' },
+        { href: '/page/pw-event-calendar', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
         { href: '/leaders', label: 'Leaders in Packaging' },
         { href: '/videos', label: 'Videos' },
