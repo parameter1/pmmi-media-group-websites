@@ -1,5 +1,6 @@
 @import "../../node_modules/@base-cms/marko-web-theme-default/skins/orion/skin";
 @import "../../node_modules/@base-cms/marko-web-gtm/scss/slot";
+@import "./carousel";
 @import "./contact-us-form"; // @todo this should be remove once contact us is in core
 @import "./company-page";
 @import "./leaders";
