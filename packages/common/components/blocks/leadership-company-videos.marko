@@ -1,0 +1,34 @@
+import { get, getAsArray } from "@base-cms/object-path";
+import queryFragment from "../../graphql/fragments/leadership-company-videos";
+
+$ const { contentId } = input;
+
+<marko-web-query|{ nodes }|
+  name="related-published-content"
+  params={ contentId, limit: 20, queryFragment, includeContentTypes: ["Company"] }
+>
+  <if(nodes.length)>
+    <for|company| of=nodes>
+      <if(company.isLeader)>
+        $ const videos = getAsArray(company, "videos.edges").map(({ node }) => node);
+        <if(videos.length)>
+          <marko-web-node-list class="mt-block" collapsible=false>
+            <@header>
+              Videos from ${company.name}
+              <a target="_blank" href=get(company, "youtube.url") rel="noopener" class="small float-right py-1">
+                View all videos
+              </a>
+            </@header>
+            <@body>
+              <default-theme-card-deck-flow cols=3 nodes=videos>
+                <@slot|{ node, index }|>
+                  <common-youtube-card-node node=node />
+                </@slot>
+              </default-theme-card-deck-flow>
+            </@body>
+          </marko-web-node-list>
+        </if>
+      </if>
+    </for>
+  </if>
+</marko-web-query>
