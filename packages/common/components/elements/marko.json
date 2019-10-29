@@ -5,7 +5,8 @@
       "@content": "object"
     },
     "common-image-slider": {
-      "template": "./image-slider.marko"
+      "template": "./image-slider.marko",
+      "@iamges" : "array"
     }
   }
 }
