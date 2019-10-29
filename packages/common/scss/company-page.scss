@@ -2,21 +2,12 @@
   display: flex;
   align-items: center;
   &__logo {
-    & .page-image {
-      margin-bottom: 0;
-    }
     img {
       margin-right: 2rem;
       border: 3px solid #fff;
       border-radius: 100px;
       box-shadow: inset 0 0 5px rgba(0, 0, 0, .5);
     }
-  }
-  &__title {
-    flex-grow: 6;
-  }
-  &__social {
-    flex-grow: 1;
   }
   &__label {
     display: block;
