@@ -72,14 +72,14 @@ $ const { id, type, pageNode } = data;
               <else>Company Details</else>
             </@header>
             <@body>
-              <label class="ldp__label ldp__label--with-hr">At-a-glance</label>
+              <label class="ldp__label ldp__label--bottom-border">At-a-glance</label>
               <common-company-details company=content />
 
-              <label class="ldp__label ldp__label--with-hr">Contact</label>
+              <label class="ldp__label ldp__label--bottom-border">Contact</label>
               $ const { socialLinks, ...contentSansSocial } = content;
               <default-theme-content-contact-details obj=contentSansSocial />
 
-              <label class="ldp__label ldp__label--with-hr">More info on ${content.name}</label>
+              <label class="ldp__label ldp__label--bottom-border">More info on ${content.name}</label>
               <marko-web-content-body obj=content />
             </@body>
           </marko-web-node-list>
