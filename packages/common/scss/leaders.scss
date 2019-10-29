@@ -1,3 +1,11 @@
+$leaders-header-background-color: #005bab !default;
+$leaders-active-color: #d557af !default;
+$leaders-icon-video: #edca33 !default;
+$leaders-icon-color: #005bab !default;
+$leaders-link-color: #00337b !default;
+$leaders-title-color: #000;
+$leaders-label-color: $gray-600;
+
 .leaders {
   &__logo {
     max-width: 100%;
@@ -11,6 +19,13 @@
     font-size: 1.5rem;
     font-weight: 600;
   }
+  &__title {
+    margin: .5rem;
+    font-size: .9rem;
+    font-weight: 600;
+    color: $leaders-title-color;
+    text-transform: uppercase;
+  }
   &__item {
     text-align: left;
     .btn-link:hover,
@@ -18,13 +33,67 @@
     .btn-link:focus {
       text-decoration: none;
     }
+    button {
+      display: flex;
+      text-align: left;
+    }
+
+    & .marko-web-icon {
+      margin-right: .25rem;
+      margin-left: .25rem;
+      & > svg {
+        fill: $leaders-icon-color;
+      }
+    }
+  }
+  &__item-list {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+    &--expanded {
+      margin-left: 1.9rem;
+    }
   }
   &__item-list-item {
     position: relative;
+    display: flex;
+    padding: map-get($spacers, 1);
+    cursor: pointer;
+    transition: background-color .25s ease;
+
+    & .marko-web-icon {
+      margin-right: .25rem;
+      margin-left: .25rem;
+      & > svg {
+        fill: $leaders-icon-color;
+      }
+    }
+
+    & .marko-web-icon--videocam {
+      & svg {
+        fill: $leaders-icon-video;
+      }
+    }
+
+    & > a {
+      transition: color .25s ease;
+    }
+    &:hover {
+      background: $leaders-active-color;
+      & .marko-web-icon {
+        & > svg {
+          fill: #fff;
+        }
+      }
+      > a {
+        color: #fff !important;
+        text-decoration: none;
+      }
+    }
   }
   &__category {
     display: block;
-    color: $gray-600;
+    color: $leaders-label-color;
     text-align: left;
     text-transform: uppercase;
     &--bottom-border {
@@ -67,13 +136,14 @@
 .ldc-modal {
   @include theme-card();
   position: absolute;
-  bottom: 0;
+  bottom: 7px;
   z-index: 10;
   max-height: 600px;
   margin: 1.5rem;
   overflow: scroll;
   font-size: 80%;
   font-weight: 400;
+  cursor: default;
   background-color: #eff0f1;
   box-shadow: 0 3px 9px rgba(0, 0, 0, .35);
   & .row {

@@ -1,10 +1,10 @@
 <template>
   <li class="leaders__item">
-    <button class="btn btn-link btn-block text-left" label="Click to view items" @click="toggle">
+    <button class="btn btn-link btn-block" label="Click to view items" @click="toggle">
       <component :is="icon" />
       {{ name }}
     </button>
-    <ul v-if="expanded" class="leaders__item-list">
+    <ul v-if="expanded" class="leaders__item-list leaders__item-list--expanded">
       <li v-if="loading" class="leaders__item-list-item">
         Loading...
       </li>

@@ -26,7 +26,6 @@ $ const {
       $ const hasChildren = nodes.some(node => getAsArray(node, "children.edges").length);
       <if(hasChildren)>
         <for|parent| of=nodes>
-          <label class="leaders__category leaders__category--bottom-border">${parent.name}</label>
           $ const children = getAsArray(parent, "children.edges").map(({ node: item }) => item);
           $ const label = get(parent, "name");
           <leaders-column-layout columns=columns nodes=children label=label />
