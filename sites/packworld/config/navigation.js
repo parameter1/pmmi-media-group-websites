@@ -37,11 +37,12 @@ module.exports = {
       label: 'Resources',
       items: [
         { href: '/magazine', label: 'Magazine' },
-        { href: '/contract-packaging', label: 'Contract Packaging' },
+        { href: '/page/contract-packaging-magazine', label: 'Contract Packaging' },
         { href: '/page/pw-event-calendar', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
         { href: '/leaders', label: 'Leaders in Packaging' },
         { href: '/videos', label: 'Videos' },
+        { href: '/page/packaging-associations', label: 'Packaging Associations' },
         { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
         { href: '/webinars', label: 'Webinars' },
       ],
