@@ -1,8 +1,9 @@
 <template>
   <li class="leaders__item-list-item" @mouseenter="show" @mouseleave="hide">
+    <FilterNone :modifiers="iconModifiers" />
     <a :href="get(company, 'siteContext.path')" :title="get(company, 'name')">
       {{ get(company, 'name') }}
-      <IconYoutube v-if="showIcon" />
+      <VideoCam v-if="showIcon" :modifiers="iconModifiers" />
     </a>
     <DataCard
       v-if="expanded"
@@ -25,12 +26,14 @@
 
 <script>
 import { getAsArray, get } from '@base-cms/object-path';
-import IconYoutube from '@base-cms/marko-web-icons/browser/youtube.vue';
+import VideoCam from '@base-cms/marko-web-icons/browser/videocam.vue';
+import FilterNone from '@base-cms/marko-web-icons/browser/filter-none.vue';
 import DataCard from './data-card.vue';
 
 export default {
   components: {
-    IconYoutube,
+    FilterNone,
+    VideoCam,
     DataCard,
   },
   props: {
@@ -60,6 +63,11 @@ export default {
     },
     showIcon() {
       return get(this.company, 'youtube.username') || get(this.company, 'youtube.channelId');
+    },
+    iconModifiers() {
+      const modifiers = [];
+      if (this.expanded) modifiers.push('light');
+      return modifiers;
     },
   },
   methods: {

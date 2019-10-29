@@ -1,7 +1,7 @@
 <template>
   <div class="text-left">
-    <p class="mb-1 ml-3 font-weight-bold">
-      {{ name }}:
+    <p class="leaders__title">
+      {{ name }}
     </p>
     <ul class="leaders__item-list">
       <li v-if="loading" class="leaders__item-list-item">
