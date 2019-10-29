@@ -4,35 +4,34 @@ $ const content = getAsObject(input, "node");
 $ const primaryImage = getAsObject(content, "primaryImage");
 $ const withTitle = input.withTitle != null ? input.withTitle : true;
 
-$ const { linkAttrs } = input;
-
 <marko-web-node
-  type="contact-content"
   image-position="left"
   card=false
   full-height=false
   attrs=input.attrs
+  modifiers=["image-headshot"]
 >
   <@image
     src=primaryImage.src
     alt=primaryImage.alt
-    image-modifiers=["headshot"]
     options={ fit: "facearea", facepad: 2 }
     width=100
     ar="1:1"
-    link={ attrs: linkAttrs }
+    link=false
   />
   <@body>
     <@title tag="h5" modifiers=input.titleModifiers>
-      <marko-web-obj-text type="content" obj=content field="name" tag=null link={ attrs: linkAttrs } />
+      <marko-web-content-name tag=null obj=content link=false />
     </@title>
     <@text modifiers=["teaser"] show=(withTitle && content.title)>
-      <marko-web-obj-text type="content" obj=content field="title" tag=null />
+      <marko-web-content-title tag=null obj=content />
     </@text>
     <@footer>
       <@right>
         <if(input.withEmail && content.publicEmail)>
-          <a href=`mailto:${content.publicEmail}` class="btn btn-sm btn-primary">Email</a>
+          <marko-web-content-public-email obj=content link={ href: `mailto:${content.publicEmail}`, class:"btn btn-sm btn-primary" }>
+            Email
+          </marko-web-content-public-email>
         </if>
       </@right>
     </@footer>

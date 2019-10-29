@@ -45,7 +45,7 @@
 
 .node {
   $self: &;
-  &--contact-content-type.node--image-left {
+  &--image-headshot {
     #{ $self }__image-inner-wrapper {
       box-shadow: none;
     }
