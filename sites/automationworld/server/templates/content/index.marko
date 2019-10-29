@@ -67,7 +67,23 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
               </if>
               <else-if(displayCarousel)>
                 $ const images = getAsArray(content, 'images.edges').map(({ node }) => node);
-                <common-image-slider images=images />
+                <if(images.length > 1)>
+                  <common-image-slider images=images />
+                </if>
+                <else>
+                  $ const isLogo = get(content, "primaryImage.isLogo");
+                  <if(isLogo)>
+                    <marko-web-page-image
+                      modifiers=["primary-image-inline"]
+                      obj=content.primaryImage
+                      fluid=false
+                      width=250
+                    />
+                  </if>
+                  <else>
+                    <marko-web-page-image width=500 obj=content.primaryImage />
+                  </else>
+                </else>
               </else-if>
               <else-if(type === "contact")>
                 <marko-web-page-image width=300 fluid=false obj=content.primaryImage />
