@@ -10,6 +10,15 @@
         "default-value": 2
       }
     },
+    "leaders-column-layout": {
+      "template": "./column-layout.marko",
+      "@nodes": "array",
+      "@label": "string",
+      "@columns": {
+        "type": "number",
+        "default-value": 2
+      }
+    },
     "leaders-block-contextual": {
       "template": "./contextual.marko",
       "@section-alias": "string",
