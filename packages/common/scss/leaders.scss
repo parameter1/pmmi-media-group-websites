@@ -2,6 +2,15 @@
   &__logo {
     max-width: 100%;
   }
+  &__callout {
+    align-items: center;
+    font-size: 1.25rem;
+    text-align: left;
+  }
+  &__suppliers-callout {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
   &__item {
     text-align: left;
     .btn-link:hover,
@@ -25,6 +34,9 @@
   }
   &--leaders {
     #{ $self }__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
       background-color: $leaders-header-background-color;
     }
     .leaders {
