@@ -1,0 +1,61 @@
+import { get, getAsArray } from "@base-cms/object-path";
+import queryFragment from "../../leaders/graphql/fragments/leaders-list";
+
+$ const { nodes } = input;
+$ const hasChildren = nodes.some(node => getAsArray(node, "children.edges").length);
+
+<if(hasChildren)>
+  <for|parent| of=nodes>
+    $ const children = getAsArray(parent, "children.edges").map(({ node: item }) => item);
+    $ const label = get(parent, "name");
+    <leaders-column-layout|{ items, colClass }| columns=3 nodes=children label=label>
+      <for|item| of=items>
+        <li>
+          <h4>${item.name}</h4>
+          <ul>
+            <marko-web-query|{ nodes: content }|
+              name="website-scheduled-content"
+              params={ sectionId: item.id, limit: 0, queryFragment }
+            >
+              <for|company| of=content>
+                $ const hasYoutube = get(content, 'youtube.username', get(content, 'youtube.channelId', false));
+                <li class="leaders__list-item">
+                  <marko-web-content-name obj=company link=true>
+                    ${company.name}
+                    <if(hasYoutube)>
+                      [ YT Icon ]
+                    </if>
+                  </marko-web-content-name>
+                </li>
+              </for>
+            </marko-web-query>
+          </ul>
+        </li>
+      </for>
+    </leaders-column-layout>
+  </for>
+</if>
+<else>
+  <leaders-column-layout|{ items }| columns=3 nodes=nodes>
+    <for|item| of=items>
+      <li>
+        <h4>${item.name}</h4>
+        <ul>
+          <marko-web-query|{ nodes: content }|
+            name="website-scheduled-content"
+            params={ sectionId: item.id, limit: 1, queryFragment }
+          >
+            <for|company| of=content>
+              <li class="leaders__list-item">
+                <marko-web-content-name obj=company link=true>
+                  ${company.name}
+                  <!-- video icon -->
+                </marko-web-content-name>
+              </li>
+            </for>
+          </marko-web-query>
+        </ul>
+      </li>
+    </for>
+  </leaders-column-layout>
+</else>

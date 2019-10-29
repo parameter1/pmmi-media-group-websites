@@ -17,6 +17,10 @@
         "type": "number",
         "required": true
       }
+    },
+    "common-leaders-list-all": {
+      "template": "./leaders-list-all.marko",
+      "@nodes": "array"
     }
   }
 }
