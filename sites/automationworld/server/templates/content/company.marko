@@ -16,7 +16,7 @@ $ const { id, type, pageNode } = data;
       <marko-web-page-wrapper>
         <@section>
           <div class="row">
-            <div class="col">
+            <div class="col-md-9 col-sm-12 col-lg-10">
               <div class="ldp">
                 <div class="ldp__logo">
                   <common-company-logo content=content />
@@ -25,20 +25,22 @@ $ const { id, type, pageNode } = data;
                   <marko-web-content-name tag="h1" class="page-wrapper__title" obj=content />
                   <marko-web-content-city-state-zip tag="p" class="text-small text-muted" obj=content />
                 </div>
-                <div class="ldp__social">
-                  <marko-web-content-website obj=content link={ class: "btn btn-primary btn-block" }>
-                    Visit Site
-                  </marko-web-content-website>
-                  <div class="mt-2 d-flex justify-content-around">
-                    <for|item| of=content.socialLinks>
-                      <default-theme-social-icon-link
-                        label=item.label
-                        provider=item.provider
-                        href=item.url
-                        modifiers=["dark", "lg"]
-                      />
-                    </for>
-                  </div>
+              </div>
+            </div>
+            <div class="col-md-3 col-lg-2 col-sm-12 justify-content-center d-flex flex-column px-3 py-3">
+              <div class="ldp__social">
+                <marko-web-content-website obj=content link={ class: "btn btn-sm btn-primary btn-block" }>
+                  Visit Site
+                </marko-web-content-website>
+                <div class="mt-2 d-flex justify-content-around">
+                  <for|item| of=content.socialLinks>
+                    <default-theme-social-icon-link
+                      label=item.label
+                      provider=item.provider
+                      href=item.url
+                      modifiers=["dark", "lg"]
+                    />
+                  </for>
                 </div>
               </div>
             </div>
