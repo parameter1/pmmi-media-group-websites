@@ -11,7 +11,9 @@
       }
     },
     "leaders-column-layout": {
+      "template": "./column-layout.marko",
       "@nodes": "array",
+      "@label": "string",
       "@columns": {
         "type": "number",
         "default-value": 2

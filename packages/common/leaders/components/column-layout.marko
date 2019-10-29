@@ -4,18 +4,27 @@ $ const columns = input.columns || 2;
 $ const nodes = getAsArray(input, 'nodes');
 
 $ const colClass = columns === 2 ? "col-md-6 mb-block list-unstyled" : "col list-unstyled";
-$ const mid = Math.floor(nodes.length / 2)
+$ const mid = Math.ceil(nodes.length / 2)
 $ const groups = columns == 2 ? [
   [...nodes.slice(0, mid)],
   [...nodes.slice(mid, nodes.length)],
 ] : [nodes];
 
 <if(nodes.length)>
-  <for|items| of=groups>
-    <ul class=colClass>
-      <for|{ id, name }| of=items>
-        <marko-web-browser-component name="CommonLeadersItem" props={ id, name } />
-      </for>
-    </ul>
-  </for>
+  <if(input.label)>
+  <div class="row">
+    <div class="col">
+      <label class="leaders__category leaders__category--bottom-border">${input.label}</label>
+    </div>
+  </div>
+  </if>
+  <div class="row">
+    <for|items| of=groups>
+      <ul class=colClass>
+        <for|{ id, name }| of=items>
+          <marko-web-browser-component name="CommonLeadersItem" props={ id, name } />
+        </for>
+      </ul>
+    </for>
+  </div>
 </if>
