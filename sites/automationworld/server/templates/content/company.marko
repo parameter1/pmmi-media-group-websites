@@ -109,7 +109,7 @@ $ const { id, type, pageNode } = data;
         </div>
         <div class="col-lg-4 mb-3 mb-lg-0">
           $ const contacts = getAsArray(content, "contacts.edges").map(({ node }) => node);
-          <marko-web-node-list collapsible=false class="mt-block">
+          <marko-web-node-list class="mt-block">
             <@header>
               Key Contact<if(contacts.length > 1)>s</if>
             </@header>
