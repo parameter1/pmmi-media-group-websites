@@ -38,7 +38,7 @@ module.exports = {
     {
       label: 'Resources',
       items: [
-        { href: '/magazine', label: 'Magazine' },
+        // { href: '/magazine', label: 'Magazine' },
         { href: '/page/hcp-event-calendar', label: 'Events' },
         // { href: '/downloads', label: 'Downloads' },
         { href: '/leaders', label: 'Premier Suppliers' },

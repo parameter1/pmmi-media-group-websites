@@ -36,7 +36,7 @@ module.exports = {
     {
       label: 'Resources',
       items: [
-        { href: '/magazine', label: 'Magazine' },
+        // { href: '/magazine', label: 'Magazine' },
         { href: '/page/aw-event-calendar', label: 'Events' },
         // { href: '/downloads', label: 'Downloads' },
         { href: '/leaders', label: 'Leadership in Automation' },
