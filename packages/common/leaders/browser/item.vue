@@ -48,7 +48,7 @@ export default {
     },
     limit: {
       type: Number,
-      default: 20,
+      default: 0,
     },
   },
   data() {
