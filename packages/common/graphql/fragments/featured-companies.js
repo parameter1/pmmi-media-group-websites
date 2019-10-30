@@ -9,7 +9,6 @@ fragment PMMIFeaturedCompaniesFragment on Content {
   shortName
   canonicalPath
   ... on ContentCompany {
-    isLeader: hasWebsiteSchedule(input: { sectionAlias: "leaders" })
     website
   }
 }
