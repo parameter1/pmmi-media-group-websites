@@ -42,6 +42,19 @@ fragment ContentPageFragment on Content {
     credit
     isLogo
   }
+  images(input:{ pagination: { limit: 100 }, sort: { order: values } }) {
+    edges {
+      node {
+        id
+        src
+        alt
+        displayName
+        caption
+        credit
+        isLogo
+      }
+    }
+  }
   gating {
     surveyType
     surveyId
@@ -138,20 +151,6 @@ fragment ContentPageFragment on Content {
           siteContext {
             path
           }
-        }
-      }
-    }
-  }
-  ... on ContentMediaGallery {
-    images(input:{ pagination: { limit: 100 }, sort: { order: values } }) {
-      edges {
-        node {
-          id
-          src
-          alt
-          displayName
-          caption
-          credit
         }
       }
     }
