@@ -43,6 +43,7 @@ fragment WebsiteContentCompanyFragment on Content {
     # long text data
     productSummary
     servicesProvided
+    serviceInformation
     trainingInformation
     warrantyInformation
 
