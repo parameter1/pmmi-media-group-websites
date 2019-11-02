@@ -1,74 +1,30 @@
-const digital = (from) => {
-  const pattern = /\/sites\/default\/files\/digital_edition\/(.*)/;
-  const matches = pattern.exec(from);
-  if (matches && matches[1]) {
-    return { to: `https://digitaleditions.packworld.com/${matches[1]}` };
-  }
-  return null;
-};
+const redirect = (from, pattern) => pattern.exec(from);
 
-const s3 = (from) => {
-  const pattern = /\/sites\/default\/files\/(.*)/;
-  const matches = pattern.exec(from);
-  if (matches && matches[1]) {
-    return { to: `https://s3.us-east-2.amazonaws.com/pmg-production/Migrated+-+DO+NOT+USE/PW/${matches[1]}` };
+module.exports = ({ from }) => {
+  const digital = redirect(from, /\/sites\/default\/files\/digital_edition\/(.*)/);
+  if (digital && digital[1]) {
+    return { to: `https://digitaleditions.packworld.com/${digital[1]}` };
   }
-  return null;
-};
 
-const showcase = (from) => {
-  const pattern = /^\/showcasesubmit/;
-  const matches = pattern.exec(from);
-  if (matches && matches[1]) {
+  const s3 = redirect(from, /\/sites\/default\/files\/(.*)/);
+  if (s3 && s3[1]) {
+    return { to: `https://s3.us-east-2.amazonaws.com/pmg-production/Migrated+-+DO+NOT+USE/AW/${s3[1]}` };
+  }
+
+  const showcase = redirect(from, /^\/showcasesubmit/);
+  if (showcase && showcase[1]) {
     return { to: 'https://showcasesubmit.packworld.com' };
   }
-  return null;
-};
 
-const mundoHome = (from) => {
-  const pattern = /^\/mundopmmi$/;
-  const matches = pattern.exec(from);
-  if (matches && matches[1]) {
+  const mundoHome = redirect(from, /^\/mundopmmi$/);
+  if (mundoHome && mundoHome[1]) {
     return { to: 'https://www.mundopmmi.com' };
   }
-  return null;
-};
 
-const mundo = (from) => {
-  const pattern = /^\/mundopmmi\/.*/;
-  const matches = pattern.exec(from);
-  if (matches && matches[1]) {
+  const mundo = redirect(from, /^\/mundopmmi\/.*/);
+  if (mundo && mundo[1]) {
     return { to: `https://www.mundopmmi.com${from}` };
   }
-  return null;
-};
-
-module.exports = ({ from }) => {
-  const redirects = Promise.all([
-    digital(from),
-    s3(from),
-    showcase(from),
-    mundoHome(from),
-    mundo(from),
-  ]);
-  return redirects[1];
-};
-
-module.exports = ({ from }) => {
-  const digitalRedirect = digital(from);
-  if (digitalRedirect) return digitalRedirect;
-
-  const s3Redirect = s3(from);
-  if (s3Redirect) return s3Redirect;
-
-  const showcaseRedirect = showcase(from);
-  if (showcaseRedirect) return showcaseRedirect;
-
-  const mundoHomeRedirect = mundoHome(from);
-  if (mundoHomeRedirect) return mundoHomeRedirect;
-
-  const mundoRedirect = mundo(from);
-  if (mundoRedirect) return mundoRedirect;
 
   return null;
 };
