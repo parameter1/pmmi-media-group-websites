@@ -1,4 +1,4 @@
-const digital = async (from) => {
+const digital = (from) => {
   const pattern = /\/sites\/default\/files\/digital_edition\/(.*)/;
   const matches = pattern.exec(from);
   if (matches && matches[1]) {
@@ -7,7 +7,7 @@ const digital = async (from) => {
   return null;
 };
 
-const s3 = async (from) => {
+const s3 = (from) => {
   const pattern = /\/sites\/default\/files\/(.*)/;
   const matches = pattern.exec(from);
   if (matches && matches[1]) {
@@ -16,4 +16,12 @@ const s3 = async (from) => {
   return null;
 };
 
-module.exports = async ({ from }) => Promise.all([digital(from), s3(from)]).then(l => l[0]);
+module.exports = ({ from }) => {
+  const digitalRedirect = digital(from);
+  if (digitalRedirect) return digitalRedirect;
+
+  const s3Redirect = s3(from);
+  if (s3Redirect) return s3Redirect;
+
+  return null;
+};

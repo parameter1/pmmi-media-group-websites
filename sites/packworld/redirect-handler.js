@@ -1,4 +1,4 @@
-const digital = async (from) => {
+const digital = (from) => {
   const pattern = /\/sites\/default\/files\/digital_edition\/(.*)/;
   const matches = pattern.exec(from);
   if (matches && matches[1]) {
@@ -7,7 +7,7 @@ const digital = async (from) => {
   return null;
 };
 
-const s3 = async (from) => {
+const s3 = (from) => {
   const pattern = /\/sites\/default\/files\/(.*)/;
   const matches = pattern.exec(from);
   if (matches && matches[1]) {
@@ -16,7 +16,7 @@ const s3 = async (from) => {
   return null;
 };
 
-const showcase = async (from) => {
+const showcase = (from) => {
   const pattern = /^\/showcasesubmit/;
   const matches = pattern.exec(from);
   if (matches && matches[1]) {
@@ -25,7 +25,7 @@ const showcase = async (from) => {
   return null;
 };
 
-const mundoHome = async (from) => {
+const mundoHome = (from) => {
   const pattern = /^\/mundopmmi$/;
   const matches = pattern.exec(from);
   if (matches && matches[1]) {
@@ -34,7 +34,7 @@ const mundoHome = async (from) => {
   return null;
 };
 
-const mundo = async (from) => {
+const mundo = (from) => {
   const pattern = /^\/mundopmmi\/.*/;
   const matches = pattern.exec(from);
   if (matches && matches[1]) {
@@ -43,7 +43,7 @@ const mundo = async (from) => {
   return null;
 };
 
-module.exports = async ({ from }) => {
+module.exports = ({ from }) => {
   const redirects = Promise.all([
     digital(from),
     s3(from),
@@ -52,4 +52,23 @@ module.exports = async ({ from }) => {
     mundo(from),
   ]);
   return redirects[1];
+};
+
+module.exports = ({ from }) => {
+  const digitalRedirect = digital(from);
+  if (digitalRedirect) return digitalRedirect;
+
+  const s3Redirect = s3(from);
+  if (s3Redirect) return s3Redirect;
+
+  const showcaseRedirect = showcase(from);
+  if (showcaseRedirect) return showcaseRedirect;
+
+  const mundoHomeRedirect = mundoHome(from);
+  if (mundoHomeRedirect) return mundoHomeRedirect;
+
+  const mundoRedirect = mundo(from);
+  if (mundoRedirect) return mundoRedirect;
+
+  return null;
 };
