@@ -7,6 +7,7 @@ const coreConfig = require('./config/core');
 const document = require('./server/components/document');
 const components = require('./server/components');
 const fragments = require('./server/fragments');
+const redirectHandler = require('./redirect-handler');
 
 const { log } = console;
 
@@ -21,4 +22,5 @@ module.exports = startServer({
   version,
   onStart: app => app.set('trust proxy', 'loopback, linklocal, uniquelocal'),
   onAsyncBlockError: e => newrelic.noticeError(e),
+  redirectHandler,
 }).then(() => log('Website started!')).catch(e => setImmediate(() => { throw e; }));
