@@ -4,6 +4,15 @@ import queryFragment from "../../graphql/fragments/leadership-company";
 $ const { nodes } = input;
 $ const hasChildren = nodes.some(node => getAsArray(node, "children.edges").length);
 
+<div class="row">
+  <div class="col">
+    <p>
+      <marko-web-icon name="videocam" class="leaders-list__icon leaders-list__icon--video ml-1" /> denotes the availability of videos.
+    </p>
+    <hr class="mb-block">
+  </div>
+</div>
+
 <if(hasChildren)>
   <for|parent| of=nodes>
     $ const children = getAsArray(parent, "children.edges").map(({ node: item }) => item);
