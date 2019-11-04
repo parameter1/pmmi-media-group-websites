@@ -1,0 +1,62 @@
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+import GAM from "../../../config/gam";
+
+$ const { site } = out.global;
+$ const { id, alias, name, pageNode } = data;
+
+<marko-web-website-section-page-layout id=id alias=alias name=name>
+  <@head>
+    <marko-web-gtm-website-section-context|{ context }| alias=alias>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-website-section-context>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      $ const adSlots = {
+          "gpt-ad-leaderboard":   GAM.getAdUnit({ name: "leaderboard", aliases }),
+        }
+       <marko-web-gam-slots slots=adSlots />
+    </marko-web-resolve-page>
+  </@head>
+  <@above-container>
+    <marko-web-gam-display-ad id="gpt-ad-leaderboard" modifiers=["above-container"] />
+    <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-top-below-head" modifiers=["above-container"] />
+  </@above-container>
+  <@page>
+    <marko-web-page-wrapper>
+      <@section>
+        <div class="row">
+          <div class="col col-md-4">
+            <marko-web-node-list modifiers=["leaders"] collapsible=false>
+              <@header modifiers=["centered"]>
+                <img src="https://base.imgix.net/files/base/pmmi/all/leaders/oem.png" alt="OEM Tech Trendsetters" class="leaders__logo" />
+              </@header>
+            </marko-web-node-list>
+          </div>
+          <div class="col col-md-8">
+            <div class="page-wrapper__title">
+              Tech Trendsetters
+            </div>
+            <p>Welcome to <em>OEM Magazine's</em> Tech Trendsetters program.</p>
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <div class="row">
+          <default-theme-page-contents|{ blockName }| class="col">
+            <!--  -->
+          </default-theme-page-contents>
+        </div>
+      </@section>
+      <@section>
+        <div class="row">
+          <default-theme-page-contents|{ blockName }| class="col">
+            <marko-web-resolve-page|{ resolved }| node=pageNode>
+              $ const nodes = resolved.getEdgeNodesFor("children")
+              <common-leaders-list-all nodes=nodes />
+            </marko-web-resolve-page>
+          </default-theme-page-contents>
+        </div>
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-website-section-page-layout>
