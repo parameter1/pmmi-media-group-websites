@@ -17,6 +17,10 @@
       "@columns": {
         "type": "number",
         "default-value": 2
+      },
+      "@tag": {
+        "type": "string",
+        "default-value": "ul"
       }
     },
     "leaders-block-contextual": {

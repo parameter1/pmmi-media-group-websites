@@ -2,6 +2,7 @@ import { getAsArray } from "@base-cms/object-path";
 
 $ const columns = input.columns || 2;
 $ const nodes = getAsArray(input, "nodes");
+$ const tag = input.tag || 'ul';
 
 $ const colClass = (columns = 2) => {
   if (columns === 2) return "col-md-6 mb-block list-unstyled";
@@ -14,7 +15,7 @@ $ const groups = chunk(nodes, Math.ceil(nodes.length / columns));
 
 <if(nodes.length)>
   <if(input.label)>
-  <div class="row">
+  <div class="row mb-block">
     <div class="col">
       <label class="leaders__category leaders__category--bottom-border">${input.label}</label>
     </div>
@@ -22,7 +23,7 @@ $ const groups = chunk(nodes, Math.ceil(nodes.length / columns));
   </if>
   <div class="row">
     <for|items| of=groups>
-      <ul class=colClass(columns)>
+      <${tag} class=colClass(columns)>
         <if(input.renderBody)>
           <${input.renderBody} items=items colClass=colClass />
         </if>
@@ -31,7 +32,7 @@ $ const groups = chunk(nodes, Math.ceil(nodes.length / columns));
             <marko-web-browser-component name="CommonLeadersItem" props={ id, name } />
           </for>
         </else>
-      </ul>
+      </${tag}>
     </for>
   </div>
 </if>
