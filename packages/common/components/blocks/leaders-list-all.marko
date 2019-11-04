@@ -1,5 +1,5 @@
 import { get, getAsArray } from "@base-cms/object-path";
-import queryFragment from "../../leaders/graphql/fragments/leaders-list";
+import queryFragment from "../../graphql/fragments/leadership-company";
 
 $ const { nodes } = input;
 $ const hasChildren = nodes.some(node => getAsArray(node, "children.edges").length);
@@ -8,22 +8,27 @@ $ const hasChildren = nodes.some(node => getAsArray(node, "children.edges").leng
   <for|parent| of=nodes>
     $ const children = getAsArray(parent, "children.edges").map(({ node: item }) => item);
     $ const label = get(parent, "name");
-    <leaders-column-layout|{ items, colClass }| columns=3 nodes=children label=label>
+    <leaders-column-layout|{ items, colClass }| columns=3 nodes=children label=label tag="div">
       <for|item| of=items>
         <li>
           <h4>${item.name}</h4>
           <ul>
             <marko-web-query|{ nodes: content }|
               name="website-scheduled-content"
-              params={ sectionId: item.id, limit: 0, queryFragment }
+              params={
+                sectionId: item.id,
+                limit: 0,
+                sort: { field: 'name', order: 'asc' },
+                queryFragment,
+              }
             >
               <for|company| of=content>
-                $ const hasYoutube = get(content, 'youtube.username', get(content, 'youtube.channelId', false));
-                <li class="leaders__list-item">
-                  <marko-web-content-name obj=company link=true>
+                <li class="leaders-list__item">
+                  <marko-web-content-name obj=company link=true class="leaders-list__link">
                     ${company.name}
-                    <if(hasYoutube)>
-                      [ YT Icon ]
+                    $ const url = get(company, 'youtube.url');
+                    <if(url)>
+                      <marko-web-icon name="videocam" class="leaders-list__icon leaders-list__icon--video ml-1" />
                     </if>
                   </marko-web-content-name>
                 </li>
@@ -36,26 +41,32 @@ $ const hasChildren = nodes.some(node => getAsArray(node, "children.edges").leng
   </for>
 </if>
 <else>
-  <leaders-column-layout|{ items }| columns=3 nodes=nodes>
+  <leaders-column-layout|{ items }| columns=3 nodes=nodes tag="div">
     <for|item| of=items>
-      <li>
-        <h4>${item.name}</h4>
+      <h4>${item.name}</h4>
+      <marko-web-query|{ nodes: content }|
+        name="website-scheduled-content"
+        params={
+          sectionId: item.id,
+          limit: 0,
+          sort: { field: 'name', order: 'asc' },
+          queryFragment,
+        }
+      >
         <ul>
-          <marko-web-query|{ nodes: content }|
-            name="website-scheduled-content"
-            params={ sectionId: item.id, limit: 1, queryFragment }
-          >
-            <for|company| of=content>
-              <li class="leaders__list-item">
-                <marko-web-content-name obj=company link=true>
-                  ${company.name}
-                  <!-- video icon -->
-                </marko-web-content-name>
-              </li>
-            </for>
-          </marko-web-query>
-        </ul>
-      </li>
+          <for|company| of=content>
+            <li class="leaders__list-item">
+              <marko-web-content-name obj=company link=true class="leaders-list__link">
+                ${company.name}
+                $ const url = get(company, 'youtube.url');
+                <if(url)>
+                  <marko-web-icon name="videocam" class="leaders-list__icon leaders-list__icon--video ml-1" />
+                </if>
+              </marko-web-content-name>
+            </li>
+          </for>
+          </ul>
+        </marko-web-query>
     </for>
   </leaders-column-layout>
 </else>
