@@ -5,7 +5,7 @@ module.exports = ({ from }) => {
   if (digital && digital[1]) return { to: `https://digitaleditions.packworld.com/${digital[1]}` };
 
   const s3 = exec(from, /\/sites\/default\/files\/(.*)/);
-  if (s3 && s3[1]) return { to: `https://s3.us-east-2.amazonaws.com/pmg-production/Migrated+-+DO+NOT+USE/AW/${s3[1]}` };
+  if (s3 && s3[1]) return { to: `https://s3.us-east-2.amazonaws.com/pmg-production/Migrated+-+DO+NOT+USE/PW/${s3[1]}` };
 
   const showcase = exec(from, /^\/showcasesubmit/);
   if (showcase && showcase[1]) return { to: 'https://showcasesubmit.packworld.com' };
