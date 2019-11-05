@@ -271,3 +271,17 @@ $leaders-label-color: $gray-600;
     }
   }
 }
+
+.leaders-list {
+  &__link {
+    color: $leaders-link-color;
+  }
+  &__icon {
+    color: $leaders-icon-color;
+    &--video {
+      svg {
+        fill: $leaders-icon-video;
+      }
+    }
+  }
+}

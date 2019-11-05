@@ -1,0 +1,63 @@
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+import GAM from "../../../config/gam";
+
+$ const { site } = out.global;
+$ const { id, alias, name, pageNode } = data;
+
+<marko-web-website-section-page-layout id=id alias=alias name=name>
+  <@head>
+    <marko-web-gtm-website-section-context|{ context }| alias=alias>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-website-section-context>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      $ const adSlots = {
+          "gpt-ad-leaderboard":   GAM.getAdUnit({ name: "leaderboard", aliases }),
+        }
+       <marko-web-gam-slots slots=adSlots />
+    </marko-web-resolve-page>
+  </@head>
+  <@above-container>
+    <marko-web-gam-display-ad id="gpt-ad-leaderboard" modifiers=["above-container"] />
+    <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-top-below-head" modifiers=["above-container"] />
+  </@above-container>
+  <@page>
+    <marko-web-page-wrapper>
+      <@section>
+        <div class="row">
+          <div class="col col-md-4">
+            <marko-web-node-list modifiers=["leaders"] collapsible=false>
+              <@header modifiers=["centered"]>
+                <img src="https://base.imgix.net/files/base/pmmi/all/leaders/pw.png" alt="Leaders in Packaging" class="leaders__logo" />
+              </@header>
+            </marko-web-node-list>
+          </div>
+          <div class="col col-md-8">
+            <div class="page-wrapper__title">
+              Leadership in Packaging Profiles
+            </div>
+            <p>Welcome to <em>Packaging World's</em> Leaders in Packaging Company Profiles.</p>
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <div class="row">
+          <default-theme-page-contents|{ blockName }| class="col">
+            <p>We hope you'll find this directory of packaging machinery and materials vendors to be a helpful resource. For each participating supplier, you'll find a comprehensive company and product profile page to help you make more informed decisions.</p>
+            <p>You'll be pleased to know that our annual Leaders in Packaging program also supports packaging education via a tuition scholarship for students pursing degrees that will prepare them for a career in packaging. Scholarships have been awarded to students at <a href="http://www.packworld.com/clemson-announces-future-leaders-packaging-recipients">Clemson University</a>, <a href="http://www.packworld.com/trends-and-issues/trainingeducation/scholarship-supports-next-gen-packaging-professionals">Missouri University of Science and Technology</a>, <a href="http://www.packworld.com/trends-and-issues/trainingeducation/2014-packaging-scholarship-announced">Virginia Tech</a>, <a href="http://www.packworld.com/trends-and-issues/trainingeducation/packaging-scholarship-announced">Michigan State</a>, <a href="https://www.packworld.com/article/trends-and-issues/trainingeducation/cal-poly-named-scholarship-recipient">Cal Poly</a>, <a href="https://www.packworld.com/article/trends-and-issues/pmmi/rutgers-awarded-packaging-scholarship">Rutgers</a> and <a href="https://www.packworld.com/article/trends-and-issues/workforce-issues/rit-awarded-packaging-scholarship">Rochester Institute of Technology</a>. 2019 will be our ninth year of supporting education with the “Future Leaders in Packaging Scholarship.” For more information about this scholarship, please contact Publisher Joe Angel at <a href="/cdn-cgi/l/email-protection#5b313a353c3e371b282e3636322f363e3f323a3c29342e2b75383436">jangel@pmmimediagroup.com</a>.</p>
+          </default-theme-page-contents>
+        </div>
+      </@section>
+      <@section>
+        <div class="row">
+          <default-theme-page-contents|{ blockName }| class="col">
+            <marko-web-resolve-page|{ resolved }| node=pageNode>
+              $ const nodes = resolved.getEdgeNodesFor("children")
+              <common-leaders-list-all nodes=nodes />
+            </marko-web-resolve-page>
+          </default-theme-page-contents>
+        </div>
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-website-section-page-layout>
