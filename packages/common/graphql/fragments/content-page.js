@@ -55,7 +55,7 @@ fragment ContentPageFragment on Content {
       }
     }
   }
-  companies: relatedContent(input:{ includeContentTypes: Company }) {
+  companies: relatedContent(input: { includeContentTypes: [Company] }) {
     edges {
       node {
         id
