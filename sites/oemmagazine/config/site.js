@@ -5,15 +5,15 @@ module.exports = {
   company: 'PMMI Media Group',
   logos: {
     navbar: {
-      src: 'https://img.oemmagazine.com/files/base/pmmi/oem/oem_logo.png?h=45',
+      src: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=45',
       srcset: [
-        'https://img.oemmagazine.com/files/base/pmmi/oem/oem_logo.png?h=90 2x',
+        'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=90 2x',
       ],
     },
     footer: {
-      src: 'https://img.oemmagazine.com/files/base/pmmi/oem/oem_logo.png?h=60',
+      src: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=60',
       srcset: [
-        'https://img.oemmagazine.com/files/base/pmmi/oem/oem_logo.png?h=120 2x',
+        'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=120 2x',
       ],
     },
   },
