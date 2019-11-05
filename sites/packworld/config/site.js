@@ -5,15 +5,15 @@ module.exports = {
   company: 'PMMI Media Group',
   logos: {
     navbar: {
-      src: 'https://base.imgix.net/files/base/pmmi/pw/pw_logo.png?h=45',
+      src: 'https://img.packworld.com/files/base/pmmi/pw/pw_logo.png?h=45',
       srcset: [
-        'https://base.imgix.net/files/base/pmmi/pw/pw_logo.png?h=90 2x',
+        'https://img.packworld.com/files/base/pmmi/pw/pw_logo.png?h=90 2x',
       ],
     },
     footer: {
-      src: 'https://base.imgix.net/files/base/pmmi/pw/pw_logo.png?h=60',
+      src: 'https://img.packworld.com/files/base/pmmi/pw/pw_logo.png?h=60',
       srcset: [
-        'https://base.imgix.net/files/base/pmmi/pw/pw_logo.png?h=120 2x',
+        'https://img.packworld.com/files/base/pmmi/pw/pw_logo.png?h=120 2x',
       ],
     },
   },
