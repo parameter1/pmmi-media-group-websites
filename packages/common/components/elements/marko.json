@@ -7,6 +7,10 @@
     "common-image-slider": {
       "template": "./image-slider.marko",
       "@images" : "array"
+    },
+    "common-gam-content-targeting": {
+      "template": "./gam-content-targeting.marko",
+      "@obj": "object"
     }
   }
 }
