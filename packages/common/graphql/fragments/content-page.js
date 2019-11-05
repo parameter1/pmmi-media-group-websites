@@ -55,6 +55,13 @@ fragment ContentPageFragment on Content {
       }
     }
   }
+  companies: relatedContent(input:{ includeContentTypes: Company }) {
+    edges {
+      node {
+        id
+      }
+    }
+  }
   gating {
     surveyType
     surveyId
