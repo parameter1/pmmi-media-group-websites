@@ -14,24 +14,14 @@ $ const displayPublishedDate = true;
     <marko-web-gtm-content-context|{ context }| id=id>
       <marko-web-gtm-push data=context />
     </marko-web-gtm-content-context>
-    <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
+    <marko-web-resolve-page|{ data: content }| node=pageNode>
       $ const aliases = hierarchyAliases(content.primarySection);
       $ const adSlots = {
         "gpt-ad-leaderboard": GAM.getAdUnit({ name: "leaderboard", aliases }),
         "gpt-ad-skyscraper": GAM.getAdUnit({ name: "skyscraper", aliases, size: [300, 600] }),
       };
       <marko-web-gam-slots slots=adSlots />
-      $ const companies = resolved.getEdgeNodesFor('companies').map(({ id }) => id);
-      $ if (resolved.get('company.id')) companies.unshift(resolved.get('company.id'));
-      $ const keyValues = {
-        cont_id: id,
-        cont_type: type,
-        ...(companies.length && {
-          companies: companies.join('|'),
-          Company: companies.shift(),
-        }),
-      };
-      <marko-web-gam-targeting key-values=keyValues />
+      <common-gam-content-targeting obj=content />
     </marko-web-resolve-page>
   </@head>
   <@above-container>
