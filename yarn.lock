@@ -807,10 +807,10 @@
     graphql "^14.5.4"
     graphql-tag "^2.10.1"
 
-"@base-cms/marko-web@^1.0.0-beta.19":
-  version "1.0.0-beta.19"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web/-/marko-web-1.0.0-beta.19.tgz#ccd9eacf0b1c8b965da4b0460456efa4df28987b"
-  integrity sha512-odOFI7U/CDJA50La07xxOQvxYFpfQYiGIcjokcxexZsxd44dcL/J0oZX/Hd4K5sVAL0sHUARy1iXmCAoiLhEEQ==
+"@base-cms/marko-web@^1.0.0-beta.20":
+  version "1.0.0-beta.20"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web/-/marko-web-1.0.0-beta.20.tgz#2f54a72920cce3e1d3c636bf09cfcccf3d5fad74"
+  integrity sha512-8CtewwMl89YxleKNx0JUD/8k14//zNz8NWKa/QovqU/ziDBNIUX92TGVa8VFy1C9pLSzQ9RoeN8x/Uzq3TL4JA==
   dependencies:
     "@base-cms/embedded-media" "^1.0.0-beta.1"
     "@base-cms/express-apollo" "^1.0.0-beta.7"
@@ -851,10 +851,10 @@
   resolved "https://registry.yarnpkg.com/@base-cms/utils/-/utils-1.0.0-beta.4.tgz#d25eec2484b9529a69de2475fa071f277ebc37be"
   integrity sha512-WtvpT02tDLGFl+79p2zUyIiKenuNEpbpPWcqcIoc5mzdGXvRTxkMAcX2uSXn/soJeW5LSTTQi3xOsLRjtg086g==
 
-"@base-cms/web-cli@^1.0.0-beta.19":
-  version "1.0.0-beta.19"
-  resolved "https://registry.yarnpkg.com/@base-cms/web-cli/-/web-cli-1.0.0-beta.19.tgz#a25d2b561e048c20dffeb21298f7e1dc5306a21f"
-  integrity sha512-abSddI9qdqU0SSop2NVWBtLtE8NhjeWR8O0Fy6kXuNAgiR7yU6QFKTisBUkA9d0uWNqJPZFuxxBjAg37NHx5vg==
+"@base-cms/web-cli@^1.0.0-beta.20":
+  version "1.0.0-beta.20"
+  resolved "https://registry.yarnpkg.com/@base-cms/web-cli/-/web-cli-1.0.0-beta.20.tgz#180d0baf2822f517588659d3a36c9bd0af46cd79"
+  integrity sha512-jjQHElQQhq+ARTvhlRNP5gc6Eaq9ZsoLkiTKzAYPiTMuRRHTOLLMEB4lhIOJI3oOswzT4oAish9jwsaIBKDHqg==
   dependencies:
     "@babel/core" "^7.6.0"
     "@babel/plugin-transform-runtime" "^7.6.0"
@@ -862,7 +862,7 @@
     "@babel/runtime" "^7.6.0"
     "@babel/runtime-corejs2" "^7.6.0"
     "@base-cms/express-apollo" "^1.0.0-beta.7"
-    "@base-cms/marko-web" "^1.0.0-beta.19"
+    "@base-cms/marko-web" "^1.0.0-beta.20"
     autoprefixer "^9.6.1"
     babel-loader "^8.0.6"
     chalk "^2.4.2"
