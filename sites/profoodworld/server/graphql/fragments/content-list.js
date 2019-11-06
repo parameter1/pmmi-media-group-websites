@@ -5,6 +5,7 @@ module.exports = gql`
 fragment WebsiteContentListFragment on Content {
   id
   type
+  labels
   typeTitled: type(input: { format: titleize })
   shortName
   teaser(input: { maxLength: 500, useFallback: false, truncatedSuffix: "" })

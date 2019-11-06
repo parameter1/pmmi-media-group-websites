@@ -1,4 +1,4 @@
-import { getAsObject, get } from "@base-cms/object-path";
+import { getAsArray, getAsObject, get } from "@base-cms/object-path";
 
 $ const content = getAsObject(input, "node");
 $ const primaryImage = getAsObject(content, "primaryImage");
@@ -40,7 +40,13 @@ $ const { linkAttrs } = input;
     </@text>
     <@footer>
       <@left>
-        <attribution content=content />
+        $ const labels = getAsArray(content, 'labels');
+        <if(labels.includes("Supplier Submitted"))>
+          <span class="supplier-disclaimer">Supplier Submitted</span>
+        </if>
+        <else>
+          <attribution content=content />
+        </else>
       </@left>
       <@right|{ blockName }|>
         <dates block-name=blockName content=content />
