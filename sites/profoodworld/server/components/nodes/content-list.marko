@@ -40,13 +40,7 @@ $ const { linkAttrs } = input;
     </@text>
     <@footer>
       <@left>
-        $ const labels = getAsArray(content, 'labels');
-        <if(labels.includes("Supplier Submitted"))>
-          <span class="supplier-submitted">Supplier Submitted</span>
-        </if>
-        <else>
-          <attribution content=content />
-        </else>
+        <attribution content=content />
       </@left>
       <@right|{ blockName }|>
         <dates block-name=blockName content=content />
