@@ -41,6 +41,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
               <default-theme-website-section-breadcrumbs section=content.primarySection />
               <marko-web-content-name tag="h1" class="page-wrapper__title" obj=content />
               <marko-web-content-teaser tag="p" class="page-wrapper__deck" obj=content />
+              <common-supplier-disclaimer obj=content />
               <if(content.type !== "contact")>
                 <default-theme-content-attribution obj=content />
               </if>

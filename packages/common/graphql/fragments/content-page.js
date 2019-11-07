@@ -4,6 +4,7 @@ module.exports = gql`
 fragment ContentPageFragment on Content {
   id
   name
+  labels
   teaser(input: { useFallback: false, maxLength: null })
   body
   published
