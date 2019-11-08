@@ -1,0 +1,7 @@
+{
+  "tags": {
+    "common-leaders-dropdown-portal": {
+      "template": "./dropdown-portal.marko"
+    }
+  }
+}
