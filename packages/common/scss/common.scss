@@ -87,3 +87,17 @@ $theme-site-header-breakpoints: (
   font-size: .85rem;
   font-style: italic;
 }
+
+.content-section-header {
+  display: block;
+  color: $gray-600;
+  text-align: left;
+  text-transform: uppercase;
+  &--border {
+    padding-bottom: .25rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .25);
+  }
+  &:not(:first-child) {
+    margin-top: 1.5rem;
+  }
+}
