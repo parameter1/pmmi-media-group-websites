@@ -4,7 +4,7 @@ module.exports = {
       { href: 'https://pmmi.dragonforms.com/loading.do?pk=HCPMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=HCPnew', label: 'Subscribe', target: '_blank' },
       { href: '/machinery-materials', label: 'Machinery & Materials' },
       { href: '/markets', label: 'Markets' },
-      { href: '/logistics-distribution', label: 'Logistics / Cold Chain' },
+      { href: '/logistics-distribution', label: 'Logistics & Cold Chain' },
       { href: '/issues', label: 'Issues' },
       { href: '/page/hcp-event-calendar', label: 'Events' },
       // { href: '/downloads', label: 'Downloads' },
@@ -31,7 +31,7 @@ module.exports = {
       items: [
         { href: '/machinery-materials', label: 'Machinery & Materials' },
         { href: '/markets', label: 'Markets' },
-        { href: '/logistics-distribution', label: 'Logistics / Cold Chain' },
+        { href: '/logistics-distribution', label: 'Logistics & Cold Chain' },
         { href: '/issues', label: 'Issues' },
       ],
     },
