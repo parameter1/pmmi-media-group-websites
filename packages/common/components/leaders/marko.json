@@ -2,6 +2,9 @@
   "tags": {
     "common-leaders-dropdown-portal": {
       "template": "./dropdown-portal.marko"
+    },
+    "common-leaders-home-page": {
+      "template": "./home-page.marko"
     }
   }
 }
