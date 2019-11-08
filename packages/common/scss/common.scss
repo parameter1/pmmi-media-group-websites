@@ -1,5 +1,27 @@
-// Fonts for Leaders
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700|Source+Serif+Pro:400,600,700&display=swap");
+
+$theme-font-family-sans-serif: "IBM Plex Sans", sans-serif;
+$theme-font-family-serif: "Source Serif Pro", serif;
+$theme-font-family-page-title: $theme-font-family-sans-serif;
+
+$theme-site-navbar-secondary-bg-color: #000;
+$theme-site-navbar-primary-bg-color: #000;
+$theme-card-header-background-color: #000;
+
+$enable-rounded: false;
+
+$theme-site-navbar-logo-height: 30px;
+$theme-site-navbar-logo-height-sm: 25px;
+
+$theme-site-header-breakpoints: (
+  hide-primary: 10000px,
+  hide-secondary: 610px,
+  hide-tertiary: 0,
+  small-logo: 667px,
+  small-text-primary: 10000px,
+  small-text-secondary: 740px
+);
+
 @import "../../node_modules/@base-cms/marko-web-theme-default/skins/orion/skin";
 @import "../../node_modules/@base-cms/marko-web-gtm/scss/slot";
 @import "../../node_modules/@base-cms/marko-web-leaders/scss/leaders";
