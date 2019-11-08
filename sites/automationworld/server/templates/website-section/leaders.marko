@@ -50,13 +50,7 @@ $ const { id, alias, name, pageNode } = data;
         </div>
       </@section>
       <@section>
-        <div class="row">
-          <default-theme-page-contents|{ blockName }| class="col">
-            <marko-web-resolve-page|{ resolved }| node=pageNode>
-              <common-leaders-all />
-            </marko-web-resolve-page>
-          </default-theme-page-contents>
-        </div>
+        <common-leaders-all />
       </@section>
     </marko-web-page-wrapper>
   </@page>
