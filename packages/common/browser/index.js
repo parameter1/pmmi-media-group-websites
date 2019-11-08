@@ -6,8 +6,8 @@ const ContactUsForm = () => import(/* webpackChunkName: "common-contact-us" */ '
 
 export default (Browser) => {
   // @todo this should be removed once contact us is moved to core.
-  Browser.registerComponent('CommonContactUsForm', ContactUsForm);
-  Browser.registerComponent('CommonImageSlider', ImageSlider);
-  Browser.registerComponent('CommonLeadersItem', LeadersItem);
-  Browser.registerComponent('CommonLeadersItemStatic', LeadersItemStatic);
+  Browser.register('CommonContactUsForm', ContactUsForm);
+  Browser.register('CommonImageSlider', ImageSlider);
+  Browser.register('CommonLeadersItem', LeadersItem);
+  Browser.register('CommonLeadersItemStatic', LeadersItemStatic);
 };
