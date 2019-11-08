@@ -795,6 +795,18 @@
   dependencies:
     inflected "^2.0.4"
 
+"@base-cms/leaders-program@^1.0.0-rc.1":
+  version "1.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/@base-cms/leaders-program/-/leaders-program-1.0.0-rc.1.tgz#d78bcaf1c4727b9c9613a424ca116b7460aa605e"
+  integrity sha512-aVxwngTM/SsDlrZqNPji7q8ALpHIiMdCsU/c90EdgaoLjX9RVtOErvW76yxewYOBEcRP6CqNYr+aNDTnESeUcA==
+  dependencies:
+    core-js "^3.3.2"
+    graphql "^14.5.4"
+    graphql-tag "^2.10.1"
+    object-path "^0.11.4"
+    portal-vue "^2.1.6"
+    vue "^2.6.10"
+
 "@base-cms/marko-compiler@^1.0.0-beta.1":
   version "1.0.0-beta.1"
   resolved "https://registry.yarnpkg.com/@base-cms/marko-compiler/-/marko-compiler-1.0.0-beta.1.tgz#675b952410d9722cf99e9eb45185246f6872746f"
@@ -848,6 +860,15 @@
   version "1.0.0-rc.1"
   resolved "https://registry.yarnpkg.com/@base-cms/marko-web-icons/-/marko-web-icons-1.0.0-rc.1.tgz#a34db81d7a812d827cede19f02bc9f61122bb77e"
   integrity sha512-4wGIz7sciS4zuyyUMF2Xxwnr5navd6WDWmvBlIUnQwAL9nwu8fbI0oPopC88wFXexk7GaadhBuDS2hKT5HPukg==
+
+"@base-cms/marko-web-leaders@^1.0.0-rc.1":
+  version "1.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-leaders/-/marko-web-leaders-1.0.0-rc.1.tgz#542cdeda1a472bc9696b0fc5130fb6777d7f524a"
+  integrity sha512-FRkrn5k81kJv/sTQAYCMuqhjxsny9J6XwsgddHED9j3q+gnwiEHj9YYJ6qAtJCpbaPGeyhYnmjqa0zzjOiKotg==
+  dependencies:
+    "@base-cms/leaders-program" "^1.0.0-rc.1"
+    graphql "^14.5.4"
+    graphql-tag "^2.10.1"
 
 "@base-cms/marko-web-native-x@^1.0.0-rc.1":
   version "1.0.0-rc.1"
@@ -3691,6 +3712,11 @@ core-js@^2.6.5, core-js@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.9.tgz#6b4b214620c834152e179323727fc19741b084f2"
   integrity sha512-HOpZf6eXmnl7la+cUdMnLvUxKNqLUzJvgIziQ0DiF3JwSImNphIqdGqzj6hIKyX04MmV0poclQ7+wjWvxQyR2A==
+
+core-js@^3.3.2:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.4.0.tgz#29ea478601789c72f2978e9bb98f43546f89d3aa"
+  integrity sha512-lQxb4HScV71YugF/X28LtePZj9AB7WqOpcB+YztYxusvhrgZiQXPmCYfPC5LHsw/+ScEtDbXU3xbqH3CjBRmYA==
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
@@ -8591,6 +8617,11 @@ plumb@0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/plumb/-/plumb-0.1.0.tgz#4c57790a509692832fdbf10dfaddd7948c5cb574"
   integrity sha1-TFd5ClCWkoMv2/EN+t3XlIxctXQ=
+
+portal-vue@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/portal-vue/-/portal-vue-2.1.6.tgz#a7d4790b14a79af7fd159a60ec88c30cddc6c639"
+  integrity sha512-lvCF85D4e8whd0nN32D8FqKwwkk7nYUI3Ku8UAEx4Z1reomu75dv5evRUTZNaj1EalxxWNXiNl0EHRq36fG8WA==
 
 posix-character-classes@^0.1.0:
   version "0.1.1"
