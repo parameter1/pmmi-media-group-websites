@@ -1,6 +1,8 @@
 const navigation = require('./navigation');
+const leaders = require('./leaders');
 
 module.exports = {
+  leaders,
   navigation,
   company: 'PMMI Media Group',
   logos: {

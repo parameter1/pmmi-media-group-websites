@@ -37,9 +37,9 @@ $theme-site-header-breakpoints: (
   small-text-secondary: 740px
 );
 
-$leaders-header-background-color: $dark-bg-color;
-$leaders-link-color: $dark-bg-color;
-$leaders-icon-color: #045bac;
+$leaders-primary-color: #002f7b;
+$leaders-primary-color-light: #005bac;
+$leaders-accent-color: #d557af;
 
 @import "../../node_modules/@base-cms-websites/package-common/scss/common";
 
