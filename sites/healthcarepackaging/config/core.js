@@ -1,3 +1,1 @@
-module.exports = {
-  siteName: 'Healthcare Packaging',
-};
+module.exports = {};

@@ -1,3 +1,1 @@
-module.exports = {
-  siteName: 'OEM Magazine',
-};
+module.exports = {};
