@@ -75,15 +75,15 @@ fragment ContentPageFragment on Content {
     byline
   }
   ... on ContentEvent {
-    ends
-    starts
+    endDate
+    startDate
   }
   ... on ContentArticle {
     sidebars
   }
   ... on ContentWebinar {
     linkUrl
-    starts
+    startDate
     sponsors {
       edges {
         node {
