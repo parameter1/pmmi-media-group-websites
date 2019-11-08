@@ -3,6 +3,9 @@
     "common-leaders-dropdown-portal": {
       "template": "./dropdown-portal.marko"
     },
+    "common-leaders-all": {
+      "template": "./all.marko"
+    },
     "common-leaders-home-page": {
       "template": "./home-page.marko"
     },
