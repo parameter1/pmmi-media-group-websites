@@ -1,5 +1,4 @@
 const contactUsHandler = require('@base-cms-websites/package-common/contact-us');
-const leadersHandler = require('@base-cms-websites/package-common/leaders');
 const home = require('./home');
 const content = require('./content');
 const dynamicPages = require('./dynamic-page');
@@ -13,9 +12,6 @@ module.exports = (app) => {
   // Handle contact is submissions on /__contact-us
   // @todo This should be removed once contact-us is moved to core.
   contactUsHandler(app);
-
-  // Handle leaders queries on /__leaders-content
-  leadersHandler(app);
 
   // Homepage
   home(app);
