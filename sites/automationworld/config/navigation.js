@@ -6,7 +6,7 @@ module.exports = {
       { href: '/factory', label: 'Factory' },
       { href: '/process', label: 'Process' },
       { href: '/page/aw-event-calendar', label: 'Events' },
-      // { href: '/downloads', label: 'Downloads' },
+      { href: '/downloads', label: 'Downloads' },
     ],
   },
   tertiary: {
@@ -38,7 +38,7 @@ module.exports = {
       items: [
         // { href: '/magazine', label: 'Magazine' },
         { href: '/page/aw-event-calendar', label: 'Events' },
-        // { href: '/downloads', label: 'Downloads' },
+        { href: '/downloads', label: 'Downloads' },
         { href: '/leaders', label: 'Leadership in Automation' },
         { href: '/videos', label: 'Videos' },
         { href: '/podcasts', label: 'Podcasts' },
