@@ -1,7 +1,7 @@
 import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
 import GAM from "../../../config/gam";
 
-$ const { site } = out.global;
+$ const { site, config } = out.global;
 $ const { id, alias, name, pageNode } = data;
 
 <marko-web-website-section-page-layout id=id alias=alias name=name>
@@ -12,7 +12,7 @@ $ const { id, alias, name, pageNode } = data;
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ const aliases = hierarchyAliases(section);
       $ const adSlots = {
-          "gpt-ad-leaderboard":   GAM.getAdUnit({ name: "leaderboard", aliases }),
+          "gpt-ad-leaderboard": GAM.getAdUnit({ name: "leaderboard", aliases }),
         }
        <marko-web-gam-slots slots=adSlots />
     </marko-web-resolve-page>
@@ -24,40 +24,36 @@ $ const { id, alias, name, pageNode } = data;
   <@page>
     <marko-web-page-wrapper>
       <@section>
-        <div class="row">
-          <div class="col col-md-4">
-            <marko-web-node-list modifiers=["leaders"] collapsible=false>
-              <@header modifiers=["centered"]>
-                <img src="https://base.imgix.net/files/base/pmmi/all/leaders/aw.png" alt="Leaders in Automation" class="leaders__logo" />
-              </@header>
-            </marko-web-node-list>
-          </div>
-          <div class="col col-md-8">
-            <div class="page-wrapper__title">
-              Leadership in Automation
+        <div class="leaders-index-page">
+          <div class="leaders-index-page__header-wrapper">
+            <div class="leaders-index-page__logo">
+              <marko-web-img
+                src=site.get("leaders.header.imgSrc")
+                alt=site.get("leaders.title")
+              />
             </div>
-            <p>
-              Welcome to <em>Automation World's</em> Leadership in Automation program.<br>
-              Vote for your 2020 Honorees <a href="https://bit.ly/2Lqg66e" target="_blank" rel="nofollow">here</a>.
-            </p>
+            <div class="leaders-index-page__header">
+              <h1 class="leaders-index-page__title">
+                ${site.get("leaders.title")}
+              </h1>
+              <div class="leaders-index-page__description">
+                <p>Welcome to <em>${config.siteName()}'s</em> ${site.get("leaders.title")} program.</p>
+                <p>Vote for your 2020 Honorees <marko-web-link href="https://bit.ly/2Lqg66e" target="_blank">here</marko-web-link>.</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </@section>
-      <@section>
-        <div class="row">
-          <default-theme-page-contents|{ blockName }| class="col">
+          <div class="leaders-index-page__body">
             <p>Recognize innovation, leadership and excellence among suppliers of automation software, technology and products.</p>
             <p>Read the Automation World feature article to see all the <a href="/13319442">2019 First Team Honorees</a>.</p>
             <p><em>Thanks for your participation, which promotes excellence within the automation community!</em></p>
-          </default-theme-page-contents>
+          </div>
         </div>
       </@section>
       <@section>
         <div class="row">
           <default-theme-page-contents|{ blockName }| class="col">
             <marko-web-resolve-page|{ resolved }| node=pageNode>
-              $ const nodes = resolved.getEdgeNodesFor("children")
-              <!-- <common-leaders-list-all nodes=nodes /> -->
+              <common-leaders-all />
             </marko-web-resolve-page>
           </default-theme-page-contents>
         </div>
