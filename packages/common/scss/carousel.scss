@@ -19,6 +19,7 @@ $theme-carousel-margin-bottom: .75rem;
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: initial;
     padding-bottom: $theme-carousel-caption-padding;
     text-shadow: $theme-carousel-caption-text-shadow;
     background: $theme-carousel-caption-background;
@@ -31,6 +32,7 @@ $theme-carousel-margin-bottom: .75rem;
   }
 
   .carousel-indicators {
+    z-index: 2;
     margin-bottom: 0;
   }
 }
@@ -41,7 +43,7 @@ $theme-carousel-margin-bottom: .75rem;
 .carousel-control-prev {
   top: initial;
   bottom: 8px;
-  z-index: 16;
+  z-index: 2;
   justify-content: space-around;
   opacity: initial;
 }
