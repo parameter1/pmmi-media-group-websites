@@ -1,0 +1,15 @@
+$ const { site } = out.global;
+
+<marko-web-leaders props={
+  sectionAlias: site.get("leaders.alias"),
+  open: null,
+  expanded: true,
+  contextual: true,
+  displayHeader: false,
+  columns: 3,
+  offsetTop: 50,
+  mediaQueries: [
+    { prop: "columns", value: 2, query: "(max-width: 991px)" },
+    { prop: "columns", value: 1, query: "(max-width: 700px)" },
+  ],
+}/>

@@ -1,12 +1,42 @@
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700|Source+Serif+Pro:400,600,700&display=swap");
+
+$theme-font-family-sans-serif: "IBM Plex Sans", sans-serif;
+$theme-font-family-serif: "Source Serif Pro", serif;
+$theme-font-family-page-title: $theme-font-family-sans-serif;
+
+$theme-site-navbar-secondary-bg-color: #000;
+$theme-site-navbar-primary-bg-color: #000;
+$theme-card-header-background-color: #000;
+
+$enable-rounded: false;
+
+$theme-site-navbar-logo-height: 30px;
+$theme-site-navbar-logo-height-sm: 25px;
+
+$theme-site-header-breakpoints: (
+  hide-primary: 10000px,
+  hide-secondary: 610px,
+  hide-tertiary: 0,
+  small-logo: 667px,
+  small-text-primary: 10000px,
+  small-text-secondary: 740px
+);
+
 @import "../../node_modules/@base-cms/marko-web-theme-default/skins/orion/skin";
 @import "../../node_modules/@base-cms/marko-web-gtm/scss/slot";
+@import "../../node_modules/@base-cms/marko-web-leaders/scss/leaders";
 @import "./carousel";
 @import "./contact-us-form"; // @todo this should be remove once contact us is in core
 @import "./company-page";
-@import "./leaders";
+@import "./leaders-index-page";
 
-.page-rail {
-  text-align: center;
+.leaders {
+  @include border-radius($theme-card-border-radius);
+  @include box-shadow($theme-card-box-shadow);
+  background-color: $white;
+  &__body {
+    padding: $marko-web-node-padding;
+  }
 }
 
 .ad-container {
@@ -56,4 +86,18 @@
 .supplier-disclaimer {
   font-size: .85rem;
   font-style: italic;
+}
+
+.content-section-header {
+  display: block;
+  color: $gray-600;
+  text-align: left;
+  text-transform: uppercase;
+  &--border {
+    padding-bottom: .25rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .25);
+  }
+  &:not(:first-child) {
+    margin-top: 1.5rem;
+  }
 }

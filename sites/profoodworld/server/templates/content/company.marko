@@ -50,33 +50,32 @@ $ const { id, type, pageNode } = data;
 
       <div class="row">
         <div class="col-lg-8 mb-3 mb-lg-0">
-
           <marko-web-node-list collapsible=false class="mt-block">
             <@header>
               Company Overview
             </@header>
             <@body>
-              <label class="leaders__category">About ${content.name}</label>
+              <label class="content-section-header">About ${content.name}</label>
               <marko-web-content-teaser tag="p" obj=content />
-              <label class="leaders__category">Product Summary</label>
+              <label class="content-section-header">Product Summary</label>
               <marko-web-obj-text tag="p" obj=content field="productSummary" type="content" html=true />
             </@body>
           </marko-web-node-list>
 
           <marko-web-node-list collapsible=false class="mt-block">
             <@header>
-              <if(content.isLeader)>Leaders in Processing</if>
+              <if(content.isLeader)>${site.get("leaders.title")}</if>
               <else>Company Details</else>
             </@header>
             <@body>
-              <label class="leaders__category leaders__category--bottom-border">At-a-glance</label>
+              <label class="content-section-header content-section-header--border">At-a-glance</label>
               <common-company-details company=content />
 
-              <label class="leaders__category leaders__category--bottom-border">Contact</label>
+              <label class="content-section-header content-section-header--border">Contact</label>
               $ const { socialLinks, ...contentSansSocial } = content;
               <default-theme-content-contact-details obj=contentSansSocial />
 
-              <label class="leaders__category leaders__category--bottom-border">More info on ${content.name}</label>
+              <label class="content-section-header content-section-header--border">More info on ${content.name}</label>
               <marko-web-content-body obj=content />
             </@body>
           </marko-web-node-list>
@@ -110,7 +109,7 @@ $ const { id, type, pageNode } = data;
         </div>
         <div class="col-lg-4 mb-3 mb-lg-0">
           $ const contacts = getAsArray(content, "contacts.edges").map(({ node }) => node);
-          <marko-web-node-list collapsible=false class="mt-block">
+          <marko-web-node-list class="mt-block">
             <@header>
               Key Contact<if(contacts.length > 1)>s</if>
             </@header>

@@ -16,6 +16,7 @@
     "@base-cms/marko-web-gam": "^1.0.0-rc.1",
     "@base-cms/marko-web-gtm": "^1.0.0-rc.1",
     "@base-cms/marko-web-icons": "^1.0.0-rc.1",
+    "@base-cms/marko-web-leaders": "^1.0.0-rc.2",
     "@base-cms/marko-web-theme-default": "^1.0.0-rc.1",
     "@base-cms/object-path": "^1.0.0-rc.1",
     "@base-cms/utils": "^1.0.0-rc.1",
@@ -26,5 +27,8 @@
     "graphql-tag": "^2.10.1",
     "node-fetch": "^2.6.0",
     "vue-recaptcha": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3"
   }
 }

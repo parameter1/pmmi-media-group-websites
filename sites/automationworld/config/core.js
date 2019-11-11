@@ -1,3 +1,1 @@
-module.exports = {
-  siteName: 'Automation World',
-};
+module.exports = {};

@@ -1,3 +1,1 @@
-module.exports = {
-  siteName: 'Packaging World',
-};
+module.exports = {};
