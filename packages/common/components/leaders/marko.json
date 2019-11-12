@@ -12,6 +12,9 @@
     "common-leaders-contextual": {
       "template": "./contextual.marko",
       "@content-id": "number"
+    },
+    "common-leaders-gtm-tracker": {
+      "template": "./gtm-tracker.marko"
     }
   }
 }
