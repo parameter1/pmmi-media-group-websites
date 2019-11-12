@@ -19,11 +19,11 @@ export default {
     },
     event: {
       type: String,
-      default: 'action',
+      default: 'leaders-action',
     },
   },
   mounted() {
-    this.EventBus.$on('action', (event, payload) => {
+    this.EventBus.$on('leaders-action', (event, payload) => {
       const { type, label, category } = getAsObject(event);
       const data = {
         type,
