@@ -32,7 +32,10 @@ export default {
         ...getAsObject(payload),
       };
       const dataLayer = window[this.name];
-      if (dataLayer) dataLayer.push({ ...data, event: this.event });
+      if (dataLayer) {
+        dataLayer.push({ leaders: data, event: this.event });
+        dataLayer.push({ leaders: undefined, event: undefined });
+      }
     });
   },
 };
