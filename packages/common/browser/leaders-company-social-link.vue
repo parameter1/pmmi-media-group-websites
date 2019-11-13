@@ -12,17 +12,17 @@
 </template>
 
 <script>
-import Youtube from '@base-cms/marko-web-icons/browser/youtube.vue';
-import Linkedin from '@base-cms/marko-web-icons/browser/linkedin.vue';
-import Facebook from '@base-cms/marko-web-icons/browser/facebook.vue';
-import Twitter from '@base-cms/marko-web-icons/browser/twitter.vue';
+import IconYoutube from '@base-cms/marko-web-icons/browser/youtube.vue';
+import IconLinkedin from '@base-cms/marko-web-icons/browser/linkedin.vue';
+import IconFacebook from '@base-cms/marko-web-icons/browser/facebook.vue';
+import IconTwitter from '@base-cms/marko-web-icons/browser/twitter.vue';
 
 export default {
   components: {
-    'icon-youtube': Youtube,
-    'icon-linkedin': Linkedin,
-    'icon-facebook': Facebook,
-    'icon-twitter': Twitter,
+    IconYoutube,
+    IconLinkedin,
+    IconFacebook,
+    IconTwitter,
   },
   props: {
     companyId: {
