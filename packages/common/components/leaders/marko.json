@@ -17,10 +17,13 @@
       "template": "./gtm-tracker.marko"
     },
     "common-leaders-company-website-link": {
-      "template": "./company-website-link.marko"
+      "template": "./company-website-link.marko",
+      "@company": "object"
     },
     "common-leaders-company-social-link": {
-      "template": "./company-social-link.marko"
+      "template": "./company-social-link.marko",
+      "@company": "object",
+      "@item": "object"
     }
   }
 }
