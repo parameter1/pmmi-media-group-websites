@@ -15,6 +15,12 @@
     },
     "common-leaders-gtm-tracker": {
       "template": "./gtm-tracker.marko"
+    },
+    "common-leaders-company-website-link": {
+      "template": "./company-website-link.marko"
+    },
+    "common-leaders-company-social-link": {
+      "template": "./company-social-link.marko"
     }
   }
 }
