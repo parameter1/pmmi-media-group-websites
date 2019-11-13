@@ -1,10 +1,10 @@
 <template>
   <a
     :href="href"
-    :target="target"
+    target="_blank"
     class="social-icon-link"
     :title="title"
-    :rel="rel"
+    rel="nofollow"
     @click="emitAction"
   >
     <component :is="icon" :modifiers="modifiers" />
@@ -43,8 +43,6 @@ export default {
     },
   },
   data: () => ({
-    target: '_blank',
-    rel: 'nofollow',
     modifiers: ['dark', 'lg'],
   }),
   computed: {
