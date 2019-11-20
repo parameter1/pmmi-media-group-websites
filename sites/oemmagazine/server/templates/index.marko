@@ -134,6 +134,15 @@ $ const { id, alias, name, pageNode } = data;
       </website-content-card-deck-flow>
     </marko-web-query>
 
+    <marko-web-query|{ nodes }|
+      name="website-optioned-content"
+      params={ sectionAlias: "home", optionName: "Pinned", limit: 5, skip: 14, requiresImage: true, queryFragment }
+    >
+      <website-content-card-deck-flow nodes=nodes ad-index=2 ad-name="imu2" >
+        <@native-x index=1 name="load-more" />
+      </website-content-card-deck-flow>
+    </marko-web-query>
+
     <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-bottom-wide" />
 
   </@page>
@@ -145,7 +154,7 @@ $ const { id, alias, name, pageNode } = data;
         component-input={ aliases }
         fragment-name="content-list"
         query-name="website-scheduled-content"
-        query-params={ sectionId: id, limit: 12, skip: 14, requiresImage: true }
+        query-params={ sectionId: id, limit: 12, skip: 19, requiresImage: true }
         max-pages=0
         page-input={ for: "website-section", id }
       />
