@@ -57,10 +57,10 @@ services:
     environment:
       <<: *env
 
-  automationworld:
+  automationworld.com:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/automationworld
+    working_dir: /root/sites/automationworld.com
     environment:
       <<: *env
       <<: *env-caprica-staging
@@ -73,10 +73,10 @@ services:
       - "9710:80"
       - "19710:19710"
 
-  packworld:
+  packworld.com:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/packworld
+    working_dir: /root/sites/packworld.com
     environment:
       <<: *env
       <<: *env-caprica-staging
@@ -89,10 +89,10 @@ services:
       - "9711:80"
       - "19711:19711"
 
-  healthcarepackaging:
+  healthcarepackaging.com:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/healthcarepackaging
+    working_dir: /root/sites/healthcarepackaging.com
     environment:
       <<: *env
       <<: *env-caprica-staging
@@ -105,10 +105,10 @@ services:
       - "9712:80"
       - "19712:19712"
 
-  profoodworld:
+  profoodworld.com:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/profoodworld
+    working_dir: /root/sites/profoodworld.com
     environment:
       <<: *env
       <<: *env-caprica-staging
@@ -121,10 +121,10 @@ services:
       - "9713:80"
       - "19713:19713"
 
-  oemmagazine:
+  oemmagazine.org:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/oemmagazine
+    working_dir: /root/sites/oemmagazine.org
     environment:
       <<: *env
       <<: *env-caprica-staging
