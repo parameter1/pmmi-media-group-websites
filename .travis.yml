@@ -4,48 +4,114 @@ cache: yarn
 
 stages:
   - name: test
-  - name: notify_start
+
+  - name: production-started
+    if: tag =~ /^v\d+\.\d+\.\d+$/
+  - name: production
+    if: tag =~ /^v\d+\.\d+\.\d+$/
+  - name: production-finished
+    if: tag =~ /^v\d+\.\d+\.\d+$/
+
+  - name: staging-started
     if: tag is present
-  - name: deploy
+  - name: staging
     if: tag is present
-  - name: notify
+  - name: staging-finished
     if: tag is present
 
 jobs:
   include:
     - stage: test
-      env:
-        - NODE_ENV=test
+      env: [NODE_ENV=test]
 
-    - stage: notify_start
-      script: deploy/notify-start.sh
+    - stage: production-started
+      name: Deployment Started
+      script: npx @base-cms/website-deployment-tool notify-started
       install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
 
-    - stage: notify
-      script: deploy/notify.sh
+    - stage: staging-started
+      name: Deployment Started
+      script: npx @base-cms/website-deployment-tool notify-started
       install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
-    - stage: deploy
-      name: Automation World
-      script: deploy/index.js automationworld caprica
-      install: skip
+    #############################
+    ### vvv ADD SITES HERE vvv ##
+    #############################
 
-    - stage: deploy
-      name: Packaging World
-      script: deploy/index.js packworld caprica
+    - stage: production
+      name: automationworld.com
+      script: npx @base-cms/website-deployment-tool deploy automationworld.com caprica
       install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
 
-    - stage: deploy
-      name: Healthcare Packaging
-      script: deploy/index.js healthcarepackaging caprica
+    - stage: staging
+      name: automationworld.com
+      script: npx @base-cms/website-deployment-tool deploy automationworld.com caprica
       install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
-    - stage: deploy
-      name: Pro Food World
-      script: deploy/index.js profoodworld caprica
+    - stage: production
+      name: healthcarepackaging.com
+      script: npx @base-cms/website-deployment-tool deploy healthcarepackaging.com caprica
       install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
 
-    - stage: deploy
-      name: OEM Magazine
-      script: deploy/index.js oemmagazine caprica
+    - stage: staging
+      name: healthcarepackaging.com
+      script: npx @base-cms/website-deployment-tool deploy healthcarepackaging.com caprica
       install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: oemmagazine.org
+      script: npx @base-cms/website-deployment-tool deploy oemmagazine.org caprica
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: oemmagazine.org
+      script: npx @base-cms/website-deployment-tool deploy oemmagazine.org caprica
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: packworld.com
+      script: npx @base-cms/website-deployment-tool deploy packworld.com caprica
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: packworld.com
+      script: npx @base-cms/website-deployment-tool deploy packworld.com caprica
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    - stage: production
+      name: profoodworld.com
+      script: npx @base-cms/website-deployment-tool deploy profoodworld.com caprica
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging
+      name: profoodworld.com
+      script: npx @base-cms/website-deployment-tool deploy profoodworld.com caprica
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
+
+    #############################
+    ### ^^^ ADD SITES HERE ^^^ ##
+    #############################
+
+    - stage: production-finished
+      name: Deployment Finished
+      script: npx @base-cms/website-deployment-tool notify-finished
+      install: skip
+      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-gxsr7]
+
+    - stage: staging-finished
+      name: Deployment Finished
+      script: npx @base-cms/website-deployment-tool notify-finished
+      install: skip
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]

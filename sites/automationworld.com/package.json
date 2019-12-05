@@ -1,8 +1,8 @@
 {
-  "name": "@base-cms-websites/oemmagazine",
+  "name": "@base-cms-websites/automationworld.com",
   "version": "1.4.5",
   "author": "Josh Worden <josh@limit0.io>",
-  "repository": "https://github.com/base-cms-websites/pmmi-media-group/tree/master/sites/oemmagazine",
+  "repository": "https://github.com/base-cms-websites/pmmi-media-group/tree/master/sites/automationworld.com",
   "license": "MIT",
   "private": true,
   "scripts": {
