@@ -1,3 +1,5 @@
+const deletedCompanies = require('@base-cms-websites/package-common/redirects/deleted-companies');
+
 const exec = (from, pattern) => pattern.exec(from);
 
 module.exports = ({ from }) => {
@@ -16,5 +18,5 @@ module.exports = ({ from }) => {
   const mundo = exec(from, /^\/mundopmmi\/.*/);
   if (mundo && mundo[1]) return { to: `https://www.mundopmmi.com${from}` };
 
-  return null;
+  return deletedCompanies({ from });
 };

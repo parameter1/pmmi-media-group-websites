@@ -1,3 +1,5 @@
+const deletedCompanies = require('@base-cms-websites/package-common/redirects/deleted-companies');
+
 const exec = (from, pattern) => pattern.exec(from);
 
 module.exports = ({ from }) => {
@@ -7,5 +9,5 @@ module.exports = ({ from }) => {
   const s3 = exec(from, /\/sites\/default\/files\/(.*)/);
   if (s3 && s3[1]) return { to: `https://s3.us-east-2.amazonaws.com/pmg-production/Migrated+-+DO+NOT+USE/HCP/${s3[1]}` };
 
-  return null;
+  return deletedCompanies({ from });
 };
