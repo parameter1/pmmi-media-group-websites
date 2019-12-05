@@ -50,7 +50,7 @@ jobs:
       name: automationworld.com
       script: npx @base-cms/website-deployment-tool deploy automationworld.com caprica
       install: skip
-      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-rc5kp]
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
     - stage: production
       name: healthcarepackaging.com
@@ -62,7 +62,7 @@ jobs:
       name: healthcarepackaging.com
       script: npx @base-cms/website-deployment-tool deploy healthcarepackaging.com caprica
       install: skip
-      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-rc5kp]
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
     - stage: production
       name: oemmagazine.org
@@ -74,9 +74,9 @@ jobs:
       name: oemmagazine.org
       script: npx @base-cms/website-deployment-tool deploy oemmagazine.org caprica
       install: skip
-      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-rc5kp]
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
-      - stage: production
+    - stage: production
       name: packworld.com
       script: npx @base-cms/website-deployment-tool deploy packworld.com caprica
       install: skip
@@ -86,9 +86,9 @@ jobs:
       name: packworld.com
       script: npx @base-cms/website-deployment-tool deploy packworld.com caprica
       install: skip
-      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-rc5kp]
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
-      - stage: production
+    - stage: production
       name: profoodworld.com
       script: npx @base-cms/website-deployment-tool deploy profoodworld.com caprica
       install: skip
@@ -98,7 +98,7 @@ jobs:
       name: profoodworld.com
       script: npx @base-cms/website-deployment-tool deploy profoodworld.com caprica
       install: skip
-      env: [ENVIRONMENT=production RANCHER_CLUSTERID=c-rc5kp]
+      env: [ENVIRONMENT=staging RANCHER_CLUSTERID=c-rc5kp]
 
     #############################
     ### ^^^ ADD SITES HERE ^^^ ##
