@@ -1,6 +1,6 @@
 {
   "name": "@base-cms-websites/packworld.com",
-  "version": "1.4.5",
+  "version": "1.4.7",
   "author": "Josh Worden <josh@limit0.io>",
   "repository": "https://github.com/base-cms-websites/pmmi-media-group/tree/master/sites/packworld.com",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
-    "@base-cms-websites/package-common": "^1.4.4",
+    "@base-cms-websites/package-common": "^1.4.7",
     "@base-cms/marko-core": "^1.0.0-rc.1",
     "@base-cms/marko-web": "^1.0.0-rc.4",
     "@base-cms/marko-web-gam": "^1.0.0-rc.1",
