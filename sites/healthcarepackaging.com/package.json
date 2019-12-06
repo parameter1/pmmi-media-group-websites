@@ -15,7 +15,7 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
-    "@base-cms-websites/package-common": "^1.4.7",
+    "@pmmi-media-group/package-common": "^1.4.7",
     "@base-cms/marko-core": "^1.0.0-rc.1",
     "@base-cms/marko-web": "^1.0.0-rc.4",
     "@base-cms/marko-web-gam": "^1.0.0-rc.1",

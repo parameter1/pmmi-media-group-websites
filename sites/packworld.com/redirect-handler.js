@@ -1,4 +1,4 @@
-const deletedCompanies = require('@base-cms-websites/package-common/redirects/deleted-companies');
+const deletedCompanies = require('@pmmi-media-group/package-common/redirects/deleted-companies');
 
 const exec = (from, pattern) => pattern.exec(from);
 
