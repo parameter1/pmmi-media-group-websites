@@ -1,5 +1,5 @@
 const { withWebsiteSection } = require('@base-cms/marko-web/middleware');
-const leadersFragment = require('@base-cms-websites/package-common/graphql/fragments/leaders-section');
+const leadersFragment = require('@pmmi-media-group/package-common/graphql/fragments/leaders-section');
 const section = require('../templates/website-section');
 const contactUs = require('../templates/website-section/contact-us');
 const global250 = require('../templates/website-section/global-250');

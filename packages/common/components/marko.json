@@ -1,5 +1,5 @@
 {
-  "taglib-id": "@base-cms-websites/package-common-components",
+  "taglib-id": "@pmmi-media-group/package-common-components",
   "taglib-imports": [
     "./blocks/marko.json",
     "./elements/marko.json",

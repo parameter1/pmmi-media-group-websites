@@ -1,5 +1,5 @@
 {
-  "name": "@base-cms-websites/pmmi-media-group",
+  "name": "@pmmi-media-group/websites",
   "description": "Websites for PMMI Media Group",
   "repository": "https://github.com/base-cms-websites/pmmi-media-group.git",
   "author": "Jacob Bare <jacob@limit0.io>",
