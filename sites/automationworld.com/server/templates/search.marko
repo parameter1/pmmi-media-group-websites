@@ -22,7 +22,10 @@ $ const description = `Search ${config.siteName()}`;
             <default-theme-breadcrumbs-with-home>
               <@item>${title}</@item>
             </default-theme-breadcrumbs-with-home>
-            <h1 class="page-wrapper__title">${description}</h1>
+            <h1 class="page-wrapper__title">
+              ${description}
+              <common-sponsored-search-block />
+            </h1>
           </div>
         </div>
       </@section>

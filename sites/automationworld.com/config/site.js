@@ -1,5 +1,17 @@
+const sponsoredSearchNav = require('../../../packages/common/components/blocks/sponsored-search-nav');
 const navigation = require('./navigation');
 const leaders = require('./leaders');
+
+const sponsoredSearch = {
+  enabled: process.env.SPONSORED_SEARCH_ENABLED || false,
+  navImage: 'https://img.automationworld.com/files/base/pmmi/all/PROFINET-white.png',
+  blockImage: 'https://img.automationworld.com/files/base/pmmi/all/PROFINET-rgb.png',
+};
+
+if (sponsoredSearch.enabled) {
+  const label = sponsoredSearchNav.renderToString({ image: sponsoredSearch.navImage });
+  navigation.tertiary.items[0] = { href: '/search', label };
+}
 
 module.exports = {
   navigation,
@@ -35,4 +47,5 @@ module.exports = {
   magazines: {
     description: '',
   },
+  sponsoredSearch,
 };
