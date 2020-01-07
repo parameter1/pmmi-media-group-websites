@@ -1,0 +1,12 @@
+$ const { site } = out.global;
+$ const block = "sponsored-search-block";
+$ const image = site.get('sponsoredSearch.blockImage');
+$ const src = `${image}?h=50`;
+$ const srcset = `${image}?h=100 2x`;
+
+<if(site.get('sponsoredSearch.enabled'))>
+  <div class=block>
+    <span class=`${block}__text`>Sponsored by</span>
+    <img class=`${block}__logo` src=src srcset=srcset />
+  </div>
+</if>

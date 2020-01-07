@@ -17,6 +17,13 @@
         "type": "number",
         "required": true
       }
+    },
+    "common-sponsored-search-nav": {
+      "template": "./sponsored-search-nav.marko",
+      "@image": "string"
+    },
+    "common-sponsored-search-block": {
+      "template": "./sponsored-search-block.marko"
     }
   }
 }

@@ -29,6 +29,7 @@ $theme-site-header-breakpoints: (
 @import "./contact-us-form"; // @todo this should be remove once contact us is in core
 @import "./company-page";
 @import "./leaders-index-page";
+@import "./sponsored-search";
 
 .leaders {
   @include border-radius($theme-card-border-radius);

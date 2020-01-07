@@ -1,0 +1,17 @@
+.sponsored-search-nav {
+  &__logo {
+    margin-left: map-get($spacers, 1);
+  }
+}
+
+.sponsored-search-block {
+  float: right;
+  font-size: 1rem;
+  &__logo {
+    margin-left: map-get($spacers, 2);
+  }
+  @include media-breakpoint-down("md") {
+    float: none;
+    text-align: center;
+  }
+}

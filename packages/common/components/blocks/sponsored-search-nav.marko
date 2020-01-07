@@ -1,0 +1,9 @@
+$ const block = "sponsored-search-nav";
+$ const { image } = input;
+$ const src = `${image}?h=30`;
+$ const srcset = `${image}?h=60 2x`;
+
+<div class=block>
+  <marko-web-icon class=`${block}__icon` name="search" attrs={ title: "Search" } />
+  <img class=`${block}__logo` src=src srcset=srcset />
+</div>
