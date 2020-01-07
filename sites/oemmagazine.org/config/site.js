@@ -25,7 +25,7 @@ module.exports = {
     { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/oem-magazine' },
   ],
   gtm: {
-    containerId: 'GTM-M596Q98',
+    containerId: process.env.GTM_CONTAINER_ID || 'GTM-M596Q98',
     slotPrefix: 'oem',
   },
   wufoo: {

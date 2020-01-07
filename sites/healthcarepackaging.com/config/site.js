@@ -25,7 +25,7 @@ module.exports = {
     { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/healthcare-packaging' },
   ],
   gtm: {
-    containerId: 'GTM-T7LSZ5W',
+    containerId: process.env.GTM_CONTAINER_ID || 'GTM-T7LSZ5W',
     slotPrefix: 'hcp',
   },
   wufoo: {

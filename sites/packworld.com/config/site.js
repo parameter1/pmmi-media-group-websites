@@ -25,7 +25,7 @@ module.exports = {
     { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/packaging-world' },
   ],
   gtm: {
-    containerId: 'GTM-TK8WXJR',
+    containerId: process.env.GTM_CONTAINER_ID || 'GTM-TK8WXJR',
     slotPrefix: 'pw',
   },
   wufoo: {

@@ -26,7 +26,7 @@ module.exports = {
     { provider: 'instagram', href: 'https://www.instagram.com/automation_world' },
   ],
   gtm: {
-    containerId: 'GTM-NM2MBTG',
+    containerId: process.env.GTM_CONTAINER_ID || 'GTM-NM2MBTG',
     slotPrefix: 'aw',
   },
   wufoo: {

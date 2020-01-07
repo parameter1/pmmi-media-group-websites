@@ -25,7 +25,7 @@ module.exports = {
     { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/profoodworld' },
   ],
   gtm: {
-    containerId: 'GTM-MW8Q9VC',
+    containerId: process.env.GTM_CONTAINER_ID || 'GTM-MW8Q9VC',
     slotPrefix: 'pfw',
   },
   wufoo: {
