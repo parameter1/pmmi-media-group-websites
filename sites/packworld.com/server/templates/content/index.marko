@@ -99,7 +99,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
                 </default-theme-content-download>
               </if>
 
-              <if(["article", "blog", "news", "press-release"].includes(content.type))>
+              <if(["article", "blog", "media-gallery", "news", "podcast", "press-release", "product", "video", "webinar"].includes(content.type))>
                 <common-featured-companies content-id=content.id />
               </if>
 
@@ -132,7 +132,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
         </@section>
       </marko-web-page-wrapper>
 
-      <if(["article", "blog", "news", "press-release"].includes(content.type))>
+      <if(["article", "blog", "media-gallery", "news", "podcast", "press-release", "product", "video", "webinar"].includes(content.type))>
         <common-leadership-company-videos content-id=content.id />
       </if>
 
