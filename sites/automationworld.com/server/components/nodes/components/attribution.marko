@@ -2,17 +2,10 @@ import { getAsArray, getAsObject } from "@base-cms/object-path";
 
 $ const { content } = input;
 $ const company = getAsObject(content, "company");
-$ const labels = getAsArray(content, "labels");
-$ const show = labels.includes("Supplier Submitted");
 
-<if(show)>
-  <span class="supplier-disclaimer">Supplier Submitted</span>
+<if(company.id)>
+  <company-name company=company />
 </if>
 <else>
-  <if(company.id)>
-    <company-name company=company />
-  </if>
-  <else>
-    <authors content=content />
-  </else>
+  <authors content=content />
 </else>
