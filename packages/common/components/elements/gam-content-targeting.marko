@@ -4,7 +4,9 @@ $ const content = getAsObject(input, "obj");
 $ const { id, type } = content;
 $ const companyIds = getAsArray(content, "companies.edges").map(({ node }) => node.id);
 $ const companyId = get(content, "company.id");
-$ const categories = getAsArray(content, "taxonomy.edges").map(({ node }) => node.name);
+$ const categories = getAsArray(content, "taxonomy.edges").filter(({ node: { type } }) =>
+  type === "Category").map(({ node }) =>
+    node.fullName.replace(`${node.type}: `, "").replace(` (${node.id})`, ""));
 $ if (companyId) companyIds.unshift(companyId);
 $ const keyValues = {
   cont_id: id,

@@ -20,7 +20,7 @@ fragment ContentPageFragment on Content {
     edges {
       node {
         id
-        name
+        fullName
         type
       }
     }
