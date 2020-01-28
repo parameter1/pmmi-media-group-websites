@@ -1,15 +1,17 @@
 const { getAsArray } = require('@base-cms/object-path');
 
+const categories = (obj, key, value) => ([...new Set([
+  ...getAsArray(obj, key),
+  ...(value ? [value.name] : []),
+])]);
+
 module.exports = content => getAsArray(content, 'taxonomy.edges')
   .map(({ node }) => node.hierarchy)
   .reduce((obj, hierarchy) => {
     const [primary, secondary, tertiary] = hierarchy;
-    const cat1 = getAsArray(obj, 'primary_cats');
-    const cat2 = getAsArray(obj, 'secondary_cats');
-    const cat3 = getAsArray(obj, 'tertiary_cats');
     return {
-      primary_cats: [...(new Set([...cat1, ...(primary ? [primary.name] : [])]))],
-      secondary_cats: [...(new Set([...cat2, ...(secondary ? [secondary.name] : [])]))],
-      tertiary_cats: [...(new Set([...cat3, ...(tertiary ? [tertiary.name] : [])]))],
+      primary_cats: categories(obj, 'primary_cats', primary),
+      secondary_cats: categories(obj, 'secondary_cats', secondary),
+      tertiary_cats: categories(obj, 'tertiary_cats', tertiary),
     };
   }, {});
