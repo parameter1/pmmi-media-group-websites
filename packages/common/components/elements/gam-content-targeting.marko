@@ -1,9 +1,11 @@
 import { getAsObject, get, getAsArray } from "@base-cms/object-path";
+import gamContentCategories from "@pmmi-media-group/package-common/utils/gam-content-categories";
 
 $ const content = getAsObject(input, "obj");
 $ const { id, type } = content;
 $ const companyIds = getAsArray(content, "companies.edges").map(({ node }) => node.id);
 $ const companyId = get(content, "company.id");
+$ const categories = gamContentCategories(content);
 $ if (companyId) companyIds.unshift(companyId);
 $ const keyValues = {
   cont_id: id,
@@ -12,5 +14,6 @@ $ const keyValues = {
     companies: companyIds.join("|"),
     Company: companyIds.shift(),
   }),
+  ...(categories && { ...categories }),
 };
 <marko-web-gam-targeting key-values=keyValues />

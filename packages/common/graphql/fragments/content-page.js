@@ -16,11 +16,15 @@ fragment ContentPageFragment on Content {
       path
     }
   }
-  taxonomy {
+  taxonomy(input: { type: Category }) {
     edges {
       node {
         id
-        type
+        name
+        hierarchy {
+          id
+          name
+        }
       }
     }
   }
