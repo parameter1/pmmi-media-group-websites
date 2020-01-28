@@ -1,11 +1,11 @@
 import { getAsObject, get, getAsArray } from "@base-cms/object-path";
-import getCategoryNames from "@pmmi-media-group/package-common/components/elements/gam-category-names";
+import gamContentCategories from "@pmmi-media-group/package-common/utils/gam-content-categories";
 
 $ const content = getAsObject(input, "obj");
 $ const { id, type } = content;
 $ const companyIds = getAsArray(content, "companies.edges").map(({ node }) => node.id);
 $ const companyId = get(content, "company.id");
-$ const categories = getCategoryNames(content);
+$ const categories = gamContentCategories(content);
 $ if (companyId) companyIds.unshift(companyId);
 $ const keyValues = {
   cont_id: id,
