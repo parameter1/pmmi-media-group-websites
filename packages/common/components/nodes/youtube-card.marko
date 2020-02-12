@@ -18,7 +18,8 @@ $ const { linkAttrs } = input;
     alt=video.title
     fluid=true
     ar="4:3"
-    link={ href: video.url, target: "_blank", attrs: linkAttrs }
+    link={ href: video.url, target: "_blank" }
+    attrs=linkAttrs
   />
   <@body>
     <@title tag="h5" modifiers=input.titleModifiers>

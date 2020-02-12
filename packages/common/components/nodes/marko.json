@@ -2,7 +2,8 @@
   "tags": {
     "common-youtube-card-node": {
       "template": "./youtube-card.marko",
-      "@node": "object"
+      "@node": "object",
+      "@link-attrs": "object"
     },
     "common-author-card-node": {
       "template": "./author-card.marko",

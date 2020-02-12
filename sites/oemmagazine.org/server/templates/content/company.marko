@@ -121,7 +121,10 @@ $ const { id, type, pageNode } = data;
             <@nodes|{ nodes }| nodes=videos>
               <for|node| of=nodes>
                 <div class="node-list__node">
-                  <common-youtube-card-node node=node />
+                  <common-youtube-card-node node=node link-attrs={
+                    'data-company-id': content.id,
+                    'data-company-name': content.name,
+                  } />
                 </div>
               </for>
             </@nodes>
