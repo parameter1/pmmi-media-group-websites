@@ -2,7 +2,7 @@ const contactUsHandler = require('@pmmi-media-group/package-common/contact-us');
 const home = require('./home');
 const content = require('./content');
 const dynamicPages = require('./dynamic-page');
-const magazine = require('./magazine');
+// const magazine = require('./magazine');
 const publishedContent = require('./published-content');
 const search = require('./search');
 const subscribe = require('./subscribe');
@@ -17,7 +17,7 @@ module.exports = (app) => {
   home(app);
 
   // Magazine Pages
-  magazine(app);
+  // magazine(app);
 
   // Dynamic Pages
   dynamicPages(app);
