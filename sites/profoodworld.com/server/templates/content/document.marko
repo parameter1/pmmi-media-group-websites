@@ -7,7 +7,7 @@ $ const { site } = out.global;
 $ const { id, type, pageNode } = data;
 
 $ const displayCarousel = true;
-$ const displayPublishedDate = true;
+$ const displayPublishedDate = false;
 
 <marko-web-content-page-layout id=id type=type>
   <@head>
@@ -42,9 +42,11 @@ $ const displayPublishedDate = true;
               <marko-web-content-teaser tag="p" class="page-wrapper__deck" obj=content />
               <common-supplier-disclaimer obj=content />
               <default-theme-content-attribution obj=content />
-              <default-theme-page-dates|{ blockName }|>
-                <marko-web-content-published block-name=blockName obj=content />
-              </default-theme-page-dates>
+              <if(displayPublishedDate)>
+                <default-theme-page-dates|{ blockName }|>
+                  <marko-web-content-published block-name=blockName obj=content />
+                </default-theme-page-dates>
+              </if>
             </div>
           </div>
         </@section>

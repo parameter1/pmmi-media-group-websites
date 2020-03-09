@@ -6,6 +6,6 @@ $ const { content, blockName } = input;
     <marko-web-content-end-date tag="span" block-name=blockName obj=content />
   </div>
 </if>
-<else>
+<else-if(content.type !== "document")>
   <marko-web-content-published obj=content />
-</else>
+</else-if>
