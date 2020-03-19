@@ -39,6 +39,7 @@ module.exports = {
         // { href: '/magazine', label: 'Magazine' },
         { href: '/page/aw-event-calendar', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
+        { href: '/page/aw-newsletters', label: 'Newsletters' },
         { href: '/leaders', label: 'Leadership in Automation' },
         { href: '/videos', label: 'Videos' },
         { href: '/podcasts', label: 'Podcasts' },

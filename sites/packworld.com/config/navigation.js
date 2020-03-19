@@ -40,6 +40,7 @@ module.exports = {
         { href: '/page/contract-packaging-magazine', label: 'Contract Packaging' },
         { href: '/page/pw-event-calendar', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
+        { href: '/page/pw-newsletters', label: 'Newsletters' },
         { href: '/leaders', label: 'Leaders in Packaging' },
         { href: '/videos', label: 'Videos' },
         { href: '/page/packaging-associations', label: 'Packaging Associations' },

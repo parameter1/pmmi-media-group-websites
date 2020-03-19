@@ -40,6 +40,7 @@ module.exports = {
       items: [
         { href: '/page/hcp-event-calendar', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
+        { href: '/page/hcp-newsletters', label: 'Newsletters' },
         { href: '/leaders', label: 'Premier Suppliers' },
         { href: '/videos', label: 'Videos' },
         { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
