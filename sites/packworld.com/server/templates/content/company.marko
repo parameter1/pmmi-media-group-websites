@@ -23,13 +23,15 @@ $ const { id, type, pageNode } = data;
     <marko-web-resolve-page|{ resolved, data: content }| node=pageNode>
       $ const section = resolved.getAsObject("primarySection");
       $ const aliases = hierarchyAliases(section);
+      $ const includeContentTypes = Boolean(content.isLeader) ? ["Article", "Blog", "Product", "News", "PressRelease", "Webinar", "Whitepaper"] : ["Article", "Product", "News", "PressRelease", "Video"];
+
       <marko-web-load-more
         header=`More from ${content.name}`
         component-name="content-load-more-flow"
-        component-input={ aliases, limit: 9 }
+        component-input={ aliases }
         fragment-name="content-list"
         query-name="all-company-content"
-        query-params={ companyId: id, limit: 9, includeContentTypes: ["Article", "Blog", "PressRelease", "News", "Product", "Webinar", "Whitepaper"] }
+        query-params={ companyId: id, limit: 9, includeContentTypes }
         page-input={ for: "content", id, type }
       />
     </marko-web-resolve-page>
