@@ -54,7 +54,7 @@ fragment WebsiteContentCompanyFragment on Content {
       alt
     }
 
-    isLeader: hasWebsiteSchedule(input: { sectionAlias: "leaders" })
+    isLeader: hasWebsiteSchedule(input: { sectionAlias: "leaders-2020" })
 
     contacts: publicContacts {
       edges {
