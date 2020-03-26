@@ -23,7 +23,7 @@ $ const { id, type, pageNode } = data;
     <marko-web-resolve-page|{ resolved, data: content }| node=pageNode>
       $ const section = resolved.getAsObject("primarySection");
       $ const aliases = hierarchyAliases(section);
-      $ const includeContentTypes = Boolean(content.isLeader) ? ["Article", "Blog", "Product", "News", "PressRelease", "Webinar", "Whitepaper"] : ["Article", "Product", "News", "PressRelease", "Video"];
+      $ const includeContentTypes = ["Article", "Blog", "Product", "News", "PressRelease", "Webinar", "Whitepaper", "Video"];
 
       <marko-web-load-more
         header=`More from ${content.name}`
