@@ -80,7 +80,7 @@ $ const { id, type, content } = input;
         <@nodes|{ nodes: items }| nodes=nodes>
           <default-theme-card-deck-flow cols=2 nodes=items>
             <@slot|{ node, index }|>
-              <website-content-card-node
+              <shared-content-card-node
                 image-width=340
                 node=node
               />
@@ -131,22 +131,22 @@ $ const { id, type, content } = input;
       name="all-company-content"
       params={ companyId: id, includeContentTypes: ["Article"], limit: 3, queryFragment }
     >
-      <website-content-list-flow nodes=nodes class="mt-block" inner-justified=false>
+      <shared-content-list-flow nodes=nodes class="mt-block" inner-justified=false>
         <@header>
           Case Studies
         </@header>
-      </website-content-list-flow>
+      </shared-content-list-flow>
     </marko-web-query>
 
     <marko-web-query|{ nodes }|
       name="all-company-content"
       params={ companyId: id, includeContentTypes: ["News", "PressRelease"], limit: 5, queryFragment }
     >
-      <website-content-list-flow nodes=nodes class="mt-block" inner-justified=false>
+      <shared-content-list-flow nodes=nodes class="mt-block" inner-justified=false>
         <@header>
           Company News
         </@header>
-      </website-content-list-flow>
+      </shared-content-list-flow>
     </marko-web-query>
   </div>
 </div>
