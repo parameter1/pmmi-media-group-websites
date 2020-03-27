@@ -7,7 +7,6 @@ fragment LimitedCompanyProfileFragment on Content {
   ...WebsiteContentListFragment
 
   name
-  body
 
   ... on ContentCompany {
     website
