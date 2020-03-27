@@ -1,9 +1,11 @@
 const navigation = require('./navigation');
 const leaders = require('./leaders');
+const nativeX = require('./native-x');
 
 module.exports = {
   leaders,
   navigation,
+  nativeX,
   company: 'PMMI Media Group',
   logos: {
     navbar: {

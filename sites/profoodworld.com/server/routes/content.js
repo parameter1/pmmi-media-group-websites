@@ -1,8 +1,8 @@
 const { withContent } = require('@base-cms/marko-web/middleware');
 const queryFragment = require('@pmmi-media-group/package-common/graphql/fragments/content-page');
 const companyQueryFragment = require('@pmmi-media-group/package-common/graphql/fragments/content-company');
+const company = require('@pmmi-media-group/package-shared/templates/content/company');
 const content = require('../templates/content');
-const company = require('../templates/content/company');
 const podcast = require('../templates/content/podcast');
 const webinar = require('../templates/content/webinar');
 const document = require('../templates/content/document');

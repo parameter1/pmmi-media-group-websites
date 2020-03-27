@@ -1,0 +1,25 @@
+{
+  "<shared-content-list-flow>": {
+    "template": "./content-list.marko",
+    "<header>": {},
+    "<native-x>": {
+      "@index": "number",
+      "@name": "string",
+      "@aliases": "array"
+    },
+    "@class": "string",
+    "@nodes": "array",
+    "@display-image": {
+      "type": "boolean",
+      "default-value": true
+    },
+    "@with-teaser": {
+      "type": "boolean",
+      "default-value": false
+    },
+    "@inner-justified": {
+      "type": "boolean",
+      "default-value": true
+    }
+  }
+}
