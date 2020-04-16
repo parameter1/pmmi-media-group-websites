@@ -1,0 +1,7 @@
+{
+  "<shared-inquiry-block>": {
+    "template": "./inquiry.marko",
+    "@content": "object",
+    "@modifiers": "array"
+  }
+}

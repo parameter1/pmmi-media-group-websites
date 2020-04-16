@@ -1,0 +1,13 @@
+import { getAsObject } from "@base-cms/object-path";
+
+$ const content = getAsObject(input, "content");
+$ const company = getAsObject(input, "content.company");
+$ const shouldDisplay = "company" === content.type || ["article", "video", "product"].includes(content.type) && company.id;
+
+<if(shouldDisplay)>
+  <marko-web-inquiry-form ...input>
+    <@header>
+      Request a Quote
+    </@header>
+  </marko-web-inquiry-form>
+</if>
