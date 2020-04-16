@@ -1,4 +1,5 @@
 .inquiry-form {
+  $self: &;
   padding: $block-spacer;
   margin-top: 0;
   margin-bottom: $block-spacer;
@@ -27,5 +28,22 @@
 
   label {
     margin-bottom: 0;
+  }
+
+  &--block {
+    @include theme-card();
+    padding: 0;
+    background-color: $white;
+    #{ $self }__header,
+    #{ $self }__description,
+    #{ $self }__form {
+      padding: $marko-web-node-list-padding;
+    }
+    #{ $self }__header {
+      @include theme-card-header();
+    }
+  }
+  &--top-margin {
+    margin-top: map-get($spacers, block);
   }
 }
