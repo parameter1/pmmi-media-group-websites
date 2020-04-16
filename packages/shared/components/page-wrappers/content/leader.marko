@@ -92,6 +92,8 @@ $ const { id, type, content } = input;
 
   </div>
   <div class="col-lg-4 mb-3 mb-lg-0">
+    <shared-inquiry-block content=content modifiers=["top-margin", "block"] />
+
     $ const contacts = getAsArray(content, "contacts.edges").map(({ node }) => node);
     <marko-web-node-list class="mt-block">
       <@header>
