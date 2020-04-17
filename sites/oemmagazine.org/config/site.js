@@ -36,4 +36,13 @@ module.exports = {
   magazines: {
     description: '',
   },
+  inquiry: {
+    enabled: true,
+    directSend: false,
+    sendTo: 'chat@pmmimediagroup.com',
+    replyTo: 'chat@pmmimediagroup.com',
+    sendFrom: 'OEM Magazine <noreply@baseplatform.io>',
+    logo: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=45',
+    bgColor: '#000',
+  },
 };
