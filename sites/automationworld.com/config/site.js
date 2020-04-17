@@ -37,4 +37,13 @@ module.exports = {
   magazines: {
     description: '',
   },
+  inquiry: {
+    enabled: true,
+    directSend: false,
+    sendTo: 'chat@pmmimediagroup.com',
+    replyTo: 'chat@pmmimediagroup.com',
+    sendFrom: 'Automation World <noreply@baseplatform.io>',
+    logo: 'https://img.automationworld.com/files/base/pmmi/aw/aw_logo.png?h=45',
+    bgColor: '#000',
+  },
 };
