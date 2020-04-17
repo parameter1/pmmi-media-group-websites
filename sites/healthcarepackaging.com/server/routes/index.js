@@ -1,4 +1,5 @@
 const contactUsHandler = require('@pmmi-media-group/package-common/contact-us');
+const inquiryHandler = require('@pmmi-media-group/package-shared/inquiry-handler');
 const home = require('./home');
 const content = require('./content');
 const dynamicPages = require('./dynamic-page');
@@ -12,6 +13,7 @@ module.exports = (app) => {
   // Handle contact is submissions on /__contact-us
   // @todo This should be removed once contact-us is moved to core.
   contactUsHandler(app);
+  inquiryHandler(app);
 
   // Homepage
   home(app);

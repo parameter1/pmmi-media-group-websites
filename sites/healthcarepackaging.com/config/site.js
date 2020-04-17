@@ -36,4 +36,13 @@ module.exports = {
   magazines: {
     description: '',
   },
+  inquiry: {
+    enabled: true,
+    directSend: false,
+    sendTo: 'chat@pmmimediagroup.com',
+    replyTo: 'chat@pmmimediagroup.com',
+    sendFrom: 'Healthcare Packaging <noreply@baseplatform.io>',
+    logo: 'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo.png?h=45',
+    bgColor: '#000',
+  },
 };
