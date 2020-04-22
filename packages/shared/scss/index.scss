@@ -31,19 +31,8 @@
   }
 
   &--block {
-    @include theme-card();
     padding: 0;
+    margin-bottom: 0;
     background-color: $white;
-    #{ $self }__header,
-    #{ $self }__description,
-    #{ $self }__form {
-      padding: $marko-web-node-list-padding;
-    }
-    #{ $self }__header {
-      @include theme-card-header();
-    }
-  }
-  &--top-margin {
-    margin-top: map-get($spacers, block);
   }
 }

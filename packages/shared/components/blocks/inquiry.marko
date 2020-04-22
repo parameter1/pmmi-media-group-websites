@@ -6,8 +6,10 @@ $ const shouldDisplay = "company" === content.type || ["video", "product"].inclu
 
 <if(shouldDisplay)>
   <marko-web-inquiry-form ...input>
-    <@header>
-      Request a Quote
-    </@header>
+    <if(input.withHeader)>
+      <@header>
+        Request a Quote
+      </@header>
+    </if>
   </marko-web-inquiry-form>
 </if>
