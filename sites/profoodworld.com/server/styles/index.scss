@@ -19,6 +19,7 @@ $leaders-primary-color-light: #003a6f;
 $leaders-accent-color: #8fb019;
 
 @import "../../node_modules/@pmmi-media-group/package-common/scss/common";
+@import "../../node_modules/@pmmi-media-group/package-shared/scss/index";
 
 .load-more-trigger > button:hover {
   background-color: #8fb019;

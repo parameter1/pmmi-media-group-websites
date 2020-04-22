@@ -109,6 +109,8 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
             </default-theme-page-contents>
 
             <aside class="col-lg-4 page-rail">
+              <shared-inquiry-block content=content />
+
               <marko-web-gam-display-ad id="gpt-ad-imu1" />
 
               <!-- Div for Leaders Button -->
@@ -131,6 +133,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
 
         </@section>
       </marko-web-page-wrapper>
+
       <if(["article", "blog", "media-gallery", "news", "podcast", "press-release", "product", "video", "webinar"].includes(content.type))>
         <common-leadership-company-videos content-id=content.id />
       </if>

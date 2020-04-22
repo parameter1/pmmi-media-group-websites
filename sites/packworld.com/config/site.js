@@ -36,4 +36,13 @@ module.exports = {
   magazines: {
     description: '',
   },
+  inquiry: {
+    enabled: true,
+    directSend: false,
+    sendTo: 'chat@pmmimediagroup.com',
+    replyTo: 'chat@pmmimediagroup.com',
+    sendFrom: 'Packaging World <noreply@baseplatform.io>',
+    logo: 'https://img.packworld.com/files/base/pmmi/pw/pw_logo.png?h=45',
+    bgColor: '#000',
+  },
 };

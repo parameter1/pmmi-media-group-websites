@@ -1,0 +1,11 @@
+{
+  "<shared-inquiry-block>": {
+    "template": "./inquiry.marko",
+    "@content": "object",
+    "@modifiers": "array",
+    "@with-header": {
+      "type": "boolean",
+      "default-value": true
+    }
+  }
+}
