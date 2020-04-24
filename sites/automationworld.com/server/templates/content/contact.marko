@@ -58,7 +58,12 @@ $ const { id, type, pageNode } = data;
         <div class="col-lg-8">
           <marko-web-query|{ nodes }|
             name="all-author-content"
-            params={ contactId: content.id, limit: 4, queryFragment }
+            params={
+              contactId: content.id,
+              limit: 4,
+              queryFragment,
+              withSite: false,
+            }
           >
             <default-theme-card-deck-flow cols=2 nodes=nodes>
               <@slot|{ node, index }|>
