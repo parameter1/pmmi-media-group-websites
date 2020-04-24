@@ -36,10 +36,10 @@ module.exports = {
     {
       label: 'Resources',
       items: [
-        // { href: '/magazine', label: 'Magazine' },
         { href: '/page/aw-event-calendar', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
         { href: '/page/aw-newsletters', label: 'Newsletters' },
+        { href: '/page/magazine', label: 'Magazine' },
         { href: '/leaders', label: 'Leadership in Automation' },
         { href: '/videos', label: 'Videos' },
         { href: '/podcasts', label: 'Podcasts' },

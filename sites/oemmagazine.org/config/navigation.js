@@ -36,9 +36,9 @@ module.exports = {
     {
       label: 'Resources',
       items: [
-        // { href: '/magazine', label: 'Magazine' },
         { href: '/page/oem-event-calendar', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
+        { href: '/page/magazine', label: 'Magazine' },
         { href: '/leaders', label: 'Tech Trendsetters' },
         { href: '/videos', label: 'Videos' },
       ],
