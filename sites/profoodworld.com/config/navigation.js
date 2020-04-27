@@ -36,9 +36,10 @@ module.exports = {
     {
       label: 'Resources',
       items: [
-        // { href: '/magazine', label: 'Magazine' },
         { href: '/events', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
+        { href: '/page/pfw-newsletter', label: 'Newsletters' },
+        { href: '/page/magazine', label: 'Magazine' },
         { href: '/leaders', label: 'Leaders in Processing' },
         // { href: '/global-250', label: 'Global 250' },
         // { href: '/awards', label: 'Awards' },

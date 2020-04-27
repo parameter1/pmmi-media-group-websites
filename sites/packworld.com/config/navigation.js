@@ -41,6 +41,7 @@ module.exports = {
         { href: '/page/pw-event-calendar', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
         { href: '/page/pw-newsletters', label: 'Newsletters' },
+        { href: '/page/magazine', label: 'Magazine' },
         { href: '/leaders', label: 'Leaders in Packaging' },
         { href: '/videos', label: 'Videos' },
         { href: '/page/packaging-associations', label: 'Packaging Associations' },
