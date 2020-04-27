@@ -38,6 +38,7 @@ module.exports = {
       items: [
         { href: '/page/oem-event-calendar', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
+        { href: 'https://oemmagazine.dragonforms.com/loading.do?omedasite=oemnlimu', label: 'Newsletters', target: '_blank' },
         { href: '/page/magazine', label: 'Magazine' },
         { href: '/leaders', label: 'Tech Trendsetters' },
         { href: '/videos', label: 'Videos' },
