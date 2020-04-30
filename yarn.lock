@@ -861,14 +861,14 @@
   resolved "https://registry.yarnpkg.com/@base-cms/marko-web-icons/-/marko-web-icons-1.24.0.tgz#f03f3afa456d9d1229a217f2c7efe15065fac02c"
   integrity sha512-hU6A/4nr/QmwO5ePCboe/oWl/NW6eCZcZVHKLMoYQ+tfO46BhwcKiUz5CAMZJorx5rveAwoAd8eT9g6f4SRVAw==
 
-"@base-cms/marko-web-inquiry@^1.26.2":
-  version "1.26.2"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-inquiry/-/marko-web-inquiry-1.26.2.tgz#28576bebf89b868354304e2c44cefcf082a3a91a"
-  integrity sha512-nlt52LFNHsWj274uUeIQE/X0kE5JNYGmDWcHqSEFiGEQMEBWLYqKKb/gAcAF2Kev0rXGk8XPuKH5YnNhQ1OEJA==
+"@base-cms/marko-web-inquiry@^1.27.0":
+  version "1.27.0"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-inquiry/-/marko-web-inquiry-1.27.0.tgz#d9f4aeadf636e32c098b1291ec7c572b40e21874"
+  integrity sha512-O/xLtYxSQjxVei0i1SkZskWGUp+PFCQjABT7VP8n7ExaOgrjM+fBKQg8kDEUoMKryfMut9wO80coRH6JSsNkgA==
   dependencies:
     "@base-cms/env" "^1.0.0"
     "@base-cms/marko-core" "^1.26.2"
-    "@base-cms/marko-web" "^1.26.2"
+    "@base-cms/marko-web" "^1.27.0"
     "@base-cms/object-path" "^1.25.0"
     "@base-cms/utils" "^1.25.0"
     "@base-cms/web-common" "^1.26.2"
@@ -897,10 +897,10 @@
     "@base-cms/utils" "^1.25.0"
     node-fetch "^2.6.0"
 
-"@base-cms/marko-web-reveal-ad@^1.25.6":
-  version "1.25.6"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-reveal-ad/-/marko-web-reveal-ad-1.25.6.tgz#75c7a5207443e0afc1c1f1eb5fe727b9f5fc3548"
-  integrity sha512-bHrkd4L0QYymGVtGeCTO0fhRp0nWWP4fWlA3LJFRjN8CbDpr7DPtTR7HTva3hVz1RDzhrSf4dSqWoUAkj7tA8A==
+"@base-cms/marko-web-reveal-ad@^1.26.3":
+  version "1.26.3"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web-reveal-ad/-/marko-web-reveal-ad-1.26.3.tgz#4c2143cfda320571b18fdc2822c3c6f8c7c0de2b"
+  integrity sha512-p9eMuGwvAv5N/cIat2n0OZ4xYNoFSdxQoCFRkEJ7knpuKX3hjO3/sSJAJ2lk45TEgGH0mEgfuAIs8+3gpN3JvQ==
   dependencies:
     "@base-cms/object-path" "^1.25.0"
     "@base-cms/utils" "^1.25.0"
@@ -917,10 +917,10 @@
     graphql "^14.5.4"
     graphql-tag "^2.10.1"
 
-"@base-cms/marko-web@^1.26.2":
-  version "1.26.2"
-  resolved "https://registry.yarnpkg.com/@base-cms/marko-web/-/marko-web-1.26.2.tgz#a4625950aad022fd7b47d2426fb9120c123c1f66"
-  integrity sha512-NJUIlaf2MtNQ8rjkcva5rZX7pilyGoIoJzIbInWgcngsdrR6W9jDxufRuCXrpLwrPS2guxFo4rJg2pQrkeBndA==
+"@base-cms/marko-web@^1.27.0":
+  version "1.27.0"
+  resolved "https://registry.yarnpkg.com/@base-cms/marko-web/-/marko-web-1.27.0.tgz#918c4e7672da80bf937af40e264813a479eaf6ff"
+  integrity sha512-KXmlR692uMzjVTCcvW0/RVaR/ezuV3nCRhNtYRHNAAFXycyfX139blm6pMFv6Gprq1brik5U8iqplU2/BElMPA==
   dependencies:
     "@base-cms/embedded-media" "^1.6.3"
     "@base-cms/express-apollo" "^1.9.0"
@@ -943,7 +943,7 @@
     graphql-tag "^2.10.1"
     helmet "^3.21.0"
     http-errors "^1.7.3"
-    jquery "^3.4.1"
+    jquery "^3.5.0"
     marko "^4.18.30"
     moment "^2.24.0"
     vue "^2.6.11"
@@ -967,10 +967,10 @@
   resolved "https://registry.yarnpkg.com/@base-cms/utils/-/utils-1.25.0.tgz#84658dc9da247046e35d7c3ad6f56a0a0670497e"
   integrity sha512-gHFztvnOJ31+31Tu4tjFDwLPvpxyHSxbIFW2ibjNbrEAbKHtbvZLxbirWklEu0RZ3Vh8tgJ4YrcmbH1Ok2Cjnw==
 
-"@base-cms/web-cli@^1.26.2":
-  version "1.26.2"
-  resolved "https://registry.yarnpkg.com/@base-cms/web-cli/-/web-cli-1.26.2.tgz#da85a24497442aa091aecd8fb52b3ef569252bd9"
-  integrity sha512-7tSNnM+U7C34+jGYaCqOuQnTET8RW1PNaEyTaEFH8VL3QxjIIP9wZbx7cSK80PwJFlylbUc8DyIj0PrgdUAoYg==
+"@base-cms/web-cli@^1.27.0":
+  version "1.27.0"
+  resolved "https://registry.yarnpkg.com/@base-cms/web-cli/-/web-cli-1.27.0.tgz#5db6d382a0f7bcd0127fbae843b62d437a643efe"
+  integrity sha512-KYvexmdLJcsyUy345eOCC9CgsD+VGJsfeE3lT+yO36P9U3YPyuEnTq2bWK0qdljYurYuGFMDUfTNWG+Pp14sRg==
   dependencies:
     "@babel/core" "^7.6.0"
     "@babel/plugin-transform-runtime" "^7.6.0"
@@ -979,7 +979,7 @@
     "@babel/runtime-corejs2" "^7.6.0"
     "@base-cms/cli-utils" "^1.13.0"
     "@base-cms/express-apollo" "^1.9.0"
-    "@base-cms/marko-web" "^1.26.2"
+    "@base-cms/marko-web" "^1.27.0"
     autoprefixer "^9.6.1"
     babel-eslint "^10.0.3"
     babel-loader "^8.0.6"
@@ -6730,10 +6730,10 @@ iterall@^1.2.2:
   resolved "https://registry.yarnpkg.com/iterall/-/iterall-1.2.2.tgz#92d70deb8028e0c39ff3164fdbf4d8b088130cd7"
   integrity sha512-yynBb1g+RFUPY64fTrFv7nsjRrENBQJaX2UL+2Szc9REFrSNm1rpSXHGzhmAy7a9uv3vlvgBlXnf9RqmPH1/DA==
 
-jquery@^3.4.1:
-  version "3.4.1"
-  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
-  integrity sha512-36+AdBzCL+y6qjw5Tx7HgzeGCzC81MDDgaUP8ld2zhx58HdqXGoBd+tHdrBMiyjGQs0Hxs/MLZTu/eHNJJuWPw==
+jquery@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.5.0.tgz#9980b97d9e4194611c36530e7dc46a58d7340fc9"
+  integrity sha512-Xb7SVYMvygPxbFMpTFQiHh1J7HClEaThguL15N/Gg37Lri/qKyhRGZYzHRyLH8Stq3Aow0LsHO2O2ci86fCrNQ==
 
 js-base64@^2.1.8:
   version "2.5.1"
