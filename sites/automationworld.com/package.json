@@ -1,6 +1,6 @@
 {
   "name": "@pmmi-media-group/automationworld.com",
-  "version": "1.8.1",
+  "version": "1.9.0",
   "author": "Josh Worden <josh@limit0.io>",
   "repository": "https://github.com/base-cms-websites/pmmi-media-group/tree/master/sites/automationworld.com",
   "license": "MIT",
@@ -27,8 +27,8 @@
     "@base-cms/object-path": "^1.25.0",
     "@base-cms/utils": "^1.25.0",
     "@base-cms/web-cli": "^1.27.3",
-    "@pmmi-media-group/package-common": "^1.8.1",
-    "@pmmi-media-group/package-shared": "^1.8.1",
+    "@pmmi-media-group/package-common": "^1.9.0",
+    "@pmmi-media-group/package-shared": "^1.9.0",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
     "newrelic": "^5.11.0"
