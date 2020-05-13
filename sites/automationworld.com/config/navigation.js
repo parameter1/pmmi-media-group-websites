@@ -44,7 +44,7 @@ module.exports = {
         { href: '/videos', label: 'Videos' },
         { href: '/podcasts', label: 'Podcasts' },
         { href: '/webinars', label: 'Webinars' },
-        { href: '/page/archive-magazine-issues', label: 'Digital Editions' },
+        { href: '/page/digital-editions', label: 'Digital Editions' },
       ],
     },
     {
