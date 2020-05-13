@@ -46,7 +46,7 @@ module.exports = {
         { href: '/videos', label: 'Videos' },
         { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
         { href: '/webinars', label: 'Webinars' },
-        { href: '/page/digital-editions', label: 'Digital Editions' },
+        // { href: '/page/digital-editions', label: 'Digital Editions' },
       ],
     },
     {
