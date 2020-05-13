@@ -56,12 +56,12 @@ module.exports = {
       items: [
         { href: 'https://pmmi.dragonforms.com/loading.do?pk=PFWMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=PPFWnew ', label: 'Subscribe', target: '_blank' },
         { href: 'https://www.pmmimediagroup.com/pfw/profood-world', label: 'Advertise', target: '_blank' },
+        { href: 'https://www.pmmimediagroup.com/pfw/reprints-and-permissions', label: 'Reprints' },
         { href: '/page/pfw-about-us', label: 'About' },
         { href: '/page/pfw-contact-us', label: 'Contact' },
         { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy', target: '_blank' },
         { href: '/page/pfw-terms-use', label: 'Terms of Use' },
         { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
-        { href: '/pfw/reprints-and-permissions', label: 'Reprints' },
       ],
     },
   ],

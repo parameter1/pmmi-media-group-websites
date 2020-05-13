@@ -54,12 +54,12 @@ module.exports = {
       items: [
         { href: 'https://pmmi.dragonforms.com/loading.do?pk=HCPMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=HCPnew', label: 'Subscribe', target: '_blank' },
         { href: 'https://www.pmmimediagroup.com/hcp/healthcare-packaging', label: 'Advertise', target: '_blank' },
+        { href: 'https://www.pmmimediagroup.com/hcp/reprints-and-permissions', label: 'Reprints' },
         { href: '/page/hcp-about-us', label: 'About' },
         { href: '/page/hcp-contact-us', label: 'Contact' },
         { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy', target: '_blank' },
         { href: '/page/hcp-terms-use', label: 'Terms of Use' },
         { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
-        { href: '/pw/reprints-and-permissions', label: 'Reprints' },
       ],
     },
   ],

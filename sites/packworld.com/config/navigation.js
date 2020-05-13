@@ -55,12 +55,12 @@ module.exports = {
       items: [
         { href: 'https://pmmi.dragonforms.com/loading.do?pk=PWMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=PPWnew', label: 'Subscribe', target: '_blank' },
         { href: 'https://www.pmmimediagroup.com/pw/packaging-world', label: 'Advertise', target: '_blank' },
+        { href: 'https://www.pmmimediagroup.com/pw/reprints-and-permissions', label: 'Reprints' },
         { href: '/page/pw-about-us', label: 'About' },
         { href: '/page/pw-contact-us', label: 'Contact' },
         { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy', target: '_blank' },
         { href: '/page/pw-terms-use', label: 'Terms of Use' },
         { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
-        { href: '/pw/reprints-and-permissions', label: 'Reprints' },
       ],
     },
   ],

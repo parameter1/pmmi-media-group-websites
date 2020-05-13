@@ -50,12 +50,12 @@ module.exports = {
       items: [
         { href: 'https://pmmi.dragonforms.com/init.do?pk=OEMMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=OEMnew', label: 'Subscribe', target: '_blank' },
         { href: 'https://www.pmmimediagroup.com/oem', label: 'Advertise', target: '_blank' },
+        { href: 'https://www.pmmimediagroup.com/ppoem/reprints-and-permissions', label: 'Reprints' },
         { href: '/page/oem-about-us', label: 'About' },
         { href: '/page/oem-contact-us', label: 'Contact' },
         { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy', target: '_blank' },
         { href: '/page/oem-terms-use', label: 'Terms of Use' },
         { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
-        { href: '/ppoem/reprints-and-permissions', label: 'Reprints' },
       ],
     },
   ],
