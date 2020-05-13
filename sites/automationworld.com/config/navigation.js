@@ -44,6 +44,7 @@ module.exports = {
         { href: '/videos', label: 'Videos' },
         { href: '/podcasts', label: 'Podcasts' },
         { href: '/webinars', label: 'Webinars' },
+        { href: '/page/archive-magazine-issues', label: 'Digital Editions' },
       ],
     },
     {
@@ -56,6 +57,7 @@ module.exports = {
         { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy', target: '_blank' },
         { href: '/page/aw-terms-use', label: 'Terms of Use' },
         { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
+        { href: '/aw/reprints-and-permissions', label: 'Reprints' },
       ],
     },
   ],

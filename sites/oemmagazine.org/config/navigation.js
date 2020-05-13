@@ -42,6 +42,7 @@ module.exports = {
         { href: '/page/magazine', label: 'Magazine' },
         { href: '/leaders', label: 'Tech Trendsetters' },
         { href: '/videos', label: 'Videos' },
+        { href: '/page/archive', label: 'Digital Editions' },
       ],
     },
     {
@@ -54,6 +55,7 @@ module.exports = {
         { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy', target: '_blank' },
         { href: '/page/oem-terms-use', label: 'Terms of Use' },
         { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
+        { href: '/ppoem/reprints-and-permissions', label: 'Reprints' },
       ],
     },
   ],

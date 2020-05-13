@@ -48,6 +48,7 @@ module.exports = {
         { href: 'https://www.opxleadershipnetwork.org', label: 'OpX Leadership Network', target: '_blank' },
         { href: '/page/awards-sema', label: 'Sustainability Awards' },
         { href: '/page/awards-mia', label: 'Manufacturing Awards' },
+        { href: '/page/archive', label: 'Digital Editions' },
       ],
     },
     {
@@ -60,6 +61,7 @@ module.exports = {
         { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy', target: '_blank' },
         { href: '/page/pfw-terms-use', label: 'Terms of Use' },
         { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
+        { href: '/pfw/reprints-and-permissions', label: 'Reprints' },
       ],
     },
   ],

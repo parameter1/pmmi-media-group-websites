@@ -47,6 +47,7 @@ module.exports = {
         { href: '/page/packaging-associations', label: 'Packaging Associations' },
         { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
         { href: '/webinars', label: 'Webinars' },
+        { href: '/page/archive', label: 'Digital Editions' },
       ],
     },
     {
@@ -59,6 +60,7 @@ module.exports = {
         { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy', target: '_blank' },
         { href: '/page/pw-terms-use', label: 'Terms of Use' },
         { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
+        { href: '/pw/reprints-and-permissions', label: 'Reprints' },
       ],
     },
   ],
