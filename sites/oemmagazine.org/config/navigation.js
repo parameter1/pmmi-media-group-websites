@@ -42,7 +42,7 @@ module.exports = {
         { href: '/page/magazine', label: 'Magazine' },
         { href: '/leaders', label: 'Tech Trendsetters' },
         { href: '/videos', label: 'Videos' },
-        { href: '/page/digital-editions', label: 'Digital Editions' },
+        // { href: '/page/digital-editions', label: 'Digital Editions' },
       ],
     },
     {

@@ -48,7 +48,7 @@ module.exports = {
         { href: 'https://www.opxleadershipnetwork.org', label: 'OpX Leadership Network', target: '_blank' },
         { href: '/page/awards-sema', label: 'Sustainability Awards' },
         { href: '/page/awards-mia', label: 'Manufacturing Awards' },
-        { href: '/page/digital-editions', label: 'Digital Editions' },
+        // { href: '/page/digital-editions', label: 'Digital Editions' },
       ],
     },
     {
