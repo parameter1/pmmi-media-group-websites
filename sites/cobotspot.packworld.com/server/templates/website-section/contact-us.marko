@@ -13,8 +13,6 @@ $ const { id, alias, name, pageNode } = data;
     <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script>
   </@head>
   <@page>
-    <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "leaderboard" }) modifiers=["top-of-page"] />
-
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       <marko-web-page-wrapper>
         <@section>

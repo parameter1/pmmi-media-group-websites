@@ -17,18 +17,12 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
     <marko-web-resolve-page|{ data: content }| node=pageNode>
       $ const aliases = hierarchyAliases(content.primarySection);
       $ const adSlots = {
-        "gpt-ad-leaderboard": GAM.getAdUnit({ name: "leaderboard", aliases }),
-        "gpt-ad-imu1": GAM.getAdUnit({ name: "imu1", aliases, size: [300, 250]}),
         "gpt-ad-skyscraper": GAM.getAdUnit({ name: "skyscraper", aliases, size: [300, 600] }),
       };
       <marko-web-gam-slots slots=adSlots />
       <common-gam-content-targeting obj=content />
     </marko-web-resolve-page>
   </@head>
-  <@above-container>
-    <marko-web-gam-display-ad id="gpt-ad-leaderboard" modifiers=["above-container"] />
-    <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-top-below-head" modifiers=["above-container"] />
-  </@above-container>
   <@page>
 
     <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
