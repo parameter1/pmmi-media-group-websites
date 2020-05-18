@@ -1,9 +1,7 @@
 const navigation = require('./navigation');
-const leaders = require('./leaders');
 const nativeX = require('./native-x');
 
 module.exports = {
-  leaders,
   navigation,
   nativeX,
   company: 'PMMI Media Group',
@@ -22,13 +20,15 @@ module.exports = {
     },
   },
   socialMediaLinks: [
-    { provider: 'facebook', href: 'https://www.facebook.com/PackagingWorld' },
-    { provider: 'twitter', href: 'https://twitter.com/packagingworld' },
-    { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/packaging-world' },
+    { provider: 'instagram', href: 'https://www.instagram.com/universalrobots' },
+    { provider: 'twitter', href: 'https://www.twitter.com/Universal_Robot' },
+    { provider: 'facebook', href: 'https://www.facebook.com/UniversalRobots' },
+    { provider: 'linkedin', href: 'https://www.linkedin.com/company/universal-robots-a-s' },
+    { provider: 'youtube', href: 'https://www.youtube.com/channel/UCM09iVHDc416V8qLj-qhcWQ' },
   ],
   gtm: {
-    containerId: process.env.GTM_CONTAINER_ID || 'GTM-TK8WXJR',
-    slotPrefix: 'pw',
+    containerId: process.env.GTM_CONTAINER_ID || 'GTM-5D5ZGG5',
+    slotPrefix: 'cs',
   },
   wufoo: {
     userName: 'pmmimediagroup',
