@@ -6,7 +6,7 @@ module.exports = {
       { href: '/ur-plus', label: 'UR+' },
       { href: '/webinars', label: 'Webinars' },
       { href: '/education', label: 'Education' },
-      { href: '/page/cs-contact-us', label: 'Contact Us' },
+      { href: 'https://hubs.ly/H0qqYnh0', label: 'Contact Us', target: '_blank' },
     ],
   },
   tertiary: {
@@ -16,9 +16,7 @@ module.exports = {
   },
   footer: {
     items: [
-      { href: '/page/cs-contact-us', label: 'Contact' },
-      { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy', target: '_blank' },
-      { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
+      { href: 'https://hubs.ly/H0qqYnh0', label: 'Contact Us', target: '_blank' },
     ],
   },
   menu: [
@@ -30,20 +28,15 @@ module.exports = {
         { href: '/ur-plus', label: 'UR+' },
         { href: '/webinars', label: 'Webinars' },
         { href: '/education', label: 'Education' },
-        { href: '/page/cs-contact-us', label: 'Contact Us' },
       ],
     },
     {
       label: 'Resources',
       items: [
-      ],
-    },
-    {
-      label: 'User Tools',
-      items: [
-        { href: '/page/cs-contact-us', label: 'Contact' },
-        { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy', target: '_blank' },
-        { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
+        { href: '/downloads', label: 'Downloads' },
+        { href: '/videos', label: 'Videos' },
+        { href: '/blog', label: 'Blog' },
+        { href: 'https://hubs.ly/H0qqYnh0', label: 'Contact Us', target: '_blank' },
       ],
     },
   ],
