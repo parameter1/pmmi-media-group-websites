@@ -1,6 +1,12 @@
 module.exports = {
   secondary: {
     items: [
+      { href: '/case-studies', label: 'Case Studies' },
+      { href: '/products', label: 'Products' },
+      { href: '/ur-plus', label: 'UR+' },
+      { href: '/webinars', label: 'Webinars' },
+      { href: '/education', label: 'Education' },
+      { href: '/page/cs-contact-us', label: 'Contact Us' },
     ],
   },
   tertiary: {
