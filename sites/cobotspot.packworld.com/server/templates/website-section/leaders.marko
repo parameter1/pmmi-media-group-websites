@@ -1,0 +1,53 @@
+import hierarchyAliases from "@base-cms/marko-web/utils/hierarchy-aliases";
+import GAM from "../../../config/gam";
+
+$ const { site, config } = out.global;
+$ const { id, alias, name, pageNode } = data;
+
+<marko-web-website-section-page-layout id=id alias=alias name=name>
+  <@head>
+    <marko-web-gtm-website-section-context|{ context }| alias=alias>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-website-section-context>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      $ const adSlots = {
+          "gpt-ad-leaderboard":   GAM.getAdUnit({ name: "leaderboard", aliases }),
+        }
+       <marko-web-gam-slots slots=adSlots />
+    </marko-web-resolve-page>
+  </@head>
+  <@above-container>
+    <marko-web-gam-display-ad id="gpt-ad-leaderboard" modifiers=["above-container"] />
+    <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-top-below-head" modifiers=["above-container"] />
+  </@above-container>
+  <@page>
+    <marko-web-page-wrapper>
+      <@section>
+        <div class="leaders-index-page__header-wrapper">
+          <div class="leaders-index-page__logo">
+            <marko-web-img
+              src=site.get("leaders.header.imgSrc")
+              alt=site.get("leaders.title")
+            />
+          </div>
+          <div class="leaders-index-page__header">
+            <h1 class="leaders-index-page__title">
+              ${site.get("leaders.title")}
+            </h1>
+            <div class="leaders-index-page__description">
+              <p>Welcome to <em>${config.siteName()}'s</em> ${site.get("leaders.title")} program.</p>
+            </div>
+          </div>
+          <div class="leaders-index-page__body">
+            <p>We hope you'll find this directory of packaging machinery and materials vendors to be a helpful resource. For each participating supplier, you'll find a comprehensive company and product profile page to help you make more informed decisions.</p>
+            <p>You'll be pleased to know that our annual Leaders in Packaging program also supports packaging education via a tuition scholarship for students pursuing degrees that will prepare them for a career in packaging. Scholarships have been awarded to students at <a href="/13359570">Clemson University</a>, <a href="/13361275">Missouri University of Science and Technology</a>, <a href="/13363639">Virginia Tech</a>, <a href="/13366329">Michigan State</a>, <a href="/13368828">Cal Poly</a>, <a href="/13371963">Rutgers</a>, <a href="/13374554">Rochester Institute of Technology</a> and the <a href="/21109517">University of Florida, Packaging Engineering Program</a>. 2020 will be our tenth year of supporting education with the “Future Leaders in Packaging Scholarship.” For more information about this scholarship, please contact Publisher Joe Angel at <a href="mailto:jangel@pmmimediagroup.com">jangel@pmmimediagroup.com</a>.</p>
+          </div>
+        </div>
+      </@section>
+      <@section>
+        <common-leaders-all />
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-website-section-page-layout>
