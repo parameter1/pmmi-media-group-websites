@@ -97,25 +97,10 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
                 <common-featured-companies content-id=content.id />
               </if>
 
-              <!-- Div for BI Library -->
-              <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-bilibrary" class="mt-3" />
-
             </default-theme-page-contents>
 
             <aside class="col-lg-4 page-rail">
               <shared-inquiry-block content=content />
-
-              <marko-web-gam-display-ad id="gpt-ad-imu1" />
-
-              <!-- Div for Audience -->
-              <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-01-right" />
-
-              <!-- Div for Control Systems Integrators Report -->
-              <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-02-right" />
-
-              <!-- Div for Marketing -->
-              <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-03-right" />
-
             </aside>
           </div>
 
@@ -159,9 +144,6 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
       </div>
 
       <div class="row">
-        <div class="col-lg-4 page-rail">
-          <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-04-left" />
-        </div>
         <div class="col-lg-8">
           <marko-web-query|{ nodes }|
             name="website-scheduled-content"
@@ -187,13 +169,6 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
           >
             <website-content-card-deck-flow nodes=nodes />
           </marko-web-query>
-        </div>
-      </div>
-
-      <!-- Div for Audience -->
-      <div class="row">
-        <div class="col-lg-12 mb-4">
-          <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-bottom-wide" />
         </div>
       </div>
 
