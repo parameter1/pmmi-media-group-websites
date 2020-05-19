@@ -7,15 +7,15 @@ module.exports = {
   company: 'PMMI Media Group',
   logos: {
     navbar: {
-      src: 'https://img.packworld.com/files/base/pmmi/pw/pw_logo.png?h=45',
+      src: 'https://img.packworld.com/files/base/pmmi/cs/universal-robots-logo-white.png?h=45',
       srcset: [
-        'https://img.packworld.com/files/base/pmmi/pw/pw_logo.png?h=90 2x',
+        'https://img.packworld.com/files/base/pmmi/cs/universal-robots-logo-white.png?h=90 2x',
       ],
     },
     footer: {
-      src: 'https://img.packworld.com/files/base/pmmi/pw/pw_logo.png?h=60',
+      src: 'https://img.packworld.com/files/base/pmmi/cs/universal-robots-logo-white.png?h=60',
       srcset: [
-        'https://img.packworld.com/files/base/pmmi/pw/pw_logo.png?h=120 2x',
+        'https://img.packworld.com/files/base/pmmi/cs/universal-robots-logo-white.png?h=120 2x',
       ],
     },
   },
@@ -42,7 +42,7 @@ module.exports = {
     sendTo: 'chat@pmmimediagroup.com',
     replyTo: 'chat@pmmimediagroup.com',
     sendFrom: 'Packaging World <noreply@baseplatform.io>',
-    logo: 'https://img.packworld.com/files/base/pmmi/pw/pw_logo.png?h=45',
+    logo: 'https://img.packworld.com/files/base/pmmi/cs/universal-robots-logo-white.png?h=45',
     bgColor: '#000',
   },
 };
