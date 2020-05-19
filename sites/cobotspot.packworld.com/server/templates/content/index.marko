@@ -159,9 +159,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
             name="website-scheduled-content"
             params={ sectionAlias: section.alias, limit: 3, skip: 4, queryFragment }
           >
-            <website-content-card-deck-flow nodes=nodes>
-              <@native-x index=1 name="load-more" />
-            </website-content-card-deck-flow>
+            <website-content-card-deck-flow nodes=nodes />
           </marko-web-query>
         </div>
       </div>
@@ -193,9 +191,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
             name="website-scheduled-content"
             params={ sectionAlias: section.alias, limit: 3, skip: 9, queryFragment }
           >
-            <website-content-card-deck-flow nodes=nodes>
-              <@native-x index=2 name="load-more" />
-            </website-content-card-deck-flow>
+            <website-content-card-deck-flow nodes=nodes />
           </marko-web-query>
         </div>
       </div>
