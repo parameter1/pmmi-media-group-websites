@@ -39,8 +39,8 @@ module.exports = {
   inquiry: {
     enabled: true,
     directSend: false,
-    sendTo: 'chat@pmmimediagroup.com',
-    replyTo: 'chat@pmmimediagroup.com',
+    sendTo: 'info-request@pmmimediagroup.com',
+    replyTo: 'info-request@pmmimediagroup.com',
     sendFrom: 'Packaging World <noreply@baseplatform.io>',
     logo: 'https://img.packworld.com/files/base/pmmi/cs/universal-robots-logo-white.png?h=45',
     bgColor: '#000',

@@ -39,8 +39,8 @@ module.exports = {
   inquiry: {
     enabled: true,
     directSend: false,
-    sendTo: 'chat@pmmimediagroup.com',
-    replyTo: 'chat@pmmimediagroup.com',
+    sendTo: 'info-request@pmmimediagroup.com',
+    replyTo: 'info-request@pmmimediagroup.com',
     sendFrom: 'ProFood World <noreply@baseplatform.io>',
     logo: 'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo.png?h=45',
     bgColor: '#000',
