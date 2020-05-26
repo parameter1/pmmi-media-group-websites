@@ -40,8 +40,8 @@ module.exports = {
   inquiry: {
     enabled: true,
     directSend: false,
-    sendTo: 'chat@pmmimediagroup.com',
-    replyTo: 'chat@pmmimediagroup.com',
+    sendTo: 'info-request@pmmimediagroup.com',
+    replyTo: 'info-request@pmmimediagroup.com',
     sendFrom: 'Automation World <noreply@baseplatform.io>',
     logo: 'https://img.automationworld.com/files/base/pmmi/aw/aw_logo.png?h=45',
     bgColor: '#000',
