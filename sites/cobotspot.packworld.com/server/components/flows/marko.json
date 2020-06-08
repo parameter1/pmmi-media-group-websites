@@ -1,4 +1,8 @@
 {
+  "<website-twitter-feed>": {
+    "template": "./twitter-feed.marko",
+    "@height": "number"
+  },
   "<website-content-hero-flow>": {
     "template": "./content-hero.marko",
     "<native-x>": {
@@ -6,6 +10,10 @@
       "@name": "string",
       "@aliases": "array"
     },
+    "@nodes": "array"
+  },
+  "<website-content-hero-feed>": {
+    "template": "./content-hero-feed.marko",
     "@nodes": "array"
   },
   "<website-content-list-flow>": {

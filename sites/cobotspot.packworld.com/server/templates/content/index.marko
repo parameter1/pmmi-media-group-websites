@@ -100,83 +100,19 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
             </default-theme-page-contents>
 
             <aside class="col-lg-4 page-rail">
-              <shared-inquiry-block content=content />
+              <website-twitter-feed height=650 />
+              <marko-web-gam-display-ad id="gpt-ad-skyscraper" />
             </aside>
           </div>
 
         </@section>
       </marko-web-page-wrapper>
 
-      <if(["article", "blog", "media-gallery", "news", "podcast", "press-release", "product", "video", "webinar"].includes(content.type))>
-        <common-leadership-company-videos content-id=content.id />
-      </if>
-
       <div class="row mt-4">
-        <div class="col-lg-8">
-          <marko-web-query|{ nodes }|
-            name="website-scheduled-content"
-            params={ sectionAlias: section.alias, limit: 4, queryFragment }
-          >
-            <default-theme-card-deck-flow cols=2 nodes=nodes>
-              <@slot|{ node, index }|>
-                <website-content-card-node
-                  image-width=340
-                  node=node
-                />
-              </@slot>
-            </default-theme-card-deck-flow>
-          </marko-web-query>
-        </div>
-        <div class="col-lg-4 page-rail">
-          <marko-web-gam-display-ad id="gpt-ad-skyscraper" modifiers=["in-card"] />
-        </div>
-      </div>
-
-      <div class="row">
         <div class="col-lg-12">
           <marko-web-query|{ nodes }|
             name="website-scheduled-content"
-            params={ sectionAlias: section.alias, limit: 3, skip: 4, queryFragment }
-          >
-            <website-content-card-deck-flow nodes=nodes />
-          </marko-web-query>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-8">
-          <marko-web-query|{ nodes }|
-            name="website-scheduled-content"
-            params={ sectionAlias: section.alias, limit: 2, skip: 7, queryFragment }
-          >
-            <default-theme-card-deck-flow cols=2 nodes=nodes>
-              <@slot|{ node, index }|>
-                <website-content-card-node
-                  image-width=340
-                  node=node
-                />
-              </@slot>
-            </default-theme-card-deck-flow>
-          </marko-web-query>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12">
-          <marko-web-query|{ nodes }|
-            name="website-scheduled-content"
-            params={ sectionAlias: section.alias, limit: 3, skip: 9, queryFragment }
-          >
-            <website-content-card-deck-flow nodes=nodes />
-          </marko-web-query>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12">
-          <marko-web-query|{ nodes }|
-            name="website-scheduled-content"
-            params={ sectionAlias: section.alias, limit: 8, skip: 12, queryFragment }
+            params={ sectionAlias: section.alias, limit: 9, queryFragment }
           >
             <website-content-card-deck-flow nodes=nodes />
           </marko-web-query>
@@ -196,7 +132,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
         aliases=aliases
         section-id=section.id
         section-name=section.name
-        section-skip=20
+        section-skip=9
       >
       </website-content-load-more-block>
     </marko-web-resolve-page>

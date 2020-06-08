@@ -10,32 +10,43 @@ $ const { id, alias, name, pageNode } = data;
     <marko-web-gtm-website-section-context|{ context }| alias=alias>
       <marko-web-gtm-push data=context />
     </marko-web-gtm-website-section-context>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      $ const adSlots = {
+        "gpt-ad-section-skyscraper": GAM.getAdUnit({ name: "skyscraper", aliases, size: [300, 600] }),
+      };
+       <marko-web-gam-slots slots=adSlots />
+    </marko-web-resolve-page>
   </@head>
   <@page>
     <marko-web-query|{ nodes }|
       name="website-optioned-content"
-      params={ sectionId: id, optionName: "Pinned", limit: 5, requiresImage: true, queryFragment }
+      params={ sectionId: id, optionName: "Pinned", limit: 2, requiresImage: true, queryFragment }
     >
-      <website-content-hero-flow nodes=nodes />
+      <website-content-hero-feed nodes=nodes />
     </marko-web-query>
 
-    <marko-web-query|{ nodes }|
-      name="website-optioned-content"
-      params={ sectionId: id, optionName: "Pinned", limit: 5, skip: 5, requiresImage: true, queryFragment }
-    >
-      <website-content-card-deck-flow nodes=nodes ad-index=1 ad-name="imu1" >
-        <@native-x index=2 name="load-more" />
-      </website-content-card-deck-flow>
-    </marko-web-query>
+    <div class="row">
+      <div class="col-lg-8 mb-block">
+        <marko-web-query|{ nodes }|
+          name="website-optioned-content"
+          params={ sectionId: id, optionName: "Pinned", limit: 4, skip: 1, requiresImage: true, queryFragment }
+        >
+          <default-theme-card-deck-flow cols=2 nodes=nodes>
+            <@slot|{ node, index }|>
+              <website-content-card-node
+                image-width=340
+                node=node
+              />
+            </@slot>
+          </default-theme-card-deck-flow>
+        </marko-web-query>
+      </div>
+      <div class="col-lg-4 mb-block page-rail">
+        <marko-web-gam-display-ad id="gpt-ad-section-skyscraper" modifiers=["in-card"] />
+      </div>
+    </div>
 
-    <marko-web-query|{ nodes }|
-      name="website-optioned-content"
-      params={ sectionId: id, optionName: "Pinned", limit: 5, skip: 10, requiresImage: true, queryFragment }
-    >
-      <website-content-card-deck-flow nodes=nodes ad-index=2 ad-name="imu2" >
-        <@native-x index=1 name="load-more" />
-      </website-content-card-deck-flow>
-    </marko-web-query>
   </@page>
   <@below-page>
     <marko-web-resolve-page|{ data: section }| node=pageNode>
@@ -45,7 +56,7 @@ $ const { id, alias, name, pageNode } = data;
         component-input={ aliases }
         fragment-name="content-list"
         query-name="website-scheduled-content"
-        query-params={ sectionId: id, limit: 12, skip: 15, requiresImage: true }
+        query-params={ sectionId: id, limit: 12, skip: 5, requiresImage: true }
         max-pages=3
         page-input={ for: "website-section", id }
       />
