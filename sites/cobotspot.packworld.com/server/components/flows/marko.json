@@ -1,4 +1,8 @@
 {
+  "<website-twitter-feed>": {
+    "template": "./twitter-feed.marko",
+    "@height": "number"
+  },
   "<website-content-hero-flow>": {
     "template": "./content-hero.marko",
     "<native-x>": {
