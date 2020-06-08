@@ -5,7 +5,7 @@ module.exports = {
       { href: '/processing-equipment', label: 'Processing Equipment' },
       { href: '/automation', label: 'Automation' },
       { href: '/food-safety', label: 'Food Safety' },
-      { href: '/events', label: 'Events' },
+      { href: '/page/pfw-event-calendar', label: 'Events' },
       { href: '/downloads', label: 'Downloads' },
     ],
   },
@@ -36,7 +36,7 @@ module.exports = {
     {
       label: 'Resources',
       items: [
-        { href: '/events', label: 'Events' },
+        { href: '/page/pfw-event-calendar', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
         { href: '/page/pfw-newsletter', label: 'Newsletters' },
         { href: '/page/magazine', label: 'Magazine' },
