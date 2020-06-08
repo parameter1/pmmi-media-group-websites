@@ -1,0 +1,18 @@
+<default-theme-hero-flow nodes=input.nodes>
+  <@hero|{ node }|>
+    <website-content-card-node node=node image-width=630 title-modifiers=["large"] />
+  </@hero>
+  <@list|{ nodes }|>
+    <a
+      class="twitter-timeline btn btn-primary btn-block"
+      data-height="450"
+      data-theme="light"
+      href="https://twitter.com/Universal_Robot"
+      target="_blank"
+    >
+      Tweets by Universal_Robot
+    </a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  </@list>
+</default-theme-hero-flow>

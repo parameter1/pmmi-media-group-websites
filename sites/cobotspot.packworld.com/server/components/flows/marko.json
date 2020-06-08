@@ -8,6 +8,10 @@
     },
     "@nodes": "array"
   },
+  "<website-content-hero-feed>": {
+    "template": "./content-hero-feed.marko",
+    "@nodes": "array"
+  },
   "<website-content-list-flow>": {
     "template": "./content-list.marko",
     "<header>": {},

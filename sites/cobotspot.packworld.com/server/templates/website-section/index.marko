@@ -14,14 +14,14 @@ $ const { id, alias, name, pageNode } = data;
   <@page>
     <marko-web-query|{ nodes }|
       name="website-optioned-content"
-      params={ sectionId: id, optionName: "Pinned", limit: 5, requiresImage: true, queryFragment }
+      params={ sectionId: id, optionName: "Pinned", limit: 2, requiresImage: true, queryFragment }
     >
-      <website-content-hero-flow nodes=nodes />
+      <website-content-hero-feed nodes=nodes />
     </marko-web-query>
 
     <marko-web-query|{ nodes }|
       name="website-optioned-content"
-      params={ sectionId: id, optionName: "Pinned", limit: 5, skip: 5, requiresImage: true, queryFragment }
+      params={ sectionId: id, optionName: "Pinned", limit: 5, skip: 1, requiresImage: true, queryFragment }
     >
       <website-content-card-deck-flow nodes=nodes ad-index=1 ad-name="imu1" >
         <@native-x index=2 name="load-more" />
@@ -30,7 +30,7 @@ $ const { id, alias, name, pageNode } = data;
 
     <marko-web-query|{ nodes }|
       name="website-optioned-content"
-      params={ sectionId: id, optionName: "Pinned", limit: 5, skip: 10, requiresImage: true, queryFragment }
+      params={ sectionId: id, optionName: "Pinned", limit: 5, skip: 6, requiresImage: true, queryFragment }
     >
       <website-content-card-deck-flow nodes=nodes ad-index=2 ad-name="imu2" >
         <@native-x index=1 name="load-more" />
@@ -45,7 +45,7 @@ $ const { id, alias, name, pageNode } = data;
         component-input={ aliases }
         fragment-name="content-list"
         query-name="website-scheduled-content"
-        query-params={ sectionId: id, limit: 12, skip: 15, requiresImage: true }
+        query-params={ sectionId: id, limit: 12, skip: 11, requiresImage: true }
         max-pages=3
         page-input={ for: "website-section", id }
       />
