@@ -4,6 +4,7 @@ const whitePapers = require('../templates/published-content/white-papers');
 const videos = require('../templates/published-content/videos');
 const podcasts = require('../templates/published-content/podcasts');
 const documents = require('../templates/published-content/documents');
+const products = require('../templates/published-content/products');
 
 module.exports = (app) => {
   app.get('/supplier-events', (_, res) => { res.marko(events); });
@@ -12,4 +13,5 @@ module.exports = (app) => {
   app.get('/videos', (_, res) => { res.marko(videos); });
   app.get('/podcasts', (_, res) => { res.marko(podcasts); });
   app.get('/downloads', (_, res) => { res.marko(documents); });
+  app.get('/products', (_, res) => { res.marko(products); });
 };
