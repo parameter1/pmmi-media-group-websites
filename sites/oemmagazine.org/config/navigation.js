@@ -6,7 +6,7 @@ module.exports = {
       { href: '/products', label: 'Products' },
       { href: '/oem-issues', label: 'OEM Issues' },
       { href: '/page/oem-event-calendar', label: 'Events' },
-      { href: '/downloads', label: 'Downloads' },
+      { href: '/page/oem-newsletter-mainnav', label: 'Newsletters' },
     ],
   },
   tertiary: {
