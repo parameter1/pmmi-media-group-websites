@@ -34,12 +34,13 @@ $ const description = defaultDescription(title, config);
       name="all-published-content"
       params={ contentTypes: ["Document"], limit: 12, queryFragment }
     >
-    <website-content-list-flow nodes=nodes />
+    <website-content-list-flow with-teaser=true nodes=nodes />
     </marko-web-query>
   </@page>
   <@below-page>
     <marko-web-load-more
       component-name="content-list-flow"
+      component-input={ withTeaser: true }
       fragment-name="content-list"
       query-name="all-published-content"
       query-params={ contentTypes: ["Document"], limit: 12, skip: 12 }
