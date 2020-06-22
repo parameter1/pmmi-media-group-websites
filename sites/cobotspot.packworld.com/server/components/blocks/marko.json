@@ -31,5 +31,8 @@
   },
   "<website-magazine-publications-block>": {
     "template": "./magazine-publications.marko"
+  },
+  "<website-footer-block>": {
+    "template": "./footer.marko"
   }
 }
