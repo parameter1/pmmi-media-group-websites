@@ -25,3 +25,8 @@ $leaders-accent-color: #d557af;
   background-color: $light-bg-color;
   border-color: $light-bg-color;
 }
+.site-footer {
+  &__brand {
+    padding: 0 2rem;
+  }
+}
