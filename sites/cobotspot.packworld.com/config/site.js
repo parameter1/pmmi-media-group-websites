@@ -45,4 +45,14 @@ module.exports = {
     logo: 'https://img.packworld.com/files/base/pmmi/cs/universal-robots-logo-white.png?h=45',
     bgColor: '#000',
   },
+  packworld: {
+    logos: {
+      footer: {
+        src: 'https://img.packworld.com/files/base/pmmi/pw/pw_logo.png?h=60',
+        srcset: [
+          'https://img.packworld.com/files/base/pmmi/pw/pw_logo.png?h=120 2x',
+        ],
+      },
+    },
+  },
 };

@@ -17,6 +17,8 @@ module.exports = {
   footer: {
     items: [
       { href: 'https://hubs.ly/H0qqYnh0', label: 'Contact Us', target: '_blank' },
+      { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy', target: '_blank' },
+      { href: '/page/cs-terms-use', label: 'Terms of Use' },
     ],
   },
   menu: [
@@ -37,6 +39,8 @@ module.exports = {
         { href: '/videos', label: 'Videos' },
         { href: '/blog', label: 'Blog' },
         { href: 'https://hubs.ly/H0qqYnh0', label: 'Contact Us', target: '_blank' },
+        { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy', target: '_blank' },
+        { href: '/page/cs-terms-use', label: 'Terms of Use' },
       ],
     },
   ],
