@@ -68,19 +68,19 @@ $ const { id, type, content } = input;
       name="all-company-content"
       params={
         companyId: id,
-        includeContentTypes: ["Product"],
+        includeContentTypes: ["Promotion"],
         queryFragment,
         limit: 4,
       }
     >
       <marko-web-node-list class="mt-block">
         <@header>
-          Products
+          Featured Products
         </@header>
         <@nodes|{ nodes: items }| nodes=nodes>
           <default-theme-card-deck-flow cols=2 nodes=items>
             <@slot|{ node, index }|>
-              <shared-content-card-node
+              <common-featured-products-card-node
                 image-width=340
                 node=node
               />
