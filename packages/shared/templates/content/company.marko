@@ -31,7 +31,7 @@ $ const { id, type, pageNode } = data;
         component-input={ aliases }
         fragment-name="content-list"
         query-name="all-company-content"
-        query-params={ companyId: id, limit: 9, includeContentTypes }
+        query-params={ companyId: id, limit: 9, includeContentTypes, withSite: false }
         page-input={ for: "content", id, type }
       />
     </marko-web-resolve-page>

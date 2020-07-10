@@ -8,7 +8,7 @@ $ const { id, type } = input;
 
 <marko-web-query|res|
   name="content"
-  params={ id, queryFragment: limitedFragment }
+  params={ id, queryFragment: limitedFragment, withSite: false }
 >
   $ const { node: content } = res;
   $ const section = getAsObject(content, "primarySection");
