@@ -18,6 +18,11 @@ $leaders-primary-color: #002f7b;
 $leaders-primary-color-light: #005bac;
 $leaders-accent-color: #d557af;
 
+$theme-site-header-breakpoints: (
+  hide-secondary: 790px,
+  small-text-secondary: 875px
+);
+
 @import "../../node_modules/@pmmi-media-group/package-common/scss/common";
 @import "../../node_modules/@pmmi-media-group/package-shared/scss/index";
 
