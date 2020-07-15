@@ -20,7 +20,7 @@ $theme-site-header-breakpoints: (
   small-logo: 667px,
   small-text-primary: 10000px,
   small-text-secondary: 740px
-);
+) !default;
 
 @import "../../node_modules/@base-cms/marko-web-theme-default/skins/orion/skin";
 @import "../../node_modules/@base-cms/marko-web-gtm/scss/slot";
