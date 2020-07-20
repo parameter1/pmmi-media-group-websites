@@ -62,7 +62,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
               </if>
               <else-if(displayCarousel)>
                 $ const images = getAsArray(content, "images.edges").map(({ node }) => node);
-                <if(images.length > 1 && (content.status === 1 && content.published < new Date(2019, 9, 30)))>
+                <if(images.length > 1)>
                   <common-image-slider images=images />
                 </if>
                 <else>
