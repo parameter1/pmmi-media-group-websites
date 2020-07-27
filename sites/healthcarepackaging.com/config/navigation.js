@@ -7,7 +7,7 @@ module.exports = {
       { href: '/logistics-distribution', label: 'Logistics & Cold Chain' },
       { href: '/issues', label: 'Issues' },
       { href: '/page/hcp-event-calendar', label: 'Events' },
-      { href: '/downloads', label: 'Downloads' },
+      { href: '/page/hcp-newsletters-mainnav', label: 'Newsletters' },
     ],
   },
   tertiary: {

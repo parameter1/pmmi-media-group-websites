@@ -6,7 +6,7 @@ module.exports = {
       { href: '/factory', label: 'Factory' },
       { href: '/process', label: 'Process' },
       { href: '/page/aw-event-calendar', label: 'Events' },
-      { href: '/downloads', label: 'Downloads' },
+      { href: '/page/aw-newsletters-mainnav', label: 'Newsletters' },
     ],
   },
   tertiary: {
