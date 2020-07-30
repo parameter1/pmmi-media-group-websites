@@ -6,7 +6,7 @@ module.exports = {
       { href: '/design', label: 'Design' },
       { href: '/issues', label: 'Issues' },
       { href: '/page/pw-event-calendar', label: 'Events' },
-      { href: '/downloads', label: 'Downloads' },
+      { href: '/page/pw-newsletters-mainnav', label: 'Newsletters' },
       { href: 'https://cobotspot.packworld.com', label: 'Collaborative Robots', target: '_blank' },
     ],
   },

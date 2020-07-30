@@ -6,7 +6,7 @@ module.exports = {
       { href: '/automation', label: 'Automation' },
       { href: '/food-safety', label: 'Food Safety' },
       { href: '/page/pfw-event-calendar', label: 'Events' },
-      { href: '/downloads', label: 'Downloads' },
+      { href: '/page/pfw-newsletters-mainnav', label: 'Newsletters' },
     ],
   },
   tertiary: {
