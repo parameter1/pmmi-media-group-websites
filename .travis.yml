@@ -29,37 +29,37 @@ jobs:
 
     - stage: production
       name: automationworld.com
-      script: npx @base-cms/website-deployment-tool deploy automationworld.com caprica
+      script: npx @base-cms/website-deployment-tool deploy automationworld.com websites
       install: skip
       env: [ENVIRONMENT=production]
 
     - stage: production
       name: healthcarepackaging.com
-      script: npx @base-cms/website-deployment-tool deploy healthcarepackaging.com caprica
+      script: npx @base-cms/website-deployment-tool deploy healthcarepackaging.com websites
       install: skip
       env: [ENVIRONMENT=production]
 
     - stage: production
       name: oemmagazine.org
-      script: npx @base-cms/website-deployment-tool deploy oemmagazine.org caprica
+      script: npx @base-cms/website-deployment-tool deploy oemmagazine.org websites
       install: skip
       env: [ENVIRONMENT=production]
 
     - stage: production
       name: packworld.com
-      script: npx @base-cms/website-deployment-tool deploy packworld.com caprica
+      script: npx @base-cms/website-deployment-tool deploy packworld.com websites
       install: skip
       env: [ENVIRONMENT=production]
 
     - stage: production
       name: profoodworld.com
-      script: npx @base-cms/website-deployment-tool deploy profoodworld.com caprica
+      script: npx @base-cms/website-deployment-tool deploy profoodworld.com websites
       install: skip
       env: [ENVIRONMENT=production]
 
     - stage: production
       name: cobotspot.packworld.com
-      script: npx @base-cms/website-deployment-tool deploy cobotspot.packworld.com caprica
+      script: npx @base-cms/website-deployment-tool deploy cobotspot.packworld.com websites
       install: skip
       env: [ENVIRONMENT=production]
 
