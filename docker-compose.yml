@@ -25,11 +25,11 @@ x-env-defaults: &env
   SENDGRID_DEV_TO: developer@endeavorb2b.com
   YARN_CACHE_FOLDER: /.yarn-cache
 
-x-env-caprica: &env-caprica-staging
-  GRAPHQL_URI: ${GRAPHQL_URI-https://caprica.graphql.base-cms.io}
-  OEMBED_URI: ${OEMBED_URI-https://caprica.oembed.base-cms.io}
-  RSS_URI: ${RSS_URI-https://caprica.rss.base-cms.io}
-  SITEMAPS_URI: ${SITEMAPS_URI-https://caprica.sitemaps.base-cms.io}
+x-env-tauron: &env-tauron
+  GRAPHQL_URI: ${GRAPHQL_URI-https://tauron.graphql.base.parameter1.com}
+  OEMBED_URI: ${OEMBED_URI-https://tauron.oembed.base.parameter1.com}
+  RSS_URI: ${RSS_URI-https://tauron.rss.base.parameter1.com}
+  SITEMAPS_URI: ${SITEMAPS_URI-https://tauron.sitemaps.base.parameter1.com}
 
 x-env-development: &env-development
   GRAPHQL_URI: ${GRAPHQL_URI-http://host.docker.internal:10002}
@@ -65,7 +65,7 @@ services:
     working_dir: /root/sites/automationworld.com
     environment:
       <<: *env
-      <<: *env-caprica-staging
+      <<: *env-tauron
       PORT: 80
       EXPOSED_PORT: 9710
       LIVERELOAD_PORT: 19710
@@ -81,7 +81,7 @@ services:
     working_dir: /root/sites/packworld.com
     environment:
       <<: *env
-      <<: *env-caprica-staging
+      <<: *env-tauron
       PORT: 80
       EXPOSED_PORT: 9711
       LIVERELOAD_PORT: 19711
@@ -97,7 +97,7 @@ services:
     working_dir: /root/sites/healthcarepackaging.com
     environment:
       <<: *env
-      <<: *env-caprica-staging
+      <<: *env-tauron
       PORT: 80
       EXPOSED_PORT: 9712
       LIVERELOAD_PORT: 19712
@@ -113,7 +113,7 @@ services:
     working_dir: /root/sites/profoodworld.com
     environment:
       <<: *env
-      <<: *env-caprica-staging
+      <<: *env-tauron
       PORT: 80
       EXPOSED_PORT: 9713
       LIVERELOAD_PORT: 19713
@@ -129,7 +129,7 @@ services:
     working_dir: /root/sites/oemmagazine.org
     environment:
       <<: *env
-      <<: *env-caprica-staging
+      <<: *env-tauron
       PORT: 80
       EXPOSED_PORT: 9714
       LIVERELOAD_PORT: 19714
@@ -145,7 +145,7 @@ services:
     working_dir: /root/sites/cobotspot.packworld.com
     environment:
       <<: *env
-      <<: *env-caprica-staging
+      <<: *env-tauron
       PORT: 80
       EXPOSED_PORT: 9715
       LIVERELOAD_PORT: 19715
