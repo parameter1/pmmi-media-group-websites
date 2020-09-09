@@ -1,3 +1,4 @@
+require('@pmmi-media-group/package-shared/datadog');
 const newrelic = require('newrelic');
 const { startServer } = require('@base-cms/marko-web');
 const { version } = require('./package.json');

@@ -19,6 +19,7 @@
     "@base-cms/object-path": "^1.25.0",
     "@base-cms/utils": "^1.25.0",
     "@pmmi-media-group/package-common": "^1.13.1",
+    "dd-trace": "^0.25.1",
     "graphql-tag": "^2.10.1"
   },
   "devDependencies": {
