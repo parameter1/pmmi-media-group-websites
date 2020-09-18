@@ -13,14 +13,19 @@ $enable-rounded: false;
 $theme-site-navbar-logo-height: 30px;
 $theme-site-navbar-logo-height-sm: 25px;
 
-$theme-site-header-breakpoints: (
-  hide-primary: 10000px,
-  hide-secondary: 610px,
-  hide-tertiary: 0,
-  small-logo: 667px,
-  small-text-primary: 10000px,
-  small-text-secondary: 740px
-) !default;
+$theme-site-header-breakpoints: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-site-header-breakpoints: map-merge(
+  (
+    hide-primary: 10000px,
+    hide-secondary: 610px,
+    hide-tertiary: 0,
+    small-logo: 667px,
+    small-text-primary: 10000px,
+    small-text-secondary: 740px
+  ),
+  $theme-site-header-breakpoints
+);
 
 @import "../../node_modules/@base-cms/marko-web-theme-default/skins/orion/skin";
 @import "../../node_modules/@base-cms/marko-web-gtm/scss/slot";
