@@ -11,7 +11,7 @@ module.exports = (app) => {
   app.get('/:alias(global-250)', (_, res) => { res.marko(global250); });
   app.get('/:alias(global-250/*)', (_, res) => { res.marko(global250); });
 
-  app.get('/global-50', (_, res) => { res.marko(global50); });
+  app.get('/:alias(global-50)', (_, res) => { res.marko(global50); });
   app.get('/:alias(global-50/*)', (_, res) => { res.marko(global50); });
 
   app.get('/:alias(leaders)', withWebsiteSection({
