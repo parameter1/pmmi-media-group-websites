@@ -12,6 +12,13 @@ stages:
   - name: production-finished
     if: tag =~ /^v\d+\.\d+\.\d+$/
 
+  - name: staging-started
+    if: tag is present
+  - name: staging
+    if: tag is present
+  - name: staging-finished
+    if: tag is present
+
 jobs:
   include:
     - stage: test
@@ -23,6 +30,12 @@ jobs:
       install: skip
       env: [ENVIRONMENT=production]
 
+    - stage: staging-started
+      name: Deployment Started
+      script: npx @base-cms/website-deployment-tool notify-started
+      install: skip
+      env: [ENVIRONMENT=staging]
+
     #############################
     ### vvv ADD SITES HERE vvv ##
     #############################
@@ -33,11 +46,23 @@ jobs:
       install: skip
       env: [ENVIRONMENT=production]
 
+    - stage: staging
+      name: automationworld.com
+      script: npx @base-cms/website-deployment-tool deploy automationworld.com staging-websites
+      install: skip
+      env: [ENVIRONMENT=staging]
+
     - stage: production
       name: healthcarepackaging.com
       script: npx @base-cms/website-deployment-tool deploy healthcarepackaging.com websites
       install: skip
       env: [ENVIRONMENT=production]
+
+    - stage: staging
+      name: healthcarepackaging.com
+      script: npx @base-cms/website-deployment-tool deploy healthcarepackaging.com staging-websites
+      install: skip
+      env: [ENVIRONMENT=staging]
 
     - stage: production
       name: oemmagazine.org
@@ -45,11 +70,23 @@ jobs:
       install: skip
       env: [ENVIRONMENT=production]
 
+    - stage: staging
+      name: oemmagazine.org
+      script: npx @base-cms/website-deployment-tool deploy oemmagazine.org staging-websites
+      install: skip
+      env: [ENVIRONMENT=staging]
+
     - stage: production
       name: packworld.com
       script: npx @base-cms/website-deployment-tool deploy packworld.com websites
       install: skip
       env: [ENVIRONMENT=production]
+
+    - stage: staging
+      name: packworld.com
+      script: npx @base-cms/website-deployment-tool deploy packworld.com staging-websites
+      install: skip
+      env: [ENVIRONMENT=staging]
 
     - stage: production
       name: profoodworld.com
@@ -57,11 +94,23 @@ jobs:
       install: skip
       env: [ENVIRONMENT=production]
 
+    - stage: staging
+      name: profoodworld.com
+      script: npx @base-cms/website-deployment-tool deploy profoodworld.com staging-websites
+      install: skip
+      env: [ENVIRONMENT=staging]
+
     - stage: production
       name: cobotspot.packworld.com
       script: npx @base-cms/website-deployment-tool deploy cobotspot.packworld.com websites
       install: skip
       env: [ENVIRONMENT=production]
+
+    - stage: staging
+      name: cobotspot.packworld.com
+      script: npx @base-cms/website-deployment-tool deploy cobotspot.packworld.com staging-websites
+      install: skip
+      env: [ENVIRONMENT=staging]
 
     #############################
     ### ^^^ ADD SITES HERE ^^^ ##
@@ -72,3 +121,9 @@ jobs:
       script: npx @base-cms/website-deployment-tool notify-finished
       install: skip
       env: [ENVIRONMENT=production]
+
+    - stage: staging-finished
+      name: Deployment Finished
+      script: npx @base-cms/website-deployment-tool notify-finished
+      install: skip
+      env: [ENVIRONMENT=staging]
