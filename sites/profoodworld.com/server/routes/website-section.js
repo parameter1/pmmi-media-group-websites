@@ -8,13 +8,11 @@ const leaders = require('../templates/website-section/leaders');
 const queryFragment = require('../graphql/fragments/website-section-page');
 
 module.exports = (app) => {
-  app.get('/global-250', (_, res) => { res.marko(global250); });
-  app.get('/global-250/2017', (_, res) => { res.marko(global250); });
-  app.get('/global-250/2016', (_, res) => { res.marko(global250); });
+  app.get('/:alias(global-250)', (_, res) => { res.marko(global250); });
+  app.get('/:alias(global-250/*)', (_, res) => { res.marko(global250); });
 
   app.get('/global-50', (_, res) => { res.marko(global50); });
-  app.get('/global-50/2017', (_, res) => { res.marko(global50); });
-  app.get('/global-50/2016', (_, res) => { res.marko(global50); });
+  app.get('/:alias(global-50/*)', (_, res) => { res.marko(global50); });
 
   app.get('/:alias(leaders)', withWebsiteSection({
     template: leaders,
