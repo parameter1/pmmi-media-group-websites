@@ -9,15 +9,15 @@ module.exports = {
   company: 'PMMI Media Group',
   logos: {
     navbar: {
-      src: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=45',
+      src: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=45&auto=format,compress&q=70',
       srcset: [
-        'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=90 2x',
+        'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=90&auto=format,compress&q=70 2x',
       ],
     },
     footer: {
-      src: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=60',
+      src: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=60&auto=format,compress&q=70',
       srcset: [
-        'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=120 2x',
+        'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=120&auto=format,compress&q=70 2x',
       ],
     },
   },
@@ -42,7 +42,7 @@ module.exports = {
     sendTo: 'info-request@pmmimediagroup.com',
     replyTo: 'info-request@pmmimediagroup.com',
     sendFrom: 'OEM Magazine <noreply@baseplatform.io>',
-    logo: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=45',
+    logo: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=45&auto=format,compress&q=70',
     bgColor: '#000',
   },
 };

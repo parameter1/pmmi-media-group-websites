@@ -50,7 +50,7 @@ fragment WebsiteContentCompanyFragment on Content {
     # circle image
     primaryImage {
       id
-      src(input: { options: { auto: "format", fillColor: "fff", fit: "fill", h: 125, w: 125, pad: 5, mask: "ellipse" } })
+      src(input: { options: { auto: "format,compress", q: 70, fillColor: "fff", fit: "fill", h: 125, w: 125, pad: 5, mask: "ellipse" } })
       alt
     }
 
@@ -65,7 +65,7 @@ fragment WebsiteContentCompanyFragment on Content {
           publicEmail
           primaryImage {
             id
-            src(input: { options: { auto: "format", h: 100, w: 100, mask: "ellipse", fit: "facearea", facepad: 3 } })
+            src(input: { options: { auto: "format,compress", q: 70, h: 100, w: 100, mask: "ellipse", fit: "facearea", facepad: 3 } })
           }
         }
       }

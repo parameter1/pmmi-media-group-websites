@@ -30,7 +30,7 @@ fragment ContactPageFragment on Content {
   }
   primaryImage {
     id
-    src
+    src(input: { options: { auto: "format,compress", q: 70 } })
     alt
     caption
     credit
@@ -40,7 +40,7 @@ fragment ContactPageFragment on Content {
     edges {
       node {
         id
-        src
+        src(input: { options: { auto: "format,compress", q: 70 } })
         alt
         displayName
         caption
