@@ -1,5 +1,5 @@
 const { withContent } = require('@base-cms/marko-web/middleware');
-const queryFragment = require('@pmmi-media-group/package-common/graphql/fragments/content-page');
+const queryFragment = require('@pmmi-media-group/package-shared/graphql/fragments/content-page');
 const companyQueryFragment = require('@pmmi-media-group/package-common/graphql/fragments/content-company');
 const contactQueryFragment = require('@pmmi-media-group/package-shared/graphql/fragments/content-contact');
 const company = require('@pmmi-media-group/package-shared/templates/content/company');
