@@ -42,11 +42,15 @@ fragment ContentPageFragment on Content {
   }
   primaryImage {
     id
-    src(input: { options: { auto: "format,compress", q: 70 } })
+    src(input: { useCropRectangle: true, options: { auto: "format,compress", q: 70 } })
     alt
     caption
     credit
     isLogo
+    cropDimensions {
+      aspectRatio
+    }
+    primaryImageDisplay
   }
   images(input:{ pagination: { limit: 100 }, sort: { order: values } }) {
     edges {

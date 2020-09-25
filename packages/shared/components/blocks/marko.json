@@ -2,6 +2,9 @@
   "<shared-primary-image-block>": {
     "template": "./primary-image.marko"
   },
+  "<shared-content-media-block>": {
+    "template": "./content-media.marko"
+  },
   "<shared-inquiry-block>": {
     "template": "./inquiry.marko",
     "@content": "object",
