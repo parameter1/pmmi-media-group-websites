@@ -1,4 +1,7 @@
 {
+  "<shared-primary-image-block>": {
+    "template": "./primary-image.marko"
+  },
   "<shared-inquiry-block>": {
     "template": "./inquiry.marko",
     "@content": "object",
