@@ -9,15 +9,15 @@ module.exports = {
   company: 'PMMI Media Group',
   logos: {
     navbar: {
-      src: 'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo.png?h=45',
+      src: 'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo.png?h=45&auto=format,compress&q=70',
       srcset: [
-        'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo.png?h=90 2x',
+        'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo.png?h=90&auto=format,compress&q=70 2x',
       ],
     },
     footer: {
-      src: 'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo.png?h=60',
+      src: 'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo.png?h=60&auto=format,compress&q=70',
       srcset: [
-        'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo.png?h=120 2x',
+        'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo.png?h=120&auto=format,compress&q=70 2x',
       ],
     },
   },
@@ -42,7 +42,7 @@ module.exports = {
     sendTo: 'info-request@pmmimediagroup.com',
     replyTo: 'info-request@pmmimediagroup.com',
     sendFrom: 'ProFood World <noreply@baseplatform.io>',
-    logo: 'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo.png?h=45',
+    logo: 'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo.png?h=45&auto=format,compress&q=70',
     bgColor: '#000',
   },
 };
