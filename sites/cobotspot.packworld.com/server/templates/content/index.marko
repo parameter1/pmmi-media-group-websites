@@ -6,7 +6,6 @@ import GAM from "../../../config/gam";
 $ const { site } = out.global;
 $ const { id, type, pageNode } = data;
 
-$ const displayCarousel = ["whitepaper", "media-gallery", "contact"].includes(type) ? false : true;
 $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? false : true;
 
 <marko-web-content-page-layout id=id type=type>
@@ -57,32 +56,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
         <@section>
           <div class="row">
             <default-theme-page-contents|{ blockName }| class="col-lg-8 mb-3 mb-lg-0">
-              <if(content.embedCode)>
-                <marko-web-content-embed-code block-name=blockName obj=content />
-              </if>
-              <else-if(displayCarousel)>
-                $ const images = getAsArray(content, "images.edges").map(({ node }) => node);
-                <if(images.length > 1 && (content.published < new Date(2019, 9, 30) || content.published > new Date(2020, 6, 21)))>
-                  <common-image-slider images=images />
-                </if>
-                <else>
-                  $ const isLogo = get(content, "primaryImage.isLogo");
-                  <if(isLogo)>
-                    <marko-web-page-image
-                      modifiers=["primary-image-inline"]
-                      obj=content.primaryImage
-                      fluid=false
-                      width=250
-                    />
-                  </if>
-                  <else>
-                    <marko-web-page-image width=500 obj=content.primaryImage />
-                  </else>
-                </else>
-              </else-if>
-              <else-if(type === "contact")>
-                <marko-web-page-image width=300 fluid=false obj=content.primaryImage />
-              </else-if>
+              <shared-content-media-block content=content blockName=blockName />
               <default-theme-content-contact-details obj=content />
               <marko-web-content-body block-name=blockName obj=content />
               <marko-web-content-sidebars block-name=blockName obj=content />
