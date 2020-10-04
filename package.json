@@ -1,7 +1,7 @@
 {
   "name": "@pmmi-media-group/websites",
   "description": "Websites for PMMI Media Group",
-  "repository": "https://github.com/base-cms-websites/pmmi-media-group.git",
+  "repository": "https://github.com/parameter1/pmmi-media-group-websites.git",
   "author": "Jacob Bare <jacob@limit0.io>",
   "license": "MIT",
   "private": true,
