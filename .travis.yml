@@ -2,6 +2,22 @@ language: node_js
 node_js: "10.15"
 cache: yarn
 
+_production-job: &production-job
+  stage: production
+  name: SERVICE_NAME
+  script: scripts/deploy.js SERVICE_NAME
+  install: skip
+  env:
+    - "ENVIRONMENT=production RANCHER_CLUSTERID=c-njflm"
+
+_staging-job: &staging-job
+  stage: staging
+  name: SERVICE_NAME
+  script: scripts/deploy.js SERVICE_NAME
+  install: skip
+  env:
+    - "ENVIRONMENT=staging RANCHER_CLUSTERID=c-njflm"
+
 stages:
   - name: test
 
@@ -24,106 +40,70 @@ jobs:
     - stage: test
       env: [NODE_ENV=test]
 
-    - stage: production-started
+    - <<: *production-job
+      stage: production-started
       name: Deployment Started
       script: npx @base-cms/website-deployment-tool notify-started
-      install: skip
-      env: [ENVIRONMENT=production]
-
-    - stage: staging-started
+    - <<: *staging-job
+      stage: staging-started
       name: Deployment Started
       script: npx @base-cms/website-deployment-tool notify-started
-      install: skip
-      env: [ENVIRONMENT=staging]
 
     #############################
     ### vvv ADD SITES HERE vvv ##
     #############################
 
-    - stage: production
+    - <<: *production-job
       name: automationworld.com
       script: npx @base-cms/website-deployment-tool deploy automationworld.com websites
-      install: skip
-      env: [ENVIRONMENT=production]
-
-    - stage: staging
+    - <<: *staging-job
       name: automationworld.com
       script: npx @base-cms/website-deployment-tool deploy automationworld.com staging-websites-tauron
-      install: skip
-      env: [ENVIRONMENT=staging]
 
-    - stage: production
+    - <<: *production-job
       name: healthcarepackaging.com
       script: npx @base-cms/website-deployment-tool deploy healthcarepackaging.com websites
-      install: skip
-      env: [ENVIRONMENT=production]
-
-    - stage: staging
+    - <<: *staging-job
       name: healthcarepackaging.com
       script: npx @base-cms/website-deployment-tool deploy healthcarepackaging.com staging-websites-tauron
-      install: skip
-      env: [ENVIRONMENT=staging]
 
-    - stage: production
+    - <<: *production-job
       name: oemmagazine.org
       script: npx @base-cms/website-deployment-tool deploy oemmagazine.org websites
-      install: skip
-      env: [ENVIRONMENT=production]
-
-    - stage: staging
+    - <<: *staging-job
       name: oemmagazine.org
       script: npx @base-cms/website-deployment-tool deploy oemmagazine.org staging-websites-tauron
-      install: skip
-      env: [ENVIRONMENT=staging]
 
-    - stage: production
+    - <<: *production-job
       name: packworld.com
       script: npx @base-cms/website-deployment-tool deploy packworld.com websites
-      install: skip
-      env: [ENVIRONMENT=production]
-
-    - stage: staging
+    - <<: *staging-job
       name: packworld.com
       script: npx @base-cms/website-deployment-tool deploy packworld.com staging-websites-tauron
-      install: skip
-      env: [ENVIRONMENT=staging]
 
-    - stage: production
+    - <<: *production-job
       name: profoodworld.com
       script: npx @base-cms/website-deployment-tool deploy profoodworld.com websites
-      install: skip
-      env: [ENVIRONMENT=production]
-
-    - stage: staging
+    - <<: *staging-job
       name: profoodworld.com
       script: npx @base-cms/website-deployment-tool deploy profoodworld.com staging-websites-tauron
-      install: skip
-      env: [ENVIRONMENT=staging]
 
-    - stage: production
+    - <<: *production-job
       name: cobotspot.packworld.com
       script: npx @base-cms/website-deployment-tool deploy cobotspot.packworld.com websites
-      install: skip
-      env: [ENVIRONMENT=production]
-
-    - stage: staging
+    - <<: *staging-job
       name: cobotspot.packworld.com
       script: npx @base-cms/website-deployment-tool deploy cobotspot.packworld.com staging-websites-tauron
-      install: skip
-      env: [ENVIRONMENT=staging]
 
     #############################
     ### ^^^ ADD SITES HERE ^^^ ##
     #############################
 
-    - stage: production-finished
+    - <<: *production-job
+      stage: production-finished
       name: Deployment Finished
       script: npx @base-cms/website-deployment-tool notify-finished
-      install: skip
-      env: [ENVIRONMENT=production]
-
-    - stage: staging-finished
+    - <<: *staging-job
+      stage: staging-finished
       name: Deployment Finished
       script: npx @base-cms/website-deployment-tool notify-finished
-      install: skip
-      env: [ENVIRONMENT=staging]
