@@ -1,4 +1,4 @@
-const { getAsArray } = require('@base-cms/object-path');
+const { getAsArray } = require('@parameter1/base-cms-object-path');
 
 const categories = (obj, key, value) => ([...new Set([
   ...getAsArray(obj, key),
