@@ -1,4 +1,4 @@
-import Leaders from '@base-cms/marko-web-leaders/browser';
+import Leaders from '@parameter1/base-cms-marko-web-leaders/browser';
 
 const ImageSlider = () => import(/* webpackChunkName: "common-image-slider" */ './image-slider.vue');
 const ContactUsForm = () => import(/* webpackChunkName: "common-contact-us" */ './contact-us-form.vue');

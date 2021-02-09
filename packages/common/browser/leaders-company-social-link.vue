@@ -12,13 +12,13 @@
 </template>
 
 <script>
-import IconFacebook from '@base-cms/marko-web-icons/browser/facebook.vue';
-import IconInstagram from '@base-cms/marko-web-icons/browser/instagram.vue';
-import IconLinkedin from '@base-cms/marko-web-icons/browser/linkedin.vue';
-import IconPinterest from '@base-cms/marko-web-icons/browser/pinterest.vue';
-import IconTwitter from '@base-cms/marko-web-icons/browser/twitter.vue';
-import IconOther from '@base-cms/marko-web-icons/browser/link-external.vue';
-import IconYoutube from '@base-cms/marko-web-icons/browser/youtube.vue';
+import IconFacebook from '@parameter1/base-cms-marko-web-icons/browser/facebook.vue';
+import IconInstagram from '@parameter1/base-cms-marko-web-icons/browser/instagram.vue';
+import IconLinkedin from '@parameter1/base-cms-marko-web-icons/browser/linkedin.vue';
+import IconPinterest from '@parameter1/base-cms-marko-web-icons/browser/pinterest.vue';
+import IconTwitter from '@parameter1/base-cms-marko-web-icons/browser/twitter.vue';
+import IconOther from '@parameter1/base-cms-marko-web-icons/browser/link-external.vue';
+import IconYoutube from '@parameter1/base-cms-marko-web-icons/browser/youtube.vue';
 
 export default {
   components: {
