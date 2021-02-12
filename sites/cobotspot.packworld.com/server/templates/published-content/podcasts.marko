@@ -31,7 +31,14 @@ $ const description = defaultDescription(title, config);
 
     <marko-web-query|{ nodes }|
       name="all-published-content"
-      params={ contentTypes: ["Podcast"], limit: 18, sortField: "startDate", sortOrder: "desc", queryFragment }
+      params={
+        withSite: false,
+        contentTypes: ["Podcast"],
+        limit: 18,
+        sortField: "startDate",
+        sortOrder: "desc",
+        queryFragment,
+      }
     >
       <website-content-list-flow nodes=nodes />
     </marko-web-query>
@@ -41,7 +48,14 @@ $ const description = defaultDescription(title, config);
       component-name="content-list-flow"
       fragment-name="content-list"
       query-name="all-published-content"
-      query-params={ contentTypes: ["Podcast"], limit: 18, sortField: "startDate", sortOrder: "desc", skip: 18 }
+      query-params={
+        withSite: false,
+        contentTypes: ["Podcast"],
+        limit: 18,
+        sortField: "startDate",
+        sortOrder: "desc",
+        skip: 18,
+      }
       page-input={ for: "published-content" }
     />
   </@below-page>
