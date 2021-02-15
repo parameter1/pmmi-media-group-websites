@@ -10,14 +10,6 @@ _production-job: &production-job
   env:
     - "ENVIRONMENT=production RANCHER_CLUSTERID=c-njflm"
 
-_staging-job: &staging-job
-  stage: staging
-  name: SERVICE_NAME
-  script: scripts/deploy.js SERVICE_NAME
-  install: skip
-  env:
-    - "ENVIRONMENT=staging RANCHER_CLUSTERID=c-njflm"
-
 stages:
   - name: test
 
@@ -28,13 +20,6 @@ stages:
   - name: production-finished
     if: tag =~ /^v\d+\.\d+\.\d+$/
 
-  - name: staging-started
-    if: tag is present
-  - name: staging
-    if: tag is present
-  - name: staging-finished
-    if: tag is present
-
 jobs:
   include:
     - stage: test
@@ -42,10 +27,6 @@ jobs:
 
     - <<: *production-job
       stage: production-started
-      name: Deployment Started
-      script: npx @parameter1/base-cms-website-deployment-tool notify-started
-    - <<: *staging-job
-      stage: staging-started
       name: Deployment Started
       script: npx @parameter1/base-cms-website-deployment-tool notify-started
 
@@ -56,44 +37,26 @@ jobs:
     - <<: *production-job
       name: automationworld.com
       script: npx @parameter1/base-cms-website-deployment-tool deploy automationworld.com websites
-    - <<: *staging-job
-      name: automationworld.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy automationworld.com staging-websites-tauron
 
     - <<: *production-job
       name: healthcarepackaging.com
       script: npx @parameter1/base-cms-website-deployment-tool deploy healthcarepackaging.com websites
-    - <<: *staging-job
-      name: healthcarepackaging.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy healthcarepackaging.com staging-websites-tauron
 
     - <<: *production-job
       name: oemmagazine.org
       script: npx @parameter1/base-cms-website-deployment-tool deploy oemmagazine.org websites
-    - <<: *staging-job
-      name: oemmagazine.org
-      script: npx @parameter1/base-cms-website-deployment-tool deploy oemmagazine.org staging-websites-tauron
 
     - <<: *production-job
       name: packworld.com
       script: npx @parameter1/base-cms-website-deployment-tool deploy packworld.com websites
-    - <<: *staging-job
-      name: packworld.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy packworld.com staging-websites-tauron
 
     - <<: *production-job
       name: profoodworld.com
       script: npx @parameter1/base-cms-website-deployment-tool deploy profoodworld.com websites
-    - <<: *staging-job
-      name: profoodworld.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy profoodworld.com staging-websites-tauron
 
     - <<: *production-job
       name: cobotspot.packworld.com
       script: npx @parameter1/base-cms-website-deployment-tool deploy cobotspot.packworld.com websites
-    - <<: *staging-job
-      name: cobotspot.packworld.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy cobotspot.packworld.com staging-websites-tauron
 
     #############################
     ### ^^^ ADD SITES HERE ^^^ ##
@@ -101,9 +64,5 @@ jobs:
 
     - <<: *production-job
       stage: production-finished
-      name: Deployment Finished
-      script: npx @parameter1/base-cms-website-deployment-tool notify-finished
-    - <<: *staging-job
-      stage: staging-finished
       name: Deployment Finished
       script: npx @parameter1/base-cms-website-deployment-tool notify-finished
