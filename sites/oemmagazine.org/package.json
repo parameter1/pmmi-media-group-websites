@@ -15,8 +15,8 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
-    "@parameter1/base-cms-marko-core": "^2.4.2",
-    "@parameter1/base-cms-marko-web": "^2.4.2",
+    "@parameter1/base-cms-marko-core": "^2.4.3",
+    "@parameter1/base-cms-marko-web": "^2.4.3",
     "@parameter1/base-cms-marko-web-gam": "^2.4.2",
     "@parameter1/base-cms-marko-web-gcse": "^2.4.2",
     "@parameter1/base-cms-marko-web-gtm": "^2.4.2",
@@ -26,7 +26,7 @@
     "@parameter1/base-cms-marko-web-theme-default": "^2.4.2",
     "@parameter1/base-cms-object-path": "^2.4.2",
     "@parameter1/base-cms-utils": "^2.4.2",
-    "@parameter1/base-cms-web-cli": "^2.4.2",
+    "@parameter1/base-cms-web-cli": "^2.4.3",
     "@pmmi-media-group/package-common": "^1.14.2",
     "@pmmi-media-group/package-shared": "^1.14.2",
     "graphql": "^14.5.4",
