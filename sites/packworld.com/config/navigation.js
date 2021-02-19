@@ -45,6 +45,7 @@ module.exports = {
         { href: '/page/magazine', label: 'Magazine' },
         { href: '/leaders', label: 'Leaders in Packaging' },
         { href: '/videos', label: 'Videos' },
+        { href: '/podcasts', label: 'Podcasts' },
         { href: '/page/packaging-associations', label: 'Packaging Associations' },
         { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
         { href: '/webinars', label: 'Webinars' },

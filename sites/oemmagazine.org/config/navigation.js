@@ -42,6 +42,7 @@ module.exports = {
         { href: '/page/magazine', label: 'Magazine' },
         { href: '/leaders', label: 'Tech Trendsetters' },
         { href: '/videos', label: 'Videos' },
+        { href: '/podcasts', label: 'Podcasts' },
         // { href: '/page/digital-editions', label: 'Digital Editions' },
       ],
     },

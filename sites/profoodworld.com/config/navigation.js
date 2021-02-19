@@ -44,6 +44,7 @@ module.exports = {
         // { href: '/global-250', label: 'Global 250' },
         // { href: '/awards', label: 'Awards' },
         { href: '/videos', label: 'Videos' },
+        { href: '/podcasts', label: 'Podcasts' },
         { href: '/webinars', label: 'Webinars' },
         { href: 'https://www.opxleadershipnetwork.org', label: 'OpX Leadership Network', target: '_blank' },
         { href: '/page/awards-sema', label: 'Sustainability Awards' },
