@@ -44,6 +44,7 @@ module.exports = {
         { href: '/page/magazine', label: 'Magazine' },
         { href: '/leaders', label: 'Premier Suppliers' },
         { href: '/videos', label: 'Videos' },
+        { href: '/podcasts', label: 'Podcasts' },
         { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
         { href: '/webinars', label: 'Webinars' },
         // { href: '/page/digital-editions', label: 'Digital Editions' },
