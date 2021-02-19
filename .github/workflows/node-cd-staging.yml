@@ -3,10 +3,7 @@
 
 name: Node.js CD (Staging)
 
-on:
-  push:
-    tags:
-      - v*
+on: workflow_dispatch
 
 env:
   RANCHER_CLUSTERID: ${{ secrets.RANCHER_CLUSTERID_BASECMS }}
