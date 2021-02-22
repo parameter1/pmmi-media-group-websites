@@ -7,6 +7,11 @@ module.exports = {
   navigation,
   nativeX,
   company: 'PMMI Media Group',
+  p1events: {
+    tenant: 'pmmi',
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'automationworld.com' : '',
+  },
   logos: {
     navbar: {
       src: 'https://img.automationworld.com/files/base/pmmi/aw/aw_logo.png?h=45&auto=format,compress&q=70',
