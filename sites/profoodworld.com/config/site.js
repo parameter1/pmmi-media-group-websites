@@ -7,6 +7,11 @@ module.exports = {
   navigation,
   nativeX,
   company: 'PMMI Media Group',
+  p1events: {
+    tenant: 'pmmi',
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'profoodworld.com' : '',
+  },
   logos: {
     navbar: {
       src: 'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo.png?h=45&auto=format,compress&q=70',

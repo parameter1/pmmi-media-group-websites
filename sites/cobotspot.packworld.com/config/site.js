@@ -5,6 +5,11 @@ module.exports = {
   navigation,
   nativeX,
   company: 'PMMI Media Group',
+  p1events: {
+    tenant: 'pmmi',
+    enabled: true,
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'cobotspot.packworld.com' : '',
+  },
   logos: {
     navbar: {
       src: 'https://img.packworld.com/files/base/pmmi/cs/universal-robots-logo-white.png?h=45&auto=format,compress&q=70',
