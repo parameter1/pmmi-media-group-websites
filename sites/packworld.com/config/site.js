@@ -10,7 +10,7 @@ module.exports = {
   p1events: {
     tenant: 'pmmi',
     enabled: true,
-    cookieDomain: process.env.NODE_ENV === 'production' ? 'packworld.com' : '',
+    cookieDomain: process.env.NODE_ENV === 'production' ? 'www.packworld.com' : '',
   },
   logos: {
     navbar: {
