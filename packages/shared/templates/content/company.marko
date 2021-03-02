@@ -8,6 +8,9 @@ $ const { id, type, pageNode } = data;
     <marko-web-gtm-content-context|{ context }| id=id>
       <marko-web-gtm-push data=context />
     </marko-web-gtm-content-context>
+    <marko-web-resolve-page|{ data: content }| node=pageNode>
+      <marko-web-p1-events-track-content node=content />
+    </marko-web-resolve-page>
   </@head>
   <@page>
     <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
