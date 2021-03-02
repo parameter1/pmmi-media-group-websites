@@ -21,11 +21,13 @@ $ const { site } = out.global;
     <${input.head} />
     <marko-web-gtm-start />
     <marko-web-gam-enable />
-    <meta name="google-site-verification" content="vx3rbJbbxiQg4qiHcf0shjiJutB05qBcu2B6hkPIhNs" />
   </@head>
   <@above-container>
-    <common-leaders-gtm-tracker />
-    <common-leaders-dropdown-portal />
+    <!-- Leaders -->
+    <marko-web-p1-events-track-leaders />
+    <marko-web-leaders-gtm-tracker />
+    <marko-web-leaders-dropdown-portal />
+
     <marko-web-reveal-ad-listener />
     <marko-web-gtm-track-load-more />
     <default-theme-site-header />
