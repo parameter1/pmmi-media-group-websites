@@ -2048,15 +2048,14 @@
     node-fetch "^2.6.1"
     vue-recaptcha "^1.3.0"
 
-"@parameter1/base-cms-marko-web-leaders@^2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-leaders/-/base-cms-marko-web-leaders-2.6.0.tgz#b5e90f10a5129660f0961ed20ecbc41ae0ca25e8"
-  integrity sha512-voDDCcGaItvMXuGyKxYe0NrQjCVl3zJ91xSDNr9k8bg+yAtpFY5KpqOCwKXUFXQrSL3Ok7SIXrgF/C2GQ47KHQ==
+"@parameter1/base-cms-marko-web-leaders@^2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-leaders/-/base-cms-marko-web-leaders-2.7.0.tgz#58da715faea5e8fe97529517183254fb0e8b7a46"
+  integrity sha512-Yr08/yORsfzg+0qrDIoFnV7Dc6qPKHyKUUKCBusnrIVOH399o+i8etsEdRCtWtnkqO99JcJSQsMeB2dDvax/7w==
   dependencies:
     "@parameter1/base-cms-leaders-program" "^2.5.0"
     "@parameter1/base-cms-marko-web-icons" "^2.0.0"
     "@parameter1/base-cms-object-path" "^2.5.0"
-    dom-utils "^0.9.0"
     graphql "^14.7.0"
     graphql-tag "^2.11.0"
     object-path "^0.11.5"
@@ -2070,11 +2069,12 @@
     "@parameter1/base-cms-utils" "^2.4.2"
     node-fetch "^2.6.1"
 
-"@parameter1/base-cms-marko-web-p1-events@^2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-p1-events/-/base-cms-marko-web-p1-events-2.5.0.tgz#19df7200a79aeafa25348f43a8ab7c21f64719e9"
-  integrity sha512-4ObiZtb3ErkN0F0DRtQgAdC1xmDBJ88YO28jzqmE+3FUbgrcKrBggUReWI6vxFHhlvl16VE6QRe8RQE5PmnAqg==
+"@parameter1/base-cms-marko-web-p1-events@^2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-p1-events/-/base-cms-marko-web-p1-events-2.7.0.tgz#f7c2dd1610b36611db248781962327db8478e0ef"
+  integrity sha512-8bQQv5SW4xQsLUyfBJbN7Djle7IIs2u2niGsZpagZcFBAf7Poj0+rasvvVSlbi/2bGW8+ogzoblA/UMuIAU6hw==
   dependencies:
+    "@parameter1/base-cms-inflector" "^2.0.0"
     "@parameter1/base-cms-object-path" "^2.5.0"
 
 "@parameter1/base-cms-marko-web-reveal-ad@^2.5.0":
@@ -2085,10 +2085,10 @@
     "@parameter1/base-cms-object-path" "^2.5.0"
     "@parameter1/base-cms-utils" "^2.4.2"
 
-"@parameter1/base-cms-marko-web-theme-default@^2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-theme-default/-/base-cms-marko-web-theme-default-2.6.1.tgz#c72fb57af9a7bd1715ba41062a813a70ef89c747"
-  integrity sha512-tZnXuwhEX4d2oU0Ao4QBCjTlrmaBROiE2Sgh28mqPvepXVlkhHerJRlvjPo7miP6vF+O4c+6iSfaC0kDlQPB2w==
+"@parameter1/base-cms-marko-web-theme-default@^2.7.0":
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-theme-default/-/base-cms-marko-web-theme-default-2.7.0.tgz#2461713f8fee74d4012565c37921125b00ceb18c"
+  integrity sha512-EgZNOVygtMINM5mxNE3Hw8gT5fiC5MZ8Q6DcyorJzn8SBNGj7WQ5dGSPxPPiCGAoB4w3C0oJ9mkl1AvI77EL1g==
   dependencies:
     "@parameter1/base-cms-marko-web-icons" "^2.0.0"
     "@parameter1/base-cms-object-path" "^2.5.0"
