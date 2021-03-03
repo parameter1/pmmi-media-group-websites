@@ -1,5 +1,6 @@
 import { getAsArray, get } from "@parameter1/base-cms-object-path";
 import queryFragment from "../../../graphql/fragments/content-list";
+import leadersLinkAttrs from "@parameter1/base-cms-marko-web-leaders/utils/event-link-attrs";
 
 $ const { site } = out.global;
 $ const { id, type, content } = input;
@@ -57,7 +58,14 @@ $ const { id, type, content } = input;
 
         <label class="content-section-header content-section-header--border">Contact</label>
         $ const { socialLinks, ...contentSansSocial } = content;
-        <default-theme-content-contact-details obj=contentSansSocial />
+        <default-theme-content-contact-details
+          obj=contentSansSocial
+          website-link-attrs=leadersLinkAttrs({
+            companyId: content.id,
+            category: "Leaders Company Profile",
+            label: "Company Website",
+          })
+        />
 
         <label class="content-section-header content-section-header--border">More info on ${content.name}</label>
         <marko-web-content-body obj=content />
@@ -120,10 +128,14 @@ $ const { id, type, content } = input;
       <@nodes|{ nodes }| nodes=videos>
         <for|node| of=nodes>
           <div class="node-list__node">
-            <common-youtube-card-node node=node link-attrs={
-              'data-company-id': content.id,
-              'data-company-name': content.name,
-            } />
+            <common-youtube-card-node
+              node=node
+              company-id=content.id
+              link-attrs={
+                'data-company-id': content.id,
+                'data-company-name': content.name,
+              }
+            />
           </div>
         </for>
       </@nodes>

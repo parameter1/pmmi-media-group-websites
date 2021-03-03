@@ -1,10 +1,21 @@
 import { getAsObject, get } from "@parameter1/base-cms-object-path";
+import leadersLinkAttrs from "@parameter1/base-cms-marko-web-leaders/utils/event-link-attrs";
 
 $ const video = getAsObject(input, "node");
 $ const primaryImage = getAsObject(video, "primaryImage");
 $ const withDescription = input.withDescription != null ? input.withDescription : true;
 
-$ const { linkAttrs } = input;
+$ const href = video.url;
+$ const link = {
+  href,
+  target: "_blank",
+  attrs: leadersLinkAttrs({
+    companyId: input.companyId,
+    category: "Leaders Company Profile",
+    label: "YouTube Video", // matches the same label as the data card
+    linkAttrs: input.linkAttrs,
+  }),
+};
 
 <marko-web-node
   type="video-content"
@@ -18,11 +29,11 @@ $ const { linkAttrs } = input;
     alt=video.title
     fluid=true
     ar="4:3"
-    link={ href: video.url, target: "_blank", attrs: linkAttrs }
+    link=link
   />
   <@body>
     <@title tag="h5" modifiers=input.titleModifiers>
-      <marko-web-obj-text type="content" obj=video field="title" tag=null link={ href: video.url, target: "_blank", attrs: linkAttrs } />
+      <marko-web-obj-text type="content" obj=video field="title" tag=null link=link />
     </@title>
     <@text modifiers=["teaser"] show=(withDescription && video.description)>
       <marko-web-obj-text type="content" obj=video field="description" tag=null />

@@ -1,11 +1,23 @@
 import { getAsArray, getAsObject, get } from "@parameter1/base-cms-object-path";
+import leadersLinkAttrs from "@parameter1/base-cms-marko-web-leaders/utils/event-link-attrs";
 
 $ const content = getAsObject(input, "node");
 $ const primaryImage = getAsObject(content, "primaryImage");
 $ const displayImage = input.displayImage != null ? input.displayImage : true;
 $ const title = get(content, "linkText") || get(content, "shortName");
 $ const withTeaser = input.withTeaser != null ? input.withTeaser : true;
-$ const { linkAttrs } = input;
+
+$ const href = get(content, "siteContext.path");
+$ const link = {
+  href,
+  target: "_blank",
+  attrs: leadersLinkAttrs({
+    companyId: content.id,
+    category: "Leaders Company Profile",
+    label: "Promotion Item", // matches the same label as the data card
+    linkAttrs: input.linkAttrs,
+  }),
+};
 
 <marko-web-node
   type=`${content.type}-content`
@@ -22,17 +34,15 @@ $ const { linkAttrs } = input;
       fluid=true
       ar="4:3"
       width=(input.imageWidth || 300)
-      link={ href: get(content, "siteContext.path") }
+      link=link
     />
   </if>
   <@body>
   <@title tag="h5" modifiers=input.titleModifiers>
-    <marko-core-text value=title>
-      <@link href=content.siteContext.path />
-    </marko-core-text>
+    <marko-core-text value=title link=link />
   </@title>
   <@text modifiers=["teaser"] show=(withTeaser && content.teaser)>
-    <marko-web-content-teaser tag=null obj=content link={ attrs: linkAttrs } />
+    <marko-web-content-teaser tag=null obj=content link=link />
   </@text>
   </@body>
   <@footer>
