@@ -1,6 +1,7 @@
 import { getAsArray, get } from "@parameter1/base-cms-object-path";
+import eventLinkAttrs from "@parameter1/base-cms-marko-web-p1-events/utils/link-attrs";
+import eventEntity from "@parameter1/base-cms-marko-web-p1-events/utils/base-content-entity";
 import queryFragment from "../../../graphql/fragments/content-list";
-import leadersLinkAttrs from "@parameter1/base-cms-marko-web-leaders/utils/event-link-attrs";
 
 $ const { site } = out.global;
 $ const { id, type, content } = input;
@@ -60,10 +61,10 @@ $ const { id, type, content } = input;
         $ const { socialLinks, ...contentSansSocial } = content;
         <default-theme-content-contact-details
           obj=contentSansSocial
-          website-link-attrs=leadersLinkAttrs({
-            companyId: content.id,
-            category: "Leaders Company Profile",
+          website-link-attrs=eventLinkAttrs({
+            category: "Company Profile Page",
             label: "Company Website",
+            entity: eventEntity(content.id, "company"),
           })
         />
 
@@ -90,6 +91,7 @@ $ const { id, type, content } = input;
           <default-theme-card-deck-flow cols=2 nodes=items>
             <@slot|{ node, index }|>
               <common-featured-products-card-node
+                company-id=id
                 image-width=340
                 node=node
               />

@@ -1,5 +1,6 @@
 import { getAsObject, get } from "@parameter1/base-cms-object-path";
-import leadersLinkAttrs from "@parameter1/base-cms-marko-web-leaders/utils/event-link-attrs";
+import eventLinkAttrs from "@parameter1/base-cms-marko-web-p1-events/utils/link-attrs";
+import eventEntity from "@parameter1/base-cms-marko-web-p1-events/utils/base-content-entity";
 
 $ const video = getAsObject(input, "node");
 $ const primaryImage = getAsObject(video, "primaryImage");
@@ -9,12 +10,14 @@ $ const href = video.url;
 $ const link = {
   href,
   target: "_blank",
-  attrs: leadersLinkAttrs({
-    companyId: input.companyId,
-    category: "Leaders Company Profile",
-    label: "YouTube Video", // matches the same label as the data card
-    linkAttrs: input.linkAttrs,
-  }),
+  attrs: {
+    ...input.linkAttrs,
+    ...eventLinkAttrs({
+      category: "Company Profile Page",
+      label: "YouTube Video", // matches the same label as the data card
+      entity: eventEntity(input.companyId, "company"),
+    }),
+  },
 };
 
 <marko-web-node

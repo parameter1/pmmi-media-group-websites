@@ -14,6 +14,7 @@
     "common-featured-products-card-node": {
       "template": "./featured-products-card.marko",
       "@node": "object",
+      "@company-id": "number",
       "@image-width": {
         "type": "number",
         "default-value": 300

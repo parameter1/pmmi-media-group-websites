@@ -1,5 +1,6 @@
 import { getAsArray, getAsObject, get } from "@parameter1/base-cms-object-path";
-import leadersLinkAttrs from "@parameter1/base-cms-marko-web-leaders/utils/event-link-attrs";
+import eventLinkAttrs from "@parameter1/base-cms-marko-web-p1-events/utils/link-attrs";
+import eventEntity from "@parameter1/base-cms-marko-web-p1-events/utils/base-content-entity";
 
 $ const content = getAsObject(input, "node");
 $ const primaryImage = getAsObject(content, "primaryImage");
@@ -11,12 +12,15 @@ $ const href = get(content, "siteContext.path");
 $ const link = {
   href,
   target: "_blank",
-  attrs: leadersLinkAttrs({
-    companyId: content.id,
-    category: "Leaders Company Profile",
-    label: "Promotion Item", // matches the same label as the data card
-    linkAttrs: input.linkAttrs,
-  }),
+  attrs: {
+    ...input.linkAttrs,
+    ...eventLinkAttrs({
+      category: "Company Profile Page",
+      label: "Promotion Item", // matches the same label as the data card
+      entity: eventEntity(input.companyId, "company"),
+      context: eventEntity(content.id, content.type),
+    }),
+  }
 };
 
 <marko-web-node

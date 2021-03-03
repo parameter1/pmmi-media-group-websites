@@ -75,7 +75,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
               </if>
 
               <if(["article", "blog", "media-gallery", "news", "podcast", "press-release", "product", "video", "webinar"].includes(content.type))>
-                <common-featured-companies content-id=content.id />
+                <common-featured-companies content=content />
               </if>
 
               <!-- Div for BI Library -->
