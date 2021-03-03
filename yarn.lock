@@ -2048,14 +2048,15 @@
     node-fetch "^2.6.1"
     vue-recaptcha "^1.3.0"
 
-"@parameter1/base-cms-marko-web-leaders@^2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-leaders/-/base-cms-marko-web-leaders-2.5.0.tgz#1a4c2b5653c46d737059d315c56bb29ccac39a07"
-  integrity sha512-65KtWO1qsv5quOpq5MAEEXWS+pg6xwEbLtQ0LwVdOYZgTZ4Y6Ne29S7lTQSoLnRsNqJqQ+QT7T1coVvSWd4Ulw==
+"@parameter1/base-cms-marko-web-leaders@^2.6.0":
+  version "2.6.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-leaders/-/base-cms-marko-web-leaders-2.6.0.tgz#b5e90f10a5129660f0961ed20ecbc41ae0ca25e8"
+  integrity sha512-voDDCcGaItvMXuGyKxYe0NrQjCVl3zJ91xSDNr9k8bg+yAtpFY5KpqOCwKXUFXQrSL3Ok7SIXrgF/C2GQ47KHQ==
   dependencies:
     "@parameter1/base-cms-leaders-program" "^2.5.0"
     "@parameter1/base-cms-marko-web-icons" "^2.0.0"
     "@parameter1/base-cms-object-path" "^2.5.0"
+    dom-utils "^0.9.0"
     graphql "^14.7.0"
     graphql-tag "^2.11.0"
     object-path "^0.11.5"
@@ -2084,10 +2085,10 @@
     "@parameter1/base-cms-object-path" "^2.5.0"
     "@parameter1/base-cms-utils" "^2.4.2"
 
-"@parameter1/base-cms-marko-web-theme-default@^2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-theme-default/-/base-cms-marko-web-theme-default-2.5.0.tgz#84e420d632aec71b2aaf4d97b6cfd4a5c1c971bf"
-  integrity sha512-TfP3t+bHTFuLWM0+CvGENISX6BUTxnNhEOY3Njf8l924uDp2bcSIgYU1EB1koQIlty26xCmZTRLelCan2/S40g==
+"@parameter1/base-cms-marko-web-theme-default@^2.6.1":
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-theme-default/-/base-cms-marko-web-theme-default-2.6.1.tgz#c72fb57af9a7bd1715ba41062a813a70ef89c747"
+  integrity sha512-tZnXuwhEX4d2oU0Ao4QBCjTlrmaBROiE2Sgh28mqPvepXVlkhHerJRlvjPo7miP6vF+O4c+6iSfaC0kDlQPB2w==
   dependencies:
     "@parameter1/base-cms-marko-web-icons" "^2.0.0"
     "@parameter1/base-cms-object-path" "^2.5.0"
@@ -5006,6 +5007,11 @@ dom-serializer@~0.1.0:
   dependencies:
     domelementtype "^1.3.0"
     entities "^1.1.1"
+
+dom-utils@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/dom-utils/-/dom-utils-0.9.0.tgz#e615a5af15ac4505e55ef612c72b5b5d176121f3"
+  integrity sha1-5hWlrxWsRQXlXvYSxytbXRdhIfM=
 
 domain-browser@^1.1.1:
   version "1.2.0"
