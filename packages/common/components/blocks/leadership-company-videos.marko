@@ -26,7 +26,7 @@ $ const { contentId } = input;
             <@body>
               <default-theme-card-deck-flow cols=3 nodes=videos>
                 <@slot|{ node, index }|>
-                  <common-youtube-card-node node=node link-attrs=linkAttrs />
+                  <common-youtube-card-node company-id=company.id node=node link-attrs=linkAttrs />
                 </@slot>
               </default-theme-card-deck-flow>
             </@body>
