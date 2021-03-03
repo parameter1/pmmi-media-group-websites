@@ -2069,10 +2069,10 @@
     "@parameter1/base-cms-utils" "^2.4.2"
     node-fetch "^2.6.1"
 
-"@parameter1/base-cms-marko-web-p1-events@^2.7.0":
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-p1-events/-/base-cms-marko-web-p1-events-2.7.0.tgz#f7c2dd1610b36611db248781962327db8478e0ef"
-  integrity sha512-8bQQv5SW4xQsLUyfBJbN7Djle7IIs2u2niGsZpagZcFBAf7Poj0+rasvvVSlbi/2bGW8+ogzoblA/UMuIAU6hw==
+"@parameter1/base-cms-marko-web-p1-events@^2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-p1-events/-/base-cms-marko-web-p1-events-2.7.1.tgz#11b43efc908e4f8dd20346516785f66b83e7f812"
+  integrity sha512-Fim39rWybU3jAc5wRAgTl3vvMmXcxLPkTYM7kbGFob53dNShwyEzRUhyMkuTnqHKq2r5UzgQDUBkuIrDiUSlKA==
   dependencies:
     "@parameter1/base-cms-inflector" "^2.0.0"
     "@parameter1/base-cms-object-path" "^2.5.0"
