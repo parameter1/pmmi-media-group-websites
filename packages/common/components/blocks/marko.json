@@ -2,8 +2,8 @@
   "tags": {
     "common-featured-companies": {
       "template": "./featured-companies.marko",
-      "@content-id": {
-        "type": "number",
+      "@content": {
+        "type": "object",
         "required": true
       }
     },
