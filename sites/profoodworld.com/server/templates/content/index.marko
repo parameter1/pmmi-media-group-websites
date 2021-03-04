@@ -65,7 +65,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
             <default-theme-page-contents|{ blockName }| class="col-lg-8 mb-3 mb-lg-0">
               <shared-content-media-block content=content blockName=blockName />
               <default-theme-content-contact-details obj=content />
-              <marko-web-content-body block-name=blockName obj=content />
+              <shared-content-body-with-tracking block-name=blockName content=content />
               <marko-web-content-sidebars block-name=blockName obj=content />
               <if(type === "document" || type === "whitepaper")>
                 <default-theme-content-download obj=content>
