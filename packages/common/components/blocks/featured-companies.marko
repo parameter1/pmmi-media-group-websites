@@ -6,7 +6,7 @@ $ const { content } = input;
 
 <marko-web-query|{ nodes }|
   name="related-published-content"
-  params={ contentId: content.id, limit: 20, queryFragment, includeContentTypes: ["Company"] }
+  params={ contentId: content.id, limit: 20, queryFragment, includeContentTypes: ["Company"], withSite: false }
 >
   <marko-web-node-list class="mt-3">
     <@header>Companies in this article</@header>
