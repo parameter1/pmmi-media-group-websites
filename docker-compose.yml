@@ -76,7 +76,7 @@ services:
       - "9710:80"
       - "19710:19710"
 
-  packworld.com:
+  pw:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/packworld.com
@@ -92,7 +92,7 @@ services:
       - "9711:80"
       - "19711:19711"
 
-  healthcarepackaging.com:
+  hcp:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/healthcarepackaging.com
@@ -108,7 +108,7 @@ services:
       - "9712:80"
       - "19712:19712"
 
-  profoodworld.com:
+  pfw:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/profoodworld.com
@@ -124,7 +124,7 @@ services:
       - "9713:80"
       - "19713:19713"
 
-  oemmagazine.org:
+  oem:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/oemmagazine.org
@@ -140,7 +140,7 @@ services:
       - "9714:80"
       - "19714:19714"
 
-  cobotspot.packworld.com:
+  cobotspot:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/cobotspot.packworld.com
