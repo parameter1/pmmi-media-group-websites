@@ -1,4 +1,15 @@
 {
+  "<shared-content-body-with-tracking>": {
+    "template": "./content-body-with-tracking.marko",
+    "@content": {
+      "type": "object",
+      "required": true
+    },
+    "@block-name": {
+      "type": "string",
+      "required": true
+    }
+  },
   "<shared-primary-image-block>": {
     "template": "./primary-image.marko"
   },

@@ -3,6 +3,7 @@
     "common-youtube-card-node": {
       "template": "./youtube-card.marko",
       "@node": "object",
+      "@company-id": "number",
       "@link-attrs": "object"
     },
     "common-author-card-node": {
@@ -13,6 +14,7 @@
     "common-featured-products-card-node": {
       "template": "./featured-products-card.marko",
       "@node": "object",
+      "@company-id": "number",
       "@image-width": {
         "type": "number",
         "default-value": 300

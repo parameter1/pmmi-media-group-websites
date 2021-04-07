@@ -1,6 +1,6 @@
 {
   "name": "@pmmi-media-group/package-shared",
-  "version": "1.14.4",
+  "version": "1.16.0",
   "author": "Josh Worden <josh@limit0.io>",
   "repository": "https://github.com/parameter1/pmmi-media-group-websites/tree/master/packages/shared",
   "license": "MIT",
@@ -10,18 +10,19 @@
     "test": "yarn lint"
   },
   "dependencies": {
-    "@parameter1/base-cms-image": "^2.0.0",
+    "@parameter1/base-cms-image": "^2.8.1",
     "@parameter1/base-cms-marko-core": "^2.5.0",
-    "@parameter1/base-cms-marko-web": "^2.5.0",
+    "@parameter1/base-cms-marko-web": "^2.8.1",
     "@parameter1/base-cms-marko-web-gtm": "^2.5.0",
     "@parameter1/base-cms-marko-web-inquiry": "^2.5.0",
-    "@parameter1/base-cms-marko-web-leaders": "^2.5.0",
+    "@parameter1/base-cms-marko-web-leaders": "^2.8.6",
     "@parameter1/base-cms-marko-web-native-x": "^2.5.0",
-    "@parameter1/base-cms-marko-web-p1-events": "^2.5.0",
-    "@parameter1/base-cms-marko-web-theme-default": "^2.5.0",
+    "@parameter1/base-cms-marko-web-p1-events": "^2.7.2",
+    "@parameter1/base-cms-marko-web-theme-default": "^2.7.0",
     "@parameter1/base-cms-object-path": "^2.5.0",
     "@parameter1/base-cms-utils": "^2.4.2",
-    "@pmmi-media-group/package-common": "^1.14.4",
+    "@pmmi-media-group/package-common": "^1.16.0",
+    "dom-utils": "^0.9.0",
     "graphql-tag": "^2.10.1"
   },
   "devDependencies": {

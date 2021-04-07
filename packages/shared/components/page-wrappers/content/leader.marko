@@ -1,4 +1,6 @@
 import { getAsArray, get } from "@parameter1/base-cms-object-path";
+import eventLinkAttrs from "@parameter1/base-cms-marko-web-p1-events/utils/link-attrs";
+import eventEntity from "@parameter1/base-cms-marko-web-p1-events/utils/base-content-entity";
 import queryFragment from "../../../graphql/fragments/content-list";
 
 $ const { site } = out.global;
@@ -57,10 +59,17 @@ $ const { id, type, content } = input;
 
         <label class="content-section-header content-section-header--border">Contact</label>
         $ const { socialLinks, ...contentSansSocial } = content;
-        <default-theme-content-contact-details obj=contentSansSocial />
+        <default-theme-content-contact-details
+          obj=contentSansSocial
+          website-link-attrs=eventLinkAttrs({
+            category: "Company Profile Page",
+            label: "Company Website",
+            entity: eventEntity(content.id, "company"),
+          })
+        />
 
         <label class="content-section-header content-section-header--border">More info on ${content.name}</label>
-        <marko-web-content-body obj=content />
+        <shared-content-body-with-tracking block-name="leaders-more-info" content=content />
       </@body>
     </marko-web-node-list>
 
@@ -82,6 +91,7 @@ $ const { id, type, content } = input;
           <default-theme-card-deck-flow cols=2 nodes=items>
             <@slot|{ node, index }|>
               <common-featured-products-card-node
+                company-id=id
                 image-width=340
                 node=node
               />
@@ -120,10 +130,14 @@ $ const { id, type, content } = input;
       <@nodes|{ nodes }| nodes=videos>
         <for|node| of=nodes>
           <div class="node-list__node">
-            <common-youtube-card-node node=node link-attrs={
-              'data-company-id': content.id,
-              'data-company-name': content.name,
-            } />
+            <common-youtube-card-node
+              node=node
+              company-id=content.id
+              link-attrs={
+                'data-company-id': content.id,
+                'data-company-name': content.name,
+              }
+            />
           </div>
         </for>
       </@nodes>
