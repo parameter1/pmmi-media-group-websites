@@ -60,7 +60,7 @@ services:
     environment:
       <<: *env
 
-  automationworld.com:
+  aw:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/automationworld.com
