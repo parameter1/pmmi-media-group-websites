@@ -4,6 +4,7 @@
     "./flows/marko.json",
     "./gam/marko.json",
     "./gtm/marko.json",
+    "./layouts/marko.json",
     "./nodes/marko.json",
     "./page-wrappers/marko.json"
   ],
