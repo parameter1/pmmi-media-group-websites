@@ -6,5 +6,10 @@
     "./gtm/marko.json",
     "./nodes/marko.json",
     "./page-wrappers/marko.json"
-  ]
+  "<shared-script-loader>": {
+    "template": "./script-loader/index.marko"
+  },
+  "<shared-script-loader-queue>": {
+    "template": "./script-loader/queue.marko"
+  }
 }
