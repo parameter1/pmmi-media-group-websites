@@ -1,0 +1,5 @@
+{
+  "<shared-gtm-start>": {
+    "template": "./start.marko"
+  }
+}
