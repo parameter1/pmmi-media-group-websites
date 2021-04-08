@@ -38,6 +38,9 @@ module.exports = {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-NM2MBTG',
     slotPrefix: 'aw',
   },
+  gcse: {
+    id: '003355913687346718228:y5v3j3tlsgb',
+  },
   wufoo: {
     userName: 'pmmimediagroup',
   },
