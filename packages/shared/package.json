@@ -14,6 +14,7 @@
     "@parameter1/base-cms-marko-core": "^2.12.0",
     "@parameter1/base-cms-marko-web": "^2.13.0",
     "@parameter1/base-cms-marko-web-gam": "^2.13.1",
+    "@parameter1/base-cms-marko-web-gcse": "^2.5.0",
     "@parameter1/base-cms-marko-web-gtm": "^2.13.1",
     "@parameter1/base-cms-marko-web-inquiry": "^2.5.0",
     "@parameter1/base-cms-marko-web-leaders": "^2.8.6",
