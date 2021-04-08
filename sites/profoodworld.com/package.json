@@ -32,7 +32,6 @@
     "@pmmi-media-group/package-common": "^1.16.0",
     "@pmmi-media-group/package-shared": "^1.16.0",
     "graphql": "^14.5.4",
-    "graphql-tag": "^2.10.1",
-    "newrelic": "^5.11.0"
+    "graphql-tag": "^2.10.1"
   }
 }
