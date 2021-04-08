@@ -5,7 +5,6 @@ const magazine = require('./magazine');
 const publishedContent = require('./published-content');
 const search = require('./search');
 const subscribe = require('./subscribe');
-const websiteSections = require('./website-section');
 
 module.exports = (app) => {
   // Inquiries
@@ -28,7 +27,4 @@ module.exports = (app) => {
 
   // Subscription Pages
   subscribe(app);
-
-  // Website Sections
-  websiteSections(app);
 };
