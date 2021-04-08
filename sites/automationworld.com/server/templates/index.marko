@@ -1,10 +1,8 @@
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
-import queryFragment from "../graphql/fragments/content-list";
-import latestIssueFragment from "../graphql/fragments/magazine-latest-issue";
-import GAM from "../../config/gam";
-import nxConfig from "../../config/native-x";
+import queryFragment from "@pmmi-media-group/package-shared/graphql/fragments/content-list";
+import latestIssueFragment from "@pmmi-media-group/package-shared/graphql/fragments/magazine-latest-issue";
 
-$ const { site } = out.global;
+$ const { site, GAM, nativeX: nxConfig } = out.global;
 $ const { id, alias, name, pageNode } = data;
 
 <marko-web-website-section-page-layout id=id alias=alias name=name>
@@ -34,7 +32,7 @@ $ const { id, alias, name, pageNode } = data;
           name="website-optioned-content"
           params={ sectionAlias: "home", optionName: "Pinned", limit: 1, requiresImage: true, queryFragment }
         >
-          <website-content-card-node node=nodes[0] image-width=630 title-modifiers=["large"] />
+          <shared-content-card-node node=nodes[0] image-width=630 title-modifiers=["large"] />
         </marko-web-query>
       </div>
       <div class="col-lg-4 mb-block page-rail">
@@ -50,7 +48,7 @@ $ const { id, alias, name, pageNode } = data;
         >
           <default-theme-card-deck-flow cols=2 nodes=nodes>
             <@slot|{ node, index }|>
-              <website-content-card-node
+              <shared-content-card-node
                 image-width=340
                 node=node
               />
@@ -69,7 +67,7 @@ $ const { id, alias, name, pageNode } = data;
                 queryFragment
               }
             >
-              <website-content-card-node
+              <shared-content-card-node
                 image-width=340
                 node=nodes[0]
               />
@@ -94,7 +92,7 @@ $ const { id, alias, name, pageNode } = data;
                 node=nodes[0]
                 config=nxConfig
               >
-                <website-content-card-node
+                <shared-content-card-node
                   image-width=340
                   node=nxNode
                   attrs=containerAttrs
@@ -127,11 +125,11 @@ $ const { id, alias, name, pageNode } = data;
           name="website-scheduled-content"
           params={ sectionAlias: "products", limit: 4, queryFragment }
         >
-          <website-content-list-flow nodes=nodes>
+          <shared-content-list-flow nodes=nodes>
             <@header>
               <marko-web-link href="/products">Products</marko-web-link>
             </@header>
-          </website-content-list-flow>
+          </shared-content-list-flow>
         </marko-web-query>
       </div>
       <div class="col-lg-4 mb-block">
@@ -139,11 +137,11 @@ $ const { id, alias, name, pageNode } = data;
           name="website-scheduled-content"
           params={ sectionAlias: "factory", limit: 4, queryFragment }
         >
-          <website-content-list-flow nodes=nodes>
+          <shared-content-list-flow nodes=nodes>
             <@header>
               <marko-web-link href="/factory">Factory</marko-web-link>
             </@header>
-          </website-content-list-flow>
+          </shared-content-list-flow>
         </marko-web-query>
       </div>
       <div class="col-lg-4 mb-block">
@@ -151,11 +149,11 @@ $ const { id, alias, name, pageNode } = data;
           name="website-scheduled-content"
           params={ sectionAlias: "process", limit: 4, queryFragment }
         >
-          <website-content-list-flow nodes=nodes>
+          <shared-content-list-flow nodes=nodes>
             <@header>
               <marko-web-link href="/process">Process</marko-web-link>
             </@header>
-          </website-content-list-flow>
+          </shared-content-list-flow>
         </marko-web-query>
       </div>
     </div>
@@ -169,11 +167,11 @@ $ const { id, alias, name, pageNode } = data;
           name="all-published-content"
           params={ contentTypes: ["Video"], limit: 5, queryFragment }
         >
-          <website-content-list-flow nodes=nodes>
+          <shared-content-list-flow nodes=nodes>
             <@header>
               Video
             </@header>
-          </website-content-list-flow>
+          </shared-content-list-flow>
         </marko-web-query>
       </div>
     </div>
@@ -182,18 +180,18 @@ $ const { id, alias, name, pageNode } = data;
       name="website-optioned-content"
       params={ sectionAlias: "home", optionName: "Pinned", limit: 5, skip: 4, requiresImage: true, queryFragment }
     >
-      <website-content-card-deck-flow nodes=nodes ad-index=1 ad-name="imu1" >
+      <shared-content-card-deck-flow nodes=nodes ad-index=1 ad-name="imu1" >
         <@native-x index=2 name="load-more" />
-      </website-content-card-deck-flow>
+      </shared-content-card-deck-flow>
     </marko-web-query>
 
     <marko-web-query|{ nodes }|
       name="website-optioned-content"
       params={ sectionAlias: "home", optionName: "Pinned", limit: 5, skip: 9, requiresImage: true, queryFragment }
     >
-      <website-content-card-deck-flow nodes=nodes ad-index=2 ad-name="imu2" >
+      <shared-content-card-deck-flow nodes=nodes ad-index=2 ad-name="imu2" >
         <@native-x index=1 name="load-more" />
-      </website-content-card-deck-flow>
+      </shared-content-card-deck-flow>
     </marko-web-query>
 
     <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-bottom-wide" />
