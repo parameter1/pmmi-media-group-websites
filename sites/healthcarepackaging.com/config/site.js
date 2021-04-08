@@ -35,6 +35,9 @@ module.exports = {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-T7LSZ5W',
     slotPrefix: 'hcp',
   },
+  gcse: {
+    id: '003355913687346718228:67nzwbjjldd',
+  },
   wufoo: {
     userName: 'pmmimediagroup',
   },
