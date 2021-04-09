@@ -43,6 +43,9 @@ module.exports = {
   wufoo: {
     userName: 'pmmimediagroup',
   },
+  newsletters: {
+    subscribeLink: '',
+  },
   magazines: {
     description: '',
   },

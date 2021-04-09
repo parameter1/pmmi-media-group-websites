@@ -29,16 +29,19 @@ $ const description = `${config.siteName()} has products that deliver powerful c
           </div>
         </div>
       </@section>
-      <@section>
-        <div class="row">
-          <div class="col">
-            <h4>Newsletters</h4>
-            <p>Stay up-to-date on industry news and events, new product launches and more. Select from our list of targeted newsletter offerings to stay informed on the topics that matter to you and your business.</p>
-            <p><strong><marko-web-link href="https://pmmi.dragonforms.com/loading.do?pk=AWMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=PAWnew" target="_blank">Subscribe / Manage Preferences</marko-web-link></strong></p>
-            <hr>
+      $ const newsletterSubscribeLink = site.get('newsletters.subscribeLink');
+      <if(newsletterSubscribeLink)>
+        <@section>
+          <div class="row">
+            <div class="col">
+              <h4>Newsletters</h4>
+              <p>Stay up-to-date on industry news and events, new product launches and more. Select from our list of targeted newsletter offerings to stay informed on the topics that matter to you and your business.</p>
+              <p><strong><marko-web-link href=newsletterSubscribeLink target="_blank">Subscribe / Manage Preferences</marko-web-link></strong></p>
+              <hr>
+            </div>
           </div>
-        </div>
-      </@section>
+        </@section>
+      </if>
       <@section>
         <div class="row">
           <div class="col mb-block">
