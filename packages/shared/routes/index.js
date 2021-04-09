@@ -1,5 +1,4 @@
 const inquiryHandler = require('../inquiry-handler');
-const content = require('./content');
 const dynamicPages = require('./dynamic-page');
 const magazine = require('./magazine');
 const publishedContent = require('./published-content');
@@ -15,9 +14,6 @@ module.exports = (app) => {
 
   // Dynamic Pages
   dynamicPages(app);
-
-  // Content Pages
-  content(app);
 
   // Published Content Pages
   publishedContent(app);
