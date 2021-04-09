@@ -1,10 +1,8 @@
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
-import queryFragment from "../graphql/fragments/content-list";
-import latestIssueFragment from "../graphql/fragments/magazine-latest-issue";
-import GAM from "../../config/gam";
-import nxConfig from "../../config/native-x";
+import queryFragment from "@pmmi-media-group/package-shared/graphql/fragments/content-list";
+import latestIssueFragment from "@pmmi-media-group/package-shared/graphql/fragments/magazine-latest-issue";
 
-$ const { site } = out.global;
+$ const { site, GAM, nativeX: nxConfig } = out.global;
 $ const { id, alias, name, pageNode } = data;
 
 <marko-web-website-section-page-layout id=id alias=alias name=name>
@@ -32,7 +30,7 @@ $ const { id, alias, name, pageNode } = data;
       name="website-optioned-content"
       params={ sectionId: id, optionName: "Pinned", limit: 5, requiresImage: true, queryFragment }
     >
-      <website-content-hero-flow nodes=nodes />
+      <shared-content-hero-flow nodes=nodes />
     </marko-web-query>
 
     <div class="row">
@@ -43,7 +41,7 @@ $ const { id, alias, name, pageNode } = data;
         >
           <default-theme-card-deck-flow cols=2 nodes=nodes>
             <@slot|{ node, index }|>
-              <website-content-card-node
+              <shared-content-card-node
                 image-width=340
                 node=node
               />
@@ -76,11 +74,11 @@ $ const { id, alias, name, pageNode } = data;
           name="website-scheduled-content"
           params={ sectionAlias: "machinery-materials", limit: 4, queryFragment }
         >
-          <website-content-list-flow nodes=nodes>
+          <shared-content-list-flow nodes=nodes>
             <@header>
               <marko-web-link href="/machinery-materials">Machinery & Materials</marko-web-link>
             </@header>
-          </website-content-list-flow>
+          </shared-content-list-flow>
         </marko-web-query>
       </div>
       <div class="col-lg-4 mb-block">
@@ -88,11 +86,11 @@ $ const { id, alias, name, pageNode } = data;
           name="website-scheduled-content"
           params={ sectionAlias: "markets", limit: 4, queryFragment }
         >
-          <website-content-list-flow nodes=nodes>
+          <shared-content-list-flow nodes=nodes>
             <@header>
               <marko-web-link href="/markets">Markets</marko-web-link>
             </@header>
-          </website-content-list-flow>
+          </shared-content-list-flow>
         </marko-web-query>
       </div>
     </div>
@@ -103,11 +101,11 @@ $ const { id, alias, name, pageNode } = data;
           name="website-scheduled-content"
           params={ sectionAlias: "logistics-distribution", limit: 4, queryFragment }
         >
-          <website-content-list-flow nodes=nodes>
+          <shared-content-list-flow nodes=nodes>
             <@header>
               <marko-web-link href="/logistics-distribution">Logistics & Cold Chain</marko-web-link>
             </@header>
-          </website-content-list-flow>
+          </shared-content-list-flow>
         </marko-web-query>
       </div>
       <div class="col-lg-4 mb-block">
@@ -115,11 +113,11 @@ $ const { id, alias, name, pageNode } = data;
           name="website-scheduled-content"
           params={ sectionAlias: "issues", limit: 4, queryFragment }
         >
-          <website-content-list-flow nodes=nodes>
+          <shared-content-list-flow nodes=nodes>
             <@header>
               <marko-web-link href="/issues">Issues</marko-web-link>
             </@header>
-          </website-content-list-flow>
+          </shared-content-list-flow>
         </marko-web-query>
       </div>
       <div class="col-lg-4 page-rail">
@@ -133,11 +131,11 @@ $ const { id, alias, name, pageNode } = data;
           name="website-scheduled-content"
           params={ sectionAlias: "quick-hits", limit: 4, queryFragment }
         >
-          <website-content-list-flow nodes=nodes>
+          <shared-content-list-flow nodes=nodes>
             <@header>
               <marko-web-link href="/quick-hits">Quick Hits</marko-web-link>
             </@header>
-          </website-content-list-flow>
+          </shared-content-list-flow>
         </marko-web-query>
       </div>
       <div class="col-lg-4 mb-block">
@@ -145,11 +143,11 @@ $ const { id, alias, name, pageNode } = data;
           name="all-published-content"
           params={ contentTypes: ["Product"], limit: 4, queryFragment }
         >
-          <website-content-list-flow nodes=nodes>
+          <shared-content-list-flow nodes=nodes>
             <@header>
               <marko-web-link href="/products">Products</marko-web-link>
             </@header>
-          </website-content-list-flow>
+          </shared-content-list-flow>
         </marko-web-query>
       </div>
       <div class="col-lg-4 mb-block">
@@ -157,11 +155,11 @@ $ const { id, alias, name, pageNode } = data;
           name="website-scheduled-content"
           params={ sectionAlias: "supplier-news", limit: 4, queryFragment }
         >
-          <website-content-list-flow nodes=nodes>
+          <shared-content-list-flow nodes=nodes>
             <@header>
               <marko-web-link href="/supplier-news">Supplier News</marko-web-link>
             </@header>
-          </website-content-list-flow>
+          </shared-content-list-flow>
         </marko-web-query>
       </div>
       <div class="col-lg-4 page-rail">
@@ -173,18 +171,18 @@ $ const { id, alias, name, pageNode } = data;
       name="website-optioned-content"
       params={ sectionAlias: "home", optionName: "Pinned", limit: 5, skip: 9, requiresImage: true, queryFragment }
     >
-      <website-content-card-deck-flow nodes=nodes ad-index=0 ad-position="before" ad-name="imu1" >
+      <shared-content-card-deck-flow nodes=nodes ad-index=0 ad-position="before" ad-name="imu1" >
         <@native-x index=4 name="load-more" />
-      </website-content-card-deck-flow>
+      </shared-content-card-deck-flow>
     </marko-web-query>
 
     <marko-web-query|{ nodes }|
       name="website-optioned-content"
       params={ sectionAlias: "home", optionName: "Pinned", limit: 5, skip: 14, requiresImage: true, queryFragment }
     >
-      <website-content-card-deck-flow nodes=nodes ad-index=2 ad-name="imu2" >
+      <shared-content-card-deck-flow nodes=nodes ad-index=2 ad-name="imu2" >
         <@native-x index=1 name="load-more" />
-      </website-content-card-deck-flow>
+      </shared-content-card-deck-flow>
     </marko-web-query>
 
     <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-bottom-wide" />
