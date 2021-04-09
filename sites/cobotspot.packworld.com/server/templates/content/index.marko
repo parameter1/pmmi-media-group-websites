@@ -1,9 +1,8 @@
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
 import { getAsObject, get, getAsArray } from "@parameter1/base-cms-object-path";
 import queryFragment from "../../graphql/fragments/content-list";
-import GAM from "../../../config/gam";
 
-$ const { site } = out.global;
+$ const { site, GAM } = out.global;
 $ const { id, type, pageNode } = data;
 
 $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? false : true;
@@ -75,7 +74,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
             </default-theme-page-contents>
 
             <aside class="col-lg-4 page-rail">
-              <website-twitter-feed height=650 />
+              <shared-twitter-feed height=650 />
               <marko-web-gam-display-ad id="gpt-ad-skyscraper" />
             </aside>
           </div>
@@ -89,7 +88,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
             name="website-scheduled-content"
             params={ sectionAlias: section.alias, limit: 9, queryFragment }
           >
-            <website-content-card-deck-flow nodes=nodes />
+            <shared-content-card-deck-flow nodes=nodes />
           </marko-web-query>
         </div>
       </div>
@@ -100,7 +99,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
     <marko-web-resolve-page|{ resolved, data: content }| node=pageNode>
       $ const section = resolved.getAsObject("primarySection");
       $ const aliases = hierarchyAliases(section);
-      <website-content-load-more-block
+      <shared-content-load-more-block
         id=id
         type=type
         name=content.name
@@ -109,7 +108,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
         section-name=section.name
         section-skip=9
       >
-      </website-content-load-more-block>
+      </shared-content-load-more-block>
     </marko-web-resolve-page>
   </@below-page>
   <@foot>
