@@ -1,9 +1,11 @@
 const navigation = require('./navigation');
 const nativeX = require('./native-x');
+const gam = require('./gam');
 
 module.exports = {
   navigation,
   nativeX,
+  gam,
   company: 'PMMI Media Group',
   p1events: {
     tenant: 'pmmi',
