@@ -3,10 +3,10 @@ const queryFragment = require('@pmmi-media-group/package-shared/graphql/fragment
 const companyQueryFragment = require('@pmmi-media-group/package-common/graphql/fragments/content-company');
 const contactQueryFragment = require('@pmmi-media-group/package-shared/graphql/fragments/content-contact');
 const company = require('@pmmi-media-group/package-shared/templates/content/company');
+const podcast = require('@pmmi-media-group/package-shared/templates/content/podcast');
+const webinar = require('@pmmi-media-group/package-shared/templates/content/webinar');
 const content = require('../templates/content');
 const contact = require('../templates/content/contact');
-const podcast = require('../templates/content/podcast');
-const webinar = require('../templates/content/webinar');
 const document = require('../templates/content/document');
 
 module.exports = (app) => {
