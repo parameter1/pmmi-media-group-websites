@@ -14,7 +14,10 @@ $ const description = defaultDescription(title, config);
     </marko-web-gtm-default-context>
   </@head>
   <@page>
-    <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "leaderboard" }) modifiers=["top-of-page"] />
+    $ const leaderboard = GAM.getAdUnit({ name: "leaderboard" });
+    <if(leaderboard.path)>
+      <marko-web-gam-define-display-ad ...leaderboard modifiers=["top-of-page"] />
+    </if>
     <marko-web-page-wrapper class="mb-block">
       <@section>
         <div class="row">
