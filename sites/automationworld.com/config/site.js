@@ -1,11 +1,13 @@
 const navigation = require('./navigation');
 const leaders = require('./leaders');
 const nativeX = require('./native-x');
+const gam = require('./gam');
 
 module.exports = {
   leaders,
   navigation,
   nativeX,
+  gam,
   company: 'PMMI Media Group',
   p1events: {
     tenant: 'pmmi',
@@ -36,8 +38,14 @@ module.exports = {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-NM2MBTG',
     slotPrefix: 'aw',
   },
+  gcse: {
+    id: '003355913687346718228:y5v3j3tlsgb',
+  },
   wufoo: {
     userName: 'pmmimediagroup',
+  },
+  newsletters: {
+    subscribeLink: 'https://pmmi.dragonforms.com/loading.do?pk=AWMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=PAWnew',
   },
   magazines: {
     description: '',

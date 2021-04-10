@@ -1,7 +1,5 @@
-const contentList = require('./graphql/fragments/content-list');
-const magazineIssueArchive = require('./graphql/fragments/magazine-issue-archive');
+const contentList = require('@pmmi-media-group/package-shared/graphql/fragments/content-list');
 
 module.exports = {
   contentList,
-  magazineIssueArchive,
 };

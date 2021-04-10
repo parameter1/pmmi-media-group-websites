@@ -10,6 +10,21 @@
       "required": true
     }
   },
+  "<shared-content-load-more-block>": {
+    "template": "./content-load-more.marko",
+    "<native-x>": {
+      "@index": "number",
+      "@name": "string",
+      "@aliases": "array"
+    },
+    "@id": "number",
+    "@type": "string",
+    "@name": "string",
+    "@aliases": "array",
+    "@section-id": "number",
+    "@section-name": "string",
+    "@section-skip": "number"
+  },
   "<shared-primary-image-block>": {
     "template": "./primary-image.marko"
   },
@@ -24,5 +39,8 @@
       "type": "boolean",
       "default-value": true
     }
+  },
+  "<shared-magazine-publications-block>": {
+    "template": "./magazine-publications.marko"
   }
 }

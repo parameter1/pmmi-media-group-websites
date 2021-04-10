@@ -1,9 +1,7 @@
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
-import queryFragment from "../graphql/fragments/content-list";
-import latestIssueFragment from "../graphql/fragments/magazine-latest-issue";
-import GAM from "../../config/gam";
+import queryFragment from "@pmmi-media-group/package-shared/graphql/fragments/content-list";
 
-$ const { site } = out.global;
+$ const { site, GAM } = out.global;
 $ const { id, alias, name, pageNode } = data;
 
 <marko-web-website-section-page-layout id=id alias=alias name=name>

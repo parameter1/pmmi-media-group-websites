@@ -1,9 +1,8 @@
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
 import { getAsObject, get, getAsArray } from "@parameter1/base-cms-object-path";
-import queryFragment from "../../graphql/fragments/content-list";
-import GAM from "../../../config/gam";
+import queryFragment from "@pmmi-media-group/package-shared/graphql/fragments/content-list";
 
-$ const { site } = out.global;
+$ const { site, GAM } = out.global;
 $ const { id, type, pageNode } = data;
 
 <marko-web-content-page-layout id=id type=type>
@@ -62,7 +61,7 @@ $ const { id, type, pageNode } = data;
           >
             <default-theme-card-deck-flow cols=2 nodes=nodes>
               <@slot|{ node, index }|>
-                <website-content-card-node
+                <shared-content-card-node
                   image-width=340
                   node=node
                 />
@@ -81,7 +80,7 @@ $ const { id, type, pageNode } = data;
     <marko-web-resolve-page|{ resolved, data: content }| node=pageNode>
       $ const section = resolved.getAsObject("primarySection");
       $ const aliases = hierarchyAliases(section);
-      <website-content-load-more-block
+      <shared-content-load-more-block
         id=id
         type=type
         name=content.name

@@ -1,9 +1,8 @@
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
 import { getAsObject, get, getAsArray } from "@parameter1/base-cms-object-path";
-import queryFragment from "../../graphql/fragments/content-list";
-import GAM from "../../../config/gam";
+import queryFragment from "@pmmi-media-group/package-shared/graphql/fragments/content-list";
 
-$ const { site } = out.global;
+$ const { site, GAM } = out.global;
 $ const { id, type, pageNode } = data;
 
 $ const displayCarousel = true;
@@ -74,7 +73,7 @@ $ const displayPublishedDate = false;
           >
             <default-theme-card-deck-flow cols=2 nodes=nodes>
               <@slot|{ node, index }|>
-                <website-content-card-node
+                <shared-content-card-node
                   image-width=340
                   node=node
                 />
@@ -93,7 +92,7 @@ $ const displayPublishedDate = false;
             name="website-scheduled-content"
             params={ sectionAlias: section.alias, limit: 3, skip: 4, queryFragment }
           >
-            <website-content-card-deck-flow nodes=nodes />
+            <shared-content-card-deck-flow nodes=nodes />
           </marko-web-query>
         </div>
       </div>
@@ -109,7 +108,7 @@ $ const displayPublishedDate = false;
           >
             <default-theme-card-deck-flow cols=2 nodes=nodes>
               <@slot|{ node, index }|>
-                <website-content-card-node
+                <shared-content-card-node
                   image-width=340
                   node=node
                 />
@@ -125,7 +124,7 @@ $ const displayPublishedDate = false;
             name="website-scheduled-content"
             params={ sectionAlias: section.alias, limit: 3, skip: 9, queryFragment }
           >
-            <website-content-card-deck-flow nodes=nodes />
+            <shared-content-card-deck-flow nodes=nodes />
           </marko-web-query>
         </div>
       </div>
@@ -143,7 +142,7 @@ $ const displayPublishedDate = false;
             name="website-scheduled-content"
             params={ sectionAlias: section.alias, limit: 8, skip: 12, queryFragment }
           >
-            <website-content-card-deck-flow nodes=nodes ad-index=4 ad-name="imu2" />
+            <shared-content-card-deck-flow nodes=nodes ad-index=4 ad-name="imu2" />
           </marko-web-query>
         </div>
       </div>
@@ -154,7 +153,7 @@ $ const displayPublishedDate = false;
     <marko-web-resolve-page|{ resolved, data: content }| node=pageNode>
       $ const section = resolved.getAsObject("primarySection");
       $ const aliases = hierarchyAliases(section);
-      <website-content-load-more-block
+      <shared-content-load-more-block
         id=id
         type=type
         name=content.name
@@ -163,7 +162,7 @@ $ const displayPublishedDate = false;
         section-name=section.name
         section-skip=20
       >
-      </website-content-load-more-block>
+      </shared-content-load-more-block>
     </marko-web-resolve-page>
   </@below-page>
   <@foot>

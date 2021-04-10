@@ -1,11 +1,13 @@
 const navigation = require('./navigation');
 const leaders = require('./leaders');
 const nativeX = require('./native-x');
+const gam = require('./gam');
 
 module.exports = {
   leaders,
   navigation,
   nativeX,
+  gam,
   company: 'PMMI Media Group',
   p1events: {
     tenant: 'pmmi',
@@ -35,8 +37,14 @@ module.exports = {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-M596Q98',
     slotPrefix: 'oem',
   },
+  gcse: {
+    id: '003355913687346718228:znjzr8aiziw',
+  },
   wufoo: {
     userName: 'pmmimediagroup',
+  },
+  newsletters: {
+    subscribeLink: '',
   },
   magazines: {
     description: '',

@@ -1,0 +1,31 @@
+{
+  "<shared-gam-define-display-ad>": {
+    "template": "./define-display-ad.marko"
+  },
+  "<shared-gam-enable>": {
+    "template": "./enable.marko"
+  },
+  "<shared-gam-wallpaper-ad>": {
+    "template": "./wallpaper-ad.marko",
+    "@aliases": "array",
+    "@position": "string"
+  },
+  "<shared-gam-inject-ads>": {
+    "template": "./inject-ads.marko",
+    "@inject <inject>[]": {},
+    "@detect-embeds": "boolean",
+    "@selector": "string",
+    "@child-selector": "string"
+  },
+  "<shared-gam-prestitial>": {
+    "template": "./prestitial.marko",
+    "@name": {
+      "type": "string",
+      "required": true
+    },
+    "@aliases": "array",
+    "@targeting": "object",
+    "@init": "boolean",
+    "@display": "boolean"
+  }
+}
