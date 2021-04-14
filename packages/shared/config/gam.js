@@ -14,6 +14,13 @@ module.exports = ({
         { viewport: [750, 0], size: [728, 90] },
         { viewport: [320, 0], size: [[300, 50], [320, 50], [300, 100]] },
       ],
+    })
+    .setTemplate('WALLPAPER', {
+      size: [[300, 600], [100, 600]],
+      sizeMapping: [
+        { viewport: [1400, 0], size: [300, 600] },
+        { viewport: [0, 0], size: [] },
+      ],
     });
 
   return config;
