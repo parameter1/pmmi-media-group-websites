@@ -16,6 +16,8 @@ config.setAliasAdUnits('default', [
   { name: 'imu1', size: [300, 250], path: 'pfw_imu' },
   { name: 'imu2', size: [300, 250], path: 'pfw_imu_2' },
   { name: 'skyscraper', options: { size: [300, 600] }, path: 'pfw_skyscraper' },
+  { name: 'wallpaper-left', templateName: 'WALLPAPER', path: 'pfw-wallpaper-left' },
+  { name: 'wallpaper-right', templateName: 'WALLPAPER', path: 'pfw-wallpaper-right' },
 ]);
 
 module.exports = config;

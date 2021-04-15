@@ -14,6 +14,8 @@ config.setAliasAdUnits('default', [
   { name: 'imu1', size: [300, 250], path: 'hcp_imu_1' },
   { name: 'imu2', size: [300, 250], path: 'hcp_imu_2' },
   { name: 'skyscraper', options: { size: [300, 600] }, path: 'hcp_skyscraper' },
+  { name: 'wallpaper-left', templateName: 'WALLPAPER', path: 'hcp-wallpaper-left' },
+  { name: 'wallpaper-right', templateName: 'WALLPAPER', path: 'hcp-wallpaper-right' },
 ]);
 
 module.exports = config;
