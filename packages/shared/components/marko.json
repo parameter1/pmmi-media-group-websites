@@ -19,11 +19,5 @@
     },
     "<below-container>": {},
     "<foot>": {}
-  },
-  "<shared-script-loader>": {
-    "template": "./script-loader/index.marko"
-  },
-  "<shared-script-loader-queue>": {
-    "template": "./script-loader/queue.marko"
   }
 }
