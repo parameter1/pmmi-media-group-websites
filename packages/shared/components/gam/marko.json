@@ -2,9 +2,6 @@
   "<shared-gam-define-display-ad>": {
     "template": "./define-display-ad.marko"
   },
-  "<shared-gam-enable>": {
-    "template": "./enable.marko"
-  },
   "<shared-gam-wallpaper-ad>": {
     "template": "./wallpaper-ad.marko",
     "@aliases": "array",

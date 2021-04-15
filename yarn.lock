@@ -2034,19 +2034,19 @@
     moment-timezone "^0.5.32"
     pretty "^2.0.0"
 
-"@parameter1/base-cms-marko-web-deferred-script-loader@^2.13.0":
-  version "2.13.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-deferred-script-loader/-/base-cms-marko-web-deferred-script-loader-2.13.0.tgz#48d7eb4ae28f9ef7ab3afb18a8c0b9649ca79858"
-  integrity sha512-6v963azwDnhfblNgLDhetuBIEn+x98cgMzRxFcmcsmB0Biqx2a98RagoZMbNJIqG8mmucdyLPOoWZ1dzNmioNQ==
+"@parameter1/base-cms-marko-web-deferred-script-loader@^2.18.0":
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-deferred-script-loader/-/base-cms-marko-web-deferred-script-loader-2.18.0.tgz#c834d708f37c9230e558ae3d4c7e439e6ce45c40"
+  integrity sha512-Dfz+Gin5j4EUTNeRe8J4xg5YrTz6q3tw9CSs7ylu9tZjiKb5jhbElQkqRhm91JIoKGFw0HfM4CWWcYUkN77Flg==
   dependencies:
     "@parameter1/base-cms-object-path" "^2.5.0"
 
-"@parameter1/base-cms-marko-web-gam@^2.13.1":
-  version "2.13.1"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-gam/-/base-cms-marko-web-gam-2.13.1.tgz#4ed41cd5d8184d05e5fd2337a195ca455aca293f"
-  integrity sha512-oKy01Hus23qQW07gP5AHB6Fx+4Rm0QIVZ9JrNksmqzur3wnouvABv2EHvmDQLv+OzCqUmP/FcLoIlcYg+WK4rw==
+"@parameter1/base-cms-marko-web-gam@^2.18.0":
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-gam/-/base-cms-marko-web-gam-2.18.0.tgz#13ddb2ce51a39fa64fd6bcde951ff2d601176271"
+  integrity sha512-eA6f41Mp7DX627LFeJaOtwUd45yS6BTDI4icoawoOaQxrO9jLJpgpJ2ok+qdyv9ZSElpjo97/KvNVfejr9ttWQ==
   dependencies:
-    "@parameter1/base-cms-marko-web-deferred-script-loader" "^2.13.0"
+    "@parameter1/base-cms-marko-web-deferred-script-loader" "^2.18.0"
     "@parameter1/base-cms-object-path" "^2.5.0"
     "@parameter1/base-cms-utils" "^2.4.2"
     scrollmagic "^2.0.8"
@@ -2059,13 +2059,13 @@
     "@parameter1/base-cms-object-path" "^2.5.0"
     "@parameter1/base-cms-utils" "^2.4.2"
 
-"@parameter1/base-cms-marko-web-gtm@^2.13.1":
-  version "2.13.1"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-gtm/-/base-cms-marko-web-gtm-2.13.1.tgz#a4cac8ab8a9e35276d9e838aa3968a7e3e3b5b07"
-  integrity sha512-0sGlWsdf+tF1M6WtDS09F8iwxqD8GKhkgc+dyWjZ4a4sd9DoHDzpdjffEZomA1fq+Uwhqilcm1qMdKRijg3cfw==
+"@parameter1/base-cms-marko-web-gtm@^2.18.0":
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-gtm/-/base-cms-marko-web-gtm-2.18.0.tgz#3c152959e74b01cedbaf45c310e7305605d8d9ad"
+  integrity sha512-jU/4zauCBP1XOhRd0PHgYhh3bwse3/ZmhztQC0whjnVD9d9inIe/1855ruVmJR1lJuKTa/clpHpmMzeVYGK06A==
   dependencies:
     "@parameter1/base-cms-inflector" "^2.0.0"
-    "@parameter1/base-cms-marko-web-deferred-script-loader" "^2.13.0"
+    "@parameter1/base-cms-marko-web-deferred-script-loader" "^2.18.0"
     "@parameter1/base-cms-object-path" "^2.5.0"
     "@parameter1/base-cms-utils" "^2.4.2"
     graphql "^14.7.0"
@@ -2104,13 +2104,13 @@
     graphql-tag "^2.11.0"
     object-path "^0.11.5"
 
-"@parameter1/base-cms-marko-web-native-x@^2.15.0":
-  version "2.15.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-native-x/-/base-cms-marko-web-native-x-2.15.0.tgz#a5e66dcbf5f2bc14dabed396371aacbce61ff4ad"
-  integrity sha512-/uAQVxAb14WvopWT9rSD8G+hjc5MfKPW1Q1Gj/FBs7CgQOsoXCzRl2dU4OCJ8koRYitHgkx8H9eZyFH/4j/BEA==
+"@parameter1/base-cms-marko-web-native-x@^2.19.0":
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-native-x/-/base-cms-marko-web-native-x-2.19.0.tgz#06fa7f5e872b2286fc2524da36f127e32568e7eb"
+  integrity sha512-wSIJ4G24poitQSTbyyKlM/zfGxYnf5YE34ktRfSIsaV2W8ClTdv7dEoq0H4RrmyVVs2e/9rY2PrbL1y6jiZDkA==
   dependencies:
-    "@parameter1/base-cms-marko-web-deferred-script-loader" "^2.13.0"
-    "@parameter1/base-cms-marko-web-gtm" "^2.13.1"
+    "@parameter1/base-cms-marko-web-deferred-script-loader" "^2.18.0"
+    "@parameter1/base-cms-marko-web-gtm" "^2.18.0"
     "@parameter1/base-cms-object-path" "^2.5.0"
     "@parameter1/base-cms-utils" "^2.4.2"
     "@parameter1/base-cms-web-common" "^2.5.0"
@@ -2120,13 +2120,13 @@
     graphql-tag "^2.11.0"
     node-fetch "^2.6.1"
 
-"@parameter1/base-cms-marko-web-p1-events@^2.13.1":
-  version "2.13.1"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-p1-events/-/base-cms-marko-web-p1-events-2.13.1.tgz#804d22fc51c10789c2e9dceae99aaac09946ab82"
-  integrity sha512-U9Ud5wqscMj0WWMJsWZ0s31WvHOqYu01F/BYlgEVydIhQaHUHmj0S0xpmbAJpPuAg4fjmDLaMQzqhtJ4Sc11KA==
+"@parameter1/base-cms-marko-web-p1-events@^2.18.0":
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-p1-events/-/base-cms-marko-web-p1-events-2.18.0.tgz#7a0bb7898cf4a72eb1b1155ef640914a71be1626"
+  integrity sha512-30CKbgFFrfSXFSrxdgLx2j33F4Z/0rMzEmla48TACPdQWqLLWTPiZxkU1b+MSElZplprMsrgEU8oCgBQS6E78Q==
   dependencies:
     "@parameter1/base-cms-inflector" "^2.0.0"
-    "@parameter1/base-cms-marko-web-deferred-script-loader" "^2.13.0"
+    "@parameter1/base-cms-marko-web-deferred-script-loader" "^2.18.0"
     "@parameter1/base-cms-object-path" "^2.5.0"
 
 "@parameter1/base-cms-marko-web-reveal-ad@^2.5.0":
@@ -5199,11 +5199,6 @@ dom-serializer@~0.1.0:
   dependencies:
     domelementtype "^1.3.0"
     entities "^1.1.1"
-
-dom-utils@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/dom-utils/-/dom-utils-0.9.0.tgz#e615a5af15ac4505e55ef612c72b5b5d176121f3"
-  integrity sha1-5hWlrxWsRQXlXvYSxytbXRdhIfM=
 
 domain-browser@^1.1.1:
   version "1.2.0"

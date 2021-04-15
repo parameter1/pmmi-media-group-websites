@@ -1,4 +1,5 @@
 import { getAsObject } from "@parameter1/base-cms-object-path";
+import omedaConfig from "../config/omeda";
 
 $ const {
   site,
@@ -14,29 +15,44 @@ $ const {
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <shared-script-loader-queue />
+    <marko-web-deferred-script-loader-init />
 
     <!-- init p1 website events -->
     <marko-web-p1-events-init
-      identity-query-builder=`
-        var id = query.oly_enc_id;
-        if (id) return 'omeda.pmmicd.customer*' + id + '~encoded';
-      `;
+      on="load"
+      request-frame=true
+      target-tag="body"
+      identity-query-builder=`var id = query.oly_enc_id; if (id) { return 'omeda.${omedaConfig.brandKey}.customer*' + id + '~encoded'; };`;
     />
 
     <!-- init gam -->
-    <marko-web-gam-init />
+    <marko-web-gam-init
+      on="load"
+      request-frame=true
+      target-tag="body"
+    />
 
     <!-- init gtm -->
-    <marko-web-gtm-init container-id=site.get("gtm.containerId") />
+    <marko-web-gtm-init
+      container-id=site.get("gtm.containerId")
+      on="load"
+      request-frame=true
+      target-tag="body"
+    />
 
     <!-- init native-x -->
-    <marko-web-native-x-init uri=nativeX.getUri() enabled=nativeX.isEnabled() />
+    <marko-web-native-x-init
+      uri=nativeX.getUri()
+      enabled=nativeX.isEnabled()
+      on="load"
+      request-frame=true
+      target-tag="body"
+    />
 
     <${input.head} />
 
     <!-- start gtm -->
-    <shared-gtm-start />
+    <marko-web-gtm-start />
 
     <!-- start gam -->
     <marko-web-gam-enable>
@@ -62,4 +78,7 @@ $ const {
     <${input.belowContainer} />
     <default-theme-site-footer />
   </@below-container>
+  <@below-wrapper>
+    <marko-web-deferred-script-loader-load />
+  </@below-wrapper>
 </marko-web-document>
