@@ -19,8 +19,12 @@ $ const { id, alias, name, pageNode } = input;
     </marko-web-resolve-page>
   </@head>
   <@above-container>
-    <marko-web-gam-display-ad id="gpt-ad-leaderboard" modifiers=["above-container"] />
-    <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-top-below-head" modifiers=["above-container"] />
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      <shared-gam-wallpaper-ad aliases=aliases position="section_page" />
+      <marko-web-gam-display-ad id="gpt-ad-leaderboard" modifiers=["above-container"] />
+      <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-top-below-head" modifiers=["above-container"] />
+    </marko-web-resolve-page>
   </@above-container>
   <@page>
     <marko-web-query|{ nodes }|
