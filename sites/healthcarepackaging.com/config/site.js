@@ -54,7 +54,7 @@ module.exports = {
     directSend: false,
     sendTo: 'info-request@pmmimediagroup.com',
     replyTo: 'info-request@pmmimediagroup.com',
-    sendFrom: 'Healthcare Packaging <noreply@baseplatform.io>',
+    sendFrom: 'Healthcare Packaging <noreply@parameter1.com>',
     logo: 'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo.png?h=45&auto=format,compress&q=70',
     bgColor: '#000',
   },

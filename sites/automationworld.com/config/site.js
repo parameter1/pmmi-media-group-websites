@@ -55,7 +55,7 @@ module.exports = {
     directSend: false,
     sendTo: 'info-request@pmmimediagroup.com',
     replyTo: 'info-request@pmmimediagroup.com',
-    sendFrom: 'Automation World <noreply@baseplatform.io>',
+    sendFrom: 'Automation World <noreply@parameter1.com>',
     logo: 'https://img.automationworld.com/files/base/pmmi/aw/aw_logo.png?h=45&auto=format,compress&q=70',
     bgColor: '#000',
   },
