@@ -96,6 +96,13 @@ jobs:
       name: cobotspot.packworld.com
       script: npx @parameter1/base-cms-website-deployment-tool deploy cobotspot.packworld.com staging-websites-tauron
 
+    - <<: *production-job
+      name: mundopmmi.com
+      script: npx @parameter1/base-cms-website-deployment-tool deploy mundopmmi.com websites
+    - <<: *staging-job
+      name: mundopmmi.com
+      script: npx @parameter1/base-cms-website-deployment-tool deploy mundopmmi.com staging-websites-caprica
+
     #############################
     ### ^^^ ADD SITES HERE ^^^ ##
     #############################
