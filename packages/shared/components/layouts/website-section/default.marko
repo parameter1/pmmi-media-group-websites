@@ -55,6 +55,7 @@ $ const { id, alias, name, pageNode } = input;
   <@below-page>
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ const aliases = hierarchyAliases(section);
+      $ const loadMoreContent = site.get("translations.loadMoreContent") || 'Load More Content';
       <marko-web-load-more
         component-name="content-load-more-flow"
         component-input={ aliases }
@@ -63,6 +64,7 @@ $ const { id, alias, name, pageNode } = input;
         query-params={ sectionId: id, limit: 12, skip: 15, requiresImage: true }
         max-pages=3
         page-input={ for: "website-section", id }
+        trigger-input={ buttonLabel: loadMoreContent }
       />
     </marko-web-resolve-page>
   </@below-page>

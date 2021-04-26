@@ -27,9 +27,9 @@ $ const { id, type, pageNode } = data;
       $ const section = resolved.getAsObject("primarySection");
       $ const aliases = hierarchyAliases(section);
       $ const includeContentTypes = ["Article", "Blog", "Product", "News", "PressRelease", "Webinar", "Whitepaper", "Video"];
-
+      $ const moreFrom = site.get("translations.moreFrom") || "More from";
       <marko-web-load-more
-        header=`More from ${content.name}`
+        header=`${moreFrom} ${content.name}`
         component-name="content-load-more-flow"
         component-input={ aliases }
         fragment-name="content-list"
