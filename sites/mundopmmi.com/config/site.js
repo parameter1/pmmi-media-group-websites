@@ -2,12 +2,14 @@ const navigation = require('./navigation');
 const leaders = require('./leaders');
 const nativeX = require('./native-x');
 const gam = require('./gam');
+const translations = require('./translations');
 
 module.exports = {
   leaders,
   navigation,
   nativeX,
   gam,
+  translations,
   company: 'PMMI Media Group',
   copyrightNotice: 'Todos los derechos reservados.',
   p1events: {
