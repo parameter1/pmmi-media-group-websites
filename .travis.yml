@@ -101,7 +101,7 @@ jobs:
       script: npx @parameter1/base-cms-website-deployment-tool deploy mundopmmi.com websites
     - <<: *staging-job
       name: mundopmmi.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy mundopmmi.com staging-websites-caprica
+      script: npx @parameter1/base-cms-website-deployment-tool deploy mundopmmi.com staging-websites-tauron
 
     #############################
     ### ^^^ ADD SITES HERE ^^^ ##
