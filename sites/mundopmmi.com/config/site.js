@@ -37,7 +37,7 @@ module.exports = {
     { provider: 'facebook', href: 'https://www.facebook.com/MundoPMMI' },
   ],
   gtm: {
-    containerId: process.env.GTM_CONTAINER_ID || 'GTM-WKC3D3X',
+    containerId: process.env.GTM_CONTAINER_ID || 'GTM-PWZTDXM',
     slotPrefix: 'mundo',
   },
   gcse: {
