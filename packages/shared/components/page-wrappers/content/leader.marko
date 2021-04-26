@@ -3,7 +3,7 @@ import eventLinkAttrs from "@parameter1/base-cms-marko-web-p1-events/utils/link-
 import eventEntity from "@parameter1/base-cms-marko-web-p1-events/utils/base-content-entity";
 import queryFragment from "../../../graphql/fragments/content-list";
 
-$ const { site } = out.global;
+$ const { site, i18n } = out.global;
 $ const { id, type, content } = input;
 
 <marko-web-page-wrapper>
@@ -37,16 +37,13 @@ $ const { id, type, content } = input;
 <div class="row">
   <div class="col-lg-8 mb-3 mb-lg-0">
     <marko-web-node-list collapsible=false class="mt-block">
-      $ const companyOverview = site.get("translations.companyOverview") || 'Company Overview';
       <@header>
-        ${companyOverview}
+        ${i18n("Company Overview")}
       </@header>
       <@body>
-        $ const companyOverview = site.get("translations.companyOverview") || 'Company Overview';
-        $ const companyOverview = site.get("translations.companyOverview") || 'Company Overview';
-        <label class="content-section-header">About ${content.name}</label>
+        <label class="content-section-header">${i18n("About")} ${content.name}</label>
         <marko-web-content-teaser tag="p" obj=content />
-        <label class="content-section-header">Product Summary</label>
+        <label class="content-section-header">${i18n("Product Summary")}</label>
         <marko-web-obj-text tag="p" obj=content field="productSummary" type="content" html=true />
       </@body>
     </marko-web-node-list>
@@ -57,12 +54,10 @@ $ const { id, type, content } = input;
         <else>Company Details</else>
       </@header>
       <@body>
-        $ const ataGlance = site.get("translations.ataGlance") || 'At-a-glance';
-        <label class="content-section-header content-section-header--border">${ataGlance}</label>
+        <label class="content-section-header content-section-header--border">${i18n("At-a-glance")}</label>
         <common-company-details company=content />
 
-        $ const contact = site.get("translations.contact") || 'Contact';
-        <label class="content-section-header content-section-header--border">${contact}</label>
+        <label class="content-section-header content-section-header--border">${i18n("Contact")}</label>
         $ const { socialLinks, ...contentSansSocial } = content;
         <default-theme-content-contact-details
           obj=contentSansSocial
@@ -73,8 +68,7 @@ $ const { id, type, content } = input;
           })
         />
 
-        $ const moreInfoOn = site.get("translations.moreInfoOn") || 'More info on';
-        <label class="content-section-header content-section-header--border">${moreInfoOn} ${content.name}</label>
+        <label class="content-section-header content-section-header--border">${i18n("More info on")} ${content.name}</label>
         <shared-content-body-with-tracking block-name="leaders-more-info" content=content />
       </@body>
     </marko-web-node-list>
@@ -90,9 +84,8 @@ $ const { id, type, content } = input;
       }
     >
       <marko-web-node-list class="mt-block">
-        $ const featuredProducts = site.get("translations.featuredProducts") || 'Featured Products';
         <@header>
-          ${featuredProducts}
+          ${i18n("Featured Products")}
         </@header>
         <@nodes|{ nodes: items }| nodes=nodes>
           <default-theme-card-deck-flow cols=2 nodes=items>
@@ -111,8 +104,7 @@ $ const { id, type, content } = input;
   </div>
   <div class="col-lg-4 mb-3 mb-lg-0">
     <marko-web-node-list collapsible=false class="mt-block">
-      $ const requestMoreInformation = site.get("translations.requestMoreInformation") || 'Request More Information';
-      <@header>${requestMoreInformation}</@header>
+      <@header>${i18n("Request More Information")}</@header>
       <@body>
         <shared-inquiry-block content=content with-header=false modifiers=["block"] />
       </@body>
@@ -120,9 +112,13 @@ $ const { id, type, content } = input;
 
     $ const contacts = getAsArray(content, "contacts.edges").map(({ node }) => node);
     <marko-web-node-list class="mt-block">
-      $ const keyContact = site.get("translations.keyContact") || 'Key Contact';
       <@header>
-        ${keyContact}<if(contacts.length > 1)>s</if>
+        <if(contacts.length > 1)>
+          ${i18n("Key Contacts")}
+        </if>
+        <else>
+          ${i18n("Key Contact")}
+        </else>
       </@header>
       <@nodes|{ nodes }| nodes=contacts>
         <for|node| of=nodes>
@@ -133,9 +129,8 @@ $ const { id, type, content } = input;
 
     $ const videos = getAsArray(content, "videos.edges").map(({ node }) => node);
     <marko-web-node-list class="mt-block">
-      $ const featuredVideos = site.get("translations.featuredVideos") || 'Featured Videos';
       <@header>
-        ${featuredVideos}
+        ${i18n("Featured Videos")}
       </@header>
       <@nodes|{ nodes }| nodes=videos>
         <for|node| of=nodes>
@@ -153,9 +148,8 @@ $ const { id, type, content } = input;
       </@nodes>
       <@footer>
         $ const url = get(content, "youtube.url");
-        $ const viewAllVideos = site.get("translations.viewAllVideos") || 'View All Videos';
         <a href=url target="_blank" rel="noopener" class="btn btn-sm btn-block btn-secondary">
-          ${viewAllVideos} &gt;
+          ${i18n("View All Videos")} &gt;
         </a>
       </@footer>
     </marko-web-node-list>
@@ -165,9 +159,8 @@ $ const { id, type, content } = input;
       params={ companyId: id, includeContentTypes: ["Article"], limit: 3, queryFragment }
     >
       <shared-content-list-flow nodes=nodes class="mt-block" inner-justified=false>
-        $ const caseStudies = site.get("translations.caseStudies") || 'Case Studies';
         <@header>
-          ${caseStudies}
+          ${i18n("Case Studies")}
         </@header>
       </shared-content-list-flow>
     </marko-web-query>
@@ -177,9 +170,8 @@ $ const { id, type, content } = input;
       params={ companyId: id, includeContentTypes: ["News", "PressRelease"], limit: 5, queryFragment }
     >
       <shared-content-list-flow nodes=nodes class="mt-block" inner-justified=false>
-        $ const companyNews = site.get("translations.companyNews") || 'Company News';
         <@header>
-          ${companyNews}
+          ${i18n("Company News")}
         </@header>
       </shared-content-list-flow>
     </marko-web-query>

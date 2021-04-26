@@ -1,4 +1,4 @@
-$ const { site } = out.global;
+$ const { i18n } = out.global;
 
 $ const {
   id,
@@ -11,9 +11,8 @@ $ const {
 } = input;
 
 <if(type === "contact")>
-  $ const moreFrom = site.get("translations.moreFrom") || "More from";
   <marko-web-load-more
-    header=`${moreFrom} ${name}`
+    header=`${i18n("More from")} ${name}`
     component-name="content-load-more-flow"
     component-input={ aliases }
     fragment-name="content-list"
@@ -28,9 +27,8 @@ $ const {
   />
 </if>
 <else-if(type === "company")>
-  $ const moreFrom = site.get("translations.moreFrom") || "More from";
   <marko-web-load-more
-    header=`${moreFrom} ${name}`
+    header=`${i18n("More from")} ${name}`
     component-name="content-load-more-flow"
     component-input={ aliases }
     fragment-name="content-list"
@@ -40,16 +38,14 @@ $ const {
   />
 </else-if>
 <else-if(sectionId)>
-  $ const moreIn = site.get("translations.moreIn") || "More in";
-  $ const loadMoreContent = site.get("translations.loadMoreContent") || 'Load More Content';
   <marko-web-load-more
-    header=`${moreIn} ${sectionName}`
+    header=`${i18n("More in")} ${sectionName}`
     component-name="content-load-more-flow"
     component-input={ aliases, nativeX: input.nativeX }
     fragment-name="content-list"
     query-name="website-scheduled-content"
     query-params={ sectionId, excludeContentIds: [id], limit: 12, skip: sectionSkip }
     page-input={ for: "content", id, type }
-    trigger-input={ buttonLabel: loadMoreContent }
+    trigger-input={ buttonLabel: i18n("Load More Content") }
   />
 </else-if>

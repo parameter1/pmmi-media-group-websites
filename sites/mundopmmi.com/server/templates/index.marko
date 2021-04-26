@@ -2,7 +2,7 @@ import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-ali
 import queryFragment from "@pmmi-media-group/package-shared/graphql/fragments/content-list";
 import latestIssueFragment from "@pmmi-media-group/package-shared/graphql/fragments/magazine-latest-issue";
 
-$ const { site, GAM, nativeX: nxConfig } = out.global;
+$ const { site, GAM, nativeX: nxConfig, i18n } = out.global;
 $ const { id, alias, name, pageNode } = data;
 
 <marko-web-website-section-page-layout id=id alias=alias name=name>
@@ -129,7 +129,6 @@ $ const { id, alias, name, pageNode } = data;
   <@below-page>
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ const aliases = hierarchyAliases(section);
-      $ const loadMoreContent = site.get("translations.loadMoreContent") || 'Load More Content';
       <marko-web-load-more
         component-name="content-load-more-flow"
         component-input={ aliases }
@@ -138,7 +137,7 @@ $ const { id, alias, name, pageNode } = data;
         query-params={ sectionId: id, limit: 12, skip: 21, requiresImage: true }
         max-pages=0
         page-input={ for: "website-section", id }
-        trigger-input={ buttonLabel: loadMoreContent }
+        trigger-input={ buttonLabel: i18n("Load More Content") }
       />
     </marko-web-resolve-page>
   </@below-page>
