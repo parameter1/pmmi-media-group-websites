@@ -11,7 +11,7 @@ $ const { content } = input;
   params={ contentId: content.id, limit: 20, queryFragment, includeContentTypes: ["Company"], withSite: false }
 >
   <marko-web-node-list class="mt-3">
-    <@header>${i18n("Companies in this Article")}</@header>
+    <@header>${i18n("Companies in this article")}</@header>
     <@nodes nodes=nodes>
       <@slot|{ node, index }|>
         <marko-web-node type=`${node.type}-content` flush=true>
