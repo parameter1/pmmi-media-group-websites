@@ -1,6 +1,8 @@
 import { getAsArray, get } from "@parameter1/base-cms-object-path";
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
 
+$ const { i18n } = out.global;
+
 $ const { id, type, pageNode } = data;
 
 <marko-web-content-page-layout id=id type=type>
@@ -27,9 +29,8 @@ $ const { id, type, pageNode } = data;
       $ const section = resolved.getAsObject("primarySection");
       $ const aliases = hierarchyAliases(section);
       $ const includeContentTypes = ["Article", "Blog", "Product", "News", "PressRelease", "Webinar", "Whitepaper", "Video"];
-
       <marko-web-load-more
-        header=`More from ${content.name}`
+        header=`${i18n("More from")} ${content.name}`
         component-name="content-load-more-flow"
         component-input={ aliases }
         fragment-name="content-list"

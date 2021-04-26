@@ -1,5 +1,7 @@
 const gql = require('graphql-tag');
 
+const leadersAlias = process.env.LEADERS_ALIAS || 'leaders-2021';
+
 module.exports = gql`
 
 fragment LeadershipCompanyVideosFragment on Content {
@@ -9,7 +11,7 @@ fragment LeadershipCompanyVideosFragment on Content {
     path
   }
   ... on ContentCompany {
-    isLeader: hasWebsiteSchedule(input: { sectionAlias: "leaders" })
+    isLeader: hasWebsiteSchedule(input: { sectionAlias: "${leadersAlias}" })
     youtube {
       url
     }

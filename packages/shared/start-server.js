@@ -29,6 +29,10 @@ module.exports = (options = {}) => {
       if (typeof onStart === 'function') await onStart(app);
       app.set('trust proxy', 'loopback, linklocal, uniquelocal');
 
+      // i18n
+      const i18n = v => v;
+      set(app.locals, 'i18n', options.i18n || i18n);
+
       // Setup GAM.
       const gamConfig = get(options, 'siteConfig.gam');
       set(app.locals, 'GAM', gamConfig);

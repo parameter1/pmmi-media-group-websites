@@ -1,6 +1,7 @@
 import { get, getAsArray } from "@parameter1/base-cms-object-path";
 import queryFragment from "../../graphql/fragments/leadership-company-videos";
 
+$ const { i18n } = out.global;
 $ const { contentId } = input;
 
 <marko-web-query|{ nodes }|
@@ -18,9 +19,9 @@ $ const { contentId } = input;
         <if(videos.length)>
           <marko-web-node-list class="mt-block" collapsible=false>
             <@header modifiers=["leadership-company-videos"]>
-              <span>Videos from ${company.name}</span>
+              <span>${i18n("Videos from")} ${company.name}</span>
               <marko-web-link target="_blank" href=get(company, "youtube.url") attrs=linkAttrs>
-                View all videos
+                ${i18n("View all videos")}
               </marko-web-link>
             </@header>
             <@body>

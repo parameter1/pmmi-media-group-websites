@@ -1,3 +1,5 @@
+$ const { i18n } = out.global;
+
 $ const {
   id,
   type,
@@ -10,7 +12,7 @@ $ const {
 
 <if(type === "contact")>
   <marko-web-load-more
-    header=`More from ${name}`
+    header=`${i18n("More from")} ${name}`
     component-name="content-load-more-flow"
     component-input={ aliases }
     fragment-name="content-list"
@@ -26,7 +28,7 @@ $ const {
 </if>
 <else-if(type === "company")>
   <marko-web-load-more
-    header=`More from ${name}`
+    header=`${i18n("More from")} ${name}`
     component-name="content-load-more-flow"
     component-input={ aliases }
     fragment-name="content-list"
@@ -37,12 +39,13 @@ $ const {
 </else-if>
 <else-if(sectionId)>
   <marko-web-load-more
-    header=`More in ${sectionName}`
+    header=`${i18n("More in")} ${sectionName}`
     component-name="content-load-more-flow"
     component-input={ aliases, nativeX: input.nativeX }
     fragment-name="content-list"
     query-name="website-scheduled-content"
     query-params={ sectionId, excludeContentIds: [id], limit: 12, skip: sectionSkip }
     page-input={ for: "content", id, type }
+    trigger-input={ buttonLabel: i18n("Load More Content") }
   />
 </else-if>

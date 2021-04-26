@@ -51,7 +51,7 @@ module.exports = {
     directSend: false,
     sendTo: 'info-request@pmmimediagroup.com',
     replyTo: 'info-request@pmmimediagroup.com',
-    sendFrom: 'ProFood World <noreply@baseplatform.io>',
+    sendFrom: 'ProFood World <noreply@parameter1.com>',
     logo: 'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo.png?h=45&auto=format,compress&q=70',
     bgColor: '#000',
   },

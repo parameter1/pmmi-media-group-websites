@@ -4,14 +4,14 @@ $theme-font-family-sans-serif: "IBM Plex Sans", sans-serif;
 $theme-font-family-serif: "Source Serif Pro", serif;
 $theme-font-family-page-title: $theme-font-family-sans-serif;
 
-$theme-site-navbar-secondary-bg-color: #000;
-$theme-site-navbar-primary-bg-color: #000;
-$theme-card-header-background-color: #000;
+$theme-site-navbar-secondary-bg-color: #000 !default;
+$theme-site-navbar-primary-bg-color: #000 !default;
+$theme-card-header-background-color: #000 !default;
 
 $enable-rounded: false;
 
-$theme-site-navbar-logo-height: 30px;
-$theme-site-navbar-logo-height-sm: 25px;
+$theme-site-navbar-logo-height: 30px !default;
+$theme-site-navbar-logo-height-sm: 25px !default;
 
 $theme-site-header-breakpoints: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default

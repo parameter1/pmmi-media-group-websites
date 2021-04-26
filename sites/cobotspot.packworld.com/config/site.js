@@ -54,7 +54,7 @@ module.exports = {
     directSend: false,
     sendTo: 'info-request@pmmimediagroup.com',
     replyTo: 'info-request@pmmimediagroup.com',
-    sendFrom: 'Packaging World <noreply@baseplatform.io>',
+    sendFrom: 'Packaging World <noreply@parameter1.com>',
     logo: 'https://img.packworld.com/files/base/pmmi/cs/universal-robots-logo-white.png?h=45&auto=format,compress&q=70',
     bgColor: '#000',
   },
