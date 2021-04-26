@@ -9,6 +9,7 @@ module.exports = {
   nativeX,
   gam,
   company: 'PMMI Media Group',
+  copyrightNotice: 'Todos los derechos reservados.',
   p1events: {
     tenant: 'pmmi',
     enabled: true,
