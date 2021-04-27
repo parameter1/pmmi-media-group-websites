@@ -1,6 +1,6 @@
 {
   "name": "@pmmi-media-group/oemmagazine.org",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "author": "Josh Worden <josh@limit0.io>",
   "repository": "https://github.com/parameter1/pmmi-media-group-websites/tree/master/sites/oemmagazine.org",
   "license": "MIT",
@@ -29,8 +29,8 @@
     "@parameter1/base-cms-object-path": "^2.5.0",
     "@parameter1/base-cms-utils": "^2.4.2",
     "@parameter1/base-cms-web-cli": "^2.13.0",
-    "@pmmi-media-group/package-common": "^2.0.1",
-    "@pmmi-media-group/package-shared": "^2.0.1",
+    "@pmmi-media-group/package-common": "^2.1.0",
+    "@pmmi-media-group/package-shared": "^2.1.0",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
   }
