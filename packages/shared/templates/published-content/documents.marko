@@ -14,6 +14,7 @@ $ const description = defaultDescription(title, config);
     </marko-web-gtm-default-context>
   </@head>
   <@page>
+    <!-- <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "leaderboard" }) modifiers=["top-of-page"] /> -->
     <marko-web-page-wrapper class="mb-block">
       <@section>
         <div class="row">
@@ -32,13 +33,12 @@ $ const description = defaultDescription(title, config);
       name="all-published-content"
       params={ contentTypes: ["Document"], limit: 12, queryFragment }
     >
-    <shared-content-list-flow with-teaser=true nodes=nodes />
+    <shared-content-card-deck-flow nodes=nodes />
     </marko-web-query>
   </@page>
   <@below-page>
     <marko-web-load-more
-      component-name="content-list-flow"
-      component-input={ withTeaser: true }
+      component-name="content-card-deck-flow"
       fragment-name="content-list"
       query-name="all-published-content"
       query-params={ contentTypes: ["Document"], limit: 12, skip: 12 }
