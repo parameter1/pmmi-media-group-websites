@@ -3,6 +3,7 @@
 
 User-agent: *
 Disallow: /__
+Disallow: /print/content
 
 Sitemap: https://www.cobotspot.packworld.com/sitemap.xml
 Sitemap: https://www.cobotspot.packworld.com/sitemap-google-news.xml
