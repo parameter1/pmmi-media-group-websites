@@ -142,6 +142,7 @@ fragment ContentPageFragment on Content {
         node {
           id
           name
+          title
           type
           siteContext {
             path
@@ -154,6 +155,7 @@ fragment ContentPageFragment on Content {
         node {
           id
           name
+          title
           type
           siteContext {
             path

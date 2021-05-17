@@ -16,5 +16,8 @@
       "template": "./supplier-disclaimer.marko",
       "@obj": "object"
     }
-  }
+  },
+  "taglib-imports": [
+    "./attribution/marko.json"
+  ]
 }
