@@ -32,6 +32,7 @@ $ const { id, type, pageNode } = data;
         <@section>
           <div class="row">
             <default-theme-page-contents|{ blockName }| class="col-lg-12 mb-3 mb-lg-0">
+              <common-content-attribution-element obj=content />
               <default-theme-content-contact-details obj=content />
               <shared-content-body-with-tracking block-name=blockName content=content />
               <marko-web-content-sidebars block-name=blockName obj=content />
