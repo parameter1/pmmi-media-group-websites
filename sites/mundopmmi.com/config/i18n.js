@@ -13,4 +13,13 @@ module.exports = {
   'key contacts': 'Contactos clave',
   'featured videos': 'Videos presentados',
   'visit site': 'Visita la página web',
+  'first name': 'Primer nombre',
+  about: 'Sobre',
+  'product summary': 'Resumen de producto',
+  'more info on': 'Más información en',
+  contact: 'Contacto',
+  'at-a-glance': 'A una mirada',
+  'company overview': 'Compañía Resumen',
+  'company website': 'TEST',
+  'featured products': 'Productos presentados',
 };

@@ -51,7 +51,7 @@ module.exports = {
     description: '',
   },
   inquiry: {
-    enabled: false,
+    enabled: true,
     directSend: false,
     sendTo: 'info-request@pmmimediagroup.com',
     replyTo: 'info-request@pmmimediagroup.com',
