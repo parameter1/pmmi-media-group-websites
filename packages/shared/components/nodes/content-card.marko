@@ -27,6 +27,11 @@ $ const { linkAttrs } = input;
     />
   </if>
   <@body>
+    <@header>
+      <@left>
+        <marko-web-website-section-name obj=primarySection link=true />
+      </@left>
+    </@header>
     <@title tag="h5" modifiers=input.titleModifiers>
       <marko-web-content-short-name tag=null obj=content link={ attrs: linkAttrs } />
     </@title>
