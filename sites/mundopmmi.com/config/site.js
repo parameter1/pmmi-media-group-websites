@@ -51,7 +51,7 @@ module.exports = {
     description: '',
   },
   inquiry: {
-    enabled: false,
+    enabled: true,
     directSend: false,
     sendTo: 'info-request@pmmimediagroup.com',
     replyTo: 'info-request@pmmimediagroup.com',
@@ -59,4 +59,5 @@ module.exports = {
     logo: 'https://img.mundopmmi.com/files/base/pmmi/mundo/footerLogos_white.png?h=45&auto=format,compress&q=70',
     bgColor: '#000',
   },
+  lang: 'es',
 };
