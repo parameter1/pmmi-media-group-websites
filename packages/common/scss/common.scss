@@ -34,6 +34,7 @@ $theme-site-header-breakpoints: map-merge(
 @import "./contact-us-form"; // @todo this should be remove once contact us is in core
 @import "./company-page";
 @import "./leaders-index-page";
+@import "./content-page";
 
 .leaders {
   @include border-radius($theme-card-border-radius);

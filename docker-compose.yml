@@ -170,6 +170,7 @@ services:
       LIVERELOAD_PORT: 19716
       TENANT_KEY: pmmi_mundo
       SITE_ID: 5d0a748572c1aa35008b4567
+      LEADERS_ALIAS: leaders/2021
     ports:
       - "9716:80"
       - "19716:19716"

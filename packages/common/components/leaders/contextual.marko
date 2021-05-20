@@ -18,5 +18,8 @@ $ const { contentId } = input;
       { prop: "open", value: null, query: "(max-width: 991px)" },
       { prop: "columns", value: 1, query: "(max-width: 700px)" },
     ],
+    calloutPrefix: site.get("leaders.calloutPrefix") || "Browse these",
+    calloutValue: site.get("leaders.calloutValue") || "leading suppliers",
+    viewAllText: site.get("leaders.viewAllText") || "View All Companies &gt;",
   }/>
 </if>

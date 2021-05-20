@@ -14,4 +14,7 @@ $ const { site } = out.global;
     { prop: "columns", value: 2, query: "(min-width: 700px)" },
     { prop: "displayCallout", value: false, query: "(max-width: 660px)" },
   ],
+  calloutPrefix: site.get("leaders.calloutPrefix") || "Browse these",
+  calloutValue: site.get("leaders.calloutValue") || "leading suppliers",
+  viewAllText: site.get("leaders.viewAllText") || "View All Companies &gt;",
 }/>
