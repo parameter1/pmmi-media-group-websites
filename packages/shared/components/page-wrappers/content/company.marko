@@ -8,6 +8,8 @@ import eventEntity from "@parameter1/base-cms-marko-web-p1-events/utils/base-con
 $ const { site } = out.global;
 $ const { id, type } = input;
 
+$ const contactLabels = {phone: 'Número telefónico', mobile: 'Celular', tollFree: 'Gratuitamente'}
+
 <marko-web-query|res|
   name="content"
   params={ id, queryFragment: limitedFragment, withSite: false }
@@ -39,6 +41,7 @@ $ const { id, type } = input;
               label: "Company Social Link",
               entity: eventEntity(content.id, "company"),
             })
+            labels=contactLabels
           />
         </default-theme-page-contents>
       </div>

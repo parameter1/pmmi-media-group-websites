@@ -38,7 +38,8 @@
     "@with-header": {
       "type": "boolean",
       "default-value": true
-    }
+    },
+    "@props": "object"
   },
   "<shared-magazine-publications-block>": {
     "template": "./magazine-publications.marko"

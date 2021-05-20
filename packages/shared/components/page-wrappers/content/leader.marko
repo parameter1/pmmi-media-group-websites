@@ -4,7 +4,11 @@ import eventEntity from "@parameter1/base-cms-marko-web-p1-events/utils/base-con
 import queryFragment from "../../../graphql/fragments/content-list";
 
 $ const { site, i18n } = out.global;
+$ const props = {firstName: 'Primer nombre', lastName: 'Apellido', email: 'Correo electrónico', phone: 'Número telefónico', company: 'Nombre de compañía', jobTitle: 'Título de trabajo', country: 'País', countryPlaceholder: 'Selecciona un país...', zip: 'Código postal', comments: 'Comentarios', submit: 'Enviar' }
 $ const { id, type, content } = input;
+$ const visitSite = 'Visita sitio web'
+$ const contactLabels = {phone: 'Número telefónico', mobile: 'Celular', tollFree: 'Gratuitamente'}
+$ const socialMediaLabel = 'Visita nos en '
 
 <marko-web-page-wrapper>
   <@section>
@@ -22,7 +26,7 @@ $ const { id, type, content } = input;
       </div>
       <div class="col-md-3 col-lg-2 col-sm-12 justify-content-center d-flex flex-column px-3 py-3">
         <div class="ldp__social">
-          <marko-web-leaders-company-website-link company=content />
+          <marko-web-leaders-company-website-link company=content label=visitSite/>
           <div class="mt-2 d-flex justify-content-around">
             <for|item| of=content.socialLinks>
               <marko-web-leaders-company-social-link company=content item=item />
@@ -59,7 +63,6 @@ $ const { id, type, content } = input;
 
         <label class="content-section-header content-section-header--border">${i18n("Contact")}</label>
         $ const { socialLinks, ...contentSansSocial } = content;
-        $ console.log(content)
         <default-theme-content-contact-details
           obj=contentSansSocial
           website-link-attrs=eventLinkAttrs({
@@ -67,6 +70,7 @@ $ const { id, type, content } = input;
             label: "Company Website",
             entity: eventEntity(content.id, "company"),
           })
+          labels=contactLabels
         />
 
         <label class="content-section-header content-section-header--border">${i18n("More info on")} ${content.name}</label>
@@ -107,7 +111,7 @@ $ const { id, type, content } = input;
     <marko-web-node-list collapsible=false class="mt-block">
       <@header>${i18n("Request More Information")}</@header>
       <@body>
-        <shared-inquiry-block content=content with-header=false modifiers=["block"] />
+        <shared-inquiry-block content=content with-header=false modifiers=["block"] props=props/>
       </@body>
     </marko-web-node-list>
 
