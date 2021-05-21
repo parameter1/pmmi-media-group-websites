@@ -1,9 +1,11 @@
 import { get } from "@parameter1/base-cms-object-path";
 
+$ const { i18n } = out.global
+
 $ const { company } = input;
 $ const blockName = "page-contact-details";
 $ const fields = [
-  { key: 'yearsInOperation', label: 'Years in business', tag: 'span' },
+  { key: 'yearsInOperation', label: 'Years in business' ${i18n()}, tag: 'span' },
   { key: 'numberOfEmployees', label: 'Number of employees', tag: 'span' },
   { key: 'salesRegion', label: 'Geographic sales distribution', tag: 'span' },
   { key: 'salesChannels', label: 'Sales Channel', tag: 'span' },
@@ -12,12 +14,13 @@ $ const fields = [
   { key: 'trainingInformation', label: 'Training', tag: 'p' },
   { key: 'servicesProvided', label: 'Other services', tag: 'p' },
 ];
+$ const lang = input.lang || 'en'
 
 <for|field| of=fields>
   $ const value = get(company, field.key);
   <if(value)>
     <div class=`${blockName}__field`>
-      <span class=`${blockName}__label`>${field.label}:</span>
+      <span class=`${blockName}__label`>${i18n(field.label)}:</span>
       <marko-web-obj-text tag=field.tag obj=company field=field.key type="content" html=true />
     </div>
   </if>
