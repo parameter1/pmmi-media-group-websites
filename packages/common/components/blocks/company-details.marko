@@ -5,16 +5,16 @@ $ const { i18n } = out.global
 $ const { company } = input;
 $ const blockName = "page-contact-details";
 $ const fields = [
-  { key: 'yearsInOperation', label: 'Years in business', tag: 'span' },
-  { key: 'numberOfEmployees', label: 'Number of employees', tag: 'span' },
-  { key: 'salesRegion', label: 'Geographic sales distribution', tag: 'span' },
-  { key: 'salesChannels', label: 'Sales Channel', tag: 'span' },
-  { key: 'warrantyInformation', label: 'Warranty/Guarantee', tag: 'p' },
-  { key: 'serviceInformation', label: 'Service, support & spare parts', tag: 'p' },
-  { key: 'trainingInformation', label: 'Training', tag: 'p' },
-  { key: 'servicesProvided', label: 'Other services', tag: 'p' },
+  { key: "yearsInOperation", label: "Years in business", tag: "span" },
+  { key: "numberOfEmployees", label: "Number of employees", tag: "span" },
+  { key: "salesRegion", label: "Geographic sales distribution", tag: "span" },
+  { key: "salesChannels", label: "Sales Channel", tag: "span" },
+  { key: "warrantyInformation", label: "Warranty/Guarantee", tag: "p" },
+  { key: "serviceInformation", label: "Service, support & spare parts", tag: "p" },
+  { key: "trainingInformation", label: "Training", tag: "p" },
+  { key: "servicesProvided", label: "Other services", tag: "p" },
 ];
-$ const lang = input.lang || 'en'
+$ const lang = input.lang || "en"
 
 <for|field| of=fields>
   $ const value = get(company, field.key);

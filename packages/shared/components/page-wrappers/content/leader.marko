@@ -5,7 +5,7 @@ import queryFragment from "../../../graphql/fragments/content-list";
 
 $ const { site, i18n } = out.global;
 $ const { id, type, content } = input;
-$ const lang = site.config.lang || 'en'
+$ const lang = site.config.lang || "en"
 
 <marko-web-page-wrapper>
   <@section>
@@ -141,8 +141,8 @@ $ const lang = site.config.lang || 'en'
               node=node
               company-id=content.id
               link-attrs={
-                'data-company-id': content.id,
-                'data-company-name': content.name,
+                "data-company-id": content.id,
+                "data-company-name": content.name,
               }
             />
           </div>
