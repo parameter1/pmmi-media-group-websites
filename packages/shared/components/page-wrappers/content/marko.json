@@ -8,6 +8,7 @@
     "template": "./leader.marko",
     "@id": "string",
     "@type": "string",
-    "@content": "object"
+    "@content": "object",
+    "@lang": "string"
   }
 }

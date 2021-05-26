@@ -5,6 +5,7 @@ import queryFragment from "../../../graphql/fragments/content-list";
 
 $ const { site, i18n } = out.global;
 $ const { id, type, content } = input;
+$ const lang = site.config.lang || "en";
 
 <marko-web-page-wrapper>
   <@section>
@@ -106,7 +107,7 @@ $ const { id, type, content } = input;
     <marko-web-node-list collapsible=false class="mt-block">
       <@header>${i18n("Request More Information")}</@header>
       <@body>
-        <shared-inquiry-block content=content with-header=false modifiers=["block"] />
+        <shared-inquiry-block content=content with-header=false modifiers=["block"] lang=lang />
       </@body>
     </marko-web-node-list>
 
@@ -139,8 +140,8 @@ $ const { id, type, content } = input;
               node=node
               company-id=content.id
               link-attrs={
-                'data-company-id': content.id,
-                'data-company-name': content.name,
+                "data-company-id": content.id,
+                "data-company-name": content.name,
               }
             />
           </div>
