@@ -1,7 +1,7 @@
 $ const { site } = out.global;
 $ const { contentId } = input;
 
-<if(contentId)>
+<if(contentId && site.get("leaders.enabled"))>
   <marko-web-leaders props={
     contentId,
     sectionAlias: site.get("leaders.alias"),

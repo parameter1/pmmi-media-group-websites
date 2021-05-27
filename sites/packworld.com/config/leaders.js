@@ -1,4 +1,5 @@
 module.exports = {
+  enabled: process.env.LEADERS_ENABLED || true,
   title: 'Leaders in Packaging',
   alias: process.env.LEADERS_ALIAS || 'leaders-2021',
   header: {
