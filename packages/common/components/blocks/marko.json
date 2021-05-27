@@ -9,7 +9,8 @@
     },
     "common-company-details": {
       "template": "./company-details.marko",
-      "@company": "object"
+      "@company": "object",
+      "@lang": "string"
     },
     "common-leadership-company-videos": {
       "template": "./leadership-company-videos.marko",

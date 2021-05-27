@@ -1,10 +1,13 @@
 import { getAsArray, get } from "@parameter1/base-cms-object-path";
 import eventLinkAttrs from "@parameter1/base-cms-marko-web-p1-events/utils/link-attrs";
 import eventEntity from "@parameter1/base-cms-marko-web-p1-events/utils/base-content-entity";
+import { getAsObject } from "@parameter1/base-cms-object-path";
 import queryFragment from "../../../graphql/fragments/content-list";
+
 
 $ const { site, i18n } = out.global;
 $ const { id, type, content } = input;
+$ const { lang = "en" } = getAsObject(site, "config");
 
 <marko-web-page-wrapper>
   <@section>
@@ -51,11 +54,11 @@ $ const { id, type, content } = input;
     <marko-web-node-list collapsible=false class="mt-block">
       <@header>
         <if(content.isLeader)>${site.get("leaders.title")}</if>
-        <else>Company Details</else>
+        <else>${i18n("Company Details")}</else>
       </@header>
       <@body>
         <label class="content-section-header content-section-header--border">${i18n("At-a-glance")}</label>
-        <common-company-details company=content />
+        <common-company-details company=content lang=lang/>
 
         <label class="content-section-header content-section-header--border">${i18n("Contact")}</label>
         $ const { socialLinks, ...contentSansSocial } = content;
@@ -66,6 +69,7 @@ $ const { id, type, content } = input;
             label: "Company Website",
             entity: eventEntity(content.id, "company"),
           })
+          lang=lang
         />
 
         <label class="content-section-header content-section-header--border">${i18n("More info on")} ${content.name}</label>
@@ -106,7 +110,7 @@ $ const { id, type, content } = input;
     <marko-web-node-list collapsible=false class="mt-block">
       <@header>${i18n("Request More Information")}</@header>
       <@body>
-        <shared-inquiry-block content=content with-header=false modifiers=["block"] />
+        <shared-inquiry-block content=content with-header=false modifiers=["block"] lang=lang />
       </@body>
     </marko-web-node-list>
 
@@ -139,8 +143,8 @@ $ const { id, type, content } = input;
               node=node
               company-id=content.id
               link-attrs={
-                'data-company-id': content.id,
-                'data-company-name': content.name,
+                "data-company-id": content.id,
+                "data-company-name": content.name,
               }
             />
           </div>
