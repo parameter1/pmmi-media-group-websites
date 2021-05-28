@@ -1,12 +1,14 @@
 const navigation = require('./navigation');
 const leaders = require('./leaders');
 const nativeX = require('./native-x');
+const identityX = require('./identity-x');
 const gam = require('./gam');
 
 module.exports = {
   leaders,
   navigation,
   nativeX,
+  identityX,
   gam,
   company: 'PMMI Media Group',
   copyrightNotice: 'Todos los derechos reservados.',
