@@ -2147,10 +2147,10 @@
   dependencies:
     inflected "^2.1.0"
 
-"@parameter1/base-cms-leaders-program@^2.20.2":
-  version "2.20.2"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-leaders-program/-/base-cms-leaders-program-2.20.2.tgz#9a5a11fbbcd2b8167e19de021cd57f9504fa2769"
-  integrity sha512-D4lUVpwtachoNLPYGPnIqUliaFo8THJv0HST7bliS2hFPSQaITBS2jGoIkRZ3yUv0CQpAeB7FeVlYd41QyAwCg==
+"@parameter1/base-cms-leaders-program@^2.21.2":
+  version "2.21.2"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-leaders-program/-/base-cms-leaders-program-2.21.2.tgz#f6c7a578db8139da704110d75b7784a42934118b"
+  integrity sha512-uAowwhWvNJ7y7tFDBczlr6gN2XimLz6A/5tfd82gE7F//bzaFXihqXJd1pVAVaI9FFfirlDIPFsdm2OW3hahvA==
   dependencies:
     core-js "^3.8.2"
     graphql "^14.7.0"
@@ -2158,6 +2158,7 @@
     object-path "^0.11.5"
     portal-vue "^2.1.7"
     vue "^2.6.12"
+    vue-apollo "^3.0.5"
 
 "@parameter1/base-cms-marko-compiler@^2.0.0":
   version "2.0.0"
@@ -2223,10 +2224,28 @@
   resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-icons/-/base-cms-marko-web-icons-2.0.0.tgz#a62c0040cfe5b73f1bef28cb2b25b0c6be956064"
   integrity sha512-mbOQrnltRIZfl9fpeYrfuA4PHrCacDe8gdXucK7L6y6B4UAtzPbCNaEwPInXnhSCxkbdyRXfCirEYxTrAV7hOw==
 
-"@parameter1/base-cms-marko-web-inquiry@^2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-inquiry/-/base-cms-marko-web-inquiry-2.5.0.tgz#13dccd509c9eb883d19dd8d378bb83b8fc8651dd"
-  integrity sha512-lKYcJARpo60XND/t6ZXLO8SitoMFQCMHdQszZY8tb3EZFMHli9w+vm5n4tG9p90xei9jILqX0Ff7Qec+mm2YoQ==
+"@parameter1/base-cms-marko-web-identity-x@^2.20.1":
+  version "2.20.1"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-identity-x/-/base-cms-marko-web-identity-x-2.20.1.tgz#b76ee32494ee7b0613dbfd1e372b0b46c6e025fc"
+  integrity sha512-fkFKhyyiW4f+bi7u+8F+44HotqTocmf57pja1ewO9q6xBDvymlDGf/Ye5w7zrniNHW0dMUal16+6bZDRZSeLtw==
+  dependencies:
+    "@parameter1/base-cms-object-path" "^2.5.0"
+    "@parameter1/base-cms-utils" "^2.4.2"
+    apollo-cache-inmemory "^1.6.6"
+    apollo-client "^2.6.10"
+    apollo-link-context "^1.0.20"
+    apollo-link-http "^1.5.17"
+    body-parser "^1.19.0"
+    cookie "0.3.1"
+    express "^4.17.1"
+    graphql-tag "^2.11.0"
+    moment "^2.29.1"
+    node-fetch "^2.6.1"
+
+"@parameter1/base-cms-marko-web-inquiry@^2.21.0":
+  version "2.21.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-inquiry/-/base-cms-marko-web-inquiry-2.21.0.tgz#c9cd7a7ee878f3b91ee81d6c585b556125198d87"
+  integrity sha512-LNKiRY7N6FAVfCMAR0ln+TYpyEL4G52d6yb4dgJCCUmT1CrQ5oW7VyIOmlpHt7BamWPBq5vYmUNyMNdrqfZU+w==
   dependencies:
     "@parameter1/base-cms-env" "^2.0.0"
     "@parameter1/base-cms-object-path" "^2.5.0"
@@ -2239,12 +2258,12 @@
     node-fetch "^2.6.1"
     vue-recaptcha "^1.3.0"
 
-"@parameter1/base-cms-marko-web-leaders@^2.20.2":
-  version "2.20.2"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-leaders/-/base-cms-marko-web-leaders-2.20.2.tgz#913767208bedf9080e977dc8d366f0be631e514e"
-  integrity sha512-+h/1wh0cUIZ5eIAAOYAnk+xgZVZLYvWQyf7YvyTLZiPgJ4v4HTBtVFVZ8+z2w0GVNFcb11l71DzxlWGtQZdM1Q==
+"@parameter1/base-cms-marko-web-leaders@^2.21.2":
+  version "2.21.2"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-leaders/-/base-cms-marko-web-leaders-2.21.2.tgz#8d19b23fe8afe2c5ba318de05952bf3c58a4bbeb"
+  integrity sha512-wYj0/yq5k8LsHgUXp5H4pIqVM9MyX3r3rRLI4LGyDFweZ+Z2WMYr9vxKMdD0UlA2qjmRVrRaRqrBrGlU2/ITUw==
   dependencies:
-    "@parameter1/base-cms-leaders-program" "^2.20.2"
+    "@parameter1/base-cms-leaders-program" "^2.21.2"
     "@parameter1/base-cms-marko-web-icons" "^2.0.0"
     "@parameter1/base-cms-object-path" "^2.5.0"
     graphql "^14.7.0"
@@ -2267,6 +2286,23 @@
     graphql-tag "^2.11.0"
     node-fetch "^2.6.1"
 
+"@parameter1/base-cms-marko-web-omeda-identity-x@^2.18.0":
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-omeda-identity-x/-/base-cms-marko-web-omeda-identity-x-2.18.0.tgz#c7aed444e705cdc4b12ba68e04715b0181094d66"
+  integrity sha512-gmqg7RGyp2IiMa0oRJ8O4q/FxUT04Sm1+103ZB58FsRRo1nPjaMYBexVFahGYi4sbTGg/ryx82rtOy1uvaKiGA==
+  dependencies:
+    "@parameter1/base-cms-object-path" "^2.5.0"
+    "@parameter1/base-cms-utils" "^2.4.2"
+    graphql "^14.7.0"
+    graphql-tag "^2.11.0"
+
+"@parameter1/base-cms-marko-web-omeda@^2.21.1":
+  version "2.21.1"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-omeda/-/base-cms-marko-web-omeda-2.21.1.tgz#0a7d3316bcc6a6c0b818d40201f8a39f3e7717f4"
+  integrity sha512-KtLjTjjQpW3wru4pU2MUrfvITffBdBgwciC7tN4fqUR691PjdRODHenYGTdT+E2lEYk/cyaIIx0bj3+AN6bzfA==
+  dependencies:
+    "@parameter1/base-cms-marko-web-deferred-script-loader" "^2.18.0"
+
 "@parameter1/base-cms-marko-web-p1-events@^2.18.0":
   version "2.18.0"
   resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-p1-events/-/base-cms-marko-web-p1-events-2.18.0.tgz#7a0bb7898cf4a72eb1b1155ef640914a71be1626"
@@ -2284,10 +2320,10 @@
     "@parameter1/base-cms-object-path" "^2.5.0"
     "@parameter1/base-cms-utils" "^2.4.2"
 
-"@parameter1/base-cms-marko-web-theme-default@^2.20.5":
-  version "2.20.5"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-theme-default/-/base-cms-marko-web-theme-default-2.20.5.tgz#c4b19e48c39b87e3c32a89d9575e045ddd91d206"
-  integrity sha512-iN39JfX4NMSul+mlP6pT+6+F4y5pXM5ZHWVhNg+hP0y4GWwlocoEQn3vsOQUVOZeble3/Vum0du3Q26LD4c8UA==
+"@parameter1/base-cms-marko-web-theme-default@^2.21.0":
+  version "2.21.0"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-theme-default/-/base-cms-marko-web-theme-default-2.21.0.tgz#c1c0b47a4d15148b31004a400ff7c73000a668b0"
+  integrity sha512-0LvQuq17m++hrQNWgFJSYLAIhzG5jAGVBoRzWLZvOH39gCttOEabapfrrKTY2Xzhc6gr2m/gqStDA0rcpnHaxA==
   dependencies:
     "@parameter1/base-cms-marko-web-icons" "^2.0.0"
     "@parameter1/base-cms-object-path" "^2.5.0"
@@ -2418,6 +2454,24 @@
     graphql "^14.7.0"
     graphql-tag "^2.11.0"
     http-errors "^1.8.0"
+
+"@parameter1/omeda-graphql-client-express@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@parameter1/omeda-graphql-client-express/-/omeda-graphql-client-express-0.2.3.tgz#14f6919c43aa0c613c2ab6f93d7f97c89e174b03"
+  integrity sha512-3TIR1vS/JUCN94ZLitbigpWRs+DSO4lGQYYHpCYIH87JGweQfnZbYeAJklOm1QS1zgS60ZdkBVsNNqRL9YhDtA==
+  dependencies:
+    "@parameter1/omeda-graphql-client" "^0.2.3"
+
+"@parameter1/omeda-graphql-client@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@parameter1/omeda-graphql-client/-/omeda-graphql-client-0.2.3.tgz#46345a851a7f51b361fe67ad7597429498d5e2d3"
+  integrity sha512-cVLB9+paLmEhy6/I8FyjX+YVoGUMqVsfzUvKPRJzhuMLJhpnV88S28WqWWXNFdw8ocySjsmBfohCr74Dd76g7A==
+  dependencies:
+    apollo-cache-inmemory "^1.6.6"
+    apollo-client "^2.6.10"
+    apollo-link-http "^1.5.17"
+    graphql "^15.5.0"
+    node-fetch "^2.6.1"
 
 "@protobufjs/aspromise@^1.1.1", "@protobufjs/aspromise@^1.1.2":
   version "1.1.2"
@@ -4706,6 +4760,11 @@ cookie-signature@1.0.6:
   resolved "https://registry.yarnpkg.com/cookie-signature/-/cookie-signature-1.0.6.tgz#e303a882b342cc3ee8ca513a79999734dab3ae2c"
   integrity sha1-4wOogrNCzD7oylE6eZmXNNqzriw=
 
+cookie@0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
+  integrity sha1-5+Ch+e9DtMi6klxcWpboBtFoc7s=
+
 cookie@0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.4.0.tgz#beb437e7022b3b6d49019d088665303ebe9c14ba"
@@ -6872,6 +6931,11 @@ graphql@^14.7.0:
   integrity sha512-l0xWZpoPKpppFzMfvVyFmp9vLN7w/ZZJPefUicMCepfJeQ8sMcztloGYY9DfjVPo6tIUDzU5Hw3MUbIjj9AVVA==
   dependencies:
     iterall "^1.2.2"
+
+graphql@^15.5.0:
+  version "15.5.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.5.0.tgz#39d19494dbe69d1ea719915b578bf920344a69d5"
+  integrity sha512-OmaM7y0kaK31NKG31q4YbD2beNYa6jBBKtMFT6gLYJljHLJr42IqJ8KX08u3Li/0ifzTU5HjmoOOrwa5BRLeDA==
 
 gtoken@^5.0.4:
   version "5.2.1"
