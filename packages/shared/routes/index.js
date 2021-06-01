@@ -1,3 +1,4 @@
+const identityX = require('./identity-x');
 const inquiryHandler = require('../inquiry-handler');
 const dynamicPages = require('./dynamic-page');
 const magazine = require('./magazine');
@@ -6,6 +7,9 @@ const search = require('./search');
 const subscribe = require('./subscribe');
 
 module.exports = (app) => {
+  // Identity-X
+  identityX(app);
+
   // Inquiries
   inquiryHandler(app);
 
