@@ -15,7 +15,8 @@ export default (Browser) => {
     on: {
       'encrypted-id-found': (encryptedId) => {
         if (encryptedId && window.p1events) {
-          window.p1events('setIdentity', `omeda.pmmicd.customer*${encryptedId}~encrypted`);
+          // eslint-disable-next-line prefer-template
+          window.p1events('setIdentity', 'omeda.pmmicd.customer*' + encryptedId + '~encrypted');
         }
       },
     },
