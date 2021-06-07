@@ -1,5 +1,5 @@
 module.exports = {
-  enabled: process.env.LEADERS_ENABLED || false,
+  enabled: process.env.LEADERS_ENABLED || true,
   title: 'LÍDERES EN LATINOAMÉRICA',
   alias: process.env.LEADERS_ALIAS || 'leaders/2021',
   header: {
