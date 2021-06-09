@@ -1,6 +1,6 @@
 {
   "name": "@pmmi-media-group/package-shared",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "author": "Josh Worden <josh@limit0.io>",
   "repository": "https://github.com/parameter1/pmmi-media-group-websites/tree/master/packages/shared",
   "license": "MIT",
@@ -17,8 +17,8 @@
     "@parameter1/base-cms-marko-web-gam": "^2.22.2",
     "@parameter1/base-cms-marko-web-gcse": "^2.22.2",
     "@parameter1/base-cms-marko-web-gtm": "^2.22.2",
-    "@parameter1/base-cms-marko-web-identity-x": "^2.22.2",
     "@parameter1/base-cms-marko-web-html-sitemap": "^2.22.2",
+    "@parameter1/base-cms-marko-web-identity-x": "^2.22.2",
     "@parameter1/base-cms-marko-web-inquiry": "^2.22.3",
     "@parameter1/base-cms-marko-web-leaders": "^2.22.3",
     "@parameter1/base-cms-marko-web-native-x": "^2.22.2",
