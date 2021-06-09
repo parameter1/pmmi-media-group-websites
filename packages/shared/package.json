@@ -18,6 +18,7 @@
     "@parameter1/base-cms-marko-web-gcse": "^2.22.2",
     "@parameter1/base-cms-marko-web-gtm": "^2.22.2",
     "@parameter1/base-cms-marko-web-identity-x": "^2.22.2",
+    "@parameter1/base-cms-marko-web-html-sitemap": "^2.22.2",
     "@parameter1/base-cms-marko-web-inquiry": "^2.22.3",
     "@parameter1/base-cms-marko-web-leaders": "^2.22.3",
     "@parameter1/base-cms-marko-web-native-x": "^2.22.2",
