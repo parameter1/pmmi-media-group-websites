@@ -24,6 +24,7 @@ module.exports = {
       { href: '/page/privacidad', label: 'Privacidad' },
       { href: '/page/condiciones-de-uso', label: 'Condiciones de uso' },
       { href: '/page/terminos-y-condiciones-de-publicidad', label: 'Términos y condiciones de publicidad' },
+      { href: '/site-map', label: 'Mapa del sitio web' },
     ],
   },
   menu: [
