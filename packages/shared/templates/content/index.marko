@@ -4,6 +4,7 @@ import queryFragment from "../../graphql/fragments/content-list";
 
 $ const { site, GAM } = out.global;
 $ const { id, type, pageNode } = data;
+$ const { lang = "en" } = getAsObject(site, "config");
 
 $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? false : true;
 
@@ -86,7 +87,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
             </default-theme-page-contents>
 
             <aside class="col-lg-4 page-rail">
-              <shared-inquiry-block content=content />
+              <shared-inquiry-block content=content lang=lang/>
 
               <marko-web-gam-display-ad id="gpt-ad-imu1" />
 
