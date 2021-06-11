@@ -70,13 +70,13 @@ services:
       <<: *env
       <<: *env-tauron
       PORT: 80
-      EXPOSED_PORT: 9710
-      LIVERELOAD_PORT: 19710
+      EXPOSED_PORT: 9709
+      LIVERELOAD_PORT: 19709
       TENANT_KEY: pmmi_all
       SITE_ID: 5d88cecaf175132c008b4567
     ports:
-      - "9710:80"
-      - "19710:19710"
+      - "9709:80"
+      - "19709:19709"
 
   pw:
     <<: *node
