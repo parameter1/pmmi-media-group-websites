@@ -3,7 +3,7 @@ import queryFragment from "../../graphql/fragments/content-list";
 
 $ const { config, GAM } = out.global;
 
-$ const type = "published-content";
+$ const type = "website-scheduled-content";
 $ const title = "Podcasts";
 $ const description = defaultDescription(title, config);
 
@@ -33,14 +33,9 @@ $ const description = defaultDescription(title, config);
     </marko-web-page-wrapper>
 
     <marko-web-query|{ nodes }|
-      name="all-published-content"
-      params={
-        withSite: false,
-        contentTypes: ["Podcast"],
-        limit: 18,
-        queryFragment,
-      }
-    >
+        name="website-scheduled-content"
+        params={ limit: 18, includeContentTypes: ["Podcast"], queryFragment }
+      >
       <shared-content-list-flow nodes=nodes />
     </marko-web-query>
   </@page>
@@ -48,14 +43,13 @@ $ const description = defaultDescription(title, config);
     <marko-web-load-more
       component-name="content-list-flow"
       fragment-name="content-list"
-      query-name="all-published-content"
+      query-name="website-scheduled-content"
       query-params={
-        withSite: false,
-        contentTypes: ["Podcast"],
+        includeContentTypes: ["Podcast"],
         limit: 18,
         skip: 18,
       }
-      page-input={ for: "published-content" }
+      page-input={ for: "website-scheduled-content" }
     />
   </@below-page>
 </marko-web-default-page-layout>
