@@ -10,6 +10,7 @@ module.exports = {
       { href: '/empaque', label: 'Empaque' },
       { href: '/procesamiento', label: 'Procesamiento' },
       { href: '/eventos', label: 'Eventos' },
+      { href: '/downloads', label: 'Recursos Digitales' },
     ],
   },
   tertiary: {
@@ -42,6 +43,7 @@ module.exports = {
         { href: '/eventos', label: 'Eventos' },
         { href: '/leaders', label: 'Líderes' },
         { href: '/videos', label: 'Vídeos' },
+        { href: '/downloads', label: 'Recursos Digitales' },
       ],
     },
     {
