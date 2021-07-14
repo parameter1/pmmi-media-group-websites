@@ -28,5 +28,5 @@ module.exports = {
   'at-a-glance': 'A una mirada',
   'company overview': 'Compañía Resumen',
   'featured products': 'Productos presentados',
-
+  downloads: 'Recursos Digitales',
 };
