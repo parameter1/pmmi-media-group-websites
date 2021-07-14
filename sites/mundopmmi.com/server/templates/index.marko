@@ -70,7 +70,7 @@ $ const { id, alias, name, pageNode } = data;
       <div class="col-lg-4 mb-block">
         <marko-web-query|{ nodes }|
           name="website-scheduled-content"
-          params={ sectionAlias: "automatizacion", limit: 4, queryFragment }
+          params={ sectionAlias: "automatizacion", limit: 4, withSite: false, queryFragment }
         >
           <shared-content-list-flow nodes=nodes>
             <@header>
@@ -82,7 +82,7 @@ $ const { id, alias, name, pageNode } = data;
       <div class="col-lg-4 mb-block">
         <marko-web-query|{ nodes }|
           name="website-scheduled-content"
-          params={ sectionAlias: "empaque", limit: 4, queryFragment }
+          params={ sectionAlias: "empaque", limit: 4, withSite: false, queryFragment }
         >
           <shared-content-list-flow nodes=nodes>
             <@header>
@@ -94,7 +94,7 @@ $ const { id, alias, name, pageNode } = data;
       <div class="col-lg-4 mb-block">
         <marko-web-query|{ nodes }|
           name="website-scheduled-content"
-          params={ sectionAlias: "procesamiento", limit: 4, queryFragment }
+          params={ sectionAlias: "procesamiento", limit: 4, withSite: false, queryFragment }
         >
           <shared-content-list-flow nodes=nodes>
             <@header>
