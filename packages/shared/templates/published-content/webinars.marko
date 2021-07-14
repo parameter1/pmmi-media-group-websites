@@ -33,7 +33,7 @@ $ const description = defaultDescription(title, config);
     </marko-web-page-wrapper>
 
     <marko-web-query|{ nodes }|
-      name="all-published-content"
+      name="website-scheduled-content"
       params={ contentTypes: ["Webinar"], limit: 18, sortField: "startDate", sortOrder: "desc", queryFragment }
     >
       <shared-content-list-flow nodes=nodes />
@@ -43,7 +43,7 @@ $ const description = defaultDescription(title, config);
     <marko-web-load-more
       component-name="content-list-flow"
       fragment-name="content-list"
-      query-name="all-published-content"
+      query-name="website-scheduled-content"
       query-params={ contentTypes: ["Webinar"], limit: 18, sortField: "startDate", sortOrder: "desc", skip: 18 }
       page-input={ for: "published-content" }
     />

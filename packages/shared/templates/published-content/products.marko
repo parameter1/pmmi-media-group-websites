@@ -33,7 +33,7 @@ $ const description = defaultDescription(title, config);
     </marko-web-page-wrapper>
 
     <marko-web-query|{ nodes }|
-      name="all-published-content"
+      name="website-scheduled-content"
       params={ contentTypes: ["Product"], limit: 12, queryFragment }
     >
       <shared-content-card-deck-flow nodes=nodes />
@@ -43,7 +43,7 @@ $ const description = defaultDescription(title, config);
     <marko-web-load-more
       component-name="content-card-deck-flow"
       fragment-name="content-list"
-      query-name="all-published-content"
+      query-name="website-scheduled-content"
       query-params={ contentTypes: ["Product"], limit: 12, skip: 12 }
       page-input={ for: "published-content" }
     />

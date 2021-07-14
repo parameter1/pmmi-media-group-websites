@@ -34,7 +34,7 @@ $ const now = (new Date()).valueOf();
     </marko-web-page-wrapper>
 
     <marko-web-query|{ nodes }|
-      name="all-published-content"
+      name="website-scheduled-content"
       params={ contentTypes: ["Event"], sortField: "startDate", sortOrder: "asc", endingAfter: now, limit: 18, queryFragment }
     >
       <shared-content-list-flow nodes=nodes />
@@ -44,7 +44,7 @@ $ const now = (new Date()).valueOf();
     <marko-web-load-more
       component-name="content-list-flow"
       fragment-name="content-list"
-      query-name="all-published-content"
+      query-name="website-scheduled-content"
       query-params={ contentTypes: ["Event"], sortField: "startDate", sortOrder: "asc", endingAfter: now, limit: 18, skip: 18 }
       page-input={ for: "published-content" }
     />
