@@ -7,7 +7,6 @@ module.exports = {
       { href: '/issues', label: 'Issues' },
       { href: '/page/pw-event-calendar', label: 'Events' },
       { href: '/page/pw-newsletters-mainnav', label: 'Newsletters' },
-      { href: 'https://cobotspot.packworld.com', label: 'Collaborative Robots', target: '_blank' },
     ],
   },
   tertiary: {
@@ -50,7 +49,6 @@ module.exports = {
         { href: '/page/packaging-associations', label: 'Packaging Associations' },
         { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
         { href: '/webinars', label: 'Webinars' },
-        { href: 'https://cobotspot.packworld.com', label: 'Collaborative Robots', target: '_blank' },
         // { href: '/page/digital-editions', label: 'Digital Editions' },
       ],
     },
