@@ -1,11 +1,11 @@
 import defaultDescription from "@parameter1/base-cms-marko-web/utils/published-content/description";
 import queryFragment from "../../graphql/fragments/content-list";
 
-$ const { config, GAM } = out.global;
+$ const { config, GAM, i18n } = out.global;
 
 $ const type = "published-content";
-$ const title = "Downloads";
-$ const description = defaultDescription(title, config);
+$ const title = i18n("Downloads");
+$ const description = title === "Downloads" ? defaultDescription(title, config) : "Las últimas descargas de Mundo PMMI";
 
 <marko-web-default-page-layout type=type title=title description=description>
   <@head>
