@@ -34,7 +34,7 @@ $ const description = defaultDescription(title, config);
 
     <marko-web-query|{ nodes }|
       name="website-scheduled-content"
-      params={ includeContentTypes:["Video"], limit: 12, withSite: false, queryFragment }
+      params={ includeContentTypes:["Video"], limit: 12,  queryFragment }
     >
       <shared-content-card-deck-flow nodes=nodes />
     </marko-web-query>
@@ -44,7 +44,7 @@ $ const description = defaultDescription(title, config);
       component-name="content-card-deck-flow"
       fragment-name="content-list"
       query-name="website-scheduled-content"
-      query-params={ includeContentTypes:["Video"], limit: 12, withSite: false, skip: 12 }
+      query-params={ includeContentTypes:["Video"], limit: 12,  skip: 12 }
       page-input={ for: "published-content" }
     />
   </@below-page>

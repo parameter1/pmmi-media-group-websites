@@ -75,7 +75,7 @@ $ const { id, alias, name, pageNode } = data;
       <div class="col-lg-4 mb-block">
         <marko-web-query|{ nodes }|
           name="website-scheduled-content"
-          params={ sectionAlias: "technology", limit: 4, withSite: false, queryFragment }
+          params={ sectionAlias: "technology", limit: 4,  queryFragment }
         >
           <shared-content-list-flow nodes=nodes>
             <@header>
@@ -87,7 +87,7 @@ $ const { id, alias, name, pageNode } = data;
       <div class="col-lg-4 mb-block">
         <marko-web-query|{ nodes }|
           name="website-scheduled-content"
-          params={ sectionAlias: "products", limit: 4, withSite: false, queryFragment }
+          params={ sectionAlias: "products", limit: 4,  queryFragment }
         >
           <shared-content-list-flow nodes=nodes>
             <@header>
@@ -102,7 +102,7 @@ $ const { id, alias, name, pageNode } = data;
       <div class="col-lg-4 mb-block">
         <marko-web-query|{ nodes }|
           name="website-scheduled-content"
-          params={ sectionAlias: "oem-issues", limit: 4, withSite: false, queryFragment }
+          params={ sectionAlias: "oem-issues", limit: 4,  queryFragment }
         >
           <shared-content-list-flow nodes=nodes>
             <@header>
@@ -114,7 +114,7 @@ $ const { id, alias, name, pageNode } = data;
       <div class="col-lg-4 mb-block">
         <marko-web-query|{ nodes }|
           name="website-scheduled-content"
-          params={ includeContentTypes:["Video"], limit: 4, withSite: false, queryFragment }
+          params={ includeContentTypes:["Video"], limit: 4,  queryFragment }
         >
           <shared-content-list-flow nodes=nodes>
             <@header>
@@ -157,7 +157,7 @@ $ const { id, alias, name, pageNode } = data;
         component-input={ aliases }
         fragment-name="content-list"
         query-name="website-scheduled-content"
-        query-params={ sectionId: id, limit: 12, skip: 19, withSite: false, requiresImage: true }
+        query-params={ sectionId: id, limit: 12, skip: 19,  requiresImage: true }
         max-pages=0
         page-input={ for: "website-section", id }
       />
