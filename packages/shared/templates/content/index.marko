@@ -120,7 +120,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
         <div class="col-lg-8">
           <marko-web-query|{ nodes }|
             name="website-scheduled-content"
-            params={ sectionAlias: section.alias,  limit: 4, queryFragment }
+            params={ sectionAlias: section.alias, limit: 4, queryFragment }
           >
             <default-theme-card-deck-flow cols=2 nodes=nodes>
               <@slot|{ node, index }|>
@@ -141,7 +141,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
         <div class="col-lg-12">
           <marko-web-query|{ nodes }|
             name="website-scheduled-content"
-            params={ sectionAlias: section.alias,  limit: 3, skip: 4, queryFragment }
+            params={ sectionAlias: section.alias, limit: 3, skip: 4, queryFragment }
           >
             <shared-content-card-deck-flow nodes=nodes>
               <@native-x index=1 name="load-more" />
@@ -157,7 +157,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
         <div class="col-lg-8">
           <marko-web-query|{ nodes }|
             name="website-scheduled-content"
-            params={ sectionAlias: section.alias,  limit: 2, skip: 7, queryFragment }
+            params={ sectionAlias: section.alias, limit: 2, skip: 7, queryFragment }
           >
             <default-theme-card-deck-flow cols=2 nodes=nodes>
               <@slot|{ node, index }|>
@@ -175,7 +175,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
         <div class="col-lg-12">
           <marko-web-query|{ nodes }|
             name="website-scheduled-content"
-            params={ sectionAlias: section.alias,  limit: 3, skip: 9, queryFragment }
+            params={ sectionAlias: section.alias, limit: 3, skip: 9, queryFragment }
           >
             <shared-content-card-deck-flow nodes=nodes>
               <@native-x index=2 name="load-more" />
@@ -195,7 +195,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
         <div class="col-lg-12">
           <marko-web-query|{ nodes }|
             name="website-scheduled-content"
-            params={ sectionAlias: section.alias,  limit: 8, skip: 12, queryFragment }
+            params={ sectionAlias: section.alias, limit: 8, skip: 12, queryFragment }
           >
             <shared-content-card-deck-flow nodes=nodes ad-index=4 ad-name="imu2" />
           </marko-web-query>

@@ -34,7 +34,7 @@ $ const description = defaultDescription(title, config);
 
     <marko-web-query|{ nodes }|
       name="website-scheduled-content"
-      params={ includeContentTypes:["Whitepaper"], limit: 18,  queryFragment }
+      params={ includeContentTypes:["Whitepaper"], limit: 18, queryFragment }
     >
       <shared-content-list-flow nodes=nodes />
     </marko-web-query>
@@ -44,7 +44,7 @@ $ const description = defaultDescription(title, config);
       component-name="content-list-flow"
       fragment-name="content-list"
       query-name="website-scheduled-content"
-      query-params={ includeContentTypes:["Whitepaper"], limit: 18,  skip: 18 }
+      query-params={ includeContentTypes:["Whitepaper"], limit: 18, skip: 18 }
       page-input={ for: "published-content" }
     />
   </@below-page>

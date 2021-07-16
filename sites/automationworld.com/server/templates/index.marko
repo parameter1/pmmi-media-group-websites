@@ -126,7 +126,7 @@ $ const { id, alias, name, pageNode } = data;
       <div class="col-lg-4 mb-block">
         <marko-web-query|{ nodes }|
           name="website-scheduled-content"
-          params={ sectionAlias: "products", limit: 4,  queryFragment }
+          params={ sectionAlias: "products", limit: 4, queryFragment }
         >
           <shared-content-list-flow nodes=nodes>
             <@header>
@@ -138,7 +138,7 @@ $ const { id, alias, name, pageNode } = data;
       <div class="col-lg-4 mb-block">
         <marko-web-query|{ nodes }|
           name="website-scheduled-content"
-          params={ sectionAlias: "factory", limit: 4,  queryFragment }
+          params={ sectionAlias: "factory", limit: 4, queryFragment }
         >
           <shared-content-list-flow nodes=nodes>
             <@header>
@@ -150,7 +150,7 @@ $ const { id, alias, name, pageNode } = data;
       <div class="col-lg-4 mb-block">
         <marko-web-query|{ nodes }|
           name="website-scheduled-content"
-          params={ sectionAlias: "process", limit: 4,  queryFragment }
+          params={ sectionAlias: "process", limit: 4, queryFragment }
         >
           <shared-content-list-flow nodes=nodes>
             <@header>
@@ -168,7 +168,7 @@ $ const { id, alias, name, pageNode } = data;
       <div class="col-lg-8 mb-block">
         <marko-web-query|{ nodes }|
           name="website-scheduled-content"
-          params={ includeContentTypes:["Video"], limit: 5,  queryFragment }
+          params={ includeContentTypes:["Video"], limit: 5, queryFragment }
         >
           <shared-content-list-flow nodes=nodes>
             <@header>
@@ -208,7 +208,7 @@ $ const { id, alias, name, pageNode } = data;
         component-input={ aliases }
         fragment-name="content-list"
         query-name="website-scheduled-content"
-        query-params={ sectionId: id, limit: 12, skip: 14,  requiresImage: true }
+        query-params={ sectionId: id, limit: 12, skip: 14, requiresImage: true }
         max-pages=0
         page-input={ for: "website-section", id }
       />
