@@ -160,7 +160,7 @@ $ const { lang = "en" } = getAsObject(site, "config");
 
     <marko-web-query|{ nodes }|
       name="all-company-content"
-      params={ companyId: id, includeContentTypes: ["Article"], limit: 3, queryFragment }
+      params={ companyId: id, includeContentTypes: ["Article"], limit: 3, withSite: false, queryFragment }
     >
       <shared-content-list-flow nodes=nodes class="mt-block" inner-justified=false>
         <@header>
@@ -171,7 +171,7 @@ $ const { lang = "en" } = getAsObject(site, "config");
 
     <marko-web-query|{ nodes }|
       name="all-company-content"
-      params={ companyId: id, includeContentTypes: ["News", "PressRelease"], limit: 5, queryFragment }
+      params={ companyId: id, includeContentTypes: ["News", "PressRelease"], withSite: false, limit: 5, queryFragment }
     >
       <shared-content-list-flow nodes=nodes class="mt-block" inner-justified=false>
         <@header>

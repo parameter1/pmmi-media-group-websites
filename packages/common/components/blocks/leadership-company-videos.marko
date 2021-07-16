@@ -6,7 +6,7 @@ $ const { contentId } = input;
 
 <marko-web-query|{ nodes }|
   name="related-published-content"
-  params={ contentId, limit: 20, queryFragment, includeContentTypes: ["Company"] }
+  params={ contentId, limit: 20, queryFragment, includeContentTypes: ["Company"], withSite: false }
 >
   <if(nodes.length)>
     <for|company| of=nodes>

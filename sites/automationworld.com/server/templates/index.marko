@@ -62,10 +62,10 @@ $ const { id, alias, name, pageNode } = data;
         <div class="row">
           <div class="col-lg-6 mb-block">
             <marko-web-query|{ nodes }|
-              name="all-published-content"
+              name="website-scheduled-content"
               params={
                 limit: 1,
-                contentTypes: ["Podcast"],
+                includeContentTypes:["Podcast"],
                 requiresImage: true,
                 queryFragment
               }
@@ -167,8 +167,8 @@ $ const { id, alias, name, pageNode } = data;
       </div>
       <div class="col-lg-8 mb-block">
         <marko-web-query|{ nodes }|
-          name="all-published-content"
-          params={ contentTypes: ["Video"], limit: 5, queryFragment }
+          name="website-scheduled-content"
+          params={ includeContentTypes:["Video"], limit: 5, queryFragment }
         >
           <shared-content-list-flow nodes=nodes>
             <@header>
