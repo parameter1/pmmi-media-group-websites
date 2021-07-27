@@ -11,11 +11,16 @@ fragment ContentPageFragment on Content {
   body
   status
   published
+  siteContext {
+    path
+    canonicalUrl
+  }
   company {
     id
     name
     siteContext {
       path
+      canonicalUrl
     }
   }
   taxonomy(input: { type: Category }) {
@@ -77,6 +82,10 @@ fragment ContentPageFragment on Content {
   gating {
     surveyType
     surveyId
+  }
+  userRegistration {
+    isRequired
+    accessLevels
   }
   ... on ContentVideo {
     embedCode
