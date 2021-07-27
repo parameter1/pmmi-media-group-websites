@@ -1,4 +1,7 @@
 {
+  "taglib-imports": [
+    "./content-page/marko.json"
+  ],
   "<shared-content-body-with-tracking>": {
     "template": "./content-body-with-tracking.marko",
     "@content": {
