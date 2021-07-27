@@ -29,6 +29,12 @@ module.exports = {
         'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo.png?h=120&auto=format,compress&q=70 2x',
       ],
     },
+    printContent: {
+      src: 'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo_black.png?h=45&auto=format,compress&q=70',
+      srcset: [
+        'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo_black.png?h=90&auto=format,compress&q=70 2x',
+      ],
+    },
   },
   socialMediaLinks: [
     { provider: 'twitter', href: 'https://twitter.com/ProFoodWorld' },

@@ -30,6 +30,12 @@ module.exports = {
         'https://img.mundopmmi.com/files/base/pmmi/mundo/footerLogos_white.png?h=120 2x',
       ],
     },
+    printContent: {
+      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=80',
+      srcset: [
+        'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=160 2x',
+      ],
+    },
   },
   socialMediaLinks: [
     { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/mundo-pmmi' },

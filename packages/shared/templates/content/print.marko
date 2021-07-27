@@ -29,7 +29,8 @@ $ const displayPublishedDate = ["event", "webinar", "contact", "company"].includ
     <div class="container p-5 bg-white">
       <div class="row mb-block">
         <div class="col">
-          $ const logoSrc = buildImgixUrl(site.get("logos.navbar.src"), { h: 100 });
+          $ const src = site.get("logos.printContent.src") ? site.get("logos.printContent.src") : site.get("logos.navbar.src");
+          $ const logoSrc = buildImgixUrl(src, { h: 100 });
           <if(logoSrc)>
             <marko-web-img
               link={ href: "/" }
