@@ -31,6 +31,7 @@
     "@parameter1/base-cms-utils": "^2.22.2",
     "@parameter1/omeda-graphql-client-express": "^0.2.3",
     "@pmmi-media-group/package-common": "^2.2.9",
+    "cheerio": "^1.0.0-rc.3",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
     "newrelic": "^6.4.1"

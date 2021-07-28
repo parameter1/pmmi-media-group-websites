@@ -22,7 +22,7 @@ $ const {
       on="load"
       request-frame=true
       target-tag="body"
-      identity-query-builder=`var id = query.oly_enc_id; if (id) { return 'omeda.${omedaConfig.brandKey}.customer*' + id + '~encoded'; };`;
+      identity-query-builder=`var id = query.oly_enc_id; if (id) { return 'omeda.${omedaConfig.brandKey}.customer*' + id + '~encoded'; };`
     />
 
     <!-- init gam -->
@@ -88,5 +88,6 @@ $ const {
   </@below-container>
   <@below-wrapper>
     <marko-web-deferred-script-loader-load />
+    <marko-web-browser-component name="OmedaRapidIdentityX" />
   </@below-wrapper>
 </marko-web-document>
