@@ -105,6 +105,15 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
                 </default-theme-content-download>
               </if>
 
+              <marko-web-social-sharing
+                path=content.siteContext.path
+                providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
+                print-path=`/print/content/${content.id}`
+                title=content.name
+                description=content.teaser
+                media=get(content, "primaryImage.src")
+              />
+
               <!-- Div for BI Library -->
               <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-bilibrary" class="mt-3" />
               </marko-web-identity-x-access>
