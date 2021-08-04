@@ -1,6 +1,8 @@
 @import "../../node_modules/@parameter1/base-cms-marko-web-html-sitemap/scss/index";
 @import "../../node_modules/@parameter1/base-cms-marko-web-social-sharing/scss/buttons";
 
+$header-height: calc(50px + (#{$block-spacer} * 2)) !default;
+
 .social-sharing {
   margin-top: map-get($spacers, block);
   margin-bottom: map-get($spacers, block);
@@ -9,3 +11,4 @@
 @import "./components/ads";
 @import "./components/inquiry-form";
 @import "./components/primary-image";
+@import "./components/search-page";
