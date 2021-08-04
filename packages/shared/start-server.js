@@ -5,6 +5,7 @@ const cleanResponse = require('@parameter1/base-cms-marko-core/middleware/clean-
 const omedaGraphQL = require('@parameter1/omeda-graphql-client-express');
 const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitemap/middleware/paginated');
 const htmlSitemapRoutes = require('@parameter1/base-cms-marko-web-html-sitemap/routes');
+const searchRoutes = require('./routes/search');
 
 const document = require('./components/document');
 const components = require('./components');
@@ -14,9 +15,11 @@ const sharedRoutes = require('./routes');
 const oembedHandler = require('./oembed-handler');
 const omedaConfig = require('./config/omeda');
 
-const routes = siteRoutes => (app) => {
+const routes = (siteRoutes, siteConfig) => (app) => {
   // Shared/global routes (all sites)
   sharedRoutes(app);
+  // Load shared search routes
+  searchRoutes(app, siteConfig);
   // HTML Sitemap
   htmlSitemapRoutes(app);
   // Load site routes
@@ -27,7 +30,7 @@ module.exports = (options = {}) => {
   const { onStart } = options;
   return startServer({
     ...options,
-    routes: routes(options.routes),
+    routes: routes(options.routes, options.siteConfig),
     document: options.document || document,
     components: options.components || components,
     fragments: options.fragments || fragments,
