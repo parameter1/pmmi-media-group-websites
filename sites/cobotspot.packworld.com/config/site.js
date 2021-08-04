@@ -2,12 +2,14 @@ const navigation = require('./navigation');
 const nativeX = require('./native-x');
 const identityX = require('./identity-x');
 const gam = require('./gam');
+const search = require('./search');
 
 module.exports = {
   navigation,
   nativeX,
   identityX,
   gam,
+  search,
   company: 'PMMI Media Group',
   p1events: {
     tenant: 'pmmi',
