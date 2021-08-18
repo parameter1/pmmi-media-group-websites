@@ -90,13 +90,6 @@ jobs:
       script: npx @parameter1/base-cms-website-deployment-tool deploy profoodworld.com staging-websites-tauron
 
     - <<: *production-job
-      name: cobotspot.packworld.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy cobotspot.packworld.com websites
-    - <<: *staging-job
-      name: cobotspot.packworld.com
-      script: npx @parameter1/base-cms-website-deployment-tool deploy cobotspot.packworld.com staging-websites-tauron
-
-    - <<: *production-job
       name: mundopmmi.com
       script: npx @parameter1/base-cms-website-deployment-tool deploy mundopmmi.com websites
     - <<: *staging-job
