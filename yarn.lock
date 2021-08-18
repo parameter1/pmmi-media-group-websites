@@ -2246,10 +2246,10 @@
   dependencies:
     "@parameter1/base-cms-marko-web-deferred-script-loader" "^2.22.2"
 
-"@parameter1/base-cms-marko-web-p1-events@^2.22.2":
-  version "2.22.2"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-p1-events/-/base-cms-marko-web-p1-events-2.22.2.tgz#53c8c2ded54d932b7799fe523ddd181778d9e1bb"
-  integrity sha512-MKDZAlxHvLTWs3ntzD073sHkKE1NUClM0ooTEBdLkCnxXbkDwfiRJDls8iWxtK/XZuDoGHqitVDppo0E9F5pig==
+"@parameter1/base-cms-marko-web-p1-events@^2.39.2":
+  version "2.39.2"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-p1-events/-/base-cms-marko-web-p1-events-2.39.2.tgz#cd74c5662e87e0f4d3362a02b07da5d3af3690ce"
+  integrity sha512-+UZGOc0uSvg1podTrJwnFpCZ+J8cPqBNOLqc3BMLM0hI0UtsSfn9PFfClO7xV8j83DjF0Bk0Fh3ITCObrOWITA==
   dependencies:
     "@parameter1/base-cms-inflector" "^2.0.0"
     "@parameter1/base-cms-marko-web-deferred-script-loader" "^2.22.2"
