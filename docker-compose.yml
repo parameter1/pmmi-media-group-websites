@@ -142,22 +142,6 @@ services:
       - "9714:80"
       - "19714:19714"
 
-  cobotspot:
-    <<: *node
-    <<: *site-cmd
-    working_dir: /root/sites/cobotspot.packworld.com
-    environment:
-      <<: *env
-      <<: *env-tauron
-      PORT: 80
-      EXPOSED_PORT: 9715
-      LIVERELOAD_PORT: 19715
-      TENANT_KEY: pmmi_all
-      SITE_ID: 5ebe9a808b34dcc8018b46c0
-    ports:
-      - "9715:80"
-      - "19715:19715"
-
   mundo:
     <<: *node
     <<: *site-cmd
