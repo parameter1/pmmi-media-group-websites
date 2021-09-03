@@ -7,6 +7,7 @@ module.exports = {
       { href: '/issues', label: 'Issues' },
       { href: '/page/pw-event-calendar', label: 'Events' },
       { href: '/page/pw-newsletters-mainnav', label: 'Newsletters' },
+      { href: 'https://www.machine.tours', label: 'Machine Tours', target: '_blank' },
     ],
   },
   tertiary: {

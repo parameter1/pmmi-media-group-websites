@@ -8,6 +8,7 @@ module.exports = {
       { href: '/issues', label: 'Issues' },
       { href: '/page/hcp-event-calendar', label: 'Events' },
       { href: '/page/hcp-newsletters-mainnav', label: 'Newsletters' },
+      { href: 'https://www.machine.tours', label: 'Machine Tours', target: '_blank' },
     ],
   },
   tertiary: {
