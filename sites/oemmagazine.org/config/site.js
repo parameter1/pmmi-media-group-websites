@@ -11,6 +11,9 @@ module.exports = {
   identityX,
   gam,
   company: 'PMMI Media Group',
+  idxNavItems: {
+    enable: true,
+  },
   p1events: {
     tenant: 'pmmi',
     enabled: true,

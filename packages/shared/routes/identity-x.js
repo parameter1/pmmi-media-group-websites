@@ -10,6 +10,8 @@ const logout = require('../templates/user/logout');
 const register = require('../templates/user/register');
 const profile = require('../templates/user/profile');
 
+const { isArray } = Array;
+
 const countQuery = gql`
   query CountComments($identifier: String!) {
     commentsForStream(input: { identifier: $identifier }) {
@@ -19,8 +21,48 @@ const countQuery = gql`
 `;
 
 module.exports = (app) => {
+  const { site } = app.locals;
   const config = getAsObject(app, 'locals.identityX');
   IdentityX(app, config);
+  const enable = site.get('idxNavItems.enable');
+  const defaultTargets = [
+    'navigation.tertiary.items',
+    'navigation.menu.2.items',
+  ];
+  const targets = site.getAsArray('idxNavItems.navigationTargets').length ? site.getAsArray('idxNavItems.targets') : defaultTargets;
+  if (enable) {
+    const navConfig = [
+      {
+        href: config.getEndpointFor('login'),
+        label: 'Log In',
+        when: 'logged-out',
+        modifiers: ['user'],
+      },
+      {
+        href: config.getEndpointFor('profile'),
+        label: 'My Profile',
+        when: 'logged-in',
+        modifiers: ['user'],
+      },
+      {
+        href: config.getEndpointFor('logout'),
+        label: 'Log Out',
+        when: 'logged-in',
+        modifiers: ['user'],
+      },
+      {
+        href: config.getEndpointFor('register'),
+        label: 'Register',
+        when: 'logged-out',
+        modifiers: ['user'],
+      },
+    ];
+    targets.forEach((target) => {
+      const nav = site.get(target);
+      console.log(nav);
+      if (isArray(nav)) nav.unshift(...navConfig);
+    });
+  }
 
   app.get(config.getEndpointFor('authenticate'), (_, res) => {
     res.marko(authenticate);
