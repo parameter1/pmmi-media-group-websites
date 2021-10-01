@@ -59,7 +59,6 @@ module.exports = (app) => {
     ];
     targets.forEach((target) => {
       const nav = site.get(target);
-      console.log(nav);
       if (isArray(nav)) nav.unshift(...navConfig);
     });
   }
