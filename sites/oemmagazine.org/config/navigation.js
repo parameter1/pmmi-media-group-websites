@@ -41,7 +41,7 @@ module.exports = {
         { href: '/downloads', label: 'Downloads' },
         { href: '/page/oem-newsletter', label: 'Newsletters', target: '_blank' },
         { href: '/page/magazine', label: 'Magazine' },
-        { href: '/leaders', label: 'Tech Trendsetters' },
+        { href: '/leaders', label: 'OEM Partner Leaders' },
         { href: '/videos', label: 'Videos' },
         { href: '/podcasts', label: 'Podcasts' },
         // { href: '/page/digital-editions', label: 'Digital Editions' },
