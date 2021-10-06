@@ -1,4 +1,7 @@
-$ const { config } = out.global;
+import getLoginReferrer from "./utils/get-login-referrer";
+
+$ const { config, GAM, req } = out.global;
+$ const redirect = getLoginReferrer(req);
 
 $ const type = "login";
 $ const title = "Log in";
@@ -14,7 +17,7 @@ $ const description = `Log in to ${config.siteName()}`;
     <marko-web-page-wrapper>
       <@section>
         <h1 class="page-wrapper__title">${description}</h1>
-        <marko-web-identity-x-form-login />
+        <marko-web-identity-x-form-login redirect=redirect />
       </@section>
     </marko-web-page-wrapper>
   </@page>
