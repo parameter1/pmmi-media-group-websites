@@ -12,7 +12,7 @@ module.exports = {
   gam,
   company: 'PMMI Media Group',
   idxNavItems: {
-    enable: true,
+    enable: process.env.NODE_ENV !== 'production',
   },
   p1events: {
     tenant: 'pmmi',
