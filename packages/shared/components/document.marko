@@ -76,8 +76,10 @@ $ const {
 
     <marko-web-reveal-ad-listener />
     <marko-web-gtm-track-load-more />
-    <default-theme-site-header />
-    <default-theme-site-menu />
+    <marko-web-identity-x-context|{ hasUser, isEnabled }|>
+      <default-theme-site-header has-user=hasUser reg-enabled=isEnabled />
+      <default-theme-site-menu has-user=hasUser reg-enabled=isEnabled/>
+    </marko-web-identity-x-context>
     <div class="document-container-header">
       <${input.aboveContainer} />
     </div>

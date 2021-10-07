@@ -10,6 +10,8 @@ const logout = require('../templates/user/logout');
 const register = require('../templates/user/register');
 const profile = require('../templates/user/profile');
 
+const { isArray } = Array;
+
 const countQuery = gql`
   query CountComments($identifier: String!) {
     commentsForStream(input: { identifier: $identifier }) {
@@ -19,8 +21,44 @@ const countQuery = gql`
 `;
 
 module.exports = (app) => {
+  const { site } = app.locals;
   const config = getAsObject(app, 'locals.identityX');
   IdentityX(app, config);
+  const enable = process.env.ENABLE_IDENTITY_X || false;
+  if (enable) {
+    const navConfig = [
+      {
+        href: config.getEndpointFor('login'),
+        label: 'Log In',
+        when: 'logged-out',
+        modifiers: ['user'],
+      },
+      {
+        href: config.getEndpointFor('profile'),
+        label: 'My Profile',
+        when: 'logged-in',
+        modifiers: ['user'],
+      },
+      {
+        href: config.getEndpointFor('logout'),
+        label: 'Log Out',
+        when: 'logged-in',
+        modifiers: ['user'],
+      },
+      {
+        href: config.getEndpointFor('register'),
+        label: 'Register',
+        when: 'logged-out',
+        modifiers: ['user'],
+      },
+    ];
+    // Add Items to tertiary nav
+    const tertiaryNav = site.get('navigation.tertiary.items');
+    if (isArray(tertiaryNav)) tertiaryNav.unshift(...navConfig);
+    // Add Items to menu nav
+    const menuNav = site.get('navigation.menu.2.items');
+    if (isArray(menuNav)) menuNav.unshift(...navConfig);
+  }
 
   app.get(config.getEndpointFor('authenticate'), (_, res) => {
     res.marko(authenticate);
