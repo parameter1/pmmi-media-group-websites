@@ -24,12 +24,7 @@ module.exports = (app) => {
   const { site } = app.locals;
   const config = getAsObject(app, 'locals.identityX');
   IdentityX(app, config);
-  const enable = site.get('idxNavItems.enable');
-  const defaultTargets = [
-    'navigation.tertiary.items',
-    'navigation.menu.2.items',
-  ];
-  const targets = site.getAsArray('idxNavItems.navigationTargets').length ? site.getAsArray('idxNavItems.targets') : defaultTargets;
+  const enable = process.env.ENABLE_IDENTITY_X || false;
   if (enable) {
     const navConfig = [
       {
@@ -57,10 +52,12 @@ module.exports = (app) => {
         modifiers: ['user'],
       },
     ];
-    targets.forEach((target) => {
-      const nav = site.get(target);
-      if (isArray(nav)) nav.unshift(...navConfig);
-    });
+    // Add Items to tertiary nav
+    const tertiaryNav = site.get('navigation.tertiary.items');
+    if (isArray(tertiaryNav)) tertiaryNav.unshift(...navConfig);
+    // Add Items to menu nav
+    const menuNav = site.get('navigation.menu.2.items');
+    if (isArray(menuNav)) menuNav.unshift(...navConfig);
   }
 
   app.get(config.getEndpointFor('authenticate'), (_, res) => {
