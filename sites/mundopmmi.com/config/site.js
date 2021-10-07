@@ -12,9 +12,6 @@ module.exports = {
   gam,
   company: 'PMMI Media Group',
   copyrightNotice: 'Todos los derechos reservados.',
-  idxNavItems: {
-    enable: process.env.NODE_ENV !== 'production',
-  },
   p1events: {
     tenant: 'pmmi',
     enabled: true,

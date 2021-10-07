@@ -11,9 +11,6 @@ module.exports = {
   identityX,
   gam,
   company: 'PMMI Media Group',
-  idxNavItems: {
-    enable: process.env.NODE_ENV !== 'production',
-  },
   p1events: {
     tenant: 'pmmi',
     enabled: true,
