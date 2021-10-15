@@ -6,6 +6,7 @@ import getContentPreview from "../../utils/get-content-preview";
 $ const { id, type, pageNode } = data;
 $ const { site, config, req } = out.global;
 
+$ const requiresRegistration = true;
 $ const cardBlock = "content-page-card";
 $ const displayPublishedDate = ["event", "webinar", "contact", "company"].includes(type) ? false : true;
 
@@ -101,7 +102,6 @@ $ const displayPublishedDate = ["event", "webinar", "contact", "company"].includ
             block-name=cardBlock
             obj=content
           />
-          $ const requiresRegistration = get(content, "userRegistration.isRequired");
           $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
           <marko-web-identity-x-access|context|
             enabled=requiresRegistration
@@ -118,7 +118,8 @@ $ const displayPublishedDate = ["event", "webinar", "contact", "company"].includ
                 has-required-access-level=context.hasRequiredAccessLevel
                 requires-access-level=context.requiresAccessLevel
                 requires-user-input=context.requiresUserInput
-                messages="Login to print the full article."
+                title="Login to print the full article."
+                user-input-title="Complete your profile to print the full article"
               />
             </if>
             <else>
@@ -166,7 +167,6 @@ $ const displayPublishedDate = ["event", "webinar", "contact", "company"].includ
   </@above-container>
   <@below-container>
     <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
-      $ const requiresRegistration = get(content, "userRegistration.isRequired");
       $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
       <marko-web-identity-x-access|context|
         enabled=requiresRegistration
