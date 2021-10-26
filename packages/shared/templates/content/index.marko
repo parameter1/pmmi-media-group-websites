@@ -61,6 +61,14 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
                   <marko-web-content-published block-name=blockName obj=content />
                 </if>
               </default-theme-page-dates>
+              <marko-web-social-sharing
+                path=content.siteContext.path
+                providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
+                print-path=`/print/content/${content.id}`
+                title=content.name
+                description=content.teaser
+                media=get(content, "primaryImage.src")
+              />
             </div>
           </div>
         </@section>
