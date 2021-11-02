@@ -110,7 +110,13 @@ $ const { lang = "en" } = getAsObject(site, "config");
     <marko-web-node-list collapsible=false class="mt-block">
       <@header>${i18n("Request More Information")}</@header>
       <@body>
-        <shared-inquiry-block content=content with-header=false modifiers=["block"] lang=lang />
+        <shared-inquiry-block
+          content=content
+          with-header=false
+          modifiers=["block"]
+          lang=lang
+          on-submit-consent-text=get(site, 'config.inquiry.onSubmitConsentText')
+        />
       </@body>
     </marko-web-node-list>
 

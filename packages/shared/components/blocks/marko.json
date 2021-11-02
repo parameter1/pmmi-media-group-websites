@@ -42,7 +42,8 @@
       "type": "boolean",
       "default-value": true
     },
-    "@lang": "string"
+    "@lang": "string",
+    "@on-submit-consent-text": "string"
   },
   "<shared-magazine-publications-block>": {
     "template": "./magazine-publications.marko"
