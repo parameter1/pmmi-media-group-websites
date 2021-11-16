@@ -1,11 +1,12 @@
-import { warn } from "@parameter1/base-cms-utils";
+import queryFragment from "../graphql/fragments/content-list";
 
-$ const { config, site, GAM } = out.global;
+$ const { config, site, GAM, $markoWebSearch: search } = out.global;
 
 $ const type = "search";
 $ const title = "Search";
 $ const description = `Search ${config.siteName()}`;
-$ const apiKey = site.get("gcse.id");
+
+$ const currentPage = search.getCurrentPage();
 
 <marko-web-default-page-layout type=type title=title description=description>
   <@head>
@@ -22,19 +23,56 @@ $ const apiKey = site.get("gcse.id");
             <default-theme-breadcrumbs-with-home>
               <@item>${title}</@item>
             </default-theme-breadcrumbs-with-home>
-            <h1 class="page-wrapper__title">${description}</h1>
+
+            <h1 class="page-wrapper__title">
+              <if(currentPage > 1)>${description}: Page ${currentPage}</if>
+              <else>${description}</else>
+            </h1>
           </div>
         </div>
       </@section>
       <@section>
         <div class="row">
-          <div class="col">
-            <if(apiKey)>
-              <marko-web-gcse-simple-search-box api-key=apiKey />
-            </if>
-            <else>
-              $ warn("Unable to load GCSE search: no `gcse.id` value was configured.");
-            </else>
+          <div class="col-lg-3">
+            <marko-web-search-filter-container modifiers=["sticky"]>
+              <marko-web-search-content-types-filter />
+              <marko-web-search-website-sections-filter />
+            </marko-web-search-filter-container>
+          </div>
+
+          <div class="col-lg-9">
+            <marko-web-search-form>
+              <@block class="search-form" />
+              <div class="form-group search-form__group">
+                <label for="search-phrase" class="sr-only">Enter search phrase</label>
+                <marko-web-search-input
+                  id="search-phrase"
+                  class="form-control"
+                  placeholder="Enter search phrase..."
+                />
+              </div>
+              <button type="submit" class="btn btn-primary search-form__btn">
+                Search
+              </button>
+            </marko-web-search-form>
+
+            <marko-web-search-query|{ nodes, totalCount }|
+              limit=search.getLimit()
+              skip=search.getSkip()
+              content-types=search.input.contentTypes
+              search-query=search.input.searchQuery
+              assigned-to-website-section-ids=search.input.assignedToWebsiteSectionIds
+              query-fragment=queryFragment
+            >
+              <div class="search-result-count">
+                <div>${new Intl.NumberFormat().format(totalCount)} Results</div>
+                <marko-web-search-selected-filters />
+              </div>
+              <shared-content-list-flow nodes=nodes inner-justified=false with-teaser=true />
+              <marko-web-search-pagination-controls total-count=totalCount>
+                <@link class="btn btn-primary" />
+              </marko-web-search-pagination-controls>
+            </marko-web-search-query>
           </div>
         </div>
       </@section>
