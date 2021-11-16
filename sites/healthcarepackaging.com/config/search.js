@@ -1,0 +1,20 @@
+module.exports = {
+  contentTypes: ['Article', 'Blog', 'Company', 'Document', 'MediaGallery', 'News', 'Page', 'Podcast', 'Product', 'Video', 'Webinar'],
+  assignedToWebsiteSectionIds: [
+    64020,
+    77640,
+    33341,
+    33324,
+    74336,
+    71062,
+    70846,
+    63703,
+    33338,
+    33333,
+    71062,
+    64028,
+    63703,
+    70846,
+    74336,
+  ],
+};
