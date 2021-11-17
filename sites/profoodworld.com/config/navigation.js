@@ -5,7 +5,6 @@ module.exports = {
       { href: '/processing-equipment', label: 'Processing Equipment' },
       { href: '/automation', label: 'Automation' },
       { href: '/food-safety', label: 'Food Safety' },
-      { href: '/page/pfw-event-calendar', label: 'Events' },
       { href: '/page/pfw-newsletters-mainnav', label: 'Newsletters' },
       { href: 'https://www.machine.tours', label: 'Machine Tours', target: '_blank' },
     ],
