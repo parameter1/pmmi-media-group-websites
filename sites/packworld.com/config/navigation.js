@@ -4,8 +4,6 @@ module.exports = {
       { href: 'https://pmmi.dragonforms.com/loading.do?pk=PWMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=PPWnew', label: 'Subscribe', target: '_blank' },
       { href: '/machinery', label: 'Machinery' },
       { href: '/design', label: 'Design' },
-      { href: '/issues', label: 'Issues' },
-      { href: '/page/pw-event-calendar', label: 'Events' },
       { href: '/page/pw-newsletters-mainnav', label: 'Newsletters' },
       { href: 'https://www.machine.tours', label: 'Machine Tours', target: '_blank' },
     ],
