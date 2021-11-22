@@ -48,11 +48,11 @@ $ const { id, alias, name, pageNode } = input;
       name="website-optioned-content"
       params={ sectionId: id, optionName: "Pinned", limit: 5, skip: 10, requiresImage: true, queryFragment }
     >
-        <shared-content-card-deck-flow nodes=nodes ad-index=2 ad-name="imu2">
+      <shared-content-card-deck-flow nodes=nodes ad-index=2 ad-name="imu2">
         <if(!disableNativeSlotTwo)>
           <@native-x index=1 name="load-more" />
         </if>
-        </shared-content-card-deck-flow>
+      </shared-content-card-deck-flow>
     </marko-web-query>
   </@page>
   <@below-page>
