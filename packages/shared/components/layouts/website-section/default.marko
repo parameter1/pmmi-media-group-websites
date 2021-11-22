@@ -2,6 +2,7 @@ import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-ali
 import queryFragment from "../../../graphql/fragments/content-list";
 
 $ const { site, GAM, i18n } = out.global;
+$ const disableNativeSlotTwo = site.get("disableNativeSlotTwo") || false;
 $ const { id, alias, name, pageNode } = input;
 
 <marko-web-website-section-page-layout id=id alias=alias name=name>
@@ -47,9 +48,11 @@ $ const { id, alias, name, pageNode } = input;
       name="website-optioned-content"
       params={ sectionId: id, optionName: "Pinned", limit: 5, skip: 10, requiresImage: true, queryFragment }
     >
-      <shared-content-card-deck-flow nodes=nodes ad-index=2 ad-name="imu2" >
-        <@native-x index=1 name="load-more" />
-      </shared-content-card-deck-flow>
+        <shared-content-card-deck-flow nodes=nodes ad-index=2 ad-name="imu2">
+        <if(!disableNativeSlotTwo)>
+          <@native-x index=1 name="load-more" />
+        </if>
+        </shared-content-card-deck-flow>
     </marko-web-query>
   </@page>
   <@below-page>
