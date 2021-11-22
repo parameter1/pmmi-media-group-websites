@@ -6,6 +6,7 @@ const gam = require('./gam');
 const search = require('./search');
 
 module.exports = {
+  disableNativeSlotTwo: true,
   leaders,
   navigation,
   nativeX,

@@ -3,6 +3,7 @@ import queryFragment from "@pmmi-media-group/package-shared/graphql/fragments/co
 import latestIssueFragment from "@pmmi-media-group/package-shared/graphql/fragments/magazine-latest-issue";
 
 $ const { site, GAM, nativeX: nxConfig } = out.global;
+$ const disableNativeSlotTwo = site.get("disableNativeSlotTwo") || false;
 $ const { id, alias, name, pageNode } = data;
 
 <marko-web-website-section-page-layout id=id alias=alias name=name>
@@ -142,7 +143,9 @@ $ const { id, alias, name, pageNode } = data;
       params={ sectionAlias: "home", optionName: "Pinned", limit: 5, skip: 14, requiresImage: true, queryFragment }
     >
       <shared-content-card-deck-flow nodes=nodes ad-index=2 ad-name="imu2" >
-        <@native-x index=1 name="load-more" />
+        <if(!disableNativeSlotTwo)>
+          <@native-x index=1 name="load-more" />
+        </if>
       </shared-content-card-deck-flow>
     </marko-web-query>
 
