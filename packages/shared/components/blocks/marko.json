@@ -43,7 +43,7 @@
       "default-value": true
     },
     "@lang": "string",
-    "@on-submit-consent-checkboxes": "array"
+    "@consent-checkboxes": "object"
   },
   "<shared-magazine-publications-block>": {
     "template": "./magazine-publications.marko"
