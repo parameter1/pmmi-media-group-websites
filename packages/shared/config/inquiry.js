@@ -11,7 +11,7 @@ module.exports = {
       key: 'privacyConsent',
       label: 'privacyConsent',
       html: '<span class="small">I consent to PMMI collecting and storing my information and consent to receive emails as well as sponsored advertisements from PMMI Media Group. I have read PMMI Media Group\'s privacy policy and I understand that I can unsubscribe or opt out at any time, and I can reach your Chief Privacy Officer at <a href="mailto:dataprivacy@pmmi.org">dataprivacy@pmmi.org</a> with any inquiries around privacy policies or practices.</span>',
-      required: false,
+      required: true,
     },
     {
       key: 'notificationConsent',
