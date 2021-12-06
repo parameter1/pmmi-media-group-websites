@@ -128,7 +128,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
             </default-theme-page-contents>
 
             <aside class="col-lg-4 page-rail">
-              <shared-inquiry-block content=content lang=lang on-submit-consent-text=get(site, 'config.inquiry.onSubmitConsentText') />
+              <shared-inquiry-block content=content lang=lang on-submit-consent-checkboxes=getAsArray(site, 'config.inquiry.onSubmitConsentCheckboxes') />
 
               <marko-web-gam-display-ad id="gpt-ad-imu1" />
 

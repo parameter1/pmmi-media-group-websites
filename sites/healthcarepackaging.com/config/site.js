@@ -1,3 +1,4 @@
+const sharedInquiryConfig = require('@pmmi-media-group/package-shared/config/inquiry');
 const navigation = require('./navigation');
 const leaders = require('./leaders');
 const nativeX = require('./native-x');
@@ -60,12 +61,8 @@ module.exports = {
     description: '',
   },
   inquiry: {
-    enabled: true,
-    directSend: false,
-    sendTo: 'info-request@pmmimediagroup.com',
-    replyTo: 'info-request@pmmimediagroup.com',
+    ...sharedInquiryConfig,
     sendFrom: 'Healthcare Packaging <noreply@parameter1.com>',
     logo: 'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo.png?h=45&auto=format,compress&q=70',
-    bgColor: '#000',
   },
 };

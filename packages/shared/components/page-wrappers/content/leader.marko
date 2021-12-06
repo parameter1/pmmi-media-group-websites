@@ -115,7 +115,7 @@ $ const { lang = "en" } = getAsObject(site, "config");
           with-header=false
           modifiers=["block"]
           lang=lang
-          on-submit-consent-text=get(site, 'config.inquiry.onSubmitConsentText')
+          consent-checkboxes=getAsObject(site, 'config.inquiry.consentCheckboxes')
         />
       </@body>
     </marko-web-node-list>

@@ -30,6 +30,11 @@
     margin-bottom: 0;
   }
 
+  input[type=checkbox] + label,
+  .consent-html {
+    display: inline;
+  }
+
   &--block {
     padding: 0;
     margin-bottom: 0;
