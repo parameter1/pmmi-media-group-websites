@@ -20,3 +20,11 @@ $header-height: calc(50px + (#{$block-spacer} * 2)) !default;
   margin-top: -50px;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #fff 100%);
 }
+
+.inquiry-form {
+  .privacyConsent,
+  .notificationConsent,
+  .thirdPartyConsent {
+    display: inline;
+  }
+}
