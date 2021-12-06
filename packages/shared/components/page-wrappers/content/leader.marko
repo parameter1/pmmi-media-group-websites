@@ -1,7 +1,6 @@
-import { getAsArray, get } from "@parameter1/base-cms-object-path";
+import { getAsArray, getAsObject, get } from "@parameter1/base-cms-object-path";
 import eventLinkAttrs from "@parameter1/base-cms-marko-web-p1-events/utils/link-attrs";
 import eventEntity from "@parameter1/base-cms-marko-web-p1-events/utils/base-content-entity";
-import { getAsObject } from "@parameter1/base-cms-object-path";
 import queryFragment from "../../../graphql/fragments/content-list";
 
 
@@ -115,7 +114,7 @@ $ const { lang = "en" } = getAsObject(site, "config");
           with-header=false
           modifiers=["block"]
           lang=lang
-          consent-checkboxes=getAsObject(site, 'config.inquiry.consentCheckboxes')
+          consent-checkboxes=getAsArray(site, 'config.inquiry.consentCheckboxes')
         />
       </@body>
     </marko-web-node-list>
