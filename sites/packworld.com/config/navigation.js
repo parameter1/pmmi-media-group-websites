@@ -37,7 +37,7 @@ module.exports = {
       label: 'Resources',
       items: [
         // { href: '/magazine', label: 'Magazine' },
-        { href: '/page/contract-packaging-magazine', label: 'Contract Packaging' },
+        { href: '/page/contract-packaging-magazine', label: 'Contract Manufacturing and Packaging' },
         { href: '/page/pw-event-calendar', label: 'Events' },
         { href: '/downloads', label: 'Downloads' },
         { href: '/page/pw-newsletters', label: 'Newsletters' },
