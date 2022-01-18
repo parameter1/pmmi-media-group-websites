@@ -30,7 +30,6 @@ x-env-defaults: &env
   SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
   SENDGRID_DEV_TO: ${SENDGRID_DEV_TO-support@parameter1.com}
   YARN_CACHE_FOLDER: /.yarn-cache
-  LEADERS_ALIAS: leaders-2021
   ENABLE_IDENTITY_X: ${ENABLE_IDENTITY_X-1}
 
 x-env-tauron: &env-tauron
