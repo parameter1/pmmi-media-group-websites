@@ -17,7 +17,7 @@ const idxNavItems = require('./config/identity-x-nav');
 
 const routes = (siteRoutes, siteConfig) => (app) => {
   // Shared/global routes (all sites)
-  sharedRoutes(app);
+  sharedRoutes(app, siteConfig);
   // Load shared search routes
   searchRoutes(app, siteConfig);
   // HTML Sitemap
