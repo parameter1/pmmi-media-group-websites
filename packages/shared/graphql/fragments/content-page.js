@@ -1,8 +1,6 @@
 const gql = require('graphql-tag');
 
-const leadersAlias = process.env.LEADERS_ALIAS || 'leaders-2021';
-
-module.exports = gql`
+module.exports = leadersAlias => gql`
 fragment ContentPageFragment on Content {
   id
   name
