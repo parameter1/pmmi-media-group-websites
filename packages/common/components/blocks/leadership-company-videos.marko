@@ -1,12 +1,18 @@
 import { get, getAsArray } from "@parameter1/base-cms-object-path";
 import queryFragment from "../../graphql/fragments/leadership-company-videos";
 
-$ const { i18n } = out.global;
+$ const { i18n, site } = out.global;
 $ const { contentId } = input;
 
 <marko-web-query|{ nodes }|
   name="related-published-content"
-  params={ contentId, limit: 20, queryFragment, includeContentTypes: ["Company"], withSite: false }
+  params={
+    contentId,
+    limit: 20,
+    queryFragment: queryFragment(site.get("leaders.alias")),
+    includeContentTypes: ["Company"],
+    withSite: false
+  }
 >
   <if(nodes.length)>
     <for|company| of=nodes>
