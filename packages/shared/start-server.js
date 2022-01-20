@@ -15,11 +15,11 @@ const omedaConfig = require('./config/omeda');
 const idxRouteTemplates = require('./templates/user');
 const idxNavItems = require('./config/identity-x-nav');
 
-const routes = (siteRoutes, siteConfig) => (app) => {
+const routes = siteRoutes => (app) => {
   // Shared/global routes (all sites)
   sharedRoutes(app);
   // Load shared search routes
-  searchRoutes(app, siteConfig);
+  searchRoutes(app);
   // HTML Sitemap
   htmlSitemapRoutes(app);
   // Load site routes
@@ -30,7 +30,7 @@ module.exports = (options = {}) => {
   const { onStart } = options;
   return startServer({
     ...options,
-    routes: routes(options.routes, options.siteConfig),
+    routes: routes(options.routes),
     document: options.document || document,
     components: options.components || components,
     fragments: options.fragments || fragments,
