@@ -3,7 +3,6 @@ const home = require('./home');
 const publishedContent = require('./published-content');
 const websiteSection = require('./website-section');
 const sheets = require('./global-50-250-sheets');
-const siteConfig = require('../../config/site');
 
 module.exports = (app) => {
   // Homepage
@@ -13,7 +12,7 @@ module.exports = (app) => {
   sheets(app);
 
   // Content
-  content(app, siteConfig);
+  content(app);
 
   // Published Content
   publishedContent(app);
