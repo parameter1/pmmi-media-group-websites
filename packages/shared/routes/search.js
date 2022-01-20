@@ -3,8 +3,9 @@ const MarkoWebSearchConfig = require('@parameter1/base-cms-marko-web-search/conf
 const middleware = require('@parameter1/base-cms-marko-web-search/middleware');
 const template = require('../templates/search');
 
-module.exports = (app, siteConfig) => {
-  const { contentTypes, assignedToWebsiteSectionIds } = getAsObject(siteConfig, 'search');
+module.exports = (app) => {
+  const { site } = app.locals;
+  const { contentTypes, assignedToWebsiteSectionIds } = getAsObject(site, 'search');
   const config = new MarkoWebSearchConfig({
     resultsPerPage: { default: 18 },
     contentTypes,
