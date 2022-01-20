@@ -1,5 +1,5 @@
 import { get, getAsArray } from "@parameter1/base-cms-object-path";
-import queryFragment from "../../graphql/fragments/leadership-company-videos";
+import queryFragmentFn from "../../graphql/fragment-factories/leadership-company-videos";
 
 $ const { i18n, site } = out.global;
 $ const { contentId } = input;
@@ -9,7 +9,7 @@ $ const { contentId } = input;
   params={
     contentId,
     limit: 20,
-    queryFragment: queryFragment(site.get("leaders.alias")),
+    queryFragment: queryFragmentFn(site.get("leaders.alias")),
     includeContentTypes: ["Company"],
     withSite: false
   }
