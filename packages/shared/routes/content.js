@@ -9,10 +9,11 @@ const podcast = require('../templates/content/podcast');
 const webinar = require('../templates/content/webinar');
 const document = require('../templates/content/document');
 
-module.exports = (app, siteConfig) => {
+module.exports = (app) => {
+  const { site } = app.locals;
   app.get('/*?company/:id(\\d{8})*', withContent({
     template: company,
-    queryFragment: companyQueryFragment(siteConfig.leaders.alias),
+    queryFragment: companyQueryFragment(site.get('leaders.alias')),
   }));
   app.get('/*?contact/:id(\\d{8})*', withContent({
     template: contact,
@@ -20,18 +21,19 @@ module.exports = (app, siteConfig) => {
   }));
   app.get('/*?webinar/:id(\\d{8})*', withContent({
     template: webinar,
-    queryFragment: queryFragment(siteConfig.leaders.alias),
+    queryFragment: queryFragment(site.get('leaders.alias')),
   }));
   app.get('/*?podcast/:id(\\d{8})*', withContent({
     template: podcast,
-    queryFragment: queryFragment(siteConfig.leaders.alias),
+    queryFragment: queryFragment(site.get('leaders.alias')),
   }));
   app.get('/*?document/:id(\\d{8})*', withContent({
     template: document,
-    queryFragment: queryFragment(siteConfig.leaders.alias),
+    queryFragment: queryFragment(site.get('leaders.alias')),
   }));
   app.get('/*?:id(\\d{8})*', withContent({
     template: content,
-    queryFragment: queryFragment(siteConfig.leaders.alias),
+    queryFragment: queryFragment(site.get('leaders.alias')),
   }));
+  app.get('/hooplah', () => console.log(site.get('leaders.alias')));
 };
