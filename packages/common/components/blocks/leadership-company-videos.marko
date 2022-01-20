@@ -11,7 +11,7 @@ $ const { contentId } = input;
     limit: 20,
     queryFragment: queryFragmentFn(site.get("leaders.alias")),
     includeContentTypes: ["Company"],
-    withSite: false
+    withSite: false,
   }
 >
   <if(nodes.length)>
