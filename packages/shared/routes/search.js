@@ -5,7 +5,10 @@ const template = require('../templates/search');
 
 module.exports = (app) => {
   const { site } = app.locals;
-  const { contentTypes, assignedToWebsiteSectionIds } = getAsObject(site, 'search');
+  const {
+    contentTypes,
+    assignedToWebsiteSectionIds,
+  } = getAsObject(getAsObject(site, 'config'), 'search');
   const config = new MarkoWebSearchConfig({
     resultsPerPage: { default: 18 },
     contentTypes,
