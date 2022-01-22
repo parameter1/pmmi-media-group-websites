@@ -34,6 +34,6 @@
     "@pmmi-media-group/package-shared": "^2.4.16",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^3.1.1"
   }
 }
