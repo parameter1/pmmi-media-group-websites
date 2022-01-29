@@ -1,6 +1,7 @@
 import queryFragment from "../graphql/fragments/content-list";
 
-$ const { config, site, GAM, $markoWebSearch: search } = out.global;
+$ const { config, site, GAM, $markoWebSearch: search, directorySearch } = out.global;
+$ const { shortName } = config.websiteContext;
 
 $ const type = "search";
 $ const title = "Search";
@@ -15,8 +16,14 @@ $ const currentPage = search.getCurrentPage();
     </marko-web-gtm-default-context>
   </@head>
   <@page>
-    <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "leaderboard" }) modifiers=["top-of-page"] />
     <marko-web-page-wrapper class="mb-block">
+      <@section>
+        <!-- <shared-gam-define-display-ad
+          name="lb1"
+          modifiers=["max-width-970", "margin-auto-x", "center", "min-height-90"]
+        /> -->
+        <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "leaderboard" }) modifiers=["top-of-page"] />
+      </@section>
       <@section>
         <div class="row">
           <div class="col">
@@ -28,6 +35,9 @@ $ const currentPage = search.getCurrentPage();
               <if(currentPage > 1)>${description}: Page ${currentPage}</if>
               <else>${description}</else>
             </h1>
+            <if(directorySearch)>
+              <p class="page-wrapper__deck">Not finding what you're looking for? <a id="directoryLink" href=directorySearch.linkUrl target="_blank">${directorySearch.linkText}</a></p>
+            </if>
           </div>
         </div>
       </@section>
@@ -41,24 +51,32 @@ $ const currentPage = search.getCurrentPage();
           </div>
 
           <div class="col-lg-9">
-            <marko-web-search-form>
-              <@block class="search-form" />
-              <div class="form-group search-form__group">
-                <label for="search-phrase" class="sr-only">Enter search phrase</label>
-                <marko-web-search-input
-                  id="search-phrase"
-                  class="form-control"
-                  placeholder="Enter search phrase..."
-                />
+            <div class="row">
+              <div class="col-xl-9">
+                <marko-web-search-form>
+                  <@block class="search-form" />
+                  <div class="form-group search-form__group">
+                    <label for="search-phrase" class="sr-only">Enter search phrase</label>
+                    <marko-web-search-input
+                      id="search-phrase"
+                      class="form-control"
+                      placeholder="Enter search phrase..."
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-primary search-form__btn">
+                    Search
+                  </button>
+                </marko-web-search-form>
               </div>
-              <button type="submit" class="btn btn-primary search-form__btn">
-                Search
-              </button>
-            </marko-web-search-form>
-
+              <div class="col-xl-3">
+                <marko-web-search-sort-by />
+              </div>
+            </div>
             <marko-web-search-query|{ nodes, totalCount }|
               limit=search.getLimit()
               skip=search.getSkip()
+              sort-field=search.input.sortField
+              sort-order=search.input.sortOrder
               content-types=search.input.contentTypes
               search-query=search.input.searchQuery
               assigned-to-website-section-ids=search.input.assignedToWebsiteSectionIds
@@ -69,6 +87,7 @@ $ const currentPage = search.getCurrentPage();
                 <marko-web-search-selected-filters />
               </div>
               <shared-content-list-flow nodes=nodes inner-justified=false with-teaser=true />
+              <!-- <shared-content-list-feed-flow nodes=nodes with-header=false /> -->
               <marko-web-search-pagination-controls total-count=totalCount>
                 <@link class="btn btn-primary" />
               </marko-web-search-pagination-controls>

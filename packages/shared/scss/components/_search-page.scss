@@ -6,6 +6,13 @@
   }
 }
 
+.marko-web-search-sort-by {
+  @include media-breakpoint-down(lg) {
+    padding-top: 20px;
+    width: 50%
+  }
+}
+
 .search-result-count {
   padding-bottom: 16px;
   margin-top: 16px;
