@@ -3,6 +3,7 @@ const renderBlock = require('@pmmi-media-group/package-theme-monorail/routes/ren
 const search = require('@pmmi-media-group/package-theme-monorail/routes/search');
 const taxonomy = require('@pmmi-media-group/package-theme-monorail/routes/taxonomy');
 const feed = require('./feed');
+const dynamicPage = require('./dynamic-page');
 const nativeX = require('./native-x');
 const omedaNewsletters = require('./omeda-newsletters');
 const printContent = require('./print-content');
@@ -43,4 +44,7 @@ module.exports = (app, siteConfig) => {
 
   // HTML Sitemap
   htmlSitemap(app);
+
+  // dynamic pages /page/${alias}
+  dynamicPage(app);
 };
