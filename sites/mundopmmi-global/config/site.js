@@ -22,9 +22,9 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_White_notag.png?h=80',
+      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=80',
       srcset: [
-        'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_White_notag.png?h=160 2x',
+        'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=160 2x',
       ],
     },
     footer: {
