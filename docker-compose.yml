@@ -32,6 +32,9 @@ x-env-defaults: &env
   YARN_CACHE_FOLDER: /.yarn-cache
   ENABLE_IDENTITY_X: ${ENABLE_IDENTITY_X-1}
 
+  RECAPTCHA_V3_SITE_KEY: ${RECAPTCHA_V3_SITE_KEY-(unset)}
+  RECAPTCHA_V3_SECRET_KEY: ${RECAPTCHA_V3_SECRET_KEY-(unset)}
+
 x-env-tauron: &env-tauron
   GRAPHQL_URI: ${GRAPHQL_URI-https://tauron.graphql.base.parameter1.com}
   OEMBED_URI: ${OEMBED_URI-https://tauron.oembed.base.parameter1.com}
