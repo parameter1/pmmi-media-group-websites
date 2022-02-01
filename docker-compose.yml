@@ -85,6 +85,22 @@ services:
       - "9709:80"
       - "19709:19709"
 
+  aw-global:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/global.automationworld.com
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 9709
+      LIVERELOAD_PORT: 19709
+      TENANT_KEY: pmmi_all
+      SITE_ID: 5d88cecaf175132c008b4567
+    ports:
+      - "9709:80"
+      - "19709:19709"
+
   pw:
     <<: *node
     <<: *site-cmd
