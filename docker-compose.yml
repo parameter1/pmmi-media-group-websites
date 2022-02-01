@@ -181,6 +181,22 @@ services:
       - "9713:80"
       - "19713:19713"
 
+  pfw-global:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/global.profoodworld.com
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 9713
+      LIVERELOAD_PORT: 19713
+      TENANT_KEY: pmmi_all
+      SITE_ID: 5d88cf1af175132c008b4577
+    ports:
+      - "9713:80"
+      - "19713:19713"
+
   oem:
     <<: *node
     <<: *site-cmd
