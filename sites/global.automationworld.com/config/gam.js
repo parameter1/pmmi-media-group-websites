@@ -10,12 +10,18 @@ config.lazyLoad = {
 };
 
 config.setAliasAdUnits('default', [
-  { name: 'leaderboard', templateName: 'leaderboard', path: 'aw_leaderboard' },
-  { name: 'imu1', size: [300, 250], path: 'aw_imu_1' },
-  { name: 'imu2', size: [300, 250], path: 'aw_imu_2' },
-  { name: 'skyscraper', options: { size: [300, 600] }, path: 'aw_skyscraper' },
+  { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'aw_leaderboard' },
+  { name: 'rotation', templateName: 'ROTATION', path: 'aw_leaderboard' },
+  { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'aw_leaderboard' },
+  { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'aw_leaderboard' },
   { name: 'wallpaper-left', templateName: 'WALLPAPER', path: 'aw-wallpaper-left' },
   { name: 'wallpaper-right', templateName: 'WALLPAPER', path: 'aw-wallpaper-right' },
+  // { name: 'leaderboard', templateName: 'leaderboard', path: 'aw_leaderboard' },
+  // { name: 'imu1', size: [300, 250], path: 'aw_imu_1' },
+  // { name: 'imu2', size: [300, 250], path: 'aw_imu_2' },
+  // { name: 'skyscraper', options: { size: [300, 600] }, path: 'aw_skyscraper' },
+  // { name: 'wallpaper-left', templateName: 'WALLPAPER', path: 'aw-wallpaper-left' },
+  // { name: 'wallpaper-right', templateName: 'WALLPAPER', path: 'aw-wallpaper-right' },
 ]);
 
 module.exports = config;
