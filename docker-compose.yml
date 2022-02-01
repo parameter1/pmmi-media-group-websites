@@ -117,6 +117,22 @@ services:
       - "9711:80"
       - "19711:19711"
 
+  pw-global:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/global.packworld.com
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 9711
+      LIVERELOAD_PORT: 19711
+      TENANT_KEY: pmmi_all
+      SITE_ID: 5d88cedef175132c008b456b
+    ports:
+      - "9711:80"
+      - "19711:19711"
+
   hcp:
     <<: *node
     <<: *site-cmd
