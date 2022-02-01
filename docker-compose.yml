@@ -181,6 +181,22 @@ services:
       - "9714:80"
       - "19714:19714"
 
+  oem-global:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/global.oemmagazine.org
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 9714
+      LIVERELOAD_PORT: 19714
+      TENANT_KEY: pmmi_all
+      SITE_ID: 5d88cf05f175132c008b4573
+    ports:
+      - "9714:80"
+      - "19714:19714"
+
   mundo:
     <<: *node
     <<: *site-cmd
