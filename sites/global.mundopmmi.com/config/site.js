@@ -5,12 +5,14 @@ const nativeX = require('./native-x');
 const identityX = require('./identity-x');
 const gam = require('./gam');
 const search = require('./search');
+// const newsletter = require('./newsletter');
 
 module.exports = {
   leaders,
   navigation,
   nativeX,
   identityX,
+  // newsletter,
   gam,
   search,
   company: 'PMMI Media Group',

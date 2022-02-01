@@ -166,7 +166,7 @@ services:
   mundo-global:
     <<: *node
     <<: *site-cmd
-    working_dir: /root/sites/mundopmmi-global
+    working_dir: /root/sites/global.mundopmmi.com
     environment:
       <<: *env
       <<: *env-tauron
