@@ -35,7 +35,7 @@ fragment WebsiteContentListFragment on Content {
     isLogo
   }
   userRegistration {
-    isRequired
+    isCurrentlyRequired
   }
   ... on Authorable {
     authors {
