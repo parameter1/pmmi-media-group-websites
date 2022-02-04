@@ -85,42 +85,10 @@ services:
       - "9709:80"
       - "19709:19709"
 
-  aw-global:
-    <<: *node
-    <<: *site-cmd
-    working_dir: /root/sites/global.automationworld.com
-    environment:
-      <<: *env
-      <<: *env-tauron
-      PORT: 80
-      EXPOSED_PORT: 9709
-      LIVERELOAD_PORT: 19709
-      TENANT_KEY: pmmi_all
-      SITE_ID: 5d88cecaf175132c008b4567
-    ports:
-      - "9709:80"
-      - "19709:19709"
-
   pw:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/packworld.com
-    environment:
-      <<: *env
-      <<: *env-tauron
-      PORT: 80
-      EXPOSED_PORT: 9711
-      LIVERELOAD_PORT: 19711
-      TENANT_KEY: pmmi_all
-      SITE_ID: 5d88cedef175132c008b456b
-    ports:
-      - "9711:80"
-      - "19711:19711"
-
-  pw-global:
-    <<: *node
-    <<: *site-cmd
-    working_dir: /root/sites/global.packworld.com
     environment:
       <<: *env
       <<: *env-tauron
@@ -149,22 +117,6 @@ services:
       - "9712:80"
       - "19712:19712"
 
-  hcp-global:
-    <<: *node
-    <<: *site-cmd
-    working_dir: /root/sites/global.healthcarepackaging.com
-    environment:
-      <<: *env
-      <<: *env-tauron
-      PORT: 80
-      EXPOSED_PORT: 9712
-      LIVERELOAD_PORT: 19712
-      TENANT_KEY: pmmi_all
-      SITE_ID: 5d88cef7f175132c008b456f
-    ports:
-      - "9712:80"
-      - "19712:19712"
-
   pfw:
     <<: *node
     <<: *site-cmd
@@ -181,42 +133,10 @@ services:
       - "9713:80"
       - "19713:19713"
 
-  pfw-global:
-    <<: *node
-    <<: *site-cmd
-    working_dir: /root/sites/global.profoodworld.com
-    environment:
-      <<: *env
-      <<: *env-tauron
-      PORT: 80
-      EXPOSED_PORT: 9713
-      LIVERELOAD_PORT: 19713
-      TENANT_KEY: pmmi_all
-      SITE_ID: 5d88cf1af175132c008b4577
-    ports:
-      - "9713:80"
-      - "19713:19713"
-
   oem:
     <<: *node
     <<: *site-cmd
     working_dir: /root/sites/oemmagazine.org
-    environment:
-      <<: *env
-      <<: *env-tauron
-      PORT: 80
-      EXPOSED_PORT: 9714
-      LIVERELOAD_PORT: 19714
-      TENANT_KEY: pmmi_all
-      SITE_ID: 5d88cf05f175132c008b4573
-    ports:
-      - "9714:80"
-      - "19714:19714"
-
-  oem-global:
-    <<: *node
-    <<: *site-cmd
-    working_dir: /root/sites/global.oemmagazine.org
     environment:
       <<: *env
       <<: *env-tauron
@@ -246,6 +166,22 @@ services:
       - "9716:80"
       - "19716:19716"
 
+  aw-global:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/global.automationworld.com
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 9809
+      LIVERELOAD_PORT: 19809
+      TENANT_KEY: pmmi_all
+      SITE_ID: 5d88cecaf175132c008b4567
+    ports:
+      - "9809:80"
+      - "19809:19809"
+
   mundo-global:
     <<: *node
     <<: *site-cmd
@@ -254,11 +190,75 @@ services:
       <<: *env
       <<: *env-tauron
       PORT: 80
-      EXPOSED_PORT: 9716
-      LIVERELOAD_PORT: 19716
+      EXPOSED_PORT: 9816
+      LIVERELOAD_PORT: 19816
       TENANT_KEY: pmmi_mundo
       SITE_ID: 5d0a748572c1aa35008b4567
       LEADERS_ALIAS: leaders/2021
     ports:
-      - "9716:80"
-      - "19716:19716"
+      - "9816:80"
+      - "19816:19816"
+
+  hcp-global:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/global.healthcarepackaging.com
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 9812
+      LIVERELOAD_PORT: 19812
+      TENANT_KEY: pmmi_all
+      SITE_ID: 5d88cef7f175132c008b456f
+    ports:
+      - "9812:80"
+      - "19812:19812"
+
+  oem-global:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/global.oemmagazine.org
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 9814
+      LIVERELOAD_PORT: 19814
+      TENANT_KEY: pmmi_all
+      SITE_ID: 5d88cf05f175132c008b4573
+    ports:
+      - "9814:80"
+      - "19814:19814"
+
+  pw-global:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/global.packworld.com
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 9811
+      LIVERELOAD_PORT: 19811
+      TENANT_KEY: pmmi_all
+      SITE_ID: 5d88cedef175132c008b456b
+    ports:
+      - "9811:80"
+      - "19811:19811"
+
+  pfw-global:
+    <<: *node
+    <<: *site-cmd
+    working_dir: /root/sites/global.profoodworld.com
+    environment:
+      <<: *env
+      <<: *env-tauron
+      PORT: 80
+      EXPOSED_PORT: 9813
+      LIVERELOAD_PORT: 19813
+      TENANT_KEY: pmmi_all
+      SITE_ID: 5d88cf1af175132c008b4577
+    ports:
+      - "9813:80"
+      - "19813:19813"
