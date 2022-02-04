@@ -4,6 +4,7 @@ module.exports = {
       { href: 'https://pmmi.dragonforms.com/init.do?pk=OEMMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=OEMnew', label: 'Subscribe', target: '_blank' },
       { href: '/technology', label: 'Technology' },
       { href: '/products', label: 'Products' },
+      { href: '/business', label: 'Business' },
       { href: '/page/oem-newsletter-mainnav', label: 'Newsletters' },
     ],
   },
@@ -29,7 +30,7 @@ module.exports = {
       items: [
         { href: '/technology', label: 'Technology' },
         { href: '/products', label: 'Products' },
-        { href: '/oem-issues', label: 'OEM Issues' },
+        { href: '/business', label: 'Business' },
       ],
     },
     {
