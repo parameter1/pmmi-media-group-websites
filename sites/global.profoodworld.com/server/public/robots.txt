@@ -5,5 +5,5 @@ User-agent: *
 Disallow: /__
 Disallow: /print/content
 
-Sitemap: https://www.automationworld.com/sitemap.xml
-Sitemap: https://www.automationworld.com/sitemap-google-news.xml
+Sitemap: https://www.profoodworld.com/sitemap.xml
+Sitemap: https://www.profoodworld.com/sitemap-google-news.xml
