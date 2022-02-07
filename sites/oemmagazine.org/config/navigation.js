@@ -42,7 +42,7 @@ module.exports = {
         { href: '/leaders', label: 'OEM Partner Leaders' },
         { href: '/videos', label: 'Videos' },
         { href: '/podcasts', label: 'Podcasts' },
-        // { href: '/page/digital-editions', label: 'Digital Editions' },
+        { href: '/supplier-news', label: 'Supplier News' },
       ],
     },
     {
