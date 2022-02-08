@@ -1,23 +1,28 @@
+const subscribe = { href: 'https://www.pmmimediagroup.com/aw/automation-world', label: 'Advertise', target: '_blank' };
+
 const topics = {
   primary: [
     { href: '/products', label: 'Products' },
     { href: '/factory', label: 'Factory' },
     { href: '/process', label: 'Process' },
     { href: '/downloads', label: 'Downloads' },
-    { href: '/page/aw-newsletters-mainnav', label: 'Newsletters' },
   ],
-  expanded: [],
-  secondary: [
-    { href: '/page/aw-event-calendar', label: 'Events' },
-    { href: '/downloads', label: 'Downloads' },
-    { href: '/page/aw-newsletters', label: 'Newsletters' },
-    { href: '/page/magazine', label: 'Magazine' },
-    { href: '/leaders', label: 'Leaders in Automation' },
-    { href: '/videos', label: 'Videos' },
-    { href: '/podcasts', label: 'Podcasts' },
-    { href: '/webinars', label: 'Webinars' },
+  expanded: [
+    // { href: 'https://www.abshow.com', label: 'AB Show', target: '_blank' },
   ],
+  secondary: [],
 };
+
+const resources = [
+  { href: '/page/aw-event-calendar', label: 'Events' },
+  { href: '/downloads', label: 'Downloads' },
+  { href: '/page/aw-newsletters', label: 'Newsletters' },
+  { href: '/page/magazine', label: 'Magazine' },
+  { href: '/leaders', label: 'Leaders in Automation' },
+  { href: '/videos', label: 'Videos' },
+  { href: '/podcasts', label: 'Podcasts' },
+  { href: '/webinars', label: 'Webinars' },
+];
 
 const utilities = [
   { href: 'https://www.pmmimediagroup.com/aw/automation-world', label: 'Advertise', target: '_blank' },
@@ -31,66 +36,67 @@ const utilities = [
 
 const mobileMenu = {
   primary: [
-    { href: 'https://pmmi.dragonforms.com/loading.do?pk=AWMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=PAWnew', label: 'Subscribe', target: '_blank' },
     ...topics.primary,
     ...topics.expanded,
   ],
   secondary: [
     ...topics.secondary,
-    { href: '/newsletters', label: 'Newsletters' },
+    subscribe,
+    resources,
   ],
 };
 
 const desktopMenu = {
-  about: [
-    { href: 'https://pmmi.dragonforms.com/loading.do?pk=AWMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=PAWnew', label: 'Subscribe', target: '_blank' },
-    ...utilities,
-  ],
+  about: [...utilities],
   sections: [
     ...topics.primary,
     ...topics.expanded,
     ...topics.secondary,
   ],
+  resources: [...resources],
 };
 
-
 module.exports = {
+  promos: [
+    // {
+    //   title: 'AB Magazine',
+    //   callToAction: 'Subscribe',
+    //   image: {
+    //     src: 'https://img.athleticbusiness.com/files/base/abmedia/all/image/static/ab/ab-cover-09-21.jpg?auto=format%2Ccompress&fit=crop&h=78&q=70&w=85&crop=top',
+    //     srcset: [
+    //       'https://img.athleticbusiness.com/files/base/abmedia/all/image/static/ab/ab-cover-09-21.jpg?auto=format%2Ccompress&fit=crop&h=78&q=70&dpr=2&w=85&crop=top',
+    //     ],
+    //   },
+    //   link: subscribe.href,
+    // },
+  ],
   desktopMenu,
   mobileMenu,
   primary: {
     items: [],
   },
   secondary: {
-    items: [...topics.primary],
+    items: [
+      ...topics.primary,
+      { href: '/leaders', label: 'Leaders' },
+      // { href: 'https://www.abshow.com', label: 'AB Show', target: '_blank' },
+    ],
   },
   tertiary: {
     items: [],
   },
   footer: {
     items: [
-      { href: 'https://www.pmmimediagroup.com/pw/mundo-pmmi', label: 'Anuncie', target: '_blank' },
-      { href: '/page/contacto', label: 'Contacto' },
-      { href: '/page/privacidad', label: 'Privacidad' },
-      { href: '/page/condiciones-de-uso', label: 'Condiciones de uso' },
-      { href: '/page/terminos-y-condiciones-de-publicidad', label: 'Términos y condiciones de publicidad' },
-      { href: '/site-map', label: 'Mapa del sitio web' },
+      { href: '/page/about-us', label: 'About Us' },
+      { href: '/page/contact-us', label: 'Contact Us' },
+      { href: 'https://www.pmmimediagroup.com/aw/automation-world', label: 'Advertise', target: '_blank' },
+      { href: '/page/privacy-policy', label: 'Privacy Policy' },
+      { href: '/site-map', label: 'Site Map' },
     ],
     topics: topics.primary,
     more: [
-      {
-        href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=MundoSubNav&r=@{encrypted_customer_id}',
-        label: 'Suscríbase',
-        target: '_blank',
-      },
       ...utilities,
-      { href: 'https://pmmi.dragonforms.com/loading.do?pk=AWMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=PAWnew', label: 'Subscribe', target: '_blank' },
-      { href: 'https://www.pmmimediagroup.com/aw/automation-world', label: 'Advertise', target: '_blank' },
-      { href: 'https://www.pmmimediagroup.com/aw/reprints-and-permissions', label: 'Reprints' },
-      { href: '/page/aw-about-us', label: 'About' },
-      { href: '/page/aw-contact-us', label: 'Contact' },
-      { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy', target: '_blank' },
-      { href: '/page/aw-terms-use', label: 'Terms of Use' },
-      { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
+      // { href: '/path', label: 'Path' },
     ],
   },
 };
