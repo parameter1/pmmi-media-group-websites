@@ -1,3 +1,5 @@
+const subscribe = { href: 'https://www.pmmimediagroup.com/pfw/profood-world', label: 'Advertise', target: '_blank' };
+
 const topics = {
   primary: [
     { href: '/processing-equipment', label: 'Processing Equipment' },
@@ -6,24 +8,30 @@ const topics = {
     { href: '/page/pfw-newsletters-mainnav', label: 'Newsletters' },
     { href: 'https://www.machine.tours', label: 'Machine Tours', target: '_blank' },
   ],
-  expanded: [],
+  expanded: [
+    // { href: 'https://www.abshow.com', label: 'AB Show', target: '_blank' },
+  ],
   secondary: [
-    { href: '/page/pfw-event-calendar', label: 'Events' },
-    { href: '/downloads', label: 'Downloads' },
-    { href: '/page/pfw-newsletter', label: 'Newsletters' },
-    { href: '/page/magazine', label: 'Magazine' },
-    { href: '/leaders', label: 'Leaders in Processing' },
-    // { href: '/global-250', label: 'Global 250' },
-    // { href: '/awards', label: 'Awards' },
-    { href: '/videos', label: 'Videos' },
-    { href: '/podcasts', label: 'Podcasts' },
-    { href: '/webinars', label: 'Webinars' },
-    { href: 'https://www.opxleadershipnetwork.org', label: 'OpX Leadership Network', target: '_blank' },
-    { href: '/page/awards-sema', label: 'Sustainability Awards' },
-    { href: '/page/awards-mia', label: 'Manufacturing Awards' },
-    // { href: '/page/digital-editions', label: 'Digital Editions' },
+
   ],
 };
+
+const resources = [
+  { href: '/page/pfw-event-calendar', label: 'Events' },
+  { href: '/downloads', label: 'Downloads' },
+  { href: '/page/pfw-newsletter', label: 'Newsletters' },
+  { href: '/page/magazine', label: 'Magazine' },
+  { href: '/leaders', label: 'Leaders in Processing' },
+  // { href: '/global-250', label: 'Global 250' },
+  // { href: '/awards', label: 'Awards' },
+  { href: '/videos', label: 'Videos' },
+  { href: '/podcasts', label: 'Podcasts' },
+  { href: '/webinars', label: 'Webinars' },
+  { href: 'https://www.opxleadershipnetwork.org', label: 'OpX Leadership Network', target: '_blank' },
+  { href: '/page/awards-sema', label: 'Sustainability Awards' },
+  { href: '/page/awards-mia', label: 'Manufacturing Awards' },
+  // { href: '/page/digital-editions', label: 'Digital Editions' },
+];
 
 const utilities = [
   { href: 'https://www.pmmimediagroup.com/pfw/profood-world', label: 'Advertise', target: '_blank' },
@@ -37,62 +45,62 @@ const utilities = [
 
 const mobileMenu = {
   primary: [
-    { href: 'https://www.pmmimediagroup.com/pfw/profood-world', label: 'Advertise', target: '_blank' },
     ...topics.primary,
     ...topics.expanded,
   ],
   secondary: [
     ...topics.secondary,
-    { href: '/newsletters', label: 'Newsletters' },
+    subscribe,
+    resources,
   ],
 };
 
 const desktopMenu = {
-  about: [
-    { href: 'https://www.pmmimediagroup.com/pfw/profood-world', label: 'Advertise', target: '_blank' },
-    ...utilities,
-  ],
+  about: [...utilities],
   sections: [
     ...topics.primary,
     ...topics.expanded,
     ...topics.secondary,
   ],
+  resources: [...resources],
 };
 
-
 module.exports = {
+  promos: [
+    // {
+    //   title: ' Magazine',
+    //   callToAction: 'Subscribe',
+    //   image: {
+    //     src: 'imgPath',
+    //     srcset: [
+    //       'imgPath',
+    //     ],
+    //   },
+    //   link: link,
+    // },
+  ],
   desktopMenu,
   mobileMenu,
   primary: {
     items: [],
   },
   secondary: {
-    items: [...topics.primary],
+    items: [
+      ...topics.primary,
+
+    ],
   },
   tertiary: {
     items: [],
   },
   footer: {
     items: [
-      { href: '/page/pfw-about-us', label: 'About' },
-      { href: '/page/pfw-contact-us', label: 'Contact' },
-      { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy', target: '_blank' },
-      { href: '/page/pfw-terms-use', label: 'Terms of Use' },
-      { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
-      { href: '/site-map', label: 'Site Map' },
+
     ],
-    topics: [...topics.primary],
+    topics: topics.primary,
     more: [
-      { href: 'https://pmmi.dragonforms.com/loading.do?pk=PWMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=PPWnew', label: 'Subscribe', target: '_blank' },
-      ...topics.secondary,
-      { href: 'https://pmmi.dragonforms.com/loading.do?pk=PFWMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=PPFWnew ', label: 'Subscribe', target: '_blank' },
-      { href: 'https://www.pmmimediagroup.com/pfw/profood-world', label: 'Advertise', target: '_blank' },
-      { href: 'https://www.pmmimediagroup.com/pfw/reprints-and-permissions', label: 'Reprints' },
-      { href: '/page/pfw-about-us', label: 'About' },
-      { href: '/page/pfw-contact-us', label: 'Contact' },
-      { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy', target: '_blank' },
-      { href: '/page/pfw-terms-use', label: 'Terms of Use' },
-      { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
+      ...utilities,
+      // { href: '/path', label: 'Path' },
     ],
   },
 };
