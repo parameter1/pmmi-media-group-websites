@@ -1,19 +1,35 @@
 const baseConfig = {
-  action: 'https://mundopmmi.dragonforms.com/loading.do',
+  action: 'https://profoodworld.dragonforms.com/loading.do',
   hiddenInputs: [
-    { name: 'omedasite', value: 'perspectivas' },
+    { name: 'omedasite', value: 'pfwnlbase' },
   ],
 };
 
 const defaults = {
-  name: 'Mundo Perspectivas Newsletter',
-  description: 'Keep up-to-date on healthcare packaging news, insights and analysis direct from our editors!',
+  name: 'Hand Picked Newsletter',
+  description: 'Keep up-to-date on Pro Food news, insights and analysis direct from our editors!',
   defaultNewsletter: {
-    deploymentTypeId: 25,
-    name: 'Mundo Perspectivas  Newsletter',
-    eventCategory: 'Mundo Perspectivas  Newsletter Subscription',
+    deploymentTypeId: 363,
+    name: 'ProFoodWorld\'s Hand Picked Newsletter',
+    eventCategory: 'ProFoodWorld\'s Hand Picked Subscription',
   },
-  newsletters: [],
+  newsletters: [
+    {
+      deploymentTypeId: 293,
+      name: 'ProFoodWorld\'s Joyces Voice Newsletter',
+      eventCategory: 'ProFoodWorld\'s Joyces Voice Newsletter Subscription',
+    },
+    {
+      deploymentTypeId: 31,
+      name: 'ProFoodWorld\'s New Issue Alert Newsletter',
+      eventCategory: 'ProFoodWorld\'s New Issue Alert Newsletter Subscription',
+    },
+    {
+      deploymentTypeId: 304,
+      name: 'ProFoodWorld\'s Processed Newsletter',
+      eventCategory: 'ProFoodWorld\'s Processed Newsletter Subscription',
+    },
+  ],
   demographic: {
     id: 108,
     label: 'Your primary Industry',
@@ -53,7 +69,7 @@ module.exports = {
   },
   pushdown: {
     ...defaults,
-    description: 'Join ###,### healthcare packaging profesionals who get helpful insights and important news delivered straight to their inbox with the <span class="newsletter-name">Healthcare Packaging</span> newsletter.',
+    description: 'Join ###,### pro food world profesionals who get helpful insights and important news delivered straight to their inbox with the <span class="newsletter-name">ProFoodWorld</span> newsletter.',
     imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pmmi-half.png',
   },
 
@@ -61,11 +77,11 @@ module.exports = {
   signupBannerLarge: {
     ...baseConfig,
     name: 'News Insights Newsletter',
-    description: 'Keep up-to-date on healthcare packaging news, insights and analysis direct from our editors!',
+    description: 'Keep up-to-date on pro food world news, insights and analysis direct from our editors!',
   },
   signupFooter: {
     ...baseConfig,
     name: 'News Insights Newsletter',
-    description: 'Keep up-to-date on healthcare packaging news, insights and analysis direct from our editors!',
+    description: 'Keep up-to-date on pro food world news, insights and analysis direct from our editors!',
   },
 };

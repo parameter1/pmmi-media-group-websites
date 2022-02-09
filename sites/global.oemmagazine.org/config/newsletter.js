@@ -1,17 +1,17 @@
 const baseConfig = {
-  action: 'https://mundopmmi.dragonforms.com/loading.do',
+  action: 'https://oemmagazine.dragonforms.com/loading.do',
   hiddenInputs: [
-    { name: 'omedasite', value: 'perspectivas' },
+    { name: 'omedasite', value: 'oemnlbase' },
   ],
 };
 
 const defaults = {
-  name: 'Mundo Perspectivas Newsletter',
-  description: 'Keep up-to-date on healthcare packaging news, insights and analysis direct from our editors!',
+  name: 'OEM Insights Newsletter',
+  description: 'Keep up-to-date on OEM news, insights and analysis direct from our editors!',
   defaultNewsletter: {
-    deploymentTypeId: 25,
-    name: 'Mundo Perspectivas  Newsletter',
-    eventCategory: 'Mundo Perspectivas  Newsletter Subscription',
+    deploymentTypeId: 308,
+    name: 'OEM Insights Newsletter',
+    eventCategory: 'OEM Insights Newsletter Subscription',
   },
   newsletters: [],
   demographic: {
@@ -53,7 +53,7 @@ module.exports = {
   },
   pushdown: {
     ...defaults,
-    description: 'Join ###,### healthcare packaging profesionals who get helpful insights and important news delivered straight to their inbox with the <span class="newsletter-name">Healthcare Packaging</span> newsletter.',
+    description: 'Join ###,### OEM profesionals who get helpful insights and important news delivered straight to their inbox with the <span class="newsletter-name">OEM Magazine</span> newsletter.',
     imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pmmi-half.png',
   },
 
@@ -61,11 +61,11 @@ module.exports = {
   signupBannerLarge: {
     ...baseConfig,
     name: 'News Insights Newsletter',
-    description: 'Keep up-to-date on healthcare packaging news, insights and analysis direct from our editors!',
+    description: 'Keep up-to-date on OEM news, insights and analysis direct from our editors!',
   },
   signupFooter: {
     ...baseConfig,
     name: 'News Insights Newsletter',
-    description: 'Keep up-to-date on healthcare packaging news, insights and analysis direct from our editors!',
+    description: 'Keep up-to-date on OEM news, insights and analysis direct from our editors!',
   },
 };

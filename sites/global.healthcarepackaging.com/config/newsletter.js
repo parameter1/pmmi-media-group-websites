@@ -1,19 +1,35 @@
 const baseConfig = {
-  action: 'https://mundopmmi.dragonforms.com/loading.do',
+  action: 'https://healthcarepackaging.dragonforms.com/loading.do',
   hiddenInputs: [
-    { name: 'omedasite', value: 'perspectivas' },
+    { name: 'omedasite', value: 'hcpnblock' },
   ],
 };
 
 const defaults = {
-  name: 'Mundo Perspectivas Newsletter',
+  name: 'News Insights Newsletter',
   description: 'Keep up-to-date on healthcare packaging news, insights and analysis direct from our editors!',
   defaultNewsletter: {
-    deploymentTypeId: 25,
-    name: 'Mundo Perspectivas  Newsletter',
-    eventCategory: 'Mundo Perspectivas  Newsletter Subscription',
+    deploymentTypeId: 21,
+    name: 'Healthcare Packaging Newsbrief Newsletter',
+    eventCategory: 'Healthcare Packaging Newsbrief Newsletter Subscription',
   },
-  newsletters: [],
+  newsletters: [
+    {
+      deploymentTypeId: 296,
+      name: 'Healthcare Logistics for the Life Sciences Newsletter',
+      eventCategory: 'Healthcare Logistics for the Life Sciences Newsletter Subscription',
+    },
+    {
+      deploymentTypeId: 31,
+      name: 'Healthcare Packaging Serialization Countdown Newsletter',
+      eventCategory: 'Healthcare Packaging Serialization Countdown Newsletter Subscription',
+    },
+    {
+      deploymentTypeId: 304,
+      name: 'Healthcare Packaging Quick Hits Newsletter',
+      eventCategory: 'Healthcare Packaging Quick Hits Newsletter Subscription',
+    },
+  ],
   demographic: {
     id: 108,
     label: 'Your primary Industry',

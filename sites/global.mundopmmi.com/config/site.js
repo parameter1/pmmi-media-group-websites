@@ -2,17 +2,17 @@ const sharedInquiryConfig = require('@pmmi-media-group/package-global/config/inq
 const navigation = require('./navigation');
 const leaders = require('./leaders');
 const nativeX = require('./native-x');
+const newsletter = require('./newsletter');
 const identityX = require('./identity-x');
 const gam = require('./gam');
 const search = require('./search');
-// const newsletter = require('./newsletter');
 
 module.exports = {
   leaders,
   navigation,
   nativeX,
   identityX,
-  // newsletter,
+  newsletter,
   gam,
   search,
   company: 'PMMI Media Group',
