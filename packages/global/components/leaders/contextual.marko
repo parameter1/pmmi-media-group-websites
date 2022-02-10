@@ -1,0 +1,21 @@
+$ const { site } = out.global;
+$ const { contentId } = input;
+
+<if(contentId && site.get("leaders.enabled"))>
+  <marko-web-leaders props={
+    contentId,
+    sectionAlias: site.get("leaders.alias"),
+    headerImgSrc: site.get("leaders.header.imgSrc"),
+    headerImgAlt: site.get("leaders.title"),
+    displayCallout: false,
+    offsetTop: 50,
+    viewAllHref: '/leaders',
+    mediaQueries: [
+      { prop: "columns", value: 2, query: "(min-width: 700px)" },
+      { prop: "columns", value: 1, query: "(max-width: 699px)" },
+    ],
+    calloutPrefix: site.get("leaders.calloutPrefix") || "Browse these",
+    calloutValue: site.get("leaders.calloutValue") || "leading suppliers",
+    viewAllText: site.get("leaders.viewAllText") || "View All Companies &gt;",
+  }/>
+</if>

@@ -21,6 +21,7 @@
     "@parameter1/base-cms-marko-web-icons": "^2.46.3",
     "@parameter1/base-cms-marko-web-identity-x": "^2.70.1",
     "@parameter1/base-cms-marko-web-inquiry": "^2.67.0",
+    "@parameter1/base-cms-marko-web-leaders": "^2.46.3",
     "@parameter1/base-cms-marko-web-native-x": "^2.48.1",
     "@parameter1/base-cms-marko-web-omeda": "^2.68.0",
     "@parameter1/base-cms-marko-web-omeda-identity-x": "^2.71.0",

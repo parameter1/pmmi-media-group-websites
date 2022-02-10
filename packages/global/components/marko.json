@@ -1,7 +1,8 @@
 {
   "taglib-imports": [
     "./blocks/marko.json",
-    "./layouts/marko.json"
+    "./layouts/marko.json",
+    "./leaders/marko.json"
   ],
   "<global-image-slider>": {
     "template": "./image-slider.marko"
