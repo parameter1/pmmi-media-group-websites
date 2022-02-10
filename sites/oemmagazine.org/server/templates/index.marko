@@ -103,11 +103,11 @@ $ const { id, alias, name, pageNode } = data;
       <div class="col-lg-4 mb-block">
         <marko-web-query|{ nodes }|
           name="website-scheduled-content"
-          params={ sectionAlias: "oem-issues", limit: 4, queryFragment }
+          params={ sectionAlias: "business", limit: 4, queryFragment }
         >
           <shared-content-list-flow nodes=nodes>
             <@header>
-              <marko-web-link href="/oem-issues">Issues</marko-web-link>
+              <marko-web-link href="/business">Business</marko-web-link>
             </@header>
           </shared-content-list-flow>
         </marko-web-query>
