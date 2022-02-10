@@ -1,12 +1,76 @@
-import { get } from "@parameter1/base-cms-object-path";
+import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
 
 $ const { id, alias, name, pageNode } = input;
-
-$ const { site } = out.global;
 
 <global-website-section-home-layout
   id=id
   alias=alias
   name=name
   page-node=pageNode
-/>
+>
+  <@head>
+    <meta name="google-site-verification" content="WW2QzrYsbQWBq40KQCalege4Ob8OQq4Xr9lN_5tT-ng" />
+  </@head>
+
+  <!-- <@section modifiers=["break-container"]>
+    <theme-opinion-block alias="home" />
+  </@section> -->
+
+
+  <@section|{ aliases }|>
+    <theme-gam-define-display-ad
+      name="rotation"
+      position="home_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+
+  <@section>
+    <theme-section-list-deck-block aliases=["products", "factory", "process"] />
+  </@section>
+
+  <@section>
+    <global-leaders-home-page />
+  </@section>
+
+  <!-- <@section>
+    <theme-section-card-list-block alias="partners-in-business" />
+  </@section> -->
+
+  <!-- <@section>
+    <theme-callout-cards-block>
+      <@slot>
+        <theme-latest-podcast-block alias="overdrive-radio" />
+      </@slot>
+      <@slot>
+        <site-promo-card-rotation-block />
+      </@slot>
+    </theme-callout-cards-block>
+  </@section> -->
+
+  <@section>
+    <theme-client-side-most-popular-block />
+  </@section>
+
+  <!-- <@section|{ aliases }|>
+    <theme-gam-define-display-ad
+      name="rotation"
+      position="home_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section> -->
+
+  <!-- <@section>
+    <theme-products-block alias="gear" />
+  </@section> -->
+
+  <!-- <@section>
+    <theme-section-card-deck-block alias="reader-rigs" />
+  </@section> -->
+
+  <!-- <@section>
+    <theme-resource-library-block alias="resource-library" />
+  </@section> -->
+</global-website-section-home-layout>
