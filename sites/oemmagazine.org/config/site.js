@@ -22,21 +22,21 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=45&auto=format,compress&q=70',
+      src: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=45&auto=format,compress',
       srcset: [
-        'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=90&auto=format,compress&q=70 2x',
+        'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=90&auto=format,compress 2x',
       ],
     },
     footer: {
-      src: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=60&auto=format,compress&q=70',
+      src: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=60&auto=format,compress',
       srcset: [
-        'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=120&auto=format,compress&q=70 2x',
+        'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=120&auto=format,compress 2x',
       ],
     },
     printContent: {
-      src: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo_black.png?h=45&auto=format,compress&q=70',
+      src: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo_black.png?h=45&auto=format,compress',
       srcset: [
-        'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo_black.png?h=90&auto=format,compress&q=70 2x',
+        'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo_black.png?h=90&auto=format,compress 2x',
       ],
     },
   },
@@ -64,6 +64,6 @@ module.exports = {
   inquiry: {
     ...sharedInquiryConfig,
     sendFrom: 'OEM Magazine <noreply@parameter1.com>',
-    logo: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=45&auto=format,compress&q=70',
+    logo: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=45&auto=format,compress',
   },
 };

@@ -62,9 +62,9 @@ module.exports = {
     //   title: 'AB Magazine',
     //   callToAction: 'Subscribe',
     //   image: {
-    //     src: 'https://img.athleticbusiness.com/files/base/abmedia/all/image/static/ab/ab-cover-09-21.jpg?auto=format%2Ccompress&fit=crop&h=78&q=70&w=85&crop=top',
+    //     src: 'https://img.athleticbusiness.com/files/base/abmedia/all/image/static/ab/ab-cover-09-21.jpg?auto=format%2Ccompress&fit=crop&h=78&w=85&crop=top',
     //     srcset: [
-    //       'https://img.athleticbusiness.com/files/base/abmedia/all/image/static/ab/ab-cover-09-21.jpg?auto=format%2Ccompress&fit=crop&h=78&q=70&dpr=2&w=85&crop=top',
+    //       'https://img.athleticbusiness.com/files/base/abmedia/all/image/static/ab/ab-cover-09-21.jpg?auto=format%2Ccompress&fit=crop&h=78&dpr=2&w=85&crop=top',
     //     ],
     //   },
     //   link: subscribe.href,
