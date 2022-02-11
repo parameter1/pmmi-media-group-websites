@@ -9,12 +9,8 @@ const topics = {
     { href: '/downloads', label: 'Recursos Digitales' },
     { href: '/leaders', label: 'Leaders' },
   ],
-  expanded: [
-    // { href: 'https://www.abshow.com', label: 'AB Show', target: '_blank' },
-  ],
-  secondary: [
-
-  ],
+  expanded: [],
+  secondary: [],
 };
 
 const resources = [
@@ -78,7 +74,6 @@ module.exports = {
   secondary: {
     items: [
       ...topics.primary,
-
     ],
   },
   tertiary: {
