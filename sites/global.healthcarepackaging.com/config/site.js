@@ -29,15 +29,15 @@ module.exports = {
       ],
     },
     footer: {
-      src: 'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo.png?h=60&auto=format,compress',
+      src: 'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo.png?h=35&auto=format,compress',
       srcset: [
-        'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo.png?h=120&auto=format,compress 2x',
+        'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo.png?h=35&auto=format,compress&dpr=2 2x',
       ],
     },
     printContent: {
       src: 'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo_black.png?h=45&auto=format,compress',
       srcset: [
-        'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo_black.png?h=90&auto=format,compress 2x',
+        'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo_black.png?h=45&auto=format,compress&dpr=2 2x',
       ],
     },
   },

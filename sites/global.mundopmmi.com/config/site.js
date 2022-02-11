@@ -30,15 +30,15 @@ module.exports = {
       ],
     },
     footer: {
-      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/footerLogos_white.png?h=60&auto=format,compress',
+      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/footerLogos_white.png?h=35&auto=format,compress',
       srcset: [
-        'https://img.mundopmmi.com/files/base/pmmi/mundo/footerLogos_white.png?h=120&auto=format,compress 2x',
+        'https://img.mundopmmi.com/files/base/pmmi/mundo/footerLogos_white.png?h=35&auto=format,compress&dpr=2 2x',
       ],
     },
     printContent: {
       src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=80&auto=format,compress',
       srcset: [
-        'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=160&auto=format,compress 2x',
+        'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=80&auto=format,compress&dpr=2 2x',
       ],
     },
   },
