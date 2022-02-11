@@ -44,6 +44,7 @@ module.exports = {
         { href: '/leaders', label: 'Líderes' },
         { href: '/videos', label: 'Vídeos' },
         { href: '/downloads', label: 'Recursos Digitales' },
+        { href: '/page/newsletterarchive', label: 'Archivo de boletines' },
       ],
     },
     {
