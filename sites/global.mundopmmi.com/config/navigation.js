@@ -14,10 +14,10 @@ const topics = {
 };
 
 const resources = [
-  { href: '/reader-rigs', label: 'Reader Rigs' },
-  { href: '/overdrive-radio', label: 'Overdrive Radio' },
-  { href: '/videos', label: 'Videos' },
-  { href: '/white-papers', label: 'Whitepapers' },
+  { href: '/eventos', label: 'Eventos' },
+  { href: '/leaders', label: 'Líderes' },
+  { href: '/videos', label: 'Vídeos' },
+  { href: '/downloads', label: 'Recursos Digitales' },
 ];
 
 const utilities = [
