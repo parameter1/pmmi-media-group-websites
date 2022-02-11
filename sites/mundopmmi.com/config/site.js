@@ -64,7 +64,7 @@ module.exports = {
   inquiry: {
     ...sharedInquiryConfig,
     sendFrom: 'Mundo PMMI <noreply@parameter1.com>',
-    logo: 'https://img.mundopmmi.com/files/base/pmmi/mundo/footerLogos_white.png?h=45&auto=format,compress&q=70',
+    logo: 'https://img.mundopmmi.com/files/base/pmmi/mundo/footerLogos_white.png?h=45&auto=format,compress',
   },
   lang: 'es',
 };

@@ -24,21 +24,21 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=80',
+      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=45&auto=format,compress',
       srcset: [
-        'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=160 2x',
+        'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=45&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
-      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/footerLogos_white.png?h=60',
+      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/footerLogos_white.png?h=35&auto=format,compress',
       srcset: [
-        'https://img.mundopmmi.com/files/base/pmmi/mundo/footerLogos_white.png?h=120 2x',
+        'https://img.mundopmmi.com/files/base/pmmi/mundo/footerLogos_white.png?h=35&auto=format,compress&dpr=2 2x',
       ],
     },
     printContent: {
-      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=80',
+      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=80&auto=format,compress',
       srcset: [
-        'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=160 2x',
+        'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=80&auto=format,compress&dpr=2 2x',
       ],
     },
   },
@@ -66,7 +66,7 @@ module.exports = {
   inquiry: {
     ...sharedInquiryConfig,
     sendFrom: 'Mundo PMMI <noreply@parameter1.com>',
-    logo: 'https://img.mundopmmi.com/files/base/pmmi/mundo/footerLogos_white.png?h=45&auto=format,compress&q=70',
+    logo: 'https://img.mundopmmi.com/files/base/pmmi/mundo/footerLogos_white.png?h=45&auto=format,compress',
   },
   lang: 'es',
 };

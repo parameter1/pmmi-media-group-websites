@@ -9,4 +9,7 @@ $theme-site-header-breakpoints: (
 // Colors
 $primary: #002f7b;
 
+$theme-site-navbar-logo-height: 45px;
+$theme-site-navbar-logo-height-sm: 30px;
+
 @import "../../node_modules/@pmmi-media-group/package-global/scss/core";
