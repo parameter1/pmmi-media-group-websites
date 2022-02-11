@@ -21,21 +21,21 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo.png?h=45&auto=format,compress&q=70',
+      src: 'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo.png?h=45&auto=format,compress',
       srcset: [
-        'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo.png?h=90&auto=format,compress&q=70 2x',
+        'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo.png?h=90&auto=format,compress 2x',
       ],
     },
     footer: {
-      src: 'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo.png?h=60&auto=format,compress&q=70',
+      src: 'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo.png?h=60&auto=format,compress',
       srcset: [
-        'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo.png?h=120&auto=format,compress&q=70 2x',
+        'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo.png?h=120&auto=format,compress 2x',
       ],
     },
     printContent: {
-      src: 'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo_black.png?h=45&auto=format,compress&q=70',
+      src: 'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo_black.png?h=45&auto=format,compress',
       srcset: [
-        'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo_black.png?h=90&auto=format,compress&q=70 2x',
+        'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo_black.png?h=90&auto=format,compress 2x',
       ],
     },
   },
@@ -63,6 +63,6 @@ module.exports = {
   inquiry: {
     ...sharedInquiryConfig,
     sendFrom: 'Healthcare Packaging <noreply@parameter1.com>',
-    logo: 'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo.png?h=45&auto=format,compress&q=70',
+    logo: 'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo.png?h=45&auto=format,compress',
   },
 };

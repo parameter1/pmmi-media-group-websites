@@ -1,0 +1,11 @@
+{
+  "<global-company-logo>": {
+    "template": "./company-logo.marko",
+    "@content": "object"
+  },
+  "<global-company-details>": {
+    "template": "./index.marko",
+    "@company": "object",
+    "@lang": "string"
+  }
+}
