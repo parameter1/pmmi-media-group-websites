@@ -69,7 +69,7 @@ module.exports = {
   },
   pushdown: {
     ...defaults,
-    description: 'Join ###,### healthcare packaging profesionals who get helpful insights and important news delivered straight to their inbox with the <span class="newsletter-name">Healthcare Packaging</span> newsletter.',
+    description: 'Join ###,### healthcare packaging professionals who get helpful insights and important news delivered straight to their inbox with the <span class="newsletter-name">Healthcare Packaging</span> newsletter.',
     imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pmmi-half.png',
   },
 

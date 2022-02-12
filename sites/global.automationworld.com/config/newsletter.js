@@ -100,7 +100,7 @@ module.exports = {
   },
   pushdown: {
     ...defaults,
-    description: 'Join ###,### Automation profesionals who get helpful insights and important news delivered straight to their inbox with the <span class="newsletter-name">Automation World</span> newsletter.',
+    description: 'Join ###,### Automation professionals who get helpful insights and important news delivered straight to their inbox with the <span class="newsletter-name">Automation World</span> newsletter.',
     imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pmmi-half.png',
   },
 

@@ -53,7 +53,7 @@ module.exports = {
   },
   pushdown: {
     ...defaults,
-    description: 'Join ###,### OEM profesionals who get helpful insights and important news delivered straight to their inbox with the <span class="newsletter-name">OEM Magazine</span> newsletter.',
+    description: 'Join ###,### OEM professionals who get helpful insights and important news delivered straight to their inbox with the <span class="newsletter-name">OEM Magazine</span> newsletter.',
     imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pmmi-half.png',
   },
 

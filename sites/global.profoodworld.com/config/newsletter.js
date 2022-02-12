@@ -69,7 +69,7 @@ module.exports = {
   },
   pushdown: {
     ...defaults,
-    description: 'Join ###,### pro food world profesionals who get helpful insights and important news delivered straight to their inbox with the <span class="newsletter-name">ProFoodWorld</span> newsletter.',
+    description: 'Join ###,### pro food world professionals who get helpful insights and important news delivered straight to their inbox with the <span class="newsletter-name">ProFoodWorld</span> newsletter.',
     imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pmmi-half.png',
   },
 
