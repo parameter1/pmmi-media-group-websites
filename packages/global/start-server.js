@@ -31,7 +31,7 @@ module.exports = (options = {}) => {
   const googleNewsInput = {
     days: 7,
     includeContentTypes: ['Article'],
-    excludeLabels: ['Sponsored', 'Sponsored by RoadPro'],
+    excludeLabels: ['Sponsored'],
   };
   return startServer({
     ...options,

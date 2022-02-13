@@ -40,6 +40,14 @@ module.exports = {
         'https://img.automationworld.com/files/base/pmmi/aw/aw_logo_black.png?h=45&auto=format,compress&dpr=2 2x',
       ],
     },
+    corporate: {
+      alt: 'PMMI Media Group Logo',
+      href: 'https://www.pmmimediagroup.com',
+      src: 'https://img.automationworld.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress',
+      srcset: [
+        'https://img.automationworld.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress&dpr=2 2x',
+      ],
+    },
   },
   socialMediaLinks: [
     { provider: 'facebook', href: 'https://www.facebook.com/AutomationWorldMag' },

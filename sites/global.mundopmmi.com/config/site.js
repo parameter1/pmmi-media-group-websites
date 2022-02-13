@@ -41,6 +41,14 @@ module.exports = {
         'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=80&auto=format,compress&dpr=2 2x',
       ],
     },
+    corporate: {
+      alt: 'PMMI Media Group Logo',
+      href: 'https://www.pmmimediagroup.com',
+      src: 'https://img.mundopmmi.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress',
+      srcset: [
+        'https://img.mundopmmi.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress&dpr=2 2x',
+      ],
+    },
   },
   socialMediaLinks: [
     { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/mundo-pmmi' },

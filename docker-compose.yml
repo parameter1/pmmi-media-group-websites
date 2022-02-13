@@ -173,11 +173,13 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
+      HOST: www-pmmi-aw.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9809
       LIVERELOAD_PORT: 19809
       TENANT_KEY: pmmi_all
       SITE_ID: 5d88cecaf175132c008b4567
+    hostname: www-pmmi-aw.dev.parameter1.com
     ports:
       - "9809:80"
       - "19809:19809"
@@ -189,12 +191,14 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
+      HOST: www-pmmi-mundo.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9816
       LIVERELOAD_PORT: 19816
       TENANT_KEY: pmmi_mundo
       SITE_ID: 5d0a748572c1aa35008b4567
       LEADERS_ALIAS: leaders/2021
+    hostname: www-pmmi-mundo.dev.parameter1.com
     ports:
       - "9816:80"
       - "19816:19816"
@@ -206,11 +210,13 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
+      HOST: www-pmmi-hcp.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9812
       LIVERELOAD_PORT: 19812
       TENANT_KEY: pmmi_all
       SITE_ID: 5d88cef7f175132c008b456f
+    hostname: www-pmmi-hcp.dev.parameter1.com
     ports:
       - "9812:80"
       - "19812:19812"
@@ -222,11 +228,13 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
+      HOST: www-pmmi-oem.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9814
       LIVERELOAD_PORT: 19814
       TENANT_KEY: pmmi_all
       SITE_ID: 5d88cf05f175132c008b4573
+    hostname: www-pmmi-oem.dev.parameter1.com
     ports:
       - "9814:80"
       - "19814:19814"
@@ -238,11 +246,13 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
+      HOST: www-pmmi-pw.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9811
       LIVERELOAD_PORT: 19811
       TENANT_KEY: pmmi_all
       SITE_ID: 5d88cedef175132c008b456b
+    hostname: www-pmmi-pw.dev.parameter1.com
     ports:
       - "9811:80"
       - "19811:19811"
@@ -254,11 +264,13 @@ services:
     environment:
       <<: *env
       <<: *env-tauron
+      HOST: www-pmmi-pfw.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9813
       LIVERELOAD_PORT: 19813
       TENANT_KEY: pmmi_all
       SITE_ID: 5d88cf1af175132c008b4577
+    hostname: www-pmmi-pfw.dev.parameter1.com
     ports:
       - "9813:80"
       - "19813:19813"

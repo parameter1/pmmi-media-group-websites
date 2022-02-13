@@ -6,7 +6,7 @@ const baseConfig = {
 };
 
 const defaults = {
-  name: 'Packaging Insights Newsletter',
+  name: 'Packaging World Newsletter',
   description: 'Keep up-to-date on packaging news, insights and analysis direct from our editors!',
   defaultNewsletter: {
     deploymentTypeId: 28,
@@ -99,19 +99,20 @@ module.exports = {
   },
   pushdown: {
     ...defaults,
-    description: 'Join ###,### packaging profesionals who get helpful insights and important news delivered straight to their inbox with the <span class="newsletter-name">PackWorld</span> newsletter.',
+    description: 'Get helpful insights and important news delivered straight to your inbox with the <span class="newsletter-name">PackWorld</span> newsletter.',
     imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pmmi-half.png',
+    disabled: true,
   },
 
   // links off to seperate omeda dragonform
   signupBannerLarge: {
     ...baseConfig,
-    name: 'News Insights Newsletter',
+    name: 'Packaging World Newsletter',
     description: 'Keep up-to-date on packaging news, insights and analysis direct from our editors!',
   },
   signupFooter: {
     ...baseConfig,
-    name: 'News Insights Newsletter',
+    name: 'Packaging World Newsletter',
     description: 'Keep up-to-date on packaging news, insights and analysis direct from our editors!',
   },
 };

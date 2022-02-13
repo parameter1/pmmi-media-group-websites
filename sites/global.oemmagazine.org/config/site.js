@@ -41,6 +41,14 @@ module.exports = {
         'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo_black.png?h=45&auto=format,compress&dpr=2 2x',
       ],
     },
+    corporate: {
+      alt: 'PMMI Media Group Logo',
+      href: 'https://www.pmmimediagroup.com',
+      src: 'https://img.oemmagazine.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress',
+      srcset: [
+        'https://img.oemmagazine.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress&dpr=2 2x',
+      ],
+    },
   },
   socialMediaLinks: [
     { provider: 'twitter', href: 'https://twitter.com/oemmagazine' },

@@ -26,13 +26,13 @@ $ const { id, alias, name, pageNode } = input;
     <theme-section-list-deck-block aliases=["products", "factory", "process"] />
   </@section>
 
-  <@section>
-    <global-leaders-home-page />
-  </@section>
-
   <!-- <@section>
-    <theme-section-card-list-block alias="partners-in-business" />
+    <global-leaders-home-page />
   </@section> -->
+
+  <@section>
+    <theme-hero-card-block name="Videos" query-params={ includeContentTypes: ["Video"] } />
+  </@section>
 
   <!-- <@section>
     <theme-callout-cards-block>
@@ -66,7 +66,7 @@ $ const { id, alias, name, pageNode } = input;
     <theme-section-card-deck-block alias="reader-rigs" />
   </@section> -->
 
-  <!-- <@section>
-    <theme-resource-library-block alias="resource-library" />
-  </@section> -->
+  <@section>
+    <theme-resource-library-block name="Downloads" query-params={ includeContentTypes: ["Document"] } />
+  </@section>
 </global-website-section-home-layout>
