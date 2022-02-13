@@ -26,16 +26,9 @@ $ const { id, alias, name, pageNode } = input;
     <global-leaders-home-page />
   </@section> -->
 
-  <!-- <@section>
-    <theme-callout-cards-block>
-      <@slot>
-        <theme-latest-podcast-block alias="overdrive-radio" />
-      </@slot>
-      <@slot>
-        <site-promo-card-rotation-block />
-      </@slot>
-    </theme-callout-cards-block>
-  </@section> -->
+  <@section>
+    <theme-hero-card-block name="Videos" query-params={ includeContentTypes: ["Video"] } />
+  </@section>
 
   <@section>
     <theme-client-side-most-popular-block />

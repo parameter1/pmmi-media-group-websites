@@ -30,6 +30,10 @@ $ const { id, alias, name, pageNode } = input;
     <global-leaders-home-page />
   </@section> -->
 
+  <@section>
+    <theme-hero-card-block name="Videos" query-params={ includeContentTypes: ["Video"] } />
+  </@section>
+
   <!-- <@section>
     <theme-callout-cards-block>
       <@slot>
