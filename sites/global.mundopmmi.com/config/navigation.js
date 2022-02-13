@@ -1,42 +1,18 @@
 const subscribe = { href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=MundoSubNav&r=@{encrypted_customer_id}', label: 'Suscríbase', target: '_blank' };
 
-const topics = {
-  primary: [
-    { href: '/automatizacion', label: 'Automatización' },
-    { href: '/empaque', label: 'Empaque' },
-    { href: '/procesamiento', label: 'Procesamiento' },
-    { href: '/eventos', label: 'Eventos' },
-    { href: '/downloads', label: 'Recursos Digitales' },
-    { href: '/leaders', label: 'Leaders' },
-  ],
-  expanded: [],
-  secondary: [],
-};
-
-const resources = [
-  { href: '/eventos', label: 'Eventos' },
-  { href: '/leaders', label: 'Líderes' },
-  { href: '/videos', label: 'Vídeos' },
-  { href: '/downloads', label: 'Recursos Digitales' },
+const topics = [
+  { href: '/automatizacion', label: 'Automatización' },
+  { href: '/empaque', label: 'Empaque' },
+  { href: '/procesamiento', label: 'Procesamiento' },
 ];
 
-const utilities = [
-  subscribe,
-  { href: 'https://www.pmmimediagroup.com/pw/mundo-pmmi', label: 'Anuncie', target: '_blank' },
-  { href: '/page/contacto', label: 'Contacto' },
-  { href: '/page/privacidad', label: 'Privacidad' },
-  { href: '/page/condiciones-de-uso', label: 'Condiciones de uso' },
-  { href: '/page/terminos-y-condiciones-de-publicidad', label: 'Términos y condiciones de publicidad' },
-  { href: '/site-map', label: 'Mapa del sitio web' },
-];
+const resources = [];
+
+const utilities = [];
 
 const mobileMenu = {
-  primary: [
-    ...topics.primary,
-    ...topics.expanded,
-  ],
+  primary: [...topics],
   secondary: [
-    ...topics.secondary,
     subscribe,
     resources,
   ],
@@ -44,49 +20,31 @@ const mobileMenu = {
 
 const desktopMenu = {
   about: [...utilities],
-  sections: [
-    ...topics.primary,
-    ...topics.expanded,
-    ...topics.secondary,
-  ],
+  sections: [...topics],
   resources: [...resources],
 };
 
 module.exports = {
-  promos: [
-    // {
-    //   title: ' Magazine',
-    //   callToAction: 'Subscribe',
-    //   image: {
-    //     src: 'imgPath',
-    //     srcset: [
-    //       'imgPath',
-    //     ],
-    //   },
-    //   link: link,
-    // },
-  ],
   desktopMenu,
   mobileMenu,
   primary: {
     items: [],
   },
   secondary: {
-    items: [
-      ...topics.primary,
-    ],
+    items: [...topics],
   },
   tertiary: {
     items: [],
   },
   footer: {
     items: [
-
+      { href: 'https://www.pmmimediagroup.com/pw/mundo-pmmi', label: 'Anuncie', target: '_blank' },
+      { href: '/page/privacidad', label: 'Privacidad' },
+      { href: '/page/condiciones-de-uso', label: 'Condiciones de uso' },
+      { href: '/page/terminos-y-condiciones-de-publicidad', label: 'Términos y condiciones de publicidad' },
+      { href: '/site-map', label: 'Mapa del sitio web' },
     ],
-    topics: topics.primary,
-    more: [
-      ...utilities,
-      // { href: '/path', label: 'Path' },
-    ],
+    topics: [...topics],
+    more: [...utilities],
   },
 };
