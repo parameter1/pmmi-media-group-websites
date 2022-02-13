@@ -41,6 +41,8 @@ module.exports = {
       ],
     },
     corporate: {
+      alt: 'PMMI Media Group Logo',
+      href: 'https://www.pmmimediagroup.com',
       src: 'https://img.packworld.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress',
       srcset: [
         'https://img.packworld.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress&dpr=2 2x',
