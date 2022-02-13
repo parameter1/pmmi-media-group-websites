@@ -7,7 +7,7 @@ const baseConfig = {
 
 
 const defaults = {
-  name: 'News Insights Newsletter',
+  name: 'Automation World Newsletter',
   description: 'Keep up-to-date on automation news, insights and analysis direct from our editors!',
   defaultNewsletter: {
     deploymentTypeId: 299,
@@ -100,19 +100,20 @@ module.exports = {
   },
   pushdown: {
     ...defaults,
-    description: 'Join ###,### Automation professionals who get helpful insights and important news delivered straight to their inbox with the <span class="newsletter-name">Automation World</span> newsletter.',
+    description: 'Get helpful insights and important news delivered straight to your inbox with the <span class="newsletter-name">Automation World</span> newsletter.',
     imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pmmi-half.png',
+    disabled: true,
   },
 
   // links off to seperate omeda dragonform
   signupBannerLarge: {
     ...baseConfig,
-    name: 'News Insights Newsletter',
+    name: 'Automation World Newsletter',
     description: 'Keep up-to-date on automation news, insights and analysis direct from our editors!',
   },
   signupFooter: {
     ...baseConfig,
-    name: 'News Insights Newsletter',
+    name: 'Automation World Newsletter',
     description: 'Keep up-to-date on automation news, insights and analysis direct from our editors!',
   },
 };

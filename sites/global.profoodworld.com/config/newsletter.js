@@ -69,8 +69,9 @@ module.exports = {
   },
   pushdown: {
     ...defaults,
-    description: 'Join ###,### pro food world professionals who get helpful insights and important news delivered straight to their inbox with the <span class="newsletter-name">ProFoodWorld</span> newsletter.',
+    description: 'Get helpful insights and important news delivered straight to your inbox with the <span class="newsletter-name">ProFoodWorld</span> newsletter.',
     imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pmmi-half.png',
+    disabled: true,
   },
 
   // links off to seperate omeda dragonform
