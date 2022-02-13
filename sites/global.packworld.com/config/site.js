@@ -40,6 +40,12 @@ module.exports = {
         'https://img.packworld.com/files/base/pmmi/pw/pw_logo_black.png?h=45&auto=format,compress&dpr=2 2x',
       ],
     },
+    corporate: {
+      src: 'https://img.packworld.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress',
+      srcset: [
+        'https://img.packworld.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress&dpr=2 2x',
+      ],
+    },
   },
   socialMediaLinks: [
     { provider: 'facebook', href: 'https://www.facebook.com/PackagingWorld' },

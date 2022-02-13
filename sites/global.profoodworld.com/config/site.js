@@ -41,6 +41,12 @@ module.exports = {
         'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo_black.png?h=45&auto=format,compress&dpr=2 2x',
       ],
     },
+    corporate: {
+      src: 'https://img.profoodworld.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress',
+      srcset: [
+        'https://img.profoodworld.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress&dpr=2 2x',
+      ],
+    },
   },
   socialMediaLinks: [
     { provider: 'twitter', href: 'https://twitter.com/ProFoodWorld' },
