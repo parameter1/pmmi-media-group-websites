@@ -1,4 +1,4 @@
-const subscribe = { href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=MundoSubNav', label: 'SUSCRÍBASE' };
+const subscribe = { href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=MundoSubNav&r=@{encrypted_customer_id}', label: 'Suscríbase', target: '_blank' };
 
 const topics = {
   primary: [

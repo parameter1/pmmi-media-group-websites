@@ -1,4 +1,4 @@
-const subscribe = { href: 'https://www.pmmimediagroup.com/pfw/profood-world', label: 'Advertise', target: '_blank' };
+const subscribe = { href: 'https://www.pmmimediagroup.com/pfw/profood-world', label: 'Subscribe', target: '_blank' };
 
 const topics = {
   primary: [

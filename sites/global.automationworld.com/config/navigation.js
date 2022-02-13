@@ -1,4 +1,4 @@
-const subscribe = { href: 'https://www.pmmimediagroup.com/aw/automation-world', label: 'Advertise', target: '_blank' };
+const subscribe = { href: 'https://pmmi.dragonforms.com/loading.do?pk=AWMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=PAWnew', label: 'Subscribe', target: '_blank' };
 
 const topics = {
   primary: [

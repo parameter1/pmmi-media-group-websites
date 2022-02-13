@@ -1,4 +1,4 @@
-const subscribe = { href: '/page/hcp-newsletters-mainnav', label: 'Newsletters' };
+const subscribe = { href: 'https://pmmi.dragonforms.com/loading.do?pk=HCPMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=HCPnew', label: 'Newsletters', target: '_blank' };
 
 const topics = {
   primary: [
