@@ -4,6 +4,7 @@ const search = require('@pmmi-media-group/package-theme-monorail/routes/search')
 const taxonomy = require('@pmmi-media-group/package-theme-monorail/routes/taxonomy');
 const feed = require('./feed');
 const dynamicPage = require('./dynamic-page');
+const magazine = require('../components/magazine/routes');
 const nativeX = require('./native-x');
 const omedaNewsletters = require('./omeda-newsletters');
 const printContent = require('./print-content');
@@ -14,6 +15,9 @@ const staticPage = require('./static-page');
 module.exports = (app, siteConfig) => {
   // Feed
   feed(app);
+
+  // Magazine Routes
+  magazine(app);
 
   // Omeda newsletter signup
   omedaNewsletters(app);
