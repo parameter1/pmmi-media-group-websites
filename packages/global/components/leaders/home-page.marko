@@ -12,9 +12,7 @@ $ const { site } = out.global;
     offsetTop: 50,
     viewAllHref: '/leaders',
     mediaQueries: [
-      { prop: "open", value: "right", query: "(min-width: 1490px)" },
       { prop: "columns", value: 2, query: "(min-width: 700px)" },
-      { prop: "displayCallout", value: false, query: "(max-width: 660px)" },
     ],
     calloutPrefix: site.get("leaders.calloutPrefix") || "Browse these",
     calloutValue: site.get("leaders.calloutValue") || "leading suppliers",
