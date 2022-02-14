@@ -19,6 +19,15 @@ $ const { GAM, site, config } = out.global;
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ const aliases = hierarchyAliases(section);
       <marko-web-page-wrapper>
+        <@section|{ aliases }| modifiers=["first"]>
+          <theme-gam-define-display-ad
+            name="leaderboard"
+            position="home_page"
+            aliases=aliases
+            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+          />
+          <theme-gam-wallpaper-ad aliases=aliases position="home_page" />
+        </@section>
         <@section>
           <div class="leaders-index-page__header-wrapper">
             <div class="leaders-index-page__logo">
@@ -44,8 +53,6 @@ $ const { GAM, site, config } = out.global;
               <${input.pageBody} />
             </div>
           </div>
-        </@section>
-        <@section>
           <global-leaders-all />
         </@section>
 
