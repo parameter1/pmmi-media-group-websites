@@ -331,7 +331,7 @@ export default {
         },
       };
 
-      const doubleWidthOpenDirection = ((canOpen['right'] && canOpen['right'].value === true) || canOpen[canOpen['right'].opp].value === false) ? 'right' : canOpen['right'].opp;
+      const doubleWidthOpenDirection = ((canOpen.right && canOpen.right.value === true) || canOpen[canOpen.right.opp].value === false) ? 'right' : canOpen.right.opp;
       const openDirection = (((content.getBoundingClientRect().width * 2) + 50) > window.innerWidth) ? 'below' : doubleWidthOpenDirection;
       this.openDirection = openDirection;
     },
