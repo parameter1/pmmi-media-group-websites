@@ -6,6 +6,7 @@ const newsletter = require('./newsletter');
 const identityX = require('./identity-x');
 const gam = require('./gam');
 const search = require('./search');
+const subscribe = require('./subscribe');
 
 module.exports = {
   disableNativeSlotTwo: true,
@@ -16,6 +17,7 @@ module.exports = {
   identityX,
   gam,
   search,
+  subscribe,
   company: 'PMMI Media Group',
   p1events: {
     tenant: 'pmmi',

@@ -6,6 +6,7 @@ const newsletter = require('./newsletter');
 const identityX = require('./identity-x');
 const gam = require('./gam');
 const search = require('./search');
+const subscribe = require('./subscribe');
 
 module.exports = {
   leaders,
@@ -15,6 +16,7 @@ module.exports = {
   newsletter,
   gam,
   search,
+  subscribe,
   company: 'PMMI Media Group',
   copyrightNotice: 'Todos los derechos reservados.',
   p1events: {
