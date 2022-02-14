@@ -28,9 +28,9 @@ module.exports = {
   ],
   logos: {
     navbar: {
-      src: 'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo_black.png?h=30&auto=format,compress',
+      src: 'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp-logo.png?h=30&auto=format,compress',
       srcset: [
-        'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo_black.png?h=30&auto=format,compress&dpr=2 2x',
+        'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp-logo.png?h=30&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {

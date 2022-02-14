@@ -28,9 +28,9 @@ module.exports = {
   ],
   logos: {
     navbar: {
-      src: 'https://img.packworld.com/files/base/pmmi/pw/pw_logo_black.png?h=30&auto=format,compress',
+      src: 'https://img.packworld.com/files/base/pmmi/pw/pw-logo.png?h=30&auto=format,compress',
       srcset: [
-        'https://img.packworld.com/files/base/pmmi/pw/pw_logo_black.png?h=30&auto=format,compress&dpr=2 2x',
+        'https://img.packworld.com/files/base/pmmi/pw/pw-logo.png?h=30&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {

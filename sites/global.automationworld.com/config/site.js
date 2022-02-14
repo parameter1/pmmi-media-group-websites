@@ -28,9 +28,9 @@ module.exports = {
   ],
   logos: {
     navbar: {
-      src: 'https://img.automationworld.com/files/base/pmmi/aw/aw_logo_black.png?h=30&auto=format,compress',
+      src: 'https://img.automationworld.com/files/base/pmmi/aw/aw-logo.webp?h=30&auto=format,compress',
       srcset: [
-        'https://img.automationworld.com/files/base/pmmi/aw/aw_logo_black.png?h=30&auto=format,compress&dpr=2 2x',
+        'https://img.automationworld.com/files/base/pmmi/aw/aw-logo.webp?h=30&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
