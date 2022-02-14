@@ -21,8 +21,8 @@ class MenuPosition extends AbstractPosition {
         : 0;
     }
     if (this.opensLeft) {
-      return ((pageXOffset + calcs.link('left') - calcs.arrow('w') - calcs.menu('w') - 15) > 0)
-        ? pageXOffset + calcs.link('left') - calcs.arrow('w') - calcs.menu('w') - 15
+      return ((pageXOffset + calcs.link('left') - calcs.arrow('w') - calcs.menu('w')) > 0)
+        ? pageXOffset + calcs.link('left') - calcs.arrow('w') - calcs.menu('w')
         : 0;
     }
     return ((pageXOffset + calcs.link('right') + calcs.arrow('w')) > 0) ? pageXOffset + calcs.link('right') + calcs.arrow('w') : 0;
