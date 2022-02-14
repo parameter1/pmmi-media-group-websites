@@ -1,9 +1,17 @@
 <template>
   <div :class="classes" :data-section-id="sectionId">
     <button class="leaders-section__toggle-button" @click="toggleExpanded">
-      <chevron-plus-icon v-if="iconSet === 'chevron'" v-show="!isExpanded" :modifiers="iconModifiers" />
+      <chevron-plus-icon
+        v-if="iconSet === 'chevron'"
+        v-show="!isExpanded"
+        :modifiers="iconModifiers"
+      />
       <plus-icon v-else v-show="!isExpanded" :modifiers="iconModifiers" />
-      <chevron-minus-icon v-if="iconSet === 'chevron'" v-show="isExpanded" :modifiers="iconModifiers" />
+      <chevron-minus-icon
+        v-if="iconSet === 'chevron'"
+        v-show="isExpanded"
+        :modifiers="iconModifiers"
+      />
       <minus-icon v-else v-show="isExpanded" :modifiers="iconModifiers" />
       <span class="leaders-section__toggle-button-title">{{ title }}</span>
     </button>

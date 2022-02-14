@@ -326,6 +326,7 @@ export default {
           opp: 'right',
         },
         right: {
+          // eslint-disable-next-line max-len
           value: (linkRect.x + linkRect.width + content.getBoundingClientRect().width) < window.innerWidth,
           opp: 'left',
         },
