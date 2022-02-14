@@ -128,5 +128,4 @@ export default (Browser, config = {
   Browser.register('LeadersCompanySocialLink', LeadersCompanySocialLink, {
     on: { action: (...args) => EventBus.$emit('leaders-action', ...args) },
   });
-
 };
