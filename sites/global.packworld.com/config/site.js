@@ -6,6 +6,7 @@ const newsletter = require('./newsletter');
 const identityX = require('./identity-x');
 const gam = require('./gam');
 const search = require('./search');
+const subscribe = require('./subscribe');
 
 module.exports = {
   leaders,
@@ -15,17 +16,21 @@ module.exports = {
   identityX,
   gam,
   search,
+  subscribe,
   company: 'PMMI Media Group',
   p1events: {
     tenant: 'pmmi',
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'www.packworld.com' : '',
   },
+  publicationIds: [
+    '5d8a239af6d5f267ee9745d0',
+  ],
   logos: {
     navbar: {
-      src: 'https://img.packworld.com/files/base/pmmi/pw/pw_logo_black.png?h=30&auto=format,compress',
+      src: 'https://img.packworld.com/files/base/pmmi/pw/pw-logo.png?h=30&auto=format,compress',
       srcset: [
-        'https://img.packworld.com/files/base/pmmi/pw/pw_logo_black.png?h=30&auto=format,compress&dpr=2 2x',
+        'https://img.packworld.com/files/base/pmmi/pw/pw-logo.png?h=30&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {

@@ -1,4 +1,4 @@
-const subscribe = { href: 'https://pmmi.dragonforms.com/init.do?pk=OEMMagNav&oly_enc_id=@{encrypted_customer_id}@&omedasite=OEMnew', label: 'Subscribe', target: '_blank' };
+const subscribe = require('./subscribe');
 
 const topics = [
   { href: '/technology', label: 'Technology' },
