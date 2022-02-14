@@ -23,6 +23,9 @@ module.exports = {
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'healthcarepackaging.com' : '',
   },
+  publicationIds: [
+    '5d8a20bdf6d5f267ee94a861',
+  ],
   logos: {
     navbar: {
       src: 'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo_black.png?h=30&auto=format,compress',

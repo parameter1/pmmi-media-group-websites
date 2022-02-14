@@ -23,6 +23,9 @@ module.exports = {
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'automationworld.com' : '',
   },
+  publicationIds: [
+    '5d8a225ef6d5f267ee95d214',
+  ],
   logos: {
     navbar: {
       src: 'https://img.automationworld.com/files/base/pmmi/aw/aw_logo_black.png?h=30&auto=format,compress',

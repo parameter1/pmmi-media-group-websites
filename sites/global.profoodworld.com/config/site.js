@@ -24,6 +24,9 @@ module.exports = {
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'profoodworld.com' : '',
   },
+  publicationIds: [
+    '5d8a203ef6d5f267ee9412b7',
+  ],
   logos: {
     navbar: {
       src: 'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo_black.png?h=30&auto=format,compress',

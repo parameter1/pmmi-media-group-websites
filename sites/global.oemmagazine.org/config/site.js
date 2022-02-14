@@ -24,6 +24,9 @@ module.exports = {
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'oemmagazine.org' : '',
   },
+  publicationIds: [
+    '5d8a2018f6d5f267ee93d252',
+  ],
   logos: {
     navbar: {
       src: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo_black.png?h=30&auto=format,compress',
