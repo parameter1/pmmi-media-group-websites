@@ -12,6 +12,7 @@
   &__body {
     padding: $leaders-body-padding-y $leaders-body-padding-x;
     border-bottom: 2px solid $leaders-gray-5;
+    background-color: #f1f1f1;
   }
 
   &__header {
@@ -71,4 +72,6 @@
 
 .leaders-list {
   width: 100%;
+  border-top: solid $leaders-nav-link-color 2px;
+  background: #fff;
 }

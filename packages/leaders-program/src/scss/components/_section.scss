@@ -8,8 +8,9 @@
 
   &__toggle-button {
     display: inline-flex;
-    flex-direction: row;
-    padding: 0;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: .5rem;
     margin: 0;
     font-size: $leaders-nav-link-font-size;
     font-weight: $leaders-nav-link-font-weight;
@@ -20,7 +21,8 @@
     text-transform: none;
     cursor: pointer;
     user-select: none;
-    background: none;
+    background-color: #fff;
+    width: 100%;
     border: none;
     outline: none;
     -webkit-tap-highlight-color: transparent;
