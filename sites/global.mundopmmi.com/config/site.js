@@ -6,6 +6,7 @@ const newsletter = require('./newsletter');
 const identityX = require('./identity-x');
 const gam = require('./gam');
 const search = require('./search');
+const subscribe = require('./subscribe');
 
 module.exports = {
   leaders,
@@ -15,6 +16,7 @@ module.exports = {
   newsletter,
   gam,
   search,
+  subscribe,
   company: 'PMMI Media Group',
   copyrightNotice: 'Todos los derechos reservados.',
   p1events: {
@@ -22,6 +24,9 @@ module.exports = {
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'www.mundopmmi.com' : '',
   },
+  publicationIds: [
+    '5d8a225ef6d5f267ee95d214',
+  ],
   logos: {
     navbar: {
       src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=45&auto=format,compress',

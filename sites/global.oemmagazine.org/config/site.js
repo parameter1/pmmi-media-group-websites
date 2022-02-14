@@ -6,6 +6,7 @@ const newsletter = require('./newsletter');
 const identityX = require('./identity-x');
 const gam = require('./gam');
 const search = require('./search');
+const subscribe = require('./subscribe');
 
 module.exports = {
   disableNativeSlotTwo: true,
@@ -16,12 +17,16 @@ module.exports = {
   identityX,
   gam,
   search,
+  subscribe,
   company: 'PMMI Media Group',
   p1events: {
     tenant: 'pmmi',
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'oemmagazine.org' : '',
   },
+  publicationIds: [
+    '5d8a2018f6d5f267ee93d252',
+  ],
   logos: {
     navbar: {
       src: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo_black.png?h=30&auto=format,compress',

@@ -2,6 +2,8 @@ import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-ali
 
 $ const { id, alias, name, pageNode } = input;
 
+$ const { site } = out.global;
+
 <global-website-section-home-layout
   id=id
   alias=alias
@@ -11,7 +13,6 @@ $ const { id, alias, name, pageNode } = input;
   <!-- <@section modifiers=["break-container"]>
     <theme-opinion-block alias="home" />
   </@section> -->
-
 
   <@section|{ aliases }|>
     <theme-gam-define-display-ad
