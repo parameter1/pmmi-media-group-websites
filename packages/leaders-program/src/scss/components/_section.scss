@@ -55,12 +55,14 @@
         margin-right: -$leaders-body-padding-x;
         margin-bottom: 6px;
         margin-left: -$leaders-body-padding-x;
+        padding: 0 1rem .5rem;
         font-size: $leaders-parent-section-content-title-font-size;
         font-weight: $leaders-parent-section-content-title-font-weight;
         line-height: $leaders-parent-section-content-title-line-height;
-        color: $leaders-parent-section-content-title-color;
+        // color: $leaders-parent-section-content-title-color;
+        color: $black;
         text-transform: $leaders-parent-section-content-title-transform;
-        border-bottom: 1px solid $leaders-parent-section-content-title-border-color;
+        // border-bottom: 1px solid $leaders-parent-section-content-title-border-color;
       }
     }
   }
