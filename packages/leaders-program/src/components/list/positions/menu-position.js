@@ -15,7 +15,6 @@ class MenuPosition extends AbstractPosition {
   get x() {
     const { calculus: calcs } = this;
     const { pageXOffset } = window;
-    console.log(this.opensAbove, this.opensBelow, this.opensLeft);
     if (this.opensAbove || this.opensBelow) {
       return ((pageXOffset + calcs.link('left') + calcs.link('halfW') - calcs.menu('halfW')) > 0)
         ? pageXOffset + calcs.link('left') + calcs.link('halfW') - calcs.menu('halfW')
