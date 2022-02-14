@@ -3,6 +3,8 @@
 @import "mixins";
 @import "components";
 
+$leaders-nav-link-width: 100%;
+$leaders-nav-link-max-width: $leaders-nav-link-width;
 // In order to use the default fonts, include the line below in the website CSS.
 // @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700&display=swap");
 
