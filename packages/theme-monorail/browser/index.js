@@ -18,11 +18,22 @@ const SiteNewsletterMenu = () => import(/* webpackChunkName: "theme-site-newslet
 const WufooForm = () => import(/* webpackChunkName: "theme-wufoo-form" */ './wufoo-form.vue');
 const TopStoriesMenu = () => import(/* webpackChunkName: "theme-top-stories-menu" */ './top-stories-menu.vue');
 
+const LeadersProgram = () => import(/* webpackChunkName: "leaders-program" */ '@pmmi-media-group/package-leaders-program');
+const LeadersCompanyWebsiteLink = () => import(/* webpackChunkName: "leaders-company-website-link" */ './leaders/company-website-link.vue');
+const LeadersCompanySocialLink = () => import(/* webpackChunkName: "leaders-company-social-link" */ './leaders/company-social-link.vue');
+const LeadersGTMTracker = () => import(/* webpackChunkName: "leaders-gtm-tracker" */ './leaders/gtm-tracker.vue');
+const LeadersP1EventsTracker = () => import(/* webpackChunkName: "leaders-p1-event-tracker" */ './leaders/p1events-tracker.vue');
+
 const setP1EventsIdentity = ({ p1events, brandKey, encryptedId }) => {
   if (!p1events || !brandKey || !encryptedId) return;
   p1events('setIdentity', `omeda.${brandKey}.customer*${encryptedId}~encrypted`);
 };
-export default (Browser, config = { enableOmedaIdentityX: true }) => {
+
+export default (Browser, config = {
+  enableOmedaIdentityX: true,
+  withGTM: true,
+  withP1Events: true,
+}) => {
   const { EventBus } = Browser;
   const { enableOmedaIdentityX } = config;
 
@@ -103,4 +114,19 @@ export default (Browser, config = { enableOmedaIdentityX: true }) => {
   });
   Browser.register('ThemeTopStoriesMenu', TopStoriesMenu);
   Browser.register('WufooForm', WufooForm);
+
+  // Leaders
+  if (config.withGTM) Browser.register('LeadersGTMTracker', LeadersGTMTracker, { provide: { EventBus } });
+  if (config.withP1Events) Browser.register('LeadersP1EventsTracker', LeadersP1EventsTracker, { provide: { EventBus } });
+  Browser.register('LeadersProgram', LeadersProgram, {
+    withApollo: true,
+    on: { action: (...args) => EventBus.$emit('leaders-action', ...args) },
+  });
+  Browser.register('LeadersCompanyWebsiteLink', LeadersCompanyWebsiteLink, {
+    on: { action: (...args) => EventBus.$emit('leaders-action', ...args) },
+  });
+  Browser.register('LeadersCompanySocialLink', LeadersCompanySocialLink, {
+    on: { action: (...args) => EventBus.$emit('leaders-action', ...args) },
+  });
+
 };
