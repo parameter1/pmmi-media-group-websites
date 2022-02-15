@@ -39,6 +39,7 @@ module.exports = {
   signupBanner: {
     ...defaults,
     imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pmmi-full.png',
+    disabled: true,
   },
   pushdown: {
     ...defaults,
