@@ -22,11 +22,11 @@ $ const { GAM, site, config } = out.global;
         <@section|{ aliases }| modifiers=["first"]>
           <theme-gam-define-display-ad
             name="leaderboard"
-            position="home_page"
+            position="section_page"
             aliases=aliases
-            modifiers=["max-width-970", "center", "margin-auto-x", "inline"]
+            modifiers=["inter-block"]
           />
-          <theme-gam-wallpaper-ad aliases=aliases position="home_page" />
+          <theme-gam-wallpaper-ad aliases=aliases position="section_page" />
         </@section>
         <@section>
           <div class="leaders-index-page__header-wrapper">
@@ -53,6 +53,8 @@ $ const { GAM, site, config } = out.global;
               <${input.pageBody} />
             </div>
           </div>
+        </@section>
+        <@section|{ alias }| modifiers=["break-container"]>
           <global-leaders-all />
         </@section>
 
