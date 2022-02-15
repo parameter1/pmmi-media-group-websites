@@ -1,3 +1,4 @@
+const privacyPolicy = require('./privacy-policy');
 const subscribe = require('./subscribe');
 
 const topics = [
@@ -36,7 +37,7 @@ module.exports = {
   footer: {
     items: [
       { href: '/page/pw-about-us', label: 'About Us' },
-      { href: 'https://www.pmmimediagroup.com/privacy', label: 'Privacy Policy', target: '_blank' },
+      privacyPolicy,
       { href: '/page/pw-terms-use', label: 'Terms of Use' },
       { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
       { href: '/site-map', label: 'Site Map' },
