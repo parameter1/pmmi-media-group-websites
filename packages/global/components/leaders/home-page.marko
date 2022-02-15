@@ -3,6 +3,7 @@ $ const { site } = out.global;
 <if(site.get("leaders.enabled"))>
   <marko-web-leaders props={
     sectionAlias: site.get("leaders.alias"),
+    title: site.get("leaders.title"),
     open: "auto",
     iconSet: "chevron",
     expanded: false,

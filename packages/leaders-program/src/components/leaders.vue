@@ -1,6 +1,12 @@
 <template>
   <div :class="classes" :data-taxonomy-ids="taxonomyIds.join(',') || null">
+    <div v-if="title" class="leaders__header">
+      <div class="leaders__header-title">
+        {{ title }}
+      </div>
+    </div>
     <leaders-header
+      v-else
       :display="getResponsiveValue('displayHeader')"
       :img-src="headerImgSrc"
       :img-alt="headerImgAlt"
@@ -129,6 +135,9 @@ export default {
       type: String,
       default: 'leading suppliers',
     },
+    title: {
+      type: String,
+    },
     offsetTop: {
       type: Number,
       default: 0,
@@ -160,7 +169,7 @@ export default {
     iconSet: {
       type: String,
       default: null,
-    }
+    },
   },
 
   data: () => ({

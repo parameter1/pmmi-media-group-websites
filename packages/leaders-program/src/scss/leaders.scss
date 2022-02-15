@@ -31,6 +31,11 @@ $leaders-nav-link-max-width: $leaders-nav-link-width;
     background-color: $leaders-header-bg-color;
   }
 
+  &__header-title {
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+  }
+
   &__header-image {
     margin: auto;
     > img {
