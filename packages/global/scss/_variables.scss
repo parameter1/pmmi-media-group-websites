@@ -1,7 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,600,700|Source+Serif+Pro:400,600,700&display=swap");
-
-$skin-font-family-primary:  "Source Serif Pro", serif;
-$skin-font-family-secondary: "IBM Plex Sans", sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap");
+$skin-font-family-primary: "Open Sans", sans-serif !default;
+$skin-font-family-secondary: "Open Sans", sans-serif !default;
 
 $theme-site-navbar-logo-height: 30px !default;
 $theme-site-navbar-logo-height-sm: 30px !default;
