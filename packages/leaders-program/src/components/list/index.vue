@@ -281,7 +281,7 @@ export default {
 
       const { open } = this;
       if (open === 'auto') {
-        this.validateOpenDirection(content, linkRect);
+        this.getAutoOpenDirection(content, linkRect);
       } else {
         this.openDirection = open;
       }
@@ -318,23 +318,17 @@ export default {
       this.styles.arrow = { transform: `translate(${arrow.xPx}, ${arrow.yPx}) rotate(45deg)` };
     },
 
-    validateOpenDirection(content, linkRect) {
-      // vet that it can open to the right or left based on current location & avaiable space.
-      const canOpen = {
-        left: {
-          value: (linkRect.x - content.getBoundingClientRect().width) >= 0,
-          opp: 'right',
-        },
-        right: {
-          // eslint-disable-next-line max-len
-          value: (linkRect.x + linkRect.width + content.getBoundingClientRect().width) < window.innerWidth,
-          opp: 'left',
-        },
-      };
-
-      const doubleWidthOpenDirection = ((canOpen.right && canOpen.right.value === true) || canOpen[canOpen.right.opp].value === false) ? 'right' : canOpen.right.opp;
-      const openDirection = (((content.getBoundingClientRect().width * 2) + 50) > window.innerWidth) ? 'below' : doubleWidthOpenDirection;
-      this.openDirection = openDirection;
+    getAutoOpenDirection(content, linkRect) {
+      const avaiableRight = window.innerWidth - linkRect.right;
+      const shouldOpen = (avaiableRight >= window.innerWidth / 2) ? 'right' : 'left';
+      // validate there is enought space to open the content left/right or push below
+      const canOpenRight = shouldOpen === 'right' && (content.getBoundingClientRect().width + linkRect.right) < window.innerWidth;
+      const canOpenLeft = shouldOpen === 'left' && (content.getBoundingClientRect().width + linkRect.left) < window.innerWidth;
+      if (!canOpenRight || !canOpenLeft) {
+        this.openDirection = shouldOpen;
+      } else {
+        this.openDirection = 'below';
+      }
     },
 
     closeDropdown() {
