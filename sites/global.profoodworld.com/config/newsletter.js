@@ -1,3 +1,5 @@
+const privacyPolicy = require('./privacy-policy');
+
 const baseConfig = {
   action: 'https://profoodworld.dragonforms.com/loading.do',
   hiddenInputs: [
@@ -13,6 +15,7 @@ const defaults = {
     name: 'Newsletter Name',
     eventCategory: 'Newsletter Category',
   },
+  privacyPolicy,
   newsletters: [
     {
       deploymentTypeId: 0,
