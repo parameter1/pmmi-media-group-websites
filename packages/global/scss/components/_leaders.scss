@@ -1,7 +1,29 @@
+
 .leaders {
   max-width: 700px;
   margin-right: auto;
   margin-left: auto;
+  &__header-title {
+    padding-left: $leaders-footer-padding-y;
+    @include skin-typography($style: "section-header-small");
+    color: $white;
+  }
+  &__header {
+    border-radius: 4px 4px 0 0;
+  }
+  &__body {
+    border-radius: 0 0 4px 4px;
+  }
+}
+.leaders-section {
+  $self: &;
+  &__toggle-button {
+    border-radius: 4px;
+    ~ #{ $self }__list {
+      border-radius: 0 0 4px 4px;
+      overflow: hidden;
+    }
+  }
 }
 .leaders-index-page {
   &__header-wrapper {

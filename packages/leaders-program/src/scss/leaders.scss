@@ -31,11 +31,6 @@ $leaders-nav-link-max-width: $leaders-nav-link-width;
     background-color: $leaders-header-bg-color;
   }
 
-  &__header-title {
-    font-weight: $font-weight-bold;
-    text-transform: uppercase;
-  }
-
   &__header-image {
     margin: auto;
     > img {
@@ -58,17 +53,6 @@ $leaders-nav-link-max-width: $leaders-nav-link-width;
   &__footer {
     padding: $leaders-footer-padding-y $leaders-footer-padding-x;
     text-align: center;
-    border-bottom: 2px solid $leaders-gray-5;
-    background-color: #f1f1f1;
-    > a {
-      font-size: $leaders-nav-link-font-size;
-      font-weight: $leaders-nav-link-font-weight;
-      line-height: $leaders-nav-link-line-height;
-      color: $leaders-nav-link-color;
-      &:hover {
-        color: $leaders-nav-link-color;
-      }
-    }
   }
 }
 

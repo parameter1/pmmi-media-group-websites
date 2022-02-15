@@ -39,7 +39,7 @@
       />
     </div>
     <div v-if="viewAll" class="leaders__footer">
-      <a :href="viewAll" v-html="viewAllText" />
+      <a class="btn btn-primary" :href="viewAll" v-html="viewAllText" />
     </div>
   </div>
 </template>
