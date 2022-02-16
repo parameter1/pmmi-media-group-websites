@@ -21,7 +21,7 @@
   "<marko-web-leaders-p1events-tracker>": {
     "template": "./p1events-tracker.marko"
   },
-  "marko-web-leaders-company-videos>": {
+  "<marko-web-leaders-company-videos>": {
     "template": "./company-videos.marko",
     "@content-id": {
       "type": "number",
