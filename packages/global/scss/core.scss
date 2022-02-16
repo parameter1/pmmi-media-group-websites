@@ -4,6 +4,9 @@
 // import theme css
 @import "../../node_modules/@pmmi-media-group/package-theme-monorail/scss/core";
 
+// import theme leaders css
+@import "../../node_modules/@pmmi-media-group/package-theme-monorail-leaders/scss/leaders";
+
 // skin components
 @import "./components/blocks/magazine-issues";
 @import "./components/leaders";

@@ -34,6 +34,7 @@
     "@parameter1/base-cms-web-common": "^2.75.1",
     "@parameter1/omeda-graphql-client-express": "^0.4.2",
     "@pmmi-media-group/package-theme-monorail": "^2.6.0",
+    "@pmmi-media-group/package-theme-monorail-leaders": "^2.6.0",
     "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.10",
     "express": "^4.17.1",

@@ -3,6 +3,7 @@ const renderBlock = require('@pmmi-media-group/package-theme-monorail/routes/ren
 const search = require('@pmmi-media-group/package-theme-monorail/routes/search');
 const taxonomy = require('@pmmi-media-group/package-theme-monorail/routes/taxonomy');
 const feed = require('./feed');
+const content = require('./content');
 const dynamicPage = require('./dynamic-page');
 // const identityX = require('./identity-x');
 const magazine = require('../components/magazine/routes');
@@ -55,4 +56,6 @@ module.exports = (app, siteConfig) => {
 
   // dynamic pages /page/${alias}
   dynamicPage(app);
+
+  content(app);
 };

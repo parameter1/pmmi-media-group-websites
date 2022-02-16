@@ -1,0 +1,29 @@
+{
+  "name": "@pmmi-media-group/package-theme-monorail-leaders",
+  "version": "2.6.0",
+  "description": "Marko Wrapper & Components for the Leaders Program",
+  "repository": "https://github.com/parameter1/pmmi-media-group-websites/tree/master/packages/theme-monorail-leaders",
+  "author": "Brian Miller<brian@parameter1.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "yarn lint:js && yarn lint:css",
+    "lint:js": "eslint --ext .js --ext .vue --max-warnings 5 ./",
+    "lint:css": "stylelint ./**/*.scss --max-warnings 5",
+    "compile": "basecms-marko-compile compile --dir ./ --silent true",
+    "test": "yarn compile && yarn lint"
+  },
+  "dependencies": {
+    "@pmmi-media-group/package-leaders-program-monorail": "^2.6.0",
+    "@parameter1/base-cms-marko-web-icons": "^2.46.3",
+    "@parameter1/base-cms-object-path": "^2.75.1",
+    "graphql": "^14.7.0",
+    "graphql-tag": "^2.12.5",
+    "object-path": "^0.11.8"
+  },
+  "peerDependencies": {
+    "@parameter1/base-cms-marko-web": "^2.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
