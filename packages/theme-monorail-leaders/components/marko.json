@@ -1,4 +1,8 @@
 {
+  "taglib-imports": [
+    "./flows/marko.json",
+    "./nodes/marko.json"
+  ],
   "<marko-web-leaders>": {
     "template": "./index.marko"
   },

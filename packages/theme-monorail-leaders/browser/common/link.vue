@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { buildFlags } from '../../utils/link-tracking';
+import { buildFlags } from '../utils/link-tracking';
 
 export default {
   props: {

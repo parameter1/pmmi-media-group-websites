@@ -53,8 +53,8 @@ import allQuery from '../graphql/queries/all-sections';
 import fromContentQuery from '../graphql/queries/sections-from-content';
 import fromIdsQuery from '../graphql/queries/sections-from-ids';
 import contentQuery from '../graphql/queries/content';
-import getEdgeNodes from '../utils/get-edge-nodes';
-import getAsObject from '../utils/get-as-object';
+import getEdgeNodes from './utils/get-edge-nodes';
+import getAsObject from './utils/get-as-object';
 
 export default {
   components: {
@@ -137,6 +137,7 @@ export default {
     },
     title: {
       type: String,
+      default: null,
     },
     offsetTop: {
       type: Number,

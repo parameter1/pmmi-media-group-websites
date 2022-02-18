@@ -62,8 +62,8 @@
 <script>
 import LeadersSection from './section.vue';
 import LeadersColumns from './columns.vue';
-import getAsArray from '../../utils/get-as-array';
-import getEdgeNodes from '../../utils/get-edge-nodes';
+import getAsArray from '../utils/get-as-array';
+import getEdgeNodes from '../utils/get-edge-nodes';
 
 export default {
   components: {

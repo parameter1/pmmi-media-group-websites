@@ -2,7 +2,7 @@ const gql = require('graphql-tag');
 
 module.exports = leadersAlias => gql`
 
-fragment WebsiteContentCompanyFragment on Content {
+fragment LeadersWebsiteContentCompanyFragment on Content {
   id
   type
   name

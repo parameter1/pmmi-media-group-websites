@@ -90,8 +90,8 @@ import KeyExecutive from './blocks/key-executive.vue';
 import PromotionCard from './blocks/promotion-card.vue';
 import VideoCard from './blocks/video-card.vue';
 import ViewMore from './blocks/view-more.vue';
-import getAsObject from '../../utils/get-as-object';
-import getEdgeNodes from '../../utils/get-edge-nodes';
+import getAsObject from '../utils/get-as-object';
+import getEdgeNodes from '../utils/get-edge-nodes';
 
 export default {
   components: {

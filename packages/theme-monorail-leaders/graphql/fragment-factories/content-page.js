@@ -1,7 +1,7 @@
 const gql = require('graphql-tag');
 
 module.exports = leadersAlias => gql`
-fragment GlobalContentPageFragment on Content {
+fragment LeadersContentPageFragment on Content {
   id
   name
   labels

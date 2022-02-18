@@ -1,4 +1,4 @@
-const LeadersProgram = () => import(/* webpackChunkName: "leaders-program" */ '@pmmi-media-group/package-leaders-program-monorail');
+const LeadersProgram = () => import(/* webpackChunkName: "leaders-program" */ './leaders-block.vue');
 const LeadersCompanyWebsiteLink = () => import(/* webpackChunkName: "leaders-company-website-link" */ './company-website-link.vue');
 const LeadersCompanySocialLink = () => import(/* webpackChunkName: "leaders-company-social-link" */ './company-social-link.vue');
 const LeadersGTMTracker = () => import(/* webpackChunkName: "leaders-gtm-tracker" */ './gtm-tracker.vue');

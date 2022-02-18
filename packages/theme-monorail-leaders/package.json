@@ -13,16 +13,16 @@
     "test": "yarn compile && yarn lint"
   },
   "dependencies": {
-    "@pmmi-media-group/package-leaders-program-monorail": "^2.6.0",
     "@parameter1/base-cms-marko-web-icons": "^2.46.3",
+    "@parameter1/base-cms-marko-core": "^2.0.0",
+    "@parameter1/base-cms-marko-web": "^2.0.0",
     "@parameter1/base-cms-object-path": "^2.75.1",
+    "portal-vue": "^2.1.7",
     "graphql": "^14.7.0",
     "graphql-tag": "^2.12.5",
     "object-path": "^0.11.8"
   },
-  "peerDependencies": {
-    "@parameter1/base-cms-marko-web": "^2.0.0"
-  },
+  "peerDependencies": {},
   "publishConfig": {
     "access": "public"
   }

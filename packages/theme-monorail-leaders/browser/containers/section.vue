@@ -67,7 +67,7 @@ import Card from '../card/index.vue';
 import LinkContents from '../list/nav/contents.vue';
 
 import query from '../../graphql/queries/content-for-section';
-import getEdgeNodes from '../../utils/get-edge-nodes';
+import getEdgeNodes from '../utils/get-edge-nodes';
 
 export default {
   components: {
