@@ -1,0 +1,56 @@
+{
+  "<global-published-content-events-layout>": {
+    "template": "./events.marko",
+    "<head>": {},
+    "@sections <section>[]": {},
+    "@id": "number",
+    "@alias": "string",
+    "@name": "string",
+    "@page-node": "object"
+  },
+  "<global-published-content-documents-layout>": {
+    "template": "./documents.marko",
+    "<head>": {},
+    "@sections <section>[]": {},
+    "@id": "number",
+    "@alias": "string",
+    "@name": "string",
+    "@page-node": "object"
+  },
+  "<global-published-content-podcasts-layout>": {
+    "template": "./podcasts.marko",
+    "<head>": {},
+    "@sections <section>[]": {},
+    "@id": "number",
+    "@alias": "string",
+    "@name": "string",
+    "@page-node": "object"
+  },
+  "<global-published-content-webinars-layout>": {
+    "template": "./webinars.marko",
+    "<head>": {},
+    "@sections <section>[]": {},
+    "@id": "number",
+    "@alias": "string",
+    "@name": "string",
+    "@page-node": "object"
+  },
+  "<global-published-content-whitepapers-layout>": {
+    "template": "./whitepapers.marko",
+    "<head>": {},
+    "@sections <section>[]": {},
+    "@id": "number",
+    "@alias": "string",
+    "@name": "string",
+    "@page-node": "object"
+  },
+  "<global-published-content-videos-layout>": {
+    "template": "./videos.marko",
+    "<head>": {},
+    "@sections <section>[]": {},
+    "@id": "number",
+    "@alias": "string",
+    "@name": "string",
+    "@page-node": "object"
+  }
+}
