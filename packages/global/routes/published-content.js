@@ -1,15 +1,54 @@
-const events = require('../templates/published-content/events');
-const webinars = require('../templates/published-content/webinars');
-const whitePapers = require('../templates/published-content/whitepapers');
-const videos = require('../templates/published-content/videos');
-const podcasts = require('../templates/published-content/podcasts');
-const documents = require('../templates/published-content/documents');
+const publishedContent = require('../templates/published-content/default');
 
 module.exports = (app) => {
-  app.get('/supplier-events', (_, res) => { res.marko(events); });
-  app.get('/webinars', (_, res) => { res.marko(webinars); });
-  app.get('/white-papers', (_, res) => { res.marko(whitePapers); });
-  app.get('/videos', (_, res) => { res.marko(videos); });
-  app.get('/podcasts', (_, res) => { res.marko(podcasts); });
-  app.get('/downloads', (_, res) => { res.marko(documents); });
+  app.get('/supplier-events', (_, res) => {
+    res.marko(publishedContent,
+      {
+        alias: 'suppliers-events',
+        includeContentTypes: ['Event'],
+        title: 'Suppliers Events',
+      });
+  });
+  app.get('/webinars', (_, res) => {
+    res.marko(publishedContent,
+      {
+        alias: 'webinars',
+        includeContentTypes: ['Webinar'],
+        title: 'Webinars',
+        sortField: 'startDate',
+        sortOrder: 'desc',
+      });
+  });
+  app.get('/white-papers', (_, res) => {
+    res.marko(publishedContent,
+      {
+        alias: 'whitepapers',
+        includeContentTypes: ['Whiteper'],
+        title: 'Whitepapers',
+      });
+  });
+  app.get('/videos', (_, res) => {
+    res.marko(publishedContent,
+      {
+        alias: 'videoss',
+        includeContentTypes: ['Video'],
+        title: 'Videos',
+      });
+  });
+  app.get('/podcasts', (_, res) => {
+    res.marko(publishedContent,
+      {
+        alias: 'podcasts',
+        includeContentTypes: ['Podcast'],
+        title: 'Podcasts',
+      });
+  });
+  app.get('/downloads', (_, res) => {
+    res.marko(publishedContent,
+      {
+        alias: 'downloads',
+        includeContentTypes: ['Document'],
+        title: 'Downloadss',
+      });
+  });
 };

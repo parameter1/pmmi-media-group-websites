@@ -4,20 +4,26 @@ import { getAsArray } from "@parameter1/base-cms-object-path";
 
 $ const sections = getAsArray(input, "sections");
 $ const { config, GAM, pagination: p } = out.global;
+$ const {
+  alias,
+  title,
+  includeContentTypes,
+  sortField,
+  sortOrder,
+} = input;
 $ const perPage = 18;
 
 $ const type = "published-content";
-$ const title = "Videos";
 $ const description = defaultDescription(title, config);
 
 <theme-default-page name=title>
   <@head>
     <theme-section-feed-block|{ totalCount }| with-section=false query-name="all-published-content" count-only=true>
-      <@query-params include-content-types=['Video'] />
+      <@query-params include-content-types=includeContentTypes />
       <theme-pagination-controls
         per-page=perPage
         total-count=totalCount
-        path='/videos'
+        path=`/${alias}`
         as-rels=true
       />
     </theme-section-feed-block>
@@ -49,14 +55,21 @@ $ const description = defaultDescription(title, config);
       </@section>
       <@section|{ blockName }|>
         <theme-section-feed-block with-section=false query-name="all-published-content" lazyload=false>
-          <@query-params include-content-types=['Video'] limit=18 skip=p.skip({ perPage }) query-fragment=queryFragment />
+          <@query-params
+            limit=18
+            skip=p.skip({ perPage })
+            query-fragment=queryFragment
+            include-content-types=includeContentTypes
+            sort-field=sortField
+            sort-order=sortOrder
+          />
         </theme-section-feed-block>
         <theme-section-feed-block|{ totalCount }| query-name="all-published-content" count-only=true>
-          <@query-params include-content-types=['Video'] />
+          <@query-params include-content-types=includeContentTypes />
           <theme-pagination-controls
             per-page=perPage
             total-count=totalCount
-            path='/videos'
+            path=`/${alias}`
           />
         </theme-section-feed-block>
       </@section>
