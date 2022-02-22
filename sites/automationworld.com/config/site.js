@@ -44,6 +44,7 @@ module.exports = {
     { provider: 'twitter', href: 'https://www.twitter.com/automationworld' },
     { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/automation-world' },
     { provider: 'instagram', href: 'https://www.instagram.com/automation_world' },
+    { provider: 'youtube', href: 'https://www.youtube.com/c/AutomationWorldTV?utm_source=AWWebsite&utm_campaign=AWYouTube' },
   ],
   gtm: {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-NM2MBTG',
