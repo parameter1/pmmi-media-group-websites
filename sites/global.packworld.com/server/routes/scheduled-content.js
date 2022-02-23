@@ -1,8 +1,8 @@
-const publishedContent = require('@pmmi-media-group/package-global/templates/published-content/default');
+const scheduledContent = require('@pmmi-media-group/package-global/templates/scheduled-content/default');
 
 module.exports = (app) => {
   app.get('/products', (_, res) => {
-    res.marko(publishedContent,
+    res.marko(scheduledContent,
       {
         alias: 'products',
         includeContentTypes: ['Product'],

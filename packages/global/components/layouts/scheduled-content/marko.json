@@ -1,9 +1,10 @@
 {
-  "<global-published-content-layout>": {
+  "<global-scheduled-content-layout>": {
     "template": "./index.marko",
     "<head>": {},
     "@sections <section>[]": {},
     "@alias": "string",
+    "@ending-after": "string",
     "@name": "string",
     "@title": "string",
     "@include-content-types": "array",
