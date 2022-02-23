@@ -2,6 +2,8 @@ const htmlSitemap = require('@parameter1/base-cms-marko-web-html-sitemap/routes'
 const renderBlock = require('@pmmi-media-group/package-theme-monorail/routes/render-block');
 const search = require('@pmmi-media-group/package-theme-monorail/routes/search');
 const taxonomy = require('@pmmi-media-group/package-theme-monorail/routes/taxonomy');
+
+const leaders = require('./leaders');
 const feed = require('./feed');
 const content = require('./content');
 const dynamicPage = require('./dynamic-page');
@@ -15,6 +17,8 @@ const redirects = require('./redirects');
 const staticPage = require('./static-page');
 
 module.exports = (app, siteConfig) => {
+  leaders(app);
+
   // Feed
   feed(app);
 
