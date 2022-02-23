@@ -1,5 +1,4 @@
 {
-  "taglib-id": "@parameter1/base-cms-marko-web-leaders",
   "taglib-imports": [
     "./components/marko.json"
   ]
