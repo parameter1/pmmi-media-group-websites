@@ -56,7 +56,7 @@ module.exports = (app) => {
       {
         alias: 'downloads',
         includeContentTypes: ['Document'],
-        title: 'Downloadss',
+        title: 'Downloads',
       });
   });
 };
