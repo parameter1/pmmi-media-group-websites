@@ -22,8 +22,8 @@ module.exports = (app) => {
   app.get('/white-papers', (_, res) => {
     res.marko(publishedContent,
       {
-        alias: 'whitepapers',
-        includeContentTypes: ['Whiteper'],
+        alias: 'white-papers',
+        includeContentTypes: ['Whitepaper'],
         title: 'Whitepapers',
       });
   });
