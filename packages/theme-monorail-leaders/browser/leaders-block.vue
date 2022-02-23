@@ -49,7 +49,10 @@ import Loading from './common/loading.vue';
 import LeadersSectionsWrapper from './containers/section-wrapper.vue';
 import LeadersHeader from './header.vue';
 
-import allQuery from '../graphql/queries/all-sections';
+// import allQuery from '../graphql/queries/all-sections';
+// import fromContentQuery from '../graphql/queries/sections-from-content';
+// import fromIdsQuery from '../graphql/queries/sections-from-ids';
+// import contentQuery from '../graphql/queries/content';
 import getEdgeNodes from './utils/get-edge-nodes';
 import getAsObject from './utils/get-as-object';
 
@@ -292,6 +295,7 @@ export default {
         if (primarySection.id) sectionIds.push(primarySection.id);
       }
       if (!taxonomyIds.length && !sectionIds.length) return [];
+
       const sectionFromContentUrl = `/__sections-from-content?sectionIds=${sectionIds}&taxonomyIds=${taxonomyIds}`;
       const sectionFromContentRes = await fetch(sectionFromContentUrl);
       const sectionFromContentJson = await sectionFromContentRes.json();
@@ -301,10 +305,11 @@ export default {
     },
 
     async loadAllSections() {
-      const variables = { sectionAlias: this.sectionAlias };
-      const { data } = await this.$apollo.query({ query: allQuery, variables });
+      const url = `/__all-sections?alias=${this.sectionAlias}`;
+      const res = await fetch(url);
+      const json = await res.json();
       this.loadType = 'all';
-      return getEdgeNodes(data, 'websiteSectionAlias.children');
+      return getEdgeNodes(json, 'websiteSectionAlias.children');
     },
   },
 };
