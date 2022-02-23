@@ -30,7 +30,7 @@ module.exports = (app) => {
   app.get('/videos', (_, res) => {
     res.marko(publishedContent,
       {
-        alias: 'videoss',
+        alias: 'videos',
         includeContentTypes: ['Video'],
         title: 'Videos',
       });
