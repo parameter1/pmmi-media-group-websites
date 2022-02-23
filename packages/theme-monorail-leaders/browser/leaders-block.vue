@@ -50,7 +50,6 @@ import LeadersSectionsWrapper from './containers/section-wrapper.vue';
 import LeadersHeader from './header.vue';
 
 import allQuery from '../graphql/queries/all-sections';
-import contentQuery from '../graphql/queries/content';
 import getEdgeNodes from './utils/get-edge-nodes';
 import getAsObject from './utils/get-as-object';
 
@@ -282,13 +281,14 @@ export default {
 
     async loadContentSections() {
       if (!this.contentId) return [];
-      const variables = { contentId: this.contentId };
-      const r1 = await this.$apollo.query({ query: contentQuery, variables });
-      const taxonomyIds = getEdgeNodes(r1, 'data.content.taxonomy').map(t => t.id);
+      const leaderByIdUrl = `/__leader-by-id?id=${this.contentId}`;
+      const res = await fetch(leaderByIdUrl);
+      const json = await res.json();
+      const taxonomyIds = getEdgeNodes(json, 'content.taxonomy').map(t => t.id);
       const sectionIds = [];
       this.taxonomyIds = taxonomyIds;
       if (this.useContentPrimarySection) {
-        const primarySection = getAsObject(r1, 'data.content.primarySection');
+        const primarySection = getAsObject(json, 'content.primarySection');
         if (primarySection.id) sectionIds.push(primarySection.id);
       }
       if (!taxonomyIds.length && !sectionIds.length) return [];
