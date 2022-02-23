@@ -1,0 +1,13 @@
+{
+  "<global-published-content-layout>": {
+    "template": "./index.marko",
+    "<head>": {},
+    "@sections <section>[]": {},
+    "@alias": "string",
+    "@name": "string",
+    "@title": "string",
+    "@include-content-types": "array",
+    "@sort-field": "string",
+    "@sort-order": "string"
+  }
+}
