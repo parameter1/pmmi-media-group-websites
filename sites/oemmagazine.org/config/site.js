@@ -44,8 +44,6 @@ module.exports = {
     { provider: 'twitter', href: 'https://twitter.com/oemmagazine' },
     { provider: 'facebook', href: 'https://www.facebook.com/OEMMagazine' },
     { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/oem-magazine' },
-    { provider: 'youtube', href: 'https://www.youtube.com/channel/UCFTwxWPoHELvYMYBa-ZES4A?utm_source=OEMWebsite&utm_campaign=OEMYouTube' },
-
   ],
   gtm: {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-M596Q98',
