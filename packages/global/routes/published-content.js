@@ -4,9 +4,9 @@ module.exports = (app) => {
   app.get('/supplier-events', (_, res) => {
     res.marko(publishedContent,
       {
-        alias: 'suppliers-events',
+        alias: 'supplier-events',
         includeContentTypes: ['Event'],
-        title: 'Suppliers Events',
+        title: 'Supplier Events',
       });
   });
   app.get('/webinars', (_, res) => {
