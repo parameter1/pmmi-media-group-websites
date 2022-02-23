@@ -51,7 +51,6 @@ import LeadersHeader from './header.vue';
 
 import allQuery from '../graphql/queries/all-sections';
 import fromContentQuery from '../graphql/queries/sections-from-content';
-import fromIdsQuery from '../graphql/queries/sections-from-ids';
 import contentQuery from '../graphql/queries/content';
 import getEdgeNodes from './utils/get-edge-nodes';
 import getAsObject from './utils/get-as-object';
@@ -267,9 +266,10 @@ export default {
     async loadSections() {
       const { sectionIds } = this;
       if (sectionIds && sectionIds.length) {
-        const variables = { sectionIds };
-        const r = await this.$apollo.query({ query: fromIdsQuery, variables });
-        const sections = getEdgeNodes(r, 'data.websiteSections')
+        const url = `/__sections-from-ids?sectionIds=${this.sectionids}`;
+        const res = await fetch(url);
+        const json = await res.json();
+        const sections = getEdgeNodes(json, 'websiteSections')
           .filter(s => s.hierarchy.some(({ alias }) => alias === this.sectionAlias));
         if (sections.length) return sections;
       }
