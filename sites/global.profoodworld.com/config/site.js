@@ -59,8 +59,6 @@ module.exports = {
     { provider: 'twitter', href: 'https://twitter.com/ProFoodWorld' },
     { provider: 'facebook', href: 'https://www.facebook.com/ProFoodWorld' },
     { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/profoodworld' },
-    { provider: 'youtube', href: 'https://www.youtube.com/channel/UCMtji4GViRU_1PfKnVpu2Yw?utm_source=PFWWebsite&utm_campaign=PFWYouTube' },
-
   ],
   gtm: {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-MW8Q9VC',
