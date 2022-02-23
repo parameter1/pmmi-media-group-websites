@@ -1,0 +1,101 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import defaultDescription from "@parameter1/base-cms-marko-web/utils/published-content/description";
+import queryFragment from "@pmmi-media-group/package-theme-monorail/graphql/fragments/content-list";
+import { getAsArray } from "@parameter1/base-cms-object-path";
+
+$ const sections = getAsArray(input, "sections");
+$ const queryName = defaultValue(input.queryName, "website-scheduled-content");
+$ const { config, GAM, pagination: p } = out.global;
+$ const {
+  alias,
+  title,
+  includeContentTypes,
+  sortField,
+  sortOrder,
+  endingAfter,
+} = input;
+$ const perPage = 18;
+
+$ const type = "scheduled-content";
+$ const description = defaultDescription(title, config);
+
+<theme-default-page name=title>
+  <@head>
+    <theme-section-feed-block|{ totalCount }| with-section=false query-name=queryName count-only=true>
+      <@query-params include-content-types=includeContentTypes />
+      <theme-pagination-controls
+        per-page=perPage
+        total-count=totalCount
+        path=`/${alias}`
+        as-rels=true
+      />
+    </theme-section-feed-block>
+    <marko-web-gtm-default-context|{ context }| type=type>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-default-context>
+  </@head>
+  <@page>
+    <marko-web-page-wrapper>
+      <@section|{ aliases }| modifiers=["first"]>
+        <theme-gam-define-display-ad
+          name="leaderboard"
+          position="section_page"
+          aliases=aliases
+          modifiers=["inter-block"]
+        />
+        <theme-gam-wallpaper-ad aliases=aliases position="section_page" />
+      </@section>
+      <@section>
+        <div class="row">
+          <div class="col">
+            <default-theme-breadcrumbs-with-home>
+              <@item>${title}</@item>
+            </default-theme-breadcrumbs-with-home>
+            <h1 class="page-wrapper__title">${title}</h1>
+            <div class="page-wrapper__deck">${description}</div>
+          </div>
+        </div>
+      </@section>
+      <@section|{ blockName }|>
+        <theme-section-feed-block with-section=false query-name=queryName lazyload=false>
+          <@query-params
+            limit=18
+            skip=p.skip({ perPage })
+            query-fragment=queryFragment
+            include-content-types=includeContentTypes
+            sort-field=sortField
+            sort-order=sortOrder
+            ending-after=endingAfter
+          />
+        </theme-section-feed-block>
+        <theme-section-feed-block|{ totalCount }| query-name=queryName count-only=true>
+          <@query-params include-content-types=includeContentTypes />
+          <theme-pagination-controls
+            per-page=perPage
+            total-count=totalCount
+            path=`/${alias}`
+          />
+        </theme-section-feed-block>
+      </@section>
+      <@section|{ aliases }|>
+        <theme-gam-define-display-ad
+          name="rotation"
+          position="section_page"
+          aliases=aliases
+          modifiers=["inter-block"]
+        />
+      </@section>
+      <@section>
+        <theme-client-side-most-popular-block />
+      </@section>
+      <@section|{ aliases }|>
+        <theme-gam-define-display-ad
+          name="rotation"
+          position="section_page"
+          aliases=aliases
+          modifiers=["inter-block"]
+        />
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</theme-default-page>

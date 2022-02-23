@@ -6,6 +6,7 @@ const taxonomy = require('@pmmi-media-group/package-theme-monorail/routes/taxono
 const leaders = require('./leaders');
 const feed = require('./feed');
 const content = require('./content');
+const scheduledContent = require('./scheduled-content');
 const dynamicPage = require('./dynamic-page');
 // const identityX = require('./identity-x');
 const magazine = require('../components/magazine/routes');
@@ -24,6 +25,8 @@ module.exports = (app, siteConfig) => {
 
   // IdentityX (user routing and app context)
   // identityX(app);
+
+  scheduledContent(app);
 
   // Magazine Routes
   magazine(app);
