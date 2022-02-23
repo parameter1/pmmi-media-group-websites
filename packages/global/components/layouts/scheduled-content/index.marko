@@ -1,8 +1,10 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import defaultDescription from "@parameter1/base-cms-marko-web/utils/published-content/description";
 import queryFragment from "@pmmi-media-group/package-theme-monorail/graphql/fragments/content-list";
 import { getAsArray } from "@parameter1/base-cms-object-path";
 
 $ const sections = getAsArray(input, "sections");
+$ const queryName = defaultValue(input.queryName, "website-scheduled-content");
 $ const { config, GAM, pagination: p } = out.global;
 $ const {
   alias,
@@ -10,15 +12,16 @@ $ const {
   includeContentTypes,
   sortField,
   sortOrder,
+  endingAfter,
 } = input;
 $ const perPage = 18;
 
-$ const type = "published-content";
+$ const type = "scheduled-content";
 $ const description = defaultDescription(title, config);
 
 <theme-default-page name=title>
   <@head>
-    <theme-section-feed-block|{ totalCount }| with-section=false query-name="all-published-content" count-only=true>
+    <theme-section-feed-block|{ totalCount }| with-section=false query-name=queryName count-only=true>
       <@query-params include-content-types=includeContentTypes />
       <theme-pagination-controls
         per-page=perPage
@@ -54,7 +57,7 @@ $ const description = defaultDescription(title, config);
         </div>
       </@section>
       <@section|{ blockName }|>
-        <theme-section-feed-block with-section=false query-name="all-published-content" lazyload=false>
+        <theme-section-feed-block with-section=false query-name=queryName lazyload=false>
           <@query-params
             limit=18
             skip=p.skip({ perPage })
@@ -62,9 +65,10 @@ $ const description = defaultDescription(title, config);
             include-content-types=includeContentTypes
             sort-field=sortField
             sort-order=sortOrder
+            ending-after=endingAfter
           />
         </theme-section-feed-block>
-        <theme-section-feed-block|{ totalCount }| query-name="all-published-content" count-only=true>
+        <theme-section-feed-block|{ totalCount }| query-name=queryName count-only=true>
           <@query-params include-content-types=includeContentTypes />
           <theme-pagination-controls
             per-page=perPage
@@ -73,13 +77,25 @@ $ const description = defaultDescription(title, config);
           />
         </theme-section-feed-block>
       </@section>
-      <for|s| of=sections>
-        <@section|{ blockName }| modifiers=s.modifiers>
-          <${s.renderBody}
-            block-name=blockName
-          />
-        </@section>
-      </for>
+      <@section|{ aliases }|>
+        <theme-gam-define-display-ad
+          name="rotation"
+          position="section_page"
+          aliases=aliases
+          modifiers=["inter-block"]
+        />
+      </@section>
+      <@section>
+        <theme-client-side-most-popular-block />
+      </@section>
+      <@section|{ aliases }|>
+        <theme-gam-define-display-ad
+          name="rotation"
+          position="section_page"
+          aliases=aliases
+          modifiers=["inter-block"]
+        />
+      </@section>
     </marko-web-page-wrapper>
   </@page>
 </theme-default-page>

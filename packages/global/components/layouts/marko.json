@@ -1,7 +1,7 @@
 {
   "taglib-imports": [
     "./content/marko.json",
-    "./published-content/marko.json",
+    "./scheduled-content/marko.json",
     "./website-section/marko.json"
   ]
 }
