@@ -66,7 +66,6 @@ import List from '../list/index.vue';
 import Card from '../card/index.vue';
 import LinkContents from '../list/nav/contents.vue';
 
-import query from '../../graphql/queries/content-for-section';
 import getEdgeNodes from '../utils/get-edge-nodes';
 
 export default {
@@ -210,16 +209,14 @@ export default {
         this.isLoading = true;
         this.error = null;
         try {
-          const variables = {
-            sectionId: this.sectionId,
-            promotionLimit: this.promotionLimit,
-            videoLimit: this.videoLimit,
-          };
-          const { data } = await this.$apollo.query({ query, variables });
-          this.items = getEdgeNodes(data, 'websiteScheduledContent');
+          const url = `/__content-for-section?sectionId=${this.sectionId}`;
+          const res = await fetch(url);
+          const json = await res.json();
+          if (!res.ok) throw new Error(json.message || res.statusText);
+          this.items = getEdgeNodes(json, 'websiteScheduledContent');
           this.hasLoaded = true;
-        } catch (e) {
-          this.error = e;
+        } catch (error) {
+          this.error = error.message;
         } finally {
           this.isLoading = false;
         }
