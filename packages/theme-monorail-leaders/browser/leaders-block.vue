@@ -299,7 +299,7 @@ export default {
     },
 
     async loadAllSections() {
-      const url = `/__all-sections?alias=${this.sectionAlias}`;
+      const url = `/__all-sections?alias=${encodeURIComponent(this.sectionAlias)}`;
       const res = await fetch(url);
       const json = await res.json();
       this.loadType = 'all';
