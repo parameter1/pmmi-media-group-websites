@@ -8,11 +8,9 @@
 @import "../../node_modules/bootstrap/scss/input-group";
 @import "../../node_modules/@parameter1/base-cms-marko-web-html-sitemap/scss/index";
 
+
 // skin mixins
 @import "./mixins";
-
-// skin leaders
-@import "./leaders/leaders";
 
 // components
 @import "../components/breadcrumbs/scss/breadcrumbs";
