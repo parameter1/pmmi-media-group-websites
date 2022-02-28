@@ -59,6 +59,7 @@ module.exports = {
     { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/mundo-pmmi' },
     { provider: 'twitter', href: 'https://twitter.com/MundoPmmi' },
     { provider: 'facebook', href: 'https://www.facebook.com/MundoPMMI' },
+    { provider: 'youtube', href: 'https://www.youtube.com/channel/UCM5Ldhqi4SFRIyoGxuJZV3w?utm_source=MundoWebsite&utm_campaign=MundoYouTube' },
   ],
   gtm: {
     containerId: process.env.GTM_CONTAINER_ID || 'GTM-PWZTDXM',
