@@ -8,7 +8,6 @@
 @import "../../node_modules/bootstrap/scss/input-group";
 @import "../../node_modules/@parameter1/base-cms-marko-web-html-sitemap/scss/index";
 
-
 // skin mixins
 @import "./mixins";
 
@@ -27,6 +26,7 @@
 @import "./components/site-footer";
 @import "./components/site-menu";
 @import "./components/site-navbar";
+@import "./components/site-navbar-b";
 @import "./components/site-newsletter-menu";
 @import "./components/spec-guide";
 @import "./components/sponsor-logo";
