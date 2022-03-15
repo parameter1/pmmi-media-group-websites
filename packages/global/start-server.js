@@ -13,7 +13,6 @@ const paginated = require('./middleware/paginated');
 const newsletterState = require('./middleware/newsletter-state');
 const redirectHandler = require('./redirect-handler');
 const oembedHandler = require('./oembed-handler');
-const omedaConfig = require('./config/omeda');
 const idxRouteTemplates = require('./templates/user');
 const recaptcha = require('./config/recaptcha');
 
@@ -57,6 +56,7 @@ module.exports = (options = {}) => {
 
       // Setup IdentityX + Omeda
       const idxConfig = getAsObject(options, 'siteConfig.identityX');
+      const omedaConfig = getAsObject(options, 'siteConfig.omeda');
       omedaIdentityX(app, {
         brandKey: omedaConfig.brandKey,
         clientKey: omedaConfig.clientKey,

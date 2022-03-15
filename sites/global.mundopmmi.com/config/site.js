@@ -4,6 +4,7 @@ const leaders = require('./leaders');
 const nativeX = require('./native-x');
 const newsletter = require('./newsletter');
 const identityX = require('./identity-x');
+const omeda = require('./omeda');
 const gam = require('./gam');
 const search = require('./search');
 const subscribe = require('./subscribe');
@@ -13,6 +14,7 @@ module.exports = {
   navigation,
   nativeX,
   identityX,
+  omeda,
   newsletter,
   gam,
   search,
