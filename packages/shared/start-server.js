@@ -11,7 +11,6 @@ const fragments = require('./fragments');
 const sharedRoutes = require('./routes');
 const searchRoutes = require('./routes/search');
 const oembedHandler = require('./oembed-handler');
-const omedaConfig = require('./config/omeda');
 const idxRouteTemplates = require('./templates/user');
 const idxNavItems = require('./config/identity-x-nav');
 
@@ -52,6 +51,7 @@ module.exports = (options = {}) => {
 
       // Setup IdentityX + Omeda
       const idxConfig = getAsObject(options, 'siteConfig.identityX');
+      const omedaConfig = getAsObject(options, 'siteConfig.omeda');
       omedaIdentityX(app, {
         brandKey: omedaConfig.brandKey,
         appId: omedaConfig.appId,

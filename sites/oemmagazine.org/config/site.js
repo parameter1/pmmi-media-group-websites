@@ -3,6 +3,7 @@ const navigation = require('./navigation');
 const leaders = require('./leaders');
 const nativeX = require('./native-x');
 const identityX = require('./identity-x');
+const omeda = require('./omeda');
 const gam = require('./gam');
 const search = require('./search');
 
@@ -12,6 +13,7 @@ module.exports = {
   navigation,
   nativeX,
   identityX,
+  omeda,
   gam,
   search,
   company: 'PMMI Media Group',
