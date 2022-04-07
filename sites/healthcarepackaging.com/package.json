@@ -1,6 +1,6 @@
 {
   "name": "@pmmi-media-group/healthcarepackaging.com",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "author": "Josh Worden <josh@limit0.io>",
   "repository": "https://github.com/parameter1/pmmi-media-group-websites/tree/master/sites/healthcarepackaging.com",
   "license": "MIT",
@@ -30,7 +30,7 @@
     "@parameter1/base-cms-utils": "^2.75.1",
     "@parameter1/base-cms-web-cli": "^2.75.1",
     "@pmmi-media-group/package-common": "^2.7.0",
-    "@pmmi-media-group/package-shared": "^2.8.1",
+    "@pmmi-media-group/package-shared": "^2.8.2",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
   }
