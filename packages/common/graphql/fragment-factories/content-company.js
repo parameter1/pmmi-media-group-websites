@@ -56,7 +56,7 @@ fragment WebsiteContentCompanyFragment on Content {
 
     isLeader: hasWebsiteSchedule(input: { sectionAlias: "${leadersAlias}" })
 
-    contacts: publicContacts {
+    contacts: publicContacts(input: { sort: { field: published, order: asc }}) {
       edges {
         node {
           id
