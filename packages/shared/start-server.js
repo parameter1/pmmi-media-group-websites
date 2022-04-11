@@ -55,7 +55,6 @@ module.exports = (options = {}) => {
       omedaIdentityX(app, {
         clientKey: omedaConfig.clientKey,
         brandKey: omedaConfig.brandKey,
-        clientKey: omedaConfig.clientKey,
         appId: omedaConfig.appId,
         inputId: omedaConfig.inputId,
         rapidIdentProductId: get(omedaConfig, 'rapidIdentification.productId'),
