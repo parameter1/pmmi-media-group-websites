@@ -15,7 +15,6 @@ module.exports = (app) => {
     template: contact,
     queryFragment,
   }));
-
   app.get('/*?company/:id(\\d{8})*', withContent({
     template: company,
     queryFragment: companyQueryFragmentFn(site.get('leaders.alias')),
