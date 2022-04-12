@@ -65,7 +65,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
               <!-- <marko-web-image-slider images=images /> -->
             </else-if>
             <else-if(displayPrimaryImage)>
-              $ let forceDisplay = "fluid";
+              $ let forceDisplay = "full";
               $ if (type === "contact") forceDisplay = "left";
               $ if (type === "video") forceDisplay = "none";
               <theme-primary-image-block
