@@ -29,11 +29,16 @@
           required
           @focus="didFocus = true"
         >
-        <privacy-policy :block-name="blockName" :privacy-policy-link="privacyPolicyLink" />
+        <privacy-policy
+          :block-name="blockName"
+          :privacy-policy-link="privacyPolicyLink"
+          :lang="lang"
+        />
         <sign-up-button
           :class="element('form-button')"
           :is-loading="isLoading"
           :disabled="disabled"
+          :lang="lang"
         />
       </form>
 
