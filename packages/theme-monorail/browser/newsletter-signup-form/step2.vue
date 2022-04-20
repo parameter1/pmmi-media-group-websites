@@ -175,6 +175,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    lang: {
+      type: String,
+      default: 'en',
+    },
   },
 
   data: () => ({

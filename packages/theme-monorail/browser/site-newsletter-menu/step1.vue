@@ -103,6 +103,10 @@ export default {
       type: Object,
       required: true,
     },
+    lang: {
+      type: String,
+      default: 'en',
+    },
   },
 
   data: () => ({
