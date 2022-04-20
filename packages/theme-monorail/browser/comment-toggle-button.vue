@@ -35,6 +35,10 @@ export default {
       type: String,
       required: true,
     },
+    lang: {
+      type: String,
+      default: 'en',
+    },
   },
 
   data: () => ({
