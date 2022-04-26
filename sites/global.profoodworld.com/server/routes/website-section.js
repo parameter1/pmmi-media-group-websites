@@ -1,6 +1,6 @@
 const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middleware');
 const queryFragment = require('@pmmi-media-group/package-theme-monorail/graphql/fragments/website-section-page');
-const leadersFragment = require('@pmmi-media-group/package-theme-monorail/graphql/fragments/leaders-section');
+const leadersFragment = require('@pmmi-media-group/package-theme-monorail-leaders/graphql/fragments/leaders-section');
 const section = require('../templates/website-section');
 const leaders = require('../templates/website-section/leaders');
 const global250 = require('../templates/website-section/global-250');
