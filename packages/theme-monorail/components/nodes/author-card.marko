@@ -1,5 +1,7 @@
 import { getAsObject, get } from "@parameter1/base-cms-object-path";
 
+$ const { i18n } = out.global;
+
 $ const content = getAsObject(input, "node");
 $ const primaryImage = getAsObject(content, "primaryImage");
 $ const withTitle = input.withTitle != null ? input.withTitle : true;
@@ -31,7 +33,7 @@ $ const withTitle = input.withTitle != null ? input.withTitle : true;
       <@right>
         <if(input.withEmail && content.publicEmail)>
           <marko-web-content-public-email obj=content link={ href: `mailto:${content.publicEmail}`, class:"btn btn-sm btn-primary" }>
-            Email
+            ${i18n("Email")}
           </marko-web-content-public-email>
         </if>
       </@right>
