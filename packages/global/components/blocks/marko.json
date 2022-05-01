@@ -12,5 +12,8 @@
       "type": "string",
       "required": true
     }
+  },
+  "<global-promo-card-rotation-block>": {
+    "template": "./promo-card-rotation.marko"
   }
 }
