@@ -14,14 +14,18 @@ $ const { site } = out.global;
     <theme-opinion-block alias="home" />
   </@section> -->
 
-  <@section|{ aliases }|>
+  <@section>
+    <global-promo-card-rotation-block />
+  </@section>
+
+  <!-- <@section|{ aliases }|>
     <theme-gam-define-display-ad
-      name="rotation"
+      name="leaderboard"
       position="home_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
-  </@section>
+  </@section> -->
 
   <@section>
     <theme-section-list-deck-block aliases=["products", "factory", "process"] />
@@ -50,16 +54,9 @@ $ const { site } = out.global;
     <theme-hero-card-block name="Videos" query-params={ includeContentTypes: ["Video"] } />
   </@section>
 
-  <!-- <@section>
-    <theme-callout-cards-block>
-      <@slot>
-        <theme-latest-podcast-block alias="overdrive-radio" />
-      </@slot>
-      <@slot>
-        <site-promo-card-rotation-block />
-      </@slot>
-    </theme-callout-cards-block>
-  </@section> -->
+  <@section>
+    <global-promo-card-rotation-block />
+  </@section>
 
   <@section>
     <theme-client-side-most-popular-block />
@@ -74,13 +71,17 @@ $ const { site } = out.global;
     />
   </@section> -->
 
-  <!-- <@section>
-    <theme-products-block alias="gear" />
-  </@section> -->
+  <@section>
+    <theme-products-block alias="products" title="Partner Content" />
+  </@section>
 
-  <!-- <@section>
-    <theme-section-card-deck-block alias="reader-rigs" />
-  </@section> -->
+  <@section>
+    <theme-section-card-deck-block alias="products" />
+  </@section>
+
+  <@section>
+    <theme-section-card-list-block alias="products" default-description="Latest products in the marketplace" />
+  </@section>
 
   <@section>
     <theme-resource-library-block name="Downloads" query-params={ includeContentTypes: ["Document"] } />
