@@ -13,8 +13,8 @@ config
   .setAliasAdUnits('default', [
     { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'mundo_leaderboard' },
     { name: 'rotation', templateName: 'ROTATION', path: 'mundo_leaderboard' },
-    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'mundo_leaderboard' },
-    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'mundo_leaderboard' },
+    { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'mundo_imu1' },
+    { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'mundo_imu1' },
     { name: 'wallpaper-left', templateName: 'WALLPAPER', path: 'mundo-wallpaper-left' },
     { name: 'wallpaper-right', templateName: 'WALLPAPER', path: 'mundo-wallpaper-right' },
     // { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'mundo_leaderboard' },

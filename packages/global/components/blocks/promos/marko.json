@@ -1,3 +1,14 @@
 {
-
+  "<global-standard-promo-block>": {
+    "template": "./standard.marko"
+  },
+  "<global-data-study-promo-block>": {
+    "template": "./data-study.marko"
+  },
+  "<global-pack-expo-xpress-promo-block>": {
+    "template": "./pack-expo-xpress.marko"
+  },
+  "<global-covid-news-promo-block>": {
+    "template": "./covid-news.marko"
+  }
 }
