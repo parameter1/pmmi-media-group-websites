@@ -10,17 +10,13 @@ $ const { site } = out.global;
   name=name
   page-node=pageNode
 >
-  <!-- <@section modifiers=["break-container"]>
-    <theme-opinion-block alias="home" />
-  </@section> -->
-
-  <@section>
-    <global-promo-card-rotation-block />
+  <@section modifiers=["break-container"]>
+    <theme-opinion-block alias="sustainability" />
   </@section>
 
   <!-- <@section|{ aliases }|>
     <theme-gam-define-display-ad
-      name="leaderboard"
+      name="rotation"
       position="home_page"
       aliases=aliases
       modifiers=["inter-block"]
@@ -76,11 +72,11 @@ $ const { site } = out.global;
   </@section>
 
   <@section>
-    <theme-section-card-deck-block alias="products" />
+    <theme-section-card-deck-block alias="products" default-description="This is an example description" />
   </@section>
 
   <@section>
-    <theme-section-card-list-block alias="products" default-description="Latest products in the marketplace" />
+    <theme-section-card-list-block alias="sustainability" default-description="This is an example description" />
   </@section>
 
   <@section>
