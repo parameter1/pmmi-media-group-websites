@@ -32,7 +32,7 @@ module.exports = {
   'previous page': 'Pagina Anterior',
   page: 'Pagina',
   of: 'de',
-  'next page': 'Pagina Próximo',
+  'next page': 'Pagina Próxima',
   email: 'Correo electrónico',
   'sign up': 'Suscríbase ',
   topics: 'Temas',
