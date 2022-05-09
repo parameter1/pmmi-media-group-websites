@@ -29,7 +29,7 @@ module.exports = {
   'company overview': 'Compañía Resumen',
   'featured products': 'Productos presentados',
   downloads: 'Recursos Digitales',
-  'previous page': 'Anterior Pagina',
+  'previous page': 'Pagina Anterior',
   page: 'Pagina',
   of: 'de',
   'next page': 'Próxima Pagina',
