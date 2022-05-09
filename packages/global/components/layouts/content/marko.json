@@ -55,15 +55,6 @@
     "@type": "string",
     "@page-node": "object"
   },
-  "<global-content-product-layout>": {
-    "template": "./product.marko",
-    "<after-body>": {},
-    "<right-rail>": {},
-    "@sections <section>[]": {},
-    "@id": "number",
-    "@type": "string",
-    "@page-node": "object"
-  },
   "<global-content-whitepaper-layout>": {
     "template": "./whitepaper.marko",
     "@id": "number",
