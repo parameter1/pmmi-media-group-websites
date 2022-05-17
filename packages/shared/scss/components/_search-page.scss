@@ -8,8 +8,8 @@
 
 .marko-web-search-sort-by {
   @include media-breakpoint-down(lg) {
+    width: 50%;
     padding-top: 20px;
-    width: 50%
   }
 }
 
