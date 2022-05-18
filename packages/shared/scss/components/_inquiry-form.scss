@@ -30,7 +30,8 @@
     margin-bottom: 0;
   }
 
-  input[type=checkbox] + label,
+  // stylelint-disable-next-line selector-no-qualifying-type
+  input[type="checkbox"] + label,
   .consent-html {
     display: inline;
   }

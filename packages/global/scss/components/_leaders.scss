@@ -20,8 +20,8 @@
   &__toggle-button {
     border-radius: 4px;
     ~ #{ $self }__list {
-      border-radius: 0 0 4px 4px;
       overflow: hidden;
+      border-radius: 0 0 4px 4px;
     }
   }
 }
