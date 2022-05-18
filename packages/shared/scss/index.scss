@@ -29,3 +29,8 @@ $header-height: calc(50px + (#{$block-spacer} * 2)) !default;
     display: inline;
   }
 }
+
+.content-page-preview-overlay {
+  height: 200px;
+  margin-top: -175px;
+}
