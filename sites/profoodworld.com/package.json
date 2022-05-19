@@ -1,6 +1,6 @@
 {
   "name": "@pmmi-media-group/profoodworld.com",
-  "version": "2.9.2",
+  "version": "2.9.3",
   "author": "Josh Worden <josh@limit0.io>",
   "repository": "https://github.com/parameter1/pmmi-media-group-websites/tree/master/sites/profoodworld.com",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "@parameter1/base-cms-utils": "^2.75.1",
     "@parameter1/base-cms-web-cli": "^2.81.0",
     "@pmmi-media-group/package-common": "^2.9.1",
-    "@pmmi-media-group/package-shared": "^2.9.2",
+    "@pmmi-media-group/package-shared": "^2.9.3",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
     "node-fetch": "^2.6.0"
