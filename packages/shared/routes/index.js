@@ -4,6 +4,7 @@ const magazine = require('./magazine');
 const printContent = require('./print-content');
 const publishedContent = require('./published-content');
 const subscribe = require('./subscribe');
+const rss = require('./rss');
 
 module.exports = (app) => {
   // Inquiries
@@ -23,4 +24,7 @@ module.exports = (app) => {
 
   // Subscription Pages
   subscribe(app);
+
+  // RSS Feeds
+  rss(app);
 };
