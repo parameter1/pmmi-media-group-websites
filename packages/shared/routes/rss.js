@@ -10,7 +10,7 @@ module.exports = (app) => {
     const cleanedAlias = params.sectionAlias.replace(/\/+$/, '').replace(/^\/+/, '');
     const section = await loader(apollo, { alias: cleanedAlias });
     if (section) {
-      params.sectionAlias = cleanedAlias;
+      params.sectionAlias = section.alias;
       res.redirect(301, `/__rss/website-scheduled-content.xml?input=${encodeURIComponent(JSON.stringify(params))}`);
     }
   }));
