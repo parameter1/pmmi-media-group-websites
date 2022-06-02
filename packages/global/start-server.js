@@ -16,6 +16,9 @@ const oembedHandler = require('./oembed-handler');
 const idxRouteTemplates = require('./templates/user');
 const recaptcha = require('./config/recaptcha');
 
+const contentGatingHandlerEnabled = process.env.CONTENT_GATING_HANDLER_ENABLED;
+const defaultContentGatingHandler = require('./utils/content-gating-handler');
+
 const routes = (siteRoutes, siteConfig) => (app) => {
   // Handle submissions on /__inquiry
   loadInquiry(app);
@@ -32,6 +35,10 @@ module.exports = (options = {}) => {
     includeContentTypes: ['Article'],
     excludeLabels: ['Sponsored'],
   };
+  // Allow for env enable/disable of contentGatingHandler
+  const contentGatingHandler = (contentGatingHandlerEnabled)
+    ? options.contentGatingHandler || defaultContentGatingHandler
+    : () => false;
   return startServer({
     ...options,
     routes: routes(options.routes, options.siteConfig),
@@ -44,6 +51,8 @@ module.exports = (options = {}) => {
     onStart: async (app) => {
       if (typeof onStart === 'function') await onStart(app);
       app.set('trust proxy', 'loopback, linklocal, uniquelocal');
+
+      set(app.locals, 'contentGatingHandler', contentGatingHandler);
 
       // Use paginated middleware
       app.use(paginated());

@@ -14,6 +14,10 @@ const oembedHandler = require('./oembed-handler');
 const idxRouteTemplates = require('./templates/user');
 const idxNavItems = require('./config/identity-x-nav');
 
+const contentGatingHandlerEnabled = process.env.CONTENT_GATING_HANDLER_ENABLED;
+
+const defaultContentGatingHandler = require('./utils/content-gating-handler');
+
 const routes = siteRoutes => (app) => {
   // Shared/global routes (all sites)
   sharedRoutes(app);
@@ -27,6 +31,10 @@ const routes = siteRoutes => (app) => {
 
 module.exports = (options = {}) => {
   const { onStart } = options;
+  // Allow for env enable/disable of contentGatingHandler
+  const contentGatingHandler = (contentGatingHandlerEnabled)
+    ? options.contentGatingHandler || defaultContentGatingHandler
+    : () => false;
   return startServer({
     ...options,
     routes: routes(options.routes),
@@ -36,6 +44,8 @@ module.exports = (options = {}) => {
     onStart: async (app) => {
       if (typeof onStart === 'function') await onStart(app);
       app.set('trust proxy', 'loopback, linklocal, uniquelocal');
+
+      set(app.locals, 'contentGatingHandler', contentGatingHandler);
 
       // i18n
       const i18n = v => v;
