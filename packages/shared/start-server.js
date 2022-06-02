@@ -14,8 +14,9 @@ const oembedHandler = require('./oembed-handler');
 const idxRouteTemplates = require('./templates/user');
 const idxNavItems = require('./config/identity-x-nav');
 
+const contentGatingHandlerEnabled = process.env.CONTENT_GATING_HANDLER_ENABLED
+
 const defaultContentGatingHandler = ({ content, olyEncId }) => {
-  console.log(olyEncId);
   // If there is an associated olyEncId skip as they are considered identitfied.
   if (olyEncId) return false;
 
@@ -48,7 +49,10 @@ const routes = siteRoutes => (app) => {
 
 module.exports = (options = {}) => {
   const { onStart } = options;
-  const contentGatingHandler = options.contentGatingHandler || defaultContentGatingHandler;
+  // Allow for env enable/disable of contentGatingHandler
+  const contentGatingHandler = (contentGatingHandlerEnabled)
+    ? options.contentGatingHandler || defaultContentGatingHandler
+    : () => false;
   return startServer({
     ...options,
     routes: routes(options.routes),
