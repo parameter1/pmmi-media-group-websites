@@ -14,7 +14,7 @@ const oembedHandler = require('./oembed-handler');
 const idxRouteTemplates = require('./templates/user');
 const idxNavItems = require('./config/identity-x-nav');
 
-const contentGatingHandlerEnabled = process.env.CONTENT_GATING_HANDLER_ENABLED
+const contentGatingHandlerEnabled = process.env.CONTENT_GATING_HANDLER_ENABLED;
 
 const defaultContentGatingHandler = require('./utils/content-gating-handler');
 
