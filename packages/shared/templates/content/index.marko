@@ -7,7 +7,7 @@ $ const {
   site,
   GAM,
   contentGatingHandler,
-  olyEncId,
+  req,
 } = out.global;
 $ const { id, type, pageNode } = data;
 $ const { lang = "en" } = getAsObject(site, "config");
@@ -83,7 +83,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
               <shared-content-media-block content=content blockName=blockName />
               <default-theme-content-contact-details obj=content />
 
-              $ const requiresRegistration = (get(content, "userRegistration.isCurrentlyRequired") || contentGatingHandler({ content, olyEncId }));
+              $ const requiresRegistration = (get(content, "userRegistration.isCurrentlyRequired") || contentGatingHandler({ content, req }));
               $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
               <marko-web-identity-x-access|context|
                 enabled=requiresRegistration
