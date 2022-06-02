@@ -3,7 +3,12 @@ import { getAsObject, get, getAsArray } from "@parameter1/base-cms-object-path";
 import queryFragment from "../../graphql/fragments/content-list";
 import getContentPreview from "../../utils/get-content-preview";
 
-$ const { site, GAM } = out.global;
+$ const {
+  site,
+  GAM,
+  contentGatingHandler,
+  olyEncId,
+} = out.global;
 $ const { id, type, pageNode } = data;
 $ const { lang = "en" } = getAsObject(site, "config");
 
@@ -78,7 +83,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact"].includes(type) ? 
               <shared-content-media-block content=content blockName=blockName />
               <default-theme-content-contact-details obj=content />
 
-              $ const requiresRegistration = get(content, "userRegistration.isCurrentlyRequired");
+              $ const requiresRegistration = (get(content, "userRegistration.isCurrentlyRequired") || contentGatingHandler({ content, olyEncId }));
               $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
               <marko-web-identity-x-access|context|
                 enabled=requiresRegistration
