@@ -168,7 +168,6 @@ services:
       LIVERELOAD_PORT: 19716
       TENANT_KEY: pmmi_mundo
       SITE_ID: 5d0a748572c1aa35008b4567
-      LEADERS_ALIAS: leaders/2021
     hostname: www-pmmimediagroup-mundo.dev.parameter1.com
     ports:
       - "9716:80"
@@ -205,7 +204,6 @@ services:
       LIVERELOAD_PORT: 19816
       TENANT_KEY: pmmi_mundo
       SITE_ID: 5d0a748572c1aa35008b4567
-      LEADERS_ALIAS: leaders/2021
     hostname: www-pmmi-mundo.dev.parameter1.com
     ports:
       - "9816:80"
