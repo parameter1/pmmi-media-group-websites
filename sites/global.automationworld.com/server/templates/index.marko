@@ -10,25 +10,35 @@ $ const { site } = out.global;
   name=name
   page-node=pageNode
 >
-  <@section modifiers=["break-container"]>
-    <theme-opinion-block alias="sustainability" />
+  <@section>
+    <global-leaders-home-page />
   </@section>
 
-  <!-- <@section|{ aliases }|>
+  <@section>
+    <theme-section-list-deck-block aliases=["factory", "process", "podcasts"] />
+  </@section>
+
+  <@section|{ aliases }|>
     <theme-gam-define-display-ad
       name="rotation"
       position="home_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
-  </@section> -->
-
-  <@section>
-    <theme-section-list-deck-block aliases=["products", "factory", "process"] />
   </@section>
 
   <@section>
-    <global-leaders-home-page />
+    <theme-section-card-list-block
+      alias="products"
+      default-description="Sensors, controllers, drives, industrial networking, and operations software are among the new automation technology product introductions featured here." />
+  </@section>
+
+  <@section>
+    <global-promo-card-rotation-block />
+  </@section>
+
+  <@section>
+    <theme-client-side-most-popular-block />
   </@section>
 
   <@section|{ aliases }|>
@@ -51,35 +61,7 @@ $ const { site } = out.global;
   </@section>
 
   <@section>
-    <global-promo-card-rotation-block />
+    <theme-newsletter-signup-banner-block style="center"/>
   </@section>
 
-  <@section>
-    <theme-client-side-most-popular-block />
-  </@section>
-
-  <!-- <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="home_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section> -->
-
-  <@section>
-    <theme-products-block alias="products" title="Partner Content" />
-  </@section>
-
-  <@section>
-    <theme-section-card-deck-block alias="products" default-description="This is an example description" />
-  </@section>
-
-  <@section>
-    <theme-section-card-list-block alias="sustainability" default-description="This is an example description" />
-  </@section>
-
-  <@section>
-    <theme-resource-library-block name="Downloads" query-params={ includeContentTypes: ["Document"] } />
-  </@section>
 </global-website-section-home-layout>
