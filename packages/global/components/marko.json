@@ -28,11 +28,5 @@
     },
     "<below-container>": {},
     "<foot>": {}
-  },
-  "<global-site-header>": {
-    "template": "./site-header.marko"
-  },
-  "<global-site-menu>": {
-    "template": "./site-menu/index.marko"
   }
 }
