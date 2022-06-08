@@ -14,3 +14,27 @@ $leaders-primary-color-light: #9b0000;
 $leaders-accent-color: #c60000;
 
 @import "../../node_modules/@pmmi-media-group/package-global/scss/core";
+
+.inline-newsletter-form-step1 {
+  background-color: $leaders-primary-color;
+
+  &__title {
+    color: #fff;
+  }
+
+  &__description {
+    color: #fff;
+  }
+
+  &__privacy-policy {
+    color: #fff;
+    a {
+      color: #fff;
+    }
+  }
+
+  &__form-button {
+    color: #fff;
+    background-color: #3b0000;
+  }
+}
