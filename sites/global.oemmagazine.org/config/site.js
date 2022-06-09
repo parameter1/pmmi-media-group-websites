@@ -1,6 +1,7 @@
 const sharedInquiryConfig = require('@pmmi-media-group/package-global/config/inquiry');
 const navigation = require('./navigation');
 const leaders = require('./leaders');
+const magazine = require('./magazine');
 const nativeX = require('./native-x');
 const newsletter = require('./newsletter');
 const identityX = require('./identity-x');
@@ -12,6 +13,7 @@ const subscribe = require('./subscribe');
 module.exports = {
   disableNativeSlotTwo: true,
   leaders,
+  magazine,
   navigation,
   nativeX,
   newsletter,
@@ -26,9 +28,6 @@ module.exports = {
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'oemmagazine.org' : '',
   },
-  publicationIds: [
-    '5d8a2018f6d5f267ee93d252',
-  ],
   logos: {
     navbar: {
       src: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo_black.png?h=30&auto=format,compress',

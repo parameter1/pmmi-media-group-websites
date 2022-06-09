@@ -4,14 +4,16 @@
 // import theme css
 @import "../../node_modules/@parameter1/base-cms-marko-web-theme-monorail/scss/core";
 
+// import theme magazine css
+@import "../../node_modules/@pmmi-media-group/package-theme-monorail-magazine/scss/index";
+
 // import theme leaders css
 @import "../../node_modules/@pmmi-media-group/package-theme-monorail-leaders/scss/leaders";
 
 // skin components
-@import "./components/blocks/magazine-issues";
 @import "./components/leaders";
 
-@import "../components/magazine/scss/index";
+// @import "../components/magazine/scss/index";
 
 body {
   -webkit-font-smoothing: antialiased;

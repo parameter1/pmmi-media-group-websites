@@ -1,6 +1,7 @@
 const sharedInquiryConfig = require('@pmmi-media-group/package-global/config/inquiry');
 const navigation = require('./navigation');
 const leaders = require('./leaders');
+const magazine = require('./magazine');
 const newsletter = require('./newsletter');
 const nativeX = require('./native-x');
 const identityX = require('./identity-x');
@@ -11,6 +12,7 @@ const subscribe = require('./subscribe');
 
 module.exports = {
   leaders,
+  magazine,
   navigation,
   newsletter,
   nativeX,
