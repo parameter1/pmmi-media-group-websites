@@ -33,6 +33,7 @@
     "@parameter1/base-cms-web-cli": "^2.95.0",
     "@pmmi-media-group/package-global": "^2.11.0",
     "@pmmi-media-group/package-theme-monorail-leaders": "^2.11.0",
+    "@pmmi-media-group/package-theme-monorail-magazine": "^2.0.0",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
     "node-fetch": "^2.6.0"
