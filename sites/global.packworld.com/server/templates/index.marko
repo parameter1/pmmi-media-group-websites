@@ -23,8 +23,17 @@ $ const { site } = out.global;
     />
   </@section>
 
-<@section>
-    <global-leaders-home-page />
+  <@section>
+    <div class="row">
+      <div class="col-lg-8">
+        <global-leaders-home-page />
+      </div>
+      <div class="col-lg-4">PROMO CARDS</div>
+    </div>
+  </@section>
+
+  <@section>
+    <theme-section-list-deck-block aliases=["machinery", "design", "issues"] />
   </@section>
 
   <@section|{ aliases }|>
