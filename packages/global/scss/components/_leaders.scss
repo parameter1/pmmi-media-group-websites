@@ -1,5 +1,5 @@
-
 .leaders {
+  $self: &;
   max-width: 700px;
   margin-right: auto;
   margin-left: auto;
@@ -8,16 +8,33 @@
     @include skin-typography($style: "section-header-small");
     color: $white;
   }
+  &__body {
+    background-color: #ffffff;
+  }
   &__header {
     border-radius: 4px 4px 0 0;
   }
-  &__body {
-    border-radius: 0 0 4px 4px;
+  &--contextual {
+    #{ $self }__body {
+      border-right: 2px solid $leaders-gray-5;
+      border-bottom: none;
+      border-left: 2px solid $leaders-gray-5;
+      border-radius: 0;
+    }
+    #{ $self }__footer {
+      border-right: 2px solid $leaders-gray-5;
+      border-bottom: 2px solid $leaders-gray-5;
+      border-left: 2px solid $leaders-gray-5;
+      border-radius: 0 0 4px 4px;
+    }
   }
 }
 .leaders-section {
   $self: &;
   &__toggle-button {
+    padding: 0;
+    flex-direction: row;
+    justify-content: flex-start;
     border-radius: 4px;
     ~ #{ $self }__list {
       overflow: hidden;
@@ -25,6 +42,8 @@
     }
   }
 }
+
+
 .leaders-index-page {
   &__header-wrapper {
     display: flex;

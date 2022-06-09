@@ -20,7 +20,6 @@ const staticPage = require('./static-page');
 
 module.exports = (app, siteConfig) => {
   leaders(app);
-
   // Feed
   feed(app);
 
