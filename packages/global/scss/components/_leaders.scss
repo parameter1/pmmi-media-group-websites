@@ -1,4 +1,3 @@
-
 .leaders {
   max-width: 700px;
   margin-right: auto;
@@ -8,16 +7,29 @@
     @include skin-typography($style: "section-header-small");
     color: $white;
   }
+  &__body {
+    background-color: #ffffff;
+    border-radius: 0 0 4px 4px;
+  }
+  // &__footer {
+  //   .btn-primary,
+  //   .btn-primary:hover {
+  //     background-color: #ffffff;
+  //     border-color: #ffffff;
+  //     color: $primary;
+  //     font-weight: $font-weight-bold;
+  //   }
+  // }
   &__header {
     border-radius: 4px 4px 0 0;
-  }
-  &__body {
-    border-radius: 0 0 4px 4px;
   }
 }
 .leaders-section {
   $self: &;
   &__toggle-button {
+    padding: 0;
+    flex-direction: row;
+    justify-content: flex-start;
     border-radius: 4px;
     ~ #{ $self }__list {
       overflow: hidden;
@@ -25,6 +37,8 @@
     }
   }
 }
+
+
 .leaders-index-page {
   &__header-wrapper {
     display: flex;
