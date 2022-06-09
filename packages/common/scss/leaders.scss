@@ -27,6 +27,15 @@
     flex-direction: row;
     justify-content: flex-start;
   }
+  &--with-parent {
+    .leaders-section {
+      &__title {
+        color: #919191;
+        border-bottom: 1px solid #cecece;
+        padding: 0;
+      }
+    }
+  }
 }
 .leaders-index-page {
   &__header-wrapper {
