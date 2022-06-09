@@ -1,3 +1,44 @@
+.leaders {
+  &__body {
+    background-color: #ffffff;
+  }
+  &__footer {
+    padding: 0;
+    .btn-primary {
+      background-color: #ffffff;
+      border: none;
+      box-shadow: none;
+      color: $leaders-nav-link-color;
+      font-weight: 500;
+    }
+  }
+}
+.leaders-col {
+  padding-left: 0;
+  padding-right: 0;
+  &--2,
+  &--3 {
+    padding-right: 15px;
+  }
+}
+.leaders-section {
+  &__toggle-button{
+    padding: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 .leaders-index-page {
   &__header-wrapper {
     display: flex;

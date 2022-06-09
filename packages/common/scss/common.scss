@@ -3,6 +3,7 @@
 $theme-font-family-sans-serif: "IBM Plex Sans", sans-serif;
 $theme-font-family-serif: "Source Serif Pro", serif;
 $theme-font-family-page-title: $theme-font-family-sans-serif;
+$leaders-base-font-family: $theme-font-family-sans-serif;
 
 $theme-site-navbar-secondary-bg-color: #000 !default;
 $theme-site-navbar-primary-bg-color: #000 !default;
@@ -36,7 +37,7 @@ $theme-site-header-breakpoints: map-merge(
 @import "./carousel";
 @import "./contact-us-form"; // @todo this should be remove once contact us is in core
 @import "./company-page";
-@import "./leaders-index-page";
+@import "./leaders";
 @import "./content-page";
 
 .leaders {
