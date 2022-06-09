@@ -4,7 +4,6 @@ const search = require('@parameter1/base-cms-marko-web-theme-monorail/routes/sea
 const taxonomy = require('@parameter1/base-cms-marko-web-theme-monorail/routes/taxonomy');
 const omedaNewsletters = require('@parameter1/base-cms-marko-web-omeda/routes/omeda-newsletters');
 
-const leaders = require('./leaders');
 const feed = require('./feed');
 const content = require('./content');
 const scheduledContent = require('./scheduled-content');
@@ -19,8 +18,6 @@ const redirects = require('./redirects');
 const staticPage = require('./static-page');
 
 module.exports = (app, siteConfig) => {
-  leaders(app);
-
   // Feed
   feed(app);
 
