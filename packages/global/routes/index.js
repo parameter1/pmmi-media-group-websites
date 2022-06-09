@@ -5,6 +5,7 @@ const taxonomy = require('@parameter1/base-cms-marko-web-theme-monorail/routes/t
 const omedaNewsletters = require('@parameter1/base-cms-marko-web-omeda/routes/omeda-newsletters');
 const magazine = require('@pmmi-media-group/package-theme-monorail-magazine/routes');
 
+const leaders = require('./leaders');
 const feed = require('./feed');
 const content = require('./content');
 const scheduledContent = require('./scheduled-content');
@@ -18,6 +19,7 @@ const redirects = require('./redirects');
 const staticPage = require('./static-page');
 
 module.exports = (app, siteConfig) => {
+  leaders(app);
   // Feed
   feed(app);
 
