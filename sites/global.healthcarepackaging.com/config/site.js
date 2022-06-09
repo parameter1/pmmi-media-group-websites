@@ -1,6 +1,7 @@
 const sharedInquiryConfig = require('@pmmi-media-group/package-global/config/inquiry');
 const navigation = require('./navigation');
 const leaders = require('./leaders');
+const magazine = require('./magazine');
 const nativeX = require('./native-x');
 const newsletter = require('./newsletter');
 const identityX = require('./identity-x');
@@ -11,6 +12,7 @@ const subscribe = require('./subscribe');
 
 module.exports = {
   leaders,
+  magazine,
   navigation,
   nativeX,
   newsletter,
@@ -25,9 +27,6 @@ module.exports = {
     enabled: true,
     cookieDomain: process.env.NODE_ENV === 'production' ? 'healthcarepackaging.com' : '',
   },
-  publicationIds: [
-    '5d8a20bdf6d5f267ee94a861',
-  ],
   logos: {
     navbar: {
       src: 'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp-logo.png?h=30&auto=format,compress',

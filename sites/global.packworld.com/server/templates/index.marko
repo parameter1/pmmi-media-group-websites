@@ -37,9 +37,9 @@ $ const { site } = out.global;
   </@section>
 
   <@section|{ aliases }|>
-    $ const publicationIds = site.get("publicationIds");
+    $ const publicationIds = site.get("magazine.publicationIds");
     <if(publicationIds.length)>
-      <global-magazine-issues-block publication-id=publicationIds[0] />
+      <theme-magazine-issues-block publication-id=publicationIds[0] />
     </if>
     <else>
       <theme-gam-define-display-ad
