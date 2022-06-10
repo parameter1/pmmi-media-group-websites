@@ -9,7 +9,22 @@ $ const { id, type, pageNode, ...rest } = input;
   <@section>
     <global-promo-card-rotation-block />
   </@section>
+
   <@section>
     <theme-client-side-most-popular-block />
+  </@section>
+
+  $ const publicationIds = site.get("magazine.publicationIds");
+  <if(publicationIds.length)>
+    <@section>
+      <theme-magazine-issues-block publication-id=publicationIds[0] />
+    </@section>
+  </if>
+
+  <@section>
+    <theme-content-card-deck-block
+      query-params={ includeContentTypes: ["Document"], limit: 4 }
+      section={ name: "Downloads", canonicalPath: "/downloads" }
+    />
   </@section>
 </global-content-default-layout>
