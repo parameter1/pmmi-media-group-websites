@@ -10,83 +10,57 @@ $ const { site } = out.global;
   name=name
   page-node=pageNode
 >
-  <!-- <@section modifiers=["break-container"]>
-    <theme-opinion-block alias="home" />
-  </@section> -->
-
-  <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="home_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
+  <@section>
+    <div class="row">
+      <div class="col-lg-8">
+        <global-leaders-home-page />
+      </div>
+      <div class="col-lg-4">
+      </div>
+    </div>
   </@section>
 
   <@section>
     <theme-section-list-deck-block aliases=["machinery-materials", "markets", "logistics-distribution"] />
   </@section>
 
-<@section>
-    <global-leaders-home-page />
-  </@section>
-
   <@section|{ aliases }|>
-    $ const publicationIds = site.get("magazine.publicationIds");
-    <if(publicationIds.length)>
-      <theme-magazine-issues-block publication-id=publicationIds[0] />
-    </if>
-    <else>
-      <theme-gam-define-display-ad
-        name="rotation"
-        position="home_page"
-        aliases=aliases
-        modifiers=["inter-block"]
-      />
-    </else>
-  </@section>
-
-  <@section>
-    <theme-hero-card-block name="Videos" query-params={ includeContentTypes: ["Video"] } />
-  </@section>
-
-  <!-- <@section>
-    <theme-section-card-list-block alias="partners-in-business" />
-  </@section> -->
-
-  <!-- <@section>
-    <theme-callout-cards-block>
-      <@slot>
-        <theme-latest-podcast-block alias="overdrive-radio" />
-      </@slot>
-      <@slot>
-        <site-promo-card-rotation-block />
-      </@slot>
-    </theme-callout-cards-block>
-  </@section> -->
-
-  <@section>
-    <theme-client-side-most-popular-block />
-  </@section>
-
-  <!-- <@section|{ aliases }|>
     <theme-gam-define-display-ad
       name="rotation"
       position="home_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
-  </@section> -->
+  </@section>
 
   <!-- <@section>
-    <theme-products-block alias="gear" />
+    <theme-section-card-list-block alias="products" />
   </@section> -->
 
-  <!-- <@section>
-    <theme-section-card-deck-block alias="reader-rigs" />
-  </@section> -->
+  <@section>
+    <global-promo-card-rotation-block />
+  </@section>
 
-  <!-- <@section>
-    <theme-resource-library-block alias="resource-library" />
-  </@section> -->
+  <@section>
+    <theme-client-side-most-popular-block />
+  </@section>
+
+
+  $ const publicationIds = site.get("magazine.publicationIds");
+  <if(publicationIds.length)>
+    <@section>
+      <theme-magazine-issues-block publication-id=publicationIds[0] />
+    </@section>
+  </if>
+
+  <@section>
+    <theme-hero-card-block name="Videos" query-params={ includeContentTypes: ["Video"] } />
+  </@section>
+
+  <@section>
+    <theme-content-card-deck-block
+      query-params={ includeContentTypes: ["Document"], limit: 4 }
+      section={ name: "Downloads", canonicalPath: "/downloads" }
+    />
+  </@section>
 </global-website-section-home-layout>
