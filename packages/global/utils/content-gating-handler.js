@@ -7,9 +7,9 @@ module.exports = ({ content, req }) => {
 
   // Gate the following content types only.
   const typesToGate = [
-    'article',
-    'blog',
-    'news',
+    // 'article',
+    // 'blog',
+    // 'news',
   ];
   if (typesToGate.includes(content.type)) return true;
 
