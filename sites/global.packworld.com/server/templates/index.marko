@@ -10,25 +10,13 @@ $ const { site } = out.global;
   name=name
   page-node=pageNode
 >
-  <!-- <@section modifiers=["break-container"]>
-    <theme-opinion-block alias="home" />
-  </@section> -->
-
-  <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="home_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
   <@section>
     <div class="row">
       <div class="col-lg-8">
         <global-leaders-home-page />
       </div>
-      <div class="col-lg-4">PROMO CARDS</div>
+      <div class="col-lg-4">
+      </div>
     </div>
   </@section>
 
@@ -37,46 +25,42 @@ $ const { site } = out.global;
   </@section>
 
   <@section|{ aliases }|>
-    $ const publicationIds = site.get("magazine.publicationIds");
-    <if(publicationIds.length)>
-      <theme-magazine-issues-block publication-id=publicationIds[0] />
-    </if>
-    <else>
-      <theme-gam-define-display-ad
-        name="rotation"
-        position="home_page"
-        aliases=aliases
-        modifiers=["inter-block"]
-      />
-    </else>
-  </@section>
-
-  <@section>
-    <theme-hero-card-block name="Videos" query-params={ includeContentTypes: ["Video"] } />
-  </@section>
-
-  <@section>
-    <theme-client-side-most-popular-block />
-  </@section>
-
-  <!-- <@section|{ aliases }|>
     <theme-gam-define-display-ad
       name="rotation"
       position="home_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
-  </@section> -->
+  </@section>
 
   <!-- <@section>
-    <theme-products-block alias="gear" />
-  </@section> -->
-
-  <!-- <@section>
-    <theme-section-card-deck-block alias="reader-rigs" />
+    <theme-section-card-list-block alias="products" />
   </@section> -->
 
   <@section>
-    <theme-resource-library-block name="Downloads" query-params={ includeContentTypes: ["Document"] } />
+    <global-promo-card-rotation-block />
+  </@section>
+
+  <@section>
+    <theme-client-side-most-popular-block />
+  </@section>
+
+
+  $ const publicationIds = site.get("magazine.publicationIds");
+  <if(publicationIds.length)>
+    <@section>
+      <theme-magazine-issues-block publication-id=publicationIds[0] />
+    </@section>
+  </if>
+
+  <@section>
+    <theme-hero-card-block name="Videos" query-params={ includeContentTypes: ["Video"] } />
+  </@section>
+
+  <@section>
+    <theme-content-card-deck-block
+      query-params={ includeContentTypes: ["Document"], limit: 4 }
+      section={ name: "Downloads", canonicalPath: "/downloads" }
+    />
   </@section>
 </global-website-section-home-layout>

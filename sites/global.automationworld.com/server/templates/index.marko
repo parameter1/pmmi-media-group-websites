@@ -10,44 +10,31 @@ $ const { site } = out.global;
   name=name
   page-node=pageNode
 >
-  <@section modifiers=["break-container"]>
-    <theme-opinion-block alias="sustainability" />
+  <@section>
+    <div class="row">
+      <div class="col-lg-8">
+        <global-leaders-home-page />
+      </div>
+      <div class="col-lg-4">
+      </div>
+    </div>
   </@section>
 
-  <!-- <@section|{ aliases }|>
+  <@section>
+    <theme-section-list-deck-block aliases=["factory", "process", "podcasts"] />
+  </@section>
+
+  <@section|{ aliases }|>
     <theme-gam-define-display-ad
       name="rotation"
       position="home_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
-  </@section> -->
-
-  <@section>
-    <theme-section-list-deck-block aliases=["factory", "process", "podcasts"] />
   </@section>
 
   <@section>
-    <global-leaders-home-page />
-  </@section>
-
-  <@section|{ aliases }|>
-    $ const publicationIds = site.get("magazine.publicationIds");
-    <if(publicationIds.length)>
-      <theme-magazine-issues-block publication-id=publicationIds[0] />
-    </if>
-    <else>
-      <theme-gam-define-display-ad
-        name="rotation"
-        position="home_page"
-        aliases=aliases
-        modifiers=["inter-block"]
-      />
-    </else>
-  </@section>
-
-  <@section>
-    <theme-hero-card-block name="Videos" query-params={ includeContentTypes: ["Video"] } />
+    <theme-section-card-list-block alias="products" />
   </@section>
 
   <@section>
@@ -58,28 +45,22 @@ $ const { site } = out.global;
     <theme-client-side-most-popular-block />
   </@section>
 
-  <!-- <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="home_page"
-      aliases=aliases
-      modifiers=["inter-block"]
+
+  $ const publicationIds = site.get("magazine.publicationIds");
+  <if(publicationIds.length)>
+    <@section>
+      <theme-magazine-issues-block publication-id=publicationIds[0] />
+    </@section>
+  </if>
+
+  <@section>
+    <theme-hero-card-block name="Videos" query-params={ includeContentTypes: ["Video"] } />
+  </@section>
+
+  <@section>
+    <theme-content-card-deck-block
+      query-params={ includeContentTypes: ["Document"], limit: 4 }
+      section={ name: "Downloads", canonicalPath: "/downloads" }
     />
-  </@section> -->
-
-  <@section>
-    <theme-products-block alias="products" title="Partner Content" />
-  </@section>
-
-  <@section>
-    <theme-section-card-deck-block alias="products" default-description="This is an example description" />
-  </@section>
-
-  <@section>
-    <theme-section-card-list-block alias="sustainability" default-description="This is an example description" />
-  </@section>
-
-  <@section>
-    <theme-resource-library-block name="Downloads" query-params={ includeContentTypes: ["Document"] } />
   </@section>
 </global-website-section-home-layout>
