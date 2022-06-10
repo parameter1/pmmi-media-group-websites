@@ -171,6 +171,16 @@ label {
 }
 
 // Begin right rail content layout CSS
+.content-page-body {
+  .primary-image {
+    &--aligned-center {
+      @media (min-width: 900px) {
+        margin-left: 0;
+        width: 700px;
+      }
+    }
+  }
+}
 .content-page-header {
   max-width: none;
   margin-right: 0;
@@ -212,6 +222,7 @@ label {
     }
   }
 }
+
 // End right rail content layout CSS
 
 .content-page-preview-overlay {
