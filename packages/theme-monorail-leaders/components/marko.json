@@ -19,6 +19,13 @@
   "<marko-web-leaders-dropdown-portal>": {
     "template": "./dropdown-portal.marko"
   },
+  "<marko-web-leaders-featured-companies>": {
+    "template": "./featured-companies.marko",
+    "@content": {
+      "type": "object",
+      "required": true
+    }
+  },
   "<marko-web-leaders-gtm-tracker>": {
     "template": "./gtm-tracker.marko"
   },

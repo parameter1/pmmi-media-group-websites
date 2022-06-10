@@ -6,6 +6,7 @@ $ const { site, contentGatingHandler, req } = out.global;
 $ const { id, type, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
 $ const sections = getAsArray(input, "sections");
 
+$ const leadersContentTypes = input.leadersContentTypes || ["article", "blog", "media-gallery", "news", "podcast", "press-release", "product", "video", "webinar"];
 $ const displayPrimaryImage = ["media-gallery", "document", "podcast"].includes(type) ? false : true;
 $ const displayPublishedDate = ["company", "contact", "whitepaper"].includes(type) ? false : true;
 $ const displayReadNext = showReadNextBlock && ["article"].includes(type);
@@ -139,6 +140,11 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
 
                 $ const sidebars = getAsArray(content, "sidebars").map((sidebar) => sidebar.body);
                 <marko-web-content-sidebars block-name=blockName obj={ sidebars } />
+
+                <if(leadersContentTypes.includes(content.type))>
+                  <marko-web-leaders-featured-companies content=content />
+                </if>
+
                 <if(type === "document" || type === "whitepaper")>
                   <default-theme-content-download obj=content>
                     <@wufoo user-name=site.get("wufoo.userName") />
@@ -162,16 +168,20 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                   />
                 </if>
 
-                <if(displayNewsletterSignup)>
-                  <theme-newsletter-signup-banner-block />
-                </if>
-
                 <if(displaySocialShare)>
                   <marko-web-social-sharing
                     path=content.siteContext.path
                     providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
                     print-path=`/print/content/${content.id}`
                   />
+                </if>
+
+                <if(leadersContentTypes.includes(content.type))>
+                  <marko-web-leaders-company-videos content-id=content.id />
+                </if>
+
+                <if(displayNewsletterSignup)>
+                  <theme-newsletter-signup-banner-block />
                 </if>
               </else>
             </marko-web-identity-x-access>
