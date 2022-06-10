@@ -178,6 +178,10 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                     print-path=`/print/content/${content.id}`
                   />
                 </if>
+
+                <if(["article", "blog", "media-gallery", "news", "podcast", "press-release", "product", "video", "webinar"].includes(content.type))>
+                  <marko-web-leaders-company-videos content-id=content.id />
+                </if>
               </else>
             </marko-web-identity-x-access>
 
