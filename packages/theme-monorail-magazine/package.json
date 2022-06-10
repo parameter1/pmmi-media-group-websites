@@ -1,6 +1,6 @@
 {
   "name": "@pmmi-media-group/package-theme-monorail-magazine",
-  "version": "2.0.0",
+  "version": "2.11.1",
   "description": "Magazine components, routes, and styling for the Monorail theme",
   "repository": "https://github.com/parameter1/pmmi-media-group-websites/tree/master/packages/theme-monorail-magazine",
   "author": "Brian Miller<brian@parameter1.com>",
