@@ -4,12 +4,17 @@
   .node-list {
     &__header {
       background-color: $primary;
+      border-radius: 4px 4px 0 0;
       color: #fff;
       padding: 12px;
       font-size: 18px;
+      text-transform: uppercase;
     }
     &__nodes {
-      background-color: $gray-200;
+      border-left: 2px solid $gray-200;
+      border-right: 2px solid $gray-200;
+      border-bottom: 2px solid $gray-200;
+      border-radius: 0 0 4px 4px;
     }
   }
 }
