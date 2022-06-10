@@ -1,0 +1,15 @@
+.leaders-featured-companies {
+  margin-bottom: 24px;
+
+  .node-list {
+    &__header {
+      background-color: $primary;
+      color: #fff;
+      padding: 12px;
+      font-size: 18px;
+    }
+    &__nodes {
+      background-color: $gray-200;
+    }
+  }
+}
