@@ -167,10 +167,6 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                   />
                 </if>
 
-                <if(displayNewsletterSignup)>
-                  <theme-newsletter-signup-banner-block />
-                </if>
-
                 <if(displaySocialShare)>
                   <marko-web-social-sharing
                     path=content.siteContext.path
@@ -181,6 +177,10 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
 
                 <if(["article", "blog", "media-gallery", "news", "podcast", "press-release", "product", "video", "webinar"].includes(content.type))>
                   <marko-web-leaders-company-videos content-id=content.id />
+                </if>
+
+                <if(displayNewsletterSignup)>
+                  <theme-newsletter-signup-banner-block />
                 </if>
               </else>
             </marko-web-identity-x-access>
