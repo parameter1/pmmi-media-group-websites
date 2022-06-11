@@ -9,6 +9,7 @@
       v-else
       :display="getResponsiveValue('displayHeader')"
       :img-src="headerImgSrc"
+      :img-srcset="headerImgSrcset"
       :img-alt="headerImgAlt"
       :display-callout="getResponsiveValue('displayCallout')"
       :callout-prefix="calloutPrefix"
@@ -111,6 +112,10 @@ export default {
       default: true,
     },
     headerImgSrc: {
+      type: String,
+      default: null,
+    },
+    headerImgSrcset: {
       type: String,
       default: null,
     },

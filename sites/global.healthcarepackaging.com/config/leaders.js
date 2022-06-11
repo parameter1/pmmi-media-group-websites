@@ -3,6 +3,7 @@ module.exports = {
   title: 'Premier Suppliers',
   alias: process.env.LEADERS_ALIAS || 'leaders-2021',
   header: {
-    imgSrc: process.env.LEADERS_LOGO || 'https://img.healthcarepackaging.com/files/base/pmmi/all/leaders/hcp-2021-2.png?h=90',
+    imgSrc: process.env.LEADERS_LOGO || 'https://img.healthcarepackaging.com/files/base/pmmi/all/leaders/hcp-2021-2.png?auto=format,compress&h=90',
+    imgSrcset: process.env.LEADERS_LOGO || 'https://img.healthcarepackaging.com/files/base/pmmi/all/leaders/hcp-2021-2.png?auto=format,compress&h=90&dpr=2 2x',
   },
 };
