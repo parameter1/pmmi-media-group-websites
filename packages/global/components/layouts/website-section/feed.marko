@@ -3,8 +3,8 @@ import { getAsArray } from "@parameter1/base-cms-object-path";
 $ const { id, alias, name, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
 
-$ const { pagination: p } = out.global;
-$ const perPage = 18;
+$ const { site, pagination: p } = out.global;
+$ const perPage = 12;
 
 <global-website-section-default-layout
   id=id
@@ -23,14 +23,13 @@ $ const perPage = 18;
     </theme-section-feed-block>
   </@head>
 
-  <@section|{ aliases }| modifiers=["first"]>
+  <@section|{ aliases }| modifiers=["break-container", "first"]>
     <theme-gam-define-display-ad
       name="leaderboard"
       position="section_page"
       aliases=aliases
       modifiers=["inter-block"]
     />
-    <theme-gam-wallpaper-ad aliases=aliases position="section_page" />
   </@section>
 
   <@section|{ blockName, section, aliases }|>
@@ -71,17 +70,17 @@ $ const perPage = 18;
 
   <@section>
     <theme-section-feed-block alias=alias>
-      <@query-params limit=2 skip=p.skip({ perPage, skip: 3 }) />
+      <@query-params limit=3 skip=p.skip({ perPage, skip: 3 }) />
     </theme-section-feed-block>
   </@section>
 
-  <!-- <@section>
+  <@section>
     <theme-newsletter-signup-banner-large-block />
-  </@section> -->
+  </@section>
 
   <@section>
     <theme-section-feed-block alias=alias>
-      <@query-params limit=3 skip=p.skip({ perPage, skip: 5 }) />
+      <@query-params limit=3 skip=p.skip({ perPage, skip: 6 }) />
     </theme-section-feed-block>
   </@section>
 
@@ -96,22 +95,7 @@ $ const perPage = 18;
 
   <@section>
     <theme-section-feed-block alias=alias>
-      <@query-params limit=5 skip=p.skip({ perPage, skip: 8 }) />
-    </theme-section-feed-block>
-  </@section>
-
-  <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="section_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
-  <@section>
-    <theme-section-feed-block alias=alias>
-      <@query-params limit=5 skip=p.skip({ perPage, skip: 13 }) />
+      <@query-params limit=3 skip=p.skip({ perPage, skip: 9 }) />
     </theme-section-feed-block>
     <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
       <theme-pagination-controls
@@ -122,10 +106,6 @@ $ const perPage = 18;
     </theme-section-feed-block>
   </@section>
 
-  <@section>
-    <theme-top-stories-block />
-  </@section>
-
   <@section|{ aliases }|>
     <theme-gam-define-display-ad
       name="rotation"
@@ -135,15 +115,38 @@ $ const perPage = 18;
     />
   </@section>
 
-  <for|s| of=sections>
-    <@section|{ blockName, section, aliases }| modifiers=s.modifiers>
-      <${s.renderBody}
-        block-name=blockName
-        section=section
-        aliases=aliases
-      />
+  <@section>
+    <theme-top-stories-block query-params={ optionName: "Pinned" } />
+  </@section>
+
+  <@section>
+    <global-promo-card-rotation-block />
+  </@section>
+
+  <@section>
+    <theme-content-card-list-block
+      query-params={ includeContentTypes: ["Product"] }
+      section={ name: "Products", canonicalPath: "/products" }
+    />
+  </@section>
+
+  <@section>
+    <theme-client-side-most-popular-block />
+  </@section>
+
+  $ const publicationIds = site.get("magazine.publicationIds");
+  <if(publicationIds.length)>
+    <@section>
+      <theme-magazine-issues-block publication-id=publicationIds[0] />
     </@section>
-  </for>
+  </if>
+
+  <@section>
+    <theme-content-card-deck-block
+      query-params={ includeContentTypes: ["Document"], limit: 4 }
+      section={ name: "Downloads", canonicalPath: "/downloads" }
+    />
+  </@section>
 
   <@section|{ aliases }|>
     <theme-gam-define-display-ad
