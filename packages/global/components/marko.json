@@ -7,6 +7,9 @@
   "<global-image-slider>": {
     "template": "./image-slider.marko"
   },
+  "<theme-content-card-list-block>": {
+    "template": "./content-card-list.marko"
+  },
   "<global-sponsored-label-logo>": {
     "template": "./sponsored-label-logo.marko"
   },
