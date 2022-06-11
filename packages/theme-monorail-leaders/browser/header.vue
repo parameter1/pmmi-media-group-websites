@@ -1,7 +1,11 @@
 <template>
   <div v-if="display" class="leaders__header">
     <div v-if="imgSrc" class="leaders__header-image">
-      <img :src="imgSrc" :alt="imgAlt">
+      <img
+        :src="imgSrc"
+        :srcset="imgSrcset"
+        :alt="imgAlt"
+      >
     </div>
     <div v-if="displayCallout" class="leaders__header-callout">
       <div class="leaders__callout-prefix">
@@ -22,6 +26,10 @@ export default {
       default: true,
     },
     imgSrc: {
+      type: String,
+      default: null,
+    },
+    imgSrcset: {
       type: String,
       default: null,
     },
