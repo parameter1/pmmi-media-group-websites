@@ -5,6 +5,7 @@
         :src="imgSrc"
         :srcset="imgSrcset"
         :alt="imgAlt"
+        loading="lazy"
       >
     </div>
     <div v-if="displayCallout" class="leaders__header-callout">
