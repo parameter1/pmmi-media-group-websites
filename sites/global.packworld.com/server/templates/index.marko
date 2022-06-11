@@ -33,9 +33,12 @@ $ const { site } = out.global;
     />
   </@section>
 
-  <!-- <@section>
-    <theme-section-card-list-block alias="products" />
-  </@section> -->
+  <@section>
+    <theme-content-card-list-block
+      query-params={ includeContentTypes: ["Product"] }
+      section={ name: "Products", canonicalPath: "/products" }
+    />
+  </@section>
 
   <@section>
     <global-promo-card-rotation-block />
