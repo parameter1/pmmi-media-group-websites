@@ -22,10 +22,10 @@ const defaultContentGatingHandler = require('./utils/content-gating-handler');
 const routes = (siteRoutes, siteConfig) => (app) => {
   // Handle submissions on /__inquiry
   loadInquiry(app);
-  // Shared/global routes (all sites)
-  sharedRoutes(app, siteConfig);
   // Load site routes
   siteRoutes(app);
+  // Shared/global routes (all sites)
+  sharedRoutes(app, siteConfig);
 };
 
 module.exports = (options = {}) => {
