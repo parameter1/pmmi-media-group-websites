@@ -18,7 +18,7 @@ $ const queryParams = {
   limit: 5,
   requiresImage: true,
   queryFragment,
-  sectionAlias: "podcasts"
+  sectionAlias: "podcasts/aw-podcasts"
 };
 
 <marko-web-query|{ nodes }| name=queryName params=queryParams>
@@ -66,7 +66,7 @@ $ const queryParams = {
               with-header=false
               lazyload=false
               with-native-x=false
-              query-params={ sectionAlias: "podcasts"}
+              query-params={ sectionAlias: "podcasts/aw-podcasts"}
             />
           </if>
         </@section>
