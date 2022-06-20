@@ -3,11 +3,17 @@ const queryFragment = require('@parameter1/base-cms-marko-web-theme-monorail/gra
 const leadersFragment = require('@pmmi-media-group/package-theme-monorail-leaders/graphql/fragments/leaders-section');
 const section = require('../templates/website-section');
 const leaders = require('../templates/website-section/leaders');
+const podcasts = require('../templates/website-section/podcasts');
 
 module.exports = (app) => {
   app.get('/:alias(leaders)', withWebsiteSection({
     template: leaders,
     queryFragment: leadersFragment,
+  }));
+
+  app.get('/:alias(podcasts)', withWebsiteSection({
+    template: podcasts,
+    queryFragment,
   }));
 
   app.get('/:alias([a-z0-9-/]+)', withWebsiteSection({
