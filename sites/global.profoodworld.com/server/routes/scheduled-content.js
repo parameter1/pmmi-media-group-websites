@@ -9,4 +9,12 @@ module.exports = (app) => {
         title: 'Products',
       });
   });
+  app.get('/podcasts', (_, res) => {
+    res.marko(scheduledContent,
+      {
+        alias: 'podcasts',
+        includeContentTypes: ['Podcast'],
+        title: 'Podcasts',
+      });
+  });
 };

@@ -38,14 +38,6 @@ module.exports = (app) => {
         title: 'Videos',
       });
   });
-  app.get('/podcasts', (_, res) => {
-    res.marko(publishedContent,
-      {
-        alias: 'podcasts',
-        includeContentTypes: ['Podcast'],
-        title: 'Podcasts',
-      });
-  });
   app.get('/downloads', (_, res) => {
     res.marko(publishedContent,
       {

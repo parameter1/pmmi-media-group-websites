@@ -12,4 +12,12 @@ module.exports = (app) => {
         endingAfter: (new Date()).valueOf(),
       });
   });
+  app.get('/podcasts', (_, res) => {
+    res.marko(scheduledContent,
+      {
+        alias: 'podcasts',
+        includeContentTypes: ['Podcast'],
+        title: 'Podcasts',
+      });
+  });
 };
