@@ -3,7 +3,7 @@ const renderBlock = require('@parameter1/base-cms-marko-web-theme-monorail/route
 const search = require('@parameter1/base-cms-marko-web-theme-monorail/routes/search');
 const taxonomy = require('@parameter1/base-cms-marko-web-theme-monorail/routes/taxonomy');
 const omedaNewsletters = require('@parameter1/base-cms-marko-web-omeda/routes/omeda-newsletters');
-const magazine = require('@pmmi-media-group/package-theme-monorail-magazine/routes');
+const magazine = require('@parameter1/package-theme-monorail-magazine/routes');
 
 const leaders = require('./leaders');
 const feed = require('./feed');
