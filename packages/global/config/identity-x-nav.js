@@ -39,5 +39,4 @@ module.exports = ({ site }) => {
     const nav = site.get(target);
     if (isArray(nav)) nav.unshift(...navConfig);
   });
-  console.log('hitting heree: ', site, navConfig);
 };
