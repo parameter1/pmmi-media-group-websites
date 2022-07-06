@@ -1,3 +1,4 @@
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
 
 $ const { id, alias, name, pageNode } = input;
@@ -34,10 +35,12 @@ $ const { site } = out.global;
   </@section>
 
   <@section>
-    <theme-content-card-list-block
-      query-params={ includeContentTypes: ["Product"] }
-      section={ name: "Products", canonicalPath: "/products" }
-    />
+    $ const defaultParams = {
+        queryParams: { includeContentTypes: ["Product"] },
+        section: { name: "Products", canonicalPath: "/products" },
+    };
+    $ const productsParams = defaultValue(site.get("productsParams"), defaultParams);
+    <theme-content-card-list-block ...productsParams />
   </@section>
 
   <@section>
