@@ -19,6 +19,10 @@
   "<global-sponsored-section-name-logo>": {
     "template": "./sponsored-section-name-logo.marko"
   },
+
+  "<global-site-menu>": {
+    "template": "./site-menu/index.marko"
+  },
   "<global-document>": {
     "template": "./document.marko",
     "<head>": {},
