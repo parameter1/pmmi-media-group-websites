@@ -85,10 +85,9 @@ $ const {
       clear-data=true
     />
     <marko-web-identity-x-context|{ hasUser, isEnabled }|>
-      <theme-site-header has-user=hasUser reg-enabled=isEnabled />
-      <theme-site-menu has-user=hasUser reg-enabled=isEnabled />
+      <theme-site-header has-user=hasUser reg-enabled=isEnabled show-search-icon=true />
+      <global-site-menu has-user=hasUser reg-enabled=isEnabled />
     </marko-web-identity-x-context>
-    <theme-site-newsletter-menu />
     <${input.aboveContainer} />
   </@above-container>
   <@below-container>
