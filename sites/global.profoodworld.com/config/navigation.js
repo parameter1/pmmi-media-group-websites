@@ -7,22 +7,53 @@ const topics = [
   { href: '/food-safety', label: 'Food Safety' },
 ];
 
-const resources = [];
+const resources = [
+  { href: '/page/pfw-event-calendar', label: 'Events' },
+  { href: '/downloads', label: 'Downloads' },
+  { href: '/page/pfw-newsletter', label: 'Newsletters' },
+  { href: '/page/magazine', label: 'Magazine' },
+  { href: '/leaders', label: 'Leaders in Processing' },
+  { href: '/videos', label: 'Videos' },
+  { href: '/podcasts', label: 'Podcasts' },
+  { href: '/webinars', label: 'Webinars' },
+  { href: 'https://www.opxleadershipnetwork.org', label: 'OpX Leadership Network', target: '_blank' },
+  { href: '/page/awards-sema', label: 'Sustainability Awards' },
+  { href: '/page/awards-mia', label: 'Manufacturing Awards' },
+];
 
-const utilities = [];
+const utilities = [
+  { href: 'https://www.pmmimediagroup.com/pfw/profood-world', label: 'Advertise', target: '_blank' },
+  { href: 'https://www.pmmimediagroup.com/pfw/reprints-and-permissions', label: 'Reprints' },
+  { href: '/page/pfw-about-us', label: 'About' },
+  { href: '/page/pfw-contact-us', label: 'Contact' },
+];
 
 const mobileMenu = {
   primary: [...topics],
   secondary: [
     subscribe,
-    resources,
+    ...resources,
+    ...utilities,
   ],
 };
 
 const desktopMenu = {
-  about: [...utilities],
-  sections: [...topics],
-  resources: [...resources],
+  leftCol: {
+    items: [
+      subscribe,
+      ...utilities,
+    ],
+  },
+  middleCol: {
+    items: [
+      ...topics,
+    ],
+  },
+  rightCol: {
+    items: [
+      ...resources,
+    ],
+  },
 };
 
 module.exports = {
@@ -32,7 +63,11 @@ module.exports = {
     items: [],
   },
   secondary: {
-    items: [...topics],
+    items: [
+      subscribe,
+      ...topics,
+      { href: '/leaders', label: 'Leaders' },
+    ],
   },
   tertiary: {
     items: [],
@@ -46,6 +81,10 @@ module.exports = {
       { href: '/site-map', label: 'Site Map' },
     ],
     topics: [...topics],
-    more: [...utilities],
+    more: [
+      subscribe,
+      { href: 'https://www.pmmimediagroup.com/pfw/profood-world', label: 'Advertise', target: '_blank' },
+      { href: '/page/pfw-contact-us', label: 'Contact' },
+    ],
   },
 };
