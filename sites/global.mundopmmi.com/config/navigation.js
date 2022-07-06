@@ -9,20 +9,43 @@ const topics = [
 
 const resources = [];
 
-const utilities = [];
+const utilities = [
+  { href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=Mundo_NL_Nav', label: 'Suscríbase', target: '_blank' },
+  { href: 'https://www.pmmimediagroup.com/pw/mundo-pmmi', label: 'Anuncie', target: '_blank' },
+  { href: '/page/acerca-de-nosotros', label: 'Acerca de nosotros' },
+  { href: '/page/contacto', label: 'Contacto' },
+];
 
 const mobileMenu = {
-  primary: [...topics],
+  primary: [
+    ...topics,
+  ],
   secondary: [
     subscribe,
-    resources,
+    ...resources,
+    ...utilities,
   ],
 };
 
 const desktopMenu = {
-  about: [...utilities],
-  sections: [...topics],
-  resources: [...resources],
+  leftCol: {
+    label: 'Acerca de nosotros',
+    items: [...utilities],
+  },
+  middleCol: {
+    label: 'Temas',
+    items: [...topics],
+  },
+  rightCol: {
+    label: 'Recursos',
+    items: [
+      { href: '/eventos', label: 'Eventos' },
+      { href: '/leaders', label: 'Líderes' },
+      { href: '/videos', label: 'Vídeos' },
+      { href: '/downloads', label: 'Recursos Digitales' },
+      { href: '/page/newsletterarchive', label: 'Archivo de boletines' },
+    ],
+  },
 };
 
 module.exports = {
@@ -32,7 +55,12 @@ module.exports = {
     items: [],
   },
   secondary: {
-    items: [...topics],
+    items: [
+      ...topics,
+      { href: '/eventos', label: 'Eventos' },
+      { href: '/downloads', label: 'Recursos Digitales' },
+      { href: '/leaders', label: 'Líderes' },
+    ],
   },
   tertiary: {
     items: [],
@@ -46,6 +74,10 @@ module.exports = {
       { href: '/site-map', label: 'Mapa del sitio web' },
     ],
     topics: [...topics],
-    more: [...utilities],
+    more: [
+      { href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=Mundo_NL_Nav', label: 'Suscríbase', target: '_blank' },
+      { href: 'https://www.pmmimediagroup.com/pw/mundo-pmmi', label: 'Anuncie', target: '_blank' },
+      { href: '/page/contacto', label: 'Contacto' },
+    ],
   },
 };
