@@ -15,6 +15,7 @@ const redirectHandler = require('./redirect-handler');
 const oembedHandler = require('./oembed-handler');
 const idxRouteTemplates = require('./templates/user');
 const recaptcha = require('./config/recaptcha');
+const idxNavItems = require('./config/identity-x-nav');
 
 const contentGatingHandlerEnabled = process.env.CONTENT_GATING_HANDLER_ENABLED;
 const defaultContentGatingHandler = require('./utils/content-gating-handler');
@@ -75,6 +76,7 @@ module.exports = (options = {}) => {
         idxConfig,
         idxRouteTemplates,
       });
+      idxNavItems({ site: app.locals.site });
 
       // Setup GAM.
       const gamConfig = get(options, 'siteConfig.gam');
