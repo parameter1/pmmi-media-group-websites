@@ -120,8 +120,8 @@ $ const perPage = 12;
     <theme-top-stories-block query-params={ optionName: "Pinned" } />
   </@section>
 
-  <@section>
-    <global-promo-card-rotation-block />
+  <@section|{ aliases }|>
+    <theme-native-x-promo-card-block placement-name="audience" aliases=aliases />
   </@section>
 
   <@section>
