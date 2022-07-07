@@ -7,35 +7,68 @@ const topics = [
   { href: '/process', label: 'Process' },
 ];
 
-const resources = [];
-
 const utilities = [
+  subscribe,
   { href: 'https://www.pmmimediagroup.com/aw/automation-world', label: 'Advertise', target: '_blank' },
-  { href: '/page/aw-contact-us', label: 'Contact Us' },
-  { href: '/page/aw-newsletters-mainnav', label: 'Newsletters' },
+  { href: 'https://www.pmmimediagroup.com/aw/reprints-and-permissions', label: 'Reprints' },
+  { href: '/page/aw-about-us', label: 'About' },
+  { href: '/page/aw-contact-us', label: 'Contact' },
 ];
 
 const mobileMenu = {
-  primary: [...topics],
+  primary: [
+    ...topics,
+    { href: '/leaders', label: 'Leaders in Automation' },
+    { href: '/downloads', label: 'Downloads' },
+  ],
   secondary: [
     subscribe,
-    resources,
+    { href: '/page/aw-event-calendar', label: 'Events' },
+    { href: '/page/aw-newsletters', label: 'Newsletters' },
+    { href: '/page/magazine', label: 'Magazine' },
+    { href: '/videos', label: 'Videos' },
+    { href: '/podcasts', label: 'Podcasts' },
+    { href: '/webinars', label: 'Webinars' },
+    ...utilities,
   ],
 };
 
 const desktopMenu = {
-  about: [...utilities],
-  sections: [...topics],
-  resources: [...resources],
+  leftCol: {
+    items: [
+      ...utilities,
+    ],
+  },
+  middleCol: { items: [...topics] },
+  rightCol: {
+    items: [
+      { href: '/page/aw-event-calendar', label: 'Events' },
+      { href: '/downloads', label: 'Downloads' },
+      { href: '/page/aw-newsletters', label: 'Newsletters' },
+      { href: '/page/magazine', label: 'Magazine' },
+      { href: '/leaders', label: 'Leaders in Automation' },
+      { href: '/videos', label: 'Videos' },
+      { href: '/podcasts', label: 'Podcasts' },
+      { href: '/webinars', label: 'Webinars' },
+    ],
+  },
 };
 
 module.exports = {
   desktopMenu,
   mobileMenu,
   secondary: {
-    items: [...topics],
+    items: [
+      subscribe,
+      ...topics,
+      { href: '/leaders', label: 'Leaders' },
+      { href: '/downloads', label: 'Downloads' },
+    ],
   },
   tertiary: {
+    items: [],
+  },
+  user: {
     items: [],
   },
   footer: {
@@ -48,7 +81,8 @@ module.exports = {
     ],
     topics: [...topics],
     more: [
-      ...utilities,
+      subscribe,
+      { href: 'https://www.pmmimediagroup.com/aw/automation-world', label: 'Advertise', target: '_blank' },
     ],
   },
 };

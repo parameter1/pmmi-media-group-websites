@@ -1,0 +1,124 @@
+import { asObject } from "@parameter1/base-cms-utils";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+
+$ const blockName = input.blockName || "site-menu";
+
+$ const { site, config } = out.global;
+
+$ const regEnabled = defaultValue(input.regEnabled, false);
+$ const hasUser = defaultValue(input.hasUser, false);
+
+$ const attrs = {
+  "aria-label": "Site Menu",
+  ...input.attrs
+}
+
+<marko-web-block
+  name=blockName
+  tag=(input.tag || "aside")
+  class=input.class
+  modifiers=input.modifiers
+  attrs=attrs
+>
+  <!-- desktop -->
+  <marko-web-element block-name=blockName name="contents-desktop">
+    <div class="row">
+      <div class="col-6 col-md-4 col-lg-3">
+        <!-- search box -->
+        <search block-name=blockName />
+        <!-- user section || IDX_NAV_ENABLE -->
+        <if(site.getAsArray("navigation.desktopMenu.user"))>
+          <!-- user section -->
+            <default-theme-site-menu-section
+            tag="nav"
+            block-name=blockName
+            label="Account"
+            items=site.getAsArray("navigation.desktopMenu.user")
+            modifiers=["user"]
+            reg-enabled=regEnabled
+            has-user=hasUser
+            attrs={ "aria-label": "Account Management Menu (Desktop)" }
+          />
+        </if>
+        <!-- social -->
+        <social-icons block-name=blockName />
+        <!-- about section -->
+        <default-theme-site-menu-section
+          tag="nav"
+          block-name=blockName
+          label=(site.get("navigation.desktopMenu.leftCol.label") || "About")
+          items=site.getAsArray("navigation.desktopMenu.leftCol.items")
+          modifiers=["secondary"]
+          reg-enabled=regEnabled
+          has-user=hasUser
+          attrs={ "aria-label": "About Menu (Desktop)" }
+        />
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <!-- sections -->
+        <default-theme-site-menu-section
+          tag="nav"
+          block-name=blockName
+          label=(site.get("navigation.desktopMenu.middleCol.label") || "Sections")
+          items=site.getAsArray("navigation.desktopMenu.middleCol.items")
+          modifiers=["primary"]
+          reg-enabled=regEnabled
+          has-user=hasUser
+          attrs={ "aria-label": "Site Sections Menu (Desktop)" }
+        />
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <default-theme-site-menu-section
+          tag="nav"
+          block-name=blockName
+          label=(site.get("navigation.desktopMenu.rightCol.label") || "Resources")
+          items=site.getAsArray("navigation.desktopMenu.rightCol.items")
+          modifiers=["primary"]
+          reg-enabled=regEnabled
+          has-user=hasUser
+        />
+      </div>
+    </div>
+  </marko-web-element>
+  <!-- mobile -->
+  <marko-web-element block-name=blockName name="contents-mobile">
+    <!-- search box -->
+    <search block-name=blockName />
+    <!-- user section || IDX_NAV_ENABLE -->
+    <if(site.getAsArray("navigation.mobileMenu.user"))>
+      <!-- user section -->
+        <default-theme-site-menu-section
+        tag="nav"
+        block-name=blockName
+        label="Account"
+        items=site.getAsArray("navigation.mobileMenu.user")
+        modifiers=["user"]
+        reg-enabled=regEnabled
+        has-user=hasUser
+        attrs={ "aria-label": "Account Management Menu (Mobile)" }
+      />
+    </if>
+    <!-- social -->
+    <social-icons block-name=blockName />
+    <!-- primary section -->
+    <default-theme-site-menu-section
+      tag="nav"
+      block-name=blockName
+      items=site.getAsArray("navigation.mobileMenu.primary")
+      modifiers=["primary"]
+      reg-enabled=regEnabled
+      has-user=hasUser
+      attrs={ "aria-label": "About Menu (Mobile)" }
+    />
+    <!-- secondary section -->
+    <default-theme-site-menu-section
+      tag="nav"
+      block-name=blockName
+      items=site.getAsArray("navigation.mobileMenu.secondary")
+      modifiers=["secondary"]
+      reg-enabled=regEnabled
+      has-user=hasUser
+      attrs={ "aria-label": "Site Sections Menu" }
+    />
+  </marko-web-element>
+</marko-web-block>

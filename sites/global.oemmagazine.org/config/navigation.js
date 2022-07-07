@@ -4,26 +4,53 @@ const subscribe = require('./subscribe');
 const topics = [
   { href: '/technology', label: 'Technology' },
   { href: '/products', label: 'Products' },
-  { href: '/oem-issues', label: 'OEM Issues' },
-  { href: '/page/oem-newsletter-mainnav', label: 'Newsletters' },
+  { href: '/business', label: 'Business' },
 ];
 
-const resources = [];
+const resources = [
+  { href: '/page/oem-event-calendar', label: 'Events' },
+  { href: '/downloads', label: 'Downloads' },
+  { href: '/page/oem-newsletter', label: 'Newsletters', target: '_blank' },
+  { href: '/page/magazine', label: 'Magazine' },
+  { href: '/leaders', label: 'OEM Partner Leaders' },
+  { href: '/videos', label: 'Videos' },
+  { href: '/podcasts', label: 'Podcasts' },
+  { href: '/supplier-news', label: 'Supplier News' },
+];
 
-const utilities = [];
+const utilities = [
+  { href: 'https://www.pmmimediagroup.com/oem', label: 'Advertise', target: '_blank' },
+  { href: 'https://www.pmmimediagroup.com/ppoem/reprints-and-permissions', label: 'Reprints' },
+  { href: '/page/oem-about-us', label: 'About' },
+  { href: '/page/oem-contact-us', label: 'Contact' },
+];
 
 const mobileMenu = {
   primary: [...topics],
   secondary: [
     subscribe,
-    resources,
+    ...resources,
+    ...utilities,
   ],
 };
 
 const desktopMenu = {
-  about: [...utilities],
-  sections: [...topics],
-  resources: [...resources],
+  leftCol: {
+    items: [
+      subscribe,
+      ...utilities,
+    ],
+  },
+  middleCol: {
+    items: [
+      ...topics,
+    ],
+  },
+  rightCol: {
+    items: [
+      ...resources,
+    ],
+  },
 };
 
 module.exports = {
@@ -33,7 +60,11 @@ module.exports = {
     items: [],
   },
   secondary: {
-    items: [...topics],
+    items: [
+      subscribe,
+      ...topics,
+      { href: '/leaders', label: 'Partner Leaders' },
+    ],
   },
   tertiary: {
     items: [],
@@ -47,6 +78,10 @@ module.exports = {
       { href: '/site-map', label: 'Site Map' },
     ],
     topics: [...topics],
-    more: [...utilities],
+    more: [
+      subscribe,
+      { href: 'https://www.pmmimediagroup.com/oem', label: 'Advertise', target: '_blank' },
+      { href: '/page/oem-contact-us', label: 'Contact' },
+    ],
   },
 };

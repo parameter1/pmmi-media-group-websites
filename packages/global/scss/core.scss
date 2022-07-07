@@ -233,3 +233,10 @@ label {
 .content-page-gate {
   margin-top: 0;
 }
+.newsletter-signup-banner {
+  &__form-wrapper--footer {
+    label {
+      color: $gray-400
+    }
+  }
+}

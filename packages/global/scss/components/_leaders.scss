@@ -3,6 +3,11 @@
   max-width: 700px;
   margin-right: auto;
   margin-left: auto;
+  &__header-image {
+    img {
+      width: 100%;
+    }
+  }
   &__header-title {
     padding-left: $leaders-footer-padding-y;
     @include skin-typography($style: "section-header-small");
@@ -67,6 +72,9 @@
     margin-right: .75rem;
     margin-bottom: .75rem;
     background-color: $leaders-primary-color;
+    img {
+      width: 100%;
+    }
   }
 
   &__body,
