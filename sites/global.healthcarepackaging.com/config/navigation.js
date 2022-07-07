@@ -43,7 +43,7 @@ const desktopMenu = {
   middleCol: {
     items: [
       ...topics,
-      { href: '/issues', label: 'Issues' },
+      { href: '/issues', label: 'News' },
     ],
   },
   rightCol: {
@@ -89,7 +89,7 @@ module.exports = {
     ],
     topics: [
       ...topics,
-      { href: '/issues', label: 'Issues' },
+      { href: '/issues', label: 'News' },
     ],
     more: [
       subscribe,

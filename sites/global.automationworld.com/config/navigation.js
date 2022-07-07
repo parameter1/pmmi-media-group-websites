@@ -36,10 +36,7 @@ const mobileMenu = {
 const desktopMenu = {
   leftCol: {
     items: [
-      subscribe,
-      { href: 'https://www.pmmimediagroup.com/aw/automation-world', label: 'Advertise', target: '_blank' },
-      { href: 'https://www.pmmimediagroup.com/aw/reprints-and-permissions', label: 'Reprints' },
-      { href: '/page/aw-about-us', label: 'About' },
+      ...utilities,
     ],
   },
   middleCol: { items: [...topics] },
