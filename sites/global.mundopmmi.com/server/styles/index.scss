@@ -1,10 +1,15 @@
 $theme-site-header-breakpoints: (
   hide-primary: 100000px, // effectively always hide the primary nav
-  hide-secondary: 780px,
-  small-logo: 980px,
+  hide-secondary: 980px,
+  small-logo: 1080px,
   small-text-primary: 0,
-  small-text-secondary: 980px
+  small-text-secondary: 1080px
 );
+
+// Make secondary smaller to account for to many items
+$theme-site-navbar-secondary-font-size: 16px !default;
+// make small logo smaller to account for sponsored search.
+// $theme-site-navbar-logo-height-sm: 24px;
 
 // Colors
 $primary: #002f7b;

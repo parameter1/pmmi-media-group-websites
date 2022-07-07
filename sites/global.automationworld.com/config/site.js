@@ -17,6 +17,9 @@ module.exports = {
   newsletter,
   nativeX,
   identityX,
+  idxNavItems: {
+    enable: true,
+  },
   omeda,
   gam,
   search,
