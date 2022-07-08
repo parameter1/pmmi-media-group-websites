@@ -69,6 +69,9 @@ module.exports = {
   tertiary: {
     items: [],
   },
+  user: {
+    items: [],
+  },
   footer: {
     items: [
       { href: '/page/oem-about-us', label: 'About Us' },

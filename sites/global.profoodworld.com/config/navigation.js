@@ -72,6 +72,9 @@ module.exports = {
   tertiary: {
     items: [],
   },
+  user: {
+    items: [],
+  },
   footer: {
     items: [
       { href: '/page/pfw-about-us', label: 'About Us' },
