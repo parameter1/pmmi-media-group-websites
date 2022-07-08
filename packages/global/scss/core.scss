@@ -240,3 +240,17 @@ label {
     }
   }
 }
+
+// /user/${type} add spacing above/below main section
+.page {
+  &--profile,
+  &--authenticate,
+  &--login,
+  &--logout,
+  &--register {
+    .page-wrapper .page-wrapper__section:only-child {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
+}
