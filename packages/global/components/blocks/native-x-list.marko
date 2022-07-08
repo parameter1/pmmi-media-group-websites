@@ -13,7 +13,7 @@ $ const uri = nxConfig.getUri();
     <marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placementA.id opts={ n: 1 }>
       $ const hasAd = ads && ads.length && ads[0] && ads[0].hasCampaign;
       <if(hasAd)>
-        $ const nodeA = convertAdToContent(ads[0], { sectionName: `${i18n("Sponsored by")} ${ads[0].campaign.advertiserName}` });
+        $ const nodeA = convertAdToContent(ads[0], { sectionName: "Sponsor Content" });
         <div class="node-list__node">
           <theme-content-node
             node=nodeA
@@ -31,7 +31,7 @@ $ const uri = nxConfig.getUri();
     <marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placementB.id opts={ n: 1 }>
       $ const hasAd = ads && ads.length && ads[0] && ads[0].hasCampaign;
       <if(hasAd)>
-        $ const nodeB = convertAdToContent(ads[0], { sectionName: "Sponsored Content" });
+        $ const nodeB = convertAdToContent(ads[0], { sectionName: "Sponsor Content" });
         <div class="node-list__node">
           <theme-content-node
             node=nodeB

@@ -16,6 +16,10 @@
     }
   }
   .node {
+    &__title a {
+      -webkit-line-clamp: 4;
+      max-height: 88px;
+    }
     &__website-section-name {
       @include skin-typography($style: "slug-small", $link-style: "primary");
     }
