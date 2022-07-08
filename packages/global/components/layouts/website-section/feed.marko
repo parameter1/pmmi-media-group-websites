@@ -76,7 +76,11 @@ $ const perPage = 12;
   </@section>
 
   <@section>
-    <theme-newsletter-signup-banner-block />
+    <marko-web-identity-x-context|{ hasUser }|>
+      <if(!hasUser)>
+        <identity-x-newsletter-form-inline />
+      </if>
+    </marko-web-identity-x-context>
   </@section>
 
   <@section>

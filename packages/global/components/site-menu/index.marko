@@ -27,13 +27,13 @@ $ const attrs = {
         <!-- search box -->
         <search block-name=blockName />
         <!-- user section || IDX_NAV_ENABLE -->
-        <if(site.getAsArray("navigation.desktopMenu.user"))>
+        <if(site.getAsArray("navigation.user.items"))>
           <!-- user section -->
             <default-theme-site-menu-section
             tag="nav"
             block-name=blockName
             label="Account"
-            items=site.getAsArray("navigation.desktopMenu.user")
+            items=site.getAsArray("navigation.user.items")
             modifiers=["user"]
             reg-enabled=regEnabled
             has-user=hasUser
@@ -85,13 +85,13 @@ $ const attrs = {
     <!-- search box -->
     <search block-name=blockName />
     <!-- user section || IDX_NAV_ENABLE -->
-    <if(site.getAsArray("navigation.mobileMenu.user"))>
+    <if(site.getAsArray("navigation.user.items"))>
       <!-- user section -->
         <default-theme-site-menu-section
         tag="nav"
         block-name=blockName
         label="Account"
-        items=site.getAsArray("navigation.mobileMenu.user")
+        items=site.getAsArray("navigation.user.items")
         modifiers=["user"]
         reg-enabled=regEnabled
         has-user=hasUser

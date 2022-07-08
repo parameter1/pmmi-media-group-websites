@@ -1,65 +1,30 @@
-const privacyPolicy = require('./privacy-policy');
-
-const baseConfig = {
-  action: 'https://automationworld.dragonforms.com/loading.do',
-  hiddenInputs: [
-    { name: 'omedasite', value: 'awnlblock' },
-  ],
-};
-
 const defaults = {
-  name: '{Name} Newsletter',
-  description: 'Get helpful insights and important news delivered straight to your inbox with the <span class="newsletter-name">{Name}</span> newsletter.',
-  defaultNewsletter: {
-    deploymentTypeId: 0,
-    name: 'Newsletter Name',
-    eventCategory: 'Newsletter Category',
-  },
-  privacyPolicy,
-  newsletters: [
-    {
-      deploymentTypeId: 0,
-      name: 'Newsletter Name',
-      eventCategory: 'Newsletter Category',
-    },
-    {
-      deploymentTypeId: 0,
-      name: 'Newsletter Name',
-      eventCategory: 'Newsletter Category',
-    },
-  ],
-  demographic: {
-    id: 0,
-    label: 'Demographic Question',
-    values: [
-      { id: 0, label: 'Demographic answer' },
-    ],
-  },
+  disabled: process.env.DISABLE_IDX_NEWSLETTER_SIGNUP === 'true',
+  name: 'Join thousands of your peers!',
+  description: 'Automation intelligence and updates from <strong>Automation World</strong> delivered to your inbox.',
 };
 
 module.exports = {
-  // uses inline omeda form
-  signupBanner: {
-    ...defaults,
-    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pmmi-full.png',
-    disabled: true,
-  },
   pushdown: {
     ...defaults,
-    description: 'Get helpful insights and important news delivered straight to your inbox with the <span class="newsletter-name">{Name}</span> newsletter.',
-    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pmmi-half.png',
-    disabled: true,
+    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/aw-signup-half.png',
   },
 
-  // links off to seperate omeda dragonform
+  signupBanner: {
+    ...defaults,
+    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/aw-signup-full.png',
+  },
   signupBannerLarge: {
-    ...baseConfig,
-    name: '{Name} Newsletter',
-    description: 'Get helpful insights and important news delivered straight to your inbox.',
+    ...defaults,
   },
   signupFooter: {
-    ...baseConfig,
-    name: '{Name} Newsletter',
-    description: 'Get helpful insights and important news delivered straight to your inbox.',
+    ...defaults,
+    name: 'Automation World Newsletter',
+    description: 'The go-to source for automation professionals looking for <strong>breaking news, industry trends and best practices.</strong>',
+  },
+  signupBannerStatic: {
+    ...defaults,
+    name: 'Automation World Newsletter',
+    description: 'The go-to source for automation professionals looking for <strong>breaking news, industry trends and best practices.</strong>',
   },
 };

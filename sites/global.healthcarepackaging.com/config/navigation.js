@@ -79,6 +79,9 @@ module.exports = {
   tertiary: {
     items: [],
   },
+  user: {
+    items: [],
+  },
   footer: {
     items: [
       { href: '/page/hcp-about-us', label: 'About Us' },

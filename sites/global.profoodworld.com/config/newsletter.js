@@ -1,65 +1,32 @@
-const privacyPolicy = require('./privacy-policy');
-
-const baseConfig = {
-  action: 'https://profoodworld.dragonforms.com/loading.do',
-  hiddenInputs: [
-    { name: 'omedasite', value: 'pfwnlbase' },
-  ],
-};
-
 const defaults = {
-  name: '{Name} Newsletter',
-  description: 'Get helpful insights and important news delivered straight to your inbox with the <span class="newsletter-name">{Name}</span> newsletter.',
-  defaultNewsletter: {
-    deploymentTypeId: 0,
-    name: 'Newsletter Name',
-    eventCategory: 'Newsletter Category',
-  },
-  privacyPolicy,
-  newsletters: [
-    {
-      deploymentTypeId: 0,
-      name: 'Newsletter Name',
-      eventCategory: 'Newsletter Category',
-    },
-    {
-      deploymentTypeId: 0,
-      name: 'Newsletter Name',
-      eventCategory: 'Newsletter Category',
-    },
-  ],
-  demographic: {
-    id: 0,
-    label: 'Demographic Question',
-    values: [
-      { id: 0, label: 'Demographic answer' },
-    ],
-  },
+  disabled: process.env.DISABLE_IDX_NEWSLETTER_SIGNUP === 'true',
+  name: 'Join thousands of your peers!',
+  description: 'Food and beverage packaging intelligence and updates from <strong>ProFood World</strong> delivered to your inbox.',
 };
 
 module.exports = {
-  // uses inline omeda form
-  signupBanner: {
-    ...defaults,
-    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pmmi-full.png',
-    disabled: true,
-  },
   pushdown: {
     ...defaults,
-    description: 'Get helpful insights and important news delivered straight to your inbox with the <span class="newsletter-name">{Name}</span> newsletter.',
-    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pmmi-half.png',
-    disabled: true,
+    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pfw-signup-half.png',
   },
 
-  // links off to seperate omeda dragonform
+  signupBanner: {
+    ...defaults,
+    name: 'You\'re Invited!',
+    description: 'Don\'t miss your weekly dose of packaging intelligence and news with <strong>ProFood World\'s</strong> e-newsletter.',
+    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pfw-signup-full.png',
+  },
   signupBannerLarge: {
-    ...baseConfig,
-    name: '{Name} Newsletter',
-    description: 'Get helpful insights and important news delivered straight to your inbox.',
+    ...defaults,
   },
   signupFooter: {
-    ...baseConfig,
-    name: '{Name} Newsletter',
-    description: 'Get helpful insights and important news delivered straight to your inbox.',
+    ...defaults,
+    name: 'ProFood World Newsletter',
+    description: 'The go-to source for packaging professionals looking for <strong>breaking news, industry trends and best practices.</strong>',
+  },
+  signupBannerStatic: {
+    ...defaults,
+    name: 'You\'re Invited!',
+    description: 'Don\'t miss your weekly dose of packaging intelligence and news with <strong>ProFood World\'s</strong> e-newsletter.',
   },
 };

@@ -65,6 +65,9 @@ module.exports = {
   tertiary: {
     items: [],
   },
+  user: {
+    items: [],
+  },
   footer: {
     items: [
       { href: 'https://www.pmmimediagroup.com/pw/mundo-pmmi', label: 'Anuncie', target: '_blank' },
