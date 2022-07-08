@@ -1,8 +1,9 @@
 import { defaultValue } from "@parameter1/base-cms-marko-web/utils";
-import convertAdToContent from "@parameter1/base-cms-marko-web-native-x/utils/convert-ad-to-content";
+import convertAdToNode from "@parameter1/base-cms-marko-web-native-x/utils/convert-ad-to-node";
 
 $ const { nativeX: nxConfig, i18n } = out.global;
 $ const aliases = defaultValue(input.aliases, []);
+$ const sectionName = defaultValue(input.sectionName, "Sponsor Content");
 
 $ const blockName = "native-x-list";
 $ const uri = nxConfig.getUri();
@@ -13,17 +14,14 @@ $ const uri = nxConfig.getUri();
     <marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placementA.id opts={ n: 1 }>
       $ const hasAd = ads && ads.length && ads[0] && ads[0].hasCampaign;
       <if(hasAd)>
-        $ const nodeA = convertAdToContent(ads[0], { sectionName: "Sponsor Content" });
         <div class="node-list__node">
           <theme-content-node
-            node=nodeA
             with-teaser=false
             image-position="right"
             with-section=false
             with-dates=false
             image={ lazyload: true, width: 100, height: 100, ar: "1:1" }
-            attrs=ads[0].attributes.container
-            link-attrs=ads[0].attributes.link
+            ...convertAdToNode(ads[0], { sectionName })
           />
         </div>
       </if>
@@ -33,17 +31,14 @@ $ const uri = nxConfig.getUri();
     <marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placementB.id opts={ n: 1 }>
       $ const hasAd = ads && ads.length && ads[0] && ads[0].hasCampaign;
       <if(hasAd)>
-        $ const nodeB = convertAdToContent(ads[0], { sectionName: "Sponsor Content" });
         <div class="node-list__node">
           <theme-content-node
-            node=nodeB
             with-teaser=false
             image-position="right"
             with-section=true
             with-dates=false
             image={ lazyload: true, width: 100, height: 100, ar: "1:1" }
-            attrs=ads[0].attributes.container
-            link-attrs=ads[0].attributes.link
+            ...convertAdToNode(ads[0], { sectionName })
           />
         </div>
       </if>
