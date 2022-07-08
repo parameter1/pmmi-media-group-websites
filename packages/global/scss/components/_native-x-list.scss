@@ -1,0 +1,27 @@
+.native-x-list {
+  .node-list {
+    &__nodes {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    &__node {
+      background-color: $gray-100;
+      border-bottom: none;
+      border-radius: 4px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    &__node:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .node {
+    &__title a {
+      -webkit-line-clamp: 4;
+      max-height: 88px;
+    }
+    &__website-section-name {
+      @include skin-typography($style: "slug-small", $link-style: "primary");
+    }
+  }
+}

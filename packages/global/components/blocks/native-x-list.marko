@@ -1,0 +1,47 @@
+import { defaultValue } from "@parameter1/base-cms-marko-web/utils";
+import convertAdToNode from "@parameter1/base-cms-marko-web-native-x/utils/convert-ad-to-node";
+
+$ const { nativeX: nxConfig, i18n } = out.global;
+$ const aliases = defaultValue(input.aliases, []);
+$ const sectionName = defaultValue(input.sectionName, "Sponsor Content");
+
+$ const blockName = "native-x-list";
+$ const uri = nxConfig.getUri();
+
+<div class="node-list native-x-list node-list--flush-x">
+  <div class="node-list__nodes">
+    $ const placementA = nxConfig.getPlacement({ name: "marketing", aliases });
+    <marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placementA.id opts={ n: 1 }>
+      $ const hasAd = ads && ads.length && ads[0] && ads[0].hasCampaign;
+      <if(hasAd)>
+        <div class="node-list__node">
+          <theme-content-node
+            with-teaser=false
+            image-position="right"
+            with-section=false
+            with-dates=false
+            image={ lazyload: true, width: 100, height: 100, ar: "1:1" }
+            ...convertAdToNode(ads[0], { sectionName })
+          />
+        </div>
+      </if>
+    </marko-web-native-x-fetch-elements>
+
+    $ const placementB = nxConfig.getPlacement({ name: "default", aliases });
+    <marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placementB.id opts={ n: 1 }>
+      $ const hasAd = ads && ads.length && ads[0] && ads[0].hasCampaign;
+      <if(hasAd)>
+        <div class="node-list__node">
+          <theme-content-node
+            with-teaser=false
+            image-position="right"
+            with-section=true
+            with-dates=false
+            image={ lazyload: true, width: 100, height: 100, ar: "1:1" }
+            ...convertAdToNode(ads[0], { sectionName })
+          />
+        </div>
+      </if>
+    </marko-web-native-x-fetch-elements>
+  </div>
+</div>

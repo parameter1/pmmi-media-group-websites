@@ -13,6 +13,9 @@
       "required": true
     }
   },
+  "<global-native-x-list-block>": {
+    "template": "./native-x-list.marko"
+  },
   "<global-promo-card-rotation-block>": {
     "template": "./promo-card-rotation.marko"
   }
