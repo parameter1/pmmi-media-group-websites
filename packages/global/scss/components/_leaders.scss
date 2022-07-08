@@ -6,6 +6,7 @@
   &__header-image {
     img {
       width: 100%;
+      max-height: 90px;
     }
   }
   &__header-title {
@@ -74,6 +75,7 @@
     background-color: $leaders-primary-color;
     img {
       width: 100%;
+      max-height: 90px;
     }
   }
 
