@@ -1,7 +1,7 @@
 const defaults = {
   disabled: process.env.DISABLE_IDX_NEWSLETTER_SIGNUP === 'true',
-  name: 'Join thousands of your peers!',
-  description: 'Industry intelligence and updates from <strong>muno PMMI</strong> delivered to your inbox.',
+  name: '¡Únase a miles de sus colegas!',
+  description: 'Inteligencia de la industria y actualizaciones de <strong>Mundo PMMI</strong> directamente a su bandeja de entrada.',
 };
 
 module.exports = {
@@ -12,8 +12,8 @@ module.exports = {
 
   signupBanner: {
     ...defaults,
-    name: 'You\'re Invited!',
-    description: 'Don\'t miss your weekly dose of industry intelligence and news with <strong>mundo PMMI\'s</strong> e-newsletter.',
+    name: 'Está invitado',
+    description: 'No se pierda la dosis semanal de inteligencia de la industria y noticias con el boletín de <strong>Mundo PMMI</strong>',
     imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/mundo-signup-full.png',
   },
   signupBannerLarge: {
@@ -22,11 +22,11 @@ module.exports = {
   signupFooter: {
     ...defaults,
     name: 'mundo PMMI Newsletter',
-    description: 'The go-to source for industry professionals looking for <strong>breaking news, industry trends and best practices.</strong>',
+    description: 'La fuente clave para profesionales de la industria que buscan actualizarse en empaque, noticias, tendencias y mejores prácticas',
   },
   signupBannerStatic: {
     ...defaults,
-    name: 'You\'re Invited!',
-    description: 'Don\'t miss your weekly dose of industry intelligence and news with <strong>mundo PMMI\'s</strong> e-newsletter.',
+    name: 'Está invitado',
+    description: 'No se pierda la dosis semanal de inteligencia de la industria y noticias con el boletín de <strong>Mundo PMMI</strong>',
   },
 };
