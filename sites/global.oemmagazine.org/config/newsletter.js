@@ -1,5 +1,5 @@
 const defaults = {
-  disabled: process.env.DISABLE_IDX_NEWSLETTER_SIGNUP === 'false',
+  disabled: process.env.DISABLE_IDX_NEWSLETTER_SIGNUP === 'true',
   name: 'Join thousands of your peers!',
   description: 'Industry intelligence and updates from <strong>OEM</strong> delivered to your inbox.',
 };
