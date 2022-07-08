@@ -21,7 +21,7 @@ module.exports = {
   },
   signupFooter: {
     ...defaults,
-    name: 'mundo PMMI Newsletter',
+    name: 'Boletín Mundo PMMI',
     description: 'La fuente clave para profesionales de la industria que buscan actualizarse en empaque, noticias, tendencias y mejores prácticas',
   },
   signupBannerStatic: {
