@@ -2,7 +2,7 @@ import { get, getAsArray } from "@parameter1/base-cms-object-path";
 import contentIframe from "@pmmi-media-group/package-global/utils/content-iframe";
 import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/utils/get-content-preview";
 
-$ const { site, contentGatingHandler, req } = out.global;
+$ const { site, contentGatingHandler, req, i18n } = out.global;
 $ const { id, type, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
 $ const sections = getAsArray(input, "sections");
 
@@ -13,6 +13,8 @@ $ const displayReadNext = showReadNextBlock && ["article"].includes(type);
 $ const displaySocialShare = ["contact"].includes(type) ? false : true;
 $ const displayComments = false; // ["contact"].includes(type) ? false : true;
 $ const displayNewsletterSignup = ["contact"].includes(type) ? false : true;
+$ const continueLable = i18n("Sign Me Up!");
+$ const buttonLabels = { continue: continueLable };
 $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type);
 
 <global-content-wrapper-layout
@@ -184,7 +186,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                 <if(displayNewsletterSignup)>
                   <marko-web-identity-x-context|{ hasUser }|>
                     <if(!hasUser)>
-                      <identity-x-newsletter-form-inline />
+                      <identity-x-newsletter-form-inline button-labels=buttonLabels />
                     </if>
                   </marko-web-identity-x-context>
                 </if>

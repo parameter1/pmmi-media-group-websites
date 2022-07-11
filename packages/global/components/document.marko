@@ -6,7 +6,11 @@ $ const {
   req,
   nativeX,
   GAM,
+  i18n,
 } = out.global;
+
+$ const continueLable = i18n("Sign Me Up!");
+$ const buttonLabels = { continue: continueLable };
 
 <marko-web-document ...input>
   <@head>
@@ -85,14 +89,21 @@ $ const {
       clear-data=true
     />
     <marko-web-identity-x-context|{ hasUser, isEnabled }|>
-      <theme-site-header has-user=hasUser reg-enabled=isEnabled show-search-icon=true />
+      <theme-site-header
+        has-user=hasUser
+        reg-enabled=isEnabled
+        show-search-icon=true
+        newsletter-menu-block-props={
+          buttonLabels,
+        }
+      />
       <global-site-menu has-user=hasUser reg-enabled=isEnabled />
     </marko-web-identity-x-context>
     <${input.aboveContainer} />
   </@above-container>
   <@below-container>
     <${input.belowContainer} />
-    <theme-site-footer />
+    <theme-site-footer newsletter-block-props={ buttonLabels } />
   </@below-container>
   <@below-wrapper>
     <marko-web-deferred-script-loader-load />
