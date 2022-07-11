@@ -4,6 +4,7 @@ const { set, get, getAsObject } = require('@parameter1/base-cms-object-path');
 const loadInquiry = require('@parameter1/base-cms-marko-web-inquiry');
 const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitemap/middleware/paginated');
 const omedaIdentityX = require('@parameter1/base-cms-marko-web-omeda-identity-x');
+const i18n = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/i18n');
 
 const document = require('./components/document');
 const components = require('./components');
@@ -87,8 +88,7 @@ module.exports = (options = {}) => {
       set(app.locals, 'nativeX', nativeXConfig);
 
       // i18n
-      const i18n = v => v;
-      set(app.locals, 'i18n', options.i18n || i18n);
+      i18n(app, options.i18n);
 
       // Recaptcha
       set(app.locals, 'recaptcha', recaptcha);

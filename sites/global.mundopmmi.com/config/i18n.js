@@ -35,6 +35,8 @@ module.exports = {
   'next page': 'Próxima Pagina',
   email: 'Correo electrónico',
   'sign up': 'Suscríbase ',
+  'sign me up': 'Inscribirme',
+  'sign me up!': '¡Inscribirme!',
   topics: 'Temas',
   more: 'Más',
   'view more': 'Vea Más',
