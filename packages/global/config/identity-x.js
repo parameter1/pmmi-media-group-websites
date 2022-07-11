@@ -5,6 +5,7 @@ module.exports = ({
   appId,
   requiredServerFields,
   requiredClientFields,
+  booleanQuestionsLabel = 'Choose your subscriptions: ',
   ...rest
 } = {}) => {
   const config = new IdentityXConfiguration({
@@ -12,6 +13,7 @@ module.exports = ({
     apiToken: process.env.IDENTITYX_API_TOKEN,
     requiredServerFields,
     requiredClientFields,
+    booleanQuestionsLabel,
     onHookError: newrelic.noticeError.bind(newrelic),
     ...rest,
   });
