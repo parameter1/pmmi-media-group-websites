@@ -5,7 +5,7 @@ module.exports = ({
   appId,
   requiredServerFields,
   requiredClientFields,
-  booleanQuestionsLabel = 'Choose your subscriptions: ',
+  booleanQuestionsLabel = 'Choose your subscriptions:',
   ...rest
 } = {}) => {
   const config = new IdentityXConfiguration({
