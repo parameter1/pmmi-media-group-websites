@@ -53,9 +53,9 @@ module.exports = {
     corporate: {
       alt: 'PMMI Media Group Logo',
       href: 'https://www.pmmimediagroup.com',
-      src: 'https://img.oemmagazine.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress',
+      src: 'https://img.oemmagazine.org/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress',
       srcset: [
-        'https://img.oemmagazine.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress&dpr=2 2x',
+        'https://img.oemmagazine.org/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress&dpr=2 2x',
       ],
     },
   },
