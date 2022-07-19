@@ -7,14 +7,14 @@ const defaults = {
 module.exports = {
   pushdown: {
     ...defaults,
-    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/oem-signup-half.png',
+    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/oem-iphone-Cropped.png',
   },
 
   signupBanner: {
     ...defaults,
     name: 'You\'re Invited!',
     description: 'Don\'t miss your weekly dose of industry intelligence and news with <strong>OEM\'s</strong> e-newsletter.',
-    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/oem-signup-full.png',
+    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/oem-iphone.png',
   },
   signupBannerLarge: {
     ...defaults,
