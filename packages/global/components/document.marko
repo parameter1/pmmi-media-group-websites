@@ -10,6 +10,7 @@ $ const {
 } = out.global;
 
 $ const continueLable = i18n("Sign Me Up!");
+$ const loginEmailLabel = i18n("Work Email");
 $ const buttonLabels = { continue: continueLable };
 
 <marko-web-document ...input>
@@ -95,7 +96,7 @@ $ const buttonLabels = { continue: continueLable };
         show-search-icon=true
         newsletter-menu-block-props={
           buttonLabels,
-          loginEmailLabel: "Work Email"
+          loginEmailLabel,
         }
       />
       <global-site-menu has-user=hasUser reg-enabled=isEnabled />
@@ -104,7 +105,7 @@ $ const buttonLabels = { continue: continueLable };
   </@above-container>
   <@below-container>
     <${input.belowContainer} />
-    <theme-site-footer newsletter-block-props={ buttonLabels, loginEmailLabel: "Work Email" } />
+    <theme-site-footer newsletter-block-props={ buttonLabels, loginEmailLabel } />
   </@below-container>
   <@below-wrapper>
     <marko-web-deferred-script-loader-load />

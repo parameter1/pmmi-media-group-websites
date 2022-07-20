@@ -14,6 +14,7 @@ $ const displaySocialShare = ["contact"].includes(type) ? false : true;
 $ const displayComments = false; // ["contact"].includes(type) ? false : true;
 $ const displayNewsletterSignup = ["contact"].includes(type) ? false : true;
 $ const continueLable = i18n("Sign Me Up!");
+$ const loginEmailLabel = i18N("Work Email");
 $ const buttonLabels = { continue: continueLable };
 $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type);
 
@@ -186,7 +187,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                 <if(displayNewsletterSignup)>
                   <marko-web-identity-x-context|{ hasUser }|>
                     <if(!hasUser)>
-                      <identity-x-newsletter-form-inline button-labels=buttonLabels login-email-label="Work Email" />
+                      <identity-x-newsletter-form-inline button-labels=buttonLabels login-email-label=loginEmailLable />
                     </if>
                   </marko-web-identity-x-context>
                 </if>
