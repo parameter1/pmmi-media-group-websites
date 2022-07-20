@@ -10,7 +10,7 @@ $ const uri = nxConfig.getUri();
 
 <div class="node-list native-x-list node-list--flush-x">
   <div class="node-list__nodes">
-    $ const placementA = nxConfig.getPlacement({ name: "marketing", aliases });
+    $ const placementA = nxConfig.getPlacement({ name: "audience", aliases });
     <marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placementA.id opts={ n: 1 }>
       $ const hasAd = ads && ads.length && ads[0] && ads[0].hasCampaign;
       <if(hasAd)>
