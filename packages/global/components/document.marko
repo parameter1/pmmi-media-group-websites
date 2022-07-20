@@ -95,6 +95,7 @@ $ const buttonLabels = { continue: continueLable };
         show-search-icon=true
         newsletter-menu-block-props={
           buttonLabels,
+          loginEmailLabel: "Work Email"
         }
       />
       <global-site-menu has-user=hasUser reg-enabled=isEnabled />
@@ -103,7 +104,7 @@ $ const buttonLabels = { continue: continueLable };
   </@above-container>
   <@below-container>
     <${input.belowContainer} />
-    <theme-site-footer newsletter-block-props={ buttonLabels } />
+    <theme-site-footer newsletter-block-props={ buttonLabels, loginEmailLabel: "Work Email" } />
   </@below-container>
   <@below-wrapper>
     <marko-web-deferred-script-loader-load />

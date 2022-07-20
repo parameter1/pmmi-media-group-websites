@@ -186,7 +186,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                 <if(displayNewsletterSignup)>
                   <marko-web-identity-x-context|{ hasUser }|>
                     <if(!hasUser)>
-                      <identity-x-newsletter-form-inline button-labels=buttonLabels />
+                      <identity-x-newsletter-form-inline button-labels=buttonLabels login-email-label="Work Email" />
                     </if>
                   </marko-web-identity-x-context>
                 </if>
