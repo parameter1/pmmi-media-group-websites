@@ -7,12 +7,13 @@ const defaults = {
 module.exports = {
   pushdown: {
     ...defaults,
-    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/aw-signup-half.png',
+    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/aw-iphone-Cropped.png',
   },
 
   signupBanner: {
-    ...defaults,
-    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/aw-signup-full.png',
+    name: 'You’re Invited',
+    description: 'Don’t miss your weekly dose of automation intelligence and news with <strong>Automation World’s</strong> e-newsletter.',
+    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/aw-iphone.png',
   },
   signupBannerLarge: {
     ...defaults,

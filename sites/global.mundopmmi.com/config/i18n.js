@@ -55,4 +55,5 @@ module.exports = {
   'register for webinar': 'Registra Por Webinario',
   'view webinar': 'Vea Webinario',
   results: 'Resultados',
+  'work email': 'Correo Electrónico',
 };

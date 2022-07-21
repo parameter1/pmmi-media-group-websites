@@ -5,8 +5,9 @@ $ const { id, alias, name, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
 
 $ const { site, pagination: p, i18n } = out.global;
-$ const continueLable = i18n("Sign Me Up!");
-$ const buttonLabels = { continue: continueLable };
+$ const continueLabel = i18n("Sign Me Up!");
+$ const loginEmailLabel = i18n("Work Email");
+$ const buttonLabels = { continue: continueLabel };
 $ const perPage = 12;
 
 <global-website-section-default-layout
@@ -80,7 +81,7 @@ $ const perPage = 12;
   <@section>
     <marko-web-identity-x-context|{ hasUser }|>
       <if(!hasUser)>
-        <identity-x-newsletter-form-inline button-labels=buttonLabels />
+        <identity-x-newsletter-form-inline button-labels=buttonLabels login-email-label=loginEmailLabel />
       </if>
     </marko-web-identity-x-context>
   </@section>

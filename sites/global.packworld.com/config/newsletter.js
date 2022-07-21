@@ -7,14 +7,14 @@ const defaults = {
 module.exports = {
   pushdown: {
     ...defaults,
-    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pw-signup-half.png',
+    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pw-iphone-Cropped.png',
   },
 
   signupBanner: {
     ...defaults,
     name: 'You\'re Invited!',
     description: 'Don\'t miss your weekly dose of packaging intelligence and news with <strong>Packaging World\'s</strong> e-newsletter.',
-    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pw-signup-full.png',
+    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pw-iphone.png',
   },
   signupBannerLarge: {
     ...defaults,
