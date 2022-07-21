@@ -10,8 +10,8 @@ config.lazyLoad = {
 };
 
 config.setAliasAdUnits('default', [
-  { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'pfw_leaderboard' },
-  { name: 'rotation', templateName: 'ROTATION', path: 'pfw_leaderboard' },
+  { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'pfw_leaderoard' },
+  { name: 'rotation', templateName: 'ROTATION', path: 'pfw_leaderoard' },
   { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'pfw_imu' },
   { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'pfw_imu' },
   { name: 'wallpaper-left', templateName: 'WALLPAPER', path: 'wallpaper-left' },
