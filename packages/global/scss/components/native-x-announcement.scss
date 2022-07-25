@@ -1,0 +1,39 @@
+.announcement {
+  z-index: 15000;
+  background-color: $primary;
+  border-bottom: 1px solid #c4c6cb;
+  font-weight: $font-weight-bold;
+  font-size: 12px;
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    max-width: $marko-web-document-container-max-width;
+    margin: map-get($spacers, 2) auto;
+    padding: 0 $marko-web-page-wrapper-padding;
+  }
+  &__title,
+  &__short-title,
+  &__cta {
+    font-size: 12px;
+    font-weight: 700;
+    height: 20px;
+    letter-spacing: 0.3px;
+    line-height: 20px;
+  }
+  &__short-title {
+    color: $white;
+    @media (min-width: 728px) {
+      display: none;
+    }
+  }
+  &__title {
+    color: $white;
+    @media (max-width: 728px) {
+      display: none;
+    }
+  }
+  &__cta {
+    color: $white;
+    margin-left: 1em;
+  }
+}

@@ -14,6 +14,7 @@
 @import "./components/content-card-list";
 @import "./components/leaders";
 @import "./components/native-x-list";
+@import "./components/native-x-announcement";
 
 // @import "../components/magazine/scss/index";
 
@@ -253,5 +254,11 @@ label {
       margin-top: 30px;
       margin-bottom: 30px;
     }
+  }
+}
+
+.site-header .search-sponsor__logo {
+  @media (max-width: 420px) {
+    display: none;
   }
 }
