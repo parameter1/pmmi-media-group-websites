@@ -10,6 +10,8 @@
     max-width: $marko-web-document-container-max-width;
     margin: map-get($spacers, 2) auto;
     padding: 0 $marko-web-page-wrapper-padding;
+    max-width: 100%;
+    overflow: hidden;
   }
   &__title,
   &__short-title,
@@ -19,6 +21,7 @@
     height: 20px;
     letter-spacing: 0.3px;
     line-height: 20px;
+    white-space: nowrap;
   }
   &__short-title {
     color: $white;
