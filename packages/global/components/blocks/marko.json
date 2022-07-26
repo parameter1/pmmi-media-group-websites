@@ -13,6 +13,9 @@
       "required": true
     }
   },
+  "<global-native-x-announcement-block>": {
+    "template": "./native-x-announcement.marko"
+  },
   "<global-native-x-list-block>": {
     "template": "./native-x-list.marko"
   },

@@ -89,6 +89,7 @@ $ const buttonLabels = { continue: continueLabel };
       on="newsletter-form-subscription"
       clear-data=true
     />
+    <global-native-x-announcement-block />
     <marko-web-identity-x-context|{ hasUser, isEnabled }|>
       <theme-site-header
         has-user=hasUser
@@ -101,6 +102,7 @@ $ const buttonLabels = { continue: continueLabel };
       />
       <global-site-menu has-user=hasUser reg-enabled=isEnabled />
     </marko-web-identity-x-context>
+    <marko-web-browser-component name="DynamicSiteMenuPositioner" />
     <${input.aboveContainer} />
   </@above-container>
   <@below-container>
