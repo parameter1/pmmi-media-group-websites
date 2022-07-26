@@ -4,8 +4,6 @@ $ const aliases = input.aliases ? input.aliases : [];
 $ const blockName = "announcement";
 $ const uri = nxConfig.getUri();
 $ const placement = nxConfig.getPlacement({ name, aliases });
-$ const titleLength = input.titleLength ? input.titleLength : 100;
-$ const shortTitleLength = input.shortTitleLength ? input.shortTitleLength : 60;
 
 <if(uri && placement && placement.id)>
   <marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placement.id opts={ n: 1 }>
@@ -18,10 +16,10 @@ $ const shortTitleLength = input.shortTitleLength ? input.shortTitleLength : 60;
         <marko-web-link href=href attrs=attrs.link  >
           <marko-web-element block-name=blockName name="wrapper" attrs=attrs.container >
             <marko-web-element block-name=blockName name="short-title">
-              ${title.substring(0, shortTitleLength)}<if(title.length > shortTitleLength)>&#8230;</if>
+              ${title}
             </marko-web-element>
             <marko-web-element block-name=blockName name="title">
-              ${teaser.substring(0, titleLength)}<if(teaser.length > titleLength)>&#8230;</if>
+              ${teaser}
             </marko-web-element>
             <marko-web-element block-name=blockName name="cta">
               ${linkText}

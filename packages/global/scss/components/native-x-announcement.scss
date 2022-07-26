@@ -9,9 +9,15 @@
     flex-direction: row;
     max-width: $marko-web-document-container-max-width;
     margin: map-get($spacers, 2) auto;
-    padding: 0 $marko-web-page-wrapper-padding;
-    max-width: 100%;
-    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    a,
+    a:hover {
+      text-decoration: none;
+    }
+    @media (max-width: $marko-web-document-container-max-width) {
+      padding: 0 ($marko-web-page-wrapper-padding * 2);
+    }
   }
   &__title,
   &__short-title,
@@ -28,12 +34,18 @@
     @media (min-width: 728px) {
       display: none;
     }
+    max-width: 75ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   &__title {
     color: $white;
     @media (max-width: 728px) {
       display: none;
     }
+    max-width: 150ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   &__cta {
     color: $white;
