@@ -7,6 +7,7 @@
   &__wrapper {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     max-width: $marko-web-document-container-max-width;
     margin: map-get($spacers, 2) auto;
     margin-left: auto;
