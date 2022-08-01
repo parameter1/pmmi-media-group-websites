@@ -1,8 +1,8 @@
 {
-  "name": "@pmmi-media-group/healthcarepackaging.com",
-  "version": "2.14.3",
+  "name": "@pmmi-media-group/staging.profoodworld.com",
+  "version": "2.13.4",
   "author": "Josh Worden <josh@limit0.io>",
-  "repository": "https://github.com/parameter1/pmmi-media-group-websites/tree/master/sites/healthcarepackaging.com",
+  "repository": "https://github.com/parameter1/pmmi-media-group-websites/tree/master/sites/staging.profoodworld.com",
   "license": "MIT",
   "private": true,
   "scripts": {
@@ -15,6 +15,7 @@
     "test": "yarn lint && yarn compile && yarn build"
   },
   "dependencies": {
+    "@parameter1/base-cms-env": "^2.45.0",
     "@parameter1/base-cms-marko-core": "^2.80.0",
     "@parameter1/base-cms-marko-web": "^2.98.0",
     "@parameter1/base-cms-marko-web-gam": "^2.103.1",
@@ -32,6 +33,7 @@
     "@pmmi-media-group/package-common": "^2.13.4",
     "@pmmi-media-group/package-shared": "^2.13.4",
     "graphql": "^14.5.4",
-    "graphql-tag": "^2.10.1"
+    "graphql-tag": "^2.10.1",
+    "node-fetch": "^2.6.0"
   }
 }

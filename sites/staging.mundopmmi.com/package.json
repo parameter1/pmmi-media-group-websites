@@ -1,8 +1,8 @@
 {
-  "name": "@pmmi-media-group/oemmagazine.org",
+  "name": "@pmmi-media-group/staging.mundopmmi.com",
   "version": "2.13.4",
-  "author": "Josh Worden <josh@limit0.io>",
-  "repository": "https://github.com/parameter1/pmmi-media-group-websites/tree/master/sites/oemmagazine.org",
+  "author": "Brandon Krigbaum <brandon@parameter1.com>",
+  "repository": "https://github.com/parameter1/pmmi-media-group-websites/tree/master/sites/staging.mundopmmi.com",
   "license": "MIT",
   "private": true,
   "scripts": {
