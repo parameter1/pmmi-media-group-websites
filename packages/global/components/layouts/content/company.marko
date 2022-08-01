@@ -140,34 +140,6 @@ $ const lang = site.config.lang || "en";
             </@body>
           </marko-web-node-list>
 
-          <marko-web-query|{ nodes }|
-            name="all-company-content"
-            params={
-              companyId: id,
-              includeContentTypes: ["Promotion"],
-              queryFragment,
-              limit: 4,
-              withSite: false,
-            }
-          >
-            <marko-web-node-list class="mt-block">
-              <@header>
-                ${i18n("Featured Products")}
-              </@header>
-              <@nodes|{ nodes: items }| nodes=nodes>
-                <default-theme-card-deck-flow cols=2 nodes=items>
-                  <@slot|{ node, index }|>
-                    <theme-featured-products-card-node
-                      company-id=id
-                      image-width=340
-                      node=node
-                    />
-                  </@slot>
-                </default-theme-card-deck-flow>
-              </@nodes>
-            </marko-web-node-list>
-          </marko-web-query>
-
 
 
         </div>
@@ -182,12 +154,12 @@ $ const lang = site.config.lang || "en";
       <div class="col-lg-4 pt-block">
         $ const inquiry = site.getAsObject('inquiry');
         <if(content.isLeader)>
-          <marko-web-node-list collapsible=false>
+          <!-- <marko-web-node-list collapsible=false>
             <@header>Request More Information</@header>
             <@body>
               <marko-web-inquiry-form content=content with-header=false modifiers=["node-list"] />
             </@body>
-          </marko-web-node-list>
+          </marko-web-node-list> -->
           $ const contacts = getAsArray(content, "contacts.edges").map(({ node }) => node);
           <marko-web-node-list class="mt-block">
             <@header>
