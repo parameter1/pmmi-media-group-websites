@@ -166,9 +166,9 @@ services:
       - "9716:80"
       - "19716:19716"
 
-  aw-global:
+  aw-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.automationworld.com
+    working_dir: /root/sites/staging.automationworld.com
     environment:
       <<: *env-tauron
       HOST: www-pmmi-aw.dev.parameter1.com
@@ -182,9 +182,9 @@ services:
       - "9809:80"
       - "19809:19809"
 
-  mundo-global:
+  mundo-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.mundopmmi.com
+    working_dir: /root/sites/staging.mundopmmi.com
     environment:
       <<: *env-tauron
       HOST: www-pmmi-mundo.dev.parameter1.com
@@ -198,9 +198,9 @@ services:
       - "9816:80"
       - "19816:19816"
 
-  hcp-global:
+  hcp-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.healthcarepackaging.com
+    working_dir: /root/sites/staging.healthcarepackaging.com
     environment:
       <<: *env-tauron
       HOST: www-pmmi-hcp.dev.parameter1.com
@@ -214,9 +214,9 @@ services:
       - "9812:80"
       - "19812:19812"
 
-  oem-global:
+  oem-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.oemmagazine.org
+    working_dir: /root/sites/staging.oemmagazine.org
     environment:
       <<: *env-tauron
       HOST: www-pmmi-oem.dev.parameter1.com
@@ -230,9 +230,9 @@ services:
       - "9814:80"
       - "19814:19814"
 
-  pw-global:
+  pw-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.packworld.com
+    working_dir: /root/sites/staging.packworld.com
     environment:
       <<: *env-tauron
       HOST: www-pmmi-pw.dev.parameter1.com
@@ -246,9 +246,9 @@ services:
       - "9811:80"
       - "19811:19811"
 
-  pfw-global:
+  pfw-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.profoodworld.com
+    working_dir: /root/sites/staging.profoodworld.com
     environment:
       <<: *env-tauron
       HOST: www-pmmi-pfw.dev.parameter1.com
