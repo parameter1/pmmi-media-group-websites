@@ -4,7 +4,7 @@ const subscribe = require('./subscribe');
 const topics = [
   { href: '/machinery', label: 'Machinery' },
   { href: '/design', label: 'Design' },
-  { href: '/issues', label: 'News' },
+  { href: '/news', label: 'News' },
 ];
 
 const resources = [
