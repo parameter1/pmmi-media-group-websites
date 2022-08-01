@@ -83,6 +83,7 @@ module.exports = {
     more: [
       subscribe,
       { href: 'https://www.pmmimediagroup.com/aw/automation-world', label: 'Advertise', target: '_blank' },
+      { href: '/page/aw-contact-us', label: 'Contact' },
     ],
   },
 };
