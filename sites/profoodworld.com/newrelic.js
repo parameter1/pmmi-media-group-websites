@@ -1,1 +1,1 @@
-module.exports = require('@pmmi-media-group/package-shared/newrelic');
+module.exports = require('@pmmi-media-group/package-global/newrelic');

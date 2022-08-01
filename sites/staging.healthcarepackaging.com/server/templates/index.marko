@@ -1,0 +1,209 @@
+import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+import queryFragment from "@pmmi-media-group/package-shared/graphql/fragments/content-list";
+import latestIssueFragment from "@pmmi-media-group/package-shared/graphql/fragments/magazine-latest-issue";
+
+$ const { site, GAM, nativeX: nxConfig } = out.global;
+$ const { id, alias, name, pageNode } = data;
+
+<marko-web-website-section-page-layout id=id alias=alias name=name>
+  <@head>
+    <marko-web-gtm-website-section-context|{ context }| alias=alias>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-website-section-context>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      $ const adSlots = {
+        "gpt-ad-leaderboard":     GAM.getAdUnit({ name: "leaderboard", aliases }),
+        "gpt-ad-home-skyscraper": GAM.getAdUnit({ name: "skyscraper", aliases, size: [300, 600] }),
+      };
+       <marko-web-gam-slots slots=adSlots />
+       <marko-web-p1-events-track-website-section node=section />
+    </marko-web-resolve-page>
+  </@head>
+  <@above-container>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      <shared-gam-wallpaper-ad aliases=aliases position="home_page" />
+      <marko-web-gam-display-ad id="gpt-ad-leaderboard" modifiers=["above-container"] />
+      <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-top-below-head" modifiers=["above-container"] />
+    </marko-web-resolve-page>
+  </@above-container>
+  <@page>
+
+    <marko-web-query|{ nodes }|
+      name="website-optioned-content"
+      params={ sectionId: id, optionName: "Pinned", limit: 5, requiresImage: true, queryFragment }
+    >
+      <shared-content-hero-flow nodes=nodes />
+    </marko-web-query>
+
+    <div class="row">
+      <div class="col-lg-8 mb-block">
+        <marko-web-query|{ nodes }|
+          name="website-optioned-content"
+          params={ sectionAlias: "home", optionName: "Pinned", limit: 4, skip: 5, requiresImage: true, queryFragment }
+        >
+          <default-theme-card-deck-flow cols=2 nodes=nodes>
+            <@slot|{ node, index }|>
+              <shared-content-card-node
+                image-width=340
+                node=node
+              />
+            </@slot>
+          </default-theme-card-deck-flow>
+        </marko-web-query>
+      </div>
+      <div class="col-lg-4 mb-block page-rail">
+        <marko-web-gam-display-ad id="gpt-ad-home-skyscraper" modifiers=["in-card"] />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-8 mb-block">
+        <common-leaders-home-page />
+      </div>
+      <div class="col-lg-4 mb-block page-rail">
+        <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-leaders-vote-btn" />
+        <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-02-right" />
+        <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-03-right" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 page-rail">
+        <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-03-tall-left" modifiers=["in-card"] />
+      </div>
+      <div class="col-lg-4 mb-block">
+        <marko-web-query|{ nodes }|
+          name="website-scheduled-content"
+          params={ sectionAlias: "machinery-materials", limit: 4, queryFragment }
+        >
+          <shared-content-list-flow nodes=nodes>
+            <@header>
+              <marko-web-link href="/machinery-materials">Machinery & Materials</marko-web-link>
+            </@header>
+          </shared-content-list-flow>
+        </marko-web-query>
+      </div>
+      <div class="col-lg-4 mb-block">
+        <marko-web-query|{ nodes }|
+          name="website-scheduled-content"
+          params={ sectionAlias: "markets", limit: 4, queryFragment }
+        >
+          <shared-content-list-flow nodes=nodes>
+            <@header>
+              <marko-web-link href="/markets">Markets</marko-web-link>
+            </@header>
+          </shared-content-list-flow>
+        </marko-web-query>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 mb-block">
+        <marko-web-query|{ nodes }|
+          name="website-scheduled-content"
+          params={ sectionAlias: "logistics-distribution", limit: 4, queryFragment }
+        >
+          <shared-content-list-flow nodes=nodes>
+            <@header>
+              <marko-web-link href="/logistics-distribution">Logistics & Cold Chain</marko-web-link>
+            </@header>
+          </shared-content-list-flow>
+        </marko-web-query>
+      </div>
+      <div class="col-lg-4 mb-block">
+        <marko-web-query|{ nodes }|
+          name="website-scheduled-content"
+          params={ sectionAlias: "news", limit: 4, queryFragment }
+        >
+          <shared-content-list-flow nodes=nodes>
+            <@header>
+              <marko-web-link href="/news">Issues</marko-web-link>
+            </@header>
+          </shared-content-list-flow>
+        </marko-web-query>
+      </div>
+      <div class="col-lg-4 page-rail">
+        <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-04-tall-right" modifiers=["in-card"] />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 mb-block">
+        <marko-web-query|{ nodes }|
+          name="website-scheduled-content"
+          params={ sectionAlias: "quick-hits", limit: 4, queryFragment }
+        >
+          <shared-content-list-flow nodes=nodes>
+            <@header>
+              <marko-web-link href="/quick-hits">Quick Hits</marko-web-link>
+            </@header>
+          </shared-content-list-flow>
+        </marko-web-query>
+      </div>
+      <div class="col-lg-4 mb-block">
+        <marko-web-query|{ nodes }|
+          name="website-scheduled-content"
+          params={ includeContentTypes:["Product"], limit: 4, queryFragment }
+        >
+          <shared-content-list-flow nodes=nodes>
+            <@header>
+              <marko-web-link href="/products">Products</marko-web-link>
+            </@header>
+          </shared-content-list-flow>
+        </marko-web-query>
+      </div>
+      <div class="col-lg-4 mb-block">
+        <marko-web-query|{ nodes }|
+          name="website-scheduled-content"
+          params={ sectionAlias: "supplier-news", limit: 4, queryFragment }
+        >
+          <shared-content-list-flow nodes=nodes>
+            <@header>
+              <marko-web-link href="/supplier-news">Supplier News</marko-web-link>
+            </@header>
+          </shared-content-list-flow>
+        </marko-web-query>
+      </div>
+      <div class="col-lg-4 page-rail">
+        <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-04-tall-right" modifiers=["in-card"] />
+      </div>
+    </div>
+
+    <marko-web-query|{ nodes }|
+      name="website-optioned-content"
+      params={ sectionAlias: "home", optionName: "Pinned", limit: 5, skip: 9, requiresImage: true, queryFragment }
+    >
+      <shared-content-card-deck-flow nodes=nodes ad-index=0 ad-position="before" ad-name="imu1" >
+        <@native-x index=4 name="load-more" />
+      </shared-content-card-deck-flow>
+    </marko-web-query>
+
+    <marko-web-query|{ nodes }|
+      name="website-optioned-content"
+      params={ sectionAlias: "home", optionName: "Pinned", limit: 5, skip: 14, requiresImage: true, queryFragment }
+    >
+      <shared-content-card-deck-flow nodes=nodes ad-index=2 ad-name="imu2" >
+        <@native-x index=1 name="load-more" />
+      </shared-content-card-deck-flow>
+    </marko-web-query>
+
+    <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="home-bottom-wide" />
+
+  </@page>
+  <@below-page>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      <marko-web-load-more
+        component-name="content-load-more-flow"
+        component-input={ aliases }
+        fragment-name="content-list"
+        query-name="website-scheduled-content"
+        query-params={ sectionId: id, limit: 12, skip: 19, requiresImage: true }
+        max-pages=0
+        page-input={ for: "website-section", id }
+      />
+    </marko-web-resolve-page>
+  </@below-page>
+</marko-web-website-section-page-layout>

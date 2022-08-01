@@ -1,13 +1,15 @@
+import { get } from "@parameter1/base-cms-object-path";
+
+$ const { id, alias, name, pageNode } = input;
+
 $ const { site, config } = out.global;
 
-$ const {
-  id,
-  alias,
-  name,
-  pageNode,
-} = data;
-
-<shared-leaders-layout id=id alias=alias name=name page-node=pageNode>
+<global-website-section-leaders-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
   <@page-description>
     <p>Welcome to <em>${config.siteName()}'s</em> ${site.get("leaders.title")} program.</p>
   </@page-description>
@@ -16,4 +18,4 @@ $ const {
     <p>Read the <em>Automation World</em> feature article to see all the <a href="/21232623">2021 First Team Honorees</a>.</p>
     <p><em>Thanks for your participation, which promotes excellence within the automation community!</em></p>
   </@page-body>
-</shared-leaders-layout>
+</global-website-section-leaders-layout>

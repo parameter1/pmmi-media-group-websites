@@ -34,18 +34,21 @@ x-env-defaults: &env
   LEADERS_ALIAS: ${LEADERS_ALIAS-}
 
 x-env-tauron: &env-tauron
+  <<: *env
   GRAPHQL_URI: ${GRAPHQL_URI-https://tauron.graphql.base.parameter1.com}
   OEMBED_URI: ${OEMBED_URI-https://tauron.oembed.base.parameter1.com}
   RSS_URI: ${RSS_URI-https://tauron.rss.base.parameter1.com}
   SITEMAPS_URI: ${SITEMAPS_URI-https://tauron.sitemaps.base.parameter1.com}
 
 x-env-development: &env-development
+  <<: *env
   GRAPHQL_URI: ${GRAPHQL_URI-http://host.docker.internal:10002}
   OEMBED_URI: ${OEMBED_URI-http://host.docker.internal:10013}
   RSS_URI: ${RSS_URI-http://host.docker.internal:10011}
   SITEMAPS_URI: ${SITEMAPS_URI-http://host.docker.internal:10009}
 
 x-site-command: &site-cmd
+  <<: *node
   entrypoint: ["node_modules/.bin/basecms-website"]
   command: ["dev", "index.js"]
 
@@ -68,11 +71,9 @@ services:
       <<: *env
 
   aw:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/automationworld.com
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-pmmimediagroup-aw.dev.parameter1.com
       PORT: 80
@@ -86,11 +87,9 @@ services:
       - "19709:19709"
 
   pw:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/packworld.com
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-pmmimediagroup-pw.dev.parameter1.com
       PORT: 80
@@ -104,11 +103,9 @@ services:
       - "19711:19711"
 
   hcp:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/healthcarepackaging.com
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-pmmimediagroup-hcp.dev.parameter1.com
       PORT: 80
@@ -122,11 +119,9 @@ services:
       - "19712:19712"
 
   pfw:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/profoodworld.com
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-pmmimediagroup-pfw.dev.parameter1.com
       PORT: 80
@@ -140,11 +135,9 @@ services:
       - "19713:19713"
 
   oem:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/oemmagazine.org
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-pmmimediagroup-oem.dev.parameter1.com
       PORT: 80
@@ -158,11 +151,9 @@ services:
       - "19714:19714"
 
   mundo:
-    <<: *node
     <<: *site-cmd
     working_dir: /root/sites/mundopmmi.com
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-pmmimediagroup-mundo.dev.parameter1.com
       PORT: 80
@@ -175,12 +166,10 @@ services:
       - "9716:80"
       - "19716:19716"
 
-  aw-global:
-    <<: *node
+  aw-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.automationworld.com
+    working_dir: /root/sites/staging.automationworld.com
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-pmmi-aw.dev.parameter1.com
       PORT: 80
@@ -193,12 +182,10 @@ services:
       - "9809:80"
       - "19809:19809"
 
-  mundo-global:
-    <<: *node
+  mundo-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.mundopmmi.com
+    working_dir: /root/sites/staging.mundopmmi.com
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-pmmi-mundo.dev.parameter1.com
       PORT: 80
@@ -211,12 +198,10 @@ services:
       - "9816:80"
       - "19816:19816"
 
-  hcp-global:
-    <<: *node
+  hcp-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.healthcarepackaging.com
+    working_dir: /root/sites/staging.healthcarepackaging.com
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-pmmi-hcp.dev.parameter1.com
       PORT: 80
@@ -229,12 +214,10 @@ services:
       - "9812:80"
       - "19812:19812"
 
-  oem-global:
-    <<: *node
+  oem-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.oemmagazine.org
+    working_dir: /root/sites/staging.oemmagazine.org
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-pmmi-oem.dev.parameter1.com
       PORT: 80
@@ -247,12 +230,10 @@ services:
       - "9814:80"
       - "19814:19814"
 
-  pw-global:
-    <<: *node
+  pw-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.packworld.com
+    working_dir: /root/sites/staging.packworld.com
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-pmmi-pw.dev.parameter1.com
       PORT: 80
@@ -265,12 +246,10 @@ services:
       - "9811:80"
       - "19811:19811"
 
-  pfw-global:
-    <<: *node
+  pfw-staging:
     <<: *site-cmd
-    working_dir: /root/sites/global.profoodworld.com
+    working_dir: /root/sites/staging.profoodworld.com
     environment:
-      <<: *env
       <<: *env-tauron
       HOST: www-pmmi-pfw.dev.parameter1.com
       PORT: 80

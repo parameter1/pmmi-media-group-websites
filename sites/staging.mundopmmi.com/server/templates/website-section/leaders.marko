@@ -1,0 +1,17 @@
+$ const { site, config } = out.global;
+
+$ const {
+  id,
+  alias,
+  name,
+  pageNode,
+} = data;
+
+<shared-leaders-layout id=id alias=alias name=name page-node=pageNode>
+  <@page-description>
+    <p>Bienvenido al programa ${site.get("leaders.title")} de Mundo PMMI.</p>
+  </@page-description>
+  <@page-body>
+    <p>Esperamos que encuentre útiles los recursos de este directorio de proveedores de maquinaria para empaque y materiales. Para cada proveedor participante, usted encontrará una página de perfil muy completa diseñada para ayudarle a tomar decisiones mejor informadas. </p>
+  </@page-body>
+</shared-leaders-layout>

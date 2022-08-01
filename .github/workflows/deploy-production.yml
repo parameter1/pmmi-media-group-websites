@@ -38,10 +38,10 @@ jobs:
         site:
           - automationworld.com
           - healthcarepackaging.com
+          - mundopmmi.com
           - oemmagazine.org
           - packworld.com
           - profoodworld.com
-          - mundopmmi.com
     steps:
       - uses: actions/checkout@v2
       - name: Deploy to Kubernetes
