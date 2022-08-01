@@ -29,6 +29,7 @@ module.exports = {
   'company overview': 'Compañía Resumen',
   'featured products': 'Productos presentados',
   downloads: 'Recursos Digitales',
+  'the latest downloads from mundo pmmi': 'Las últimas descargas de Mundo PMMI',
   'previous page': 'Pagina Anterior',
   page: 'Pagina',
   of: 'de',
