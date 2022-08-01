@@ -36,12 +36,12 @@ jobs:
         namespace:
           - staging-websites-tauron
         site:
-          - automationworld.com
-          - healthcarepackaging.com
-          - oemmagazine.org
-          - packworld.com
-          - profoodworld.com
-          - mundopmmi.com
+          - staging.automationworld.com
+          - staging.healthcarepackaging.com
+          - staging.mundopmmi.com
+          - staging.oemmagazine.org
+          - staging.packworld.com
+          - staging.profoodworld.com
     steps:
       - uses: actions/checkout@v2
       - name: Deploy to Kubernetes
