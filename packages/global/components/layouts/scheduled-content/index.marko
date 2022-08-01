@@ -5,7 +5,7 @@ import { getAsArray } from "@parameter1/base-cms-object-path";
 
 $ const sections = getAsArray(input, "sections");
 $ const queryName = defaultValue(input.queryName, "website-scheduled-content");
-$ const { config, GAM, pagination: p } = out.global;
+$ const { config, GAM, pagination: p, i18n } = out.global;
 $ const {
   alias,
   title,
@@ -49,10 +49,10 @@ $ const description = defaultDescription(title, config);
         <div class="row">
           <div class="col">
             <default-theme-breadcrumbs-with-home>
-              <@item>${title}</@item>
+              <@item>${i18n(title)}</@item>
             </default-theme-breadcrumbs-with-home>
-            <h1 class="page-wrapper__title">${title}</h1>
-            <div class="page-wrapper__deck">${description}</div>
+            <h1 class="page-wrapper__title">${i18n(title)}</h1>
+            <div class="page-wrapper__deck">${i18n(description)}</div>
           </div>
         </div>
       </@section>
