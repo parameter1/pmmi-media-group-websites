@@ -61,7 +61,7 @@ module.exports = {
   socialMediaLinks: [
     { provider: 'facebook', href: 'https://www.facebook.com/HealthcarePackaging' },
     { provider: 'twitter', href: 'https://twitter.com/healthcarepkg' },
-    { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/healthcare-packaging' },
+    { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/healthcare-packaging-/' },
     { provider: 'youtube', href: 'https://www.youtube.com/channel/UCP5NjADH2XxjuAkyZjRdnAg?utm_source=HCPWebsite&utm_campaign=HCPYouTube' },
   ],
   gtm: {
