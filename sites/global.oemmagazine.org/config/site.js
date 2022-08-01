@@ -33,9 +33,9 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo_black.png?h=30&auto=format,compress',
+      src: 'https://img.oemmagazine.org/files/base/pmmi/oem/OEM-logo-colored.png?h=30&auto=format,compress',
       srcset: [
-        'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo_black.png?h=30&auto=format,compress&dpr=2 2x',
+        'https://img.oemmagazine.org/files/base/pmmi/oem/OEM-logo-colored.png?h=30&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
@@ -45,9 +45,9 @@ module.exports = {
       ],
     },
     printContent: {
-      src: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo_black.png?h=45&auto=format,compress',
+      src: 'https://img.oemmagazine.org/files/base/pmmi/oem/OEM-logo-colored.png?h=45&auto=format,compress',
       srcset: [
-        'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo_black.png?h=45&auto=format,compress&dpr=2 2x',
+        'https://img.oemmagazine.org/files/base/pmmi/oem/OEM-logo-colored.png?h=45&auto=format,compress&dpr=2 2x',
       ],
     },
     corporate: {

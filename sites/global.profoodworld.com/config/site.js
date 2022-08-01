@@ -33,9 +33,9 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo_black.png?h=30&auto=format,compress',
+      src: 'https://img.profoodworld.com/files/base/pmmi/pfw/pfw-color.svg?h=30&auto=format,compress',
       srcset: [
-        'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo_black.png?h=30&auto=format,compress&dpr=2 2x',
+        'https://img.profoodworld.com/files/base/pmmi/pfw/pfw-color.svg?h=30&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
@@ -45,9 +45,9 @@ module.exports = {
       ],
     },
     printContent: {
-      src: 'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo_black.png?h=45&auto=format,compress',
+      src: 'https://img.profoodworld.com/files/base/pmmi/pfw/pfw-color.svg?h=45&auto=format,compress',
       srcset: [
-        'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo_black.png?h=45&auto=format,compress&dpr=2 2x',
+        'https://img.profoodworld.com/files/base/pmmi/pfw/pfw-color.svg?h=45&auto=format,compress&dpr=2 2x',
       ],
     },
     corporate: {
