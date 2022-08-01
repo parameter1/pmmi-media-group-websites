@@ -89,3 +89,15 @@
     }
   }
 }
+
+.page-wrapper {
+  &__section {
+    &--leaders-full-width {
+      .leaders {
+        &--all {
+          max-width: $marko-web-document-container-max-width;
+        }
+      }
+    }
+  }
+}
