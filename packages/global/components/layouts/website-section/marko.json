@@ -10,6 +10,8 @@
   },
   "<global-website-section-leaders-layout>": {
     "template": "./leaders.marko",
+    "<page-description>": {},
+    "<page-body>": {},
     "<head>": {},
     "@sections <section>[]": {},
     "@id": "number",
