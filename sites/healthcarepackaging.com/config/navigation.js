@@ -31,7 +31,7 @@ module.exports = {
         { href: '/machinery-materials', label: 'Machinery & Materials' },
         { href: '/markets', label: 'Markets' },
         { href: '/logistics-distribution', label: 'Logistics & Cold Chain' },
-        { href: '/issues', label: 'Issues' },
+        { href: '/news', label: 'Issues' },
       ],
     },
     {

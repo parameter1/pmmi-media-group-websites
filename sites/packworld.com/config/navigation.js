@@ -30,7 +30,7 @@ module.exports = {
       items: [
         { href: '/machinery', label: 'Machinery' },
         { href: '/design', label: 'Design' },
-        { href: '/issues', label: 'Issues' },
+        { href: '/news', label: 'Issues' },
       ],
     },
     {
