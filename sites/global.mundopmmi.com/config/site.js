@@ -33,9 +33,9 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=45&auto=format,compress',
+      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/Mundo-fullcolor.svg?h=45&auto=format,compress',
       srcset: [
-        'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=45&auto=format,compress&dpr=2 2x',
+        'https://img.mundopmmi.com/files/base/pmmi/mundo/Mundo-fullcolor.svg?h=45&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
@@ -45,9 +45,9 @@ module.exports = {
       ],
     },
     printContent: {
-      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=80&auto=format,compress',
+      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/Mundo-fullcolor.svg?h=80&auto=format,compress',
       srcset: [
-        'https://img.mundopmmi.com/files/base/pmmi/mundo/MundoPMMI_logo_black_notag.png?h=80&auto=format,compress&dpr=2 2x',
+        'https://img.mundopmmi.com/files/base/pmmi/mundo/Mundo-fullcolor.svg?h=80&auto=format,compress&dpr=2 2x',
       ],
     },
     corporate: {
