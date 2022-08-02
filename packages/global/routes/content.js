@@ -7,6 +7,7 @@ const contact = require('../templates/content/contact');
 const company = require('../templates/content/company');
 const mediaGallery = require('../templates/content/media-gallery');
 const whitepaper = require('../templates/content/whitepaper');
+const webinar = require('../templates/content/webinar');
 const content = require('../templates/content');
 
 module.exports = (app) => {
@@ -26,6 +27,10 @@ module.exports = (app) => {
   app.get('/*?whitepaper/:id(\\d{8})*', withContent({
     template: whitepaper,
     queryFragment: contentQueryFragmentFn(site.get('leaders.alias')),
+  }));
+  app.get('/*?webinar/:id(\\d{8})*', withContent({
+    template: webinar,
+    queryFragment,
   }));
   app.get('/*?:id(\\d{8})*', withContent({
     template: content,
