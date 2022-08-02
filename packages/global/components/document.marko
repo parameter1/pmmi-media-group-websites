@@ -98,6 +98,7 @@ $ const buttonLabels = { continue: continueLabel };
         newsletter-menu-block-props={
           buttonLabels,
           loginEmailLabel,
+          loginEmailPlaceholder: 'example@yourcompany.com',
         }
       />
       <global-site-menu has-user=hasUser reg-enabled=isEnabled />
@@ -107,7 +108,7 @@ $ const buttonLabels = { continue: continueLabel };
   </@above-container>
   <@below-container>
     <${input.belowContainer} />
-    <theme-site-footer newsletter-block-props={ buttonLabels, loginEmailLabel } />
+    <theme-site-footer newsletter-block-props={ buttonLabels, loginEmailLabel, loginEmailPlaceholder: 'example@yourcompany.com' } />
   </@below-container>
   <@below-wrapper>
     <marko-web-deferred-script-loader-load />
