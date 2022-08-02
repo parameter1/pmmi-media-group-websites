@@ -243,6 +243,12 @@ label {
   }
 }
 
+.content-page-header {
+  .social-sharing {
+    margin-top: map-get($spacers, block);
+  }
+}
+
 // /user/${type} add spacing above/below main section
 .page {
   &--profile,
