@@ -56,8 +56,8 @@ module.exports = {
   },
   secondary: {
     items: [
+      { href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=Mundo_NL_Nav', label: 'Suscríbase', target: '_blank' },
       ...topics,
-      { href: '/eventos', label: 'Eventos' },
       { href: '/downloads', label: 'Recursos Digitales' },
       { href: '/leaders', label: 'Líderes' },
     ],
