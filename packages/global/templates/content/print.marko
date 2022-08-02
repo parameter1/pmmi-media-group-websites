@@ -108,7 +108,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact", "company"].includ
             required-access-level-ids=accessLevels
           >
             <if(!context.canAccess || context.requiresUserInput)>
-              $ const body = getContentPreview({ body: content.body, selector: "p:nth-of-type(1)" });
+              $ const body = getContentPreview({ body: content.body, selector: "p:lt(3)" });
               <marko-web-content-body block-name=contentsBlock obj={ body } />
 
               <div class="content-page-preview-overlay" />
