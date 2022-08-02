@@ -61,6 +61,13 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
     <div class="row">
       <div class="col-lg-8">
         <div class="content-page-body">
+          <if(displaySocialShare)>
+            <marko-web-social-sharing
+              path=content.siteContext.path
+              providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
+              print-path=`/print/content/${content.id}`
+            />
+          </if>
           <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
             <if(content.embedCode)>
               $ const iframeContent = contentIframe(content);
