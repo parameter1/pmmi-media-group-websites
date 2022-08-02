@@ -1,0 +1,26 @@
+.node-list {
+  &.inquiry-form {
+    .marko-web-icon svg {
+      fill: $white;
+    }
+  }
+  &__header {
+    .inquiry-form-button {
+      &:focus,
+      &:hover {
+        background-color: $primary;
+      }
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__body {
+    .inquiry-form {
+      display: none;
+      &--open {
+        display: block;
+      }
+    }
+  }
+}

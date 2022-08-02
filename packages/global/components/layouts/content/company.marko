@@ -182,8 +182,22 @@ $ const lang = site.config.lang || "en";
       <div class="col-lg-4 pt-block">
         $ const inquiry = site.getAsObject('inquiry');
         <if(content.isLeader)>
-          <marko-web-node-list collapsible=false>
-            <@header>Request More Information</@header>
+          <marko-web-node-list class="inquiry-form" collapsible=false>
+            <@header>
+              <marko-web-browser-component
+                name="ThemeMenuToggleButton"
+                props={
+                  className: 'inquiry-form-button btn btn-primary',
+                  before: 'Request More Info',
+                  targets: ['.node-list__body .inquiry-form'],
+                  toggleClass: 'inquiry-form--open',
+                  iconName: 'chevron-down',
+                  initiallyExpanded: false,
+                  expandedIconName: 'chevron-up',
+                }
+                ssr=true
+              />
+            </@header>
             <@body>
               <marko-web-inquiry-form content=content with-header=false modifiers=["node-list"] />
             </@body>
