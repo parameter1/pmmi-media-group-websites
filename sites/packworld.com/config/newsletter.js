@@ -2,6 +2,8 @@ const defaults = {
   disabled: process.env.DISABLE_IDX_NEWSLETTER_SIGNUP === 'true',
   name: 'Join thousands of your peers!',
   description: 'Packaging intelligence and updates from <strong>Packaging World</strong> delivered to your inbox.',
+  withUserName: 'Manage your newsletter preferences!',
+  withUserDescription: ' ',
 };
 
 module.exports = {

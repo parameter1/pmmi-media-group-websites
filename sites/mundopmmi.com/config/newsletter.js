@@ -2,6 +2,8 @@ const defaults = {
   disabled: process.env.DISABLE_IDX_NEWSLETTER_SIGNUP === 'true',
   name: '¡Únase a miles de sus colegas!',
   description: 'Inteligencia de la industria y actualizaciones de <strong>Mundo PMMI</strong> directamente a su bandeja de entrada.',
+  withUserName: '¡Gestiona tus preferencias de newsletter!',
+  withUserDescription: ' ',
 };
 
 module.exports = {
