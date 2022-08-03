@@ -1,10 +1,12 @@
-import { getAsObject, getAsArray } from "@parameter1/base-cms-object-path";
+import { get, getAsObject, getAsArray } from "@parameter1/base-cms-object-path";
 import { buildImgixUrl } from "@parameter1/base-cms-image";
 import imageHeight from "@parameter1/base-cms-marko-web/components/node/utils/image-height";
+import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/utils/get-content-preview";
 
 $ const { id, type, pageNode } = data;
 $ const { site, config, req } = out.global;
 
+$ const requiresRegistration = true;
 $ const cardBlock = "content-page-card";
 $ const displayPublishedDate = ["event", "webinar", "contact", "company"].includes(type) ? false : true;
 
@@ -14,7 +16,6 @@ $ const displayPublishedDate = ["event", "webinar", "contact", "company"].includ
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <meta name="robots" content="noindex">
     <marko-web-content-page-metadata id=id />
 
     <marko-web-gtm-init container-id=site.get("gtm.containerId") />
@@ -29,7 +30,8 @@ $ const displayPublishedDate = ["event", "webinar", "contact", "company"].includ
     <div class="container p-5 bg-white">
       <div class="row mb-block">
         <div class="col">
-          $ const logoSrc = buildImgixUrl(site.get("logos.navbar.src"), { h: 100 });
+          $ const src = site.get("logos.printContent.src") ? site.get("logos.printContent.src") : site.get("logos.navbar.src");
+          $ const logoSrc = buildImgixUrl(src, { h: 100 });
           <if(logoSrc)>
             <marko-web-img
               link={ href: "/" }
@@ -85,7 +87,7 @@ $ const displayPublishedDate = ["event", "webinar", "contact", "company"].includ
           <if(isSponsored)>
             <div class=`${cardBlock}__sponsored-content`>Sponsored Content</div>
           </if>
-          <theme-website-section-breadcrumbs
+          <default-theme-website-section-breadcrumbs
             section=primarySection
             display-home=false
             modifiers=[cardBlock]
@@ -100,52 +102,84 @@ $ const displayPublishedDate = ["event", "webinar", "contact", "company"].includ
             block-name=cardBlock
             obj=content
           />
+          $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
+          <marko-web-identity-x-access|context|
+            enabled=requiresRegistration
+            required-access-level-ids=accessLevels
+          >
+            <if(!context.canAccess || context.requiresUserInput)>
+              $ const body = getContentPreview({ body: content.body, selector: "p:lt(3)" });
+              <marko-web-content-body block-name=contentsBlock obj={ body } />
 
-          <if(primaryImage.isLogo)>
-            <marko-web-page-image
-              obj=primaryImage
-              fluid=false
-              width=250
-            />
-          </if>
-
-          <if(type !== "contact")>
-            <default-theme-content-attribution obj=content />
-            <default-theme-page-dates|{ blockName }|>
-              <if(type === "event")>
-                <marko-web-content-start-date block-name=blockName obj=content />
-                <marko-web-content-end-date block-name=blockName obj=content />
+              <div class="content-page-preview-overlay" />
+              <theme-content-page-gate
+                can-access=context.canAccess
+                is-logged-in=context.isLoggedIn
+                has-required-access-level=context.hasRequiredAccessLevel
+                requires-access-level=context.requiresAccessLevel
+                requires-user-input=context.requiresUserInput
+                title="Login to print the full article."
+                user-input-title="Complete your profile to print the full article"
+              />
+            </if>
+            <else>
+              <if(primaryImage.isLogo)>
+                <marko-web-page-image
+                  obj=primaryImage
+                  fluid=false
+                  width=250
+                />
               </if>
-              <if(type === "webinar")>
-                <marko-web-content-start-date block-name=blockName obj=content />
+
+              <if(type !== "contact")>
+                <default-theme-content-attribution obj=content />
+                <default-theme-page-dates|{ blockName }|>
+                  <if(type === "event")>
+                    <marko-web-content-start-date block-name=blockName obj=content />
+                    <marko-web-content-end-date block-name=blockName obj=content />
+                  </if>
+                  <if(type === "webinar")>
+                    <marko-web-content-start-date block-name=blockName obj=content />
+                  </if>
+                  <if(displayPublishedDate)>
+                    <marko-web-content-published block-name=blockName obj=content />
+                  </if>
+                </default-theme-page-dates>
               </if>
-              <if(displayPublishedDate)>
-                <marko-web-content-published block-name=blockName obj=content />
-              </if>
-            </default-theme-page-dates>
-          </if>
 
-          <hr>
+              <hr>
 
-          <default-theme-content-contact-details obj=content />
-          <marko-web-content-body block-name=contentsBlock obj=content>
-            <@embed-options lazyload-images=false />
-          </marko-web-content-body>
-          <marko-web-content-sidebars block-name=contentsBlock obj=content />
+              <default-theme-content-contact-details obj=content />
+              <marko-web-content-body block-name=contentsBlock obj=content>
+                <@embed-options lazyload-images=false />
+              </marko-web-content-body>
+              <marko-web-content-sidebars block-name=contentsBlock obj=content />
 
-          <hr>
-          <div>
-            <strong>Source URL:</strong> ${content.siteContext.canonicalUrl}
-          </div>
+              <hr>
+              <div>
+                <strong>Source URL:</strong> ${content.siteContext.canonicalUrl}
+              </div>
+            </else>
+          </marko-web-identity-x-access>
         </default-theme-page-contents>
       </marko-web-resolve-page>
     </div>
   </@above-container>
   <@below-container>
-    <script>
-      (function() {
-        window.print();
-      })(window);
-    </script>
+    <marko-web-resolve-page|{ data: content, resolved }| node=pageNode>
+      $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
+      <marko-web-identity-x-access|context|
+        enabled=requiresRegistration
+        required-access-level-ids=accessLevels
+      >
+        <if(context.canAccess)>
+          <script>
+            (function() {
+              window.print();
+            })(window);
+          </script>
+        </if>
+      </marko-web-identity-x-access>
+    </marko-web-resolve-page>
   </@below-container>
 </marko-web-document>
