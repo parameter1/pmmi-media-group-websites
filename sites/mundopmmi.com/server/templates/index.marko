@@ -70,7 +70,11 @@ $ const buttonLabels = { continue: continueLabel };
   <@section>
     <marko-web-identity-x-context|{ hasUser }|>
       <if(!hasUser)>
-        <identity-x-newsletter-form-inline button-labels=buttonLabels, login-email-label=loginEmailLabel />
+        <identity-x-newsletter-form-inline
+          button-labels=buttonLabels
+          login-email-label=loginEmailLabel
+          login-email-placeholder="example@yourcompany.com"
+        />
       </if>
     </marko-web-identity-x-context>
   </@section>
