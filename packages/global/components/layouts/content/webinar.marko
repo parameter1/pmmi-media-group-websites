@@ -6,7 +6,6 @@ $ const { site, contentGatingHandler, req, i18n } = out.global;
 $ const { id, type, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
 $ const sections = getAsArray(input, "sections");
 
-$ const leadersContentTypes = input.leadersContentTypes || ["article", "blog", "media-gallery", "news", "podcast", "press-release", "product", "video", "webinar"];
 $ const displayComments = false; // ["contact"].includes(type) ? false : true;
 $ const continueLabel = i18n("Sign Me Up!");
 $ const loginEmailLabel = i18n("Work Email");
@@ -28,22 +27,14 @@ $ const buttonLabels = { continue: continueLabel };
     <theme-gam-wallpaper-ad aliases=aliases position="content_page" />
   </@section>
 
-  <@section|{ blockName, content, aliases, authors }| modifiers=["content-header"]>
+  <@section|{ blockName, content, aliases }| modifiers=["content-header"]>
     $ const { primarySection } = content;
     <div class="content-page-header">
       <theme-content-page-breadcrumbs section=primarySection />
       <marko-web-content-name tag="h1" block-name=blockName obj=content />
-      <if(authors.length === 1)>
-        <theme-author-published-node author=authors[0] content=content lazyload=false />
-      </if>
-      <else-if(authors.length > 1)>
-        <default-theme-content-attribution obj=content elements=["authors"] />
-      </else-if>
-      <if(authors.length !== 1)>
-        <default-theme-page-dates|{ blockName }|>
-          <theme-content-published-node block-name=blockName obj=content />
-        </default-theme-page-dates>
-      </if>
+      <default-theme-page-dates|{ blockName }|>
+        <theme-content-published-node block-name=blockName obj=content />
+      </default-theme-page-dates>
       <global-sponsored-section-logo alias=primarySection.alias modifiers=["content-page"] class="mt-3" />
         <marko-web-social-sharing
           path=content.siteContext.path
@@ -53,7 +44,7 @@ $ const buttonLabels = { continue: continueLabel };
     </div>
   </@section>
 
-  <@section|{ aliases, content, authors }| modifiers=["content-body"]>
+  <@section|{ aliases, content }| modifiers=["content-body"]>
     $ const { primarySection } = content;
     <div class="content-page-body">
       <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
@@ -95,15 +86,7 @@ $ const buttonLabels = { continue: continueLabel };
             $ const sidebars = getAsArray(content, "sidebars").map((sidebar) => sidebar.body);
             <marko-web-content-sidebars block-name=blockName obj={ sidebars } />
 
-            <if(leadersContentTypes.includes(content.type))>
-              <marko-web-leaders-featured-companies content=content />
-            </if>
-
-            <for|author| of=authors>
-              <if(getAsArray(author, "labels").includes("Contributor"))>
-                <marko-web-content-body obj=author block-name="inline-author-bio" />
-              </if>
-            </for>
+            <marko-web-leaders-featured-companies content=content />
 
             <marko-web-social-sharing
               path=content.siteContext.path
@@ -111,9 +94,7 @@ $ const buttonLabels = { continue: continueLabel };
               print-path=`/print/content/${content.id}`
             />
 
-            <if(leadersContentTypes.includes(content.type))>
-              <marko-web-leaders-company-videos content-id=content.id />
-            </if>
+            <marko-web-leaders-company-videos content-id=content.id />
 
             <marko-web-identity-x-context|{ hasUser }|>
               <if(!hasUser)>
