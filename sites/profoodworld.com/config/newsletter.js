@@ -22,7 +22,7 @@ module.exports = {
   signupFooter: {
     ...defaults,
     name: 'ProFood World Newsletter',
-    description: 'The go-to source for packaging professionals looking for <strong>breaking news, industry trends and best practices.</strong>',
+    description: 'The go to source for processing and packaging professionals looking for <strong>breaking news, industry trends and best practices</strong>.',
   },
   signupBannerStatic: {
     ...defaults,
