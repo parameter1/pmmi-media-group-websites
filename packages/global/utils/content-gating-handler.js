@@ -7,7 +7,7 @@ module.exports = ({ content, req }) => {
 
   // Gate the following content types only.
   const typesToGate = [
-    'article',
+    // 'article',
     'blog',
     'news',
   ];
