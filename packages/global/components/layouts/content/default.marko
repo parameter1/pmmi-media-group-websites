@@ -149,8 +149,10 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                   />
                 </if>
 
-                $ const sidebars = getAsArray(content, "sidebars").map((sidebar) => sidebar.body);
-                <marko-web-content-sidebars block-name=blockName obj={ sidebars } />
+                <if(context.canAccess && !context.requiresUserInput)>
+                  $ const sidebars = getAsArray(content, "sidebars").map((sidebar) => sidebar.body);
+                  <marko-web-content-sidebars block-name=blockName obj={ sidebars } />
+                </if>
 
                 <if(leadersContentTypes.includes(content.type))>
                   <marko-web-leaders-featured-companies content=content />
