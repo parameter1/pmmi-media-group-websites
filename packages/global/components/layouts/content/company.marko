@@ -182,12 +182,7 @@ $ const lang = site.config.lang || "en";
       <div class="col-lg-4 pt-block">
         $ const inquiry = site.getAsObject('inquiry');
         <if(content.isLeader)>
-          <marko-web-node-list collapsible=false>
-            <@header>Request More Information</@header>
-            <@body>
-              <marko-web-inquiry-form content=content with-header=false modifiers=["node-list"] />
-            </@body>
-          </marko-web-node-list>
+          <theme-company-inquiry-form-block content=content initially-expanded=false />
           $ const contacts = getAsArray(content, "contacts.edges").map(({ node }) => node);
           <marko-web-node-list class="mt-block">
             <@header>
