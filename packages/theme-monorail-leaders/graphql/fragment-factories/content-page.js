@@ -96,8 +96,12 @@ fragment LeadersContentPageFragment on Content {
     endDate
     startDate
   }
-  ... on ContentArticle {
-    sidebars
+  ... on SidebarEnabledInterface {
+    sidebars: sidebarStubs {
+      name
+      body
+      label
+    }
   }
   ... on ContentWebinar {
     linkUrl
