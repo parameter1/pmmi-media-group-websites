@@ -19,7 +19,9 @@ const recaptcha = require('./config/recaptcha');
 const idxNavItems = require('./config/identity-x-nav');
 
 const contentGatingHandlerEnabled = process.env.CONTENT_GATING_HANDLER_ENABLED;
-const defaultContentGatingHandler = require('./utils/content-gating-handler');
+const defaultContentGatingHandler = () => false;
+// When we retest this with the group remove above line and uncomment line below! :)
+// const defaultContentGatingHandler = require('./utils/content-gating-handler');
 
 const routes = (siteRoutes, siteConfig) => (app) => {
   // Handle submissions on /__inquiry
