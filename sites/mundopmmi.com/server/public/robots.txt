@@ -2,9 +2,8 @@
 # www.google.com/support/webmasters/bin/answer.py?hl=en&answer=156449
 
 User-agent: *
-Disallow: /
 Disallow: /__
-Disallow: /load-more
+Disallow: /print/content
 
 Sitemap: https://www.mundopmmi.com/sitemap.xml
 Sitemap: https://www.mundopmmi.com/sitemap-google-news.xml
