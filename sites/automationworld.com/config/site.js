@@ -1,31 +1,31 @@
 const sharedInquiryConfig = require('@pmmi-media-group/package-global/config/inquiry');
-const navigation = require('./navigation');
+const gam = require('./gam');
+const identityX = require('./identity-x');
 const leaders = require('./leaders');
 const magazine = require('./magazine');
-const newsletter = require('./newsletter');
 const nativeX = require('./native-x');
-const identityX = require('./identity-x');
+const navigation = require('./navigation');
+const newsletter = require('./newsletter');
 const omeda = require('./omeda');
 const omedaIdentityX = require('./omeda-identity-x');
-const gam = require('./gam');
 const search = require('./search');
 const subscribe = require('./subscribe');
 
 module.exports = {
+  // module configs
+  gam,
+  identityX,
+  idxNavItems: { enable: true },
   leaders,
   magazine,
+  nativeX,
   navigation,
   newsletter,
-  nativeX,
-  identityX,
-  idxNavItems: {
-    enable: true,
-  },
   omeda,
   omedaIdentityX,
-  gam,
   search,
   subscribe,
+  // theme configs
   company: 'PMMI Media Group',
   p1events: {
     tenant: 'pmmi',
