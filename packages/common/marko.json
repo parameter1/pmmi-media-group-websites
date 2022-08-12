@@ -1,6 +1,0 @@
-{
-  "taglib-id": "@pmmi-media-group/package-common",
-  "taglib-imports": [
-    "./components/marko.json"
-  ]
-}
