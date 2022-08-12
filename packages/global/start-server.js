@@ -5,23 +5,19 @@ const loadInquiry = require('@parameter1/base-cms-marko-web-inquiry');
 const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitemap/middleware/paginated');
 const omedaIdentityX = require('@parameter1/base-cms-marko-web-omeda-identity-x');
 const i18n = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/i18n');
+const newsletterState = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/newsletter-state');
+const contentGating = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/content-gating');
 
 const document = require('./components/document');
 const components = require('./components');
 const fragments = require('./fragments');
 const sharedRoutes = require('./routes');
 const paginated = require('./middleware/paginated');
-const newsletterState = require('./middleware/newsletter-state');
 const redirectHandler = require('./redirect-handler');
 const oembedHandler = require('./oembed-handler');
 const idxRouteTemplates = require('./templates/user');
 const recaptcha = require('./config/recaptcha');
 const idxNavItems = require('./config/identity-x-nav');
-
-const contentGatingHandlerEnabled = process.env.CONTENT_GATING_HANDLER_ENABLED;
-const defaultContentGatingHandler = () => false;
-// When we retest this with the group remove above line and uncomment line below! :)
-// const defaultContentGatingHandler = require('./utils/content-gating-handler');
 
 const routes = (siteRoutes, siteConfig) => (app) => {
   // Handle submissions on /__inquiry
@@ -39,10 +35,6 @@ module.exports = (options = {}) => {
     includeContentTypes: ['Article'],
     excludeLabels: ['Sponsored'],
   };
-  // Allow for env enable/disable of contentGatingHandler
-  const contentGatingHandler = (contentGatingHandlerEnabled)
-    ? options.contentGatingHandler || defaultContentGatingHandler
-    : () => false;
   return startServer({
     ...options,
     routes: routes(options.routes, options.siteConfig),
@@ -56,7 +48,9 @@ module.exports = (options = {}) => {
       if (typeof onStart === 'function') await onStart(app);
       app.set('trust proxy', 'loopback, linklocal, uniquelocal');
 
-      set(app.locals, 'contentGatingHandler', contentGatingHandler);
+      // Use Monorail Content Gating middleware
+      const contentGatingHandlerEnabled = process.env.CONTENT_GATING_HANDLER_ENABLED;
+      contentGating(app, contentGatingHandlerEnabled, options.contentGatingHandler);
 
       // Use paginated middleware
       app.use(paginated());
