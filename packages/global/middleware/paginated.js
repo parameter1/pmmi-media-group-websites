@@ -1,6 +1,3 @@
-/**
- * @todo move this to @parameter1/base-cms-marko-web-theme-monorail
- */
 module.exports = ({ param = 'page' } = {}) => (req, res, next) => {
   const page = parseInt(req.query[param], 10) || 1;
 
