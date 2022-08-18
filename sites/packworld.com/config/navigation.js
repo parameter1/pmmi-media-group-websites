@@ -56,6 +56,7 @@ module.exports = {
       subscribe,
       ...topics,
       { href: '/leaders', label: 'Leaders' },
+      { href: '/downloads', label: 'Downloads' },
     ],
   },
   tertiary: {

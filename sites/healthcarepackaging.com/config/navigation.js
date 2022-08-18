@@ -3,7 +3,6 @@ const subscribe = require('./subscribe');
 
 const topics = [
   { href: '/machinery-materials', label: 'Machinery & Materials' },
-  { href: '/markets', label: 'Markets' },
   { href: '/logistics-distribution', label: 'Logistics & Cold Chain' },
 ];
 
@@ -73,7 +72,7 @@ module.exports = {
       subscribe,
       ...topics,
       { href: '/leaders', label: 'Suppliers' },
-
+      { href: '/downloads', label: 'Downloads' },
     ],
   },
   tertiary: {
