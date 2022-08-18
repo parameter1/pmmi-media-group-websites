@@ -5,6 +5,8 @@ module.exports = ({
   inputId = process.env.OMEDA_INPUT_ID,
   graphqlUri = 'https://graphql.omeda.parameter1.com/',
   rapidIdentification = { productId: 352 },
+  promoCodeCookieName,
+  promoCodeDefault,
 } = {}) => ({
   clientKey,
   brandKey,
@@ -12,4 +14,6 @@ module.exports = ({
   inputId,
   graphqlUri,
   rapidIdentification,
+  promoCodeCookieName,
+  promoCodeDefault,
 });
