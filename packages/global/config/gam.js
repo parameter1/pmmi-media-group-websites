@@ -48,21 +48,15 @@ module.exports = ({
         { viewport: [0, 0], size: [] },
       ],
     })
-    .setTemplate('INLINE-CONTENT-DESKTOP', {
+    .setTemplate('INLINE-CONTENT-MOBILE', {
       size: [300, 250],
       sizeMapping: [
-        { viewport: [300, 0], size: [300, 250] },
-        { viewport: [0, 0], size: [] },
-      ],
-    })
-    .setTemplate('WALLPAPER', {
-      size: [[300, 600], [100, 600]],
-      sizeMapping: [
-        { viewport: [1400, 0], size: [300, 600] },
-        { viewport: [0, 0], size: [] },
+        { viewport: [980, 0], size: [] },
+        { viewport: [320, 0], size: [300, 250] },
       ],
     })
     .setTemplate('GEAR', {
+    .setTemplate('INLINE-CONTENT-DESKTOP', {
       size: [300, 250],
       sizeMapping: [
         { viewport: [980, 0], size: [300, 250] },
