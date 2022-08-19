@@ -3,7 +3,6 @@ const subscribe = require('./subscribe');
 
 const topics = [
   { href: '/processing-equipment', label: 'Processing Equipment' },
-  { href: '/automation', label: 'Automation' },
   { href: '/food-safety', label: 'Food Safety' },
 ];
 
@@ -67,6 +66,7 @@ module.exports = {
       subscribe,
       ...topics,
       { href: '/leaders', label: 'Leaders' },
+      { href: '/downloads', label: 'Downloads' },
     ],
   },
   tertiary: {
