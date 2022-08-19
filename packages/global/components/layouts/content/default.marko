@@ -218,6 +218,11 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
         </div>
       </div>
       <div class="col-lg-4">
+        <if(type === 'product' && content.company)>
+          <div class="mb-block">
+            <theme-company-inquiry-form-block content=content.company initially-expanded=false consent-checkboxes=getAsArray(site, 'config.inquiry.consentCheckboxes') />
+          </div>
+        </if>
         <global-leaders-contextual content-id=id />
       </div>
     </div>
