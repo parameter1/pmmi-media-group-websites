@@ -179,7 +179,7 @@ $ const lang = site.config.lang || "en";
       <div class="col-lg-4 pt-block">
         $ const inquiry = site.getAsObject('inquiry');
         <if(content.isLeader)>
-          <theme-company-inquiry-form-block content=content initially-expanded=false />
+          <theme-company-inquiry-form-block content=content initially-expanded=false consent-checkboxes=getAsArray(site, 'config.inquiry.consentCheckboxes') />
           $ const contacts = getAsArray(content, "contacts.edges").map(({ node }) => node);
           <marko-web-node-list class="mt-block">
             <@header>
