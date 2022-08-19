@@ -19,6 +19,7 @@ const resources = [
   { href: '/page/packaging-associations', label: 'Packaging Associations' },
   { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
   { href: '/webinars', label: 'Webinars' },
+  { href: '/supplier-news', label: 'Supplier News' },
 ];
 
 const utilities = [
