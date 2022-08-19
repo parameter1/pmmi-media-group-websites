@@ -69,6 +69,7 @@ module.exports = (options = {}) => {
 
       // Setup IdentityX + Omeda
       const omedaIdentityXConfig = getAsObject(options, 'siteConfig.omedaIdentityX');
+      set(app.locals, 'omedaConfig', getAsObject(options, 'siteConfig.omeda'));
       omedaIdentityX(app, { ...omedaIdentityXConfig, idxRouteTemplates });
       idxNavItems({ site: app.locals.site });
 
