@@ -34,7 +34,13 @@ module.exports = () => asyncRoute(async (req, res, next) => {
   // check if there is a content id in the request
   const contentRegex = new RegExp(/\d{8}/, 'i');
   const isContent = contentRegex.test(req.params.id);
-  const config = req.app.locals.site.getAsObject('newsletterState') || {};
+  // Only setting this up this way for future use to override from a config elsewhere
+  const config = {
+    excludeGatedContent: true,
+    excludeContentTypes: [
+      'page',
+    ],
+  };
   // If there is a content id see if it is a gated piece of content
   if (isContent) {
     if (config.excludeGatedContent
