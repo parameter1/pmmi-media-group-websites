@@ -1,7 +1,8 @@
 const publishedContent = require('../templates/scheduled-content/default');
+const newsletterState = require('../middleware/newsletter-state');
 
 module.exports = (app) => {
-  app.get('/supplier-events', (_, res) => {
+  app.get('/supplier-events', newsletterState(), (_, res) => {
     res.marko(publishedContent,
       {
         alias: 'supplier-events',
@@ -12,7 +13,7 @@ module.exports = (app) => {
         endingAfter: (new Date()).valueOf(),
       });
   });
-  app.get('/webinars', (_, res) => {
+  app.get('/webinars', newsletterState(), (_, res) => {
     res.marko(publishedContent,
       {
         alias: 'webinars',
@@ -22,7 +23,7 @@ module.exports = (app) => {
         sortOrder: 'desc',
       });
   });
-  app.get('/white-papers', (_, res) => {
+  app.get('/white-papers', newsletterState(), (_, res) => {
     res.marko(publishedContent,
       {
         alias: 'white-papers',
@@ -30,7 +31,7 @@ module.exports = (app) => {
         title: 'Whitepapers',
       });
   });
-  app.get('/videos', (_, res) => {
+  app.get('/videos', newsletterState(), (_, res) => {
     res.marko(publishedContent,
       {
         alias: 'videos',
@@ -38,7 +39,7 @@ module.exports = (app) => {
         title: 'Videos',
       });
   });
-  app.get('/downloads', (_, res) => {
+  app.get('/downloads', newsletterState(), (_, res) => {
     res.marko(publishedContent,
       {
         alias: 'downloads',

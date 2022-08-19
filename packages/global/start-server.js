@@ -11,7 +11,6 @@ const components = require('./components');
 const fragments = require('./fragments');
 const sharedRoutes = require('./routes');
 const paginated = require('./middleware/paginated');
-const newsletterState = require('./middleware/newsletter-state');
 const redirectHandler = require('./redirect-handler');
 const oembedHandler = require('./oembed-handler');
 const idxRouteTemplates = require('./templates/user');
@@ -63,9 +62,6 @@ module.exports = (options = {}) => {
 
       // Use paginated middleware
       app.use(htmlSitemapPagination());
-
-      // Use newsletterState middleware
-      app.use(newsletterState());
 
       // Setup IdentityX + Omeda
       const omedaIdentityXConfig = getAsObject(options, 'siteConfig.omedaIdentityX');
