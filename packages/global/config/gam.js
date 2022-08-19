@@ -6,6 +6,13 @@ module.exports = ({
 } = {}) => {
   const config = new GAMConfiguration(accountId, { basePath });
 
+  config.lazyLoad = {
+    enabled: true, // set to true to enable lazy loading
+    fetchMarginPercent: 100, // fetch ad when one viewport away
+    renderMarginPercent: 50, // render ad when half viewport away
+    mobileScaling: 2, // double these on mobile
+  };
+
   config
     .setTemplate('LEADERBOARD', {
       size: [
@@ -41,39 +48,18 @@ module.exports = ({
         { viewport: [0, 0], size: [] },
       ],
     })
-    .setTemplate('INLINE-CONTENT-DESKTOP', {
+    .setTemplate('INLINE-CONTENT-MOBILE', {
       size: [300, 250],
       sizeMapping: [
-        { viewport: [300, 0], size: [300, 250] },
-        { viewport: [0, 0], size: [] },
+        { viewport: [980, 0], size: [] },
+        { viewport: [320, 0], size: [300, 250] },
       ],
     })
-    .setTemplate('WALLPAPER', {
-      size: [[300, 600], [100, 600]],
-      sizeMapping: [
-        { viewport: [1400, 0], size: [300, 600] },
-        { viewport: [0, 0], size: [] },
-      ],
-    })
-    .setTemplate('GEAR', {
+    .setTemplate('INLINE-CONTENT-DESKTOP', {
       size: [300, 250],
       sizeMapping: [
         { viewport: [980, 0], size: [300, 250] },
         { viewport: [0, 0], size: [] },
-      ],
-    })
-    .setTemplate('WALLPAPER', {
-      size: [[300, 600], [100, 600]],
-      sizeMapping: [
-        { viewport: [1400, 0], size: [300, 600] },
-        { viewport: [0, 0], size: [] },
-      ],
-    })
-    .setTemplate('GEAR-MOBILE', {
-      size: [300, 250],
-      sizeMapping: [
-        { viewport: [980, 0], size: [] },
-        { viewport: [300, 0], size: [300, 250] },
       ],
     });
 
