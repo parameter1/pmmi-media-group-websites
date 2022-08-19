@@ -1,6 +1,6 @@
 {
   "name": "@pmmi-media-group/automationworld.com",
-  "version": "3.1.1",
+  "version": "3.1.3",
   "author": "Brian Miller <brian@parameter1.com>",
   "repository": "https://github.com/parameter1/pmmi-media-group-websites/tree/master/sites/automationworld.com",
   "license": "MIT",
@@ -32,7 +32,7 @@
     "@parameter1/base-cms-object-path": "^3.0.0",
     "@parameter1/base-cms-utils": "^3.0.0",
     "@parameter1/base-cms-web-cli": "^3.0.0",
-    "@pmmi-media-group/package-global": "^3.1.1",
+    "@pmmi-media-group/package-global": "^3.1.3",
     "@pmmi-media-group/package-theme-monorail-leaders": "^3.0.10",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
