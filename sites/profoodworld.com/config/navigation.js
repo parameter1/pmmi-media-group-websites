@@ -19,6 +19,7 @@ const resources = [
   { href: 'https://www.opxleadershipnetwork.org', label: 'OpX Leadership Network', target: '_blank' },
   { href: '/page/awards-sema', label: 'Sustainability Awards' },
   { href: '/page/awards-mia', label: 'Manufacturing Awards' },
+  { href: '/supplier-news', label: 'Supplier News' },
 ];
 
 const utilities = [
