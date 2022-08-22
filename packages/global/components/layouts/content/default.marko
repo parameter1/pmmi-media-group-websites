@@ -194,6 +194,9 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                   <marko-web-leaders-company-videos content-id=content.id />
                 </if>
 
+                <!-- Div for BI Library -->
+                <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-bilibrary" class="mt-3" />
+
                 <if(displayNewsletterSignup)>
                   <marko-web-identity-x-context|{ hasUser }|>
                     <if(!hasUser)>
@@ -206,8 +209,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                     </if>
                   </marko-web-identity-x-context>
                 </if>
-                <!-- Div for BI Library -->
-                <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-bilibrary" class="mt-3" />
+
               </else>
             </marko-web-identity-x-access>
 
