@@ -100,74 +100,73 @@ $ const lang = site.config.lang || "en";
           </div>
         </if>
         <else>
-
-        <div class="content-page-body">
-          <marko-web-node-list collapsible=false class="mt-block">
-            <@header>
-              ${i18n("Company Overview")}
-            </@header>
-            <@body>
-              <label class="content-section-header">${i18n("About")} ${content.name}</label>
-              <marko-web-content-teaser tag="p" obj=content />
-              <label class="content-section-header">${i18n("Product Summary")}</label>
-              <marko-web-obj-text tag="p" obj=content field="productSummary" type="content" html=true />
-            </@body>
-          </marko-web-node-list>
-
-          <marko-web-query|{ nodes }|
-            name="all-company-content"
-            params={
-              companyId: id,
-              includeContentTypes: ["Promotion"],
-              queryFragment,
-              limit: 4,
-              withSite: false,
-            }
-          >
-            <marko-web-node-list class="mt-block">
+          <div class="content-page-body">
+            <marko-web-node-list collapsible=false class="mt-block">
               <@header>
-                ${i18n("Featured Products")}
+                ${i18n("Company Overview")}
               </@header>
-              <@nodes|{ nodes: items }| nodes=nodes>
-                <default-theme-card-deck-flow cols=4 nodes=items modifiers=["featured-products"]>
-                  <@slot|{ node, index }|>
-                    <theme-featured-products-card-node
-                      company-id=id
-                      image-width=340
-                      node=node
-                    />
-                  </@slot>
-                </default-theme-card-deck-flow>
-              </@nodes>
+              <@body>
+                <label class="content-section-header content-section-header--border">${i18n("About")} ${content.name}</label>
+                <marko-web-content-teaser tag="p" obj=content />
+                <label class="content-section-header content-section-header--border">${i18n("Product Summary")}</label>
+                <marko-web-obj-text tag="p" obj=content field="productSummary" type="content" html=true />
+              </@body>
             </marko-web-node-list>
-          </marko-web-query>
 
-          <marko-web-node-list collapsible=false class="mt-block">
-            <@header>
-              <if(content.isLeader)>${site.get("leaders.title")}</if>
-              <else>${i18n("Company Details")}</else>
-            </@header>
-            <@body>
-              <label class="content-section-header content-section-header--border">${i18n("At-a-glance")}</label>
-              <global-company-details company=content lang=lang/>
+            <marko-web-node-list collapsible=false class="mt-block">
+              <@header>
+                <if(content.isLeader)>${site.get("leaders.title")}</if>
+                <else>${i18n("Company Details")}</else>
+              </@header>
+              <@body>
+                <label class="content-section-header content-section-header--border">${i18n("At-a-glance")}</label>
+                <global-leaders-details company=content lang=lang/>
 
-              <label class="content-section-header content-section-header--border">${i18n("Contact")}</label>
-              $ const { socialLinks, ...contentSansSocial } = content;
-              <default-theme-content-contact-details
-                obj=contentSansSocial
-                website-link-attrs=eventLinkAttrs({
-                  category: "Company Profile Page",
-                  label: "Company Website",
-                  entity: eventEntity(content.id, "company"),
-                })
-                lang=lang
-              />
+                <label class="content-section-header content-section-header--border">${i18n("Contact")}</label>
+                $ const { socialLinks, ...contentSansSocial } = content;
+                <default-theme-content-contact-details
+                  obj=contentSansSocial
+                  website-link-attrs=eventLinkAttrs({
+                    category: "Company Profile Page",
+                    label: "Company Website",
+                    entity: eventEntity(content.id, "company"),
+                  })
+                  lang=lang
+                />
 
-              <label class="content-section-header content-section-header--border">${i18n("More info on")} ${content.name}</label>
-              <global-content-body-with-tracking block-name="leaders-more-info" content=content />
-            </@body>
-          </marko-web-node-list>
-        </div>
+                <label class="content-section-header content-section-header--border">${i18n("More info on")} ${content.name}</label>
+                <global-content-body-with-tracking block-name="leaders-more-info" content=content />
+              </@body>
+            </marko-web-node-list>
+
+            <marko-web-query|{ nodes }|
+              name="all-company-content"
+              params={
+                companyId: id,
+                includeContentTypes: ["Promotion"],
+                queryFragment,
+                limit: 4,
+                withSite: false,
+              }
+            >
+              <marko-web-node-list class="mt-block">
+                <@header>
+                  ${i18n("Featured Products")}
+                </@header>
+                <@nodes|{ nodes: items }| nodes=nodes>
+                  <default-theme-card-deck-flow cols=4 nodes=items modifiers=["featured-products"]>
+                    <@slot|{ node, index }|>
+                      <theme-featured-products-card-node
+                        company-id=id
+                        image-width=340
+                        node=node
+                      />
+                    </@slot>
+                  </default-theme-card-deck-flow>
+                </@nodes>
+              </marko-web-node-list>
+            </marko-web-query>
+          </div>
         </else>
         <${input.afterBody}
           aliases=aliases

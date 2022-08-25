@@ -101,3 +101,38 @@
     }
   }
 }
+
+.page--content-company {
+  .node-list:not(.inquiry-form) {
+    .node-list__header {
+      background-color: $black;
+      color: $white;
+      padding-top: .25rem;
+      padding-bottom: .25rem;
+    }
+  }
+}
+.content-section-header {
+  color: #0000008a;
+  display: block;
+  text-align: left;
+  text-transform: uppercase;
+  &--border {
+    border-bottom: 1px solid #00000040;
+    padding-bottom: 0.25rem;
+  }
+  &:not(:first-child) {
+    margin-top: 1.5rem;
+  }
+}
+
+.ldp {
+  display: flex;
+  align-items: center;
+  &__logo img {
+    border: 3px solid #fff;
+    border-radius: 100px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 5px 0px inset;
+    margin-right: 2rem;
+  }
+}
