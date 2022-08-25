@@ -167,6 +167,58 @@ $ const lang = site.config.lang || "en";
               </marko-web-node-list>
             </marko-web-query>
           </div>
+          $ const videos = getAsArray(content, "videos.edges").map(({ node }) => node);
+          <marko-web-node-list class="mt-block">
+            <@header>
+              ${i18n("Featured Videos")}
+            </@header>
+            <@nodes|{ nodes }| nodes=videos>
+              <default-theme-card-deck-flow cols=3 nodes=nodes modifiers=["featured-videos"]>
+                <@slot|{ node, index }|>
+                  <div class="node-list__node">
+                    <theme-youtube-card-node
+                      node=node
+                      company-id=content.id
+                      image-position="top"
+                      link-attrs={
+                        "data-company-id": content.id,
+                        "data-company-name": content.name,
+                      }
+                    />
+                  </div>
+                </@slot>
+              </default-theme-card-deck-flow>
+            </@nodes>
+            <@footer>
+              $ const url = get(content, "youtube.url");
+              <a href=url target="_blank" rel="noopener" class="btn btn-sm btn-block btn-secondary">
+                ${i18n("View all videos")} &gt;
+              </a>
+            </@footer>
+          </marko-web-node-list>
+
+          <theme-latest-content-list-block
+            query-name="all-company-content"
+            query-params={ companyId: id, includeContentTypes: ["Article"], limit: 3, withSite: false }
+            title=`${i18n("Case Studies")}`
+            with-native-x-section=false
+            flush-x=false
+            class="mt-block"
+          >
+            <@node with-dates=false />
+          </theme-latest-content-list-block>
+
+          <theme-latest-content-list-block
+            query-name="all-company-content"
+            query-params={ companyId: id, includeContentTypes: ["News", "PressRelease"], withSite: false, limit: 5 }
+            title=`${i18n("Company News")}`
+            with-native-x-section=false
+            flush-x=false
+            class="mt-block"
+          >
+            <@node with-dates=false />
+          </theme-latest-content-list-block>
+
         </else>
         <${input.afterBody}
           aliases=aliases
@@ -195,51 +247,9 @@ $ const lang = site.config.lang || "en";
               </for>
             </@nodes>
           </marko-web-node-list>
-          $ const videos = getAsArray(content, "videos.edges").map(({ node }) => node);
-          <marko-web-node-list class="mt-block">
-            <@header>
-              ${i18n("Featured Videos")}
-            </@header>
-            <@nodes|{ nodes }| nodes=videos>
-              <for|node| of=nodes>
-                <div class="node-list__node">
-                  <theme-youtube-card-node
-                    node=node
-                    company-id=content.id
-                    image-position="top"
-                    link-attrs={
-                      "data-company-id": content.id,
-                      "data-company-name": content.name,
-                    }
-                  />
-                </div>
-              </for>
-            </@nodes>
-            <@footer>
-              $ const url = get(content, "youtube.url");
-              <a href=url target="_blank" rel="noopener" class="btn btn-sm btn-block btn-secondary">
-                ${i18n("View all videos")} &gt;
-              </a>
-            </@footer>
-          </marko-web-node-list>
 
-          <theme-latest-content-list-block
-            query-name="all-company-content"
-            query-params={ companyId: id, includeContentTypes: ["Article"], limit: 3, withSite: false }
-            title=`${i18n("Case Studies")}`
-            with-native-x-section=false
-          >
-            <@node with-dates=false />
-          </theme-latest-content-list-block>
 
-          <theme-latest-content-list-block
-            query-name="all-company-content"
-            query-params={ companyId: id, includeContentTypes: ["News", "PressRelease"], withSite: false, limit: 5 }
-            title=`${i18n("Company News")}`
-            with-native-x-section=false
-          >
-            <@node with-dates=false />
-          </theme-latest-content-list-block>
+
         </if>
       </div>
     </div>
