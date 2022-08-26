@@ -1,6 +1,6 @@
 const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middleware');
+const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');
 const queryFragment = require('@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/website-section-page');
-const newsletterState = require('@pmmi-media-group/package-global/middleware/newsletter-state');
 
 const home = require('../templates/index');
 
