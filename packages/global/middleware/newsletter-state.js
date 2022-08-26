@@ -28,6 +28,7 @@ const newsletterState = ({ setCookie = true } = {}) => (req, res, next) => {
 };
 
 const formatContentResponse = ({ res, content }) => {
+  if (!res.locals.newsletterState) return;
   const {
     initiallyExpanded,
     hasCookie,
