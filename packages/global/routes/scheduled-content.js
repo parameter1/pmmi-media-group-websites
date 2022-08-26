@@ -1,5 +1,5 @@
 const publishedContent = require('../templates/scheduled-content/default');
-const newsletterState = require('../middleware/newsletter-state');
+const { newsletterState } = require('../middleware/newsletter-state');
 
 module.exports = (app) => {
   app.get('/supplier-events', newsletterState(), (_, res) => {

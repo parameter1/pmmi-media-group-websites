@@ -1,8 +1,7 @@
 const { get } = require('@parameter1/base-cms-object-path');
 
 const cookieName = 'enlPrompted';
-
-module.exports = ({ setCookie = true } = {}) => (req, res, next) => {
+const newsletterState = ({ setCookie = true } = {}) => (req, res, next) => {
   const hasCookie = Boolean(get(req, `cookies.${cookieName}`));
   const utmMedium = get(req, 'query.utm_medium');
   const olyEncId = get(req, 'query.oly_enc_id');
@@ -26,4 +25,26 @@ module.exports = ({ setCookie = true } = {}) => (req, res, next) => {
     cookie: { name: cookieName, maxAge },
   };
   next();
+};
+
+const formatContentResponse = ({ res, content }) => {
+  const {
+    initiallyExpanded,
+    hasCookie,
+    fromEmail,
+    disabled,
+    cookie,
+  } = res.locals.newsletterState;
+
+  if (get(content, 'userRegistration.isCurrentlyRequired') === true) {
+    res.locals.newsletterState.initiallyExpanded = false;
+  } else if (!initiallyExpanded && !hasCookie && !disabled && !fromEmail) {
+    res.cookie(cookie.name, true, { maxAge: cookie.maxAge });
+    res.locals.newsletterState.initiallyExpanded = true;
+  }
+};
+
+module.exports = {
+  newsletterState,
+  formatContentResponse,
 };
