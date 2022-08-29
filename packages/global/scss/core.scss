@@ -261,6 +261,11 @@ label {
       margin-bottom: 30px;
     }
   }
+  &--content-webinar {
+    .content-page-body {
+      max-width: none;
+    }
+  }
 }
 
 .site-header .search-sponsor__logo {
