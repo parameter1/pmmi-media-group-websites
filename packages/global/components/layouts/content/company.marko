@@ -100,74 +100,125 @@ $ const lang = site.config.lang || "en";
           </div>
         </if>
         <else>
-
-        <div class="content-page-body">
-          <marko-web-node-list collapsible=false class="mt-block">
-            <@header>
-              ${i18n("Company Overview")}
-            </@header>
-            <@body>
-              <label class="content-section-header">${i18n("About")} ${content.name}</label>
-              <marko-web-content-teaser tag="p" obj=content />
-              <label class="content-section-header">${i18n("Product Summary")}</label>
-              <marko-web-obj-text tag="p" obj=content field="productSummary" type="content" html=true />
-            </@body>
-          </marko-web-node-list>
-
-          <marko-web-query|{ nodes }|
-            name="all-company-content"
-            params={
-              companyId: id,
-              includeContentTypes: ["Promotion"],
-              queryFragment,
-              limit: 4,
-              withSite: false,
-            }
-          >
-            <marko-web-node-list class="mt-block">
+          <div class="content-page-body">
+            <marko-web-node-list collapsible=false class="mt-block">
               <@header>
-                ${i18n("Featured Products")}
+                ${i18n("Company Overview")}
               </@header>
-              <@nodes|{ nodes: items }| nodes=nodes>
-                <default-theme-card-deck-flow cols=4 nodes=items modifiers=["featured-products"]>
-                  <@slot|{ node, index }|>
-                    <theme-featured-products-card-node
-                      company-id=id
-                      image-width=340
-                      node=node
-                    />
-                  </@slot>
-                </default-theme-card-deck-flow>
-              </@nodes>
+              <@body>
+                <label class="content-section-header content-section-header--border">${i18n("About")} ${content.name}</label>
+                <marko-web-content-teaser tag="p" obj=content />
+                <label class="content-section-header content-section-header--border">${i18n("Product Summary")}</label>
+                <marko-web-obj-text tag="p" obj=content field="productSummary" type="content" html=true />
+              </@body>
             </marko-web-node-list>
-          </marko-web-query>
 
-          <marko-web-node-list collapsible=false class="mt-block">
+            <marko-web-node-list collapsible=false class="mt-block">
+              <@header>
+                <if(content.isLeader)>${site.get("leaders.title")}</if>
+                <else>${i18n("Company Details")}</else>
+              </@header>
+              <@body>
+                <label class="content-section-header content-section-header--border">${i18n("At-a-glance")}</label>
+                <global-leaders-details company=content lang=lang/>
+
+                <label class="content-section-header content-section-header--border">${i18n("Contact")}</label>
+                $ const { socialLinks, ...contentSansSocial } = content;
+                <default-theme-content-contact-details
+                  obj=contentSansSocial
+                  website-link-attrs=eventLinkAttrs({
+                    category: "Company Profile Page",
+                    label: "Company Website",
+                    entity: eventEntity(content.id, "company"),
+                  })
+                  lang=lang
+                />
+
+                <label class="content-section-header content-section-header--border">${i18n("More info on")} ${content.name}</label>
+                <global-content-body-with-tracking block-name="leaders-more-info" content=content />
+              </@body>
+            </marko-web-node-list>
+
+            <marko-web-query|{ nodes }|
+              name="all-company-content"
+              params={
+                companyId: id,
+                includeContentTypes: ["Promotion"],
+                queryFragment,
+                limit: 4,
+                withSite: false,
+              }
+            >
+              <marko-web-node-list class="mt-block">
+                <@header>
+                  ${i18n("Featured Products")}
+                </@header>
+                <@nodes|{ nodes: items }| nodes=nodes>
+                  <default-theme-card-deck-flow cols=4 nodes=items modifiers=["featured-products"]>
+                    <@slot|{ node, index }|>
+                      <theme-featured-products-card-node
+                        company-id=id
+                        image-width=340
+                        node=node
+                      />
+                    </@slot>
+                  </default-theme-card-deck-flow>
+                </@nodes>
+              </marko-web-node-list>
+            </marko-web-query>
+          </div>
+          $ const videos = getAsArray(content, "videos.edges").map(({ node }) => node);
+          <marko-web-node-list class="mt-block">
             <@header>
-              <if(content.isLeader)>${site.get("leaders.title")}</if>
-              <else>${i18n("Company Details")}</else>
+              ${i18n("Featured Videos")}
             </@header>
-            <@body>
-              <label class="content-section-header content-section-header--border">${i18n("At-a-glance")}</label>
-              <global-company-details company=content lang=lang/>
-
-              <label class="content-section-header content-section-header--border">${i18n("Contact")}</label>
-              $ const { socialLinks, ...contentSansSocial } = content;
-              <default-theme-content-contact-details
-                obj=contentSansSocial
-                website-link-attrs=eventLinkAttrs({
-                  category: "Company Profile Page",
-                  label: "Company Website",
-                  entity: eventEntity(content.id, "company"),
-                })
-                lang=lang
-              />
-
-              <label class="content-section-header content-section-header--border">${i18n("More info on")} ${content.name}</label>
-              <global-content-body-with-tracking block-name="leaders-more-info" content=content />
-            </@body>
+            <@nodes|{ nodes }| nodes=videos>
+              <default-theme-card-deck-flow cols=3 nodes=nodes modifiers=["featured-videos"]>
+                <@slot|{ node, index }|>
+                  <div class="node-list__node">
+                    <theme-youtube-card-node
+                      node=node
+                      company-id=content.id
+                      image-position="top"
+                      link-attrs={
+                        "data-company-id": content.id,
+                        "data-company-name": content.name,
+                      }
+                    />
+                  </div>
+                </@slot>
+              </default-theme-card-deck-flow>
+            </@nodes>
+            <@footer>
+              $ const url = get(content, "youtube.url");
+              <a href=url target="_blank" rel="noopener" class="btn btn-sm btn-block btn-secondary">
+                ${i18n("View all videos")} &gt;
+              </a>
+            </@footer>
           </marko-web-node-list>
-        </div>
+
+          <theme-latest-content-list-block
+            query-name="all-company-content"
+            query-params={ companyId: id, includeContentTypes: ["Article"], limit: 3, withSite: false }
+            title=`${i18n("Case Studies")}`
+            with-native-x-section=false
+            flush-x=false
+            class="mt-block"
+          >
+            <@node with-dates=false />
+          </theme-latest-content-list-block>
+
+          <theme-latest-content-list-block
+            query-name="all-company-content"
+            query-params={ companyId: id, includeContentTypes: ["News", "PressRelease"], withSite: false, limit: 5 }
+            title=`${i18n("Company News")}`
+            with-native-x-section=false
+            flush-x=false
+            class="mt-block"
+          >
+            <@node with-dates=false />
+          </theme-latest-content-list-block>
+
         </else>
         <${input.afterBody}
           aliases=aliases
@@ -196,51 +247,9 @@ $ const lang = site.config.lang || "en";
               </for>
             </@nodes>
           </marko-web-node-list>
-          $ const videos = getAsArray(content, "videos.edges").map(({ node }) => node);
-          <marko-web-node-list class="mt-block">
-            <@header>
-              ${i18n("Featured Videos")}
-            </@header>
-            <@nodes|{ nodes }| nodes=videos>
-              <for|node| of=nodes>
-                <div class="node-list__node">
-                  <theme-youtube-card-node
-                    node=node
-                    company-id=content.id
-                    image-position="top"
-                    link-attrs={
-                      "data-company-id": content.id,
-                      "data-company-name": content.name,
-                    }
-                  />
-                </div>
-              </for>
-            </@nodes>
-            <@footer>
-              $ const url = get(content, "youtube.url");
-              <a href=url target="_blank" rel="noopener" class="btn btn-sm btn-block btn-secondary">
-                ${i18n("View all videos")} &gt;
-              </a>
-            </@footer>
-          </marko-web-node-list>
 
-          <theme-latest-content-list-block
-            query-name="all-company-content"
-            query-params={ companyId: id, includeContentTypes: ["Article"], limit: 3, withSite: false }
-            title=`${i18n("Case Studies")}`
-            with-native-x-section=false
-          >
-            <@node with-dates=false />
-          </theme-latest-content-list-block>
 
-          <theme-latest-content-list-block
-            query-name="all-company-content"
-            query-params={ companyId: id, includeContentTypes: ["News", "PressRelease"], withSite: false, limit: 5 }
-            title=`${i18n("Company News")}`
-            with-native-x-section=false
-          >
-            <@node with-dates=false />
-          </theme-latest-content-list-block>
+
         </if>
       </div>
     </div>
