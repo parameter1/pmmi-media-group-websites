@@ -1,0 +1,9 @@
+$ const { site } = out.global;
+
+$ const i18n = require('../utils/i18n-marko');
+
+$ const lang = site.config.lang || "en";
+
+<marko-web-browser-component name="Translated" props={ lang: lang } />
+
+<div>${i18n(lang, "surnameLabel")}</div>

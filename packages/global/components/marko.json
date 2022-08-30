@@ -34,5 +34,8 @@
     },
     "<below-container>": {},
     "<foot>": {}
+  },
+  "<global-translated>": {
+    "template": "./translated.marko"
   }
 }
