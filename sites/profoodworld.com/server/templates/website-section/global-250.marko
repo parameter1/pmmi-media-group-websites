@@ -11,7 +11,6 @@ $ const description = "Global 250 Food and Beverage Manufacturers";
     </marko-web-gtm-default-context>
   </@head>
   <@page>
-    <marko-web-gam-define-display-ad ...GAM.getAdUnit({ name: "leaderboard" }) modifiers=["top-of-page"] />
     <marko-web-page-wrapper class="mb-block">
       <@section>
         <div class="row">
@@ -26,11 +25,17 @@ $ const description = "Global 250 Food and Beverage Manufacturers";
             <div class="col">
               <marko-web-block class="top250-header__sponsored-by">
                 Presented by
+              <marko-web-link
+                href="https://theaustin.com/?utm_source=profoodworld.com&utm_medium=global250"
+                title="The Austin Company Website"
+                target="_blank"
+              >
                 <marko-web-img
                   alt="Global 250 Sponsor: The Austin Company"
-                  src="https://img.profoodworld.com/files/base/pmmi/all/image/static/the-austin-company.jpg?w=150"
-                  srcset="https://img.profoodworld.com/files/base/pmmi/all/image/static/the-austin-company.jpg?w=300 2x"
+                  src="https://img.profoodworld.com/files/base/pmmi/all/image/static/the-austin-company.jpg?w=100"
+                  srcset="https://img.profoodworld.com/files/base/pmmi/all/image/static/the-austin-company.jpg?w=200 2x"
                 />
+              </marko-web-link>
             </marko-web-block>
             </div>
           </div>
