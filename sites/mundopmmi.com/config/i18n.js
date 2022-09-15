@@ -57,4 +57,5 @@ module.exports = {
   'view webinar': 'Vea Webinario',
   results: 'Resultados',
   'work email': 'Correo Electrónico',
+  follow: 'Siga a',
 };
