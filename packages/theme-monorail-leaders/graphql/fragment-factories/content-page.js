@@ -20,6 +20,7 @@ fragment LeadersContentPageFragment on Content {
       path
       canonicalUrl
     }
+    enableRmi
   }
   taxonomy(input: { type: Category }) {
     edges {
