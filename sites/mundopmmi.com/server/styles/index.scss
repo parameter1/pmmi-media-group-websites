@@ -22,3 +22,22 @@ $theme-site-navbar-logo-height: 45px;
 $theme-site-navbar-logo-height-sm: 30px;
 
 @import "../../node_modules/@pmmi-media-group/package-global/scss/core";
+
+.page-attribution {
+  &__content-authors {
+    &::before {
+      content: "Por";
+    }
+  }
+}
+
+.page-contents {
+  .primary-image {
+    &__image-credit::before {
+      content: "Fuente: ";
+    }
+  }
+  [data-embed-type] .credit::before {
+    content: "Fuente: ";
+  }
+}
