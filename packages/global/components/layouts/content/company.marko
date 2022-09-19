@@ -34,21 +34,6 @@ $ const lang = site.config.lang || "en";
           <theme-content-page-breadcrumbs section=primarySection />
           <marko-web-content-name tag="h1" class="page-wrapper__title" obj=content />
         </div>
-        <div class="content-page-body">
-          <default-theme-content-contact-details
-            obj=content
-            website-link-attrs=eventLinkAttrs({
-              category: "Company Profile Page",
-              label: "Company Website",
-              entity: eventEntity(content.id, "company"),
-            })
-            social-link-attrs=eventLinkAttrs({
-              category: "Company Profile Page",
-              label: "Company Social Link",
-              entity: eventEntity(content.id, "company"),
-            })
-          />
-        </div>
       </if>
       <else>
         <div class="content-page-header  content-page-header--full-width">
