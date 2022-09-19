@@ -3,7 +3,7 @@ import convertAdToNode from "@parameter1/base-cms-marko-web-native-x/utils/conve
 
 $ const { nativeX: nxConfig, i18n } = out.global;
 $ const aliases = defaultValue(input.aliases, []);
-$ const sectionName = defaultValue(input.sectionName, "Sponsor Content");
+$ const sectionName = defaultValue(input.sectionName, `${i18n("Sponsor Content")}`);
 
 $ const blockName = "native-x-list";
 $ const uri = nxConfig.getUri();
