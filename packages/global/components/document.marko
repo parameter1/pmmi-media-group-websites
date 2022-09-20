@@ -1,4 +1,5 @@
 import createOmedaIdentityBuilder from "@parameter1/base-cms-marko-web-p1-events/utils/create-omeda-identity-builder";
+import { defaultValue } from "@parameter1/base-cms-marko-web/utils";
 import { getAsObject } from "@parameter1/base-cms-object-path";
 
 $ const {
@@ -9,6 +10,10 @@ $ const {
   i18n,
   omedaConfig
 } = out.global;
+
+$ const gamDefer = defaultValue(req.query.gamDefer, "ready");
+$ const gtmDefer = defaultValue(req.query.gtmDefer, "load");
+$ const olyticsDefer = defaultValue(req.query.olyticsDefer, "load");
 
 $ const continueLabel = i18n("Sign Me Up!");
 $ const loginEmailLabel = i18n("Work Email");
@@ -33,17 +38,17 @@ $ const buttonLabels = { continue: continueLabel };
 
     <!-- init gam -->
     <marko-web-gam-init
-      on="ready"
       request-frame=true
       target-tag="body"
+      on=gamDefer
     />
 
     <!-- init gtm -->
     <marko-web-gtm-init
       container-id=site.get("gtm.containerId")
-      on="load"
       request-frame=true
       target-tag="body"
+      on=gtmDefer
     />
 
     <!-- init native-x -->
@@ -58,7 +63,7 @@ $ const buttonLabels = { continue: continueLabel };
     <!-- init omeda olytics -->
     <marko-web-omeda-olytics-init
       oid=omedaConfig.olytics.oid
-      on="load"
+      on=olyticsDefer
       request-frame=true
       target-tag="body"
     />
