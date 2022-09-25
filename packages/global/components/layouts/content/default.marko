@@ -224,7 +224,9 @@ $ const demo = req.cookies.disabledFeatures;
         </if>
         <global-leaders-contextual content-id=id />
         <if(demo && leadersContentTypes.includes(content.type))>
-          <marko-web-leaders-featured-companies content=content />
+          <div class="sticky-top">
+            <marko-web-leaders-featured-companies content=content />
+          </div>
         </if>
       </div>
     </div>

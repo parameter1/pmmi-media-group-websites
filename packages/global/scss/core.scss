@@ -290,3 +290,9 @@ label {
     padding: 0;
   }
 }
+
+@media (max-width: 100000px) {
+  .sticky-top {
+    top: 1rem;
+  }
+}
