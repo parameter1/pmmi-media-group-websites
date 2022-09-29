@@ -49,6 +49,10 @@ const getSiteRedirect = ({ from, req }) => {
     return { to: '/' };
   }
 
+  if (from === '/page/subscribe') {
+    return { to: '/page/magazine' };
+  }
+
   return null;
 };
 
