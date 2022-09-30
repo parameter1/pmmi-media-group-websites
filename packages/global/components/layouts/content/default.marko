@@ -18,8 +18,6 @@ $ const loginEmailLabel = i18n("Work Email");
 $ const buttonLabels = { continue: continueLabel };
 $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type);
 
-$ const demo = req.cookies.disabledFeatures;
-
 <global-content-wrapper-layout
   id=id
   type=type
@@ -152,7 +150,7 @@ $ const demo = req.cookies.disabledFeatures;
                   <marko-web-content-sidebars block-name=blockName obj={ sidebars } />
                 </if>
 
-                <if(!demo && leadersContentTypes.includes(content.type))>
+                <if(leadersContentTypes.includes(content.type))>
                   <marko-web-leaders-featured-companies content=content />
                 </if>
 
@@ -223,11 +221,6 @@ $ const demo = req.cookies.disabledFeatures;
           </div>
         </if>
         <global-leaders-contextual content-id=id />
-        <if(demo && leadersContentTypes.includes(content.type))>
-          <div class="sticky-top">
-            <marko-web-leaders-featured-companies content=content />
-          </div>
-        </if>
       </div>
     </div>
   </@section>
