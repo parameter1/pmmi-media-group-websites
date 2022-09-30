@@ -1,14 +1,11 @@
 $ const { site, req } = out.global;
 $ const { contentId } = input;
 
-$ const demo = req.cookies.disabledFeatures;
-$ const expanded = (demo) ? false : true;
-
 <if(contentId && site.get("leaders.enabled"))>
   <marko-web-leaders props={
     contentId,
     open: "auto",
-    expanded,
+    expanded: true,
     iconSet: "chevron",
     sectionAlias: site.get("leaders.alias"),
     headerImgSrc: site.get("leaders.header.imgSrc"),
