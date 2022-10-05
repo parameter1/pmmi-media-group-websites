@@ -19,7 +19,7 @@ $ const perPage = 18;
 $ const type = "scheduled-content";
 $ const description = defaultDescription(title, config);
 
-<theme-default-page name=title>
+<theme-default-page title=title description=description>
   <@head>
     <theme-section-feed-block|{ totalCount }| with-section=false query-name=queryName count-only=true>
       <@query-params include-content-types=includeContentTypes />
