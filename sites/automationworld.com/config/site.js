@@ -41,12 +41,16 @@ module.exports = {
       srcset: [
         'https://img.automationworld.com/files/base/pmmi/aw/aw-logo.webp?h=30&auto=format,compress&dpr=2 2x',
       ],
+      width: '158',
+      height: '24',
     },
     footer: {
       src: 'https://img.automationworld.com/files/base/pmmi/aw/aw_logo.png?h=35&auto=format,compress',
       srcset: [
         'https://img.automationworld.com/files/base/pmmi/aw/aw_logo.png?h=35&auto=format,compress&dpr=2 2x',
       ],
+      width: '244',
+      height: '35',
     },
     printContent: {
       src: 'https://img.automationworld.com/files/base/pmmi/aw/aw_logo_black.png?h=45&auto=format,compress',
@@ -61,6 +65,8 @@ module.exports = {
       srcset: [
         'https://img.automationworld.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress&dpr=2 2x',
       ],
+      width: '83',
+      height: '40',
     },
   },
   socialMediaLinks: [
