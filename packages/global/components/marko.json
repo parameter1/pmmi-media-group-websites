@@ -10,6 +10,9 @@
   "<theme-content-card-list-block>": {
     "template": "./content-card-list.marko"
   },
+  "<global-gam-content-targeting>": {
+    "template": "./gam-content-targeting.marko"
+  },
   "<global-sponsored-label-logo>": {
     "template": "./sponsored-label-logo.marko"
   },
