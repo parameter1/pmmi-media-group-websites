@@ -75,4 +75,7 @@ module.exports = {
   relevancy: 'Relevancia',
   section: 'Seccion',
   type: 'Tipo',
+  account: 'Cuenta',
+  'sign in': 'Suscríbase',
+  'log in to mundo PMMI': 'Conéctese a Mundo PMMI',
 };
