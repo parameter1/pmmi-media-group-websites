@@ -7,6 +7,7 @@ const magazine = require('@parameter1/base-cms-marko-web-theme-monorail-magazine
 
 const leaders = require('./leaders');
 const feed = require('./feed');
+const digitalEditionRedirects = require('./digital-edition-redirects');
 const content = require('./content');
 const scheduledContent = require('./scheduled-content');
 const dynamicPage = require('./dynamic-page');
@@ -65,4 +66,9 @@ module.exports = (app, siteConfig) => {
   dynamicPage(app);
 
   content(app);
+
+  // Prgamatic redirect for legacy digitial edition urls
+  // old: "http://www.automationworld.com/sites/default/files/digital_edition/december2014/AW_December_2014_Optimized/index.html",
+  // new: "https://digitaleditions.automationworld.com/december2014/AW_December_2014_Optimized/index.html",
+  digitalEditionRedirects(app);
 };
