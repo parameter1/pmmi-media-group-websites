@@ -67,7 +67,7 @@ module.exports = (app, siteConfig) => {
 
   content(app);
 
-  // Prgamatic redirect for legacy digitial edition urls
+  // Programatic redirect for legacy digitial edition urls
   // old: "http://www.automationworld.com/sites/default/files/digital_edition/december2014/AW_December_2014_Optimized/index.html",
   // new: "https://digitaleditions.automationworld.com/december2014/AW_December_2014_Optimized/index.html",
   digitalEditionRedirects(app);
