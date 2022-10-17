@@ -1,8 +1,11 @@
-$ const { config } = out.global;
+import { get } from "@parameter1/base-cms-object-path";
+
+$ const { site, config } = out.global;
 
 $ const type = "authenticate";
 $ const title = "Authenticate";
-$ const description = `Complete your ${config.siteName()} Profile`;
+$ const completeYourProfileVerbiage = get(site, "config.completeYourProfileVerbiage");
+$ const description = completeYourProfileVerbiage ? completeYourProfileVerbiage : `Complete your ${config.siteName()} Profile`;
 
 <marko-web-default-page-layout type=type title=title description=title>
   <@head>
