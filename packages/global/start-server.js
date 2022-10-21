@@ -74,6 +74,13 @@ module.exports = (options = {}) => {
       // i18n
       i18n(app, options.i18n);
 
+      // Add IdentityX logoutHook to remove omeda_promo_code cookie
+      const identityX = getAsObject(options, 'siteConfig.identityX');
+      identityX.addHook({
+        name: 'onLogout',
+        fn: ({ res }) => res.clearCookie('omeda_promo_code'),
+      });
+
       // Setup IdentityX + Omeda
       const omedaIdentityXConfig = getAsObject(options, 'siteConfig.omedaIdentityX');
       set(app.locals, 'omedaConfig', getAsObject(options, 'siteConfig.omeda'));
