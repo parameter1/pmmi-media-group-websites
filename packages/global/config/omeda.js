@@ -1,7 +1,7 @@
 module.exports = ({
   clientKey = 'client_pmmi',
   brandKey = 'pmmicd',
-  onLoginPromoCodes,
+  onLoginLinkSentPromoCodes,
   appId = process.env.OMEDA_APP_ID,
   inputId = process.env.OMEDA_INPUT_ID,
   graphqlUri = 'https://graphql.omeda.parameter1.com/',
@@ -14,7 +14,7 @@ module.exports = ({
 } = {}) => ({
   clientKey,
   brandKey,
-  onLoginPromoCodes,
+  onLoginLinkSentPromoCodes,
   appId,
   inputId,
   graphqlUri,

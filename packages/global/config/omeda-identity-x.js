@@ -63,9 +63,9 @@ module.exports = ({
   onLoginLinkSentFormatter: (async ({ req, payload }) => {
     const omeda = req.app.locals.site.getAsObject('omeda');
     const { source } = req.body;
-    const { onLoginPromoCodes } = omeda;
-    const { default: defaultPromoCode } = onLoginPromoCodes.default;
-    const sourcePromoCode = onLoginPromoCodes[source];
+    const { onLoginLinkSentPromoCodes } = omeda;
+    const { default: defaultPromoCode } = onLoginLinkSentPromoCodes.default;
+    const sourcePromoCode = onLoginLinkSentPromoCodes[source];
     // if neither are set skip and retun the payload
     if (!sourcePromoCode && !defaultPromoCode) return payload;
 
