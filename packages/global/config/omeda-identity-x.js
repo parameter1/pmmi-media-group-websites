@@ -60,4 +60,21 @@ module.exports = ({
   appendPromoCodeToHook,
   appendBehaviorToHook,
   appendDemographicToHook,
+  onLoginLinkSentFormatter: (async ({ req, payload }) => {
+    const omeda = req.app.locals.site.getAsObject('omeda');
+    const { source } = req.body;
+    const { onLoginPromoCodes } = omeda;
+    const { default: defaultPromoCode } = onLoginPromoCodes.default;
+    const sourcePromoCode = onLoginPromoCodes[source];
+    // if neither are set skip and retun the payload
+    if (!sourcePromoCode && !defaultPromoCode) return payload;
+
+    const val = sourcePromoCode || defaultPromoCode;
+    const options = { maxAge: 60 * 60 * 24 * 365, httpOnly: false };
+    req.res.cookie('omeda_promo_code', val, options);
+    return {
+      ...payload,
+      promoCode: val,
+    };
+  }),
 });
