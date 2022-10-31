@@ -41,11 +41,10 @@ module.exports = ({
         { viewport: [300, 0], size: [[300, 50], [300, 250], [320, 100]] },
       ],
     })
-    .setTemplate('INLINE-CONTENT-MOBILE', {
+    .setTemplate('INLINE-CONTENT-SIGNUP', {
       size: [300, 250],
       sizeMapping: [
-        { viewport: [300, 0], size: [300, 250] },
-        { viewport: [0, 0], size: [] },
+        { viewport: [0, 0], size: [300, 250] },
       ],
     })
     .setTemplate('INLINE-CONTENT-MOBILE', {
