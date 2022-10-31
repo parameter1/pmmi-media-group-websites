@@ -263,45 +263,13 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
     </@section>
   </if>
 
-  <@section|{ aliases }|>
-    <theme-native-x-promo-card-block placement-name="marketing" aliases=aliases />
-  </@section>
-
-  <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="leaderboard"
-      position="content_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
-  <@section>
-    $ const defaultParams = {
-        queryParams: { includeContentTypes: ["Product"] },
-        section: { name: "Products", canonicalPath: "/products" },
-    };
-    $ const productsParams = defaultValue(site.get("productsParams"), defaultParams);
-    <theme-content-card-list-block ...productsParams />
-  </@section>
-
-
-  <@section>
-    <theme-client-side-most-popular-block />
-  </@section>
-
-  $ const publicationIds = site.get("magazine.publicationIds");
-  <if(publicationIds.length)>
-    <@section>
-      <theme-magazine-issues-block publication-id=publicationIds[0] />
+  <for|s| of=sections>
+    <@section|{ blockName, content, aliases }| modifiers=s.modifiers>
+      <${s.renderBody}
+        block-name=blockName
+        content=content
+        aliases=aliases
+      />
     </@section>
-  </if>
-
-  <@section>
-    <theme-content-card-deck-block
-      query-params={ includeContentTypes: ["Document"], limit: 4 }
-      section={ name: `${i18n("Downloads")}`, canonicalPath: "/downloads" }
-    />
-  </@section>
-
+  </for>
 </global-content-wrapper-layout>
