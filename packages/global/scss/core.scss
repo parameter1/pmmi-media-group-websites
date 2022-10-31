@@ -213,17 +213,6 @@ label {
       display: block;
     }
   }
-  &--with-label {
-    > *:first-child {
-      &::before {
-        padding-bottom: 1rem;
-        font-size: 12px;
-        color: $gray-500;
-        text-transform: none;
-        content: "Advertisement";
-      }
-    }
-  }
 }
 
 // End right rail content layout CSS
