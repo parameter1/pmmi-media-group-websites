@@ -1,6 +1,7 @@
 import { get, getAsArray } from "@parameter1/base-cms-object-path";
 import contentIframe from "@pmmi-media-group/package-global/utils/content-iframe";
 import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/utils/get-content-preview";
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
 $ const { site, contentGatingHandler, req, i18n } = out.global;
 $ const { id, type, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
@@ -196,6 +197,13 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                 <!-- Div for BI Library -->
                 <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-bilibrary" class="mt-3" />
 
+                <theme-gam-define-display-ad
+                  name="inline-content-signup"
+                  position="content_page"
+                  aliases=aliases
+                  modifiers=["inline-content"]
+                />
+
                 <if(displayNewsletterSignup)>
                   <marko-web-identity-x-context|{ hasUser }|>
                     <if(!hasUser)>
@@ -255,13 +263,45 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
     </@section>
   </if>
 
-  <for|s| of=sections>
-    <@section|{ blockName, content, aliases }| modifiers=s.modifiers>
-      <${s.renderBody}
-        block-name=blockName
-        content=content
-        aliases=aliases
-      />
+  <@section|{ aliases }|>
+    <theme-native-x-promo-card-block placement-name="marketing" aliases=aliases />
+  </@section>
+
+  <@section|{ aliases }|>
+    <theme-gam-define-display-ad
+      name="leaderboard"
+      position="content_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+
+  <@section>
+    $ const defaultParams = {
+        queryParams: { includeContentTypes: ["Product"] },
+        section: { name: "Products", canonicalPath: "/products" },
+    };
+    $ const productsParams = defaultValue(site.get("productsParams"), defaultParams);
+    <theme-content-card-list-block ...productsParams />
+  </@section>
+
+
+  <@section>
+    <theme-client-side-most-popular-block />
+  </@section>
+
+  $ const publicationIds = site.get("magazine.publicationIds");
+  <if(publicationIds.length)>
+    <@section>
+      <theme-magazine-issues-block publication-id=publicationIds[0] />
     </@section>
-  </for>
+  </if>
+
+  <@section>
+    <theme-content-card-deck-block
+      query-params={ includeContentTypes: ["Document"], limit: 4 }
+      section={ name: `${i18n("Downloads")}`, canonicalPath: "/downloads" }
+    />
+  </@section>
+
 </global-content-wrapper-layout>
