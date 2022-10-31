@@ -192,6 +192,7 @@ label {
 
 .ad-container {
   &--inline-content#{&}--template-inline-content-desktop,
+  &--inline-content#{&}--template-inline-content-signup,
   &--inline-content#{&}--template-inline-content-mobile {
     min-height: 0;
     margin-bottom: 0;
@@ -200,6 +201,7 @@ label {
       margin-bottom: 30px;
     }
   }
+  &--inline-content#{&}--template-inline-content-signup,
   &--inline-content#{&}--template-inline-content-desktop {
     display: none;
     margin-right: 0;
