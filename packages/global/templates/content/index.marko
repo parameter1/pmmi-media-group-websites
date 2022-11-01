@@ -14,6 +14,15 @@ $ const { site } = out.global;
     <theme-native-x-promo-card-block placement-name="marketing" aliases=aliases />
   </@section>
 
+  <@section|{ aliases }|>
+    <theme-gam-define-display-ad
+      name="leaderboard"
+      position="content_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+
   <@section>
     $ const defaultParams = {
         queryParams: { includeContentTypes: ["Product"] },

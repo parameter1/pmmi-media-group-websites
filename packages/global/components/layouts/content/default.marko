@@ -196,6 +196,13 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                 <!-- Div for BI Library -->
                 <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-bilibrary" class="mt-3" />
 
+                <theme-gam-define-display-ad
+                  name="inline-content"
+                  position="content_page"
+                  aliases=aliases
+                  modifiers=["inline-content"]
+                />
+
                 <if(displayNewsletterSignup)>
                   <marko-web-identity-x-context|{ hasUser }|>
                     <if(!hasUser)>
