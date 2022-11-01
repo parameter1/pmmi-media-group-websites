@@ -41,7 +41,7 @@ module.exports = ({
         { viewport: [300, 0], size: [[300, 50], [300, 250], [320, 100]] },
       ],
     })
-    .setTemplate('INLINE-CONTENT-SIGNUP', {
+    .setTemplate('INLINE-CONTENT', {
       size: [300, 250],
       sizeMapping: [
         { viewport: [0, 0], size: [300, 250] },
