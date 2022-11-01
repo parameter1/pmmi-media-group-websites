@@ -191,8 +191,8 @@ label {
 }
 
 .ad-container {
+  &--inline-content#{&}--template-inline-content,
   &--inline-content#{&}--template-inline-content-desktop,
-  &--inline-content#{&}--template-inline-content-signup,
   &--inline-content#{&}--template-inline-content-mobile {
     min-height: 0;
     margin-bottom: 0;
@@ -201,20 +201,25 @@ label {
       margin-bottom: 30px;
     }
   }
-  &--inline-content#{&}--template-inline-content-signup,
   &--inline-content#{&}--template-inline-content-desktop {
     display: none;
-    margin-right: 0;
-    margin-left: 0;
-    background-color: #fff;
-    > *:first-child {
-      border-top: 3px solid $skin-ad-bg-color;
-      border-bottom: 3px solid $skin-ad-bg-color;
-    }
     @media (min-width: 780px) {
       display: block;
     }
   }
+  &--inline-content#{&}--template-inline-content,
+  &--inline-content#{&}--template-inline-content-desktop {
+    @media (min-width: 780px) {
+      margin-right: 0;
+      margin-left: 0;
+      background-color: #fff;
+      > *:first-child {
+        border-top: 3px solid $skin-ad-bg-color;
+        border-bottom: 3px solid $skin-ad-bg-color;
+      }
+    }
+  }
+
   &--with-label {
     > *:first-child {
       &::before {
