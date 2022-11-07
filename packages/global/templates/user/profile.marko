@@ -6,7 +6,7 @@ $ const { site, config } = out.global;
 $ const type = "profile";
 $ const title = `${config.siteName()} Profile`;
 $ const description = defaultValue(get(site, "config.completeYourProfileVerbiage"), `Complete your ${config.siteName()} Profile`);
-$ const buttonLabel = defaultValue(get(site, "profileSubmitButtonLabel"), "Submit");
+$ const buttonLabel = defaultValue(get(site, "config.profileSubmitButtonLabel"), "Submit");
 
 <marko-web-default-page-layout type=type title=title description=description>
   <@head>
