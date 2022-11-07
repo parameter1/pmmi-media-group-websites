@@ -63,12 +63,6 @@ module.exports = (options = {}) => {
       // Use paginated middleware
       app.use(htmlSitemapPagination());
 
-      // Setup IdentityX + Omeda
-      const omedaIdentityXConfig = getAsObject(options, 'siteConfig.omedaIdentityX');
-      set(app.locals, 'omedaConfig', getAsObject(options, 'siteConfig.omeda'));
-      omedaIdentityX(app, { ...omedaIdentityXConfig, idxRouteTemplates });
-      idxNavItems({ site: app.locals.site });
-
       // Setup GAM.
       const gamConfig = get(options, 'siteConfig.gam');
       set(app.locals, 'GAM', gamConfig);
@@ -79,6 +73,12 @@ module.exports = (options = {}) => {
 
       // i18n
       i18n(app, options.i18n);
+
+      // Setup IdentityX + Omeda
+      const omedaIdentityXConfig = getAsObject(options, 'siteConfig.omedaIdentityX');
+      set(app.locals, 'omedaConfig', getAsObject(options, 'siteConfig.omeda'));
+      omedaIdentityX(app, { ...omedaIdentityXConfig, idxRouteTemplates });
+      idxNavItems({ site: app.locals.site, i18n: app.locals.i18n });
 
       // Recaptcha
       set(app.locals, 'recaptcha', recaptcha);
