@@ -16,7 +16,7 @@ $ const displayNewsletterSignup = ["contact"].includes(type) ? false : true;
 $ const continueLabel = i18n("Sign Me Up!");
 $ const loginEmailLabel = i18n("Work Email");
 $ const buttonLabels = { continue: continueLabel };
-$ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type);
+$ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release", "product", "video"].includes(type);
 
 <global-content-wrapper-layout
   id=id
@@ -44,9 +44,9 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
         <theme-content-attribution obj=content />
       </if>
       <if(displayPublishedDate && authors.length !== 1)>
-        <default-theme-page-dates|{ blockName }|>
+        <theme-page-dates|{ blockName }|>
           <theme-content-published-node block-name=blockName obj=content />
-        </default-theme-page-dates>
+        </theme-page-dates>
       </if>
       <global-sponsored-section-logo alias=primarySection.alias modifiers=["content-page"] class="mt-3" />
       <if(displaySocialShare)>
@@ -64,7 +64,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
     <div class="row">
       <div class="col-lg-8">
         <div class="content-page-body">
-          <default-theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
+          <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
             $ const requiresRegistration = (get(content, "userRegistration.isCurrentlyRequired") || contentGatingHandler({ content, req }));
             $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
             <marko-web-identity-x-access|context|
@@ -159,10 +159,10 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                 </if>
 
                 <if(type === "document" || type === "whitepaper")>
-                  <default-theme-content-download obj=content>
+                  <theme-content-download obj=content>
                     <@wufoo user-name=site.get("wufoo.userName") />
                     <@link class="btn btn-primary" />
-                  </default-theme-content-download>
+                  </theme-content-download>
                 </if>
 
                 <if(type !== "contact")>
@@ -196,6 +196,13 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
                 <!-- Div for BI Library -->
                 <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-bilibrary" class="mt-3" />
 
+                <theme-gam-define-display-ad
+                  name="inline-content"
+                  position="content_page"
+                  aliases=aliases
+                  modifiers=["inline-content"]
+                />
+
                 <if(displayNewsletterSignup)>
                   <marko-web-identity-x-context|{ hasUser }|>
                     <if(!hasUser)>
@@ -215,7 +222,7 @@ $ const shouldInjectAds = ["article", "video", "news", "podcast"].includes(type)
             <if(displayComments)>
               <theme-identity-x-comment-stream content=content />
             </if>
-          </default-theme-page-contents>
+          </theme-page-contents>
         </div>
       </div>
       <div class="col-lg-4">
