@@ -69,7 +69,7 @@ $ const lang = site.config.lang || "en";
       <div class="col-lg-8">
         <if(!content.isLeader)>
           <div class="content-page-body">
-            <default-theme-content-contact-details
+            <theme-content-contact-details
               obj=content
               website-link-attrs=eventLinkAttrs({
                 category: "Company Profile Page",
@@ -109,7 +109,7 @@ $ const lang = site.config.lang || "en";
 
                 <label class="content-section-header content-section-header--border">${i18n("Contact")}</label>
                 $ const { socialLinks, ...contentSansSocial } = content;
-                <default-theme-content-contact-details
+                <theme-content-contact-details
                   obj=contentSansSocial
                   website-link-attrs=eventLinkAttrs({
                     category: "Company Profile Page",
@@ -139,7 +139,7 @@ $ const lang = site.config.lang || "en";
                   ${i18n("Featured Products")}
                 </@header>
                 <@nodes|{ nodes: items }| nodes=nodes>
-                  <default-theme-card-deck-flow cols=4 nodes=items modifiers=["featured-products"]>
+                  <theme-card-deck-flow cols=4 nodes=items modifiers=["featured-products"]>
                     <@slot|{ node, index }|>
                       <theme-featured-products-card-node
                         company-id=id
@@ -147,7 +147,7 @@ $ const lang = site.config.lang || "en";
                         node=node
                       />
                     </@slot>
-                  </default-theme-card-deck-flow>
+                  </theme-card-deck-flow>
                 </@nodes>
               </marko-web-node-list>
             </marko-web-query>
@@ -158,7 +158,7 @@ $ const lang = site.config.lang || "en";
               ${i18n("Featured Videos")}
             </@header>
             <@nodes|{ nodes }| nodes=videos>
-              <default-theme-card-deck-flow cols=3 nodes=nodes modifiers=["featured-videos"]>
+              <theme-card-deck-flow cols=3 nodes=nodes modifiers=["featured-videos"]>
                 <@slot|{ node, index }|>
                   <div class="node-list__node">
                     <theme-youtube-card-node
@@ -172,7 +172,7 @@ $ const lang = site.config.lang || "en";
                     />
                   </div>
                 </@slot>
-              </default-theme-card-deck-flow>
+              </theme-card-deck-flow>
             </@nodes>
             <@footer>
               $ const url = get(content, "youtube.url");
