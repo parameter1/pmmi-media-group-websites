@@ -77,5 +77,5 @@ module.exports = {
   type: 'Tipo',
   account: 'Cuenta',
   'sign in': 'Suscríbase',
-  'log in to mundo PMMI': 'Conéctese a Mundo PMMI',
+  'log in to mundo pmmi': 'Conéctese a Mundo PMMI',
 };
