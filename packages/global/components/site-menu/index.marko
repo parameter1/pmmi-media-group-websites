@@ -3,7 +3,7 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
 $ const blockName = input.blockName || "site-menu";
 
-$ const { site, config } = out.global;
+$ const { site, config, i18n } = out.global;
 
 $ const regEnabled = defaultValue(input.regEnabled, false);
 $ const hasUser = defaultValue(input.hasUser, false);
@@ -32,7 +32,7 @@ $ const attrs = {
             <theme-site-menu-section
             tag="nav"
             block-name=blockName
-            label="Account"
+            label=`${i18n("Account")}`
             items=site.getAsArray("navigation.user.items")
             modifiers=["user"]
             reg-enabled=regEnabled
@@ -90,7 +90,7 @@ $ const attrs = {
         <theme-site-menu-section
         tag="nav"
         block-name=blockName
-        label="Account"
+        label=`${i18n("Account")}`
         items=site.getAsArray("navigation.user.items")
         modifiers=["user"]
         reg-enabled=regEnabled
