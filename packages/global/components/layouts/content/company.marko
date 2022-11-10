@@ -98,32 +98,6 @@ $ const lang = site.config.lang || "en";
               </@body>
             </marko-web-node-list>
 
-            <marko-web-node-list collapsible=false class="mt-block">
-              <@header>
-                <if(content.isLeader)>${site.get("leaders.title")}</if>
-                <else>${i18n("Company Details")}</else>
-              </@header>
-              <@body>
-                <label class="content-section-header content-section-header--border">${i18n("At-a-glance")}</label>
-                <global-leaders-details company=content lang=lang/>
-
-                <label class="content-section-header content-section-header--border">${i18n("Contact")}</label>
-                $ const { socialLinks, ...contentSansSocial } = content;
-                <theme-content-contact-details
-                  obj=contentSansSocial
-                  website-link-attrs=eventLinkAttrs({
-                    category: "Company Profile Page",
-                    label: "Company Website",
-                    entity: eventEntity(content.id, "company"),
-                  })
-                  lang=lang
-                />
-
-                <label class="content-section-header content-section-header--border">${i18n("More info on")} ${content.name}</label>
-                <global-content-body-with-tracking block-name="leaders-more-info" content=content />
-              </@body>
-            </marko-web-node-list>
-
             <marko-web-query|{ nodes }|
               name="all-company-content"
               params={
@@ -151,6 +125,32 @@ $ const lang = site.config.lang || "en";
                 </@nodes>
               </marko-web-node-list>
             </marko-web-query>
+
+            <marko-web-node-list collapsible=false class="mt-block">
+              <@header>
+                <if(content.isLeader)>${site.get("leaders.title")}</if>
+                <else>${i18n("Company Details")}</else>
+              </@header>
+              <@body>
+                <label class="content-section-header content-section-header--border">${i18n("At-a-glance")}</label>
+                <global-leaders-details company=content lang=lang/>
+
+                <label class="content-section-header content-section-header--border">${i18n("Contact")}</label>
+                $ const { socialLinks, ...contentSansSocial } = content;
+                <theme-content-contact-details
+                  obj=contentSansSocial
+                  website-link-attrs=eventLinkAttrs({
+                    category: "Company Profile Page",
+                    label: "Company Website",
+                    entity: eventEntity(content.id, "company"),
+                  })
+                  lang=lang
+                />
+
+                <label class="content-section-header content-section-header--border">${i18n("More info on")} ${content.name}</label>
+                <global-content-body-with-tracking block-name="leaders-more-info" content=content />
+              </@body>
+            </marko-web-node-list>
           </div>
           $ const videos = getAsArray(content, "videos.edges").map(({ node }) => node);
           <marko-web-node-list class="mt-block">
