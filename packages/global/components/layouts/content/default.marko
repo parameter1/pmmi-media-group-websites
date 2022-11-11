@@ -94,6 +94,11 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                 <if(content.embedCode)>
                   $ const iframeContent = contentIframe(content);
                   <marko-web-content-embed-code block-name=blockName obj=iframeContent />
+                  <if(content.transcript)>
+                    <marko-web-link href=`#transcript-${id}` class="btn btn-transcript mt-block mb-2" title="Transcript">
+                      <marko-web-icon name="file" modifiers=["lg"] /> Transcript
+                    </marko-web-link>
+                  </if>
                 </if>
                 <else-if(type === "media-gallery")>
                   <!-- <marko-web-image-slider images=images /> -->
@@ -108,13 +113,10 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                     fluid-width=700
                   />
                 </else-if>
-
                 $ const bodyId = `content-body-${content.id}`;
-
+                $ const desktopCounts = [350, 1500, 2750, 4500, 6250, 8000, 9750, 11500, 13250, 15000, 16750, 18500];
+                $ const mobileCounts = [250, 1650, 2950, 4250, 5550, 6850, 8150, 9450, 10750, 12050, 13350, 14650, 15950, 17250];
                 <if(shouldInjectAds)>
-
-                  $ const desktopCounts = [350, 1500, 2750, 4500, 6250, 8000, 9750, 11500, 13250, 15000, 16750, 18500];
-                  $ const mobileCounts = [250, 1650, 2950, 4250, 5550, 6850, 8150, 9450, 10750, 12050, 13350, 14650, 15950, 17250];
                   <theme-gam-inject-ads selector=`#${bodyId}` detect-embeds=true>
                     <for|char| of=desktopCounts>
                       <!-- desktop/tablet only -->
@@ -139,6 +141,40 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                 </if>
 
                 <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
+
+                <if(content.transcript)>
+                  $ const transcriptId = `content-transcript-${content.id}`;
+                  <if(shouldInjectAds)>
+                    <theme-gam-inject-ads selector=`#${transcriptId}` detect-embeds=true>
+                      <for|char| of=desktopCounts>
+                        <!-- desktop/tablet only -->
+                        <@inject
+                          at=char
+                          name="inline-content-desktop"
+                          aliases=aliases
+                          modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+                        />
+                      </for>
+
+                      <for|char| of=mobileCounts>
+                        <!-- mobile only -->
+                        <@inject
+                          at=char
+                          name="inline-content-mobile"
+                          aliases=aliases
+                          modifiers=["max-width-970", "margin-auto-x", "inline-content"]
+                        />
+                      </for>
+                    </theme-gam-inject-ads>
+                  </if>
+
+                  <div id=`transcript-${id}` class="page-contents__content-transcript">
+                    <marko-web-element block-name="page-contents" name="content-transcript-title">
+                      <marko-web-icon name="file" modifiers=["lg"] /> Transcript
+                    </marko-web-element>
+                    <marko-web-content-transcript obj=content block-name=blockName attrs={ id: transcriptId }  />
+                  </div>
+                </if>
 
                 <!-- needs input -->
                 <if(input.afterBody)>
