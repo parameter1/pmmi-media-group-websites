@@ -81,7 +81,6 @@ module.exports = (options = {}) => {
       const identityX = getAsObject(options, 'siteConfig.identityX');
 
       const { promoCodeCookieName } = omedaConfig;
-      console.log('name: ', promoCodeCookieName);
       identityX.addHook({
         name: 'onLogout',
         fn: ({ res }) => res.clearCookie(promoCodeCookieName),
