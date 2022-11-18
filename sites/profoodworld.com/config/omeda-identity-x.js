@@ -7,4 +7,8 @@ module.exports = configure({
   idxConfig,
   rapidIdentProductId: 368,
   websiteBehaviorAttributeId: 199632,
+  onLoginLinkSentPromoCodes: {
+    newsletterSignup: 'PFW_NL_P1',
+    default: 'PFW_P1',
+  },
 });

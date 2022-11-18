@@ -9,7 +9,7 @@ module.exports = ({
   olytics = {
     oid: '8f4e4496f62c4648a7378595464d6079',
   },
-  promoCodeCookieName,
+  promoCodeCookieName = 'omeda_promo_code',
   promoCodeDefault,
 } = {}) => ({
   clientKey,
