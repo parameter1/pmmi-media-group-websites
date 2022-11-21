@@ -73,10 +73,21 @@ module.exports = (options = {}) => {
 
       // i18n
       i18n(app, options.i18n);
+      // Set omedaConfig to local
+      const omedaConfig = getAsObject(options, 'siteConfig.omeda');
+      set(app.locals, 'omedaConfig', omedaConfig);
+
+      // Add IdentityX logoutHook to remove omeda_promo_code cookie
+      const identityX = getAsObject(options, 'siteConfig.identityX');
+
+      const { promoCodeCookieName } = omedaConfig;
+      identityX.addHook({
+        name: 'onLogout',
+        fn: ({ res }) => res.clearCookie(promoCodeCookieName),
+      });
 
       // Setup IdentityX + Omeda
       const omedaIdentityXConfig = getAsObject(options, 'siteConfig.omedaIdentityX');
-      set(app.locals, 'omedaConfig', getAsObject(options, 'siteConfig.omeda'));
       omedaIdentityX(app, { ...omedaIdentityXConfig, idxRouteTemplates });
       idxNavItems({ site: app.locals.site, i18n: app.locals.i18n });
 
