@@ -20,6 +20,7 @@ const resources = [
   { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
   { href: '/webinars', label: 'Webinars' },
   { href: '/supplier-news', label: 'Supplier News' },
+  { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
 ];
 
 const utilities = [
