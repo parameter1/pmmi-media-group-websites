@@ -35,7 +35,7 @@ module.exports = (app) => {
   }));
   app.get('/*?webinar/:id(\\d{8})*', newsletterState({ setCookie: false }), withContent({
     template: webinar,
-    queryFragment,
+    queryFragment: contentQueryFragmentFn(site.get('leaders.alias')),
     formatResponse: formatContentResponse,
   }));
   app.get('/*?:id(\\d{8})*', newsletterState({ setCookie: false }), withContent({
