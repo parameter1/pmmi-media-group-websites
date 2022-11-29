@@ -33,7 +33,7 @@ $ const buttonLabels = { continue: continueLabel };
       <theme-content-page-breadcrumbs section=primarySection />
       <marko-web-content-name tag="h1" block-name=blockName obj=content />
       <theme-page-dates|{ blockName }|>
-        <theme-content-published-node block-name=blockName obj=content />
+        Starts: <marko-web-content-start-date block-name=blockName obj=content format="MMMM Do YYYY, h:mm a"/>
       </theme-page-dates>
       <global-sponsored-section-logo alias=primarySection.alias modifiers=["content-page"] class="mt-3" />
         <marko-web-social-sharing
