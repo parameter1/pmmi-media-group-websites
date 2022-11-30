@@ -1,0 +1,9 @@
+.page-wrapper__section {
+  $self: &;
+  // Hide the On Demand title when upcoming block is not present.
+  + #{ $self }--upcoming:empty + #{ $self }--archives {
+    .node-list__header {
+      display: none;
+     }
+  }
+}

@@ -13,16 +13,6 @@ module.exports = (app) => {
         endingAfter: (new Date()).valueOf(),
       });
   });
-  app.get('/webinars', newsletterState(), (_, res) => {
-    res.marko(publishedContent,
-      {
-        alias: 'webinars',
-        includeContentTypes: ['Webinar'],
-        title: 'Webinars',
-        sortField: 'startDate',
-        sortOrder: 'desc',
-      });
-  });
   app.get('/white-papers', newsletterState(), (_, res) => {
     res.marko(publishedContent,
       {
