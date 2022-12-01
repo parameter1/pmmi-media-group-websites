@@ -114,17 +114,14 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                   />
                 </else-if>
                 $ const bodyId = `content-body-${content.id}`;
+                <!-- This adjust first few ads, converts the 1000 into two at 300 & 1500 -->
                 $ const desktopAdCounts = [350, 1500, 2750, 4500, 6250, 8000, 9750, 11500, 13250, 15000, 16750, 18500];
-                $ const mobileAdCounts = [250, 1650, 2950, 4250, 5550, 6850, 8150, 9450, 10750, 12050, 13350, 14650, 15950, 17250];
-                $ const mobileLeadrboardAdCount = [];
 
                 <theme-body-with-injection
                   content=content
                   aliases=aliases
                   block-name=blockName
                   desktop-ad-counts=desktopAdCounts
-                  mobile-ad-counts=mobileAdCounts
-                  mobile-leaderboard-ad-counts=mobileLeadrboardAdCount
                   preventHTMLInjection=!shouldInjectAds
                 />
 
@@ -140,8 +137,6 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                       aliases=aliases
                       block-name=blockName
                       desktop-ad-counts=desktopAdCounts
-                      mobile-ad-counts=mobileAdCounts
-                      mobile-leaderboard-ad-counts=mobileLeadrboardAdCount
                       preventHTMLInjection=!shouldInjectAds
                     />
                   </div>
