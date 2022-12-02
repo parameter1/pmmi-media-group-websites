@@ -1,0 +1,23 @@
+.page-wrapper {
+  &__section {
+    &--webinars {
+      .node-list__header {
+        @include skin-typography($style: "section-header-small", $link-style: "primary");
+      }
+      .node-list--upcoming {
+        // border-bottom: solid 1px $gray-200;
+        // padding-bottom: map-get($spacers, 2);
+      }
+      .node-list--archives {
+        .node-list__header {
+          display: none;
+        }
+      }
+      .node-list--upcoming ~ .node-list--archives {
+        .node-list__header {
+          display: initial;
+        }
+      }
+    }
+  }
+}
