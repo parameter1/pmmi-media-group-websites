@@ -121,9 +121,6 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                   block-name=blockName
                   preventHTMLInjection=!shouldInjectAds
                 />
-
-                <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
-
                 <if(content.transcript)>
                   <div id=`transcript-${id}` class="page-contents__content-transcript">
                     <marko-web-element block-name="page-contents" name="content-transcript-title">
