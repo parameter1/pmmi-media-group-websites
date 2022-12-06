@@ -78,4 +78,5 @@ module.exports = {
   account: 'Cuenta',
   'sign in': 'Suscríbase',
   'log in to mundo pmmi': 'Conéctese a Mundo PMMI',
+  'site map': 'Mapa del sitio',
 };

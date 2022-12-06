@@ -75,7 +75,7 @@ module.exports = {
       privacyPolicy,
       { href: '/page/condiciones-de-uso', label: 'Condiciones de uso' },
       { href: '/page/terminos-y-condiciones-de-publicidad', label: 'Términos y condiciones de publicidad' },
-      { href: '/site-map', label: 'Mapa del sitio web' },
+      { href: '/site-map', label: 'Mapa del sitio' },
     ],
     topics: [...topics],
     more: [
