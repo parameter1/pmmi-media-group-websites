@@ -2130,7 +2130,7 @@
     fancy-log "^1.3.3"
     mkdirp "^0.5.5"
 
-"@parameter1/base-cms-dayjs@3.17.0", "@parameter1/base-cms-dayjs@^3.17.0":
+"@parameter1/base-cms-dayjs@^3.17.0":
   version "3.17.0"
   resolved "https://registry.yarnpkg.com/@parameter1/base-cms-dayjs/-/base-cms-dayjs-3.17.0.tgz#ba50e7b13622f9326f305f73ad139633472d2ec3"
   integrity sha512-QSn42RXXSv+BbjbLCOVLDYbBN40xxMH/wPJ6ecbwTAtQ64DkUZANER9HtVC8xsbV3VqItlm+++NNDjHPVBn5bA==
@@ -2271,10 +2271,10 @@
     graphql "^14.7.0"
     graphql-tag "^2.12.5"
 
-"@parameter1/base-cms-marko-web-html-sitemap@^3.17.0":
-  version "3.17.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-html-sitemap/-/base-cms-marko-web-html-sitemap-3.17.0.tgz#010d407a9d0ba46861bf342213804069b5218b89"
-  integrity sha512-O7rKimQuqG1RQrpEefya+LJqsi4PDcx5pWW6GVT59LuY9g09YnHYvXhSYmOPIa2CU+AufqwovTQEHbErM90iyw==
+"@parameter1/base-cms-marko-web-html-sitemap@^3.17.2":
+  version "3.17.2"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-html-sitemap/-/base-cms-marko-web-html-sitemap-3.17.2.tgz#39a107975f9ebb7abee36aa115bd16e8289a41a4"
+  integrity sha512-KWpzVFurUGC11O+bEdQ7wjDeCGX72LGPyk3OPIuij4wepcejpta6JwUKLaQ0fjLTMHcPQJyGEl0JPv60zlN9Vw==
   dependencies:
     "@parameter1/base-cms-dayjs" "^3.17.0"
     "@parameter1/base-cms-object-path" "^3.0.0"
@@ -2444,12 +2444,12 @@
     graphql-tag "^2.12.5"
     object-path "^0.11.8"
 
-"@parameter1/base-cms-marko-web-theme-monorail@^3.17.1":
-  version "3.17.1"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-theme-monorail/-/base-cms-marko-web-theme-monorail-3.17.1.tgz#0b4d93aefb3b9eb4b082e81e448877e6b034035f"
-  integrity sha512-N14RPxh86PE5YgEufRby3zqIeOMxNH6fzVKXIXpMMWP42Ypw5ElxxBWfUGtpUl5Fl3CsNfmz0cMXp+axoTmKZw==
+"@parameter1/base-cms-marko-web-theme-monorail@^3.17.2":
+  version "3.17.2"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-theme-monorail/-/base-cms-marko-web-theme-monorail-3.17.2.tgz#6fe7064e88a290113dd26394376a9a43dab1bbfb"
+  integrity sha512-h+8ML+RcxggSwyO2wTwu5o8DJHxHBpER4qXNHM6HJMKmMo1gMPp4Fr0ZzTw0LamQgtyrzLYQctJJ7uZiwXZzrg==
   dependencies:
-    "@parameter1/base-cms-dayjs" "3.17.0"
+    "@parameter1/base-cms-dayjs" "^3.17.0"
     "@parameter1/base-cms-image" "^3.13.5"
     "@parameter1/base-cms-inflector" "^3.0.0"
     "@parameter1/base-cms-marko-core" "^3.17.0"
@@ -2457,7 +2457,7 @@
     "@parameter1/base-cms-marko-web-deferred-script-loader" "^3.17.0"
     "@parameter1/base-cms-marko-web-gam" "^3.17.0"
     "@parameter1/base-cms-marko-web-gtm" "^3.17.0"
-    "@parameter1/base-cms-marko-web-html-sitemap" "^3.17.0"
+    "@parameter1/base-cms-marko-web-html-sitemap" "^3.17.2"
     "@parameter1/base-cms-marko-web-icons" "^3.0.0"
     "@parameter1/base-cms-marko-web-identity-x" "^3.17.0"
     "@parameter1/base-cms-marko-web-inquiry" "^3.0.0"
