@@ -119,9 +119,11 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                   content=content
                   aliases=aliases
                   block-name=blockName
+                  selector=bodyId
                   preventHTMLInjection=!shouldInjectAds
                 />
                 <if(content.transcript)>
+                  $ const transcriptId = `content-transcript-${content.id}`;
                   <div id=`transcript-${id}` class="page-contents__content-transcript">
                     <marko-web-element block-name="page-contents" name="content-transcript-title">
                       <marko-web-icon name="file" modifiers=["lg"] /> Transcript
@@ -130,6 +132,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                       content={ body: content.transcript }
                       aliases=aliases
                       block-name=blockName
+                      selector=transcriptId
                       preventHTMLInjection=!shouldInjectAds
                     />
                   </div>
