@@ -31,8 +31,10 @@ $ const archiveQueryParams = {
   beginningBefore: now,
   sort: {
     field: "startDate",
-    order: "asc",
+    order: "desc",
   },
+  limit: perPage,
+  skip: p.skip({ perPage })
 };
 
 <!-- Correct queryParams format to send to pagination controls -->
@@ -113,10 +115,10 @@ $ const countQueryParams = {
       <@header>
         On Demand
       </@header>
-      <@query-params ...archiveQueryParams limit=12 />
+      <@query-params ...archiveQueryParams />
     </theme-section-feed-block>
     <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
-      <@query-params ...countQueryParams />
+      <@query-params ...countQueryParams  />
       <theme-pagination-controls
         per-page=perPage
         total-count=totalCount
