@@ -43,7 +43,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
       <if(type !== "contact")>
         <theme-content-attribution obj=content />
       </if>
-      <if(displayPublishedDate && authors.length !== 1)>
+      <if(displayPublishedDate)>
         <theme-page-dates|{ blockName }|>
           <theme-content-published-node block-name=blockName obj=content />
         </theme-page-dates>
