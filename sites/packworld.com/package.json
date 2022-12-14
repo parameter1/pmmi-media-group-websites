@@ -1,6 +1,6 @@
 {
   "name": "@pmmi-media-group/packworld.com",
-  "version": "3.8.1",
+  "version": "3.8.2",
   "author": "Brian Miller <brian@parameter1.com>",
   "repository": "https://github.com/parameter1/pmmi-media-group-websites/tree/master/sites/packworld.com",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "@parameter1/base-cms-object-path": "^3.0.0",
     "@parameter1/base-cms-utils": "^3.0.0",
     "@parameter1/base-cms-web-cli": "^3.17.1",
-    "@pmmi-media-group/package-global": "^3.8.1",
+    "@pmmi-media-group/package-global": "^3.8.2",
     "@pmmi-media-group/package-theme-monorail-leaders": "^3.8.0",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
