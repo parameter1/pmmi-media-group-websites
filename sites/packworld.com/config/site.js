@@ -93,4 +93,8 @@ module.exports = {
     sendFrom: 'Packaging World <noreply@parameter1.com>',
     logo: 'https://img.packworld.com/files/base/pmmi/pw/pw_logo.png?h=45&auto=format,compress',
   },
+  linkOffsite: {
+    webinar: 'linkUrl',
+    event: 'website',
+  },
 };

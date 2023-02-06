@@ -93,4 +93,8 @@ module.exports = {
     sendFrom: 'Healthcare Packaging <noreply@parameter1.com>',
     logo: 'https://img.healthcarepackaging.com/files/base/pmmi/hcp/hcp_logo.png?h=45&auto=format,compress',
   },
+  linkOffsite: {
+    webinar: 'linkUrl',
+    event: 'website',
+  },
 };

@@ -94,4 +94,8 @@ module.exports = {
     sendFrom: 'OEM Magazine <noreply@parameter1.com>',
     logo: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=45&auto=format,compress',
   },
+  linkOffsite: {
+    webinar: 'linkUrl',
+    event: 'website',
+  },
 };
