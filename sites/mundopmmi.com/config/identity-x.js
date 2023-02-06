@@ -11,5 +11,6 @@ module.exports = configureIdentityX({
     country: 'País',
     region: 'Estado',
     postalCode: 'Código Postal',
+    addressBlockLabel: 'Dirección',
   },
 });
