@@ -9,6 +9,7 @@ $ const continueLabel = i18n("Sign Me Up!");
 $ const loginEmailLabel = i18n("Work Email");
 $ const buttonLabels = { continue: continueLabel };
 $ const perPage = 12;
+$ const actionText = i18n("signing up to receive your email notifications");
 
 <global-website-section-default-layout
   id=id
@@ -86,6 +87,7 @@ $ const perPage = 12;
           login-email-label=loginEmailLabel
           login-email-placeholder="example@yourcompany.com"
           type="inlineSection"
+          action-text=actionText
         />
       </if>
     </marko-web-identity-x-context>
