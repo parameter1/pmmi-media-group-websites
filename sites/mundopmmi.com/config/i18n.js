@@ -35,6 +35,7 @@ module.exports = {
   of: 'de',
   'next page': 'Próxima Pagina',
   email: 'Correo electrónico',
+  'email address': 'Correo electrónico',
   'sign up': 'Suscríbase ',
   'sign me up': 'Inscribirme',
   'sign me up!': '¡Inscribirme!',
@@ -79,4 +80,9 @@ module.exports = {
   'sign in': 'Suscríbase',
   'log in to mundo pmmi': 'Conéctese a Mundo PMMI',
   'site map': 'Mapa del sitio',
+  'log in to view the full article': 'Inicie sesion para ver el articulo completo',
+  'log in to print the full article': 'Inicie sesion para imprimir el articulo completo',
+  'Complete your profile to print the full article': 'Completa tu perfil para imprimir el articulo completo',
+  'signing up to receive your email notifications': 'registrarse para recibir sus notificaciones por correo electrónico',
+  continue: 'Continuar',
 };
