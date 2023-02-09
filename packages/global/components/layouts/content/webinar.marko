@@ -10,6 +10,9 @@ $ const displayComments = false; // ["contact"].includes(type) ? false : true;
 $ const continueLabel = i18n("Sign Me Up!");
 $ const loginEmailLabel = i18n("Work Email");
 $ const buttonLabels = { continue: continueLabel };
+$ const gateTitle = i18n("Log in to view the full article")
+$ const gateButtonLabels = { continue: i18n("Continue") };
+$ const actionText = i18n("signing up to receive your email notifications");
 
 <global-content-wrapper-layout
   id=id
@@ -66,6 +69,9 @@ $ const buttonLabels = { continue: continueLabel };
               requires-access-level=context.requiresAccessLevel
               requires-user-input=context.requiresUserInput
               messages=context.messages
+              button-labels=gateButtonLabels
+              title=gateTitle
+              action-text=actionText
             />
           </if>
           <else>
@@ -103,6 +109,7 @@ $ const buttonLabels = { continue: continueLabel };
                   login-email-label=loginEmailLabel
                   login-email-placeholder="example@yourcompany.com"
                   type="inlineContent"
+                  action-text=actionText
                 />
               </if>
             </marko-web-identity-x-context>
