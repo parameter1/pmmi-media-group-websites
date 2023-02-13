@@ -40,6 +40,7 @@ const desktopMenu = {
     label: 'Recursos',
     items: [
       { href: '/eventos', label: 'Eventos' },
+      { href: '/seminario-web', label: 'Seminario Web' },
       { href: '/leaders', label: 'Líderes' },
       { href: '/videos', label: 'Vídeos' },
       { href: '/downloads', label: 'Recursos Digitales' },
