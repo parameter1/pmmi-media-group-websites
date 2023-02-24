@@ -49,7 +49,7 @@ x-env-development: &env-development
 
 x-site-command: &site-cmd
   <<: *node
-  entrypoint: ["yarn]
+  entrypoint: ["yarn"]
   command: ["dev"]
 
 volumes:
