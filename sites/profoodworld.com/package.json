@@ -32,7 +32,7 @@
   "dependencies": {
     "@parameter1/base-cms-env": "^4.0.2",
     "@parameter1/base-cms-marko-core": "^4.2.0",
-    "@parameter1/base-cms-marko-web": "^4.2.1",
+    "@parameter1/base-cms-marko-web": "^4.3.0",
     "@parameter1/base-cms-marko-web-gam": "^4.1.0",
     "@parameter1/base-cms-marko-web-gcse": "^4.1.0",
     "@parameter1/base-cms-marko-web-gtm": "^4.1.0",
@@ -46,7 +46,7 @@
     "@parameter1/base-cms-marko-web-theme-monorail-magazine": "^4.1.1",
     "@parameter1/base-cms-object-path": "^4.0.2",
     "@parameter1/base-cms-utils": "^4.0.2",
-    "@parameter1/base-cms-web-cli": "^4.1.1",
+    "@parameter1/base-cms-web-cli": "^4.3.1",
     "@pmmi-media-group/package-global": "^3.8.10",
     "@pmmi-media-group/package-theme-monorail-leaders": "^3.8.7",
     "graphql": "^14.5.4",
