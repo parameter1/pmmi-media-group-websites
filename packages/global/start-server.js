@@ -94,7 +94,7 @@ module.exports = (options = {}) => {
       // Recaptcha
       set(app.locals, 'recaptcha', recaptcha);
     },
-    onAsyncBlockError: e => newrelic.noticeError(e),
+    onAsyncBlockError: (e) => newrelic.noticeError(e),
 
     redirectHandler,
 

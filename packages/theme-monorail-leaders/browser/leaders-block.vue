@@ -91,7 +91,7 @@ export default {
     mediaQueries: {
       type: Array,
       default: () => [],
-      validator: values => values.every((value) => {
+      validator: (values) => values.every((value) => {
         if (!value || typeof value !== 'object') return false;
         const props = ['open', 'columns', 'expanded', 'displayHeader', 'displayCallout', 'offsetTop', 'offsetBottom'];
         if (!props.includes(value.prop)) return false;
@@ -271,7 +271,7 @@ export default {
         const res = await fetch(url);
         const json = await res.json();
         const sections = getEdgeNodes(json, 'websiteSections')
-          .filter(s => s.hierarchy.some(({ alias }) => alias === this.sectionAlias));
+          .filter((s) => s.hierarchy.some(({ alias }) => alias === this.sectionAlias));
         if (sections.length) return sections;
       }
       const fromContent = await this.loadContentSections();
@@ -287,7 +287,7 @@ export default {
       const leaderByIdUrl = `/__leader-by-id?id=${this.contentId}`;
       const res = await fetch(leaderByIdUrl);
       const json = await res.json();
-      const taxonomyIds = getEdgeNodes(json, 'content.taxonomy').map(t => t.id);
+      const taxonomyIds = getEdgeNodes(json, 'content.taxonomy').map((t) => t.id);
       const sectionIds = [];
       this.taxonomyIds = taxonomyIds;
       if (this.useContentPrimarySection) {
@@ -300,7 +300,7 @@ export default {
       const sectionFromContentJson = await sectionFromContentRes.json();
       const sections = getEdgeNodes(sectionFromContentJson, 'websiteSections');
       return sections
-        .filter(s => s.hierarchy.some(({ alias }) => alias === this.sectionAlias));
+        .filter((s) => s.hierarchy.some(({ alias }) => alias === this.sectionAlias));
     },
 
     async loadAllSections() {

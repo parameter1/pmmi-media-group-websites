@@ -6,7 +6,7 @@ const queryFragment = require('../graphql/fragments/leader-by-id');
 
 module.exports = (app) => {
   app.use('/__leader-by-id', asyncRoute(async (req, res) => {
-    const id = parseInt(req.query.id, 0);
+    const id = parseInt(req.query.id, 10);
     const { apollo } = res.locals;
     const response = await loader(
       {
