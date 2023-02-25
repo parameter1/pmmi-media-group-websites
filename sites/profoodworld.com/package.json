@@ -5,6 +5,14 @@
   "repository": "https://github.com/parameter1/pmmi-media-group-websites/tree/master/sites/profoodworld.com",
   "license": "MIT",
   "private": true,
+  "website": {
+    "id": "5d88cf1af175132c008b4577",
+    "tenant": "pmmi_all",
+    "account": "pmmi",
+    "stack": "tauron",
+    "key": "pfw",
+    "deploy": true
+  },
   "scripts": {
     "dev": "basecms-website dev --compile-dir ../../packages --watch-dir ../../packages",
     "build": "basecms-website build",
@@ -13,6 +21,14 @@
     "lint:fix": "yarn lint --fix",
     "test": "yarn lint && yarn compile --no-clean"
   },
+  "engines": {
+    "node": ">=14.15"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
   "dependencies": {
     "@parameter1/base-cms-env": "^4.0.2",
     "@parameter1/base-cms-marko-core": "^4.2.0",
@@ -36,13 +52,5 @@
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1",
     "node-fetch": "^2.6.0"
-  },
-  "engines": {
-    "node": ">=14.15"
-  },
-  "os": [
-    "darwin",
-    "linux",
-    "win32"
-  ]
+  }
 }
