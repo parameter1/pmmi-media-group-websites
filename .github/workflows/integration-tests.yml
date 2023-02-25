@@ -15,12 +15,12 @@ jobs:
         #v# Make sure this matches the site matrix! #v#
         ###############################################
         site:
-          - { id: 5d88cecaf175132c008b4567, dir: automationworld.com, stack: tauron, account: pmmi, tenant: pmmi_all, rancher_label: pmmi-media-group-automationworld.com }
-          - { id: 5d88cef7f175132c008b456f, dir: healthcarepackaging.com, stack: tauron, account: pmmi, tenant: pmmi_all, rancher_label: pmmi-media-group-healthcarepackaging.com }
-          - { id: 5d0a748572c1aa35008b4567, dir: mundopmmi.com, stack: tauron, account: pmmi, tenant: pmmi_mundo, rancher_label: pmmi-media-group-mundopmmi.com }
-          - { id: 5d88cf05f175132c008b4573, dir: oemmagazine.org, stack: tauron, account: pmmi, tenant: pmmi_all, rancher_label: pmmi-media-group-oemmagazine.org }
-          - { id: 5d88cedef175132c008b456b, dir: packworld.com, stack: tauron, account: pmmi, tenant: pmmi_all, rancher_label: pmmi-media-group-packworld.com }
-          - { id: 5d88cf1af175132c008b4577, dir: profoodworld.com, stack: tauron, account: pmmi, tenant: pmmi_all, rancher_label: pmmi-media-group-profoodworld.com }
+          - { dir: automationworld.com, stack: tauron, id: 5d88cecaf175132c008b4567, account: pmmi, tenant: pmmi_all, rancher_label: pmmi-media-group-automationworld.com }
+          - { dir: healthcarepackaging.com, stack: tauron, id: 5d88cef7f175132c008b456f, account: pmmi, tenant: pmmi_all, rancher_label: pmmi-media-group-healthcarepackaging.com }
+          - { dir: mundopmmi.com, stack: tauron, id: 5d0a748572c1aa35008b4567, account: pmmi, tenant: pmmi_mundo, rancher_label: pmmi-media-group-mundopmmi.com }
+          - { dir: oemmagazine.org, stack: tauron, id: 5d88cf05f175132c008b4573, account: pmmi, tenant: pmmi_all, rancher_label: pmmi-media-group-oemmagazine.org }
+          - { dir: packworld.com, stack: tauron, id: 5d88cedef175132c008b456b, account: pmmi, tenant: pmmi_all, rancher_label: pmmi-media-group-packworld.com }
+          - { dir: profoodworld.com, stack: tauron, id: 5d88cf1af175132c008b4577, account: pmmi, tenant: pmmi_all, rancher_label: pmmi-media-group-profoodworld.com }
         ###############################################
         #^# Make sure this matches the site matrix! #^#
         ###############################################
