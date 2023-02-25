@@ -22,7 +22,6 @@ x-env-defaults: &env
   OMEDA_INPUT_ID: ${OMEDA_INPUT_ID-(unset)}
   BASE_BROWSE_GRAPHQL_URI: ${BASE_BROWSE_GRAPHQL_URI-https://base-browse.tauron.base.parameter1.com/graphql}
   GLOBAL_50_250_DOCS_API_KEY: ${GLOBAL_50_250_DOCS_API_KEY-(unset)}
-  # @todo the sendgrid values should be removed once the @parameter1/base-cms-mailer service is created.
   SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
   SENDGRID_DEV_TO: ${SENDGRID_DEV_TO-support@parameter1.com}
   YARN_CACHE_FOLDER: /.yarn-cache
