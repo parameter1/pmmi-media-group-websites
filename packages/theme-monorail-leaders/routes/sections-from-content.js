@@ -7,8 +7,8 @@ const queryFragment = require('../graphql/fragments/sections-from-ids');
 module.exports = (app) => {
   app.use('/__sections-from-content', asyncRoute(async (req, res) => {
     const { sectionIds, taxonomyIds } = req.query;
-    const secIds = sectionIds ? sectionIds.split(',').map(id => parseInt(id, 0)) : null;
-    const taxIds = taxonomyIds ? taxonomyIds.split(',').map(id => parseInt(id, 0)) : null;
+    const secIds = sectionIds ? sectionIds.split(',').map((id) => parseInt(id, 10)) : null;
+    const taxIds = taxonomyIds ? taxonomyIds.split(',').map((id) => parseInt(id, 10)) : null;
     const { apollo } = res.locals;
     const response = await loader(
       {

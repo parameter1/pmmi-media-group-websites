@@ -2,7 +2,6 @@ const jsonErrorHandler = require('@parameter1/base-cms-marko-web/express/json-er
 const { asyncRoute } = require('@parameter1/base-cms-utils');
 const { get } = require('@parameter1/base-cms-object-path');
 
-
 const loader = require('../loaders/all-sections');
 const queryFragment = require('../graphql/fragments/all-sections');
 

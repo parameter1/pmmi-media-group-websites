@@ -15,5 +15,5 @@ module.exports = startServer({
   contentGatingHandler: () => false,
   routes,
   redirectHandler,
-  i18n: v => i18n[`${v}`.toLowerCase()] || v,
-}).then(() => log('Website started!')).catch(e => setImmediate(() => { throw e; }));
+  i18n: (v) => i18n[`${v}`.toLowerCase()] || v,
+}).then(() => log('Website started!')).catch((e) => setImmediate(() => { throw e; }));
