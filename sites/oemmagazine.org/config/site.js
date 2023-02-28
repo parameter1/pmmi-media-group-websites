@@ -39,12 +39,16 @@ module.exports = {
       srcset: [
         'https://img.oemmagazine.org/files/base/pmmi/oem/OEM-logo-colored.png?h=30&auto=format,compress&dpr=2 2x',
       ],
+      width: '73',
+      height: '30',
     },
     footer: {
       src: 'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=35&auto=format,compress',
       srcset: [
         'https://img.oemmagazine.org/files/base/pmmi/oem/oem_logo.png?h=35&auto=format,compress&dpr=2 2x',
       ],
+      width: '98',
+      height: '35',
     },
     printContent: {
       src: 'https://img.oemmagazine.org/files/base/pmmi/oem/OEM-logo-colored.png?h=45&auto=format,compress',
@@ -59,6 +63,8 @@ module.exports = {
       srcset: [
         'https://img.oemmagazine.org/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress&dpr=2 2x',
       ],
+      width: '83',
+      height: '40',
     },
   },
   socialMediaLinks: [

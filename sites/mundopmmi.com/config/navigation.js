@@ -40,10 +40,12 @@ const desktopMenu = {
     label: 'Recursos',
     items: [
       { href: '/eventos', label: 'Eventos' },
+      { href: '/seminario-web', label: 'Seminario Web' },
       { href: '/leaders', label: 'Líderes' },
       { href: '/videos', label: 'Vídeos' },
       { href: '/downloads', label: 'Recursos Digitales' },
       { href: '/page/newsletterarchive', label: 'Archivo de boletines' },
+      { href: '/noticias-de-los-proveedores', label: 'Noticias de los proveedores' },
     ],
   },
 };
@@ -74,7 +76,7 @@ module.exports = {
       privacyPolicy,
       { href: '/page/condiciones-de-uso', label: 'Condiciones de uso' },
       { href: '/page/terminos-y-condiciones-de-publicidad', label: 'Términos y condiciones de publicidad' },
-      { href: '/site-map', label: 'Mapa del sitio web' },
+      { href: '/site-map', label: 'Mapa del sitio' },
     ],
     topics: [...topics],
     more: [

@@ -1,6 +1,6 @@
 const gql = require('graphql-tag');
 
-module.exports = leadersAlias => gql`
+module.exports = (leadersAlias) => gql`
 fragment LeadersContentPageFragment on Content {
   id
   name
@@ -20,6 +20,7 @@ fragment LeadersContentPageFragment on Content {
       path
       canonicalUrl
     }
+    enableRmi
   }
   taxonomy(input: { type: Category }) {
     edges {
@@ -48,6 +49,10 @@ fragment LeadersContentPageFragment on Content {
   primaryImage {
     id
     src(input: { useCropRectangle: true, options: { auto: "format,compress", q: 70 } })
+    cropRectangle {
+      width
+      height
+    }
     alt
     caption
     credit
@@ -87,6 +92,7 @@ fragment LeadersContentPageFragment on Content {
   }
   ... on ContentVideo {
     embedCode
+    transcript
   }
   ... on ContentNews {
     source
@@ -103,9 +109,13 @@ fragment LeadersContentPageFragment on Content {
       label
     }
   }
+  ... on ContentPodcast {
+    transcript
+  }
   ... on ContentWebinar {
     linkUrl
     startDate
+    transcript
     sponsors {
       edges {
         node {

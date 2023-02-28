@@ -14,4 +14,21 @@ $leaders-header-bg-color: #32bbe8 !default;
 $leaders-primary-color-light: #003a6f;
 $leaders-accent-color: #8fb019;
 
-@import "../../node_modules/@pmmi-media-group/package-global/scss/core";
+@import "@pmmi-media-group/package-global/scss/core";
+
+
+.top250-header {
+  font-family: $skin-font-family-secondary;
+  &__sponsored-by {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: $font-weight-semibold;
+  }
+  &__logo {
+    .top250-logo-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

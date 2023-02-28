@@ -2,19 +2,20 @@
 @import "variables";
 
 // import theme css
-@import "../../node_modules/@parameter1/base-cms-marko-web-theme-monorail/scss/core";
+@import "@parameter1/base-cms-marko-web-theme-monorail/scss/core";
 
 // import theme magazine css
-@import "../../node_modules/@parameter1/base-cms-marko-web-theme-monorail-magazine/scss/index";
+@import "@parameter1/base-cms-marko-web-theme-monorail-magazine/scss/index";
 
 // import theme leaders css
-@import "../../node_modules/@pmmi-media-group/package-theme-monorail-leaders/scss/leaders";
+@import "@pmmi-media-group/package-theme-monorail-leaders/scss/leaders";
 
 // skin components
 @import "./components/content-card-list";
 @import "./components/leaders";
 @import "./components/native-x-list";
 @import "./components/native-x-announcement";
+@import "./components/webinars-feed";
 
 // @import "../components/magazine/scss/index";
 
@@ -191,6 +192,7 @@ label {
 }
 
 .ad-container {
+  &--inline-content#{&}--template-inline-content,
   &--inline-content#{&}--template-inline-content-desktop,
   &--inline-content#{&}--template-inline-content-mobile {
     min-height: 0;
@@ -202,25 +204,19 @@ label {
   }
   &--inline-content#{&}--template-inline-content-desktop {
     display: none;
-    margin-right: 0;
-    margin-left: 0;
-    background-color: #fff;
-    > *:first-child {
-      border-top: 3px solid $skin-ad-bg-color;
-      border-bottom: 3px solid $skin-ad-bg-color;
-    }
     @media (min-width: 780px) {
       display: block;
     }
   }
-  &--with-label {
-    > *:first-child {
-      &::before {
-        padding-bottom: 1rem;
-        font-size: 12px;
-        color: $gray-500;
-        text-transform: none;
-        content: "Advertisement";
+  &--inline-content#{&}--template-inline-content,
+  &--inline-content#{&}--template-inline-content-desktop {
+    @media (min-width: 780px) {
+      margin-right: 0;
+      margin-left: 0;
+      background-color: #fff;
+      > *:first-child {
+        border-top: 3px solid $skin-ad-bg-color;
+        border-bottom: 3px solid $skin-ad-bg-color;
       }
     }
   }
@@ -261,6 +257,11 @@ label {
       margin-bottom: 30px;
     }
   }
+  &--content-webinar {
+    .content-page-body {
+      max-width: none;
+    }
+  }
 }
 
 .site-header .search-sponsor__logo {
@@ -277,5 +278,17 @@ label {
         font-size: 14px;
       }
     }
+  }
+}
+
+.inquiry-form {
+  .node-list__header {
+    padding: 0;
+  }
+}
+
+@media (max-width: 100000px) {
+  .sticky-top {
+    top: 1rem;
   }
 }

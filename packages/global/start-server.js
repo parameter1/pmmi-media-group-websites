@@ -11,7 +11,6 @@ const components = require('./components');
 const fragments = require('./fragments');
 const sharedRoutes = require('./routes');
 const paginated = require('./middleware/paginated');
-const newsletterState = require('./middleware/newsletter-state');
 const redirectHandler = require('./redirect-handler');
 const oembedHandler = require('./oembed-handler');
 const idxRouteTemplates = require('./templates/user');
@@ -64,14 +63,6 @@ module.exports = (options = {}) => {
       // Use paginated middleware
       app.use(htmlSitemapPagination());
 
-      // Use newsletterState middleware
-      app.use(newsletterState());
-
-      // Setup IdentityX + Omeda
-      const omedaIdentityXConfig = getAsObject(options, 'siteConfig.omedaIdentityX');
-      omedaIdentityX(app, { ...omedaIdentityXConfig, idxRouteTemplates });
-      idxNavItems({ site: app.locals.site });
-
       // Setup GAM.
       const gamConfig = get(options, 'siteConfig.gam');
       set(app.locals, 'GAM', gamConfig);
@@ -82,11 +73,28 @@ module.exports = (options = {}) => {
 
       // i18n
       i18n(app, options.i18n);
+      // Set omedaConfig to local
+      const omedaConfig = getAsObject(options, 'siteConfig.omeda');
+      set(app.locals, 'omedaConfig', omedaConfig);
+
+      // Add IdentityX logoutHook to remove omeda_promo_code cookie
+      const identityX = getAsObject(options, 'siteConfig.identityX');
+
+      const { promoCodeCookieName } = omedaConfig;
+      identityX.addHook({
+        name: 'onLogout',
+        fn: ({ res }) => res.clearCookie(promoCodeCookieName),
+      });
+
+      // Setup IdentityX + Omeda
+      const omedaIdentityXConfig = getAsObject(options, 'siteConfig.omedaIdentityX');
+      omedaIdentityX(app, { ...omedaIdentityXConfig, idxRouteTemplates });
+      idxNavItems({ site: app.locals.site, i18n: app.locals.i18n });
 
       // Recaptcha
       set(app.locals, 'recaptcha', recaptcha);
     },
-    onAsyncBlockError: e => newrelic.noticeError(e),
+    onAsyncBlockError: (e) => newrelic.noticeError(e),
 
     redirectHandler,
 

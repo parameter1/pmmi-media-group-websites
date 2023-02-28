@@ -19,7 +19,7 @@ $ const perPage = 18;
 $ const type = "scheduled-content";
 $ const description = defaultDescription(title, config);
 
-<theme-default-page name=title>
+<theme-default-page title=title description=description>
   <@head>
     <theme-section-feed-block|{ totalCount }| with-section=false query-name=queryName count-only=true>
       <@query-params include-content-types=includeContentTypes />
@@ -48,9 +48,9 @@ $ const description = defaultDescription(title, config);
       <@section>
         <div class="row">
           <div class="col">
-            <default-theme-breadcrumbs-with-home>
+            <theme-breadcrumbs-with-home>
               <@item>${i18n(title)}</@item>
-            </default-theme-breadcrumbs-with-home>
+            </theme-breadcrumbs-with-home>
             <h1 class="page-wrapper__title">${i18n(title)}</h1>
             <div class="page-wrapper__deck">${i18n(description)}</div>
           </div>

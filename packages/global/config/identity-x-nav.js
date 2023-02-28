@@ -1,6 +1,6 @@
 const { isArray } = Array;
 
-module.exports = ({ site }) => {
+module.exports = ({ site, i18n }) => {
   const idxConfig = site.get('identityX');
 
   const enabled = site.get('idxNavItems.enable');
@@ -12,7 +12,7 @@ module.exports = ({ site }) => {
   const navConfig = [
     {
       href: idxConfig.getEndpointFor('login'),
-      label: 'Sign In',
+      label: `${i18n('Sign In')}`,
       when: 'logged-out',
       modifiers: ['user'],
     },

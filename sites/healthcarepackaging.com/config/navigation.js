@@ -3,7 +3,6 @@ const subscribe = require('./subscribe');
 
 const topics = [
   { href: '/machinery-materials', label: 'Machinery & Materials' },
-  { href: '/markets', label: 'Markets' },
   { href: '/logistics-distribution', label: 'Logistics & Cold Chain' },
 ];
 
@@ -29,6 +28,7 @@ const mobileMenu = {
     { href: '/podcasts', label: 'Podcasts' },
     { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
     { href: '/webinars', label: 'Webinars' },
+    { href: '/supplier-news', label: 'Supplier News' },
     // { href: '/page/digital-editions', label: 'Digital,
   ],
 };
@@ -57,6 +57,8 @@ const desktopMenu = {
       { href: '/podcasts', label: 'Podcasts' },
       { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
       { href: '/webinars', label: 'Webinars' },
+      { href: '/supplier-news', label: 'Supplier News' },
+      { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
       // { href: '/page/digital-editions', label: 'Digital
     ],
   },
@@ -73,7 +75,7 @@ module.exports = {
       subscribe,
       ...topics,
       { href: '/leaders', label: 'Suppliers' },
-
+      { href: '/downloads', label: 'Downloads' },
     ],
   },
   tertiary: {

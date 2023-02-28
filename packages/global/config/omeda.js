@@ -5,7 +5,10 @@ module.exports = ({
   inputId = process.env.OMEDA_INPUT_ID,
   graphqlUri = 'https://graphql.omeda.parameter1.com/',
   rapidIdentification = { productId: 352 },
-  promoCodeCookieName,
+  olytics = {
+    oid: '8f4e4496f62c4648a7378595464d6079',
+  },
+  promoCodeCookieName = 'omeda_promo_code',
   promoCodeDefault,
 } = {}) => ({
   clientKey,
@@ -14,6 +17,7 @@ module.exports = ({
   inputId,
   graphqlUri,
   rapidIdentification,
+  olytics,
   promoCodeCookieName,
   promoCodeDefault,
 });

@@ -1,5 +1,7 @@
 <template>
-  <component :is="tag" v-if="canDisplay" v-html="value" />
+  <component :is="tag" v-if="canDisplay">
+    <div v-html="value" />
+  </component>
 </template>
 
 <script>

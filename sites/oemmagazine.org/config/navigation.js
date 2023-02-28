@@ -16,6 +16,7 @@ const resources = [
   { href: '/videos', label: 'Videos' },
   { href: '/podcasts', label: 'Podcasts' },
   { href: '/supplier-news', label: 'Supplier News' },
+  { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
 ];
 
 const utilities = [
@@ -64,6 +65,7 @@ module.exports = {
       subscribe,
       ...topics,
       { href: '/leaders', label: 'Partner Leaders' },
+      { href: '/downloads', label: 'Downloads' },
     ],
   },
   tertiary: {

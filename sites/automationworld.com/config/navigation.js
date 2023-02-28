@@ -29,6 +29,7 @@ const mobileMenu = {
     { href: '/videos', label: 'Videos' },
     { href: '/podcasts', label: 'Podcasts' },
     { href: '/webinars', label: 'Webinars' },
+    { href: '/supplier-news', label: 'Supplier News' },
     ...utilities,
   ],
 };
@@ -50,6 +51,7 @@ const desktopMenu = {
       { href: '/videos', label: 'Videos' },
       { href: '/podcasts', label: 'Podcasts' },
       { href: '/webinars', label: 'Webinars' },
+      { href: '/supplier-news', label: 'Supplier News' },
     ],
   },
 };
