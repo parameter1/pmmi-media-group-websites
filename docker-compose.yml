@@ -3,7 +3,7 @@ version: '3.7'
 x-node-defaults: &node
   tty: true
   init: true
-  image: node:10.24
+  image: node:14.21
   entrypoint: ["node"]
   working_dir: /root
   restart: always
@@ -22,7 +22,6 @@ x-env-defaults: &env
   OMEDA_INPUT_ID: ${OMEDA_INPUT_ID-(unset)}
   BASE_BROWSE_GRAPHQL_URI: ${BASE_BROWSE_GRAPHQL_URI-https://base-browse.tauron.base.parameter1.com/graphql}
   GLOBAL_50_250_DOCS_API_KEY: ${GLOBAL_50_250_DOCS_API_KEY-(unset)}
-  # @todo the sendgrid values should be removed once the @parameter1/base-cms-mailer service is created.
   SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
   SENDGRID_DEV_TO: ${SENDGRID_DEV_TO-support@parameter1.com}
   YARN_CACHE_FOLDER: /.yarn-cache
@@ -49,8 +48,8 @@ x-env-development: &env-development
 
 x-site-command: &site-cmd
   <<: *node
-  entrypoint: ["node_modules/.bin/basecms-website"]
-  command: ["dev", "index.js"]
+  entrypoint: ["yarn"]
+  command: ["dev"]
 
 volumes:
   yarn-cache: {}
@@ -79,8 +78,6 @@ services:
       PORT: 80
       EXPOSED_PORT: 9709
       LIVERELOAD_PORT: 19709
-      TENANT_KEY: pmmi_all
-      SITE_ID: 5d88cecaf175132c008b4567
       OMEDA_INPUT_ID: ${AW_OMEDA_INPUT_ID-(unset)}
     hostname: www-pmmimediagroup-aw.dev.parameter1.com
     ports:
@@ -96,8 +93,6 @@ services:
       PORT: 80
       EXPOSED_PORT: 9711
       LIVERELOAD_PORT: 19711
-      TENANT_KEY: pmmi_all
-      SITE_ID: 5d88cedef175132c008b456b
       OMEDA_INPUT_ID: ${PW_OMEDA_INPUT_ID-(unset)}
     hostname: www-pmmimediagroup-pw.dev.parameter1.com
     ports:
@@ -113,8 +108,6 @@ services:
       PORT: 80
       EXPOSED_PORT: 9712
       LIVERELOAD_PORT: 19712
-      TENANT_KEY: pmmi_all
-      SITE_ID: 5d88cef7f175132c008b456f
       OMEDA_INPUT_ID: ${HCP_OMEDA_INPUT_ID-(unset)}
     hostname: www-pmmimediagroup-hcp.dev.parameter1.com
     ports:
@@ -130,8 +123,6 @@ services:
       PORT: 80
       EXPOSED_PORT: 9713
       LIVERELOAD_PORT: 19713
-      TENANT_KEY: pmmi_all
-      SITE_ID: 5d88cf1af175132c008b4577
       OMEDA_INPUT_ID: ${PFW_OMEDA_INPUT_ID-(unset)}
     hostname: www-pmmimediagroup-pfw.dev.parameter1.com
     ports:
@@ -147,8 +138,6 @@ services:
       PORT: 80
       EXPOSED_PORT: 9714
       LIVERELOAD_PORT: 19714
-      TENANT_KEY: pmmi_all
-      SITE_ID: 5d88cf05f175132c008b4573
       OMEDA_INPUT_ID: ${OEM_OMEDA_INPUT_ID-(unset)}
     hostname: www-pmmimediagroup-oem.dev.parameter1.com
     ports:
@@ -164,8 +153,6 @@ services:
       PORT: 80
       EXPOSED_PORT: 9716
       LIVERELOAD_PORT: 19716
-      TENANT_KEY: pmmi_mundo
-      SITE_ID: 5d0a748572c1aa35008b4567
       OMEDA_INPUT_ID: ${MUNDO_OMEDA_INPUT_ID-(unset)}
     hostname: www-pmmimediagroup-mundo.dev.parameter1.com
     ports:

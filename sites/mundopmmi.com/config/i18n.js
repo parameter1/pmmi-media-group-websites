@@ -30,6 +30,8 @@ module.exports = {
   'featured products': 'Productos presentados',
   downloads: 'Recursos Digitales',
   'the latest downloads from mundo pmmi': 'Las últimas descargas de Mundo PMMI',
+  'the latest eventos from mundo pmmi': 'Los últimos eventos de mundo PMMI',
+  'the latest videos from mundo pmmi': 'Los últimos videos de mundo PMMI',
   'previous page': 'Pagina Anterior',
   page: 'Pagina',
   of: 'de',
