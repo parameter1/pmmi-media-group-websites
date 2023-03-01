@@ -15,6 +15,10 @@ $ const displayComments = false; // ["contact"].includes(type) ? false : true;
 $ const displayNewsletterSignup = ["contact"].includes(type) ? false : true;
 $ const continueLabel = i18n("Sign Me Up!");
 $ const loginEmailLabel = i18n("Work Email");
+$ const gateTitle = i18n("Log in to view the full article")
+$ const gateButtonLabels = { continue: i18n("Continue") };
+$ const gateEmailLabel = i18n("Email Address");
+$ const actionText = i18n("signing up to receive your email notifications");
 $ const buttonLabels = { continue: continueLabel };
 $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release", "product", "video"].includes(type);
 
@@ -88,6 +92,10 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                   requires-access-level=context.requiresAccessLevel
                   requires-user-input=context.requiresUserInput
                   messages=context.messages
+                  button-labels=gateButtonLabels
+                  login-email-label=gateEmailLabel
+                  title=gateTitle
+                  action-text=actionText
                 />
               </if>
               <else>
@@ -209,6 +217,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                         login-email-label=loginEmailLabel
                         login-email-placeholder="example@yourcompany.com"
                         type="inlineContent"
+                        action-text=actionText
                       />
                     </if>
                   </marko-web-identity-x-context>

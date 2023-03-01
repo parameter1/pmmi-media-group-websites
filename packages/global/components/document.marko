@@ -105,6 +105,7 @@ $ const buttonLabels = { continue: continueLabel };
           buttonLabels,
           loginEmailLabel,
           loginEmailPlaceholder: 'example@yourcompany.com',
+          actionText: i18n("signing up to receive your email notifications")
         }
       />
       <global-site-menu has-user=hasUser reg-enabled=isEnabled />
@@ -114,7 +115,13 @@ $ const buttonLabels = { continue: continueLabel };
   </@above-container>
   <@below-container>
     <${input.belowContainer} />
-    <theme-site-footer newsletter-block-props={ buttonLabels, loginEmailLabel, loginEmailPlaceholder: 'example@yourcompany.com' } />
+    <theme-site-footer
+      newsletter-block-props={
+        buttonLabels,
+        loginEmailLabel,
+        loginEmailPlaceholder: 'example@yourcompany.com',
+        actionText: i18n("signing up to receive your email notifications") }
+    />
   </@below-container>
   <@below-wrapper>
     <marko-web-deferred-script-loader-load />

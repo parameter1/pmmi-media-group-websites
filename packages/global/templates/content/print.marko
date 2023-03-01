@@ -4,7 +4,7 @@ import imageHeight from "@parameter1/base-cms-marko-web/components/node/utils/im
 import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/utils/get-content-preview";
 
 $ const { id, type, pageNode } = data;
-$ const { site, config, req } = out.global;
+$ const { site, config, req, i18n } = out.global;
 
 $ const requiresRegistration = true;
 $ const cardBlock = "content-page-card";
@@ -118,8 +118,9 @@ $ const displayPublishedDate = ["event", "webinar", "contact", "company"].includ
                 has-required-access-level=context.hasRequiredAccessLevel
                 requires-access-level=context.requiresAccessLevel
                 requires-user-input=context.requiresUserInput
-                title="Login to print the full article."
-                user-input-title="Complete your profile to print the full article"
+                title=i18n("Login to print the full article.")
+                user-input-title=i18n("Complete your profile to print the full article")
+                action-text=i18n("signing up to receive your email notifications")
               />
             </if>
             <else>
