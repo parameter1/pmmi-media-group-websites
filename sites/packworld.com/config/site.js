@@ -96,5 +96,6 @@ module.exports = {
   linkOffsite: {
     webinar: 'linkUrl',
     event: 'website',
+    target: '_blank',
   },
 };
