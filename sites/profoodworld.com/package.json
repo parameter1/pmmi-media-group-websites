@@ -46,7 +46,7 @@
     "@parameter1/base-cms-marko-web-theme-monorail-magazine": "^4.5.12",
     "@parameter1/base-cms-object-path": "^4.5.12",
     "@parameter1/base-cms-utils": "^4.5.12",
-    "@parameter1/base-cms-web-cli": "^4.6.0",
+    "@parameter1/base-cms-web-cli": "^4.8.1",
     "@pmmi-media-group/package-global": "^3.8.16",
     "@pmmi-media-group/package-theme-monorail-leaders": "^3.8.16",
     "graphql": "^14.5.4",

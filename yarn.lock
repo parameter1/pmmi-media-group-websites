@@ -1319,10 +1319,10 @@
   resolved "https://registry.yarnpkg.com/@parameter1/base-cms-utils/-/base-cms-utils-4.5.12.tgz#039e60bf20c3deb285141b3756064f717b427a0c"
   integrity sha512-pEgxO6MAwtL4zUx31oc47sJYXOJG6xyr/RQpmfjedRLxwldz3AH8d6JZCpOSVSsUGPhWJDddDszfvI2suTDqMg==
 
-"@parameter1/base-cms-web-cli@^4.6.0":
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-web-cli/-/base-cms-web-cli-4.6.0.tgz#aa4b049144438bbd593bc1a5b4c9fc5697635553"
-  integrity sha512-swxXncZX6msA1fROcAQcgItHtvAs+ldiQ2ZL/8zUqz1kr3Wddhrn19MmeHSt7u6etp/nuDjN7J+t4q6hYmDkbw==
+"@parameter1/base-cms-web-cli@^4.8.1":
+  version "4.8.1"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-web-cli/-/base-cms-web-cli-4.8.1.tgz#215ac8228493adbeee4cfeaa00f395510b210aa3"
+  integrity sha512-BRG0zA7BhubKcZT/HFW3xfv3DS/eGjL4xH3e01/C3bqJmYoq9d04h4i0OWZCBcXehDkh3iZr0gkfquMie7Wjfg==
   dependencies:
     "@fullhuman/postcss-purgecss" "^5.0.0"
     "@parameter1/base-cms-marko-compiler" "^4.5.12"
