@@ -6,7 +6,7 @@ const queryFragment = require('../graphql/fragments/content-for-section');
 
 module.exports = (app) => {
   app.use('/__content-for-section', asyncRoute(async (req, res) => {
-    const sectionId = parseInt(req.query.sectionId, 0);
+    const sectionId = parseInt(req.query.sectionId, 10);
     const { apollo } = res.locals;
     const response = await loader(
       {

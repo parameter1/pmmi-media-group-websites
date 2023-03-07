@@ -21,7 +21,7 @@ $leaders-accent-color: #d557af;
 $theme-site-navbar-logo-height: 45px;
 $theme-site-navbar-logo-height-sm: 30px;
 
-@import "../../node_modules/@pmmi-media-group/package-global/scss/core";
+@import "@pmmi-media-group/package-global/scss/core";
 
 .page-attribution {
   &__content-authors {

@@ -188,7 +188,7 @@ export default {
       }, {
         sectionId: this.sectionId,
         sectionName: this.title,
-        items: items.map(item => ({ id: item.id, name: item.name })),
+        items: items.map((item) => ({ id: item.id, name: item.name })),
       });
     },
 
