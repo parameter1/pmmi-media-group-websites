@@ -91,4 +91,9 @@ module.exports = {
     sendFrom: 'ProFood World <noreply@parameter1.com>',
     logo: 'https://img.profoodworld.com/files/base/pmmi/pfw/pfw_logo.png?h=45&auto=format,compress',
   },
+  linkOffsite: {
+    webinar: 'linkUrl',
+    event: 'website',
+    target: '_blank',
+  },
 };
