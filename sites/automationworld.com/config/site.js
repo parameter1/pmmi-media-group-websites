@@ -96,4 +96,9 @@ module.exports = {
     sendFrom: 'Automation World <noreply@parameter1.com>',
     logo: 'https://img.automationworld.com/files/base/pmmi/aw/aw_logo.png?h=45&auto=format,compress',
   },
+  linkOffsite: {
+    webinar: 'linkUrl',
+    event: 'website',
+    target: '_blank',
+  },
 };

@@ -98,4 +98,9 @@ module.exports = {
   productsParams: { alias: 'noticias-de-los-proveedores' },
   completeYourProfileVerbiage: 'Completa tu perfil de Mundo PMMI',
   profileSubmitButtonLabel: 'Enviar',
+  linkOffsite: {
+    webinar: 'linkUrl',
+    event: 'website',
+    target: '_blank',
+  },
 };
