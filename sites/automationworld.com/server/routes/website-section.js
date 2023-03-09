@@ -2,6 +2,7 @@ const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middlewar
 const queryFragment = require('@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/website-section-page');
 const leadersFragment = require('@pmmi-media-group/package-theme-monorail-leaders/graphql/fragments/leaders-section');
 const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');
+const events = require('@pmmi-media-group/package-global/templates/website-section/events');
 const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');
 
 const section = require('../templates/website-section');
@@ -9,6 +10,10 @@ const leaders = require('../templates/website-section/leaders');
 const podcasts = require('../templates/website-section/podcasts');
 
 module.exports = (app) => {
+  app.get('/:alias(events)', withWebsiteSection({
+    template: events,
+    queryFragment,
+  }));
   app.get('/:alias(webinars)', withWebsiteSection({
     template: webinars,
     queryFragment,

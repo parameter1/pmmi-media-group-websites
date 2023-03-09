@@ -13,6 +13,9 @@
       "required": true
     }
   },
+  "<global-pmg-events-block>": {
+    "template": "./pmg-events.marko"
+  },
   "<global-native-x-announcement-block>": {
     "template": "./native-x-announcement.marko"
   },
