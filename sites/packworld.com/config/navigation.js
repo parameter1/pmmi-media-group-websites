@@ -9,7 +9,7 @@ const topics = [
 
 const resources = [
   { href: '/page/contract-packaging-magazine', label: 'Contract Manufacturing and Packaging' },
-  { href: '/page/pw-event-calendar', label: 'Events' },
+  { href: '/events', label: 'Events' },
   { href: '/downloads', label: 'Downloads' },
   { href: '/page/pw-newsletters', label: 'Newsletters' },
   { href: '/page/magazine', label: 'Magazine' },
