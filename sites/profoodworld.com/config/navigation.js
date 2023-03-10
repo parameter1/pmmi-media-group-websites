@@ -7,7 +7,7 @@ const topics = [
 ];
 
 const resources = [
-  { href: '/page/pfw-event-calendar', label: 'Events' },
+  { href: '/events', label: 'Events' },
   { href: '/downloads', label: 'Downloads' },
   { href: '/page/pfw-newsletter', label: 'Newsletters' },
   { href: '/page/magazine', label: 'Magazine' },

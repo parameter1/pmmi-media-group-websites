@@ -8,7 +8,7 @@ const topics = [
 ];
 
 const resources = [
-  { href: '/page/oem-event-calendar', label: 'Events' },
+  { href: '/events', label: 'Events' },
   { href: '/downloads', label: 'Downloads' },
   { href: '/page/oem-newsletter', label: 'Newsletters', target: '_blank' },
   { href: '/page/magazine', label: 'Magazine' },

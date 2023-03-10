@@ -23,7 +23,7 @@ const mobileMenu = {
   ],
   secondary: [
     subscribe,
-    { href: '/page/aw-event-calendar', label: 'Events' },
+    { href: '/events', label: 'Events' },
     { href: '/page/aw-newsletters', label: 'Newsletters' },
     { href: '/page/magazine', label: 'Magazine' },
     { href: '/videos', label: 'Videos' },
