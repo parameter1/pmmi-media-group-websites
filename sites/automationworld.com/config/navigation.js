@@ -43,7 +43,7 @@ const desktopMenu = {
   middleCol: { items: [...topics] },
   rightCol: {
     items: [
-      { href: '/page/aw-event-calendar', label: 'Events' },
+      { href: '/events', label: 'Events' },
       { href: '/downloads', label: 'Downloads' },
       { href: '/page/aw-newsletters', label: 'Newsletters' },
       { href: '/page/magazine', label: 'Magazine' },

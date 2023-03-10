@@ -48,7 +48,7 @@ const desktopMenu = {
   },
   rightCol: {
     items: [
-      { href: '/page/hcp-event-calendar', label: 'Events' },
+      { href: '/events', label: 'Events' },
       { href: '/downloads', label: 'Downloads' },
       { href: '/page/hcp-newsletters', label: 'Newsletters' },
       { href: '/page/magazine', label: 'Magazine' },

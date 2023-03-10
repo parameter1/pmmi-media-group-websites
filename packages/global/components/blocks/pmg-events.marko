@@ -1,4 +1,4 @@
-$ const { i18n } = out.global;
+$ const { i18n, config } = out.global;
 
 $ const { queryParams } = input;
 
@@ -11,7 +11,7 @@ $ const { queryParams } = input;
 
     <marko-web-block name="top-stories" modifiers=["pmg-events"] attrs={ role: "region", "aria-label": `${i18n("PMG Events")}` }>
       <marko-web-element block-name="top-stories" name="header">
-        ${i18n("PMG Events")}
+        ${config.siteName()} ${i18n("Events")}
       </marko-web-element>
 
       <marko-web-element block-name="top-stories" name="row">
