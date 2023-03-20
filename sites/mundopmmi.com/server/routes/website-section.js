@@ -9,7 +9,7 @@ const section = require('../templates/website-section');
 const leaders = require('../templates/website-section/leaders');
 
 module.exports = (app) => {
-  app.get('/:alias(events)', withWebsiteSection({
+  app.get('/:alias(eventos)', withWebsiteSection({
     template: events,
     queryFragment,
   }));
