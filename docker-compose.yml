@@ -69,21 +69,6 @@ services:
     environment:
       <<: *env
 
-  aw:
-    <<: *site-cmd
-    working_dir: /root/sites/automationworld.com
-    environment:
-      <<: *env-tauron
-      HOST: www-pmmimediagroup-aw.dev.parameter1.com
-      PORT: 80
-      EXPOSED_PORT: 9709
-      LIVERELOAD_PORT: 19709
-      OMEDA_INPUT_ID: ${AW_OMEDA_INPUT_ID-(unset)}
-    hostname: www-pmmimediagroup-aw.dev.parameter1.com
-    ports:
-      - "9709:80"
-      - "19709:19709"
-
   pw:
     <<: *site-cmd
     working_dir: /root/sites/packworld.com
