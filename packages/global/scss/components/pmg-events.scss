@@ -16,3 +16,11 @@
     }
   }
 }
+
+.pmg-events {
+  &__wrapper {
+    &:empty {
+      display: none;
+    }
+  }
+}
