@@ -1,4 +1,5 @@
-.top-stories--pmg-events {
+.top-stories--pmg-events,
+.pmg-events__wrapper{
   margin-right: $marko-web-page-wrapper-padding * -1;
   margin-left: $marko-web-page-wrapper-padding * -1;
   margin-bottom: map-get($spacers, block);
