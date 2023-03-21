@@ -6,7 +6,12 @@ import queryFragment from "../../../graphql/fragments/pmg-events";
 $ const { id, alias, name, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
 
-$ const { site, pagination: p, i18n } = out.global;
+$ const {
+  site,
+  pagination: p,
+  i18n,
+  config,
+} = out.global;
 $ const continueLabel = i18n("Sign Me Up!");
 $ const loginEmailLabel = i18n("Work Email");
 $ const buttonLabels = { continue: continueLabel };
@@ -71,20 +76,28 @@ $ const countQueryParams = {
       modifiers=["inter-block"]
     />
   </@section>
-
-  <@section|{ blockName, section, aliases }|>
-    <if(input.beforeName)>
+  <if(input.beforeName)>
+    <@section|{ blockName, section, aliases }|>
       <${input.beforeName}
         aliases=aliases
         block-name=blockName
         section=section
       />
-    </if>
-  </@section>
+    </@section>
+  </if>
 
   <@section|{ blockName, section, aliases }| modifiers=["events"]>
     <if(p.page === 1)>
-      <global-pmg-events-block query-params=pmgQueryParams />
+      <marko-web-element block-name="pmg-events" name="wrapper">
+        <theme-section-feed-block alias=alias lazyload=false>
+          <@before>
+            <marko-web-element class="page-wrapper__website-section-name" block-name="pmg-events" name="header">
+              ${config.siteName()} ${i18n("Events")}
+            </marko-web-element>
+          </@before>
+          <@query-params ...pmgQueryParams />
+        </theme-section-feed-block>
+      </marko-web-element>
     </if>
 
     <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj=section>
