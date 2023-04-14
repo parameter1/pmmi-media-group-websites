@@ -37,6 +37,7 @@ $ const { id, type, pageNode, ...rest } = input;
     <div class="row">
       <div class="col-lg-7">
         <div class="content-page-body">
+          <global-supplier-submitted-block labels=content.labels />
           <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
 
             $ const bodyId = `content-body-${content.id}`;

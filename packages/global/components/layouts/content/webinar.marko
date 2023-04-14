@@ -50,6 +50,7 @@ $ const actionText = i18n("signing up to receive your email notifications");
   <@section|{ aliases, content }| modifiers=["content-body"]>
     $ const { primarySection } = content;
     <div class="content-page-body">
+      <global-supplier-submitted-block labels=content.labels />
       <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
         $ const requiresRegistration = (get(content, "userRegistration.isCurrentlyRequired") || contentGatingHandler({ content, req }));
         $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");

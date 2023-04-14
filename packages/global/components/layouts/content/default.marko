@@ -68,6 +68,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
     <div class="row">
       <div class="col-lg-8">
         <div class="content-page-body">
+          <global-supplier-submitted-block labels=content.labels />
           <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
             $ const requiresRegistration = (get(content, "userRegistration.isCurrentlyRequired") || contentGatingHandler({ content, req }));
             $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
