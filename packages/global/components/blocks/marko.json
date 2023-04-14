@@ -24,5 +24,9 @@
   },
   "<global-promo-card-rotation-block>": {
     "template": "./promo-card-rotation.marko"
+  },
+  "<global-supplier-submitted-block>": {
+    "template": "./supplier-submitted.marko",
+    "@labels": "array"
   }
 }
