@@ -99,4 +99,5 @@ module.exports = {
     event: 'website',
     target: '_blank',
   },
+  enableNewSearch: true,
 };
