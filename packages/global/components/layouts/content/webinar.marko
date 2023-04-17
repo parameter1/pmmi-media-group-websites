@@ -50,7 +50,6 @@ $ const actionText = i18n("signing up to receive your email notifications");
   <@section|{ aliases, content }| modifiers=["content-body"]>
     $ const { primarySection } = content;
     <div class="content-page-body">
-      <global-supplier-submitted-block labels=content.labels />
       <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
         $ const requiresRegistration = (get(content, "userRegistration.isCurrentlyRequired") || contentGatingHandler({ content, req }));
         $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
@@ -60,6 +59,7 @@ $ const actionText = i18n("signing up to receive your email notifications");
         >
           <if(!context.canAccess || context.requiresUserInput)>
             $ const body = getContentPreview({ body: content.body, selector: "p:lt(3)" });
+            <global-supplier-submitted-block labels=content.labels />
             <marko-web-content-body block-name=blockName obj={ body } />
 
             <div class="content-page-preview-overlay" />
@@ -79,6 +79,7 @@ $ const actionText = i18n("signing up to receive your email notifications");
 
             $ const bodyId = `content-body-${content.id}`;
 
+            <global-supplier-submitted-block labels=content.labels />
             <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
 
             <!-- needs input -->
