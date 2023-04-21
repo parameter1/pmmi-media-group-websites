@@ -96,5 +96,4 @@ module.exports = {
     event: 'website',
     target: '_blank',
   },
-  useAutocomplete: true,
 };

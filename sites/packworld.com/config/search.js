@@ -11,4 +11,5 @@ module.exports = {
     70845,
     63699,
   ],
+  useAutocomplete: true,
 };
