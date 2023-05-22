@@ -13,6 +13,9 @@
       "required": true
     }
   },
+  "<global-pmg-events-block>": {
+    "template": "./pmg-events.marko"
+  },
   "<global-native-x-announcement-block>": {
     "template": "./native-x-announcement.marko"
   },
@@ -21,5 +24,9 @@
   },
   "<global-promo-card-rotation-block>": {
     "template": "./promo-card-rotation.marko"
+  },
+  "<global-supplier-submitted-block>": {
+    "template": "./supplier-submitted.marko",
+    "@labels": "array"
   }
 }

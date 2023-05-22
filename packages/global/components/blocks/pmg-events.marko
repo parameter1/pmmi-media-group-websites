@@ -1,0 +1,126 @@
+$ const { i18n, config } = out.global;
+
+$ const { queryParams } = input;
+
+<marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+  <if(nodes.length)>
+    $ const heroNode = { ...nodes.slice(0, 1)[0], link: { field: "website", target: "_blank" } };
+    $ const heroHref = heroNode.website || heroNode.siteContext.path;
+    $ const heroLink = { href: heroHref, target: "_blank" };
+    $ const cardNodes = nodes.slice(1);
+
+    <marko-web-block name="top-stories" modifiers=["pmg-events"] attrs={ role: "region", "aria-label": `${i18n("PMG Events")}` }>
+      <marko-web-element block-name="top-stories" name="header">
+        ${config.siteName()} ${i18n("Events")}
+      </marko-web-element>
+
+      <marko-web-element block-name="top-stories" name="row">
+        <marko-web-element block-name="top-stories" name="col" modifiers=["hero"]>
+          <marko-web-node
+            type="event-content"
+            image-position="top"
+            card=true
+            flush=true
+            full-height=false
+            modifiers=["top-stories-hero-image"]
+          >
+            <@image
+              width=600
+              align="top"
+              use-placeholder=false
+              fluid=true
+              ar="3:2"
+              src=heroNode.primaryImage.src
+              alt=heroNode.primaryImage.alt
+              is-logo=heroNode.primaryImage.isLogo
+              link=heroLink
+            />
+          </marko-web-node>
+        </marko-web-element>
+        <marko-web-element block-name="top-stories" name="col" modifiers=["list"]>
+          <marko-web-node
+            type="event-content"
+            card=true
+            flush=true
+            full-height=true
+            modifiers=["top-stories-hero"]
+          >
+            <@body>
+              <@title tag="h5" ...input.title>
+                <marko-web-content-short-name tag=null obj=heroNode link=heroLink />
+              </@title>
+              <@text|{ blockName }|
+                modifiers=["event-details"]
+                show=(Boolean(heroNode.startDate || heroNode.endDate))
+              >
+                <if(heroNode.startDate || heroNode.endDate)>
+                  <div class=`${blockName}__content-event-dates`>
+                    <marko-web-content-start-date tag="span" block-name=blockName obj=heroNode />
+                    <marko-web-content-end-date tag="span" block-name=blockName obj=heroNode />
+                  </div>
+                </if>
+              </@text>
+              <@text
+                modifiers=["teaser"]
+                show=heroNode.teaser
+              >
+                <marko-web-content-teaser tag=null obj=heroNode link=heroLink />
+              </@text>
+            </@body>
+          </marko-web-node>
+        </marko-web-element>
+      </marko-web-element>
+
+      <if(cardNodes.length)>
+        <theme-card-deck-flow cols=4 nodes=cardNodes modifiers=["top-stories"]>
+          <@slot|{ node }|>
+            $ const href = node.website || node.siteContext.path;
+            $ const nodeLink = { href: href,  target: "_blank" };
+            <marko-web-node
+              type="event-content"
+              image-position="top"
+              card=true
+              flush=true
+              full-height=true
+              modifiers=["top-stories-card"]
+            >
+              <@image
+                width=250
+                align="top"
+                use-placeholder=false
+                fluid=true
+                ar="3:2"
+                src=node.primaryImage.src
+                alt=node.primaryImage.alt
+                is-logo=node.primaryImage.isLogo
+                link=nodeLink
+              />
+              <@body>
+                <@title tag="h5" ...input.title>
+                  <marko-web-content-short-name tag=null obj=node link=nodeLink />
+                </@title>
+                <@text|{ blockName }|
+                  modifiers=["event-details"]
+                  show=(Boolean(node.startDate || node.endDate))
+                >
+                  <if(node.startDate || node.endDate)>
+                    <div class=`${blockName}__content-event-dates`>
+                      <marko-web-content-start-date tag="span" block-name=blockName obj=node />
+                      <marko-web-content-end-date tag="span" block-name=blockName obj=node />
+                    </div>
+                  </if>
+                </@text>
+                <@text
+                  modifiers=["teaser"]
+                  show=node.teaser
+                >
+                  <marko-web-content-teaser tag=null obj=node link=nodeLink />
+                </@text>
+              </@body>
+            </marko-web-node>
+          </@slot>
+        </theme-card-deck-flow>
+      </if>
+    </marko-web-block>
+  </if>
+</marko-web-query>
