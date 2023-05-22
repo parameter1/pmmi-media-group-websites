@@ -1,6 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap");
-$skin-font-family-primary: "Open Sans", sans-serif !default;
-$skin-font-family-secondary: "Open Sans", sans-serif !default;
+@import "@parameter1/base-cms-marko-web/scss/fonts/open-sans-fallback";
+
+$skin-font-family-primary: "Open Sans", open-sans-fallback, sans-serif !default;
+$skin-font-family-secondary: "Open Sans", open-sans-fallback, sans-serif !default;
 
 $theme-site-navbar-logo-height: 30px !default;
 $theme-site-navbar-logo-height-sm: 30px !default;
