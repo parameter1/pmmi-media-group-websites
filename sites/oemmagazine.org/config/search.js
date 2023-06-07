@@ -9,4 +9,5 @@ module.exports = {
     63700,
     33367,
   ],
+  type: 'MATCH_PHRASE',
 };
