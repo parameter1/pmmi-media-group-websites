@@ -7,4 +7,5 @@ module.exports = {
     32561,
     32562,
   ],
+  type: 'MATCH_PHRASE',
 };
