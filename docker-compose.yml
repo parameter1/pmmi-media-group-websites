@@ -23,12 +23,12 @@ x-env-defaults: &env
   OMEDA_INPUT_ID: ${OMEDA_INPUT_ID-(unset)}
   BASE_BROWSE_GRAPHQL_URI: ${BASE_BROWSE_GRAPHQL_URI-https://base-browse.tauron.base.parameter1.com/graphql}
   GLOBAL_50_250_DOCS_API_KEY: ${GLOBAL_50_250_DOCS_API_KEY-(unset)}
-  # SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
-  # SENDGRID_DEV_TO: ${SENDGRID_DEV_TO-support@parameter1.com}
+  SENDGRID_API_KEY: ${SENDGRID_API_KEY-(unset)}
+  SENDGRID_DEV_TO: ${SENDGRID_DEV_TO-support@parameter1.com}
   YARN_CACHE_FOLDER: /.yarn-cache
   ENABLE_IDENTITY_X: ${ENABLE_IDENTITY_X-1}
-  # RECAPTCHA_V3_SITE_KEY: ${RECAPTCHA_V3_SITE_KEY-(unset)}
-  # RECAPTCHA_V3_SECRET_KEY: ${RECAPTCHA_V3_SECRET_KEY-(unset)}
+  RECAPTCHA_V3_SITE_KEY: ${RECAPTCHA_V3_SITE_KEY-(unset)}
+  RECAPTCHA_V3_SECRET_KEY: ${RECAPTCHA_V3_SECRET_KEY-(unset)}
   CONTENT_GATING_HANDLER_ENABLED: ${CONTENT_GATING_HANDLER_ENABLED-false}
   DISABLE_IDX_NEWSLETTER_SIGNUP: ${DISABLE_IDX_NEWSLETTER_SIGNUP-false}
   LEADERS_ALIAS: ${LEADERS_ALIAS-}
@@ -41,11 +41,12 @@ x-env-tauron: &env-tauron
   SITEMAPS_URI: ${SITEMAPS_URI-https://tauron.sitemaps.base.parameter1.com}
 
 x-env-leonis: &env-leonis
+  <<: *env
   GRAPHQL_URI: ${GRAPHQL_URI-https://graphql.leonis.base.parameter1.com}
   OEMBED_URI: ${OEMBED_URI-https://oembed.leonis.base.parameter1.com}
   RSS_URI: ${RSS_URI-https://rss.leonis.base.parameter1.com}
   SITEMAPS_URI: ${SITEMAPS_URI-https://sitemaps.leonis.base.parameter1.com}
-  # BASE_BROWSE_GRAPHQL_URI: ${BASE_BROWSE_GRAPHQL_URI-https://base-browse.leonis.base.parameter1.com/graphql}
+  BASE_BROWSE_GRAPHQL_URI: ${BASE_BROWSE_GRAPHQL_URI-https://base-browse.leonis.base.parameter1.com/graphql}
 
 x-env-development: &env-development
   <<: *env
