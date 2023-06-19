@@ -34,33 +34,33 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: '?h=30&auto=format,compress',
+      src: 'https://img.cpgnext.com/files/base/pmmi/cpgn/site-logo.svg?h=30&auto=format,compress',
       srcset: [
-        '?h=30&auto=format,compress&dpr=2 2x',
+        'https://img.cpgnext.com/files/base/pmmi/cpgn/site-logo.svg?h=30&auto=format,compress&dpr=2 2x',
       ],
-      width: '105',
+      width: '120',
       height: '30',
     },
     footer: {
-      src: '?h=35&auto=format,compress',
+      src: 'https://img.cpgnext.com/files/base/pmmi/cpgn/site-logo-white.svg?h=35&auto=format,compress',
       srcset: [
-        '?h=35&auto=format,compress&dpr=2 2x',
+        'https://img.cpgnext.com/files/base/pmmi/cpgn/site-logo-white.svg?h=35&auto=format,compress&dpr=2 2x',
       ],
-      width: '122',
+      width: '139',
       height: '35',
     },
     printContent: {
-      src: '?h=45&auto=format,compress',
+      src: 'https://img.cpgnext.com/files/base/pmmi/cpgn/site-logo.svg?h=45&auto=format,compress',
       srcset: [
-        '?h=45&auto=format,compress&dpr=2 2x',
+        'https://img.cpgnext.com/files/base/pmmi/cpgn/site-logo.svg?h=45&auto=format,compress&dpr=2 2x',
       ],
     },
     corporate: {
       alt: 'PMMI Media Group Logo',
       href: 'https://www.pmmimediagroup.com',
-      src: 'https://img.packworld.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress',
+      src: 'https://img.cpgnext.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress',
       srcset: [
-        'https://img.packworld.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress&dpr=2 2x',
+        'https://img.cpgnext.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress&dpr=2 2x',
       ],
       width: '83',
       height: '40',
