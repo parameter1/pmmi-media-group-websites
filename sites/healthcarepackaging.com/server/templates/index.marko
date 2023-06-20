@@ -50,7 +50,7 @@ $ const { site } = out.global;
   </@section>
 
 
-  $ const publicationIds = site.get("magazine.publicationIds");
+  $ const publicationIds = site.getAsArray("magazine.publicationIds");
   <if(publicationIds.length)>
     <@section>
       <theme-magazine-issues-block publication-id=publicationIds[0] />
