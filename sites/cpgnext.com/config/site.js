@@ -91,7 +91,7 @@ module.exports = {
   inquiry: {
     ...sharedInquiryConfig,
     sendFrom: 'CPG Next <noreply@parameter1.com>',
-    logo: '?h=45&auto=format,compress',
+    logo: 'https://img.cpgnext.com/files/base/pmmi/cpgn/site-logo.svg?h=45&auto=format,compress',
   },
   linkOffsite: {
     webinar: 'linkUrl',
