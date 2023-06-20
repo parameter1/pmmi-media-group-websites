@@ -73,7 +73,7 @@ module.exports = {
     // { provider: 'youtube', href: 'https://www.youtube.com/channel/UCjmotU1o5ij4p3PNUsnBoNQ?utm_source=PWWebsite&utm_campaign=PWYouTube' },
   ],
   gtm: {
-    containerId: process.env.GTM_CONTAINER_ID || '',
+    containerId: process.env.GTM_CONTAINER_ID || 'GTM-TK8WXJR',
     slotPrefix: 'cpgn',
   },
   gcse: {
