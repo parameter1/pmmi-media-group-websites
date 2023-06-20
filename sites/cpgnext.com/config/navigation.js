@@ -10,7 +10,15 @@ const topics = [
 ];
 
 const resources = [
-
+  { href: '/big-data-analytics-data-management', label: 'Big Data Analytics/Data Management' },
+  { href: '/iiot-industrial-internet-of-things', label: 'IIoT (Industrial Internet of Things' },
+  { href: '/machine-learning-artificial-intelligence', label: 'Machine Learning/Artificial Intelligence' },
+  { href: '/cloud-computing', label: 'Cloud Computing' },
+  { href: '/virtual-augmented-reality', label: 'Virtual/Augmented Reality' },
+  { href: '/simulation-digital-twins', label: 'Simulation/Digital Twins' },
+  { href: '/asset-lifecycle-management', label: 'Asset Lifecycle Management' },
+  { href: '/predictive-maintenance', label: 'Predictive Maintenance' },
+  { href: '/track-and-trace', label: 'Track and Trace' },
 ];
 
 const utilities = [
@@ -48,7 +56,7 @@ module.exports = {
       subscribe,
       ...topics,
       // { href: '/leaders', label: 'Leaders' },
-      { href: '/downloads', label: 'Downloads' },
+      // { href: '/downloads', label: 'Downloads' },
     ],
   },
   tertiary: {
