@@ -77,7 +77,7 @@ module.exports = {
     slotPrefix: 'cpgn',
   },
   gcse: {
-    id: '',
+    id: 'd551f21bee9ee4c69',
   },
   wufoo: {
     userName: 'pmmimediagroup',
