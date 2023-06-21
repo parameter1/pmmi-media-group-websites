@@ -5,7 +5,7 @@ const idxConfig = require('./identity-x');
 module.exports = configure({
   omedaConfig,
   idxConfig,
-  rapidIdentProductId: 365,
+  rapidIdentProductId: 366,
   websiteBehaviorAttributeId: 199630,
   onLoginLinkSentPromoCodes: {
     newsletterSignup: 'CPGN_NL_P1',
