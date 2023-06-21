@@ -162,7 +162,7 @@ services:
       PORT: 80
       EXPOSED_PORT: 9714
       LIVERELOAD_PORT: 19714
-      OMEDA_INPUT_ID: ${cpgn_OMEDA_INPUT_ID-(unset)}
+      OMEDA_INPUT_ID: ${CPGN_OMEDA_INPUT_ID-(unset)}
     hostname: www-pmmimediagroup-cpgnext.dev.parameter1.com
     ports:
       - "9714:80"
