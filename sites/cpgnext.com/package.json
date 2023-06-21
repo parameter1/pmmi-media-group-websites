@@ -9,7 +9,7 @@
     "id": "646d197711878ad52db7ff2a",
     "tenant": "pmmi_all",
     "account": "pmmi",
-    "stack": "tauron",
+    "stack": "leonis",
     "key": "cpgn",
     "deploy": true
   },
