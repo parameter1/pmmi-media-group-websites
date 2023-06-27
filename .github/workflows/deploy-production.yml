@@ -26,7 +26,7 @@ jobs:
 
   post-deploy-failure:
     if: failure()
-    needs: [notify-start, deploy-sites]
+    needs: [notify-start, build-sites, deploy-sites]
     uses: parameter1/actions/.github/workflows/notify-fail.yml@main
     secrets: inherit
     with:
@@ -34,7 +34,7 @@ jobs:
 
   post-deploy-complete:
     if: success()
-    needs: [notify-start, deploy-sites]
+    needs: [notify-start, build-sites, deploy-sites]
     uses: parameter1/actions/.github/workflows/notify-complete.yml@main
     secrets: inherit
     with:
@@ -53,7 +53,6 @@ jobs:
         #v# Make sure this matches the site matrix! #v#
         ###############################################
         site:
-          - { dir: cpgnext.com, stack: leonis, id: 646d197711878ad52db7ff2a, account: pmmi, tenant: pmmi_all, rancher_label: pmmi-media-group-cpgnext.com }
           - { dir: healthcarepackaging.com, stack: tauron, id: 5d88cef7f175132c008b456f, account: pmmi, tenant: pmmi_all, rancher_label: pmmi-media-group-healthcarepackaging.com }
           - { dir: mundopmmi.com, stack: tauron, id: 5d0a748572c1aa35008b4567, account: pmmi, tenant: pmmi_mundo, rancher_label: pmmi-media-group-mundopmmi.com }
           - { dir: oemmagazine.org, stack: tauron, id: 5d88cf05f175132c008b4573, account: pmmi, tenant: pmmi_all, rancher_label: pmmi-media-group-oemmagazine.org }
@@ -78,7 +77,6 @@ jobs:
         #v# Make sure this matches the site matrix! #v#
         ###############################################
         site:
-          - { dir: cpgnext.com, stack: leonis, id: 646d197711878ad52db7ff2a, account: pmmi, tenant: pmmi_all, rancher_label: pmmi-media-group-cpgnext.com }
           - { dir: healthcarepackaging.com, stack: tauron, id: 5d88cef7f175132c008b456f, account: pmmi, tenant: pmmi_all, rancher_label: pmmi-media-group-healthcarepackaging.com }
           - { dir: mundopmmi.com, stack: tauron, id: 5d0a748572c1aa35008b4567, account: pmmi, tenant: pmmi_mundo, rancher_label: pmmi-media-group-mundopmmi.com }
           - { dir: oemmagazine.org, stack: tauron, id: 5d88cf05f175132c008b4573, account: pmmi, tenant: pmmi_all, rancher_label: pmmi-media-group-oemmagazine.org }
