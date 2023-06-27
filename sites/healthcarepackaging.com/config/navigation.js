@@ -73,7 +73,8 @@ module.exports = {
   secondary: {
     items: [
       subscribe,
-      ...topics,
+      { href: '/machinery-materials', label: 'Machinery & Materials' },
+      { href: '/webinars', label: 'Webinars' },
       { href: '/leaders', label: 'Suppliers' },
       { href: '/downloads', label: 'Downloads' },
     ],

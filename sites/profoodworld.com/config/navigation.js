@@ -66,7 +66,9 @@ module.exports = {
   secondary: {
     items: [
       subscribe,
-      ...topics,
+      { href: '/processing-equipment', label: 'Processing Equipment' },
+      { href: '/food-safety', label: 'Food Safety' },
+      { href: '/events', label: 'Events' },
       { href: '/leaders', label: 'Leaders' },
       { href: '/downloads', label: 'Downloads' },
     ],
