@@ -14,3 +14,10 @@ $leaders-primary-color-light: #005bac;
 $leaders-accent-color: #d557af;
 
 @import "@pmmi-media-group/package-global/scss/core";
+
+/*! critical:start */
+.ad-container {
+  display: none !important;
+  visibility: hidden !important;
+}
+/*! critical:end */
