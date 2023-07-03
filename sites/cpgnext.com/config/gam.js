@@ -2,8 +2,6 @@ const configureGAM = require('@pmmi-media-group/package-global/config/gam');
 
 const config = configureGAM({ basePath: 'cpgn' });
 
-config.enabled = false;
-
 config.setAliasAdUnits('default', [
   { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'rotation' },
   { name: 'rotation', templateName: 'ROTATION', path: 'rotation' },
