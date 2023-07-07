@@ -6,5 +6,5 @@ Disallow: *
 Disallow: /__
 Disallow: /print/content
 
-Sitemap: https://www.healthcarepackaging.com/sitemap.xml
-Sitemap: https://www.healthcarepackaging.com/sitemap-google-news.xml
+Sitemap: https://www.cpgnext.com/sitemap.xml
+Sitemap: https://www.cpgnext.com/sitemap-google-news.xml

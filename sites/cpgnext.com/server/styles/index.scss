@@ -7,10 +7,17 @@ $theme-site-header-breakpoints: (
 );
 
 // Colors
-$primary: #002f7b;
+$primary: #FD5208;
 
 $leaders-primary-color: #002f7b;
 $leaders-primary-color-light: #005bac;
 $leaders-accent-color: #d557af;
 
 @import "@pmmi-media-group/package-global/scss/core";
+
+/*! critical:start */
+.ad-container {
+  display: none !important;
+  visibility: hidden !important;
+}
+/*! critical:end */
