@@ -40,6 +40,14 @@ x-env-tauron: &env-tauron
   RSS_URI: ${RSS_URI-https://tauron.rss.base.parameter1.com}
   SITEMAPS_URI: ${SITEMAPS_URI-https://tauron.sitemaps.base.parameter1.com}
 
+x-env-leonis: &env-leonis
+  <<: *env
+  GRAPHQL_URI: ${GRAPHQL_URI-https://graphql.leonis.base.parameter1.com}
+  OEMBED_URI: ${OEMBED_URI-https://oembed.leonis.base.parameter1.com}
+  RSS_URI: ${RSS_URI-https://rss.leonis.base.parameter1.com}
+  SITEMAPS_URI: ${SITEMAPS_URI-https://sitemaps.leonis.base.parameter1.com}
+  BASE_BROWSE_GRAPHQL_URI: ${BASE_BROWSE_GRAPHQL_URI-https://base-browse.leonis.base.parameter1.com/graphql}
+
 x-env-development: &env-development
   <<: *env
   GRAPHQL_URI: ${GRAPHQL_URI-http://host.docker.internal:10002}
@@ -74,7 +82,7 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/packworld.com
     environment:
-      <<: *env-tauron
+      <<: *env
       HOST: www-pmmimediagroup-pw.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9711
@@ -89,7 +97,7 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/healthcarepackaging.com
     environment:
-      <<: *env-tauron
+      <<: *env
       HOST: www-pmmimediagroup-hcp.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9712
@@ -104,7 +112,7 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/profoodworld.com
     environment:
-      <<: *env-tauron
+      <<: *env
       HOST: www-pmmimediagroup-pfw.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9713
@@ -119,7 +127,7 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/oemmagazine.org
     environment:
-      <<: *env-tauron
+      <<: *env
       HOST: www-pmmimediagroup-oem.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9714
@@ -134,7 +142,7 @@ services:
     <<: *site-cmd
     working_dir: /root/sites/mundopmmi.com
     environment:
-      <<: *env-tauron
+      <<: *env
       HOST: www-pmmimediagroup-mundo.dev.parameter1.com
       PORT: 80
       EXPOSED_PORT: 9716
@@ -144,3 +152,18 @@ services:
     ports:
       - "9716:80"
       - "19716:19716"
+
+  cpgn:
+    <<: *site-cmd
+    working_dir: /root/sites/cpgnext.com
+    environment:
+      <<: *env
+      HOST: www-pmmimediagroup-cpgnext.dev.parameter1.com
+      PORT: 80
+      EXPOSED_PORT: 9714
+      LIVERELOAD_PORT: 19714
+      OMEDA_INPUT_ID: ${CPGN_OMEDA_INPUT_ID-(unset)}
+    hostname: www-pmmimediagroup-cpgnext.dev.parameter1.com
+    ports:
+      - "9714:80"
+      - "19714:19717"

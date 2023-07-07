@@ -1,0 +1,23 @@
+$theme-site-header-breakpoints: (
+  hide-primary: 100000px, // effectively always hide the primary nav
+  hide-secondary: 780px,
+  small-logo: 980px,
+  small-text-primary: 0,
+  small-text-secondary: 980px
+);
+
+// Colors
+$primary: #FD5208;
+
+$leaders-primary-color: #002f7b;
+$leaders-primary-color-light: #005bac;
+$leaders-accent-color: #d557af;
+
+@import "@pmmi-media-group/package-global/scss/core";
+
+/*! critical:start */
+.ad-container {
+  display: none !important;
+  visibility: hidden !important;
+}
+/*! critical:end */
