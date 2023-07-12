@@ -49,9 +49,10 @@ const desktopMenu = {
 };
 
 module.exports = {
+  type: 'navbar-b',
   desktopMenu,
   mobileMenu,
-  secondary: {
+  primary: {
     items: [
       subscribe,
       ...topics,
@@ -73,7 +74,7 @@ module.exports = {
       { href: 'https://www.pmmimediagroup.com/advertising-terms-conditions', label: 'Advertising Terms & Conditions', target: '_blank' },
       { href: '/site-map', label: 'Site Map' },
     ],
-    topics: [...topics],
+    topics,
     more: [
       subscribe,
       { href: 'https://www.pmmimediagroup.com/pw/packaging-world', label: 'Advertise', target: '_blank' },
