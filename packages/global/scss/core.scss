@@ -68,6 +68,7 @@
 /*! critical:start */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/default-theme/site-navbar"; // load navbar from default theme first... allows for alternate monorail navbars to override these defaults
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/site-navbar";
+@import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/site-navbar-b";
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/ad-container";
 /*! critical:end */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/author-node";
