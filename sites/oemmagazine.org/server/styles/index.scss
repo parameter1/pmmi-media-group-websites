@@ -14,3 +14,11 @@ $leaders-primary-color-light: #1c3599;
 $leaders-accent-color: #ff6a45;
 
 @import "@pmmi-media-group/package-global/scss/core";
+
+.inquiry-form-button {
+  background-color: $leaders-accent-color !important;
+  &:focus,
+  &:hover {
+    background-color: $leaders-accent-color !important;
+  }
+}

@@ -19,3 +19,11 @@ $leaders-primary-color-light: #023749;
 $leaders-accent-color: #d557af;
 
 @import "@pmmi-media-group/package-global/scss/core";
+
+.inquiry-form-button {
+  background-color: $leaders-videocam-color !important;
+  &:focus,
+  &:hover {
+    background-color: $leaders-videocam-color !important;
+  }
+}
