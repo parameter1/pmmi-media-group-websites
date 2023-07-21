@@ -13,6 +13,7 @@ const resources = [
   { href: '/page/oem-newsletter', label: 'Newsletters', target: '_blank' },
   { href: '/page/magazine', label: 'Magazine' },
   { href: '/leaders', label: 'OEM Partner Leaders' },
+  { href: '/WomenInPackaging', label: 'Women in Packaging' },
   { href: '/videos', label: 'Videos' },
   { href: '/podcasts', label: 'Podcasts' },
   { href: '/supplier-news', label: 'Supplier News' },
