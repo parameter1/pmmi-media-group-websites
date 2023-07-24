@@ -14,6 +14,7 @@ const resources = [
   { href: '/page/pw-newsletters', label: 'Newsletters' },
   { href: '/page/magazine', label: 'Magazine' },
   { href: '/leaders', label: 'Leaders in Packaging' },
+  { href: '/WomenInPackaging', label: 'Women in Packaging' },
   { href: '/videos', label: 'Videos' },
   { href: '/podcasts', label: 'Podcasts' },
   { href: '/page/packaging-associations', label: 'Packaging Associations' },
