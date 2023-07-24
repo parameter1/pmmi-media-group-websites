@@ -2,10 +2,10 @@ const privacyPolicy = require('./privacy-policy');
 const subscribe = require('./subscribe');
 
 const topics = [
-  { href: '/manufacturing-software', label: 'Manufacturing Software' },
-  { href: '/data-governance-collection', label: 'Data Governance/Collection' },
-  { href: '/workforce-development', label: 'Workforce Development' },
-  { href: '/emerging-technology', label: 'Emerging Technology' },
+  { href: '/digital-factory-software', label: 'Digital Factory Software' },
+  { href: '/data-analytics', label: 'Data & Analytics' },
+  { href: '/connected-workforce', label: 'Connected Workforce' },
+  { href: '/manufacturing-metaverse', label: 'Manufacturing Metaverse' },
   { href: '/cybersecurity', label: 'Cybersecurity' },
 ];
 
