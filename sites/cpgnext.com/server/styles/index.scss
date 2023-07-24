@@ -55,5 +55,6 @@ $theme-site-navbar-secondary-font-size: 16px !default;
 }
 .document-container {
   top: calculate-navbar-height-for(default, $additional-padding: 40px);
+  padding-bottom: calculate-navbar-height-for(default, $additional-padding: 40px);
 }
 /*! critical:end */
