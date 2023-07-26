@@ -41,3 +41,11 @@ $theme-site-navbar-logo-height-sm: 30px;
     content: "Fuente: ";
   }
 }
+
+.inquiry-form-button {
+  background-color: #be1e2d !important;
+  &:focus,
+  &:hover {
+    background-color: #be1e2d !important;
+  }
+}
