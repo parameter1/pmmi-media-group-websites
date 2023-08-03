@@ -52,6 +52,7 @@ $theme-site-navbar-secondary-font-size: 16px !default;
 .site-header {
   padding-top: 40px;
   position: fixed;
+  z-index: 10;
 }
 .document-container {
   top: calculate-navbar-height-for(default, $additional-padding: 40px);
