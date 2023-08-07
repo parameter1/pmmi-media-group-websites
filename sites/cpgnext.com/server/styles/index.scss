@@ -60,6 +60,7 @@ $theme-site-navbar-secondary-font-size: 16px !default;
 }
 
 .sticky-top {
-  top: 12rem;
+  top: calculate-navbar-height-for(default, $additional-padding: 40px);
+  z-index: auto;
 }
 /*! critical:end */
