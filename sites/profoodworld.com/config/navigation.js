@@ -18,6 +18,7 @@ const resources = [
   { href: 'https://www.opxleadershipnetwork.org', label: 'OpX Leadership Network', target: '_blank' },
   { href: '/page/awards-sema', label: 'Sustainability Awards' },
   { href: '/page/awards-mia', label: 'Manufacturing Awards' },
+  { href: '/quizzes', label: 'Quizzes' },
   { href: '/supplier-news', label: 'Supplier News' },
   { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
 ];
