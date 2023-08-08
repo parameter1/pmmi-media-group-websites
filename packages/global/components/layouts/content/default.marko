@@ -235,12 +235,25 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
         </div>
       </div>
       <div class="col-lg-4">
-        <if(content.company && content.company.enableRmi)>
-          <div class="mb-block">
-            <theme-company-inquiry-form-block content=content initially-expanded=false consent-checkboxes=getAsArray(site, 'config.inquiry.consentCheckboxes') />
-          </div>
+        <if(site.get("leaders.enabled"))>
+          <if(content.company && content.company.enableRmi)>
+            <div class="mb-block">
+              <theme-company-inquiry-form-block content=content initially-expanded=false consent-checkboxes=getAsArray(site, 'config.inquiry.consentCheckboxes') />
+            </div>
+          </if>
+          <global-leaders-contextual content-id=id />
         </if>
-        <global-leaders-contextual content-id=id />
+        <else>
+          $ const excludeContentTypes = ["Contact", "Company", "Document", "TextAd", "Promotion"];
+          <theme-latest-content-list-block
+            title=`Latest in ${primarySection.name}`
+            alias=primarySection.alias
+            query-params={ excludeContentTypes, excludeContentIds: [content.id] }
+            class="sticky-top"
+          >
+            <@native-x index=4 name="related-content" aliases=aliases />
+          </theme-latest-content-list-block>
+        </else>
       </div>
     </div>
   </@section>
