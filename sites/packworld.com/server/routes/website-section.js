@@ -3,6 +3,7 @@ const queryFragment = require('@parameter1/base-cms-marko-web-theme-monorail/gra
 const leadersFragment = require('@pmmi-media-group/package-theme-monorail-leaders/graphql/fragments/leaders-section');
 const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');
 const events = require('@pmmi-media-group/package-global/templates/website-section/events');
+const withTopStoriesBlock = require('@pmmi-media-group/package-global/templates/website-section/with-top-stories-block');
 const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');
 
 const section = require('../templates/website-section');
@@ -22,6 +23,11 @@ module.exports = (app) => {
   app.get('/:alias(leaders)', newsletterState(), withWebsiteSection({
     template: leaders,
     queryFragment: leadersFragment,
+  }));
+
+  app.get('/:alias(WomenInPackaging)', newsletterState(), withWebsiteSection({
+    template: withTopStoriesBlock,
+    queryFragment,
   }));
 
   app.get('/:alias([a-z0-9-/]+)', newsletterState(), withWebsiteSection({
