@@ -63,4 +63,9 @@ $theme-site-navbar-secondary-font-size: 16px !default;
   top: calculate-navbar-height-for(default, $additional-padding: 40px);
   z-index: auto;
 }
+.site-newsletter-menu {
+  &__container {
+    top: calculate-navbar-height-for(default, $additional-padding: 40px);
+  }
+}
 /*! critical:end */
