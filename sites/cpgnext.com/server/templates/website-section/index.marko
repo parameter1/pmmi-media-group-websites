@@ -1,8 +1,186 @@
-$ const { id, alias, name, pageNode } = input;
+import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import { getAsArray } from "@parameter1/base-cms-object-path";
+import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/top-stories-block";
 
-<global-website-section-feed-layout
+$ const { id, alias, name, pageNode } = input;
+$ const sections = getAsArray(input, "sections");
+
+$ const { site, pagination: p, i18n } = out.global;
+$ const continueLabel = i18n("Sign Me Up!");
+$ const loginEmailLabel = i18n("Work Email");
+$ const buttonLabels = { continue: continueLabel };
+$ const perPage = 12;
+$ const actionText = i18n("signing up to receive your email notifications");
+
+<global-website-section-default-layout
   id=id
   alias=alias
   name=name
   page-node=pageNode
-/>
+>
+  <@head>
+    <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
+      <theme-pagination-controls
+        per-page=perPage
+        total-count=totalCount
+        path=alias
+        as-rels=true
+      />
+    </theme-section-feed-block>
+  </@head>
+
+  <@section|{ aliases }| modifiers=["break-container", "first"]>
+    <theme-gam-define-display-ad
+      name="leaderboard"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+
+  <@section|{ blockName, section, aliases }|>
+    <if(input.beforeName)>
+      <${input.beforeName}
+        aliases=aliases
+        block-name=blockName
+        section=section
+      />
+    </if>
+
+    <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj=section>
+      <if(p.page > 1)>${value}: Page ${p.page}</if>
+      <else>${value}</else>
+    </marko-web-website-section-name>
+
+    <if(input.afterName)>
+      <${input.afterName}
+        aliases=aliases
+        block-name=blockName
+        section=section
+      />
+    </if>
+
+    <theme-section-feed-block alias=alias lazyload=false>
+      <@query-params limit=3 skip=p.skip({ perPage }) />
+    </theme-section-feed-block>
+  </@section>
+
+  <@section|{ aliases }|>
+    <theme-gam-define-display-ad
+      name="rotation"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+
+  <@section>
+    <theme-section-feed-block alias=alias>
+      <@query-params limit=3 skip=p.skip({ perPage, skip: 3 }) />
+    </theme-section-feed-block>
+  </@section>
+
+  <@section>
+    <marko-web-identity-x-context|{ hasUser }|>
+      <if(!hasUser)>
+        <identity-x-newsletter-form-inline
+          button-labels=buttonLabels
+          login-email-label=loginEmailLabel
+          login-email-placeholder="example@yourcompany.com"
+          type="inlineSection"
+          action-text=actionText
+        />
+      </if>
+    </marko-web-identity-x-context>
+  </@section>
+
+  <@section>
+    <theme-section-feed-block alias=alias>
+      <@query-params limit=3 skip=p.skip({ perPage, skip: 6 }) />
+    </theme-section-feed-block>
+  </@section>
+
+  <@section|{ aliases }|>
+    <theme-gam-define-display-ad
+      name="rotation"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+
+  <@section>
+    <theme-section-feed-block alias=alias>
+      <@query-params limit=3 skip=p.skip({ perPage, skip: 9 }) />
+    </theme-section-feed-block>
+    <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
+      <theme-pagination-controls
+        per-page=perPage
+        total-count=totalCount
+        path=alias
+      />
+    </theme-section-feed-block>
+  </@section>
+
+  <@section|{ aliases }|>
+    <theme-gam-define-display-ad
+      name="rotation"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+
+  <@section>
+    $ const queryParams = {
+      limit: 4,
+      requiresImage: true,
+      queryFragment,
+      sectionAlias: "home",
+      ...input.queryParams,
+    };
+    $ const blockName = "top-stories";
+    $ const withHeader = defaultValue(input.withHeader, true);
+    $ const withNativeX = defaultValue(input.withNativeX, true);
+    $ const lazyload = defaultValue(input.lazyload, true);
+    $ const queryName = (queryParams.optionName) ? "website-optioned-content" : "website-scheduled-content";
+
+    <marko-web-query|{ nodes }| name=queryName params=queryParams>
+      <if(nodes.length)>
+        <marko-web-block name=blockName attrs={ role: "region", "aria-label": "Top Stories" }>
+          <if(withHeader)>
+            <marko-web-element block-name=blockName name="header">
+              ${i18n("Top Stories")}
+            </marko-web-element>
+          </if>
+          <theme-content-card-deck-col-flow
+            nodes=nodes
+            modifiers=[blockName]
+            ...(withNativeX && { nativeX: { name: "default", index: 3, sectionName: `${i18n("Sponsor Content")}` } })
+          >
+            <@node modifiers=[`${blockName}-card`]>
+              <@image lazyload=lazyload />
+            </@node>
+          </theme-content-card-deck-col-flow>
+        </marko-web-block>
+      </if>
+    </marko-web-query>
+  </@section>
+
+  <@section|{ aliases }|>
+    <theme-native-x-promo-card-block placement-name="marketing" aliases=aliases />
+  </@section>
+
+  <@section>
+    <theme-client-side-most-popular-block />
+  </@section>
+
+  <@section|{ aliases }|>
+    <theme-gam-define-display-ad
+      name="rotation"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+</global-website-section-default-layout>
