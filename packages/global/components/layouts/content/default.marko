@@ -98,6 +98,8 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                   title=gateTitle
                   action-text=actionText
                 />
+                <!-- Hidden content body field for seo purposes when content is gated. -->
+                <marko-web-content-body block-name=blockName attrs={ style: "display: none;" } obj=content modifiers=["ld-json"] />
               </if>
               <else>
                 <if(content.embedCode)>
