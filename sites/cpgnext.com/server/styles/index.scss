@@ -63,4 +63,16 @@ $theme-site-navbar-secondary-font-size: 16px !default;
   top: calculate-navbar-height-for(default, $additional-padding: 40px);
   z-index: auto;
 }
+.page {
+  &--website-section {
+    .hero-card {
+      &__header {
+        display: none;
+      }
+      &__description-wrapper {
+        display: none;
+      }
+    }
+  }
+}
 /*! critical:end */
