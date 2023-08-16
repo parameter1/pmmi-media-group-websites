@@ -64,7 +64,7 @@ $theme-site-navbar-secondary-font-size: 16px !default;
   z-index: auto;
 }
 .page {
-  &--website-section {
+  &--website-section, &--content {
     .hero-card {
       &__header {
         display: none;
