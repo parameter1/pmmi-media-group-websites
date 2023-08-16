@@ -59,10 +59,22 @@ $ const actionText = i18n("signing up to receive your email notifications");
         section=section
       />
     </if>
+  </@section>
 
-    <theme-section-feed-block alias=alias lazyload=false>
-      <@query-params limit=3 skip=p.skip({ perPage }) />
-    </theme-section-feed-block>
+  <@section|{ aliases }|>
+    <if(p.page === 1)>
+      <theme-top-stories-block
+        with-header=false
+        lazyload=false
+        with-native-x=false
+        query-params={ sectionAlias: alias }
+      />
+    </if>
+    <else>
+      <theme-section-feed-block alias=alias lazyload=false>
+        <@query-params limit=3 skip=p.skip({ perPage }) />
+      </theme-section-feed-block>
+    </else>
   </@section>
 
   <@section|{ aliases }|>
@@ -75,9 +87,14 @@ $ const actionText = i18n("signing up to receive your email notifications");
   </@section>
 
   <@section>
-    <theme-section-feed-block alias=alias>
-      <@query-params limit=3 skip=p.skip({ perPage, skip: 3 }) />
-    </theme-section-feed-block>
+    <if(p.page === 1)>
+      <theme-hero-card-block alias=alias query-params={ skip: 5 } />
+    </if>
+    <else>
+      <theme-section-feed-block alias=alias>
+        <@query-params limit=3 skip=p.skip({ perPage, skip: 3 }) />
+      </theme-section-feed-block>
+    </else>
   </@section>
 
   <@section>
@@ -95,9 +112,16 @@ $ const actionText = i18n("signing up to receive your email notifications");
   </@section>
 
   <@section>
-    <theme-section-feed-block alias=alias>
-      <@query-params limit=3 skip=p.skip({ perPage, skip: 6 }) />
-    </theme-section-feed-block>
+    <if(p.page === 1)>
+      <theme-section-feed-block alias=alias>
+        <@query-params limit=2 skip=p.skip({ perPage, skip: 8 }) />
+      </theme-section-feed-block>
+    </if>
+    <else>
+      <theme-section-feed-block alias=alias>
+        <@query-params limit=3 skip=p.skip({ perPage, skip: 6 }) />
+      </theme-section-feed-block>
+    </else>
   </@section>
 
   <@section|{ aliases }|>
@@ -110,9 +134,16 @@ $ const actionText = i18n("signing up to receive your email notifications");
   </@section>
 
   <@section>
-    <theme-section-feed-block alias=alias>
-      <@query-params limit=3 skip=p.skip({ perPage, skip: 9 }) />
-    </theme-section-feed-block>
+    <if(p.page === 1)>
+      <theme-section-feed-block alias=alias>
+        <@query-params limit=2 skip=p.skip({ perPage, skip: 10 }) />
+      </theme-section-feed-block>
+    </if>
+    <else>
+      <theme-section-feed-block alias=alias>
+        <@query-params limit=3 skip=p.skip({ perPage, skip: 9 }) />
+      </theme-section-feed-block>
+    </else>
     <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
       <theme-pagination-controls
         per-page=perPage
