@@ -55,7 +55,7 @@ $theme-site-navbar-secondary-font-size: 16px !default;
   z-index: 10;
 }
 .document-container {
-  top: calculate-navbar-height-for(default, $additional-padding: 40px);
+  top: calculate-navbar-height-for(default, $additional-padding: 80px);
   padding-bottom: calculate-navbar-height-for(default, $additional-padding: 40px);
 }
 
@@ -63,9 +63,23 @@ $theme-site-navbar-secondary-font-size: 16px !default;
   top: calculate-navbar-height-for(default, $additional-padding: 40px);
   z-index: auto;
 }
+
 .site-newsletter-menu {
   &__container {
     top: calculate-navbar-height-for(default, $additional-padding: 40px);
+  }
+}
+
+.page {
+  &--website-section, &--content {
+    .hero-card {
+      &__header {
+        display: none;
+      }
+      &__description-wrapper {
+        display: none;
+      }
+    }
   }
 }
 /*! critical:end */

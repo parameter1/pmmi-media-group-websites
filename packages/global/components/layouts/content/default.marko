@@ -162,7 +162,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                   <marko-web-content-sidebars block-name=blockName obj={ sidebars } />
                 </if>
 
-                <if(leadersContentTypes.includes(content.type))>
+                <if(site.get("leaders.enabled") && leadersContentTypes.includes(content.type))>
                   <marko-web-leaders-featured-companies content=content />
                 </if>
 
@@ -197,7 +197,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                   />
                 </if>
 
-                <if(leadersContentTypes.includes(content.type))>
+                <if(site.get("leaders.enabled") && leadersContentTypes.includes(content.type))>
                   <marko-web-leaders-company-videos content-id=content.id />
                 </if>
 
