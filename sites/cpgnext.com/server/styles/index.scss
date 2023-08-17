@@ -82,23 +82,4 @@ $theme-site-navbar-secondary-font-size: 16px !default;
     }
   }
 }
-
-.site-newsletter-menu {
-  &__container {
-    top: calculate-navbar-height-for(default, $additional-padding: 40px);
-  }
-}
-
-.page {
-  &--website-section, &--content {
-    .hero-card {
-      &__header {
-        display: none;
-      }
-      &__description-wrapper {
-        display: none;
-      }
-    }
-  }
-}
 /*! critical:end */
