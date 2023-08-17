@@ -7,14 +7,14 @@ const defaults = {
 module.exports = {
   pushdown: {
     ...defaults,
-    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pw-iphone-Cropped.png',
+    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/cpg-iphone-Cropped.png',
   },
 
   signupBanner: {
     ...defaults,
     name: 'Stay Connected!',
     description: 'Receive the most pertinent CPG digitalization and cybersecurity updates with <i>CPG Next’s</i> newsletter.',
-    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pw-iphone.png',
+    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/cpg-iphone.png',
   },
   signupBannerLarge: {
     ...defaults,
