@@ -65,8 +65,12 @@ $theme-site-navbar-secondary-font-size: 16px !default;
 }
 
 .site-newsletter-menu {
-  &__container {
-    top: calculate-navbar-height-for(default, $additional-padding: 40px);
+  &--open {
+    margin-top: calculate-navbar-height-for(default, $additional-padding: 40px);
+    border-bottom: 1px solid $gray-200;
+  }
+  &--open ~ .document-container{
+    margin-top: -(calculate-navbar-height-for(default, $additional-padding: 40px));
   }
 }
 
@@ -78,6 +82,15 @@ $theme-site-navbar-secondary-font-size: 16px !default;
       }
       &__description-wrapper {
         display: none;
+      }
+    }
+  }
+  &--website-section-86438 {
+    .page-wrapper {
+      &__section {
+        &:last-child {
+          margin-bottom: 60px;
+        }
       }
     }
   }
