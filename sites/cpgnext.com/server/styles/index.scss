@@ -57,20 +57,32 @@ $theme-site-navbar-secondary-font-size: 16px !default;
 .document-container {
   top: calculate-navbar-height-for(default, $additional-padding: 80px);
   padding-bottom: calculate-navbar-height-for(default, $additional-padding: 40px);
+  @media (max-width: map-get($theme-site-header-breakpoints, hide-primary)) {
+    top: calculate-navbar-height-for(default, $additional-padding: 40px);
+  }
 }
 
 .sticky-top {
   top: calculate-navbar-height-for(default, $additional-padding: 40px);
   z-index: auto;
+  @media (max-width: map-get($theme-site-header-breakpoints, hide-primary)) {
+    top: calculate-navbar-height-for(default);
+  }
 }
 
 .site-newsletter-menu {
   &--open {
     margin-top: calculate-navbar-height-for(default, $additional-padding: 40px);
     border-bottom: 1px solid $gray-200;
+    @media (max-width: map-get($theme-site-header-breakpoints, hide-primary)) {
+      margin-top: calculate-navbar-height-for(default);
+    }
   }
   &--open ~ .document-container{
     margin-top: -(calculate-navbar-height-for(default, $additional-padding: 40px));
+    @media (max-width: map-get($theme-site-header-breakpoints, hide-primary)) {
+      margin-top: -(calculate-navbar-height-for(default));
+    }
   }
 }
 
