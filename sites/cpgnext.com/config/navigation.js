@@ -1,5 +1,4 @@
 const privacyPolicy = require('./privacy-policy');
-const subscribe = require('./subscribe');
 
 const topics = [
   { href: '/digital-factory-software', label: 'Digital Factory Software' },
@@ -24,14 +23,14 @@ const resources = [
 const utilities = [
   { href: 'https://www.pmmimediagroup.com/pw/packaging-world', label: 'Advertise', target: '_blank' },
   // { href: 'https://www.pmmimediagroup.com/pw/reprints-and-permissions', label: 'Reprints' },
-  { href: '/page/pw-about-us', label: 'About' },
-  { href: '/page/pw-contact-us', label: 'Contact' },
+  { href: '/page/cpgnext-about-us', label: 'About' },
+  { href: '/page/cpgnext-contact-us', label: 'Contact' },
 ];
 
 const mobileMenu = {
   primary: [...topics],
   secondary: [
-    subscribe,
+    { href: 'https://cpgnext.dragonforms.com/cpgnlsf?pk=CPG_NL_TopNav', label: 'Subscribe', target: '_blank' },
     ...resources,
     ...utilities,
   ],
@@ -40,7 +39,7 @@ const mobileMenu = {
 const desktopMenu = {
   leftCol: {
     items: [
-      subscribe,
+      { href: 'https://cpgnext.dragonforms.com/cpgnlsf?pk=CPG_NL_TopNav', label: 'Subscribe', target: '_blank' },
       ...utilities,
     ],
   },
@@ -54,7 +53,7 @@ module.exports = {
   mobileMenu,
   primary: {
     items: [
-      subscribe,
+      { href: 'https://cpgnext.dragonforms.com/cpgnlsf?pk=CPG_NL_TopNav', label: 'Subscribe', target: '_blank' },
       ...topics,
       // { href: '/leaders', label: 'Leaders' },
       // { href: '/downloads', label: 'Downloads' },
@@ -68,16 +67,16 @@ module.exports = {
   },
   footer: {
     items: [
-      { href: '/page/pw-about-us', label: 'About Us' },
+      { href: '/page/cpgnext-about-us', label: 'About Us' },
       privacyPolicy,
       { href: '/page/pw-terms-use', label: 'Terms of Use' },
       { href: '/site-map', label: 'Site Map' },
     ],
     topics,
     more: [
-      subscribe,
+      { href: 'https://cpgnext.dragonforms.com/cpgnlsf?pk=CPG_NL_Footer', label: 'Subscribe', target: '_blank' },
       { href: 'https://www.pmmimediagroup.com/pw/packaging-world', label: 'Advertise', target: '_blank' },
-      { href: '/page/pw-contact-us', label: 'Contact' },
+      { href: '/page/cpgnext-contact-us', label: 'Contact' },
     ],
   },
 };
