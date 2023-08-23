@@ -9,7 +9,6 @@ const newsletter = require('./newsletter');
 const omeda = require('./omeda');
 const omedaIdentityX = require('./omeda-identity-x');
 const search = require('./search');
-const subscribe = require('./subscribe');
 
 module.exports = {
   // module configs
@@ -24,7 +23,6 @@ module.exports = {
   omeda,
   omedaIdentityX,
   search,
-  subscribe,
   // theme configs
   company: 'PMMI Media Group',
   p1events: {
