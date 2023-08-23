@@ -45,7 +45,7 @@ const desktopMenu = {
     ],
   },
   middleCol: { items: [...topics] },
-  rightCol: { items: [...resources] },
+  rightCol: { label: 'Topics', items: [...resources] },
 };
 
 module.exports = {
