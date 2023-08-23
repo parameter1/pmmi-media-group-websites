@@ -1,7 +1,7 @@
 const privacyPolicy = require('./privacy-policy');
 const subscribe = require('./subscribe');
 
-const topics = [
+const sections = [
   { href: '/digital-factory-software', label: 'Digital Factory Software' },
   { href: '/data-analytics', label: 'Data & Analytics' },
   { href: '/connected-workforce', label: 'Connected Workforce' },
@@ -9,7 +9,7 @@ const topics = [
   { href: '/cybersecurity', label: 'Cybersecurity' },
 ];
 
-const resources = [
+const topics = [
   { href: '/big-data-analytics-data-management', label: 'Big Data Analytics/Data Management' },
   { href: '/iiot-industrial-internet-of-things', label: 'IIoT (Industrial Internet of Things' },
   { href: '/machine-learning-artificial-intelligence', label: 'Machine Learning/Artificial Intelligence' },
@@ -29,10 +29,10 @@ const utilities = [
 ];
 
 const mobileMenu = {
-  primary: [...topics],
+  primary: [...sections],
   secondary: [
     subscribe,
-    ...resources,
+    ...topics,
     ...utilities,
   ],
 };
@@ -44,8 +44,8 @@ const desktopMenu = {
       ...utilities,
     ],
   },
-  middleCol: { items: [...topics] },
-  rightCol: { label: 'Topics', items: [...resources] },
+  middleCol: { items: [...sections] },
+  rightCol: { items: [...topics] },
 };
 
 module.exports = {
@@ -55,7 +55,7 @@ module.exports = {
   primary: {
     items: [
       subscribe,
-      ...topics,
+      ...sections,
       // { href: '/leaders', label: 'Leaders' },
       // { href: '/downloads', label: 'Downloads' },
     ],
