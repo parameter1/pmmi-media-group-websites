@@ -21,7 +21,7 @@ const resources = [
 ];
 
 const utilities = [
-  { href: 'https://www.pmmimediagroup.com/pw/packaging-world', label: 'Advertise', target: '_blank' },
+  // { href: 'https://www.pmmimediagroup.com/pw/packaging-world', label: 'Advertise', target: '_blank' },
   // { href: 'https://www.pmmimediagroup.com/pw/reprints-and-permissions', label: 'Reprints' },
   { href: '/page/cpgnext-about-us', label: 'About' },
   { href: '/page/cpgnext-contact-us', label: 'Contact' },
@@ -75,7 +75,7 @@ module.exports = {
     topics,
     more: [
       { href: 'https://cpgnext.dragonforms.com/cpgnlsf?pk=CPG_NL_Footer', label: 'Subscribe', target: '_blank' },
-      { href: 'https://www.pmmimediagroup.com/pw/packaging-world', label: 'Advertise', target: '_blank' },
+      // { href: 'https://www.pmmimediagroup.com/pw/packaging-world', label: 'Advertise', target: '_blank' },
       { href: '/page/cpgnext-contact-us', label: 'Contact' },
     ],
   },
