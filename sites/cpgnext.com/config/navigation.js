@@ -18,6 +18,7 @@ const topics = [
   { href: '/asset-lifecycle-management', label: 'Asset Lifecycle Management' },
   { href: '/predictive-maintenance', label: 'Predictive Maintenance' },
   { href: '/track-and-trace', label: 'Track and Trace' },
+  { href: '/overall-equipment-effectiveness', label: 'Overall Equipment Effectiveness' },
 ];
 
 const utilities = [
