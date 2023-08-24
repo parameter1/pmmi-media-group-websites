@@ -44,7 +44,7 @@ const desktopMenu = {
     ],
   },
   middleCol: { items: [...sections] },
-  rightCol: { items: [...topics] },
+  rightCol: { label: 'Topics', items: [...topics] },
 };
 
 module.exports = {
@@ -53,7 +53,6 @@ module.exports = {
   mobileMenu,
   primary: {
     items: [
-      ...sections,
       { href: 'https://cpgnext.dragonforms.com/cpgnlsf?pk=CPG_NL_TopNav', label: 'Subscribe', target: '_blank' },
       ...sections,
       // { href: '/leaders', label: 'Leaders' },
