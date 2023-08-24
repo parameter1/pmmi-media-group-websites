@@ -1,33 +1,31 @@
-/* eslint-disable max-len */
-// const defaults = {
-//   disabled: process.env.DISABLE_IDX_NEWSLETTER_SIGNUP === 'true',
-//   name: 'Join thousands of your peers!',
-//   description: 'Packaging intelligence and updates from <strong>Packaging World</strong> delivered to your inbox.',
-// };
+const defaults = {
+  disabled: process.env.DISABLE_IDX_NEWSLETTER_SIGNUP === 'true',
+  name: 'Join the CPG Next community!',
+  description: 'The latest in manufacturing digitalization from <i>CPG Next</i> delivered to your inbox.',
+};
 
-// module.exports = {
-//   pushdown: {
-//     ...defaults,
-//     imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pw-iphone-Cropped.png',
-//   },
+module.exports = {
+  pushdown: {
+    ...defaults,
+    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/cpg-iphone-Cropped.png',
+  },
 
-//   signupBanner: {
-//     ...defaults,
-//     name: 'You\'re Invited!',
-//     description: 'Don\'t miss your weekly dose of packaging intelligence and news with <strong>Packaging World\'s</strong> e-newsletter.',
-//     imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/pw-iphone.png',
-//   },
-//   signupBannerLarge: {
-//     ...defaults,
-//   },
-//   signupFooter: {
-//     ...defaults,
-//     name: 'Packaging World Newsletter',
-//     description: 'The go-to source for packaging professionals looking for <strong>breaking news, industry trends and best practices.</strong>',
-//   },
-//   signupBannerStatic: {
-//     ...defaults,
-//     name: 'You\'re Invited!',
-//     description: 'Don\'t miss your weekly dose of packaging intelligence and news with <strong>Packaging World\'s</strong> e-newsletter.',
-//   },
-// };
+  signupBanner: {
+    ...defaults,
+    name: 'Stay Connected!',
+    description: 'Receive the most pertinent CPG digitalization and cybersecurity updates with <i>CPG Next’s</i> newsletter.',
+    imagePath: 'files/base/pmmi/all/image/static/newsletter-pushdown/cpg-iphone.png',
+  },
+  signupBannerLarge: {
+    ...defaults,
+  },
+  signupFooter: {
+    ...defaults,
+    description: 'Receive the most pertinent CPG digitalization and cybersecurity updates with <i>CPG Next’s</i> newsletter.',
+  },
+  signupBannerStatic: {
+    ...defaults,
+    name: 'Stay Connected',
+    description: 'Receive the most pertinent CPG digitalization and cybersecurity updates with <i>CPG Next’s</i> newsletter.',
+  },
+};

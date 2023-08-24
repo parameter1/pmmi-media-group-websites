@@ -1,7 +1,6 @@
 const privacyPolicy = require('./privacy-policy');
-const subscribe = require('./subscribe');
 
-const topics = [
+const sections = [
   { href: '/digital-factory-software', label: 'Digital Factory Software' },
   { href: '/data-analytics', label: 'Data & Analytics' },
   { href: '/connected-workforce', label: 'Connected Workforce' },
@@ -9,7 +8,7 @@ const topics = [
   { href: '/cybersecurity', label: 'Cybersecurity' },
 ];
 
-const resources = [
+const topics = [
   { href: '/big-data-analytics-data-management', label: 'Big Data Analytics/Data Management' },
   { href: '/iiot-industrial-internet-of-things', label: 'IIoT (Industrial Internet of Things' },
   { href: '/machine-learning-artificial-intelligence', label: 'Machine Learning/Artificial Intelligence' },
@@ -19,20 +18,21 @@ const resources = [
   { href: '/asset-lifecycle-management', label: 'Asset Lifecycle Management' },
   { href: '/predictive-maintenance', label: 'Predictive Maintenance' },
   { href: '/track-and-trace', label: 'Track and Trace' },
+  { href: '/overall-equipment-effectiveness', label: 'Overall Equipment Effectiveness' },
 ];
 
 const utilities = [
-  { href: 'https://www.pmmimediagroup.com/pw/packaging-world', label: 'Advertise', target: '_blank' },
+  // { href: 'https://www.pmmimediagroup.com/pw/packaging-world', label: 'Advertise', target: '_blank' },
   // { href: 'https://www.pmmimediagroup.com/pw/reprints-and-permissions', label: 'Reprints' },
-  { href: '/page/pw-about-us', label: 'About' },
-  { href: '/page/pw-contact-us', label: 'Contact' },
+  { href: '/page/cpgnext-about-us', label: 'About' },
+  { href: '/page/cpgnext-contact-us', label: 'Contact' },
 ];
 
 const mobileMenu = {
-  primary: [...topics],
+  primary: [...sections],
   secondary: [
-    subscribe,
-    ...resources,
+    { href: 'https://cpgnext.dragonforms.com/cpgnlsf?pk=CPG_NL_TopNav', label: 'Subscribe', target: '_blank' },
+    ...topics,
     ...utilities,
   ],
 };
@@ -40,12 +40,12 @@ const mobileMenu = {
 const desktopMenu = {
   leftCol: {
     items: [
-      subscribe,
+      { href: 'https://cpgnext.dragonforms.com/cpgnlsf?pk=CPG_NL_TopNav', label: 'Subscribe', target: '_blank' },
       ...utilities,
     ],
   },
-  middleCol: { items: [...topics] },
-  rightCol: { items: [...resources] },
+  middleCol: { items: [...sections] },
+  rightCol: { label: 'Topics', items: [...topics] },
 };
 
 module.exports = {
@@ -54,8 +54,8 @@ module.exports = {
   mobileMenu,
   primary: {
     items: [
-      subscribe,
-      ...topics,
+      { href: 'https://cpgnext.dragonforms.com/cpgnlsf?pk=CPG_NL_TopNav', label: 'Subscribe', target: '_blank' },
+      ...sections,
       // { href: '/leaders', label: 'Leaders' },
       // { href: '/downloads', label: 'Downloads' },
     ],
@@ -68,16 +68,16 @@ module.exports = {
   },
   footer: {
     items: [
-      { href: '/page/pw-about-us', label: 'About Us' },
+      { href: '/page/cpgnext-about-us', label: 'About Us' },
       privacyPolicy,
-      { href: '/page/pw-terms-use', label: 'Terms of Use' },
+      { href: '/page/cpgnext-terms-use', label: 'Terms of Use' },
       { href: '/site-map', label: 'Site Map' },
     ],
     topics,
     more: [
-      subscribe,
-      { href: 'https://www.pmmimediagroup.com/pw/packaging-world', label: 'Advertise', target: '_blank' },
-      { href: '/page/pw-contact-us', label: 'Contact' },
+      { href: 'https://cpgnext.dragonforms.com/cpgnlsf?pk=CPG_NL_Footer', label: 'Subscribe', target: '_blank' },
+      // { href: 'https://www.pmmimediagroup.com/pw/packaging-world', label: 'Advertise', target: '_blank' },
+      { href: '/page/cpgnext-contact-us', label: 'Contact' },
     ],
   },
 };

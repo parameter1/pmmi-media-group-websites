@@ -1,8 +1,9 @@
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
+import { get } from "@parameter1/base-cms-object-path";
 
 $ const { id, type, pageNode, ...rest } = input;
 
-$ const { site } = out.global;
+$ const { site, config } = out.global;
 
 <global-content-default-layout
   id=id
@@ -10,6 +11,13 @@ $ const { site } = out.global;
   page-node=pageNode
   ...rest
 >
+  $ // Site ID for CPG Next
+  <if(["646d197711878ad52db7ff2a"].includes(get(config, "websiteContext.id")))>
+    <@section>
+      <theme-hero-card-block alias="home" query-params={ skip: 5 } />
+    </@section>
+  </if>
+
   <@section|{ aliases }|>
     <theme-native-x-promo-card-block placement-name="marketing" aliases=aliases />
   </@section>
