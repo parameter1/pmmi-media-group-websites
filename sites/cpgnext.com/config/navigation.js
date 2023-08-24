@@ -1,6 +1,6 @@
 const privacyPolicy = require('./privacy-policy');
 
-const topics = [
+const sections = [
   { href: '/digital-factory-software', label: 'Digital Factory Software' },
   { href: '/data-analytics', label: 'Data & Analytics' },
   { href: '/connected-workforce', label: 'Connected Workforce' },
@@ -8,7 +8,7 @@ const topics = [
   { href: '/cybersecurity', label: 'Cybersecurity' },
 ];
 
-const resources = [
+const topics = [
   { href: '/big-data-analytics-data-management', label: 'Big Data Analytics/Data Management' },
   { href: '/iiot-industrial-internet-of-things', label: 'IIoT (Industrial Internet of Things' },
   { href: '/machine-learning-artificial-intelligence', label: 'Machine Learning/Artificial Intelligence' },
@@ -28,10 +28,10 @@ const utilities = [
 ];
 
 const mobileMenu = {
-  primary: [...topics],
+  primary: [...sections],
   secondary: [
     { href: 'https://cpgnext.dragonforms.com/cpgnlsf?pk=CPG_NL_TopNav', label: 'Subscribe', target: '_blank' },
-    ...resources,
+    ...topics,
     ...utilities,
   ],
 };
@@ -43,8 +43,8 @@ const desktopMenu = {
       ...utilities,
     ],
   },
-  middleCol: { items: [...topics] },
-  rightCol: { items: [...resources] },
+  middleCol: { items: [...sections] },
+  rightCol: { label: 'Topics', items: [...topics] },
 };
 
 module.exports = {
@@ -54,7 +54,7 @@ module.exports = {
   primary: {
     items: [
       { href: 'https://cpgnext.dragonforms.com/cpgnlsf?pk=CPG_NL_TopNav', label: 'Subscribe', target: '_blank' },
-      ...topics,
+      ...sections,
       // { href: '/leaders', label: 'Leaders' },
       // { href: '/downloads', label: 'Downloads' },
     ],
