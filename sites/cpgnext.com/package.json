@@ -9,11 +9,9 @@
     "id": "646d197711878ad52db7ff2a",
     "tenant": "pmmi_all",
     "account": "pmmi",
-    "stack": "leonis",
+    "stack": "tauron",
     "key": "cpgn",
-    "deploy": {
-      "staging": true
-    }
+    "deploy": true
   },
   "scripts": {
     "dev": "basecms-website dev --compile-dir ../../packages --watch-dir ../../packages --purge-css-content-dir ../../packages --purge-css-content-dir ../../node_modules/@parameter1",
