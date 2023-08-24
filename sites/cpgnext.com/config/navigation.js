@@ -30,6 +30,7 @@ const utilities = [
 const mobileMenu = {
   primary: [...sections],
   secondary: [
+    { href: 'https://cpgnext.dragonforms.com/cpgnlsf?pk=CPG_NL_TopNav', label: 'Subscribe', target: '_blank' },
     ...topics,
     ...utilities,
   ],
@@ -54,7 +55,7 @@ module.exports = {
     items: [
       ...sections,
       { href: 'https://cpgnext.dragonforms.com/cpgnlsf?pk=CPG_NL_TopNav', label: 'Subscribe', target: '_blank' },
-      ...topics,
+      ...sections,
       // { href: '/leaders', label: 'Leaders' },
       // { href: '/downloads', label: 'Downloads' },
     ],
