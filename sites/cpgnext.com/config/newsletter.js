@@ -1,6 +1,6 @@
 const defaults = {
   disabled: process.env.DISABLE_IDX_NEWSLETTER_SIGNUP === 'true',
-  name: 'Join the CPG Next community!',
+  name: 'Join the CPG Next Community!',
   description: 'The latest in manufacturing digitalization from <i>CPG Next</i> delivered to your inbox.',
 };
 
