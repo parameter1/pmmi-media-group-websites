@@ -8,7 +8,7 @@ module.exports = configure({
   rapidIdentProductId: 390,
   websiteBehaviorAttributeId: 214674,
   onLoginLinkSentPromoCodes: {
-    newsletterSignup: 'CPGN_NL_P1',
-    default: 'CPGN_P1',
+    newsletterSignup: 'CPG_NL_P1',
+    default: 'CPG_P1',
   },
 });
