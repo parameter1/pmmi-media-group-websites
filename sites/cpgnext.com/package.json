@@ -1,6 +1,6 @@
 {
   "name": "@pmmi-media-group/cpgnext.com",
-  "version": "3.10.10",
+  "version": "3.12.4",
   "author": "Jessica Stenzel <jessica.stenzel@parameter1.com>",
   "repository": "https://github.com/parameter1/pmmi-media-group-websites/tree/master/sites/cpgnext.com",
   "license": "MIT",
@@ -9,11 +9,9 @@
     "id": "646d197711878ad52db7ff2a",
     "tenant": "pmmi_all",
     "account": "pmmi",
-    "stack": "leonis",
+    "stack": "tauron",
     "key": "cpgn",
-    "deploy": {
-      "staging": true
-    }
+    "deploy": true
   },
   "scripts": {
     "dev": "basecms-website dev --compile-dir ../../packages --watch-dir ../../packages --purge-css-content-dir ../../packages --purge-css-content-dir ../../node_modules/@parameter1",
@@ -49,7 +47,7 @@
     "@parameter1/base-cms-object-path": "^4.5.12",
     "@parameter1/base-cms-utils": "^4.5.12",
     "@parameter1/base-cms-web-cli": "^4.18.3",
-    "@pmmi-media-group/package-global": "^3.10.6",
+    "@pmmi-media-group/package-global": "^3.12.1",
     "@pmmi-media-group/package-theme-monorail-leaders": "^3.10.0",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"

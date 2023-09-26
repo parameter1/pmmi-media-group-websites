@@ -1,6 +1,5 @@
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import { getAsArray } from "@parameter1/base-cms-object-path";
-import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/top-stories-block";
 
 $ const { id, alias, name, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
@@ -9,8 +8,9 @@ $ const { site, pagination: p, i18n } = out.global;
 $ const continueLabel = i18n("Sign Me Up!");
 $ const loginEmailLabel = i18n("Work Email");
 $ const buttonLabels = { continue: continueLabel };
-$ const perPage = 12;
+$ const perPage = 15;
 $ const actionText = i18n("signing up to receive your email notifications");
+$ const baseSkip = p.page === 1 ? 2 : 0;
 
 <global-website-section-default-layout
   id=id
@@ -72,7 +72,7 @@ $ const actionText = i18n("signing up to receive your email notifications");
     </if>
     <else>
       <theme-section-feed-block alias=alias lazyload=false>
-        <@query-params limit=3 skip=p.skip({ perPage }) />
+        <@query-params limit=3 skip=p.skip({ perPage, skip: baseSkip }) />
       </theme-section-feed-block>
     </else>
   </@section>
@@ -87,14 +87,9 @@ $ const actionText = i18n("signing up to receive your email notifications");
   </@section>
 
   <@section>
-    <if(p.page === 1)>
-      <theme-hero-card-block alias=alias query-params={ skip: 5 } />
-    </if>
-    <else>
-      <theme-section-feed-block alias=alias>
-        <@query-params limit=3 skip=p.skip({ perPage, skip: 3 }) />
-      </theme-section-feed-block>
-    </else>
+    <theme-section-feed-block alias=alias lazyload=false>
+      <@query-params limit=3 skip=p.skip({ perPage, skip: baseSkip + 3 }) />
+    </theme-section-feed-block>
   </@section>
 
   <@section>
@@ -112,44 +107,8 @@ $ const actionText = i18n("signing up to receive your email notifications");
   </@section>
 
   <@section>
-    <if(p.page === 1)>
-      <theme-section-feed-block alias=alias>
-        <@query-params limit=2 skip=p.skip({ perPage, skip: 8 }) />
-      </theme-section-feed-block>
-    </if>
-    <else>
-      <theme-section-feed-block alias=alias>
-        <@query-params limit=3 skip=p.skip({ perPage, skip: 6 }) />
-      </theme-section-feed-block>
-    </else>
-  </@section>
-
-  <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="section_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
-  <@section>
-    <if(p.page === 1)>
-      <theme-section-feed-block alias=alias>
-        <@query-params limit=2 skip=p.skip({ perPage, skip: 10 }) />
-      </theme-section-feed-block>
-    </if>
-    <else>
-      <theme-section-feed-block alias=alias>
-        <@query-params limit=3 skip=p.skip({ perPage, skip: 9 }) />
-      </theme-section-feed-block>
-    </else>
-    <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
-      <theme-pagination-controls
-        per-page=perPage
-        total-count=totalCount
-        path=alias
-      />
+    <theme-section-feed-block alias=alias>
+      <@query-params limit=3 skip=p.skip({ perPage, skip: baseSkip + 6 }) />
     </theme-section-feed-block>
   </@section>
 
@@ -163,39 +122,51 @@ $ const actionText = i18n("signing up to receive your email notifications");
   </@section>
 
   <@section>
-    $ const queryParams = {
-      limit: 4,
-      requiresImage: true,
-      queryFragment,
-      sectionAlias: "home",
-      ...input.queryParams,
-    };
-    $ const blockName = "top-stories";
-    $ const withHeader = defaultValue(input.withHeader, true);
-    $ const withNativeX = defaultValue(input.withNativeX, true);
-    $ const lazyload = defaultValue(input.lazyload, true);
-    $ const queryName = (queryParams.optionName) ? "website-optioned-content" : "website-scheduled-content";
+    $ const blockLimit = p.page === 1 ? 4 : 3;
+    <theme-section-feed-block alias=alias>
+      <@query-params limit=blockLimit skip=p.skip({ perPage, skip: baseSkip + 9 }) />
+    </theme-section-feed-block>
+    <if(p.page === 1)>
+      <theme-section-feed-block|{ totalCount }| alias=alias count-only=true>
+        <theme-pagination-controls
+          per-page=perPage
+          total-count=totalCount
+          path=alias
+        />
+      </theme-section-feed-block>
+    </if>
+  </@section>
 
-    <marko-web-query|{ nodes }| name=queryName params=queryParams>
-      <if(nodes.length)>
-        <marko-web-block name=blockName attrs={ role: "region", "aria-label": "Top Stories" }>
-          <if(withHeader)>
-            <marko-web-element block-name=blockName name="header">
-              ${i18n("Top Stories")}
-            </marko-web-element>
-          </if>
-          <theme-content-card-deck-col-flow
-            nodes=nodes
-            modifiers=[blockName]
-            ...(withNativeX && { nativeX: { name: "default", index: 3, sectionName: `${i18n("Sponsor Content")}` } })
-          >
-            <@node modifiers=[`${blockName}-card`]>
-              <@image lazyload=lazyload />
-            </@node>
-          </theme-content-card-deck-col-flow>
-        </marko-web-block>
+  <@section|{ aliases }|>
+    <theme-gam-define-display-ad
+      name="rotation"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+
+  <@section>
+    <if(p.page !== 1)>
+      <theme-section-feed-block alias=alias>
+        <@query-params limit=3 skip=p.skip({ perPage, skip: baseSkip + 12 }) />
+      </theme-section-feed-block>
+    </if>
+  </@section>
+
+    <@section|{ aliases }|>
+      <if(p.page !== 1)>
+        <theme-gam-define-display-ad
+          name="rotation"
+          position="section_page"
+          aliases=aliases
+          modifiers=["inter-block"]
+        />
       </if>
-    </marko-web-query>
+  </@section>
+
+  <@section>
+    <theme-top-stories-block query-params={ optionName: "Pinned" } />
   </@section>
 
   <@section|{ aliases }|>
@@ -203,7 +174,30 @@ $ const actionText = i18n("signing up to receive your email notifications");
   </@section>
 
   <@section>
+    $ const defaultParams = {
+        queryParams: { includeContentTypes: ["Product"] },
+        section: { name: "Products", canonicalPath: "/products" },
+    };
+    $ const productsParams = defaultValue(site.get("productsParams"), defaultParams);
+    <theme-content-card-list-block ...productsParams />
+  </@section>
+
+  <@section>
     <theme-client-side-most-popular-block />
+  </@section>
+
+  $ const publicationIds = site.getAsArray("magazine.publicationIds");
+  <if(publicationIds.length)>
+    <@section>
+      <theme-magazine-issues-block publication-id=publicationIds[0] />
+    </@section>
+  </if>
+
+  <@section>
+    <theme-content-card-deck-block
+      query-params={ includeContentTypes: ["Document"], limit: 4 }
+      section={ name: `${i18n("Downloads")}`, canonicalPath: "/downloads" }
+    />
   </@section>
 
   <@section|{ aliases }|>
