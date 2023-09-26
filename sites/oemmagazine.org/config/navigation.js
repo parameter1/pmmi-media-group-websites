@@ -79,7 +79,7 @@ module.exports = {
     items: [
       { href: '/page/oem-about-us', label: 'About Us' },
       privacyPolicy,
-      { href: '/page/oem-terms-use', label: 'Terms of Use' },
+      { href: '/page/terms-of-use', label: 'Terms of Use' },
       { href: '/site-map', label: 'Site Map' },
     ],
     topics: [...topics],
