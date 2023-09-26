@@ -1,6 +1,6 @@
-const NativeXConfiguration = require('@parameter1/base-cms-marko-web-native-x/config');
+const configureNativeX = require('@pmmi-media-group/package-global/config/native-x');
 
-const config = new NativeXConfiguration('https://pmmi.native-x.parameter1.com');
+const config = configureNativeX();
 
 config
   .setAliasPlacements('default', [
