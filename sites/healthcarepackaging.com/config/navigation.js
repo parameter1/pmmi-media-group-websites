@@ -89,7 +89,7 @@ module.exports = {
     items: [
       { href: '/page/hcp-about-us', label: 'About Us' },
       privacyPolicy,
-      { href: '/page/hcp-terms-use', label: 'Terms of Use' },
+      { href: '/page/terms-of-use', label: 'Terms of Use' },
       { href: '/site-map', label: 'Site Map' },
     ],
     topics: [
