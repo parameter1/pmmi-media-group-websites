@@ -6,6 +6,7 @@ module.exports = ({
   requiredServerFields,
   requiredClientFields,
   booleanQuestionsLabel = 'Choose your subscriptions:',
+  gtmUserFields,
   ...rest
 } = {}) => {
   const config = new IdentityXConfiguration({
@@ -14,6 +15,7 @@ module.exports = ({
     requiredServerFields,
     requiredClientFields,
     booleanQuestionsLabel,
+    gtmUserFields,
     onHookError: newrelic.noticeError.bind(newrelic),
     ...rest,
   });
