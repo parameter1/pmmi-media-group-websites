@@ -13,4 +13,7 @@ module.exports = configureIdentityX({
     postalCode: 'Código Postal',
     addressBlockLabel: 'Dirección',
   },
+  gtmUserFields: {
+    primary_business: '6297a1f0650fd84a97efed81',
+  },
 });
