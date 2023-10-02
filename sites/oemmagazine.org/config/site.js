@@ -87,7 +87,7 @@ module.exports = {
     subscribeLink: '',
   },
   magazines: {
-    description: '',
+    description: 'Geared toward professionals who design and build machinery for packaging and processing, as well as related equipment including plastics processing, converting, and materials handling. Each quarterly issue has content targeted specifically to professionals in engineering, manufacturing, operations, field service and executive management.',
   },
   inquiry: {
     ...sharedInquiryConfig,
