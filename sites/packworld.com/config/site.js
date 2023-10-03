@@ -86,7 +86,7 @@ module.exports = {
     subscribeLink: '',
   },
   magazines: {
-    description: '',
+    description: 'Packaging World keeps professionals across all industries informed about the business of packaging. Monthly issues offer a smart mix of  application features, new products, machinery, technology and materials updates.',
   },
   inquiry: {
     ...sharedInquiryConfig,

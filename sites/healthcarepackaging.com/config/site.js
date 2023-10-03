@@ -86,7 +86,7 @@ module.exports = {
     subscribeLink: '',
   },
   magazines: {
-    description: '',
+    description: 'Written for professionals who package pharmaceuticals, nutraceuticals, biologics and medical devices. Issues focus on trends and strategies, regulatory updates, design news, application stories, and product reviews of machinery and materials.',
   },
   inquiry: {
     ...sharedInquiryConfig,

@@ -84,7 +84,7 @@ module.exports = {
     userName: 'pmmimediagroup',
   },
   magazines: {
-    description: '',
+    description: 'Business-to-business publications for food and beverage processors. Readers will find informed coverage of news, trends, products and technologies in food safety, automation, processing, packaging, material handling and sustainability on the ProFood World website and in ProFood World’s print publication.',
   },
   inquiry: {
     ...sharedInquiryConfig,
