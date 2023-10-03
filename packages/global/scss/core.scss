@@ -162,6 +162,16 @@
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/latest-products-feed";
 /*! critical:start|magazine */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/magazine-publication-card";
+.magazine-publication-card-block {
+  .node__footer {
+    &-left {
+      display: grid !important;
+      justify-content: center !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.5rem;
+    }
+  }
+}
 /*! critical:end */
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/more-products";
 @import "@parameter1/base-cms-marko-web-theme-monorail/scss/components/blocks/most-popular";
