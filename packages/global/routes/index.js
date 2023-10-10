@@ -18,8 +18,12 @@ const printContent = require('./print-content');
 const publicFiles = require('./public-files');
 const redirects = require('./redirects');
 const staticPage = require('./static-page');
+const taxonomyCategory = require('./taxonomy-category');
 
 module.exports = (app, siteConfig) => {
+  // Taxonomy category pages
+  taxonomyCategory(app);
+
   leaders(app);
   // Feed
   feed(app);
