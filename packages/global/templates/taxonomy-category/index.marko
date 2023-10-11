@@ -38,7 +38,6 @@ $ const queryParams = {
           <div class="col-lg-8">
             <marko-web-query|{ nodes }| name="all-published-content" params=queryParams>
               <marko-web-node-list
-                inner-justified=true
                 flush-x=true
                 flush-y=false
                 modifiers=["section-feed"]
@@ -50,7 +49,6 @@ $ const queryParams = {
                 </@nodes>
               </marko-web-node-list>
             </marko-web-query>
-
             <theme-query-total-count|{ totalCount }| name="all-published-content" params={ includeTaxonomyIds: [id] }>
               <theme-pagination-controls
                 per-page=perPage
@@ -71,6 +69,16 @@ $ const queryParams = {
                   with-image=false
                 />
               </if>
+              <else>
+                <div class="newsletter-form">
+                  <div class="newsletter-signup-banner newsletter-signup-banner--large"><!---->
+                    <div class="newsletter-signup-banner__right-col newsletter-signup-banner__right-col--large">
+                      <div class="newsletter-signup-banner__name newsletter-signup-banner__name--large">Thanks for confirming!</div>
+                      <div class="newsletter-signup-banner__description newsletter-signup-banner__description--large">Save us on your safelist.</div>
+                    </div>
+                  </div>
+                </div>
+              </else>
             </marko-web-identity-x-context>
             <if(site.get("leaders.enabled"))>
               <global-leaders-taxonomy-page section-ids=leadersSectionIds />
@@ -81,7 +89,6 @@ $ const queryParams = {
             />
           </div>
         </div>
-
       </@section>
 
       <@section>
