@@ -49,3 +49,9 @@ $theme-site-navbar-logo-height-sm: 30px;
     background-color: #be1e2d !important;
   }
 }
+
+.site-footer {
+  &__logo {
+    width: 80px
+  }
+}
