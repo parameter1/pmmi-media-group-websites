@@ -29,13 +29,53 @@ $ const queryParams = {
       </@section>
 
       <@section|{ blockName }|>
-        <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj={ name }>
-          <if(p.page > 1)>${value}: ${i18n("Page")} ${p.page}</if>
-          <else>${value}</else>
-        </marko-web-website-section-name>
-
         <div class="row">
           <div class="col-lg-8">
+            $ const pinnedParams = {
+              limit: 1,
+              skip: 0,
+              includeTaxonomyIds: [id],
+              includeLabels: ['Taxonomy Introduction'],
+              queryFragment,
+            }
+            <marko-web-query|{ nodes }| name="all-published-content" params=pinnedParams>
+              $ const pinnedNode = nodes.slice(0, 1)[0] || {};
+              $ const { id, type, siteContext, primaryImage } = pinnedNode;
+              $ const pinnedImageNode = {
+                id,
+                type,
+                siteContext,
+                primaryImage
+              };
+              <marko-web-element block-name="top-stories" name="row">
+                <marko-web-element block-name="top-stories" name="col" modifiers=["hero"]>
+                  <theme-content-node
+                    image-position="top"
+                    card=true
+                    flush=true
+                    image-only=true
+                    modifiers=["top-stories-hero-image"]
+                    node=pinnedImageNode
+                  >
+                    <@image fluid=true width=600 ar="3:2" lazyload=false />
+                  </theme-content-node>
+                </marko-web-element>
+                <marko-web-element block-name="top-stories" name="col" modifiers=["list"]>
+                  <theme-content-node
+                    full-height=true
+                    card=true
+                    display-image=false
+                    flush=true
+                    modifiers=["top-stories-hero"]
+                    node=pinnedNode
+                  />
+                </marko-web-element>
+              </marko-web-element>
+            </marko-web-query>
+            <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj={ name }>
+              <if(p.page > 1)>${value}: ${i18n("Page")} ${p.page}</if>
+              <else>${value}</else>
+            </marko-web-website-section-name>
             <marko-web-query|{ nodes }| name="all-published-content" params=queryParams>
               <marko-web-node-list
                 flush-x=true
