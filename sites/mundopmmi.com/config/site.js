@@ -43,9 +43,9 @@ module.exports = {
       height: '30',
     },
     footer: {
-      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/footerLogos_white.png?h=35&auto=format,compress',
+      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/Mundo-EXPO-PACK_rev-white_WEB.svg?h=35&w=auto&auto=format,compress',
       srcset: [
-        'https://img.mundopmmi.com/files/base/pmmi/mundo/footerLogos_white.png?h=35&auto=format,compress&dpr=2 2x',
+        'https://img.mundopmmi.com/files/base/pmmi/mundo/Mundo-EXPO-PACK_rev-white_WEB.svg?h=35&w=auto&auto=format,compress&dpr=2 2x',
       ],
       width: '88',
       height: '35',
