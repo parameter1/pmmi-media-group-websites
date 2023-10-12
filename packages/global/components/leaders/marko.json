@@ -8,5 +8,9 @@
   "<global-leaders-contextual>": {
     "template": "./contextual.marko",
     "@content-id": "number"
+  },
+  "<global-leaders-taxonomy-page>": {
+    "template": "./taxonomy-page.marko",
+    "@section-ids": "array,"
   }
 }

@@ -1,0 +1,143 @@
+import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+import { getAsArray } from "@parameter1/base-cms-object-path";
+import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/section-feed-block";
+
+$ const { id, name, type, description, leadersSectionIds } = input;
+$ const { site, GAM, req, i18n, pagination: p } = out.global;
+$ const perPage = 12;
+$ const continueLabel = i18n("Sign Me Up!");
+$ const loginEmailLabel = i18n("Work Email");
+$ const actionText = i18n("signing up to receive your email notifications");
+$ const buttonLabels = { continue: continueLabel };
+
+$ const queryParams = {
+  limit: perPage,
+  skip: p.skip({ perPage }),
+  includeTaxonomyIds: [id],
+  queryFragment,
+};
+
+<marko-web-default-page-layout type="taxonomy" title=`${type}: ${name}` description=description>
+  <@page>
+    <marko-web-page-wrapper>
+      <@section modifiers=["first"]>
+        <theme-gam-define-display-ad
+          name="leaderboard"
+          position="section_page"
+          modifiers=["inter-block"]
+        />
+      </@section>
+
+      <@section|{ blockName }|>
+        <div class="row">
+          <div class="col-lg-8">
+            $ const pinnedParams = {
+              limit: 1,
+              skip: 0,
+              includeTaxonomyIds: [id],
+              includeLabels: ['Taxonomy Introduction'],
+              queryFragment,
+            }
+            <marko-web-query|{ nodes }| name="all-published-content" params=pinnedParams>
+              $ const pinnedNode = nodes.slice(0, 1)[0] || {};
+              $ const { id, type, siteContext, primaryImage } = pinnedNode;
+              $ const pinnedImageNode = {
+                id,
+                type,
+                siteContext,
+                primaryImage
+              };
+              <marko-web-element block-name="top-stories" name="row">
+                <marko-web-element block-name="top-stories" name="col" modifiers=["hero"]>
+                  <theme-content-node
+                    image-position="top"
+                    card=true
+                    flush=true
+                    image-only=true
+                    modifiers=["top-stories-hero-image"]
+                    node=pinnedImageNode
+                  >
+                    <@image fluid=true width=600 ar="3:2" lazyload=false />
+                  </theme-content-node>
+                </marko-web-element>
+                <marko-web-element block-name="top-stories" name="col" modifiers=["list"]>
+                  <theme-content-node
+                    full-height=true
+                    card=true
+                    display-image=false
+                    flush=true
+                    modifiers=["top-stories-hero"]
+                    node=pinnedNode
+                  />
+                </marko-web-element>
+              </marko-web-element>
+            </marko-web-query>
+            <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj={ name }>
+              <if(p.page > 1)>${value}: ${i18n("Page")} ${p.page}</if>
+              <else>${value}</else>
+            </marko-web-website-section-name>
+            <marko-web-query|{ nodes }| name="all-published-content" params=queryParams>
+              <marko-web-node-list
+                flush-x=true
+                flush-y=false
+                modifiers=["section-feed"]
+              >
+                <@nodes nodes=nodes>
+                  <@slot|{ node }|>
+                    <theme-section-feed-content-node node=node />
+                  </@slot>
+                </@nodes>
+              </marko-web-node-list>
+            </marko-web-query>
+            <theme-query-total-count|{ totalCount }| name="all-published-content" params={ includeTaxonomyIds: [id] }>
+              <theme-pagination-controls
+                per-page=perPage
+                total-count=totalCount
+                path=req.path
+              />
+            </theme-query-total-count>
+          </div>
+          <div class="col-lg-4">
+            <marko-web-identity-x-context|{ hasUser }|>
+              <if(!hasUser)>
+                <identity-x-newsletter-form-inline
+                  button-labels=buttonLabels
+                  login-email-label=loginEmailLabel
+                  login-email-placeholder="example@yourcompany.com"
+                  type="inlineSection"
+                  action-text=actionText
+                  with-image=false
+                />
+              </if>
+              <else>
+                <div class="newsletter-form">
+                  <div class="newsletter-signup-banner newsletter-signup-banner--large"><!---->
+                    <div class="newsletter-signup-banner__right-col newsletter-signup-banner__right-col--large">
+                      <div class="newsletter-signup-banner__name newsletter-signup-banner__name--large">Thanks for confirming!</div>
+                      <div class="newsletter-signup-banner__description newsletter-signup-banner__description--large">Save us on your safelist.</div>
+                    </div>
+                  </div>
+                </div>
+              </else>
+            </marko-web-identity-x-context>
+            <if(site.get("leaders.enabled"))>
+              <global-leaders-taxonomy-page section-ids=leadersSectionIds />
+            </if>
+            <theme-gam-define-display-ad
+              name="inline-content"
+              position="section_page"
+            />
+          </div>
+        </div>
+      </@section>
+
+      <@section>
+        <theme-gam-define-display-ad
+          name="rotation"
+          position="section_page"
+          modifiers=["inter-block"]
+        />
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</marko-web-default-page-layout>

@@ -267,7 +267,7 @@ export default {
     async loadSections() {
       const { sectionIds } = this;
       if (sectionIds && sectionIds.length) {
-        const url = `/__sections-from-ids?sectionIds=${this.sectionids}`;
+        const url = `/__sections-from-ids?sectionIds=${sectionIds}`;
         const res = await fetch(url);
         const json = await res.json();
         const sections = getEdgeNodes(json, 'websiteSections')
