@@ -12,11 +12,11 @@ $theme-site-navbar-secondary-font-size: 16px !default;
 // $theme-site-navbar-logo-height-sm: 24px;
 
 // Colors
-$primary: #002f7b;
+$primary: #ce2126;
 
-$leaders-primary-color: #002f7b;
-$leaders-primary-color-light: #005bac;
-$leaders-accent-color: #d557af;
+$leaders-primary-color: #ce2126;
+$leaders-primary-color-light: #e14146;
+$leaders-accent-color: #007557;
 
 $theme-site-navbar-logo-height: 45px;
 $theme-site-navbar-logo-height-sm: 30px;
@@ -43,10 +43,10 @@ $theme-site-navbar-logo-height-sm: 30px;
 }
 
 .inquiry-form-button {
-  background-color: #be1e2d !important;
+  background-color: #007557 !important;
   &:focus,
   &:hover {
-    background-color: #be1e2d !important;
+    background-color: #007557 !important;
   }
 }
 
