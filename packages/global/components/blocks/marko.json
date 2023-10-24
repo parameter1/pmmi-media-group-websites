@@ -28,5 +28,13 @@
   "<global-supplier-submitted-block>": {
     "template": "./supplier-submitted.marko",
     "@labels": "array"
+  },
+  "<global-hero-card-block>": {
+    "template": "./hero-card-deck.marko",
+    "@alias": "string",
+    "@description": "string",
+    "@name": "string",
+    "@query-params": "object",
+    "@section": "object"
   }
 }

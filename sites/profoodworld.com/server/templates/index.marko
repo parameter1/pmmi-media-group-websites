@@ -58,7 +58,10 @@ $ const { site } = out.global;
   </if>
 
   <@section>
-    <theme-hero-card-block name="Videos" query-params={ includeContentTypes: ["Video"] } />
+        <global-hero-card-block
+      query-params={ includeContentTypes: ["Video"] }
+      section={ name: "Videos", canonicalPath: "/videos"}
+    />
   </@section>
 
   <@section>
