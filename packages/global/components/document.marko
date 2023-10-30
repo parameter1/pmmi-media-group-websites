@@ -105,7 +105,6 @@ $ const buttonLabels = { continue: continueLabel };
   <@above-container>
     $ const progressBarEnabled = ['646d197711878ad52db7ff2a'];
     <if(progressBarEnabled.includes(get(config, 'websiteContext.id')) && req.path.match(/\d{8}/))>
-      $ console.log(req.path);
       <marko-web-browser-component name="CPGNextReadingProgressBar" />
     </if>
     <marko-web-browser-component name="OmedaIdentityXRapidIdentify" />
