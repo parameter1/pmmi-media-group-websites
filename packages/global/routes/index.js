@@ -19,6 +19,8 @@ const publicFiles = require('./public-files');
 const redirects = require('./redirects');
 const staticPage = require('./static-page');
 const taxonomyCategory = require('./taxonomy-category');
+const publication = require('../templates/magazine/publication');
+const publicationFragment = require('../graphql/fragments/magazine-publication-page');
 
 module.exports = (app, siteConfig) => {
   // Taxonomy category pages
@@ -34,7 +36,7 @@ module.exports = (app, siteConfig) => {
   scheduledContent(app);
 
   // Magazine Routes
-  magazine(app);
+  magazine(app, { publication }, { publicationFragment });
 
   // Omeda newsletter signup
   omedaNewsletters(app);
