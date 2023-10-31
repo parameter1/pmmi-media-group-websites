@@ -239,7 +239,12 @@
 /*! critical:start|home */
 /*! critical:start|magazine */
 @import "@parameter1/base-cms-marko-web-theme-monorail-magazine/scss/index";
-
+.publication-button-wrapper {
+  a {
+    margin-right: 12px;
+    margin-bottom: 12px;
+  }
+}
 /*! critical:end */
 
 // import theme leaders css
