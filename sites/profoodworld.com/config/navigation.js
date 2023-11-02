@@ -10,7 +10,7 @@ const resources = [
   { href: '/events', label: 'Events' },
   { href: '/downloads', label: 'Downloads' },
   { href: '/page/pfw-newsletter', label: 'Newsletters' },
-  { href: '/page/magazine', label: 'Magazine' },
+  { href: '/magazine', label: 'Magazine' },
   { href: '/leaders', label: 'Leaders in Processing' },
   { href: '/videos', label: 'Videos' },
   { href: '/podcasts', label: 'Podcasts' },
