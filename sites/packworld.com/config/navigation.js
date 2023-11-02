@@ -12,7 +12,7 @@ const resources = [
   { href: '/events', label: 'Events' },
   { href: '/downloads', label: 'Downloads' },
   { href: '/page/pw-newsletters', label: 'Newsletters' },
-  { href: '/page/magazine', label: 'Magazine' },
+  { href: '/magazine', label: 'Magazine' },
   { href: '/leaders', label: 'Leaders in Packaging' },
   { href: '/WomenInPackaging', label: 'Women in Packaging' },
   { href: '/videos', label: 'Videos' },

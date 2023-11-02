@@ -11,7 +11,7 @@ const resources = [
   { href: '/events', label: 'Events' },
   { href: '/downloads', label: 'Downloads' },
   { href: '/page/oem-newsletter', label: 'Newsletters', target: '_blank' },
-  { href: '/page/magazine', label: 'Magazine' },
+  { href: '/magazine', label: 'Magazine' },
   { href: '/leaders', label: 'OEM Partner Leaders' },
   { href: '/WomenInPackaging', label: 'Women in Packaging' },
   { href: '/videos', label: 'Videos' },

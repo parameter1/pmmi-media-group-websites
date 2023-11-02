@@ -22,7 +22,7 @@ const mobileMenu = {
     { href: '/events', label: 'Events' },
     { href: '/downloads', label: 'Downloads' },
     { href: '/page/hcp-newsletters', label: 'Newsletters' },
-    { href: '/page/magazine', label: 'Magazine' },
+    { href: '/magazine', label: 'Magazine' },
     { href: '/leaders', label: 'Premier Suppliers' },
     { href: '/videos', label: 'Videos' },
     { href: '/podcasts', label: 'Podcasts' },
