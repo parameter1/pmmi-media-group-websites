@@ -35,33 +35,33 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/Mundo-fullcolor.svg?h=45&auto=format,compress',
+      src: 'https://img.mundoexpopack.com/files/base/pmmi/mundo/Mundo-fullcolor.svg?h=45&auto=format,compress',
       srcset: [
-        'https://img.mundopmmi.com/files/base/pmmi/mundo/Mundo-fullcolor.svg?h=45&auto=format,compress&dpr=2 2x',
+        'https://img.mundoexpopack.com/files/base/pmmi/mundo/Mundo-fullcolor.svg?h=45&auto=format,compress&dpr=2 2x',
       ],
       width: '56',
       height: '30',
     },
     footer: {
-      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/Mundo-EXPO-PACK_rev-white_WEB.svg?h=35&w=auto&auto=format,compress',
+      src: 'https://img.mundoexpopack.com/files/base/pmmi/mundo/Mundo-EXPO-PACK_rev-white_WEB.svg?h=35&w=auto&auto=format,compress',
       srcset: [
-        'https://img.mundopmmi.com/files/base/pmmi/mundo/Mundo-EXPO-PACK_rev-white_WEB.svg?h=35&w=auto&auto=format,compress&dpr=2 2x',
+        'https://img.mundoexpopack.com/files/base/pmmi/mundo/Mundo-EXPO-PACK_rev-white_WEB.svg?h=35&w=auto&auto=format,compress&dpr=2 2x',
       ],
       width: '88',
       height: '35',
     },
     printContent: {
-      src: 'https://img.mundopmmi.com/files/base/pmmi/mundo/Mundo-fullcolor.svg?h=80&auto=format,compress',
+      src: 'https://img.mundoexpopack.com/files/base/pmmi/mundo/Mundo-fullcolor.svg?h=80&auto=format,compress',
       srcset: [
-        'https://img.mundopmmi.com/files/base/pmmi/mundo/Mundo-fullcolor.svg?h=80&auto=format,compress&dpr=2 2x',
+        'https://img.mundoexpopack.com/files/base/pmmi/mundo/Mundo-fullcolor.svg?h=80&auto=format,compress&dpr=2 2x',
       ],
     },
     corporate: {
       alt: 'PMMI Media Group Logo',
       href: 'https://www.pmmimediagroup.com',
-      src: 'https://img.mundopmmi.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress',
+      src: 'https://img.mundoexpopack.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress',
       srcset: [
-        'https://img.mundopmmi.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress&dpr=2 2x',
+        'https://img.mundoexpopack.com/files/base/pmmi/all/image/static/pmmi-logo.png?h=50&auto=format,compress&dpr=2 2x',
       ],
       width: '83',
       height: '40',
@@ -92,7 +92,7 @@ module.exports = {
   inquiry: {
     ...sharedInquiryConfig,
     sendFrom: 'Mundo Expo Pack <noreply@parameter1.com>',
-    logo: 'https://img.mundopmmi.com/files/base/pmmi/mundo/footerLogos_white.png?h=45&auto=format,compress',
+    logo: 'https://img.mundoexpopack.com/files/base/pmmi/mundo/footerLogos_white.png?h=45&auto=format,compress',
   },
   lang: 'es',
   productsParams: { alias: 'noticias-de-los-proveedores' },
