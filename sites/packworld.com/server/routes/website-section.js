@@ -1,4 +1,5 @@
 const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middleware');
+const { asyncRoute } = require('@parameter1/base-cms-utils');
 const queryFragment = require('@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/website-section-page');
 const leadersFragment = require('@pmmi-media-group/package-theme-monorail-leaders/graphql/fragments/leaders-section');
 const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');
@@ -8,8 +9,11 @@ const { newsletterState } = require('@pmmi-media-group/package-global/middleware
 
 const section = require('../templates/website-section');
 const leaders = require('../templates/website-section/leaders');
+const caseStudies = require('../templates/website-section/casestudies-casepacking');
 
 module.exports = (app) => {
+  app.get('/casestudies-casepacking', asyncRoute(async (_, res) => res.marko(caseStudies)));
+
   app.get('/:alias(events)', withWebsiteSection({
     template: events,
     queryFragment,
