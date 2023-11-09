@@ -48,7 +48,7 @@ $ const { name, description } = {
               <if(p.page > 1)>${value}: ${i18n("Page")} ${p.page}</if>
               <else>${value}</else>
             </marko-web-website-section-name>
-            <marko-web-website-section-description obj={ description } />
+            <marko-web-website-section-description obj={ description } attrs={ style: "margin-bottom: 20px" } />
             <marko-web-query|{ nodes }| name="all-published-content" params=queryParams>
               <marko-web-node-list
                 flush-x=true
