@@ -5,8 +5,7 @@ const sections = [
   { href: '/data-analytics', label: 'Data & Analytics' },
   { href: '/manufacturing-metaverse', label: 'Manufacturing Metaverse' },
   { href: '/efficiency-sustainability', label: 'Efficiency & Sustainbility' },
-  // @todo Once section populated add this
-  // { href: '/journeys', label: 'Journeys' },
+  { href: '/journeys', label: 'Journeys' },
 ];
 
 const topics = [
