@@ -4,6 +4,8 @@ import { getAsArray } from "@parameter1/base-cms-object-path";
 import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/section-feed-block";
 
 $ const { site, req, i18n, pagination: p } = out.global;
+$ const { name, description } = input;
+$ const taxonomyIds = getAsArray(input.taxonomyIds);
 $ const perPage = 12;
 $ const continueLabel = i18n("Sign Me Up!");
 $ const loginEmailLabel = i18n("Work Email");
@@ -13,21 +15,14 @@ $ const actionText = i18n("signing up to receive your email notifications");
 $ const queryParams = {
   limit: 3,
   skip: p.skip({ perPage }),
-  // Packaging machinery > case erect/seal, Packaging machinery > case/tray packing
-  includeTaxonomyIds: [2008384, 2008385],
+  includeTaxonomyIds: taxonomyIds,
   includeLabels: ["Case Study"],
   queryFragment,
 };
 
 $ const paginationParams = {
-  // Packaging machinery > case erect/seal, Packaging machinery > case/tray packing
-  includeTaxonomyIds: [2008384, 2008385],
+  includeTaxonomyIds: taxonomyIds,
   includeLabels: ["Case Study"],
-};
-
-$ const { name, description } = {
-  name: "A Curated Collection of Case Studies: Case Packing",
-  description: "Are you in the market for a case packer and looking for the latest technology and innovations to streamline your packaging operations? Check out our list of case studies featuring case packers and the unique solutions that these pieces of equipment bring to the companies mentioned here. Learn how the equipment works, what it’s capable of, and which machine is right for your line."
 };
 
 <marko-web-default-page-layout type="website-section" title=name description=description>
