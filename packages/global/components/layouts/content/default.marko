@@ -76,7 +76,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
               required-access-level-ids=accessLevels
             >
               <if(!context.canAccess || context.requiresUserInput)>
-                $ const body = getContentPreview({ body: content.body, selector: "p:lt(3)" });
+                $ const body = getContentPreview({ body: content.body, selector: "p:lt(5)" });
                 $ const primaryImage = getContentPreview({primaryImage: content.primaryImage, selector: "primaryImage" });
                 <theme-primary-image-block
                   obj=content.primaryImage
