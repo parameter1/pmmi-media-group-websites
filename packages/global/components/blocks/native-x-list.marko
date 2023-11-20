@@ -12,19 +12,22 @@ $ const uri = nxConfig.getUri();
   <div class="node-list native-x-list node-list--flush-x">
     <div class="node-list__nodes">
       $ const placementA = nxConfig.getPlacement({ name: "audience", aliases });
-      <marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placementA.id opts={ n: 1 }>
-        $ const hasAd = ads && ads.length && ads[0] && ads[0].hasCampaign;
-        <if(hasAd)>
-          <div class="node-list__node">
-            <theme-content-node
-              with-teaser=false
-              image-position="right"
-              with-section=false
-              with-dates=false
-              image={ lazyload: true, width: 100, height: 67, ar: "3:2" }
-              ...convertAdToNode(ads[0], { sectionName })
-            />
-          </div>
+      $ const n = sectionName === 'Contenido Patrocinado' ? 1 : 3;
+      <marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placementA.id opts={ n }>
+        $ const activeAds = ads.filter((ad) => ad.hasCampaign);
+        <if(activeAds.length)>
+          <for|ad| of=activeAds>
+            <div class="node-list__node">
+              <theme-content-node
+                with-teaser=false
+                image-position="right"
+                with-section=true
+                with-dates=false
+                image={ lazyload: true, width: 100, height: 67, ar: "3:2" }
+                ...convertAdToNode(ad, { sectionName })
+              />
+            </div>
+          </for>
         </if>
       </marko-web-native-x-fetch-elements>
 

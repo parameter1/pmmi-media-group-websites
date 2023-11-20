@@ -1,24 +1,23 @@
 const privacyPolicy = require('./privacy-policy');
 
 const sections = [
-  { href: '/digital-factory-software', label: 'Digital Factory Software' },
+  { href: '/transformation-trends', label: 'Transformation Trends' },
   { href: '/data-analytics', label: 'Data & Analytics' },
-  { href: '/connected-workforce', label: 'Connected Workforce' },
   { href: '/manufacturing-metaverse', label: 'Manufacturing Metaverse' },
-  { href: '/cybersecurity', label: 'Cybersecurity' },
+  { href: '/efficiency-sustainability', label: 'Efficiency & Sustainbility' },
+  { href: '/journeys', label: 'Journeys' },
 ];
 
 const topics = [
-  { href: '/big-data-analytics-data-management', label: 'Big Data Analytics/Data Management' },
-  { href: '/iiot-industrial-internet-of-things', label: 'IIoT (Industrial Internet of Things' },
-  { href: '/machine-learning-artificial-intelligence', label: 'Machine Learning/Artificial Intelligence' },
-  { href: '/cloud-computing', label: 'Cloud Computing' },
-  { href: '/virtual-augmented-reality', label: 'Virtual/Augmented Reality' },
-  { href: '/simulation-digital-twins', label: 'Simulation/Digital Twins' },
-  { href: '/asset-lifecycle-management', label: 'Asset Lifecycle Management' },
-  { href: '/predictive-maintenance', label: 'Predictive Maintenance' },
-  { href: '/track-and-trace', label: 'Track and Trace' },
-  { href: '/overall-equipment-effectiveness', label: 'Overall Equipment Effectiveness' },
+  { href: '/data-analytics/data-management', label: 'Data Management' },
+  { href: '/data-analytics/iiot', label: 'IIoT' },
+  { href: '/data-analytics/artificial-intelligence-machine-learning', label: 'Artificial Intelligence/Machine Learning' },
+  { href: '/transformation-trends/cloud-services', label: 'Cloud Services' },
+  { href: '/manufacturing-metaverse/virtual-augmented-reality', label: 'Virtual/Augmented Reality' },
+  { href: '/manufacturing-metaverse/simulation-digital-twins', label: 'Simulation/Digital Twins' },
+  { href: '/efficiency-sustainability/predictive-maintenance', label: 'Predictive Maintenance' },
+  { href: '/efficiency-sustainability/track-and-trace', label: 'Track and Trace' },
+  { href: '/efficiency-sustainability/oee-asset-management', label: 'OEE/Asset Management' },
 ];
 
 const utilities = [
