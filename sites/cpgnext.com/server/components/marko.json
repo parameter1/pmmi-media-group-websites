@@ -1,3 +1,11 @@
 {
-  "taglib-imports": []
+  "taglib-imports": [],
+  "<cpgn-published-content-list-block>": {
+    "template": "./published-content-list.marko",
+    "@section-id": "number"
+  },
+  "<cpgn-published-content-list-deck-block>": {
+    "template": "./published-content-list-deck.marko",
+    "@section-ids": "array"
+  }
 }

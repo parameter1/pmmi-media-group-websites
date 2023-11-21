@@ -1,0 +1,14 @@
+import { getAsArray } from "@parameter1/base-cms-object-path";
+
+$ const blockName = "section-list-deck";
+$ const sectionIds = getAsArray(input, "sectionIds");
+
+<marko-web-block name=blockName>
+  <marko-web-element block-name=blockName name="row">
+    <for|sectionId| of=sectionIds>
+      <marko-web-element block-name=blockName name="col">
+        <cpgn-published-content-list-block section-id=sectionId />
+      </marko-web-element>
+    </for>
+  </marko-web-element>
+</marko-web-block>
