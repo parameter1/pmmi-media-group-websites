@@ -2,6 +2,7 @@ const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middlewar
 const { asyncRoute } = require('@parameter1/base-cms-utils');
 const queryFragment = require('@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/website-section-page');
 const leadersFragment = require('@pmmi-media-group/package-theme-monorail-leaders/graphql/fragments/leaders-section');
+const emergingBrandsFragment = require('@pmmi-media-group/package-global/graphql/fragments/emerging-brands-section-page');
 const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');
 const events = require('@pmmi-media-group/package-global/templates/website-section/events');
 const withTopStoriesBlock = require('@pmmi-media-group/package-global/templates/website-section/with-top-stories-block');
@@ -44,6 +45,11 @@ module.exports = (app) => {
   app.get('/:alias(WomenInPackaging)', newsletterState(), withWebsiteSection({
     template: withTopStoriesBlock,
     queryFragment,
+  }));
+
+  app.get('/:alias(emergingbrands)', newsletterState(), withWebsiteSection({
+    template: section,
+    queryFragment: emergingBrandsFragment,
   }));
 
   app.get('/:alias([a-z0-9-/]+)', newsletterState(), withWebsiteSection({

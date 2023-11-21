@@ -41,7 +41,21 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
   <@section|{ blockName, content, aliases, authors }| modifiers=["content-header"]>
     $ const { primarySection } = content;
     <div class="content-page-header">
-      <theme-content-page-breadcrumbs section=primarySection />
+      <if(primarySection.alias === 'emergingbrands' && primarySection.logo)>
+        <marko-web-link href=primarySection.canonicalPath title=primarySection.name>
+          $ const obj = { ...primarySection.logo, alt: `${primarySection.name} Logo` };
+          <marko-web-page-image
+            width=375
+            fluid=false
+            lazyload=false
+            modifiers=["section-logo"]
+            obj=obj
+          />
+        </marko-web-link>
+      </if>
+      <else>
+        <theme-content-page-breadcrumbs section=primarySection />
+      </else>
       <marko-web-content-name tag="h1" block-name=blockName obj=content />
       <marko-web-content-teaser tag="p" class="page-wrapper__deck" obj=content />
       <if(type !== "contact")>

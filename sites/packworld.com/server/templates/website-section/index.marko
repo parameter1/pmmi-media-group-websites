@@ -5,4 +5,18 @@ $ const { id, alias, name, pageNode } = input;
   alias=alias
   name=name
   page-node=pageNode
-/>
+>
+<@after-name|{ section }|>
+  <if(alias === 'emergingbrands' && section.logo)>
+    $ const obj = { ...section.logo, alt: `${section.name} Logo` };
+    <marko-web-page-image
+      width=375
+      fluid=false
+      lazyload=false
+      modifiers=["section-logo"]
+      obj=obj
+    />
+    <marko-web-website-section-description obj=section attrs={ style: "margin-bottom: 20px" } />
+  </if>
+</@after-name>
+</global-website-section-feed-layout>
