@@ -78,6 +78,17 @@ $ const attrs = {
           has-user=hasUser
         />
       </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <theme-site-menu-section
+          tag="nav"
+          block-name=blockName
+          label=(site.get("navigation.desktopMenu.extraCol.label") || "Resources")
+          items=site.getAsArray("navigation.desktopMenu.extraCol.items")
+          modifiers=["primary"]
+          reg-enabled=regEnabled
+          has-user=hasUser
+        />
+      </div>
     </div>
   </marko-web-element>
   <!-- mobile -->
