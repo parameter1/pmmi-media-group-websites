@@ -130,7 +130,10 @@ $ const queryParams = {
             </marko-web-identity-x-context>
             <div class="node-list native-x-list node-list--flush-x py-3" >
             $ const uri = nxConfig.getUri();
-            $ const placement = nxConfig.getPlacement({ name: `super-category-${name.toLowerCase()}` });
+            $ const placementName = `${name.toLowerCase().replace(/ /g, '-').replace(/\//g, '-').replace(/\(.+\)/, '').replace(/-$/, '')}`;
+            $ const placement = nxConfig.getPlacement({
+              name: `super-category-${placementName}`,
+            });
             <marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placement.id opts={ n: 1 }>
               $ const hasAd = ads && ads.length && ads[0] && ads[0].hasCampaign;
               $ const sectionName = `${i18n("Sponsor Content")}`;
