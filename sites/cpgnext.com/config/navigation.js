@@ -22,10 +22,9 @@ const topics = [
   { href: '/efficiency-sustainability/oee-asset-management', label: 'OEE/Asset Management' },
   { href: '/efficiency-sustainability/energy-management', label: 'Energy Management' },
   { href: '/efficiency-sustainability/production', label: 'Production' },
-  { href: '/efficiency-sustainability/logistics-supply-chain', label: 'Logistics/Supply Chain'},
+  { href: '/efficiency-sustainability/logistics-supply-chain', label: 'Logistics/Supply Chain' },
   { href: '/cybersecurity/remote-access-monitoring', label: 'Remote Access/Monitoring' },
   { href: '/cybersecurity/networking-connectivity', label: 'Networking and Connectivity' },
-
 ];
 
 const utilities = [
