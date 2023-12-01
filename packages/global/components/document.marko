@@ -85,9 +85,9 @@ $ const buttonLabels = { continue: continueLabel };
     <marko-web-gam-targeting key-values={ uri: req.path } />
   </@head>
   <@above-container>
-    $ const progressBarEnabled = ['646d197711878ad52db7ff2a'];
+    $ const progressBarEnabled = ["646d197711878ad52db7ff2a", "5d88cef7f175132c008b456f"];
     <if(progressBarEnabled.includes(get(config, 'websiteContext.id')) && req.path.match(/\d{8}/))>
-      <marko-web-browser-component name="CPGNextReadingProgressBar" />
+      <marko-web-browser-component name="GlobalReadingProgressBar" />
     </if>
 
     <marko-web-browser-component name="OmedaIdentityXRapidIdentify" />

@@ -42,13 +42,11 @@ $ const { site } = out.global;
   </@section>
 
   <@section>
-    <theme-native-x-promo-card-block placement-name="marketing" />
+    <theme-section-feed-block alias="home">
+      <@before><div class="node-list__header" style="padding: 0px">More from Healthcare Packaging</div></@before>
+      <@query-params limit=12 skip=1 />
+    </theme-section-feed-block>
   </@section>
-
-  <@section>
-    <theme-client-side-most-popular-block />
-  </@section>
-
 
   $ const publicationIds = site.getAsArray("magazine.publicationIds");
   <if(publicationIds.length)>
@@ -56,13 +54,6 @@ $ const { site } = out.global;
       <theme-magazine-issues-block publication-id=publicationIds[0] />
     </@section>
   </if>
-
-  <@section>
-    <global-hero-card-block
-      query-params={ includeContentTypes: ["Video"] }
-      section={ name: "Videos", canonicalPath: "/videos"}
-    />
-  </@section>
 
   <@section>
     <marko-web-identity-x-context|{ hasUser }|>
