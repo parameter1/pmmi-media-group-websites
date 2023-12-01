@@ -2,7 +2,13 @@ import { get, getAsArray } from "@parameter1/base-cms-object-path";
 import contentIframe from "@pmmi-media-group/package-global/utils/content-iframe";
 import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/utils/get-content-preview";
 
-$ const { site, contentGatingHandler, req, i18n } = out.global;
+$ const {
+  site,
+  config,
+  contentGatingHandler,
+  req,
+  i18n
+} = out.global;
 $ const { id, type, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
 $ const sections = getAsArray(input, "sections");
 
@@ -290,6 +296,15 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
         position="content_page"
         aliases=aliases
         modifiers=["inter-block"]
+      />
+    </@section>
+  </if>
+
+  <if(["5d88cedef175132c008b456b", "5d88cf1af175132c008b4577"].includes(get(config, "websiteContext.id")))>
+    <@section>
+      <theme-content-card-deck-block
+        query-params={ includeLabels: ["Machinery Basics"], limit: 4 }
+        section={ name: "Machinery Basics", canonicalPath: "/machinery-basics" }
       />
     </@section>
   </if>
