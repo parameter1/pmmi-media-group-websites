@@ -9,6 +9,7 @@ $ const { config, GAM, pagination: p, i18n } = out.global;
 $ const {
   alias,
   title,
+  includeLabels,
   includeContentTypes,
   sortField,
   sortOrder,
@@ -22,7 +23,7 @@ $ const description = defaultDescription(title, config);
 <theme-default-page title=title description=description>
   <@head>
     <theme-section-feed-block|{ totalCount }| with-section=false query-name=queryName count-only=true>
-      <@query-params include-content-types=includeContentTypes />
+      <@query-params include-labels=includeLabels include-content-types=includeContentTypes />
       <theme-pagination-controls
         per-page=perPage
         total-count=totalCount
@@ -62,6 +63,7 @@ $ const description = defaultDescription(title, config);
             limit=18
             skip=p.skip({ perPage })
             query-fragment=queryFragment
+            include-labels=includeLabels
             include-content-types=includeContentTypes
             sort-field=sortField
             sort-order=sortOrder
@@ -69,7 +71,7 @@ $ const description = defaultDescription(title, config);
           />
         </theme-section-feed-block>
         <theme-section-feed-block|{ totalCount }| query-name=queryName count-only=true>
-          <@query-params include-content-types=includeContentTypes />
+          <@query-params include-labels=includeLabels include-content-types=includeContentTypes />
           <theme-pagination-controls
             per-page=perPage
             total-count=totalCount
