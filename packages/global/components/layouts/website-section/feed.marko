@@ -46,7 +46,12 @@ $ const actionText = i18n("signing up to receive your email notifications");
       />
     </if>
 
-    <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj=section>
+    <marko-web-website-section-name|{ value }|
+      tag="h1"
+      block-name=blockName
+      obj=section
+      modifiers=[section.alias]
+    >
       <if(p.page > 1)>${value}: Page ${p.page}</if>
       <else>${value}</else>
     </marko-web-website-section-name>

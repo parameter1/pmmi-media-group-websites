@@ -45,6 +45,10 @@ fragment LeadersContentPageFragment on Content {
       alias
       canonicalPath
     }
+    logo {
+      id
+      src(input: { options: { auto: "format,compress" } })
+    }
   }
   primaryImage {
     id

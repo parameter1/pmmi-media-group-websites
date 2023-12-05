@@ -13,11 +13,18 @@ const topics = [
   { href: '/data-analytics/iiot', label: 'IIoT' },
   { href: '/data-analytics/artificial-intelligence-machine-learning', label: 'Artificial Intelligence/Machine Learning' },
   { href: '/transformation-trends/cloud-services', label: 'Cloud Services' },
+  { href: '/transformation-trends/e-commerce', label: 'E-commerce' },
+  { href: '/transformation-trends/connected-workforce', label: 'Connected Workforce' },
   { href: '/manufacturing-metaverse/virtual-augmented-reality', label: 'Virtual/Augmented Reality' },
   { href: '/manufacturing-metaverse/simulation-digital-twins', label: 'Simulation/Digital Twins' },
   { href: '/efficiency-sustainability/predictive-maintenance', label: 'Predictive Maintenance' },
   { href: '/efficiency-sustainability/track-and-trace', label: 'Track and Trace' },
   { href: '/efficiency-sustainability/oee-asset-management', label: 'OEE/Asset Management' },
+  { href: '/efficiency-sustainability/energy-management', label: 'Energy Management' },
+  { href: '/efficiency-sustainability/production', label: 'Production' },
+  { href: '/efficiency-sustainability/logistics-supply-chain', label: 'Logistics/Supply Chain' },
+  { href: '/cybersecurity/remote-access-monitoring', label: 'Remote Access/Monitoring' },
+  { href: '/cybersecurity/networking-connectivity', label: 'Networking and Connectivity' },
 ];
 
 const utilities = [
@@ -31,6 +38,7 @@ const mobileMenu = {
   primary: [...sections],
   secondary: [
     { href: '/downloads', label: 'Downloads' },
+    { href: '/webinars', label: 'Webinars' },
     { href: 'https://cpgnext.dragonforms.com/cpgnlsf?pk=CPG_NL_TopNav', label: 'Subscribe', target: '_blank' },
     ...topics,
     ...utilities,
@@ -46,7 +54,7 @@ const desktopMenu = {
   },
   middleCol: { items: [...sections] },
   rightCol: { label: 'Topics', items: [...topics] },
-  extraCol: { label: 'Resources', items: [{ href: '/downloads', label: 'Downloads' }] },
+  extraCol: { label: 'Resources', items: [{ href: '/downloads', label: 'Downloads' }, { href: '/webinars', label: 'Webinars' }] },
 };
 
 module.exports = {
@@ -57,6 +65,7 @@ module.exports = {
     items: [
       { href: 'https://cpgnext.dragonforms.com/cpgnlsf?pk=CPG_NL_TopNav', label: 'Subscribe', target: '_blank' },
       ...sections,
+      { href: '/webinars', label: 'Webinars' },
       // { href: '/leaders', label: 'Leaders' },
       // { href: '/downloads', label: 'Downloads' },
     ],

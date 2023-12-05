@@ -65,12 +65,10 @@ const desktopMenu = {
 };
 
 module.exports = {
+  type: 'navbar-b',
   desktopMenu,
   mobileMenu,
   primary: {
-    items: [],
-  },
-  secondary: {
     items: [
       subscribe,
       { href: '/machinery-materials', label: 'Machinery & Materials' },
@@ -78,6 +76,9 @@ module.exports = {
       { href: '/leaders', label: 'Suppliers' },
       { href: '/downloads', label: 'Downloads' },
     ],
+  },
+  secondary: {
+    items: [],
   },
   tertiary: {
     items: [],
