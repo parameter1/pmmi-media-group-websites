@@ -1,14 +1,20 @@
 import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/section-feed-block";
 import sectionFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/section-info";
 
-$ const { sectionId } = input;
+$ const { sectionId, excludeContentIds } = input;
 
 $ const blockName = "section-list";
 
 <marko-web-query|{ section }| name="website-scheduled-content" params={ sectionId, limit: 1, sectionFragment }>
   <marko-web-query|{ nodes }|
     name="all-published-content"
-    params={ limit: 5, sectionId, sectionBubbling: true, queryFragment }
+    params={
+      limit: 5,
+      sectionId,
+      excludeContentIds,
+      sectionBubbling: true,
+      queryFragment
+    }
   >
     <marko-web-node-list
       flush-x=true
