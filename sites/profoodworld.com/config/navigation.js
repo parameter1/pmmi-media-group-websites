@@ -7,6 +7,7 @@ const topics = [
 ];
 
 const resources = [
+  { href: '/emergingbrands', label: 'Emerging Brands' },
   { href: '/events', label: 'Events' },
   { href: '/downloads', label: 'Downloads' },
   { href: '/page/pfw-newsletter', label: 'Newsletters' },
