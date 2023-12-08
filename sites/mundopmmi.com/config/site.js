@@ -91,12 +91,12 @@ module.exports = {
   },
   inquiry: {
     ...sharedInquiryConfig,
-    sendFrom: 'Mundo Expo Pack <noreply@parameter1.com>',
+    sendFrom: 'Mundo EXPO PACK <noreply@parameter1.com>',
     logo: 'https://img.mundoexpopack.com/files/base/pmmi/mundo/footerLogos_white.png?h=45&auto=format,compress',
   },
   lang: 'es',
   productsParams: { alias: 'noticias-de-los-proveedores' },
-  completeYourProfileVerbiage: 'Completa tu perfil de Mundo Expo Pack',
+  completeYourProfileVerbiage: 'Completa tu perfil de Mundo EXPO PACK',
   profileSubmitButtonLabel: 'Enviar',
   linkOffsite: {
     webinar: 'linkUrl',
