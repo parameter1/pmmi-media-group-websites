@@ -300,7 +300,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
     </@section>
   </if>
 
-  <if(["5d88cedef175132c008b456b", "5d88cf1af175132c008b4577"].includes(get(config, "websiteContext.id")))>
+  <if(["5d88cedef175132c008b456b"].includes(get(config, "websiteContext.id")))>
     <@section>
       <theme-content-card-deck-block
         query-params={ includeLabels: ["Machinery Basics"], limit: 4 }
