@@ -4,7 +4,7 @@ const sections = [
   { href: '/transformation-trends', label: 'Transformation Trends' },
   { href: '/data-analytics', label: 'Data & Analytics' },
   { href: '/manufacturing-metaverse', label: 'Manufacturing Metaverse' },
-  { href: '/efficiency-sustainability', label: 'Efficiency & Sustainbility' },
+  { href: '/efficiency-sustainability', label: 'Efficiency & Sustainability' },
   { href: '/journeys', label: 'Journeys' },
 ];
 
