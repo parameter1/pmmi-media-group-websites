@@ -22,14 +22,4 @@ module.exports = (app) => {
       },
     );
   });
-  app.get('/machinery-basics', newsletterState(), (_, res) => {
-    res.marko(
-      scheduledContent,
-      {
-        alias: 'machinery-basics',
-        includeLabels: ['Machinery Basics'],
-        title: 'Machinery Basics',
-      },
-    );
-  });
 };
