@@ -24,7 +24,7 @@ $ const uri = nxConfig.getUri();
                 with-section=true
                 with-dates=false
                 image={ lazyload: true, width: 100, height: 67, ar: "3:2" }
-                ...convertAdToNode(ad, { sectionName })
+                ...convertAdToNode(ad, { sectionName: `${i18n("Recommended")}` })
               />
             </div>
           </for>
