@@ -87,4 +87,5 @@ module.exports = {
   'Complete your profile to print the full article': 'Completa tu perfil para imprimir el articulo completo',
   'signing up to receive your email notifications': 'registrarse para recibir sus notificaciones por correo electrónico',
   continue: 'Continuar',
+  recommended: 'Recomendado',
 };
