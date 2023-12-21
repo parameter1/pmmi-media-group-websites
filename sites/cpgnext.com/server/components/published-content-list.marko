@@ -1,0 +1,73 @@
+import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/section-feed-block";
+import sectionFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/section-info";
+
+$ const { sectionId, excludeContentIds } = input;
+
+$ const blockName = "section-list";
+
+<marko-web-query|{ section }| name="website-scheduled-content" params={ sectionId, limit: 1, sectionFragment }>
+  <marko-web-query|{ nodes }|
+    name="all-published-content"
+    params={
+      limit: 5,
+      sectionId,
+      excludeContentIds,
+      sectionBubbling: true,
+      queryFragment
+    }
+  >
+    <marko-web-node-list
+      flush-x=true
+      flush-y=false
+      modifiers=["section-feed"]
+    >
+      <@nodes nodes=nodes>
+        <marko-web-node-list
+          inner-justified=true
+          flush-x=true
+          flush-y=true
+          modifiers=[blockName]
+          ...input.nodeList
+        >
+          <@header>
+            <marko-web-website-section-name obj=section link=true />
+          </@header>
+          <@nodes nodes=nodes>
+            <@slot|{ node, index }|>
+              <if(index === 0)>
+                <theme-content-node
+                  image-position="top"
+                  card=true
+                  flush=true
+                  modifiers=[`${blockName}-card`]
+                  with-teaser=false
+                  with-dates=false
+                  with-section=true
+                  node=node
+                >
+                  <@image fluid=true width=330 ar="3:2" />
+                </theme-content-node>
+              </if>
+              <else>
+                <theme-content-node
+                  display-image=false
+                  flush=true
+                  modifiers=[`${blockName}-item`]
+                  with-teaser=false
+                  with-dates=false
+                  with-section=true
+                  node=node
+                />
+              </else>
+            </@slot>
+          </@nodes>
+          <@footer modifiers=["view-more"]>
+            <marko-web-website-section-name obj=section link=true>
+              View More &raquo;
+            </marko-web-website-section-name>
+          </@footer>
+        </marko-web-node-list>
+      </@nodes>
+    </marko-web-node-list>
+  </marko-web-query>
+</marko-web-query>
