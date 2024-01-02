@@ -4,7 +4,6 @@ import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql
 $ const blockName = "section-list-deck";
 $ const sectionIds = getAsArray(input, "sectionIds");
 $ const limit = input.excludeTopStoriesCount || 5;
-$ console.log(limit);
 
 // This will exclude whatever is in the top stories block from these subsequent blocks
 $ const excludeContentQueryParams = {
