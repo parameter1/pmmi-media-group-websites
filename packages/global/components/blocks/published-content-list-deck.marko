@@ -1,0 +1,41 @@
+import { getAsArray } from "@parameter1/base-cms-object-path";
+import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/top-stories-block";
+
+$ const blockName = "section-list-deck";
+$ const sectionIds = getAsArray(input, "sectionIds");
+$ const limit = input.excludeTopStoriesCount || 5;
+
+// This will exclude whatever is in the top stories block from these subsequent blocks
+$ const excludeContentQueryParams = {
+  limit,
+  requiresImage: true,
+  sectionAlias: "home",
+  optionName: "Pinned",
+  queryFragment,
+};
+
+<marko-web-query|{ nodes }| name="website-optioned-content" params=excludeContentQueryParams>
+  <if(nodes.length)>
+  $ const excludeContentIds = nodes.map((node) => node.id);
+    <marko-web-block name=blockName>
+      <marko-web-element block-name=blockName name="row">
+        <for|sectionId| of=sectionIds>
+          <marko-web-element block-name=blockName name="col">
+            <global-published-content-list-block section-id=sectionId exclude-content-ids=excludeContentIds />
+          </marko-web-element>
+        </for>
+      </marko-web-element>
+    </marko-web-block>
+  </if>
+  <else>
+    <marko-web-block name=blockName>
+      <marko-web-element block-name=blockName name="row">
+        <for|sectionId| of=sectionIds>
+          <marko-web-element block-name=blockName name="col">
+            <global-published-content-list-block section-id=sectionId />
+          </marko-web-element>
+        </for>
+      </marko-web-element>
+    </marko-web-block>
+  </else>
+</marko-web-query>
