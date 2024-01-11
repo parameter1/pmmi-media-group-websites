@@ -18,7 +18,6 @@ module.exports = (app) => {
   const useLinkInjectedBody = site.get('useLinkInjectedBody');
   const queryFragment = qf.factory ? qf.factory({ useLinkInjectedBody }) : qf;
 
-
   app.get('/*?contact/:id(\\d{8})*', newsletterState({ setCookie: false }), withContent({
     template: contact,
     queryFragment,
