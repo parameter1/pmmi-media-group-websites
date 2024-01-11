@@ -15,6 +15,7 @@ module.exports = {
   // module configs
   gam,
   identityX,
+  useLinkInjectedBody: process.env.USE_LINK_INJECTED_BODY === 'true',
   idxNavItems: { enable: true },
   leaders,
   magazine,
