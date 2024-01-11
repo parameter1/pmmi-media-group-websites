@@ -205,7 +205,7 @@ const factory = ({ useLinkInjectedBody = false, leadersAlias = '' } = {}) => {
       }
     }
     `;
-    fragment.factory = factory;
+  fragment.factory = factory;
   return fragment;
 };
 
