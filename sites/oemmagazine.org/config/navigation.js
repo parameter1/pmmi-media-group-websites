@@ -2,9 +2,9 @@ const privacyPolicy = require('./privacy-policy');
 const subscribe = require('./subscribe');
 
 const topics = [
-  { href: '/technology', label: 'Technology' },
-  { href: '/products', label: 'Products' },
+  { href: '/engineering', label: 'Engineering' },
   { href: '/business', label: 'Business' },
+  { href: '/pmmi-news', label: 'PMMI News' },
 ];
 
 const resources = [
@@ -55,23 +55,61 @@ const desktopMenu = {
   },
 };
 
+const primaryNavigationItems = [
+  subscribe,
+  ...topics,
+  { href: '/leaders', label: 'Partner Leaders' },
+  { href: '/downloads', label: 'Downloads' },
+];
+
 module.exports = {
+  type: 'navbar-b',
   desktopMenu,
   mobileMenu,
   primary: {
-    items: [],
+    items: primaryNavigationItems,
   },
   secondary: {
-    items: [
-      subscribe,
-      ...topics,
-      { href: '/leaders', label: 'Partner Leaders' },
-      { href: '/downloads', label: 'Downloads' },
-    ],
+    items: [],
   },
   tertiary: {
     items: [],
   },
+  contexts: [
+    {
+      when: ['/engineering'],
+      secondary: { items: [{ href: '/engineer/machine-design', label: 'Machine Design' }] },
+      tertiary: { items: [] },
+      primary: { items: primaryNavigationItems },
+    },
+    {
+      when: ['/business'],
+      secondary: {
+        items: [
+          { href: '/business/oem-profiles', label: 'OEM Profiles' },
+          { href: '/business/management', label: 'Management' },
+          { href: '/business/sales-marketing', label: 'Sales & Marketing' },
+          { href: '/business/operations-it', label: 'Operations & IT' },
+          { href: '/business/workforce', label: 'Workforce' },
+          { href: '/business/esg', label: 'ESG' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: primaryNavigationItems },
+    },
+    {
+      when: ['/pmmi-news'],
+      secondary: {
+        items: [
+          { href: '/pmmi-news/business-intelligence', label: 'Business Intelligence' },
+          { href: '/pmmi-news/PACKEXPO', label: 'PACK EXPO' },
+          { href: '/pmmi-news/ppwln', label: 'PPWLN' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: primaryNavigationItems },
+    },
+  ],
   user: {
     items: [],
   },
