@@ -1,0 +1,23 @@
+import { get } from "@parameter1/base-cms-object-path";
+
+$ const { config } = out.global;
+
+$ const siteID = get(config, "websiteContext.id");
+
+$ const siteIdToQuizSectionId = {
+  5d88cedef175132c008b456b: 85911,
+  5d88cf1af175132c008b4577: 86495,
+  646d197711878ad52db7ff2a: 86541,
+}
+
+<if(siteIdToQuizSectionId[siteID])>
+  $ const queryParams = {
+    sectionId: siteIdToQuizSectionId[siteID],
+  };
+  <marko-web-query|{ nodes }| name="all-published-content" params=queryParams>
+    <theme-client-side-most-popular-block input={ excludeContentIds: nodes.map((node) => node.id) } />
+  </marko-web-query>
+</if>
+<else>
+  <theme-client-side-most-popular-block />
+</else>
