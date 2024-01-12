@@ -14,7 +14,15 @@ $ const { site } = out.global;
 >
 
   <@section|{ aliases }|>
-    <theme-top-stories-block with-header=false lazyload=false query-params={ optionName: "Pinned", limit: 1 } />
+    <theme-top-stories-block
+      with-header=false
+      lazyload=false
+      query-params={
+        optionName: "Pinned",
+        limit: 1,
+        excludeLabels: ["Supplier Submitted"]
+      }
+    />
   </@section>
 
   <@section>
@@ -50,7 +58,7 @@ $ const { site } = out.global;
   <@section>
     <theme-section-feed-block alias="home">
       <@before><div class="node-list__header" style="padding: 0px">More from CPG Next</div></@before>
-      <@query-params limit=12 skip=1 />
+      <@query-params limit=12 skip=1 exclude-labels=["Supplier News"] />
     </theme-section-feed-block>
   </@section>
 </global-website-section-default-layout>
