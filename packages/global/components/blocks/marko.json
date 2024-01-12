@@ -48,6 +48,6 @@
     "@exclude-top-stories-count": "number"
   },
   "<global-client-side-most-popular-block>": {
-    "template": "./client-side-most-popular"
+    "template": "./client-side-most-popular.marko"
   }
 }
