@@ -4,8 +4,7 @@ import { getAsArray } from "@parameter1/base-cms-object-path";
 import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/section-feed-block";
 
 $ const { site, req, i18n, pagination: p } = out.global;
-$ const { name, description } = input;
-$ const taxonomyIds = getAsArray(input.taxonomyIds);
+$ const { name, description, queryParams: paginationParams } = input;
 $ const perPage = 12;
 $ const continueLabel = i18n("Sign Me Up!");
 $ const loginEmailLabel = i18n("Work Email");
@@ -15,14 +14,8 @@ $ const actionText = i18n("signing up to receive your email notifications");
 $ const queryParams = {
   limit: 3,
   skip: p.skip({ perPage }),
-  includeTaxonomyIds: taxonomyIds,
-  includeLabels: ["Case Study"],
+  ...paginationParams,
   queryFragment,
-};
-
-$ const paginationParams = {
-  includeTaxonomyIds: taxonomyIds,
-  includeLabels: ["Case Study"],
 };
 
 <marko-web-default-page-layout type="website-section" title=name description=description>
