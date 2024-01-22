@@ -36,5 +36,18 @@
     "@name": "string",
     "@query-params": "object",
     "@section": "object"
+  },
+  "<global-published-content-list-block>": {
+    "template": "./published-content-list.marko",
+    "@section-id": "number",
+    "@exclude-content-ids": "array"
+  },
+  "<global-published-content-list-deck-block>": {
+    "template": "./published-content-list-deck.marko",
+    "@section-ids": "array",
+    "@exclude-top-stories-count": "number"
+  },
+  "<global-client-side-most-popular-block>": {
+    "template": "./client-side-most-popular.marko"
   }
 }

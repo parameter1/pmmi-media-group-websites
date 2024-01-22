@@ -1,14 +1,24 @@
 import { get, getAsArray, getAsObject } from "@parameter1/base-cms-object-path";
+import { asArray } from "@parameter1/base-cms-utils";
 
-$ const { config, site } = out.global;
+$ const { config, site, req } = out.global;
 
 $ const newsletterMenuBlockProps = getAsObject(input, "newsletterMenuBlockProps");
+$ const isActiveLink = (requestPath, navItemPath) => requestPath.indexOf(navItemPath) === 0;
 $ const blockName = input.blockName || "site-header";
 
+$ const contexts = site.getAsArray("navigation.contexts");
+$ const contextualNav = contexts.find(({ when }) => asArray(when).some(path => isActiveLink(req.path, path)));
+
+$ const getNavItems = (key) => {
+  if (!contextualNav) return  site.getAsArray(`navigation.${key}`);
+  return getAsArray(contextualNav, key);
+};
+
 $ const navigation = {
-  primary: site.getAsArray("navigation.primary.items"),
-  secondary: site.getAsArray("navigation.secondary.items"),
-  tertiary: site.getAsArray("navigation.tertiary.items"),
+  primary: getNavItems("primary.items"),
+  secondary: getNavItems("secondary.items"),
+  tertiary: getNavItems("tertiary.items"),
 };
 $ const promos = site.getAsArray("navigation.promos");
 $ const headerColClass = promos ? `col-lg-${4 - promos.slice(1).length}` : "col-lg-6";
@@ -67,6 +77,16 @@ $ const { initiallyExpanded } = getAsObject(out.global, "newsletterState");
       has-user=input.hasUser
     />
   </theme-site-navbar>
+  <if(contextualNav && navigation.secondary.length)>
+    <theme-site-navbar modifiers=["secondary"] attrs={ "aria-label": "Secondary Navigation" }>
+      <theme-site-navbar-items
+        items=navigation.secondary
+        modifiers=["secondary"]
+        reg-enabled=input.regEnabled
+        has-user=input.hasUser
+      />
+    </theme-site-navbar>
+  </if>
   <${input.belowNav} />
 </marko-web-block>
 

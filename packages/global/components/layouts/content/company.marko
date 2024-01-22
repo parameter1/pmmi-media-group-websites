@@ -29,6 +29,12 @@ $ const lang = site.config.lang || "en";
     <@section|{ aliases, blockName, content }| modifiers=["content-header"]>
       <theme-gam-wallpaper-ad aliases=aliases position="content_page" />
       $ const { primarySection } = content;
+      $ const sectionHierarchy = getAsArray(primarySection, 'hierarchy');
+      $ // If the section hierarchy contains a root Universal Taxonomy section
+      $ if (sectionHierarchy.filter((v) => [87044,87048,87052,87053].includes(v.id)).length) {
+        const replacedHierarchy = [sectionHierarchy.pop()]
+        primarySection.hierarchy = replacedHierarchy;
+      };
       <div>
         <if(!content.isLeader)>
           <div class="content-page-header">

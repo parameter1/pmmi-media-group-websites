@@ -60,6 +60,12 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
         </marko-web-link>
       </if>
       <else>
+        $ const sectionHierarchy = getAsArray(primarySection, 'hierarchy');
+        $ // If the section hierarchy contains a root Universal Taxonomy section
+        $ if (sectionHierarchy.filter((v) => [87044,87048,87052,87053].includes(v.id)).length) {
+          const replacedHierarchy = [sectionHierarchy.pop()]
+          primarySection.hierarchy = replacedHierarchy;
+        };
         <theme-content-page-breadcrumbs section=primarySection />
       </else>
       <marko-web-content-name tag="h1" block-name=blockName obj=content />
@@ -76,7 +82,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
       <if(displaySocialShare)>
         <marko-web-social-sharing
           path=content.siteContext.path
-          providers=["print", "facebook", "linkedin", "twitter", "pinterest"]
+          providers=["print", "email", "facebook", "linkedin", "twitter", "pinterest"]
           print-path=`/print/content/${content.id}`
         />
       </if>

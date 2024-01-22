@@ -14,15 +14,22 @@ $ const { site } = out.global;
 >
 
   <@section|{ aliases }|>
-    <theme-top-stories-block with-header=false lazyload=false query-params={ optionName: "Pinned", limit: 1 } />
+    <theme-top-stories-block
+      with-header=false
+      lazyload=false
+      query-params={
+        optionName: "Pinned",
+        limit: 1,
+        excludeLabels: ["Supplier Submitted"]
+      }
+    />
   </@section>
 
   <@section>
-    <theme-section-list-deck-block aliases=["transformation-trends", "cybersecurity", "data-analytics"] />
-  </@section>
-
-  <@section>
-    <theme-section-list-deck-block aliases=["manufacturing-metaverse", "efficiency-sustainability", "journeys"] />
+    <global-published-content-list-deck-block
+      section-ids=[86517, 86521, 86518, 86992, 86996, 86520]
+      exclude-top-stories-count=1
+    />
   </@section>
 
   <@section>
@@ -51,7 +58,7 @@ $ const { site } = out.global;
   <@section>
     <theme-section-feed-block alias="home">
       <@before><div class="node-list__header" style="padding: 0px">More from CPG Next</div></@before>
-      <@query-params limit=12 skip=1 />
+      <@query-params limit=12 skip=1 exclude-labels=["Supplier News"] />
     </theme-section-feed-block>
   </@section>
 </global-website-section-default-layout>
