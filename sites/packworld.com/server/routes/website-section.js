@@ -22,10 +22,10 @@ module.exports = (app) => {
     },
   })));
   app.get('/reusablepackaging', asyncRoute(async (_, res) => res.marko(collections, {
-    name: 'Resuable Packaging: The Collection',
+    name: 'Reusable Packaging: The Collection',
     description: 'In terms of sustainability, reusable and refillable packaging is making a big splash in working to extend the life of common packaging types. Check out our curated list of content on the topic of reusable packaging in markets like food, personal care, and household goods. See which companies are introducing reusable solutions that work toward a circular economy.',
     queryParams: {
-      // Resuable Packaging
+      // Reusable Packaging
       includeTaxonomyIds: [3199269],
     },
   })));
