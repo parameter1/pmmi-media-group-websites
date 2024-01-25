@@ -1,6 +1,6 @@
 const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middleware');
 const queryFragment = require('@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/website-section-page');
-const leadersFragment = require('@pmmi-media-group/package-theme-monorail-leaders/graphql/fragments/leaders-section');
+const leadersFragment = require('@pmmi-media-group/package-global/graphql/fragments/leaders-section');
 const emergingBrandsFragment = require('@pmmi-media-group/package-global/graphql/fragments/emerging-brands-section-page');
 const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');
 const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');
