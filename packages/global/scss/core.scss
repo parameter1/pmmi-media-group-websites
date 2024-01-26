@@ -251,13 +251,14 @@
 /*! critical:start|home */
 /*! critical:start|content */
 /*! critical:start|website-section.leaders */
-@import "@pmmi-media-group/package-theme-monorail-leaders/scss/leaders";
+@import "@parameter1/base-cms-marko-web-leaders/scss/leaders";
 /*! critical:end */
 
 // skin components
 @import "./components/content-card-list";
 /*! critical:start|content */
 @import "./components/leaders";
+@import "./components/featured-companies";
 /*! critical:end */
 /*! critical:start */
 @import "./components/native-x-list";
