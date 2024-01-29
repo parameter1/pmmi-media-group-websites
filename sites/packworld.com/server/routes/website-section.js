@@ -5,12 +5,13 @@ const leadersFragment = require('@pmmi-media-group/package-global/graphql/fragme
 const emergingBrandsFragment = require('@pmmi-media-group/package-global/graphql/fragments/emerging-brands-section-page');
 const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');
 const events = require('@pmmi-media-group/package-global/templates/website-section/events');
+const collections = require('@pmmi-media-group/package-global/templates/website-section/collections');
 const withTopStoriesBlock = require('@pmmi-media-group/package-global/templates/website-section/with-top-stories-block');
+
 const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');
 
 const section = require('../templates/website-section');
 const leaders = require('../templates/website-section/leaders');
-const collections = require('../templates/website-section/collections');
 
 module.exports = (app) => {
   app.get('/advancedrecycling', asyncRoute(async (_, res) => res.marko(collections, {
