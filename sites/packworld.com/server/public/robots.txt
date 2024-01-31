@@ -6,10 +6,10 @@ Disallow: /__
 Disallow: /print/content
 
 User-agent: GPTBot
-Disallow: /*/product
+Disallow: /*/product/
 
 User-agent: ChatGPT-User
-Disallow: /*/product
+Disallow: /*/product/
 
 Sitemap: https://www.packworld.com/sitemap.xml
 Sitemap: https://www.packworld.com/sitemap-google-news.xml
