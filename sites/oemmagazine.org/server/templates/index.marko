@@ -1,4 +1,5 @@
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/section-card-list-block";
 
 $ const { id, alias, name, pageNode } = input;
 
@@ -22,7 +23,18 @@ $ const { site } = out.global;
   </@section>
 
   <@section>
-    <global-published-content-list-deck-block section-ids=[33367, 33372, 33377] />
+    $ const queryParams = {
+      sectionAlias: 'supplier-news',
+      limit: 500,
+      queryFragment,
+    };
+    <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+      $ const excludeContentIds = nodes.map((node) =>  node.id);
+      <global-published-content-list-deck-block
+        section-ids=[33367, 33372, 33377]
+        exclude-content-ids=excludeContentIds
+      />
+    </marko-web-query>
   </@section>
 
   <@section|{ aliases }|>
