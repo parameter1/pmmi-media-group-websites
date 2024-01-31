@@ -16,7 +16,10 @@ $ const excludeContentQueryParams = {
 
 <marko-web-query|{ nodes }| name="website-optioned-content" params=excludeContentQueryParams>
   <if(nodes.length)>
-  $ const excludeContentIds = nodes.map((node) => node.id);
+  $ const excludeContentIds = [
+    ...nodes.map((node) => node.id),
+    ...getAsArray(input, "excludeContentIds")
+  ];
     <marko-web-block name=blockName>
       <marko-web-element block-name=blockName name="row">
         <for|sectionId| of=sectionIds>
