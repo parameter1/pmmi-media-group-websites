@@ -5,5 +5,11 @@ User-agent: *
 Disallow: /__
 Disallow: /print/content
 
+User-agent: GPTBot
+Disallow: /*/product
+
+User-agent: ChatGPT-User
+Disallow: /*/product
+
 Sitemap: https://www.profoodworld.com/sitemap.xml
 Sitemap: https://www.profoodworld.com/sitemap-google-news.xml
