@@ -5,7 +5,6 @@ const taxonomy = require('@parameter1/base-cms-marko-web-theme-monorail/routes/t
 const omedaNewsletters = require('@parameter1/base-cms-marko-web-omeda/routes/omeda-newsletters');
 const magazine = require('@parameter1/base-cms-marko-web-theme-monorail-magazine/routes');
 
-const leaders = require('./leaders');
 const feed = require('./feed');
 const digitalEditionRedirects = require('./digital-edition-redirects');
 const content = require('./content');
@@ -26,7 +25,6 @@ module.exports = (app, siteConfig) => {
   // Taxonomy category pages
   taxonomyCategory(app);
 
-  leaders(app);
   // Feed
   feed(app);
 

@@ -1,16 +1,17 @@
 const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middleware');
 const { asyncRoute } = require('@parameter1/base-cms-utils');
 const queryFragment = require('@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/website-section-page');
-const leadersFragment = require('@pmmi-media-group/package-theme-monorail-leaders/graphql/fragments/leaders-section');
+const leadersFragment = require('@pmmi-media-group/package-global/graphql/fragments/leaders-section');
 const emergingBrandsFragment = require('@pmmi-media-group/package-global/graphql/fragments/emerging-brands-section-page');
 const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');
 const events = require('@pmmi-media-group/package-global/templates/website-section/events');
+const collections = require('@pmmi-media-group/package-global/templates/website-section/collections');
 const withTopStoriesBlock = require('@pmmi-media-group/package-global/templates/website-section/with-top-stories-block');
+
 const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');
 
 const section = require('../templates/website-section');
 const leaders = require('../templates/website-section/leaders');
-const collections = require('../templates/website-section/collections');
 
 module.exports = (app) => {
   app.get('/advancedrecycling', asyncRoute(async (_, res) => res.marko(collections, {
@@ -22,10 +23,10 @@ module.exports = (app) => {
     },
   })));
   app.get('/reusablepackaging', asyncRoute(async (_, res) => res.marko(collections, {
-    name: 'Resuable Packaging: The Collection',
+    name: 'Reusable Packaging: The Collection',
     description: 'In terms of sustainability, reusable and refillable packaging is making a big splash in working to extend the life of common packaging types. Check out our curated list of content on the topic of reusable packaging in markets like food, personal care, and household goods. See which companies are introducing reusable solutions that work toward a circular economy.',
     queryParams: {
-      // Resuable Packaging
+      // Reusable Packaging
       includeTaxonomyIds: [3199269],
     },
   })));
