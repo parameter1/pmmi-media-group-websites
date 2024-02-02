@@ -102,6 +102,8 @@ module.exports = {
       secondary: {
         items: [
           { href: '/pmmi-news/business-intelligence', label: 'Business Intelligence' },
+          { href: '/pmmi-news/max-member-forums', label: 'Max Member Forums' },
+          { href: '/pmmi-news/opx-leadership-network', label: 'OpX Leadership Network' },
           { href: '/pmmi-news/PACKEXPO', label: 'PACK EXPO' },
           { href: '/pmmi-news/ppwln', label: 'PPWLN' },
         ],
