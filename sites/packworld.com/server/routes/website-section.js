@@ -32,7 +32,7 @@ module.exports = (app) => {
   })));
 
   app.get('/machinery/smart-packaging', asyncRoute(async (_, res) => res.marko(collections, {
-    name: 'Smart Packaging',
+    name: 'Smart Packaging: The Collection',
     description: 'The stars are aligning on multiple relevant fronts: consumer behavior, legislation, technology, and data management and capacity. This confluence of advancements is slowly but surely unlocking the potential of active, intelligent, connected, and otherwise smart packaging.',
     queryParams: {
       // Package features/design > Smart packaging
