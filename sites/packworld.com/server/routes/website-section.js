@@ -31,6 +31,25 @@ module.exports = (app) => {
     },
   })));
 
+  app.get('/machinery/smart-packaging', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Smart Packaging',
+    description: 'The stars are aligning on multiple relevant fronts: consumer behavior, legislation, technology, and data management and capacity. This confluence of advancements is slowly but surely unlocking the potential of active, intelligent, connected, and otherwise smart packaging.',
+    queryParams: {
+      // Package features/design > Smart packaging
+      includeTaxonomyIds: [2008434],
+    },
+  })));
+
+  app.get('/casestudies-cartoning', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'A Curated Collection of Case Studies: Cartoning',
+    description: 'Are you in the market for cartoning equipment and looking for the latest technology and innovations to streamline your packaging operations? Check out our list of case studies featuring cartoners and the unique solutions that these pieces of equipment bring to the companies mentioned here. Learn how the equipment works, what it’s capable of, and which machine is right for your line.',
+    queryParams: {
+      // Packaging machinery > Cartoning
+      includeTaxonomyIds: [2008383],
+      includeLabels: ['Case Study'],
+    },
+  })));
+
   app.get('/casestudies-casepacking', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'A Curated Collection of Case Studies: Case Packing',
     description: 'Are you in the market for a case packer and looking for the latest technology and innovations to streamline your packaging operations? Check out our list of case studies featuring case packers and the unique solutions that these pieces of equipment bring to the companies mentioned here. Learn how the equipment works, what it’s capable of, and which machine is right for your line.',
@@ -41,12 +60,32 @@ module.exports = (app) => {
     },
   })));
 
+  app.get('/casestudies-coding/marking', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'A Curated Collection of Case Studies: Coding/Marking',
+    description: 'Are you in the market for coding/ marking equipment? Want to learn more about the category of equipment and the latest innovations that can help you achieve your packaging goals? Read through our collection of the most recent case studies related to coding, marking, & RFID.',
+    queryParams: {
+      // Issues > Coding/marking/RFID
+      includeTaxonomyIds: [2008344],
+      includeLabels: ['Case Study'],
+    },
+  })));
+
   app.get('/casestudies-liquidfilling', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'A Curated Collection of Case Studies: Liquid Filling & Capping',
     description: 'Are you in the market for a liquid filler/capper and looking for the latest technology and innovations to streamline your packaging operations? Check out our list of case studies featuring liquid and viscous fillers and the unique solutions that these pieces of equipment bring to the companies mentioned here. Learn how the equipment works, what they\'re capable of, and which machine is right for your line.',
     queryParams: {
       // Packaging machinery > Filling/capping, liquid and viscous
       includeTaxonomyIds: [2008393],
+      includeLabels: ['Case Study'],
+    },
+  })));
+
+  app.get('/casestudies-palletizing', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'A Curated Collection of Case Studies: Palletizing',
+    description: 'Are you in the market for a palletizer and looking for the latest technology and innovations to streamline your packaging operations? Check out our list of case studies featuring palletizing and depalletizing equipment and the unique solutions that these pieces of equipment bring to the companies mentioned here. Learn how the equipment works, what it’s capable of, and which machine is right for your line.',
+    queryParams: {
+      // Packaging machinery > Palletizing/depalletizing
+      includeTaxonomyIds: [2008399],
       includeLabels: ['Case Study'],
     },
   })));
