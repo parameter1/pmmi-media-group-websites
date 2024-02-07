@@ -32,7 +32,7 @@ module.exports = (app) => {
   })));
 
   app.get('/machinery/smart-packaging', asyncRoute(async (_, res) => res.marko(collections, {
-    name: 'Smart Packaging',
+    name: 'Smart Packaging: The Collection',
     description: 'The stars are aligning on multiple relevant fronts: consumer behavior, legislation, technology, and data management and capacity. This confluence of advancements is slowly but surely unlocking the potential of active, intelligent, connected, and otherwise smart packaging.',
     queryParams: {
       // Package features/design > Smart packaging
@@ -62,7 +62,7 @@ module.exports = (app) => {
 
   app.get('/casestudies-coding/marking', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'A Curated Collection of Case Studies: Coding/Marking',
-    description: 'Are you in the market for coding/ marking equipment? Want to learn more about the category of equipment and the latest innovations that can help you achieve your packaging goals? Read through our collection of the most recent case studies related to coding, marking, & RFID.',
+    description: 'Are you in the market for coding/marking equipment? Want to learn more about the category of equipment and the latest innovations that can help you achieve your packaging goals? Read through our collection of the most recent case studies related to coding, marking, & RFID.',
     queryParams: {
       // Issues > Coding/marking/RFID
       includeTaxonomyIds: [2008344],
