@@ -1,76 +1,89 @@
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/section-card-list-block";
 
 $ const { id, alias, name, pageNode } = input;
 
 $ const { site } = out.global;
 
-<global-website-section-home-layout
-  id=id
-  alias=alias
-  name=name
-  page-node=pageNode
->
-  <@section>
-    <div class="row">
-      <div class="col-lg-8">
-        <global-leaders-home-page />
-      </div>
-      <div class="col-lg-4">
-        <global-native-x-list-block />
-      </div>
-    </div>
-  </@section>
+$ const queryParams = {
+  sectionAlias: 'supplier-news',
+  limit: 10000,
+  queryFragment,
+};
 
-  <@section>
-    <global-published-content-list-deck-block section-ids=[33324, 33333, 33338] />
-  </@section>
-
-  <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="rotation"
-      position="home_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-  </@section>
-
-  <@section>
-    <theme-content-card-list-block
-      query-params={ includeContentTypes: ["Product"] }
-      section={ name: "Products", canonicalPath: "/products" }
-    />
-  </@section>
-
-  <@section>
-    <theme-section-feed-block alias="home">
-      <@before><div class="node-list__header" style="padding: 0px">More from Healthcare Packaging</div></@before>
-      <@query-params limit=12 skip=1 />
-    </theme-section-feed-block>
-  </@section>
-
-  $ const publicationIds = site.getAsArray("magazine.publicationIds");
-  <if(publicationIds.length)>
+<marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+  $ const excludeContentIds = nodes.map((node) =>  node.id);
+  <global-website-section-home-layout
+    id=id
+    alias=alias
+    name=name
+    page-node=pageNode
+  >
     <@section>
-      <theme-magazine-issues-block publication-id=publicationIds[0] />
+      <div class="row">
+        <div class="col-lg-8">
+          <global-leaders-home-page />
+        </div>
+        <div class="col-lg-4">
+          <global-native-x-list-block />
+        </div>
+      </div>
     </@section>
-  </if>
 
-  <@section>
-    <marko-web-identity-x-context|{ hasUser }|>
-      <if(!hasUser)>
-        <identity-x-newsletter-form-inline
-          login-email-label="Work Email"
-          login-email-placeholder="example@yourcompany.com"
-          type="inlineSection"
-        />
-      </if>
-    </marko-web-identity-x-context>
-  </@section>
+    <@section>
+      <global-published-content-list-deck-block
+        section-ids=[33324, 33333, 33338]
+        exclude-content-ids=excludeContentIds
+      />
+    </@section>
 
-  <@section>
-    <theme-content-card-deck-block
-      query-params={ includeContentTypes: ["Document"], limit: 4 }
-      section={ name: "Downloads", canonicalPath: "/downloads" }
-    />
-  </@section>
-</global-website-section-home-layout>
+    <@section|{ aliases }|>
+      <theme-gam-define-display-ad
+        name="rotation"
+        position="home_page"
+        aliases=aliases
+        modifiers=["inter-block"]
+      />
+    </@section>
+
+    <@section>
+      <theme-content-card-list-block
+        query-params={ includeContentTypes: ["Product"] }
+        section={ name: "Products", canonicalPath: "/products" }
+      />
+    </@section>
+
+    <@section>
+      <theme-section-feed-block alias="home">
+        <@before><div class="node-list__header" style="padding: 0px">More from Healthcare Packaging</div></@before>
+        <@query-params limit=12 skip=1 exclude-labels=["Supplier Submitted"] exclude-content-ids=excludeContentIds />
+      </theme-section-feed-block>
+    </@section>
+
+    $ const publicationIds = site.getAsArray("magazine.publicationIds");
+    <if(publicationIds.length)>
+      <@section>
+        <theme-magazine-issues-block publication-id=publicationIds[0] />
+      </@section>
+    </if>
+
+    <@section>
+      <marko-web-identity-x-context|{ hasUser }|>
+        <if(!hasUser)>
+          <identity-x-newsletter-form-inline
+            login-email-label="Work Email"
+            login-email-placeholder="example@yourcompany.com"
+            type="inlineSection"
+          />
+        </if>
+      </marko-web-identity-x-context>
+    </@section>
+
+    <@section>
+      <theme-content-card-deck-block
+        query-params={ includeContentTypes: ["Document"], limit: 4 }
+        section={ name: "Downloads", canonicalPath: "/downloads" }
+      />
+    </@section>
+  </global-website-section-home-layout>
+</marko-web-query>

@@ -45,6 +45,10 @@
   "<global-published-content-list-deck-block>": {
     "template": "./published-content-list-deck.marko",
     "@section-ids": "array",
-    "@exclude-top-stories-count": "number"
+    "@exclude-top-stories-count": "number",
+    "@exclude-content-ids": "array"
+  },
+  "<global-client-side-most-popular-block>": {
+    "template": "./client-side-most-popular.marko"
   }
 }
