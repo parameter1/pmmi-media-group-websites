@@ -17,6 +17,18 @@ module.exports = (app) => {
     queryName: 'website-scheduled-content',
     queryParams: {
       // Empaque > Sustentabilidad
+      includeContentIds: [
+        22301415,
+        21771863,
+        14037159,
+        22878510,
+        22865531,
+        22657442,
+        21964979,
+        21232523,
+        22780439,
+        21928077,
+      ],
       sectionId: 32573,
     },
   })));
