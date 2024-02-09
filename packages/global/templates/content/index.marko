@@ -23,12 +23,14 @@ $ const { site, config } = out.global;
   </@section>
 
   <@section|{ aliases }|>
-    <theme-gam-define-display-ad
-      name="leaderboard"
-      position="content_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
+    <if(type !== "document")>
+      <theme-gam-define-display-ad
+        name="leaderboard"
+        position="content_page"
+        aliases=aliases
+        modifiers=["inter-block"]
+      />
+    </if>
   </@section>
 
   <@section>
