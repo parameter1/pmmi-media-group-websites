@@ -21,7 +21,14 @@ $ const sections = getAsArray(input, "sections");
   </@section>
 
   <@section|{ aliases }|>
-    <theme-top-stories-block with-header=false lazyload=false query-params={ optionName: "Pinned" } />
+    <theme-top-stories-block
+      with-header=false
+      lazyload=false
+      query-params={
+        optionName: "Pinned",
+        excludeLabels: ["Supplier Submitted"]
+      }
+    />
   </@section>
   <for|s| of=sections>
     <@section|{ blockName, section, aliases }| modifiers=s.modifiers>

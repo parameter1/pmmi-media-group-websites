@@ -10,6 +10,7 @@ $ const continueLabel = i18n("Sign Me Up!");
 $ const loginEmailLabel = i18n("Work Email");
 $ const buttonLabels = { continue: continueLabel };
 $ const actionText = i18n("signing up to receive your email notifications");
+$ const queryName = defaultValue(input.queryName, "all-published-content");
 
 $ const queryParams = {
   limit: 3,
@@ -37,7 +38,7 @@ $ const queryParams = {
               <else>${value}</else>
             </marko-web-website-section-name>
             <marko-web-website-section-description obj={ description } attrs={ style: "margin-bottom: 20px" } />
-            <marko-web-query|{ nodes }| name="all-published-content" params=queryParams>
+            <marko-web-query|{ nodes }| name=queryName params=queryParams>
               <marko-web-node-list
                 flush-x=true
                 flush-y=false
@@ -66,7 +67,7 @@ $ const queryParams = {
         <div class="row">
           <div class="col-lg-12">
             $ queryParams.skip = p.skip({ perPage, skip: 3 });
-            <marko-web-query|{ nodes }| name="all-published-content" params=queryParams>
+            <marko-web-query|{ nodes }| name=queryName params=queryParams>
               <marko-web-node-list
                 flush-x=true
                 flush-y=false
@@ -102,7 +103,7 @@ $ const queryParams = {
         <div class="row">
           <div class="col-lg-12">
             $ queryParams.skip = p.skip({ perPage, skip: 6 });
-            <marko-web-query|{ nodes }| name="all-published-content" params=queryParams>
+            <marko-web-query|{ nodes }| name=queryName params=queryParams>
               <marko-web-node-list
                 flush-x=true
                 flush-y=false
@@ -131,7 +132,7 @@ $ const queryParams = {
         <div class="row">
           <div class="col-lg-12">
             $ queryParams.skip = p.skip({ perPage, skip: 9 });
-            <marko-web-query|{ nodes }| name="all-published-content" params=queryParams>
+            <marko-web-query|{ nodes }| name=queryName params=queryParams>
               <marko-web-node-list
                 flush-x=true
                 flush-y=false
@@ -144,7 +145,7 @@ $ const queryParams = {
                 </@nodes>
               </marko-web-node-list>
             </marko-web-query>
-            <theme-query-total-count|{ totalCount }| name="all-published-content" params=paginationParams>
+            <theme-query-total-count|{ totalCount }| name=queryName params=paginationParams>
               <theme-pagination-controls
                 per-page=perPage
                 total-count=totalCount
@@ -181,7 +182,7 @@ $ const queryParams = {
       </@section>
 
       <@section>
-        <theme-client-side-most-popular-block />
+        <global-client-side-most-popular-block />
       </@section>
 
       $ const publicationIds = site.getAsArray("magazine.publicationIds");

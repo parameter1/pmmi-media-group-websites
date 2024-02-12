@@ -15,6 +15,7 @@ module.exports = {
   // module configs
   gam,
   identityX,
+  useLinkInjectedBody: process.env.USE_LINK_INJECTED_BODY === 'true',
   idxNavItems: { enable: true },
   leaders,
   magazine,
@@ -35,11 +36,11 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.oemmagazine.org/files/base/pmmi/oem/OEM-logo-colored.png?h=30&auto=format,compress',
+      src: 'https://img.oemmagazine.org/files/base/pmmi/oem/OEM-logo-colored.png?auto=format,compress',
       srcset: [
-        'https://img.oemmagazine.org/files/base/pmmi/oem/OEM-logo-colored.png?h=30&auto=format,compress&dpr=2 2x',
+        'https://img.oemmagazine.org/files/base/pmmi/oem/OEM-logo-colored.png?auto=format,compress&dpr=2 2x',
       ],
-      width: '73',
+      width: '120',
       height: '30',
     },
     footer: {
