@@ -31,6 +31,17 @@ $ const queryParams = {
     </@section>
 
     <@section>
+      <marko-web-deferred-script-loader-register
+        name="credspark-hcp-home"
+        src="https://app.credspark.com/assessments/community-poll-answer-to-see-how-others-answered-421f60b76653d/embed_script.js"
+        on="load"
+        request-frame=true
+        target-tag="head"
+      />
+      <div class="credsparkQuiz" data-quiz-id="community-poll-answer-to-see-how-others-answered-421f60b76653d"></div>
+    </@section>
+
+    <@section>
       <global-published-content-list-deck-block
         section-ids=[33324, 33333, 33338]
         exclude-content-ids=excludeContentIds
