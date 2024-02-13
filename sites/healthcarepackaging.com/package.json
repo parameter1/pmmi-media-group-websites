@@ -33,6 +33,7 @@
   "dependencies": {
     "@parameter1/base-cms-marko-core": "^4.42.0",
     "@parameter1/base-cms-marko-web": "^4.42.0",
+    "@parameter1/base-cms-marko-web-deferred-script-loader": "^4.40.3",
     "@parameter1/base-cms-marko-web-gam": "^4.40.3",
     "@parameter1/base-cms-marko-web-gcse": "^4.40.3",
     "@parameter1/base-cms-marko-web-gtm": "^4.40.3",
