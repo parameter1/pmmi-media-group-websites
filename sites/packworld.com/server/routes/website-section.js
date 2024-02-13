@@ -40,6 +40,15 @@ module.exports = (app) => {
     },
   })));
 
+  app.get('/packagingrecyclingsummit', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Packaging Recycling Summit: The Collection',
+    description: '<i>Packaging World’s</i> annual Packaging Recycling Summit (PRS) brings together brands, retailers, packaging suppliers, reprocessors, and material recovery facilities (MRFs) with a goal of promoting collaboration across the circular supply chain. Check out our content from the conference program that aims to examine all links in the value chain, identifying materials that can and will be recycled, and exploring end-use markets for waste.',
+    queryParams: {
+      // Packaging Recylcing Summit
+      includeTaxonomyIds: [3199350],
+    },
+  })));
+
   app.get('/casestudies-cartoning', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'A Curated Collection of Case Studies: Cartoning',
     description: 'Are you in the market for cartoning equipment and looking for the latest technology and innovations to streamline your packaging operations? Check out our list of case studies featuring cartoners and the unique solutions that these pieces of equipment bring to the companies mentioned here. Learn how the equipment works, what it’s capable of, and which machine is right for your line.',
