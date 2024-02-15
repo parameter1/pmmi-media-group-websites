@@ -21,7 +21,7 @@ $ const displayComments = false; // ["contact"].includes(type) ? false : true;
 $ const displayNewsletterSignup = ["contact"].includes(type) ? false : true;
 $ const continueLabel = i18n("Sign Me Up!");
 $ const loginEmailLabel = i18n("Work Email");
-$ const gateTitle = i18n("Log in to view the full article")
+$ const gateTitle = i18n("Your email address is what keeps us afloat. Just one submission grants you full access to our articles.");
 $ const gateButtonLabels = { continue: i18n("Continue") };
 $ const gateEmailLabel = i18n("Email Address");
 $ const actionText = i18n("signing up to receive your email notifications");
@@ -35,13 +35,15 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
   ...rest
 >
   <@section|{ aliases }| modifiers=["first-sm"]>
-    <theme-gam-define-display-ad
-      name="leaderboard"
-      position="content_page"
-      aliases=aliases
-      modifiers=["inter-block"]
-    />
-    <theme-gam-wallpaper-ad aliases=aliases position="content_page" />
+    <if(type !== "document")>
+      <theme-gam-define-display-ad
+        name="leaderboard"
+        position="content_page"
+        aliases=aliases
+        modifiers=["inter-block"]
+      />
+      <theme-gam-wallpaper-ad aliases=aliases position="content_page" />
+    </if>
   </@section>
 
   <@section|{ blockName, content, aliases, authors }| modifiers=["content-header"]>
@@ -91,9 +93,12 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
 
   <@section|{ aliases, content, authors }| modifiers=["content-body"]>
     $ const { primarySection } = content;
+    $ const displayRail = ((content.company && content.company.enableRmi) || type !== "document");
     <div class="row">
-      <div class="col-lg-8">
-        <div class="content-page-body">
+      $ const colClass = displayRail ? "col-lg-8" : "col-lg-12"
+      <div class=colClass>
+      $ const bodyClass = displayRail ? "content-page-body" : "";
+        <div class=bodyClass>
           <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
             $ const requiresRegistration = (get(content, "userRegistration.isCurrentlyRequired") || contentGatingHandler({ content, req }));
             $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
@@ -232,12 +237,14 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                 <!-- Div for BI Library -->
                 <marko-web-gtm-slot prefix=site.get("gtm.slotPrefix") name="article-bilibrary" class="mt-3" />
 
-                <theme-gam-define-display-ad
-                  name="inline-content"
-                  position="content_page"
-                  aliases=aliases
-                  modifiers=["inline-content"]
-                />
+                <if(type !== "document")>
+                  <theme-gam-define-display-ad
+                    name="inline-content"
+                    position="content_page"
+                    aliases=aliases
+                    modifiers=["inline-content"]
+                  />
+                </if>
 
                 <if(displayNewsletterSignup)>
                   <marko-web-identity-x-context|{ hasUser }|>
@@ -262,16 +269,20 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
           </theme-page-contents>
         </div>
       </div>
-      <div class="col-lg-4">
-        <if(site.get("leaders.enabled"))>
+      <if(site.get("leaders.enabled") && displayRail)>
+        <div class="col-lg-4">
           <if(content.company && content.company.enableRmi)>
             <div class="mb-block">
               <theme-company-inquiry-form-block content=content initially-expanded=false consent-checkboxes=getAsArray(site, 'config.inquiry.consentCheckboxes') />
             </div>
           </if>
-          <global-leaders-contextual content-id=id />
-        </if>
-        <else>
+          <if(type !== "document")>
+            <global-leaders-contextual content-id=id />
+          </if>
+        </div>
+      </if>
+      <else-if(!site.get("leaders.enabled") && displayRail)>
+        <div class="col-lg-4">
           $ const excludeContentTypes = ["Contact", "Company", "Document", "TextAd", "Promotion"];
           <theme-latest-content-list-block
             title=`Latest in ${primarySection.name}`
@@ -281,8 +292,8 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
           >
             <@native-x index=4 name="related-content" aliases=aliases />
           </theme-latest-content-list-block>
-        </else>
-      </div>
+        </div>
+      </else-if>
     </div>
   </@section>
 
@@ -295,7 +306,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
     />
   </@section>
 
-  <if(showBottomAdBlock)>
+  <if(showBottomAdBlock && type !== "document")>
     <@section|{ aliases }|>
       <theme-gam-define-display-ad
         name="rotation"
