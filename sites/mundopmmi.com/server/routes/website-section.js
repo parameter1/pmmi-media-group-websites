@@ -14,10 +14,9 @@ module.exports = (app) => {
   app.get('/reciclaje-quimico', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'Reciclaje químico: historias de éxito en la industria de empaques',
     description: '¿Quiere conocer de cerca últimas tecnologías e innovaciones en reciclaje de envases? Encuentre en esta colección de Mundo EXPO PACK historias y casos de estudio sobresalientes de América Latina y del mundo, en los que presentamos desarrollos en reciclaje químico y las posibilidades que esta tecnología ofrece para aportarle a las empresas en la región. ¡Encuentre aquí una selección de artículos relacionados con reciclaje químico que podrían responder a las necesidades a corto y mediano plazo de su compañía!',
-    queryName: 'website-scheduled-content',
     queryParams: {
-      // Empaque > Sustentabilidad
-      sectionId: 32573,
+      // Reciclaje quimico
+      includeTaxonomyIds: [3199357],
     },
   })));
   app.get('/:alias(eventos)', withWebsiteSection({
