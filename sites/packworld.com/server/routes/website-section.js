@@ -49,6 +49,15 @@ module.exports = (app) => {
     },
   })));
 
+  app.get('/pfas', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Content Collection: PFAS',
+    description: 'Check out our collection of content on the topic of PFAS. Per- and polyfluoroalkyl substances (PFAS) are a diverse group of thousands of chemicals used in hundreds of types of products. Read more about what PFAS is, the regulations surrounding the chemicals, and a look at PFAS-free packaging.',
+    queryParams: {
+      // pfas, PFAS
+      includeTaxonomyIds: [3199281, 3199353],
+    },
+  })));
+
   app.get('/casestudies-cartoning', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'A Curated Collection of Case Studies: Cartoning',
     description: 'Are you in the market for cartoning equipment and looking for the latest technology and innovations to streamline your packaging operations? Check out our list of case studies featuring cartoners and the unique solutions that these pieces of equipment bring to the companies mentioned here. Learn how the equipment works, what it’s capable of, and which machine is right for your line.',
