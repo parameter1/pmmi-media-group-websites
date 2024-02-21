@@ -15,7 +15,8 @@ $ const siteIdToQuizSectionId = {
     sectionId: siteIdToQuizSectionId[siteID],
   };
   <marko-web-query|{ nodes }| name="all-published-content" params=queryParams>
-    <theme-client-side-most-popular-block input={ excludeContentIds: nodes.map((node) => node.id) } />
+    $ const contentIdsToExclude = nodes.map((node) => node.id);
+    <theme-client-side-most-popular-block exclude-content-ids=contentIdsToExclude />
   </marko-web-query>
 </if>
 <else>
