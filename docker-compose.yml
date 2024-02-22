@@ -154,18 +154,3 @@ services:
     ports:
       - "9716:80"
       - "19716:19716"
-
-  cpgn:
-    <<: *site-cmd
-    working_dir: /root/sites/cpgnext.com
-    environment:
-      <<: *env
-      HOST: www-pmmimediagroup-cpgnext.dev.parameter1.com
-      PORT: 80
-      EXPOSED_PORT: 9714
-      LIVERELOAD_PORT: 19714
-      OMEDA_INPUT_ID: ${CPGN_OMEDA_INPUT_ID-(unset)}
-    hostname: www-pmmimediagroup-cpgnext.dev.parameter1.com
-    ports:
-      - "9714:80"
-      - "19714:19717"
