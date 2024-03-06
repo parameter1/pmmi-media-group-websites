@@ -16,6 +16,7 @@ const resources = [
   { href: '/WomenInPackaging', label: 'Women in Packaging' },
   { href: '/videos', label: 'Videos' },
   { href: '/podcasts', label: 'Podcasts' },
+  { href: '/webinars', label: 'Webinars' },
   { href: '/supplier-news', label: 'Supplier News' },
   { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
 ];
