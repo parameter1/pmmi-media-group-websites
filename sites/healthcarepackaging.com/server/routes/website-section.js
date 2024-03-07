@@ -9,6 +9,7 @@ const collections = require('@pmmi-media-group/package-global/templates/website-
 
 const section = require('../templates/website-section');
 const leaders = require('../templates/website-section/leaders');
+const news = require('../templates/website-section/news');
 
 module.exports = (app) => {
   app.get('/trackandtrace/products', asyncRoute(async (_, res) => res.marko(collections, {
@@ -43,6 +44,11 @@ module.exports = (app) => {
   app.get('/:alias(leaders)', newsletterState(), withWebsiteSection({
     template: leaders,
     queryFragment: leadersFragment,
+  }));
+
+  app.get('/:alias(news)', newsletterState(), withWebsiteSection({
+    template: news,
+    queryFragment,
   }));
 
   app.get('/:alias([a-z0-9-/]+)', newsletterState(), withWebsiteSection({
