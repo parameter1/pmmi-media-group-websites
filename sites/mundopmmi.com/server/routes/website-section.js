@@ -19,6 +19,14 @@ module.exports = (app) => {
       includeTaxonomyIds: [3199357],
     },
   })));
+  app.get('/envases-reutilizables', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Envases reutilizables: una selección de casos exitosos',
+    description: 'Aprenda de primera mano cómo los envases reutilizables están definiendo los criterios de sustentabilidad en distintas industrias de bienes de consumo empacados. Le invitamos a explorar esta fascinante colección de Mundo EXPO PACK, en la que presentamos innovaciones, tendencias y casos exitosos de desarrollo e implementación de envases reutilizables en productos de renombre internacional.',
+    queryParams: {
+      // Envases reutilizables
+      includeTaxonomyIds: [3199410],
+    },
+  })));
   app.get('/:alias(eventos)', withWebsiteSection({
     template: events,
     queryFragment,
