@@ -15,7 +15,7 @@ const leaders = require('../templates/website-section/leaders');
 
 module.exports = (app) => {
   app.get('/advancedrecycling', asyncRoute(async (_, res) => res.marko(collections, {
-    name: 'Advanced Recycling: The Collection',
+    name: 'Advanced Recycling Content: What You Should Know',
     description: 'Advanced recycling, also known as chemical recycling, is making a name for itself within the recycling space. Check out our curated list of content on this topic so you can learn how this method produces materials that are indistinguishable from virgin plastics. You’ll also read how used plastics are recaptured and remanufactured into new plastics and products -- all through advanced recycling.',
     queryParams: {
       // Advanced Recycling
@@ -23,7 +23,7 @@ module.exports = (app) => {
     },
   })));
   app.get('/reusablepackaging', asyncRoute(async (_, res) => res.marko(collections, {
-    name: 'Reusable Packaging: The Collection',
+    name: 'Reusable Packaging: New & Noteworthy Content',
     description: 'In terms of sustainability, reusable and refillable packaging is making a big splash in working to extend the life of common packaging types. Check out our curated list of content on the topic of reusable packaging in markets like food, personal care, and household goods. See which companies are introducing reusable solutions that work toward a circular economy.',
     queryParams: {
       // Reusable Packaging
@@ -32,7 +32,7 @@ module.exports = (app) => {
   })));
 
   app.get('/machinery/smart-packaging', asyncRoute(async (_, res) => res.marko(collections, {
-    name: 'Smart Packaging: The Collection',
+    name: 'Smart Packaging: New & Noteworthy Content',
     description: 'The stars are aligning on multiple relevant fronts: consumer behavior, legislation, technology, and data management and capacity. This confluence of advancements is slowly but surely unlocking the potential of active, intelligent, connected, and otherwise smart packaging.',
     queryParams: {
       // Package features/design > Smart packaging
@@ -41,7 +41,7 @@ module.exports = (app) => {
   })));
 
   app.get('/packagingrecyclingsummit', asyncRoute(async (_, res) => res.marko(collections, {
-    name: 'Packaging Recycling Summit: The Collection',
+    name: 'Packaging Recycling Summit: Event Coverage',
     description: '<i>Packaging World’s</i> annual Packaging Recycling Summit (PRS) brings together brands, retailers, packaging suppliers, reprocessors, and material recovery facilities (MRFs) with a goal of promoting collaboration across the circular supply chain. Check out our content from the conference program that aims to examine all links in the value chain, identifying materials that can and will be recycled, and exploring end-use markets for waste.',
     queryParams: {
       // Packaging Recylcing Summit
@@ -50,7 +50,7 @@ module.exports = (app) => {
   })));
 
   app.get('/pfas', asyncRoute(async (_, res) => res.marko(collections, {
-    name: 'Content Collection: PFAS',
+    name: 'PFAS in Packaging: What You Should Know',
     description: 'Check out our collection of content on the topic of PFAS. Per- and polyfluoroalkyl substances (PFAS) are a diverse group of thousands of chemicals used in hundreds of types of products. Read more about what PFAS is, the regulations surrounding the chemicals, and a look at PFAS-free packaging.',
     queryParams: {
       // pfas, PFAS

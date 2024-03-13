@@ -12,7 +12,7 @@ const leaders = require('../templates/website-section/leaders');
 
 module.exports = (app) => {
   app.get('/oem-profiles', asyncRoute(async (_, res) => res.marko(collections, {
-    name: 'Curated Collection: OEM Profiles',
+    name: 'Content Call-out: OEM Profiles',
     description: 'Read all our OEM profiles and get inspired by what these manufacturing companies are doing to stay competitive in today’s market. Read about their machinery innovation, successful equipment launches, and the family stories behind the companies that help to set them apart.',
     queryName: 'website-scheduled-content',
     queryParams: {
