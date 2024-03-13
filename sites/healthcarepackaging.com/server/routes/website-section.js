@@ -23,7 +23,7 @@ module.exports = (app) => {
   })));
 
   app.get('/casestudies/pharma', asyncRoute(async (_, res) => res.marko(collections, {
-    name: 'Pharmaceutical Packaging Case Studies: The Collection',
+    name: 'Case Studies: Pharmaceutical Packaging',
     description: 'Read through our collection of pharmaceutical packaging case studies and get informed and inspired by the latest thinking and newest technology.',
     queryParams: {
       // Healthcare > Pharmaceutical
