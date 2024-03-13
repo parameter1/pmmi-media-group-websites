@@ -14,7 +14,7 @@ const global50 = require('../templates/website-section/global-50');
 
 module.exports = (app) => {
   app.get('/highpressureprocessing', asyncRoute(async (_, res) => res.marko(collections, {
-    name: 'High-Pressure Processing: The Collection',
+    name: 'High-Pressure Processing: Content Collection',
     description: 'Read through our collection of the most recent content on high-pressure processing. Learn more about the technology and why it’s important to food safety, food quality, shelf life, and more. Plus, read about specific applications, case studies, and the CPGs using HPP in their food or beverage operations.',
     queryParams: {
       // HPP
