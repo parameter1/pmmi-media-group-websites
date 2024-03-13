@@ -2,9 +2,13 @@ const privacyPolicy = require('./privacy-policy');
 const subscribe = require('./subscribe');
 
 const topics = [
-  { href: '/machinery', label: 'Machinery' },
-  { href: '/design', label: 'Design' },
-  { href: '/news', label: 'News' },
+  { href: '/sustainable-packaging', label: 'Sustainable Packaging' },
+  { href: '/flexibles', label: 'Flexibles' },
+  { href: '/rigid', label: 'Rigid' },
+  { href: '/coding-printing-labeling', label: 'Coding, Printing & Labeling' },
+  { href: '/secondary-packaging', label: 'Secondary Packaging' },
+  { href: '/trends', label: 'Trends' },
+  { href: '/industries', label: 'Industries' },
 ];
 
 const resources = [
@@ -53,22 +57,115 @@ const desktopMenu = {
   rightCol: { items: [...resources] },
 };
 
+const primaryNavigationItems = [
+  subscribe,
+  ...topics,
+  // { href: '/leaders', label: 'Leaders in Packaging' },
+  // { href: '/downloads', label: 'Downloads' },
+];
+
 module.exports = {
+  type: 'navbar-b',
   desktopMenu,
   mobileMenu,
+  primary: {
+    items: primaryNavigationItems,
+  },
   secondary: {
-    items: [
-      subscribe,
-      { href: '/machinery', label: 'Machinery' },
-      { href: '/design', label: 'Design' },
-      { href: '/events', label: 'Events' },
-      { href: '/leaders', label: 'Leaders' },
-      { href: '/downloads', label: 'Downloads' },
-    ],
+    items: [],
   },
   tertiary: {
     items: [],
   },
+  contexts: [
+    {
+      when: ['/sustainable-packaging'],
+      secondary: {
+        items: [
+          { href: '/sustainable-packaging/recycling', label: 'Recycling' },
+          { href: '/sustainable-packaging/bio-based', label: 'Bio-based' },
+          { href: '/sustainable-packaging/reusable-returnable', label: 'Reusable/Returnable' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: primaryNavigationItems },
+    },
+    {
+      when: ['/flexibles'],
+      secondary: {
+        items: [
+          { href: '/flexibles/bagging-pouching', label: 'Bagging & Pouching' },
+          { href: '/flexibles/wrapping', label: 'Wrapping' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: primaryNavigationItems },
+    },
+    {
+      when: ['/rigid'],
+      secondary: {
+        items: [
+          { href: '/rigid/filling-capping-closing', label: 'Filling, Capping & Closing' },
+          { href: '/rigid/containers-closures', label: 'Containers & Closures' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: primaryNavigationItems },
+    },
+    {
+      when: ['/coding-printing-labeling'],
+      secondary: {
+        items: [
+          { href: '/coding-printing-labeling/labeling', label: 'Labeling' },
+          { href: '/coding-printing-labeling/coding-marking', label: 'Coding & Marking' },
+          { href: '/coding-printing-labeling/package-printing', label: 'Package Printing' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: primaryNavigationItems },
+    },
+    {
+      when: ['/secondary-packaging'],
+      secondary: {
+        items: [
+          { href: '/secondary-packaging/cartoning', label: 'Cartoning' },
+          { href: '/secondary-packaging/multipacking', label: 'Multipacking' },
+          { href: '/secondary-packaging/case-tray-packing', label: 'Case/Tray Packing' },
+          { href: '/secondary-packaging/robotics', label: 'Robotics' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: primaryNavigationItems },
+    },
+    {
+      when: ['/trends'],
+      secondary: {
+        items: [
+          { href: '/trends/contract-packaging', label: 'Contract Packaging' },
+          { href: '/trends/logistics-supply-chain', label: 'Logistics/Supply Chain' },
+          { href: '/trends/controls-machine-components', label: 'Controls & Machine Components' },
+          { href: '/trends/ecommerce-d2c-packaging', label: 'E-commerce/D2C packaging' },
+          { href: '/trends/pmmi-news', label: 'PMMI News' },
+          { href: '/trends/workforce', label: 'Workforce' },
+          { href: '/trends/operational-excellence', label: 'Operational Excellence' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: primaryNavigationItems },
+    },
+    {
+      when: ['/industries'],
+      secondary: {
+        items: [
+          { href: '/industries/beverage', label: 'Beverage' },
+          { href: '/industries/food', label: 'Food' },
+          { href: '/industries/other-packaged-goods', label: 'Other Packaged Goods' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: primaryNavigationItems },
+    },
+  ],
   user: {
     items: [],
   },
