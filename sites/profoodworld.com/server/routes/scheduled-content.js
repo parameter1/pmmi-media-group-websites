@@ -22,4 +22,14 @@ module.exports = (app) => {
       },
     );
   });
+  app.get('/packaging-technology', newsletterState(), (_, res) => {
+    res.marko(
+      scheduledContent,
+      {
+        name: 'Packaging Technology',
+        siteId: '5d88cedef175132c008b456b',
+        queryName: 'all-published-content',
+      },
+    );
+  });
 };
