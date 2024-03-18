@@ -3,7 +3,12 @@ const subscribe = require('./subscribe');
 
 const topics = [
   { href: '/processing-equipment', label: 'Processing Equipment' },
+  { href: '/packaging-technology', label: 'Packaging Technology' },
+  { href: '/automation', label: 'Automation' },
   { href: '/food-safety', label: 'Food Safety' },
+  { href: '/sustainability', label: 'Sustainability' },
+  { href: '/facilities-design-infrastructure', label: 'Facilities, Design & Infrastructure' },
+  { href: '/industry-news', label: 'Industry News' },
 ];
 
 const resources = [
@@ -60,24 +65,77 @@ const desktopMenu = {
 };
 
 module.exports = {
+  type: 'navbar-b',
   desktopMenu,
   mobileMenu,
   primary: {
-    items: [],
+    items: topics,
   },
   secondary: {
-    items: [
-      subscribe,
-      { href: '/processing-equipment', label: 'Processing Equipment' },
-      { href: '/food-safety', label: 'Food Safety' },
-      { href: '/events', label: 'Events' },
-      { href: '/leaders', label: 'Leaders' },
-      { href: '/downloads', label: 'Downloads' },
-    ],
+    items: [],
   },
   tertiary: {
     items: [],
   },
+  contexts: [
+    {
+      when: ['/processing-equipment'],
+      secondary: {
+        items: [
+          { href: '/processing-equipment/dry-processing', label: 'Dry Processing' },
+          { href: '/processing-equipment/liquid-processing', label: 'Liquid Processing' },
+          { href: '/processing-equipment/heating-cooking', label: 'Heating/Cooking' },
+          { href: '/processing-equipment/chilling-freezing', label: 'Chilling/Freezing' },
+          { href: '/processing-equipment/processing-instrumentation', label: 'Processing Instrumentation' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: topics },
+    },
+    {
+      when: ['/automation'],
+      secondary: {
+        items: [
+          { href: '/automation/robotics', label: 'Robotics' },
+          { href: '/automation/controls', label: 'Controls' },
+          { href: '/automation/iiot', label: 'IIoT' },
+          { href: '/automation/security', label: 'Security' },
+          { href: '/automation/software', label: 'Software' },
+          { href: '/automation/workforce', label: 'Workforce' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: topics },
+    },
+    {
+      when: ['/food-safety'],
+      secondary: {
+        items: [
+          { href: '/food-safety/cleaning-and-sanitation', label: 'Cleaning & Sanitation' },
+          { href: '/food-safety/regulatory', label: 'Regulatory' },
+          { href: '/food-safety/pest-control', label: 'Pest Control' },
+          { href: '/food-safety/inspection', label: 'Inspection' },
+          { href: '/food-safety/sterilization-pasteurization', label: 'Sterilization/Pasteurization' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: topics },
+    },
+    {
+      when: ['/facilities-design-infrastructure'],
+      secondary: {
+        items: [
+          { href: '/facilities-design-infrastructure/air-handling', label: 'Air Handling' },
+          { href: '/facilities-design-infrastructure/floors-drains-walls-doors', label: 'Floors/Drain/Walls/Doors' },
+          { href: '/facilities-design-infrastructure/pumps-valves', label: 'Pumps/Valves' },
+          { href: '/facilities-design-infrastructure/engine-room', label: 'Engine Room' },
+          { href: '/facilities-design-infrastructure/wastewater-treatment', label: 'Wastewater Treatment' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: topics },
+    },
+  ],
   user: {
     items: [],
   },
