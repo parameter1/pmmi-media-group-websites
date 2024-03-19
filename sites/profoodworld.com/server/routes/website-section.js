@@ -28,21 +28,22 @@ module.exports = (app) => {
       collections,
       {
         name: 'Packaging Technology',
-        alias: 'packaging-technology',
-        siteId: '5d88cedef175132c008b456b',
-        includeContentTypes: [
-          'Article',
-          'Blog',
-          'Document',
-          'Event',
-          'News',
-          'Podcast',
-          'PressRelease',
-          'Product',
-          'Video',
-          'Webinar',
-          'Whitepaper',
-        ],
+        queryParams: {
+          siteId: '5d88cedef175132c008b456b',
+          includeContentTypes: [
+            'Article',
+            'Blog',
+            'Document',
+            'Event',
+            'News',
+            'Podcast',
+            'PressRelease',
+            'Product',
+            'Video',
+            'Webinar',
+            'Whitepaper',
+          ],
+        },
       },
     );
   });
