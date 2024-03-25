@@ -3,12 +3,8 @@ const subscribe = require('./subscribe');
 
 const topics = [
   { href: '/processing-equipment', label: 'Processing Equipment' },
-  { href: '/packaging-technology', label: 'Packaging Technology' },
-  { href: '/automation', label: 'Automation' },
   { href: '/food-safety', label: 'Food Safety' },
   { href: '/sustainability', label: 'Sustainability' },
-  { href: '/facilities-design-infrastructure', label: 'Facilities, Design & Infrastructure' },
-  { href: '/industry-news', label: 'Industry News' },
 ];
 
 const resources = [
