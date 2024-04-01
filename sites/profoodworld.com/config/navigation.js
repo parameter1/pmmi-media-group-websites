@@ -2,9 +2,11 @@ const privacyPolicy = require('./privacy-policy');
 const subscribe = require('./subscribe');
 
 const topics = [
+  subscribe,
   { href: '/processing-equipment', label: 'Processing Equipment' },
   { href: '/food-safety', label: 'Food Safety' },
   { href: '/sustainability', label: 'Sustainability' },
+  { href: '/downloads', label: 'Downloads' },
 ];
 
 const resources = [
