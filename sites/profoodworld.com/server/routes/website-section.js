@@ -22,32 +22,6 @@ module.exports = (app) => {
     },
   })));
 
-  // Get content primary to PW (canonical site is PW)
-  app.get('/packaging-technology', newsletterState(), (_, res) => {
-    res.marko(
-      collections,
-      {
-        name: 'Packaging Technology',
-        queryParams: {
-          siteId: '5d88cedef175132c008b456b',
-          includeContentTypes: [
-            'Article',
-            'Blog',
-            'Document',
-            'Event',
-            'News',
-            'Podcast',
-            'PressRelease',
-            'Product',
-            'Video',
-            'Webinar',
-            'Whitepaper',
-          ],
-        },
-      },
-    );
-  });
-
   app.get('/:alias(global-250)', newsletterState(), (_, res) => { res.marko(global250); });
   app.get('/:alias(global-250/*)', newsletterState(), (_, res) => { res.marko(global250); });
   app.get('/:alias(global-50)', newsletterState(), (_, res) => { res.marko(global50); });
