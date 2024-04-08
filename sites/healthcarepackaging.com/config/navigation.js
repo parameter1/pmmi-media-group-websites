@@ -2,8 +2,12 @@ const privacyPolicy = require('./privacy-policy');
 const subscribe = require('./subscribe');
 
 const topics = [
-  { href: '/machinery-materials', label: 'Machinery & Materials' },
-  { href: '/logistics-distribution', label: 'Logistics & Cold Chain' },
+  { href: '/design-materials', label: 'Design & Materials' },
+  { href: '/machinery', label: 'Machinery' },
+  { href: '/sustainability', label: 'Sustainability' },
+  { href: '/logistics', label: 'Logistics' },
+  { href: '/industry-news', label: 'Industry News' },
+  // { href: '/resources', label: 'Resources' },
 ];
 
 const utilities = [
@@ -69,13 +73,7 @@ module.exports = {
   desktopMenu,
   mobileMenu,
   primary: {
-    items: [
-      subscribe,
-      { href: '/machinery-materials', label: 'Machinery & Materials' },
-      { href: '/webinars', label: 'Webinars' },
-      { href: '/leaders', label: 'Suppliers' },
-      { href: '/downloads', label: 'Downloads' },
-    ],
+    items: topics,
   },
   secondary: {
     items: [],
@@ -86,6 +84,88 @@ module.exports = {
   user: {
     items: [],
   },
+  contexts: [
+    {
+      when: ['/design-materials'],
+      secondary: {
+        items: [
+          { href: '/design-materials/adherence-delivery', label: 'Adherence/Delivery' },
+          { href: '/design-materials/package-design', label: 'Package Design' },
+          { href: '/design-materials/materials', label: 'Materials' },
+          { href: '/design-materials/medical-device-packaging', label: 'Medical Device/Packaging' },
+          { href: '/design-materials/transport-packaging', label: 'Transport Packaging' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: topics },
+    },
+    {
+      when: ['/machinery'],
+      secondary: {
+        items: [
+          { href: '/machinery/packaging-filling', label: 'Packaging/Filling' },
+          { href: '/machinery/labeling-printing', label: 'Labeling/Printing' },
+          { href: '/machinery/robotics-automation', label: 'Robotics/Automation' },
+          { href: '/machinery/inspection', label: 'Inspection' },
+          { href: '/machinery/aseptic-sterile', label: 'Aseptic/Sterile' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: topics },
+    },
+    {
+      when: ['/sustainability'],
+      secondary: {
+        items: [
+          { href: '/sustainability/sustainability', label: 'Sustainability' },
+          { href: '/sustainability/recyclability', label: 'Recyclability' },
+          { href: '/sustainability/reuse-return', label: 'Reuse/Return' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: topics },
+    },
+    {
+      when: ['/logistics'],
+      secondary: {
+        items: [
+          { href: '/logistics/traceability-serialization', label: 'Traceability/Serialization' },
+          { href: '/logistics/temp-control-cold-chain', label: 'Temp Control/Cold Chain' },
+          { href: '/logistics/supply-chain', label: 'Supply Chain' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: topics },
+    },
+    {
+      when: ['/industry-news'],
+      secondary: {
+        items: [
+          { href: '/industry-news/e-commerce', label: 'E-Commerce' },
+          { href: '/industry-news/market-trends', label: 'Market Trends' },
+          { href: '/industry-news/pmmi-news', label: 'PMMI News' },
+          { href: '/industry-news/quick-hits', label: 'Quick Hits' },
+          { href: '/industry-news/regulatory', label: 'Regulatory' },
+          { href: '/industry-news/workforce', label: 'Workforce' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: topics },
+    },
+    /*
+    {
+      when: ['/resources'],
+      secondary: {
+        items: [
+          { href: '/resources/packaging-101', label: 'Packaging 101' },
+          { href: '/downloads', label: 'Downloads' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: topics },
+    },
+    */
+  ],
   footer: {
     items: [
       { href: '/page/hcp-about-us', label: 'About Us' },
@@ -93,10 +173,7 @@ module.exports = {
       { href: '/page/terms-of-use', label: 'Terms of Use' },
       { href: '/site-map', label: 'Site Map' },
     ],
-    topics: [
-      ...topics,
-      { href: '/news', label: 'News' },
-    ],
+    topics,
     more: [
       subscribe,
       { href: 'https://www.pmmimediagroup.com/hcp/healthcare-packaging', label: 'Advertise', target: '_blank' },
