@@ -1,9 +1,9 @@
 $theme-site-header-breakpoints: (
   hide-primary: 1100px,
-  hide-secondary: 700px,
-  small-logo: 775px,
+  hide-secondary: 780px,
+  small-logo: 980px,
   small-text-primary: 0,
-  small-text-secondary: 830px
+  small-text-secondary: 980px
 );
 
 // Colors
@@ -45,6 +45,31 @@ $theme-site-navbar-secondary-font-size: 16px !default;
         border-style: none;
       }
     }
+  }
+  &__items {
+    &--secondary {
+      font-weight: 400;
+      text-transform: none;
+      .site-navbar__link--active {
+        color: $gray-800;
+        font-weight: 700;
+        text-shadow: none;
+      }
+      .site-navbar__link {
+        font-size: 13px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        &:hover {
+          text-decoration: underline;
+          color: $gray-800;
+        }
+      }
+    }
+  }
+  &--secondary {
+    background-color: $gray-100;
+    border-top: 1px solid $gray-400;
+    padding: 0 16px;
   }
 }
 .document-container {
