@@ -82,10 +82,7 @@ $ const queryParams = {
       $ const finalNodes = nodes.map((node) => ({
         ...node,
         ...((node.type && ['event', 'podcast', 'webinar'].includes(node.type)) &&  {
-          primarySection: {
-            canonicalPath: `/${node.type}s`,
-            name: `${node.type.slice(0,1).toUpperCase()}${node.type.slice(1)}s`,
-            fullName: `${node.type.slice(0,1).toUpperCase()}${node.type.slice(1)}s` }
+            primarySection: handleContentTypePrimarySection({ i18n, node })
         }),
       }));
      <theme-section-feed-flow nodes=finalNodes lazyload=false />
@@ -108,10 +105,7 @@ $ const queryParams = {
       $ const finalNodes = nodes.map((node) => ({
         ...node,
         ...((node.type && ['event', 'podcast', 'webinar'].includes(node.type)) &&  {
-          primarySection: {
-            canonicalPath: `/${node.type}s`,
-            name: `${node.type.slice(0,1).toUpperCase()}${node.type.slice(1)}s`,
-            fullName: `${node.type.slice(0,1).toUpperCase()}${node.type.slice(1)}s` }
+            primarySection: handleContentTypePrimarySection({ i18n, node })
         }),
       }));
      <theme-section-feed-flow nodes=finalNodes lazyload=false />
@@ -138,10 +132,7 @@ $ const queryParams = {
       $ const finalNodes = nodes.map((node) => ({
         ...node,
         ...((node.type && ['event', 'podcast', 'webinar'].includes(node.type)) &&  {
-          primarySection: {
-            canonicalPath: `/${node.type}s`,
-            name: `${node.type.slice(0,1).toUpperCase()}${node.type.slice(1)}s`,
-            fullName: `${node.type.slice(0,1).toUpperCase()}${node.type.slice(1)}s` }
+            primarySection: handleContentTypePrimarySection({ i18n, node })
         }),
       }));
      <theme-section-feed-flow nodes=finalNodes lazyload=false />
@@ -165,10 +156,7 @@ $ const queryParams = {
       $ const finalNodes = nodes.map((node) => ({
         ...node,
         ...((node.type && ['event', 'podcast', 'webinar'].includes(node.type)) &&  {
-          primarySection: {
-            canonicalPath: `/${node.type}s`,
-            name: `${node.type.slice(0,1).toUpperCase()}${node.type.slice(1)}s`,
-            fullName: `${node.type.slice(0,1).toUpperCase()}${node.type.slice(1)}s` }
+            primarySection: handleContentTypePrimarySection({ i18n, node })
         }),
       }));
      <theme-section-feed-flow nodes=finalNodes lazyload=false />

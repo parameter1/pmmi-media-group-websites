@@ -1,5 +1,6 @@
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import { getAsArray } from "@parameter1/base-cms-object-path";
+import handleContentTypePrimarySection from "../../../utils/handle-content-type-primary-section";
 
 import queryFragment from "../../../graphql/fragments/pmg-events";
 
@@ -98,7 +99,7 @@ $ const countQueryParams = {
               </marko-web-element>
               $ const finalNodes = nodes.map((node) => ({
                 ...node,
-                primarySection: { canonicalPath: `/${alias}`, name, fullName: name }
+                primarySection: handleContentTypePrimarySection({ i18n, node })
               }));
               <theme-section-feed-flow nodes=finalNodes lazyload=false />
             </marko-web-query>
@@ -122,7 +123,7 @@ $ const countQueryParams = {
         <marko-web-query|{ nodes }| name="website-scheduled-content" params=standardQueryParams>
           $ const finalNodes = nodes.map((node) => ({
             ...node,
-            primarySection: { canonicalPath: `/${alias}`, name, fullName: name }
+            primarySection: handleContentTypePrimarySection({ i18n, node })
           }));
           <theme-section-feed-flow nodes=finalNodes modifiers=["archives"] lazyload=false />
         </marko-web-query>
