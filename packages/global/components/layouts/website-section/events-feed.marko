@@ -23,8 +23,10 @@ $ const queryParams = {
   sectionBubbling: false,
   includeContentTypes: ["Event"],
   endingAfter: now,
-  sortField: "startDate",
-  sortOrder: "asc",
+  sort: {
+    field: "startDate",
+    order: "asc",
+  },
   queryFragment,
 };
 $ const pmgQueryParams = {
@@ -57,7 +59,7 @@ $ const countQueryParams = {
 
 <theme-default-page title=name description=description>
   <@head>
-    <theme-section-feed-block|{ totalCount }| count-only=true query-name="all-published-content">
+    <theme-section-feed-block|{ totalCount }| count-only=true query-name="website-scheduled-content">
       <@query-params ...countQueryParams />
       <theme-pagination-controls
         per-page=perPage
@@ -90,7 +92,7 @@ $ const countQueryParams = {
       <@section|{ blockName, section, aliases }| modifiers=["events"]>
         <if(p.page === 1)>
           <marko-web-element block-name="pmg-events" name="wrapper">
-            <marko-web-query|{ nodes }| name="all-published-content" params=pmgQueryParams>
+            <marko-web-query|{ nodes }| name="website-scheduled-content" params=pmgQueryParams>
               <marko-web-element class="page-wrapper__website-section-name" block-name="pmg-events" name="header">
                 ${config.siteName()} ${i18n("Events")}
               </marko-web-element>
@@ -117,14 +119,14 @@ $ const countQueryParams = {
           />
         </if>
 
-        <marko-web-query|{ nodes }| name="all-published-content" params=standardQueryParams>
+        <marko-web-query|{ nodes }| name="website-scheduled-content" params=standardQueryParams>
           $ const finalNodes = nodes.map((node) => ({
             ...node,
             primarySection: { canonicalPath: `/${alias}`, name }
           }));
           <theme-section-feed-flow nodes=finalNodes modifiers=["archives"] lazyload=false />
         </marko-web-query>
-        <theme-section-feed-block|{ totalCount }| count-only=true query-name="all-published-content">
+        <theme-section-feed-block|{ totalCount }| count-only=true query-name="website-scheduled-content">
           <@query-params ...countQueryParams />
           <theme-pagination-controls
             per-page=perPage

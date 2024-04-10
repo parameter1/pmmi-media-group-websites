@@ -22,14 +22,18 @@ $ const upcomingQueryParams = {
   ...queryParams,
   beginningAfter: now,
   limit: 25,
-  sortField: "startDate",
-  sortOrder: "asc",
+  sort: {
+    field: "startDate",
+    order: "asc",
+  }
 };
 $ const archiveQueryParams = {
   ...queryParams,
   beginningBefore: now,
-  sortField: "startDate",
-  sortOrder: "desc",
+  sort: {
+    field: "startDate",
+    order: "desc",
+  },
   limit: perPage,
   skip: p.skip({ perPage })
 };
@@ -44,7 +48,7 @@ $ const countQueryParams = {
 
 <theme-default-page title=name description=description>
   <@head>
-    <theme-section-feed-block|{ totalCount }| count-only=true query-name="all-published-content">
+    <theme-section-feed-block|{ totalCount }| count-only=true query-name="website-scheduled-content">
       <@query-params ...countQueryParams />
       <theme-pagination-controls
         per-page=perPage
@@ -89,7 +93,7 @@ $ const countQueryParams = {
           />
         </if>
         <if(p.page === 1)>
-          <marko-web-query|{ nodes }| name="all-published-content" params=upcomingQueryParams>
+          <marko-web-query|{ nodes }| name="website-scheduled-content" params=upcomingQueryParams>
             $ const finalNodes = nodes.map((node) => ({
               ...node,
               primarySection: { canonicalPath: `/${alias}`, name }
@@ -105,7 +109,7 @@ $ const countQueryParams = {
             />
           </marko-web-query>
         </if>
-        <marko-web-query|{ nodes }| name="all-published-content" params=archiveQueryParams>
+        <marko-web-query|{ nodes }| name="website-scheduled-content" params=archiveQueryParams>
           $ const finalNodes = nodes.map((node) => ({
             ...node,
             primarySection: { canonicalPath: `/${alias}`, name }
@@ -114,7 +118,7 @@ $ const countQueryParams = {
             <@header>On Demand</@header>
           </theme-section-feed-flow>
         </marko-web-query>
-        <theme-section-feed-block|{ totalCount }| count-only=true query-name="all-published-content">
+        <theme-section-feed-block|{ totalCount }| count-only=true query-name="website-scheduled-content">
           <@query-params ...countQueryParams />
           <theme-pagination-controls
             per-page=perPage
