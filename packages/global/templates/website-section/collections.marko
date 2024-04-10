@@ -46,6 +46,15 @@ $ const queryParams = {
               >
                 <@nodes nodes=nodes>
                   <@slot|{ node }|>
+                    $ if (["event", "podcast", "webinar"].includes(node.type)) {
+                      const typeName = `${node.type.slice(0,1).toUpperCase()}${node.type.slice(1)}`;
+                      node.primarySection = {
+                        name: `${typeName}s`,
+                        fullName: `${typeName}s`,
+                        alias: `${node.type}s`,
+                        canonicalPath: `/${node.type}s`,
+                      }
+                    }
                     <theme-section-feed-content-node node=node />
                   </@slot>
                 </@nodes>
@@ -75,6 +84,15 @@ $ const queryParams = {
               >
                 <@nodes nodes=nodes>
                   <@slot|{ node }|>
+                    $ if (["event", "podcast", "webinar"].includes(node.type)) {
+                      const typeName = `${node.type.slice(0,1).toUpperCase()}${node.type.slice(1)}`;
+                      node.primarySection = {
+                        name: `${typeName}s`,
+                        fullName: `${typeName}s`,
+                        alias: `${node.type}s`,
+                        canonicalPath: `/${node.type}s`,
+                      }
+                    }
                     <theme-section-feed-content-node node=node />
                   </@slot>
                 </@nodes>
@@ -111,6 +129,15 @@ $ const queryParams = {
               >
                 <@nodes nodes=nodes>
                   <@slot|{ node }|>
+                    $ if (["event", "podcast", "webinar"].includes(node.type)) {
+                      const typeName = `${node.type.slice(0,1).toUpperCase()}${node.type.slice(1)}`;
+                      node.primarySection = {
+                        name: `${typeName}s`,
+                        fullName: `${typeName}s`,
+                        alias: `${node.type}s`,
+                        canonicalPath: `/${node.type}s`,
+                      }
+                    }
                     <theme-section-feed-content-node node=node />
                   </@slot>
                 </@nodes>
@@ -140,6 +167,15 @@ $ const queryParams = {
               >
                 <@nodes nodes=nodes>
                   <@slot|{ node }|>
+                    $ if (["event", "podcast", "webinar"].includes(node.type)) {
+                      const typeName = `${node.type.slice(0,1).toUpperCase()}${node.type.slice(1)}`;
+                      node.primarySection = {
+                        name: `${typeName}s`,
+                        fullName: `${typeName}s`,
+                        alias: `${node.type}s`,
+                        canonicalPath: `/${node.type}s`,
+                      }
+                    }
                     <theme-section-feed-content-node node=node />
                   </@slot>
                 </@nodes>
