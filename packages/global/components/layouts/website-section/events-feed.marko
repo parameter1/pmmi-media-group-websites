@@ -98,7 +98,7 @@ $ const countQueryParams = {
               </marko-web-element>
               $ const finalNodes = nodes.map((node) => ({
                 ...node,
-                primarySection: { canonicalPath: `/${alias}`, name }
+                primarySection: { canonicalPath: `/${alias}`, name, fullName: name }
               }));
               <theme-section-feed-flow nodes=finalNodes lazyload=false />
             </marko-web-query>
@@ -122,7 +122,7 @@ $ const countQueryParams = {
         <marko-web-query|{ nodes }| name="website-scheduled-content" params=standardQueryParams>
           $ const finalNodes = nodes.map((node) => ({
             ...node,
-            primarySection: { canonicalPath: `/${alias}`, name }
+            primarySection: { canonicalPath: `/${alias}`, name, fullName: name }
           }));
           <theme-section-feed-flow nodes=finalNodes modifiers=["archives"] lazyload=false />
         </marko-web-query>

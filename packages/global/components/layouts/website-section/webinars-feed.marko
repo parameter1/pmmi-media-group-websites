@@ -96,7 +96,7 @@ $ const countQueryParams = {
           <marko-web-query|{ nodes }| name="website-scheduled-content" params=upcomingQueryParams>
             $ const finalNodes = nodes.map((node) => ({
               ...node,
-              primarySection: { canonicalPath: `/${alias}`, name }
+              primarySection: { canonicalPath: `/${alias}`, name, fullName: name }
             }));
             <theme-section-feed-flow nodes=finalNodes modifiers=["upcoming"]>
               <@header>Upcoming</@header>
@@ -112,7 +112,7 @@ $ const countQueryParams = {
         <marko-web-query|{ nodes }| name="website-scheduled-content" params=archiveQueryParams>
           $ const finalNodes = nodes.map((node) => ({
             ...node,
-            primarySection: { canonicalPath: `/${alias}`, name }
+            primarySection: { canonicalPath: `/${alias}`, name, fullName: name }
           }));
           <theme-section-feed-flow nodes=finalNodes modifiers=["archives"] lazyload=false>
             <@header>On Demand</@header>
