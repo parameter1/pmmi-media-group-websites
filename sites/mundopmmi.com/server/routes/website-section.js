@@ -35,6 +35,14 @@ module.exports = (app) => {
       includeTaxonomyIds: [3199452],
     },
   })));
+  app.get('/robotica-tendencias', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Robótica: tendencias que definen los empaques del futuro',
+    description: '¿Se ha preguntado cómo será el futuro del empaque con la robótica avanzada? En esta selección de Mundo EXPO PACK podrá vislumbrar las más interesantes tendencias en robótica. Desde la evolución de los robots humanoides hasta los avances tecnológicos que impulsan el mercado, encuentre aquí el más completo panorama de robótica para la industria de empaques y procesamiento.',
+    queryParams: {
+      // Tendencias robótica
+      includeTaxonomyIds: [3199506],
+    },
+  })));
   app.get('/:alias(eventos)', withWebsiteSection({
     template: events,
     queryFragment,
