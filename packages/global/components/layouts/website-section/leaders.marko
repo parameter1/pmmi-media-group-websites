@@ -56,8 +56,12 @@ $ const { GAM, site, config } = out.global;
         </@section>
         <@section|{ alias }| modifiers=["leaders-full-width"]>
           <global-leaders-all />
+          <style>
+            .site-footer {
+              z-index: 0 !important;
+            }
+          </style>
         </@section>
-
         <for|s| of=sections>
           <@section|{ blockName }| modifiers=s.modifiers>
             <${s.renderBody}
