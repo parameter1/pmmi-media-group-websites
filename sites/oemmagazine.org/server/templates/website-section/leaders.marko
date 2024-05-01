@@ -1,13 +1,12 @@
 import { get } from "@parameter1/base-cms-object-path";
 
-$ const { id, alias, name, pageNode } = input;
+$ const { id, alias, pageNode } = input;
 
 $ const { site, config } = out.global;
 
 <global-website-section-leaders-layout
   id=id
   alias=alias
-  name=name
   page-node=pageNode
 >
   <@page-description>

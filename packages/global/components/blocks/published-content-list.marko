@@ -4,19 +4,30 @@ import sectionFragment from "@parameter1/base-cms-marko-web-theme-monorail/graph
 $ const { sectionId, excludeContentIds } = input;
 
 $ const blockName = "section-list";
+$ const params = {
+  limit: 5,
+  excludeContentIds,
+  ...(sectionId !== 87624 && {
+    sectionId,
+    excludeContentTypes: ["Contact", "Company", "Document", "Promotion"]
+  }),
+  ...(sectionId === 87624 && {
+    includeContentTypes: ["Document"],
+    excludeContentTypes: ["Contact", "Company", "Promotion"]
+  }),
+  excludeLabels: ["Supplier Submitted"],
+  sectionBubbling: true,
+  queryFragment
+}
 
-<marko-web-query|{ section }| name="website-scheduled-content" params={ sectionId, limit: 1, sectionFragment }>
+<marko-web-query|{ section }|
+  name="website-scheduled-content"
+  params={ sectionId, limit: 1, sectionFragment }
+  collapsible=false
+>
   <marko-web-query|{ nodes }|
     name="all-published-content"
-    params={
-      limit: 5,
-      sectionId,
-      excludeContentIds,
-      excludeContentTypes: ["Contact", "Company", "Document", "Promotion"],
-      excludeLabels: ["Supplier Submitted"],
-      sectionBubbling: true,
-      queryFragment
-    }
+    params=params
   >
       <marko-web-node-list
         inner-justified=true

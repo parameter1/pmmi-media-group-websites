@@ -16,7 +16,6 @@
     "@sections <section>[]": {},
     "@id": "number",
     "@alias": "string",
-    "@name": "string",
     "@page-node": "object"
   },
   "<global-website-section-feed-layout>": {

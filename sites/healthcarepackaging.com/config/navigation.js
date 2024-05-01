@@ -2,12 +2,13 @@ const privacyPolicy = require('./privacy-policy');
 const subscribe = require('./subscribe');
 
 const topics = [
+  subscribe,
   { href: '/design-materials', label: 'Design & Materials' },
-  { href: '/machinery', label: 'Machinery' },
   { href: '/sustainability', label: 'Sustainability' },
+  { href: '/machinery', label: 'Machinery' },
   { href: '/logistics', label: 'Logistics' },
   { href: '/industry-news', label: 'Industry News' },
-  // { href: '/resources', label: 'Resources' },
+  { href: '/resources', label: 'Resources' },
 ];
 
 const utilities = [
@@ -147,6 +148,17 @@ module.exports = {
           { href: '/industry-news/quick-hits', label: 'Quick Hits' },
           { href: '/industry-news/regulatory', label: 'Regulatory' },
           { href: '/industry-news/workforce', label: 'Workforce' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: { items: topics },
+    },
+    {
+      when: ['/resources', '/downloads'],
+      secondary: {
+        items: [
+          { href: '/resources/packaging-101', label: 'Packaging 101' },
+          { href: '/downloads', label: 'Downloads' },
         ],
       },
       tertiary: { items: [] },

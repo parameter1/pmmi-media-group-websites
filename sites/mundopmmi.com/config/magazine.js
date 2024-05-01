@@ -1,6 +1,6 @@
 module.exports = {
   publicationIds: [
-    '5d8a225ef6d5f267ee95d214',
+    '5d0a74bd72c1aa39008b456a',
   ],
   buttons: ['subscribe', 'digital-edition', 'renewal', 'change-address', 'cancel', 'archives'],
 };
