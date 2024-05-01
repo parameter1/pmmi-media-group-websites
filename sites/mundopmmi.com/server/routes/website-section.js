@@ -27,6 +27,22 @@ module.exports = (app) => {
       includeTaxonomyIds: [3199410],
     },
   })));
+  app.get('/tecnologia-hpp', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Procesamiento por Alta Presión – HPP: Implementaciones Exitosas en la industria',
+    description: 'Navegue por esta selección exclusiva de contenidos de Mundo EXPO PACK y conozca casos de éxito de implementaciones de una tecnología que está impactando la industria de alimentos: el Procesamiento por Alta Presión (HPP, por sus siglas en inglés). Aprenda directamente de compañías de productos de consumo que utilizan HPP y por qué esta tecnología se está volviendo importante para garantizar la calidad, seguridad y extender la vida útil de los alimentos.',
+    queryParams: {
+      // HPP
+      includeTaxonomyIds: [3199452],
+    },
+  })));
+  app.get('/robotica-tendencias', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Robótica: tendencias que definen los empaques del futuro',
+    description: '¿Se ha preguntado cómo será el futuro del empaque con la robótica avanzada? En esta selección de Mundo EXPO PACK podrá vislumbrar las más interesantes tendencias en robótica. Desde la evolución de los robots humanoides hasta los avances tecnológicos que impulsan el mercado, encuentre aquí el más completo panorama de robótica para la industria de empaques y procesamiento.',
+    queryParams: {
+      // Tendencias robótica
+      includeTaxonomyIds: [3199506],
+    },
+  })));
   app.get('/:alias(eventos)', withWebsiteSection({
     template: events,
     queryFragment,

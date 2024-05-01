@@ -1,11 +1,11 @@
 import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
 import { getAsArray } from "@parameter1/base-cms-object-path";
 
-$ const { id, alias, name, pageNode } = input;
+$ const { id, alias, pageNode } = input;
 $ const sections = getAsArray(input, "sections");
 $ const { GAM, site, config } = out.global;
 
-<theme-website-section-page id=id alias=alias name=name>
+<theme-website-section-page id=id alias=alias name="Leaders">
   <@head>
     <marko-web-gtm-website-section-context|{ context }| alias=alias>
       <marko-web-gtm-push data=context />
@@ -56,8 +56,12 @@ $ const { GAM, site, config } = out.global;
         </@section>
         <@section|{ alias }| modifiers=["leaders-full-width"]>
           <global-leaders-all />
+          <style>
+            .site-footer {
+              z-index: 0 !important;
+            }
+          </style>
         </@section>
-
         <for|s| of=sections>
           <@section|{ blockName }| modifiers=s.modifiers>
             <${s.renderBody}
