@@ -2,6 +2,7 @@ import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-ali
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 import { getAsArray } from "@parameter1/base-cms-object-path";
 import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/section-feed-block";
+import handleContentTypePrimarySection from "../../utils/handle-content-type-primary-section";
 
 $ const { site, req, i18n, pagination: p } = out.global;
 $ const { name, description, queryParams: paginationParams } = input;
@@ -46,6 +47,9 @@ $ const queryParams = {
               >
                 <@nodes nodes=nodes>
                   <@slot|{ node }|>
+                    $ if (["event", "podcast", "webinar"].includes(node.type)) {
+                      node.primarySection = handleContentTypePrimarySection({ i18n, node });
+                    }
                     <theme-section-feed-content-node node=node />
                   </@slot>
                 </@nodes>
@@ -75,6 +79,9 @@ $ const queryParams = {
               >
                 <@nodes nodes=nodes>
                   <@slot|{ node }|>
+                    $ if (["event", "podcast", "webinar"].includes(node.type)) {
+                      node.primarySection = handleContentTypePrimarySection({ i18n, node });
+                    }
                     <theme-section-feed-content-node node=node />
                   </@slot>
                 </@nodes>
@@ -111,6 +118,9 @@ $ const queryParams = {
               >
                 <@nodes nodes=nodes>
                   <@slot|{ node }|>
+                    $ if (["event", "podcast", "webinar"].includes(node.type)) {
+                      node.primarySection = handleContentTypePrimarySection({ i18n, node });
+                    }
                     <theme-section-feed-content-node node=node />
                   </@slot>
                 </@nodes>
@@ -140,6 +150,9 @@ $ const queryParams = {
               >
                 <@nodes nodes=nodes>
                   <@slot|{ node }|>
+                    $ if (["event", "podcast", "webinar"].includes(node.type)) {
+                      node.primarySection = handleContentTypePrimarySection({ i18n, node });
+                    }
                     <theme-section-feed-content-node node=node />
                   </@slot>
                 </@nodes>

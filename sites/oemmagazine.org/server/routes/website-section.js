@@ -5,6 +5,7 @@ const leadersFragment = require('@pmmi-media-group/package-global/graphql/fragme
 const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');
 const events = require('@pmmi-media-group/package-global/templates/website-section/events');
 const collections = require('@pmmi-media-group/package-global/templates/website-section/collections');
+const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');
 const withTopStoriesBlock = require('@pmmi-media-group/package-global/templates/website-section/with-top-stories-block');
 
 const section = require('../templates/website-section');
@@ -21,10 +22,18 @@ module.exports = (app) => {
     },
   })));
 
-  app.get('/:alias(events)', withWebsiteSection({
-    template: events,
-    queryFragment,
-  }));
+  app.get('/events', asyncRoute(async (_, res) => res.marko(events, {
+    alias: 'events',
+    name: 'Events',
+    description: '',
+  })));
+
+  app.get('/webinars', asyncRoute(async (_, res) => res.marko(webinars, {
+    alias: 'webinars',
+    name: 'Webinars',
+    description: '',
+  })));
+
   app.get('/:alias(leaders)', newsletterState(), withWebsiteSection({
     template: leaders,
     queryFragment: leadersFragment,

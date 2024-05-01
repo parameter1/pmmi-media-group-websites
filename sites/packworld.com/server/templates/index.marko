@@ -23,18 +23,7 @@ $ const { site } = out.global;
   </@section>
 
   <@section>
-    $ const queryParams = {
-      sectionAlias: 'supplier-news',
-      limit: 500,
-      queryFragment,
-    };
-    <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
-      $ const excludeContentIds = nodes.map((node) =>  node.id);
-      <global-published-content-list-deck-block
-        section-ids=[33249, 33256, 33261]
-        exclude-content-ids=excludeContentIds
-      />
-    </marko-web-query>
+    <global-published-content-list-deck-block section-ids=[33249, 33256, 33261] />
   </@section>
 
   <@section|{ aliases }|>

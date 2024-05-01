@@ -16,13 +16,14 @@ $ const {
   endingAfter,
 } = input;
 $ const perPage = 18;
+$ const withSection = defaultValue(input.withSection, false);
 
 $ const type = "scheduled-content";
 $ const description = defaultDescription(title, config);
 
 <theme-default-page title=title description=description>
   <@head>
-    <theme-section-feed-block|{ totalCount }| with-section=false query-name=queryName count-only=true>
+    <theme-section-feed-block|{ totalCount }| with-section=withSection query-name=queryName count-only=true>
       <@query-params include-labels=includeLabels include-content-types=includeContentTypes />
       <theme-pagination-controls
         per-page=perPage
@@ -58,7 +59,7 @@ $ const description = defaultDescription(title, config);
         </div>
       </@section>
       <@section|{ blockName }|>
-        <theme-section-feed-block with-section=false query-name=queryName lazyload=false>
+        <theme-section-feed-block with-section=withSection query-name=queryName lazyload=false>
           <@query-params
             limit=18
             skip=p.skip({ perPage })

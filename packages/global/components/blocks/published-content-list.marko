@@ -1,5 +1,6 @@
 import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/section-feed-block";
 import sectionFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/section-info";
+import handleContentTypePrimarySection from "../../utils/handle-content-type-primary-section";
 
 $ const { sectionId, excludeContentIds } = input;
 
@@ -30,6 +31,9 @@ $ const blockName = "section-list";
         </@header>
         <@nodes nodes=nodes>
           <@slot|{ node, index }|>
+            $ if (["event", "podcast", "webinar"].includes(node.type)) {
+              node.primarySection = handleContentTypePrimarySection({ i18n, node });
+            }
             <if(index === 0)>
               <theme-content-node
                 image-position="top"

@@ -31,14 +31,17 @@ module.exports = (app) => {
     },
   })));
 
-  app.get('/:alias(events)', withWebsiteSection({
-    template: events,
-    queryFragment,
-  }));
-  app.get('/:alias(webinars)', withWebsiteSection({
-    template: webinars,
-    queryFragment,
-  }));
+  app.get('/events', asyncRoute(async (_, res) => res.marko(events, {
+    alias: 'events',
+    name: 'Events',
+    description: 'Connect with healthcare packaging professionals, gain insights into the latest trends, and experience breakthrough technologies.',
+  })));
+
+  app.get('/webinars', asyncRoute(async (_, res) => res.marko(webinars, {
+    alias: 'webinars',
+    name: 'Webinars',
+    description: 'Industry experts talk medical packaging technologies, sustainability, and logistics, ranging from fill/finish, package design, automation, and temperature control.',
+  })));
 
   app.get('/:alias(leaders)', newsletterState(), withWebsiteSection({
     template: leaders,

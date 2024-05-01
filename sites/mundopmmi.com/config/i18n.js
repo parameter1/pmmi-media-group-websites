@@ -89,4 +89,6 @@ module.exports = {
   'your email helps us uphold our standards of quality content. unlock full access to our articles with a quick submission.': 'Su correo electrónico nos ayuda a mantener nuestros estándares de contenido de calidad. Desbloquee el acceso completo a nuestros artículos con un envío rápido.',
   continue: 'Continuar',
   recommended: 'Recomendado',
+  events: 'eventos',
+  webinars: 'seminario-web',
 };
