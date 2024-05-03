@@ -12,7 +12,7 @@ const topics = [
 ];
 
 const resources = [
-  { href: '/page/contract-packaging-magazine', label: 'Contract Manufacturing and Packaging' },
+  { href: '/trends/contract-packaging', label: 'Contract Manufacturing and Packaging' },
   { href: '/emergingbrands', label: 'Emerging Brands' },
   { href: '/events', label: 'Events' },
   { href: '/downloads', label: 'Downloads' },
