@@ -31,7 +31,22 @@ $ const { site } = out.global;
     <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
       $ const excludeContentIds = nodes.map((node) =>  node.id);
       <global-published-content-list-deck-block
-        section-ids=[33249, 33256, 33261]
+        section-ids=[87555, 87556, 87557]
+        exclude-content-ids=excludeContentIds
+      />
+    </marko-web-query>
+  </@section>
+
+    <@section>
+    $ const queryParams = {
+      sectionAlias: 'supplier-news',
+      limit: 500,
+      queryFragment,
+    };
+    <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+      $ const excludeContentIds = nodes.map((node) =>  node.id);
+      <global-published-content-list-deck-block
+        section-ids=[87558, 87559, 87524]
         exclude-content-ids=excludeContentIds
       />
     </marko-web-query>
