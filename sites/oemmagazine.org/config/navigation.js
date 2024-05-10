@@ -60,6 +60,7 @@ const primaryNavigationItems = [
   ...topics,
   { href: '/leaders', label: 'Partner Leaders' },
   { href: '/downloads', label: 'Downloads' },
+  { href: '/webinars', label: 'Webinars' },
 ];
 
 module.exports = {
