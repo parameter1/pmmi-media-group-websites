@@ -11,21 +11,14 @@ const topics = [
 ];
 
 const resources = [
-  { href: '/emergingbrands', label: 'Emerging Brands' },
-  { href: '/events', label: 'Events' },
   { href: '/downloads', label: 'Downloads' },
-  { href: '/page/pfw-newsletter', label: 'Newsletters' },
+  { href: '/events', label: 'Events' },
   { href: '/magazine', label: 'Magazine' },
-  { href: '/leaders', label: 'Leaders in Processing' },
-  { href: '/videos', label: 'Videos' },
+  { href: '/page/pfw-newsletter', label: 'Newsletters' },
   { href: '/podcasts', label: 'Podcasts' },
-  { href: '/webinars', label: 'Webinars' },
-  { href: 'https://www.opxleadershipnetwork.org', label: 'OpX Leadership Network', target: '_blank' },
-  { href: '/page/awards-sema', label: 'Sustainability Awards' },
-  { href: '/page/awards-mia', label: 'Manufacturing Awards' },
   { href: '/quizzes', label: 'Quizzes' },
-  { href: '/supplier-news', label: 'Supplier News' },
-  { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
+  { href: '/videos', label: 'Videos' },
+  { href: '/webinars', label: 'Webinars' },
 ];
 
 const utilities = [
@@ -59,6 +52,18 @@ const desktopMenu = {
   rightCol: {
     items: [
       ...resources,
+    ],
+  },
+  extraCol: {
+    label: 'Extras',
+    items: [
+      { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
+      { href: '/emergingbrands', label: 'Emerging Brands' },
+      { href: '/leaders', label: 'Leaders in Processing' },
+      { href: '/page/awards-mia', label: 'Manufacturing Awards' },
+      { href: 'https://www.opxleadershipnetwork.org', label: 'OpX Leadership Network', target: '_blank' },
+      { href: '/supplier-news', label: 'Supplier News' },
+      { href: '/page/awards-sema', label: 'Sustainability Awards' },
     ],
   },
 };

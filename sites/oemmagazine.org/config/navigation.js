@@ -8,17 +8,13 @@ const topics = [
 ];
 
 const resources = [
-  { href: '/events', label: 'Events' },
   { href: '/downloads', label: 'Downloads' },
-  { href: '/page/oem-newsletter', label: 'Newsletters', target: '_blank' },
+  { href: '/events', label: 'Events' },
   { href: '/magazine', label: 'Magazine' },
-  { href: '/leaders', label: 'OEM Partner Leaders' },
-  { href: '/WomenInPackaging', label: 'Women in Packaging' },
-  { href: '/videos', label: 'Videos' },
+  { href: '/page/oem-newsletter', label: 'Newsletters', target: '_blank' },
   { href: '/podcasts', label: 'Podcasts' },
+  { href: '/videos', label: 'Videos' },
   { href: '/webinars', label: 'Webinars' },
-  { href: '/supplier-news', label: 'Supplier News' },
-  { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
 ];
 
 const utilities = [
@@ -52,6 +48,15 @@ const desktopMenu = {
   rightCol: {
     items: [
       ...resources,
+    ],
+  },
+  extraCol: {
+    label: 'Extras',
+    items: [
+      { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
+      { href: '/leaders', label: 'OEM Partner Leaders' },
+      { href: '/supplier-news', label: 'Supplier News' },
+      { href: '/WomenInPackaging', label: 'Women in Packaging' },
     ],
   },
 };
