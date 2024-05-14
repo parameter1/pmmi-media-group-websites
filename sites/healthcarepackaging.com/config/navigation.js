@@ -53,18 +53,22 @@ const desktopMenu = {
   },
   rightCol: {
     items: [
-      { href: '/events', label: 'Events' },
       { href: '/downloads', label: 'Downloads' },
-      { href: '/page/hcp-newsletters', label: 'Newsletters' },
+      { href: '/events', label: 'Events' },
       { href: '/magazine', label: 'Magazine' },
-      { href: '/leaders', label: 'Premier Suppliers' },
-      { href: '/videos', label: 'Videos' },
+      { href: '/page/hcp-newsletters', label: 'Newsletters' },
       { href: '/podcasts', label: 'Podcasts' },
-      { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
+      { href: '/videos', label: 'Videos' },
       { href: '/webinars', label: 'Webinars' },
-      { href: '/supplier-news', label: 'Supplier News' },
+    ],
+  },
+  extraCol: {
+    label: 'Extras',
+    items: [
       { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
-      // { href: '/page/digital-editions', label: 'Digital
+      { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
+      { href: '/leaders', label: 'Leaders in Healthcare Packaging' },
+      { href: '/supplier-news', label: 'Supplier News' },
     ],
   },
 };
