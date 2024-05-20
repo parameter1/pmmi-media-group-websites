@@ -63,9 +63,12 @@ const desktopMenu = {
 
 const primaryNavigationItems = [
   subscribe,
-  ...topics,
-  // { href: '/leaders', label: 'Leaders in Packaging' },
-  // { href: '/downloads', label: 'Downloads' },
+  { href: '/sustainable-packaging', label: 'Sustainable Packaging' },
+  { href: '/flexibles', label: 'Flexibles' },
+  { href: '/rigid', label: 'Rigid' },
+  { href: '/coding-printing-labeling', label: 'Coding, Printing & Labeling' },
+  { href: '/secondary-packaging', label: 'Secondary Packaging' },
+  { href: '/trends', label: 'Trends' },
 ];
 
 module.exports = {
