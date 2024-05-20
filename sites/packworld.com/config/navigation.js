@@ -8,11 +8,11 @@ const topics = [
   { href: '/coding-printing-labeling', label: 'Coding, Printing & Labeling' },
   { href: '/secondary-packaging', label: 'Secondary Packaging' },
   { href: '/trends', label: 'Trends' },
+  { href: '/trends/contract-packaging', label: 'Contract Manufacturing and Packaging' },
   { href: '/downloads', label: 'Downloads' },
 ];
 
 const resources = [
-  { href: '/downloads', label: 'Downloads' },
   { href: '/events', label: 'Events' },
   { href: '/magazine', label: 'Magazine' },
   { href: '/page/pw-newsletters', label: 'Newsletters' },
@@ -50,7 +50,6 @@ const desktopMenu = {
   extraCol: {
     label: 'Extras',
     items: [
-      { href: '/trends/contract-packaging', label: 'Contract Manufacturing and Packaging' },
       { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
       { href: '/emergingbrands', label: 'Emerging Brands' },
       { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
