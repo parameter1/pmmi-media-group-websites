@@ -60,6 +60,12 @@ module.exports = ({
         { viewport: [980, 0], size: [300, 250] },
         { viewport: [0, 0], size: [] },
       ],
+    })
+    .setTemplate('TEST', {
+      size: ['Fluid', 'Fluid'],
+      sizeMapping: [
+        { viewport: [0, 0], size: ['Fluid', 'Fluid']}
+      ],
     });
 
   return config;
