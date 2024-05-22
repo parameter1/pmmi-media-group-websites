@@ -15,6 +15,7 @@ const resources = [
   { href: '/leaders', label: 'OEM Partner Leaders' },
   { href: '/WomenInPackaging', label: 'Women in Packaging' },
   { href: '/videos', label: 'Videos' },
+  { href: '/webinars', label: 'Webinars' },
   { href: '/podcasts', label: 'Podcasts' },
   { href: '/supplier-news', label: 'Supplier News' },
   { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
@@ -60,7 +61,6 @@ const primaryNavigationItems = [
   ...topics,
   { href: '/leaders', label: 'Partner Leaders' },
   { href: '/downloads', label: 'Downloads' },
-  { href: '/webinars', label: 'Webinars' },
 ];
 
 module.exports = {
