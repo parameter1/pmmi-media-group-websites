@@ -23,6 +23,7 @@ $ const continueLabel = i18n("Sign Me Up!");
 $ const loginEmailLabel = i18n("Work Email");
 $ const actionText = i18n("signing up to receive your email notifications");
 $ const buttonLabels = { continue: continueLabel };
+$ const effectiveAdAlias = alias.split('/')[0];
 
 $ const queryParams = {
   limit: perPage,
@@ -40,7 +41,7 @@ $ const queryParams = {
 >
   <@section|{ aliases }| modifiers=["first"]>
     <theme-gam-define-display-ad
-      name=`leaderboard-${alias}`
+      name=`leaderboard-${effectiveAdAlias}`
       position="section_page"
       aliases=aliases
       modifiers=["inter-block"]
@@ -91,7 +92,12 @@ $ const queryParams = {
             </marko-web-element>
           </marko-web-element>
         </marko-web-query>
-        <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj={ name }>
+        <marko-web-website-section-name|{ value }|
+          tag="h1"
+          block-name=blockName
+          obj={ name }
+          attrs={ style: "padding-top: 20px" }
+        >
           <if(p.page > 1)>${value}: ${i18n("Page")} ${p.page}</if>
           <else>${value}</else>
         </marko-web-website-section-name>
@@ -106,7 +112,7 @@ $ const queryParams = {
                 <theme-section-feed-content-node node=node />
                 <if(index === 2)>
                   <theme-gam-define-display-ad
-                    name=`inline-content-left-${alias}`
+                    name=`inline-content-left-${effectiveAdAlias}`
                     aliases=aliases
                     position="section_page"
                   />
@@ -141,12 +147,12 @@ $ const queryParams = {
           <global-leaders-taxonomy-page />
         </if>
         <theme-gam-define-display-ad
-          name=`inline-content-right-${alias}`
+          name=`inline-content-right-${effectiveAdAlias}`
           aliases=aliases
           position="section_page"
         />
         <theme-gam-define-display-ad
-          name=`rotation-${alias}`
+          name=`rotation-${effectiveAdAlias}`
           aliases=aliases
           position="section_page"
         />
