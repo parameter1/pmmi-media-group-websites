@@ -9,8 +9,8 @@ config.setAliasAdUnits('default', [
   { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'rotation' },
   { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'rotation' },
   // @todo Determine if these natives are loading correctly
-  { name: 'inline-content-left-sustainable-packaging', path: 'lrnative_sustainable-packaging' },
-  { name: 'inline-content-right-sustainable-packaging', path: 'rrnative_sustainable-packaging' },
+  { name: 'inline-content-left-sustainable-packaging', templateName: 'NATIVE', path: 'lrnative_sustainable-packaging' },
+  { name: 'inline-content-right-sustainable-packaging', templateName: 'NATIVE', path: 'rrnative_sustainable-packaging' },
   { name: 'leaderboard-sustainable-packaging', templateName: 'LEADERBOARD', path: 'leaderboard_sustainable-packaging' },
   // Want only 300x250s here
   { name: 'rotation-sustainable-packaging', templateName: 'INLINE-CONTENT', path: 'imu_rotation_sustainable-packaging' },
