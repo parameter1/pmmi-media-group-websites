@@ -1,9 +1,7 @@
 $ const { site, req } = out.global;
-$ const { sectionIds } = input;
 
-<if(sectionIds && site.get("leaders.enabled"))>
+<if(site.get("leaders.enabled"))>
   <marko-web-leaders props={
-    sectionIds: sectionIds,
     open: "auto",
     iconStyle: "chevron",
     sectionAlias: site.get("leaders.alias"),
@@ -16,6 +14,7 @@ $ const { sectionIds } = input;
     calloutPrefix: site.get("leaders.calloutPrefix") || "Browse these",
     calloutValue: site.get("leaders.calloutValue") || "leading suppliers",
     viewAllText: site.get("leaders.viewAllText") || "View All Companies &gt;",
-    contextual: true
+    contextual: true,
+    expanded: false,
   }/>
 </if>
