@@ -8,7 +8,7 @@ const topics = [
   { href: '/machinery', label: 'Machinery' },
   { href: '/logistics', label: 'Logistics' },
   { href: '/industry-news', label: 'Industry News' },
-  { href: '/resources', label: 'Resources' },
+  { href: '/downloads', label: 'Downloads' },
 ];
 
 const utilities = [
@@ -157,30 +157,6 @@ module.exports = {
       tertiary: { items: [] },
       primary: { items: topics },
     },
-    {
-      when: ['/resources', '/downloads'],
-      secondary: {
-        items: [
-          { href: '/resources/packaging-101', label: 'Packaging 101' },
-          { href: '/downloads', label: 'Downloads' },
-        ],
-      },
-      tertiary: { items: [] },
-      primary: { items: topics },
-    },
-    /*
-    {
-      when: ['/resources'],
-      secondary: {
-        items: [
-          { href: '/resources/packaging-101', label: 'Packaging 101' },
-          { href: '/downloads', label: 'Downloads' },
-        ],
-      },
-      tertiary: { items: [] },
-      primary: { items: topics },
-    },
-    */
   ],
   footer: {
     items: [
