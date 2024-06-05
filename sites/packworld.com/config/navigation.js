@@ -8,6 +8,7 @@ const topics = [
   { href: '/coding-printing-labeling', label: 'Coding, Printing & Labeling' },
   { href: '/secondary-packaging', label: 'Secondary Packaging' },
   { href: '/trends', label: 'Trends' },
+  { href: '/term-package-design', label: 'Term Package Design' },
   { href: '/trends/contract-packaging', label: 'Contract Manufacturing and Packaging' },
   { href: '/downloads', label: 'Downloads' },
 ];
