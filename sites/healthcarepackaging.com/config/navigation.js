@@ -8,7 +8,7 @@ const topics = [
   { href: '/machinery', label: 'Machinery' },
   { href: '/logistics', label: 'Logistics' },
   { href: '/industry-news', label: 'Industry News' },
-  { href: '/downloads', label: 'Downlaods' },
+  { href: '/downloads', label: 'Downloads' },
 ];
 
 const utilities = [
