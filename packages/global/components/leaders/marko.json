@@ -11,6 +11,7 @@
   },
   "<global-leaders-taxonomy-page>": {
     "template": "./taxonomy-page.marko",
-    "@section-ids": "array,"
+    "@section-ids": "array",
+    "@related-section-ids": "array"
   }
 }
