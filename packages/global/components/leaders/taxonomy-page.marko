@@ -1,7 +1,11 @@
 $ const { site, req } = out.global;
 
+$ const { sectionIds, relatedSectionIds } = input;
+
 <if(site.get("leaders.enabled"))>
   <marko-web-leaders props={
+    sectionIds: sectionIds,
+    relatedSectionIds: relatedSectionIds,
     open: "auto",
     iconStyle: "chevron",
     sectionAlias: site.get("leaders.alias"),
