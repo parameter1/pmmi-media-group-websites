@@ -8,26 +8,19 @@ const topics = [
   { href: '/coding-printing-labeling', label: 'Coding, Printing & Labeling' },
   { href: '/secondary-packaging', label: 'Secondary Packaging' },
   { href: '/trends', label: 'Trends' },
+  { href: '/term-package-design', label: 'Term Package Design' },
+  { href: '/trends/contract-packaging', label: 'Contract Manufacturing and Packaging' },
   { href: '/downloads', label: 'Downloads' },
 ];
 
 const resources = [
-  { href: '/page/contract-packaging-magazine', label: 'Contract Manufacturing and Packaging' },
-  { href: '/emergingbrands', label: 'Emerging Brands' },
   { href: '/events', label: 'Events' },
-  { href: '/downloads', label: 'Downloads' },
-  { href: '/page/pw-newsletters', label: 'Newsletters' },
   { href: '/magazine', label: 'Magazine' },
-  { href: '/leaders', label: 'Leaders in Packaging' },
-  { href: '/WomenInPackaging', label: 'Women in Packaging' },
-  { href: '/videos', label: 'Videos' },
+  { href: '/page/pw-newsletters', label: 'Newsletters' },
   { href: '/podcasts', label: 'Podcasts' },
-  { href: '/page/packaging-associations', label: 'Packaging Associations' },
-  { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
-  { href: '/webinars', label: 'Webinars' },
   { href: '/quizzes', label: 'Quizzes' },
-  { href: '/supplier-news', label: 'Supplier News' },
-  { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
+  { href: '/videos', label: 'Videos' },
+  { href: '/webinars', label: 'Webinars' },
 ];
 
 const utilities = [
@@ -55,13 +48,28 @@ const desktopMenu = {
   },
   middleCol: { items: [...topics] },
   rightCol: { items: [...resources] },
+  extraCol: {
+    label: 'Extras',
+    items: [
+      { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
+      { href: '/emergingbrands', label: 'Emerging Brands' },
+      { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
+      { href: '/leaders', label: 'Leaders in Packaging' },
+      { href: '/page/packaging-associations', label: 'Packaging Associations' },
+      { href: '/supplier-news', label: 'Supplier News' },
+      { href: '/WomenInPackaging', label: 'Women in Packaging' },
+    ],
+  },
 };
 
 const primaryNavigationItems = [
   subscribe,
-  ...topics,
-  // { href: '/leaders', label: 'Leaders in Packaging' },
-  // { href: '/downloads', label: 'Downloads' },
+  { href: '/sustainable-packaging', label: 'Sustainable Packaging' },
+  { href: '/flexibles', label: 'Flexibles' },
+  { href: '/rigid', label: 'Rigid' },
+  { href: '/coding-printing-labeling', label: 'Coding, Printing & Labeling' },
+  { href: '/secondary-packaging', label: 'Secondary Packaging' },
+  { href: '/trends', label: 'Trends' },
 ];
 
 module.exports = {
