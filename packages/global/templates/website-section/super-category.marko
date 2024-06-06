@@ -144,7 +144,7 @@ $ const queryParams = {
         </marko-web-identity-x-context>
         <div class="node-list node-list--flush-x py-3" >
         <if(site.get("leaders.enabled"))>
-          <global-leaders-taxonomy-page />
+          <global-leaders-taxonomy-page related-section-ids=[id] />
         </if>
         <theme-gam-define-display-ad
           name=`inline-content-right-${effectiveAdAlias}`
