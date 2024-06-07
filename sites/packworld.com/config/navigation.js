@@ -8,7 +8,6 @@ const topics = [
   { href: '/coding-printing-labeling', label: 'Coding, Printing & Labeling' },
   { href: '/secondary-packaging', label: 'Secondary Packaging' },
   { href: '/trends', label: 'Trends' },
-  { href: '/term-package-design', label: 'Term Package Design' },
   { href: '/trends/contract-packaging', label: 'Contract Manufacturing and Packaging' },
   { href: '/downloads', label: 'Downloads' },
 ];
@@ -153,6 +152,7 @@ module.exports = {
           { href: '/trends/logistics-supply-chain', label: 'Logistics/Supply Chain' },
           { href: '/trends/controls-machine-components', label: 'Controls & Machine Components' },
           { href: '/trends/ecommerce-d2c-packaging', label: 'E-commerce/D2C packaging' },
+          { href: '/trends/package-design', label: 'Package Design' },
           { href: '/trends/pmmi-news', label: 'PMMI News' },
           { href: '/trends/workforce', label: 'Workforce' },
           { href: '/trends/operational-excellence', label: 'Operational Excellence' },
