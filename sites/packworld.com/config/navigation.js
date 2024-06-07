@@ -57,6 +57,7 @@ const desktopMenu = {
       { href: '/page/packaging-associations', label: 'Packaging Associations' },
       { href: '/supplier-news', label: 'Supplier News' },
       { href: '/WomenInPackaging', label: 'Women in Packaging' },
+      { href: '/trends/operational-excellence', label: 'Operational Excellence' },
     ],
   },
 };
@@ -155,7 +156,6 @@ module.exports = {
           { href: '/trends/package-design', label: 'Package Design' },
           { href: '/trends/pmmi-news', label: 'PMMI News' },
           { href: '/trends/workforce', label: 'Workforce' },
-          { href: '/trends/operational-excellence', label: 'Operational Excellence' },
         ],
       },
       tertiary: { items: [] },
