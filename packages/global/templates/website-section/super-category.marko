@@ -1,0 +1,163 @@
+import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-aliases";
+import convertAdToNode from "@parameter1/base-cms-marko-web-native-x/utils/convert-ad-to-node";
+import { getAsArray } from "@parameter1/base-cms-object-path";
+import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/section-feed-block";
+
+$ const {
+  id,
+  alias,
+  name,
+  pageNode,
+  description,
+} = input;
+$ const {
+    site,
+    GAM,
+    req,
+    i18n,
+    nativeX: nxConfig,
+    pagination: p
+  } = out.global;
+$ const perPage = 12;
+$ const continueLabel = i18n("Sign Me Up!");
+$ const loginEmailLabel = i18n("Work Email");
+$ const actionText = i18n("signing up to receive your email notifications");
+$ const buttonLabels = { continue: continueLabel };
+$ const effectiveAdAlias = alias.split('/')[0];
+
+$ const queryParams = {
+  limit: perPage,
+  skip: p.skip({ perPage, skip: 1 }),
+  sectionAlias: alias,
+  excludeContentTypes: ['Product'],
+  queryFragment,
+};
+
+<global-website-section-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode
+>
+  <@section|{ aliases }| modifiers=["first"]>
+    <theme-gam-define-display-ad
+      name=`leaderboard-${effectiveAdAlias}`
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]
+    />
+  </@section>
+
+  <@section|{ blockName, aliases }|>
+    <div class="row">
+      <div class="col-lg-8">
+        $ const pinnedParams = {
+          limit: 1,
+          skip: p.skip({ perPage }),
+          sectionAlias: alias,
+          excludeContentTypes: ['Product'],
+          queryFragment,
+        }
+        <marko-web-query|{ nodes }| name="website-scheduled-content" params=pinnedParams>
+          $ const pinnedNode = nodes.slice(0, 1)[0] || {};
+          $ const { id, type, siteContext, primaryImage } = pinnedNode;
+          $ const pinnedImageNode = {
+            id,
+            type,
+            siteContext,
+            primaryImage
+          };
+          <marko-web-element block-name="top-stories" name="row">
+            <marko-web-element block-name="top-stories" name="col" modifiers=["hero"]>
+              <theme-content-node
+                image-position="top"
+                card=true
+                flush=true
+                image-only=true
+                modifiers=["top-stories-hero-image"]
+                node=pinnedImageNode
+              >
+                <@image fluid=true width=600 ar="3:2" lazyload=false />
+              </theme-content-node>
+            </marko-web-element>
+            <marko-web-element block-name="top-stories" name="col" modifiers=["list"]>
+              <theme-content-node
+                full-height=true
+                card=true
+                display-image=false
+                flush=true
+                modifiers=["top-stories-hero"]
+                node=pinnedNode
+              />
+            </marko-web-element>
+          </marko-web-element>
+        </marko-web-query>
+        <marko-web-website-section-name|{ value }|
+          tag="h1"
+          block-name=blockName
+          obj={ name }
+          attrs={ style: "padding-top: 20px" }
+        >
+          <if(p.page > 1)>${value}: ${i18n("Page")} ${p.page}</if>
+          <else>${value}</else>
+        </marko-web-website-section-name>
+        <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
+          <marko-web-node-list
+            flush-x=true
+            flush-y=false
+            modifiers=["section-feed"]
+          >
+            <@nodes nodes=nodes>
+              <@slot|{ node, index }|>
+                <theme-section-feed-content-node node=node />
+                <if(index === 2)>
+                  <theme-gam-define-display-ad
+                    name=`inline-content-left-${effectiveAdAlias}`
+                    aliases=aliases
+                    position="section_page"
+                  />
+                </if>
+              </@slot>
+            </@nodes>
+          </marko-web-node-list>
+        </marko-web-query>
+        <theme-query-total-count|{ totalCount }| name="website-scheduled-content" params={ sectionAlias: alias }>
+          <theme-pagination-controls
+            per-page=perPage
+            total-count=totalCount
+            path=req.path
+          />
+        </theme-query-total-count>
+      </div>
+      <div class="col-lg-4">
+        <marko-web-identity-x-context|{ hasUser }|>
+          <if(!hasUser)>
+            <identity-x-newsletter-form-inline
+              button-labels=buttonLabels
+              login-email-label=loginEmailLabel
+              login-email-placeholder="example@yourcompany.com"
+              type="inlineSection"
+              action-text=actionText
+              with-image=false
+            />
+          </if>
+        </marko-web-identity-x-context>
+        <div class="node-list node-list--flush-x py-3" >
+        <if(site.get("leaders.enabled"))>
+          <global-leaders-taxonomy-page related-section-ids=[id] />
+        </if>
+        <theme-gam-define-display-ad
+          name=`inline-content-right-${effectiveAdAlias}`
+          aliases=aliases
+          position="section_page"
+        />
+        <theme-gam-define-display-ad
+          name=`rotation-${effectiveAdAlias}`
+          aliases=aliases
+          position="section_page"
+        />
+      </div>
+      </div>
+    </div>
+  </@section>
+</global-website-section-default-layout>
