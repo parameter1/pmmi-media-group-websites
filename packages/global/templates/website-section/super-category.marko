@@ -160,4 +160,10 @@ $ const queryParams = {
       </div>
     </div>
   </@section>
+  <@section>
+    <theme-content-card-list-block
+      query-params={ includeContentTypes: ["Product"], sectionAlias: alias }
+      section={ name: "Products", canonicalPath: "/products" }
+    />
+  </@section>
 </global-website-section-default-layout>
