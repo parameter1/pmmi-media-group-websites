@@ -43,6 +43,14 @@ module.exports = (app) => {
       includeTaxonomyIds: [3199506],
     },
   })));
+  app.get('/expopack2024', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'EXPO PACK 2024: La red de envasado y procesamiento más grande en un mismo lugar',
+    description: 'Acceda al cubrimiento editorial más completo de EXPO PACK 2024, preparado especialmente por Mundo EXPO PACK para toda su audiencia. Esta colección incluye una serie de videos con las innovaciones más destacadas en maquinaria, tecnología de envasado y procesamiento; al igual que soluciones avanzadas y algunos de los desarrollos más recientes y significativos presentados durante los cuatro días de la feria de envasado y procesamiento más grande de América Latina, EXPO PACK México 2024.',
+    queryParams: {
+      // Expo Pack 2024
+      includeTaxonomyIds: [3199623],
+    },
+  })));
   app.get('/:alias(eventos)', withWebsiteSection({
     template: events,
     queryFragment,
