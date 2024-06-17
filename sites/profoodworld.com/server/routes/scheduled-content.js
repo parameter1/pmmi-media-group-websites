@@ -27,7 +27,7 @@ module.exports = (app) => {
       scheduledContent,
       {
         alias: 'supplier-news',
-        includeLabels: ['Supplier Submitted'],
+        includeLabels: ['Supplier Submitted', 'Supplier News'],
         title: 'Supplier News',
         withSection: true,
       },
