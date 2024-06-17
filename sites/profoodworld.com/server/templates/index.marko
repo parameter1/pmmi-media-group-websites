@@ -23,33 +23,11 @@ $ const { site } = out.global;
   </@section>
 
   <@section>
-    $ const queryParams = {
-      sectionAlias: 'supplier-news',
-      limit: 500,
-      queryFragment,
-    };
-    <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
-      $ const excludeContentIds = nodes.map((node) =>  node.id);
-      <global-published-content-list-deck-block
-        section-ids=[33406, 33417, 33424]
-        exclude-content-ids=excludeContentIds
-      />
-    </marko-web-query>
+    <global-published-content-list-deck-block section-ids=[33406, 33417, 33424] />
   </@section>
 
   <@section>
-    $ const queryParams = {
-      sectionAlias: 'supplier-news',
-      limit: 500,
-      queryFragment,
-    };
-    <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
-      $ const excludeContentIds = nodes.map((node) =>  node.id);
-      <global-published-content-list-deck-block
-        section-ids=[63672, 33413, 67020]
-        exclude-content-ids=excludeContentIds
-      />
-    </marko-web-query>
+    <global-published-content-list-deck-block section-ids=[63672, 33413, 67020] />
   </@section>
 
   <@section|{ aliases }|>

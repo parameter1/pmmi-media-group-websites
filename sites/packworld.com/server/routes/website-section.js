@@ -109,15 +109,17 @@ module.exports = (app) => {
     },
   })));
 
-  app.get('/:alias(events)', withWebsiteSection({
-    template: events,
-    queryFragment,
-  }));
+  app.get('/events', asyncRoute(async (_, res) => res.marko(events, {
+    alias: 'events',
+    name: 'Events',
+    description: 'Connect with industry leaders, gain insights into the latest trends, and experience breakthrough technologies in packaging and processing.',
+  })));
 
-  app.get('/:alias(webinars)', withWebsiteSection({
-    template: webinars,
-    queryFragment,
-  }));
+  app.get('/webinars', asyncRoute(async (_, res) => res.marko(webinars, {
+    alias: 'webinars',
+    name: 'Webinars',
+    description: 'Packaging webinars cover equipment, machinery, design, materials, sustainability, e-commerce, workforce, regulation, innovation, cannabis, & logistics.',
+  })));
 
   app.get('/:alias(leaders)', newsletterState(), withWebsiteSection({
     template: leaders,
