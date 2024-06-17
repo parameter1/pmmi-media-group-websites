@@ -23,18 +23,14 @@ $ const upcomingQueryParams = {
   ...queryParams,
   beginningAfter: now,
   limit: 25,
-  sort: {
-    field: "startDate",
-    order: "asc",
-  }
+  sortField: "startDate",
+  sortOrder: "desc",
 };
 $ const archiveQueryParams = {
   ...queryParams,
   beginningBefore: now,
-  sort: {
-    field: "startDate",
-    order: "desc",
-  },
+  sortField: "startDate",
+  sortOrder: "desc",
   limit: perPage,
   skip: p.skip({ perPage })
 };
@@ -49,7 +45,7 @@ $ const countQueryParams = {
 
 <theme-default-page title=name description=description>
   <@head>
-    <theme-section-feed-block|{ totalCount }| count-only=true query-name="website-scheduled-content">
+    <theme-section-feed-block|{ totalCount }| count-only=true query-name="all-published-content">
       <@query-params ...countQueryParams />
       <theme-pagination-controls
         per-page=perPage
@@ -94,7 +90,7 @@ $ const countQueryParams = {
           />
         </if>
         <if(p.page === 1)>
-          <marko-web-query|{ nodes }| name="website-scheduled-content" params=upcomingQueryParams>
+          <marko-web-query|{ nodes }| name="all-published-content" params=upcomingQueryParams>
             $ const finalNodes = nodes.map((node) => ({
               ...node,
               primarySection: handleContentTypePrimarySection({ i18n, node })
@@ -110,16 +106,16 @@ $ const countQueryParams = {
             />
           </marko-web-query>
         </if>
-        <marko-web-query|{ nodes }| name="website-scheduled-content" params=archiveQueryParams>
+        <marko-web-query|{ nodes }| name="all-published-content" params=archiveQueryParams>
           $ const finalNodes = nodes.map((node) => ({
             ...node,
             primarySection: handleContentTypePrimarySection({ i18n, node })
           }));
-          <theme-section-feed-flow nodes=finalNodes modifiers=["archives"] lazyload=false>
+          <theme-section-feed-flow nodes=finalNodes lazyload=false>
             <@header>On Demand</@header>
           </theme-section-feed-flow>
         </marko-web-query>
-        <theme-section-feed-block|{ totalCount }| count-only=true query-name="website-scheduled-content">
+        <theme-section-feed-block|{ totalCount }| count-only=true query-name="all-published-content">
           <@query-params ...countQueryParams />
           <theme-pagination-controls
             per-page=perPage
