@@ -1,5 +1,4 @@
 const privacyPolicy = require('./privacy-policy');
-const subscribe = require('./subscribe');
 
 const topics = [
   { href: '/flexibles', label: 'Flexibles' },
@@ -22,7 +21,6 @@ const mobileMenu = {
     ...topics,
   ],
   secondary: [
-    subscribe,
     ...resources,
     ...utilities,
   ],
@@ -55,7 +53,13 @@ module.exports = {
   type: 'navbar-b',
   desktopMenu,
   mobileMenu,
-  primary: { items: topics },
+  primary: {
+    items: [
+      { href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=Mundo_NL_Nav', label: 'Suscríbase', target: '_blank' },
+      ...topics,
+      { href: '/eventos', label: 'Eventos' },
+    ],
+  },
   secondary: {
     items: [
       { href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=Mundo_NL_Nav', label: 'Suscríbase', target: '_blank' },
@@ -78,7 +82,13 @@ module.exports = {
         ],
       },
       tertiary: { items: [] },
-      primary: { items: topics },
+      primary: {
+        items: [
+          { href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=Mundo_NL_Nav', label: 'Suscríbase', target: '_blank' },
+          ...topics,
+          { href: '/eventos', label: 'Eventos' },
+        ],
+      },
     },
     {
       when: ['/rigidos'],
@@ -89,7 +99,13 @@ module.exports = {
         ],
       },
       tertiary: { items: [] },
-      primary: { items: topics },
+      primary: {
+        items: [
+          { href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=Mundo_NL_Nav', label: 'Suscríbase', target: '_blank' },
+          ...topics,
+          { href: '/eventos', label: 'Eventos' },
+        ],
+      },
     },
     {
       when: ['/automatizacion'],
@@ -102,7 +118,13 @@ module.exports = {
         ],
       },
       tertiary: { items: [] },
-      primary: { items: topics },
+      primary: {
+        items: [
+          { href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=Mundo_NL_Nav', label: 'Suscríbase', target: '_blank' },
+          ...topics,
+          { href: '/eventos', label: 'Eventos' },
+        ],
+      },
     },
     {
       when: ['/procesamiento'],
@@ -113,7 +135,13 @@ module.exports = {
         ],
       },
       tertiary: { items: [] },
-      primary: { items: topics },
+      primary: {
+        items: [
+          { href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=Mundo_NL_Nav', label: 'Suscríbase', target: '_blank' },
+          ...topics,
+          { href: '/eventos', label: 'Eventos' },
+        ],
+      },
     },
   ],
   user: {
