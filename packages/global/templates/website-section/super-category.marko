@@ -23,7 +23,6 @@ $ const continueLabel = i18n("Sign Me Up!");
 $ const loginEmailLabel = i18n("Work Email");
 $ const actionText = i18n("signing up to receive your email notifications");
 $ const buttonLabels = { continue: continueLabel };
-$ const effectiveAdAlias = alias.split('/')[0];
 
 $ const queryParams = {
   limit: perPage,
@@ -41,7 +40,7 @@ $ const queryParams = {
 >
   <@section|{ aliases }| modifiers=["first"]>
     <theme-gam-define-display-ad
-      name=`leaderboard-${effectiveAdAlias}`
+      name="leaderboard"
       position="section_page"
       aliases=aliases
       modifiers=["inter-block"]
@@ -112,7 +111,7 @@ $ const queryParams = {
                 <theme-section-feed-content-node node=node />
                 <if(index === 2)>
                   <theme-gam-define-display-ad
-                    name=`inline-content-left-${effectiveAdAlias}`
+                    name="inline-content-left"
                     aliases=aliases
                     position="section_page"
                   />
@@ -147,12 +146,12 @@ $ const queryParams = {
           <global-leaders-taxonomy-page related-section-ids=[id] />
         </if>
         <theme-gam-define-display-ad
-          name=`inline-content-right-${effectiveAdAlias}`
+          name="inline-content-right"
           aliases=aliases
           position="section_page"
         />
         <theme-gam-define-display-ad
-          name=`rotation-${effectiveAdAlias}`
+          name="inline-content"
           aliases=aliases
           position="section_page"
         />
