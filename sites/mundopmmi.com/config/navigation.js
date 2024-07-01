@@ -1,9 +1,9 @@
 const privacyPolicy = require('./privacy-policy');
-const subscribe = require('./subscribe');
 
 const topics = [
+  { href: '/flexibles', label: 'Flexibles' },
+  { href: '/rigidos', label: 'Rígidos' },
   { href: '/automatizacion', label: 'Automatización' },
-  { href: '/empaque', label: 'Empaque' },
   { href: '/procesamiento', label: 'Procesamiento' },
 ];
 
@@ -21,7 +21,6 @@ const mobileMenu = {
     ...topics,
   ],
   secondary: [
-    subscribe,
     ...resources,
     ...utilities,
   ],
@@ -51,10 +50,15 @@ const desktopMenu = {
 };
 
 module.exports = {
+  type: 'navbar-b',
   desktopMenu,
   mobileMenu,
   primary: {
-    items: [],
+    items: [
+      { href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=Mundo_NL_Nav', label: 'Suscríbase', target: '_blank' },
+      ...topics,
+      { href: '/eventos', label: 'Eventos' },
+    ],
   },
   secondary: {
     items: [
@@ -67,6 +71,79 @@ module.exports = {
   tertiary: {
     items: [],
   },
+  contexts: [
+    {
+      when: ['/flexibles'],
+      secondary: {
+        items: [
+          { href: '/flexibles/ensacado-embolsado', label: 'Ensacado y embolsado' },
+          { href: '/flexibles/envoltura', label: 'Envoltura' },
+          { href: '/flexibles/materiales', label: 'Materiales' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: {
+        items: [
+          { href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=Mundo_NL_Nav', label: 'Suscríbase', target: '_blank' },
+          ...topics,
+          { href: '/eventos', label: 'Eventos' },
+        ],
+      },
+    },
+    {
+      when: ['/rigidos'],
+      secondary: {
+        items: [
+          { href: '/rigidos/llenado-tapado-cerrado', label: 'Llenado, tapado y cerrado' },
+          { href: '/rigidos/empaques-tapas', label: 'Empaques y tapas' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: {
+        items: [
+          { href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=Mundo_NL_Nav', label: 'Suscríbase', target: '_blank' },
+          ...topics,
+          { href: '/eventos', label: 'Eventos' },
+        ],
+      },
+    },
+    {
+      when: ['/automatizacion'],
+      secondary: {
+        items: [
+          { href: '/automatizacion/controles-componentes-de-maquina', label: 'Controles y Componentes de máquina' },
+          { href: '/automatizacion/robotica', label: 'Robótica' },
+          { href: '/automatizacion/internet-industrial-de-las-cosas-iiot', label: 'IIoT' },
+          { href: '/automatizacion/transformacion-digital', label: 'Transformación digital' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: {
+        items: [
+          { href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=Mundo_NL_Nav', label: 'Suscríbase', target: '_blank' },
+          ...topics,
+          { href: '/eventos', label: 'Eventos' },
+        ],
+      },
+    },
+    {
+      when: ['/procesamiento'],
+      secondary: {
+        items: [
+          { href: '/procesamiento/equipo-de-procesamiento', label: 'Equipo de procesamiento' },
+          { href: '/procesamiento/seguridad-alimentaria', label: 'Seguridad alimentaria' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: {
+        items: [
+          { href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=Mundo_NL_Nav', label: 'Suscríbase', target: '_blank' },
+          ...topics,
+          { href: '/eventos', label: 'Eventos' },
+        ],
+      },
+    },
+  ],
   user: {
     items: [],
   },
