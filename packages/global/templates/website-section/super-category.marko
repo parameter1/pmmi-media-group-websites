@@ -68,7 +68,7 @@ $ const queryParams = {
             primaryImage
           };
           $ if (["event", "podcast", "webinar"].includes(pinnedNode.type)) {
-            node.primarySection = handleContentTypePrimarySection({ i18n, node: pinnedNode });
+            pinnedNode.primarySection = handleContentTypePrimarySection({ i18n, node: pinnedNode });
           }
           <marko-web-element block-name="top-stories" name="row">
             <marko-web-element block-name="top-stories" name="col" modifiers=["hero"]>
