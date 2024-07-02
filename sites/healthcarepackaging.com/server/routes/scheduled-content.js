@@ -22,4 +22,15 @@ module.exports = (app) => {
       },
     );
   });
+  app.get('/supplier-news', newsletterState(), (_, res) => {
+    res.marko(
+      scheduledContent,
+      {
+        alias: 'supplier-news',
+        includeLabels: ['Supplier Submitted', 'Supplier News'],
+        title: 'Supplier News',
+        withSection: true,
+      },
+    );
+  });
 };

@@ -1,6 +1,7 @@
 import { get, getAsArray } from "@parameter1/base-cms-object-path";
 import contentIframe from "@pmmi-media-group/package-global/utils/content-iframe";
 import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/utils/get-content-preview";
+import handleContentTypePrimarySection from "@pmmi-media-group/package-global/utils/handle-content-type-primary-section";
 
 $ const {
   site,
@@ -68,7 +69,17 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
           const replacedHierarchy = [sectionHierarchy.pop()]
           primarySection.hierarchy = replacedHierarchy;
         };
-        <theme-content-page-breadcrumbs section=primarySection />
+        <if(["event", "podcast", "webinar"].includes(content.type))>
+          $ const handledPrimarySection = handleContentTypePrimarySection({ i18n, node: content });
+          $ const handledPrimarySectionWithHierarchy = {
+            ...handledPrimarySection,
+            hierarchy: [handledPrimarySection],
+          };
+          <theme-content-page-breadcrumbs section=handledPrimarySectionWithHierarchy />
+        </if>
+        <else>
+          <theme-content-page-breadcrumbs section=primarySection />
+        </else>
       </else>
       <marko-web-content-name tag="h1" block-name=blockName obj=content />
       <marko-web-content-teaser tag="p" class="page-wrapper__deck" obj=content />

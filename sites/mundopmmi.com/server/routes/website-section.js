@@ -51,14 +51,18 @@ module.exports = (app) => {
       includeTaxonomyIds: [3199623],
     },
   })));
-  app.get('/:alias(eventos)', withWebsiteSection({
-    template: events,
-    queryFragment,
-  }));
-  app.get('/:alias(seminario-web)', withWebsiteSection({
-    template: webinars,
-    queryFragment,
-  }));
+
+  app.get('/eventos', asyncRoute(async (_, res) => res.marko(events, {
+    alias: 'eventos',
+    name: 'Eventos',
+    description: 'Acceda aquí a información clave de las principales ferias, seminarios y eventos internacionales dirigidos a profesionales de las industrias de envasado, procesamiento de alimentos y bebidas, y automatización.',
+  })));
+
+  app.get('/seminario-web', asyncRoute(async (_, res) => res.marko(webinars, {
+    alias: 'seminario-web',
+    name: 'Seminario Web',
+    description: 'Perspectivas y análisis de líderes de opinión sobre tecnologías y tendencias de mercado en las industrias de envasado, procesamiento de alimentos y bebidas, y automatización.',
+  })));
 
   app.get('/:alias(leaders)', newsletterState(), withWebsiteSection({
     template: leaders,

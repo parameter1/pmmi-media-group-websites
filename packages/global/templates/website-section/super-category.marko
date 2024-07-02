@@ -2,6 +2,7 @@ import hierarchyAliases from "@parameter1/base-cms-marko-web/utils/hierarchy-ali
 import convertAdToNode from "@parameter1/base-cms-marko-web-native-x/utils/convert-ad-to-node";
 import { getAsArray } from "@parameter1/base-cms-object-path";
 import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/section-feed-block";
+import handleContentTypePrimarySection from "@pmmi-media-group/package-global/utils/handle-content-type-primary-section";
 
 $ const {
   id,
@@ -66,6 +67,9 @@ $ const queryParams = {
             siteContext,
             primaryImage
           };
+          $ if (["event", "podcast", "webinar"].includes(pinnedNode.type)) {
+            node.primarySection = handleContentTypePrimarySection({ i18n, node: pinnedNode });
+          }
           <marko-web-element block-name="top-stories" name="row">
             <marko-web-element block-name="top-stories" name="col" modifiers=["hero"]>
               <theme-content-node
@@ -108,6 +112,9 @@ $ const queryParams = {
           >
             <@nodes nodes=nodes>
               <@slot|{ node, index }|>
+                $ if (["event", "podcast", "webinar"].includes(node.type)) {
+                  node.primarySection = handleContentTypePrimarySection({ i18n, node });
+                }
                 <theme-section-feed-content-node node=node />
                 <if(index === 2)>
                   <theme-gam-define-display-ad
