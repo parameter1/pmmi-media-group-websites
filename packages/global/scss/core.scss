@@ -550,4 +550,30 @@ label {
     top: 1rem;
   }
 }
+
+.newsletter-signup-banner-social-share-replace {
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    .form-group {
+      flex: 1;
+      flex-grow: 1;
+      max-width: 318px;
+       ~ .btn {
+        align-self: flex-start;
+       }
+    }
+  }
+  label[for="sign-on-email"] {
+    display: none;
+  }
+  .btn {
+    flex-shrink: 1;
+    margin-left: map-get($spacers, 3);
+    padding: 10px;
+    font-weight: $font-weight-bolder;
+    order: 2;
+    align-self: center;
+  }
+}
 /*! critical:end */
