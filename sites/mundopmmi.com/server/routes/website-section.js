@@ -51,6 +51,14 @@ module.exports = (app) => {
       includeTaxonomyIds: [3199623],
     },
   })));
+  app.get('/monomateriales', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Monomateriales: Innovación en empaques para un futuro sostenible',
+    description: 'Mundo EXPO PACK presenta una selección exclusiva de innovaciones y desarrollos exitosos en empaques monomaterial disponibles en el mercado; avances que demuestran por qué los monomateriales son clave para la sustentabilidad de la industria de empaques y procesamiento. Encuentre en esta colección el proceso de desarrollo, la visión de las empresas, el impacto en el comercio electrónico, la reciclabilidad y la contribución a la economía circular de los empaques monomaterial.',
+    queryParams: {
+      // Monomateriales
+      includeTaxonomyIds: [3199683],
+    },
+  })));
 
   app.get('/eventos', asyncRoute(async (_, res) => res.marko(events, {
     alias: 'eventos',
