@@ -62,9 +62,9 @@ module.exports = ({
       ],
     })
     .setTemplate('NATIVE', {
-      size: ['fluid'],
+      size: ['fluid', [300, 250]],
       sizeMapping: [
-        { viewport: [0, 0], size: ['fluid'] },
+        { viewport: [0, 0], size: ['fluid', [300, 250]] },
       ],
     });
 
