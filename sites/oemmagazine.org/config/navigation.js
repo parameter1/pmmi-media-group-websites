@@ -84,7 +84,12 @@ module.exports = {
   contexts: [
     {
       when: ['/engineering'],
-      secondary: { items: [{ href: '/engineering/machine-design', label: 'Machine Design' }] },
+      secondary: {
+        items: [
+        { href: '/engineering/machine-design', label: 'Machine Design' },
+        { href: '/engineering/automation', label: 'Automation' },
+        ],
+      },
       tertiary: { items: [] },
       primary: { items: primaryNavigationItems },
     },
