@@ -86,8 +86,8 @@ module.exports = {
       when: ['/engineering'],
       secondary: {
         items: [
-        { href: '/engineering/machine-design', label: 'Machine Design' },
-        { href: '/engineering/automation', label: 'Automation' },
+          { href: '/engineering/machine-design', label: 'Machine Design' },
+          { href: '/engineering/automation', label: 'Automation' },
         ],
       },
       tertiary: { items: [] },
