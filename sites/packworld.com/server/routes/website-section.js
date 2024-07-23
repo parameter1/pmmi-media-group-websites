@@ -109,6 +109,16 @@ module.exports = (app) => {
     },
   })));
 
+  app.get('/paperpackaging', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Exploring Paper Packaging: A Collection of Case Studies',
+    description: 'Read our curated content on the topic of paper/wood/organic packaging. Explore what other brands are doing well, popular use cases for this material type, and success product launches.',
+    queryParams: {
+      // Packaging materials > Wood/paper/organic
+      includeTaxonomyIds: [2008430],
+      includeLabels: ['Case Study'],
+    }
+  })))
+
   app.get('/events', asyncRoute(async (_, res) => res.marko(events, {
     alias: 'events',
     name: 'Events',
