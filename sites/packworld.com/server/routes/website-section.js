@@ -117,7 +117,16 @@ module.exports = (app) => {
       includeTaxonomyIds: [2008430],
       includeLabels: ['Case Study'],
     }
-  })))
+  })));
+
+  app.get('/multipacking', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Multipacking/Shrink Bundling/Banding: Videos & Articles',
+    description: 'Do you want the latest news, case studies, and videos on the topic of multipacking, shrink bundling, and banding? Look no further. Check out our collection of content on this equipment type and get informed, inspired, and educated.',
+    queryParams: {
+      // Packaging machinery > Multipacking/shrink bundling/branding
+      includeTaxonomyIds: [2008398],
+    }
+  })));
 
   app.get('/events', asyncRoute(async (_, res) => res.marko(events, {
     alias: 'events',
