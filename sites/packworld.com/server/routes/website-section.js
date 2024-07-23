@@ -62,6 +62,7 @@ module.exports = (app) => {
   app.get('/casestudies-cartoning', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'A Curated Collection of Case Studies: Cartoning',
     description: 'Are you in the market for cartoning equipment and looking for the latest technology and innovations to streamline your packaging operations? Check out our list of case studies featuring cartoners and the unique solutions that these pieces of equipment bring to the companies mentioned here. Learn how the equipment works, what it’s capable of, and which machine is right for your line.',
+    queryName: 'website-scheduled-content',
     queryParams: {
       // Secondary Packaging > Cartoning
       sectionId: 87571,
@@ -72,6 +73,7 @@ module.exports = (app) => {
   app.get('/casestudies-casepacking', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'A Curated Collection of Case Studies: Case Packing',
     description: 'Are you in the market for a case packer and looking for the latest technology and innovations to streamline your packaging operations? Check out our list of case studies featuring case packers and the unique solutions that these pieces of equipment bring to the companies mentioned here. Learn how the equipment works, what it’s capable of, and which machine is right for your line.',
+    queryName: 'website-scheduled-content',
     queryParams: {
       // Secondary Packaging > Case/Tray Packing
       sectionId: 87573,
@@ -82,6 +84,7 @@ module.exports = (app) => {
   app.get('/casestudies-coding/marking', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'A Curated Collection of Case Studies: Coding/Marking',
     description: 'Are you in the market for coding/marking equipment? Want to learn more about the category of equipment and the latest innovations that can help you achieve your packaging goals? Read through our collection of the most recent case studies related to coding, marking, & RFID.',
+    queryName: 'website-scheduled-content',
     queryParams: {
       // Coding, Printing & Labeling > Coding & Marking
       sectionId: 87569,
@@ -92,6 +95,7 @@ module.exports = (app) => {
   app.get('/casestudies-liquidfilling', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'A Curated Collection of Case Studies: Liquid Filling & Capping',
     description: 'Are you in the market for a liquid filler/capper and looking for the latest technology and innovations to streamline your packaging operations? Check out our list of case studies featuring liquid and viscous fillers and the unique solutions that these pieces of equipment bring to the companies mentioned here. Learn how the equipment works, what they\'re capable of, and which machine is right for your line.',
+    queryName: 'website-scheduled-content',
     queryParams: {
       // Leaders (UNIVERSAL TAXONOMY PW) > Machinery > Filling/capping, liquid and viscous
       sectionId: 87073,
@@ -102,6 +106,7 @@ module.exports = (app) => {
   app.get('/casestudies-palletizing', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'A Curated Collection of Case Studies: Palletizing',
     description: 'Are you in the market for a palletizer and looking for the latest technology and innovations to streamline your packaging operations? Check out our list of case studies featuring palletizing and depalletizing equipment and the unique solutions that these pieces of equipment bring to the companies mentioned here. Learn how the equipment works, what it’s capable of, and which machine is right for your line.',
+    queryName: 'website-scheduled-content',
     queryParams: {
       // Leaders (UNIVERSAL TAXONOMY PW) > Machinery > Palletizing/depalletizing
       sectionId: 87080,

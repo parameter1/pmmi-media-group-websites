@@ -15,6 +15,7 @@ module.exports = (app) => {
   app.get('/trackandtrace/products', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'Track & Trace: A Collection of Products',
     description: 'Are you interested in track & trace/serialization solutions? Read through our collection of new and noteworthy products in track and trace and find the solution right for you.',
+    queryName: 'website-scheduled-content',
     queryParams: {
       // Logistics > Traceability/Serialization
       sectionId: 33342,
@@ -25,6 +26,7 @@ module.exports = (app) => {
   app.get('/casestudies/pharma', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'Case Studies: Pharmaceutical Packaging',
     description: 'Read through our collection of pharmaceutical packaging case studies and get informed and inspired by the latest thinking and newest technology.',
+    queryName: 'website-scheduled-content',
     queryParams: {
       // Industries > Pharmaceuticals
       sectionId: 33334,
