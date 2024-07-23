@@ -116,7 +116,7 @@ module.exports = (app) => {
       // Packaging materials > Wood/paper/organic
       includeTaxonomyIds: [2008430],
       includeLabels: ['Case Study'],
-    }
+    },
   })));
 
   app.get('/multipacking', asyncRoute(async (_, res) => res.marko(collections, {
@@ -125,7 +125,7 @@ module.exports = (app) => {
     queryParams: {
       // Packaging machinery > Multipacking/shrink bundling/branding
       includeTaxonomyIds: [2008398],
-    }
+    },
   })));
 
   app.get('/events', asyncRoute(async (_, res) => res.marko(events, {
