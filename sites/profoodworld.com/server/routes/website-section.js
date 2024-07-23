@@ -7,6 +7,7 @@ const { newsletterState } = require('@pmmi-media-group/package-global/middleware
 const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');
 const events = require('@pmmi-media-group/package-global/templates/website-section/events');
 const collections = require('@pmmi-media-group/package-global/templates/website-section/collections');
+const superCategory = require('@pmmi-media-group/package-global/templates/website-section/super-category');
 const section = require('../templates/website-section');
 const leaders = require('../templates/website-section/leaders');
 const global250 = require('../templates/website-section/global-250');
@@ -50,7 +51,7 @@ module.exports = (app) => {
   }));
 
   app.get('/:alias([a-z0-9-/]+)', newsletterState(), withWebsiteSection({
-    template: section,
+    template: superCategory,
     queryFragment,
   }));
 };
