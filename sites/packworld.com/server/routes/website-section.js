@@ -36,8 +36,8 @@ module.exports = (app) => {
     name: 'Smart Packaging: New & Noteworthy Content',
     description: 'The stars are aligning on multiple relevant fronts: consumer behavior, legislation, technology, and data management and capacity. This confluence of advancements is slowly but surely unlocking the potential of active, intelligent, connected, and otherwise smart packaging.',
     queryParams: {
-      // Package features/design > Smart packaging
-      includeTaxonomyIds: [2008434],
+      // smart packaging
+      includeTaxonomyIds: [3199742],
     },
   })));
 
@@ -111,6 +111,27 @@ module.exports = (app) => {
       // Leaders (UNIVERSAL TAXONOMY PW) > Machinery > Palletizing/depalletizing
       sectionId: 87080,
       includeLabels: ['Case Study'],
+    },
+  })));
+
+  app.get('/paperpackaging', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Exploring Paper Packaging: A Collection of Case Studies',
+    description: 'Read our curated content on the topic of paper/wood/organic packaging. Explore what other brands are doing well, popular use cases for this material type, and success product launches.',
+    queryParams: {
+      // paper packaging
+      includeTaxonomyIds: [3199743],
+      includeLabels: ['Case Study'],
+    },
+  })));
+
+  app.get('/multipacking', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Multipacking/Shrink Bundling/Banding: Videos & Articles',
+    description: 'Do you want the latest news, case studies, and videos on the topic of multipacking, shrink bundling, and banding? Look no further. Check out our collection of content on this equipment type and get informed, inspired, and educated.',
+    queryName: 'website-scheduled-content',
+    queryParams: {
+      // Secondary Packaging > Multipacking
+      sectionId: 87572,
+      includeContentTypes: ['Article', 'Video'],
     },
   })));
 
