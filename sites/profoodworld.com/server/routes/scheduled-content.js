@@ -33,4 +33,14 @@ module.exports = (app) => {
       },
     );
   });
+  app.get('/quizzes', newsletterState(), (_, res) => {
+    res.marko(
+      scheduledContent,
+      {
+        alias: 'quizzes',
+        includeLabels: ['Quiz'],
+        title: 'Quizzes',
+      },
+    );
+  });
 };
