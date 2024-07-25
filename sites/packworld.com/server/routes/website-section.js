@@ -36,8 +36,8 @@ module.exports = (app) => {
     name: 'Smart Packaging: New & Noteworthy Content',
     description: 'The stars are aligning on multiple relevant fronts: consumer behavior, legislation, technology, and data management and capacity. This confluence of advancements is slowly but surely unlocking the potential of active, intelligent, connected, and otherwise smart packaging.',
     queryParams: {
-      // Package features/design > Smart packaging
-      includeTaxonomyIds: [2008434],
+      // smart packaging
+      includeTaxonomyIds: [3199742],
     },
   })));
 
@@ -62,9 +62,10 @@ module.exports = (app) => {
   app.get('/casestudies-cartoning', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'A Curated Collection of Case Studies: Cartoning',
     description: 'Are you in the market for cartoning equipment and looking for the latest technology and innovations to streamline your packaging operations? Check out our list of case studies featuring cartoners and the unique solutions that these pieces of equipment bring to the companies mentioned here. Learn how the equipment works, what it’s capable of, and which machine is right for your line.',
+    queryName: 'website-scheduled-content',
     queryParams: {
-      // Packaging machinery > Cartoning
-      includeTaxonomyIds: [2008383],
+      // Secondary Packaging > Cartoning
+      sectionId: 87571,
       includeLabels: ['Case Study'],
     },
   })));
@@ -72,9 +73,10 @@ module.exports = (app) => {
   app.get('/casestudies-casepacking', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'A Curated Collection of Case Studies: Case Packing',
     description: 'Are you in the market for a case packer and looking for the latest technology and innovations to streamline your packaging operations? Check out our list of case studies featuring case packers and the unique solutions that these pieces of equipment bring to the companies mentioned here. Learn how the equipment works, what it’s capable of, and which machine is right for your line.',
+    queryName: 'website-scheduled-content',
     queryParams: {
-      // Packaging machinery > case erect/seal, Packaging machinery > case/tray packing
-      includeTaxonomyIds: [2008384, 2008385],
+      // Secondary Packaging > Case/Tray Packing
+      sectionId: 87573,
       includeLabels: ['Case Study'],
     },
   })));
@@ -82,9 +84,10 @@ module.exports = (app) => {
   app.get('/casestudies-coding/marking', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'A Curated Collection of Case Studies: Coding/Marking',
     description: 'Are you in the market for coding/marking equipment? Want to learn more about the category of equipment and the latest innovations that can help you achieve your packaging goals? Read through our collection of the most recent case studies related to coding, marking, & RFID.',
+    queryName: 'website-scheduled-content',
     queryParams: {
-      // Issues > Coding/marking/RFID
-      includeTaxonomyIds: [2008344],
+      // Coding, Printing & Labeling > Coding & Marking
+      sectionId: 87569,
       includeLabels: ['Case Study'],
     },
   })));
@@ -92,9 +95,10 @@ module.exports = (app) => {
   app.get('/casestudies-liquidfilling', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'A Curated Collection of Case Studies: Liquid Filling & Capping',
     description: 'Are you in the market for a liquid filler/capper and looking for the latest technology and innovations to streamline your packaging operations? Check out our list of case studies featuring liquid and viscous fillers and the unique solutions that these pieces of equipment bring to the companies mentioned here. Learn how the equipment works, what they\'re capable of, and which machine is right for your line.',
+    queryName: 'website-scheduled-content',
     queryParams: {
-      // Packaging machinery > Filling/capping, liquid and viscous
-      includeTaxonomyIds: [2008393],
+      // Leaders (UNIVERSAL TAXONOMY PW) > Machinery > Filling/capping, liquid and viscous
+      sectionId: 87073,
       includeLabels: ['Case Study'],
     },
   })));
@@ -102,10 +106,32 @@ module.exports = (app) => {
   app.get('/casestudies-palletizing', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'A Curated Collection of Case Studies: Palletizing',
     description: 'Are you in the market for a palletizer and looking for the latest technology and innovations to streamline your packaging operations? Check out our list of case studies featuring palletizing and depalletizing equipment and the unique solutions that these pieces of equipment bring to the companies mentioned here. Learn how the equipment works, what it’s capable of, and which machine is right for your line.',
+    queryName: 'website-scheduled-content',
     queryParams: {
-      // Packaging machinery > Palletizing/depalletizing
-      includeTaxonomyIds: [2008399],
+      // Leaders (UNIVERSAL TAXONOMY PW) > Machinery > Palletizing/depalletizing
+      sectionId: 87080,
       includeLabels: ['Case Study'],
+    },
+  })));
+
+  app.get('/paperpackaging', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Exploring Paper Packaging: A Collection of Case Studies',
+    description: 'Read our curated content on the topic of paper/wood/organic packaging. Explore what other brands are doing well, popular use cases for this material type, and success product launches.',
+    queryParams: {
+      // paper packaging
+      includeTaxonomyIds: [3199743],
+      includeLabels: ['Case Study'],
+    },
+  })));
+
+  app.get('/multipacking', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Multipacking/Shrink Bundling/Banding: Videos & Articles',
+    description: 'Do you want the latest news, case studies, and videos on the topic of multipacking, shrink bundling, and banding? Look no further. Check out our collection of content on this equipment type and get informed, inspired, and educated.',
+    queryName: 'website-scheduled-content',
+    queryParams: {
+      // Secondary Packaging > Multipacking
+      sectionId: 87572,
+      includeContentTypes: ['Article', 'Video'],
     },
   })));
 
