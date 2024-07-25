@@ -1304,10 +1304,10 @@
     graphql-tag "^2.12.6"
     object-path "^0.11.8"
 
-"@parameter1/base-cms-marko-web-theme-monorail@^4.58.4":
-  version "4.58.4"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-theme-monorail/-/base-cms-marko-web-theme-monorail-4.58.4.tgz#39e96dc9efd57cf85207d35959c4fb7e656b89c9"
-  integrity sha512-xDieBQZFFLBWvE4prkCf6kr6Pti6dh1gCx1E1HTHIRiamyWGVluVwB9E1KlUCfPrb9p9H2D7EMxYd5szs7RaUg==
+"@parameter1/base-cms-marko-web-theme-monorail@^4.59.1":
+  version "4.59.1"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-theme-monorail/-/base-cms-marko-web-theme-monorail-4.59.1.tgz#0433fc1cbb3cbf636a0c20ce8d8844d33baf2290"
+  integrity sha512-dTmCFA6LZ2mq9oBxxhRmfdmYDA/wC89V12e7hDzX+rBXb555fomsFk9E2Ni8KJ+WzkW38V5IUSMykef9pSP8+g==
   dependencies:
     "@parameter1/base-cms-dayjs" "^4.5.12"
     "@parameter1/base-cms-image" "^4.47.1"
@@ -1341,10 +1341,10 @@
     node-fetch "^2.6.9"
     ua-parser-js "^1.0.33"
 
-"@parameter1/base-cms-marko-web@^4.55.4":
-  version "4.55.4"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web/-/base-cms-marko-web-4.55.4.tgz#381902ee4af96dce5b736641eff586be4ed53d2e"
-  integrity sha512-gQczDTtb4JJoCjwxxPeKIOXVfit8qGCeDPDl9gYf5OuzZZBMOw5SAAEvGdpDrRs4O7BjH9EskSRdNVNQebZcxQ==
+"@parameter1/base-cms-marko-web@^4.59.1":
+  version "4.59.1"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web/-/base-cms-marko-web-4.59.1.tgz#a5ce41b49ceb95324e26ef284bbda02518f2bcd9"
+  integrity sha512-K1w5UJupV0MCOy84OXlbDkKkCJSzavMMER1qZC0Qa6zcxSz0eb57RFiJHfxz34qXXjjwam3NnI4pyRA6DZmdyA==
   dependencies:
     "@godaddy/terminus" "^4.11.2"
     "@parameter1/base-cms-apollo-ssr" "^4.5.12"
@@ -6725,7 +6725,7 @@ postcss-convert-values@^5.1.3:
     browserslist "^4.21.4"
     postcss-value-parser "^4.2.0"
 
-"postcss-critical-split@github:mrnocreativity/postcss-critical-split#51bb6d62bc75d635e32dcce90f30ba3ef6299081":
+postcss-critical-split@mrnocreativity/postcss-critical-split#51bb6d62bc75d635e32dcce90f30ba3ef6299081:
   version "2.5.3"
   resolved "https://codeload.github.com/mrnocreativity/postcss-critical-split/tar.gz/51bb6d62bc75d635e32dcce90f30ba3ef6299081"
 
