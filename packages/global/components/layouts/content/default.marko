@@ -99,21 +99,6 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
           print-path=`/print/content/${content.id}`
         />
       </if>
-      <marko-web-identity-x-context|{ hasUser }|>
-        <if(!hasUser && Object.keys(site.getAsObject(`newsletter.socialShareReplacementBanner`)).length)>
-          <div class="newsletter-signup-banner-social-share-replace">
-            <identity-x-newsletter-form-inline
-              button-labels=buttonLabels
-              login-email-label=loginEmailLabel
-              login-email-placeholder="example@yourcompany.com"
-              type="inlineContent"
-              action-text=actionText
-              with-image=false
-              config-name="socialShareReplacementBanner"
-            />
-          </div>
-        </if>
-      </marko-web-identity-x-context>
     </div>
   </@section>
 
@@ -307,6 +292,21 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
           <if(type !== "document")>
             <global-leaders-contextual content-id=id />
           </if>
+          <marko-web-identity-x-context|{ hasUser }|>
+            <if(!hasUser && Object.keys(site.getAsObject(`newsletter.contentRailBanner`)).length)>
+              <div class="newsletter-signup-banner-content-rail">
+                <identity-x-newsletter-form-inline
+                  button-labels=buttonLabels
+                  login-email-label=loginEmailLabel
+                  login-email-placeholder="example@yourcompany.com"
+                  type="inlineContent"
+                  action-text=actionText
+                  with-image=false
+                  config-name="contentRailBanner"
+                />
+              </div>
+            </if>
+          </marko-web-identity-x-context>
         </div>
       </if>
       <else-if(!site.get("leaders.enabled") && displayRail)>
