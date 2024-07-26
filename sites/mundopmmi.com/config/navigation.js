@@ -5,6 +5,7 @@ const topics = [
   { href: '/rigidos', label: 'Rígidos' },
   { href: '/automatizacion', label: 'Automatización' },
   { href: '/procesamiento', label: 'Procesamiento' },
+  { href: '/empaque-sostenible', label: 'Empaque Sostenible' },
 ];
 
 const resources = [];
@@ -132,6 +133,24 @@ module.exports = {
         items: [
           { href: '/procesamiento/equipo-de-procesamiento', label: 'Equipo de procesamiento' },
           { href: '/procesamiento/seguridad-alimentaria', label: 'Seguridad alimentaria' },
+        ],
+      },
+      tertiary: { items: [] },
+      primary: {
+        items: [
+          { href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=Mundo_NL_Nav', label: 'Suscríbase', target: '_blank' },
+          ...topics,
+          { href: '/eventos', label: 'Eventos' },
+        ],
+      },
+    },
+    {
+      when: ['/empaque-sostenible'],
+      secondary: {
+        items: [
+          { href: '/empaque-sostenible/reciclaje', label: 'Reciclaje' },
+          { href: '/empaque-sostenible/reutilizacion-retornabilidad', label: 'Reutilización/Retornabilidad' },
+          { href: '/empaque-sostenible/biobasados', label: 'Biobasados' },
         ],
       },
       tertiary: { items: [] },
