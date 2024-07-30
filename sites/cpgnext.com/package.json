@@ -1,6 +1,6 @@
 {
   "name": "@pmmi-media-group/cpgnext.com",
-  "version": "3.22.1",
+  "version": "3.22.3",
   "author": "Jessica Stenzel <jessica.stenzel@parameter1.com>",
   "repository": "https://github.com/parameter1/pmmi-media-group-websites/tree/master/sites/cpgnext.com",
   "license": "MIT",
@@ -47,7 +47,7 @@
     "@parameter1/base-cms-object-path": "^4.40.3",
     "@parameter1/base-cms-utils": "^4.40.3",
     "@parameter1/base-cms-web-cli": "^4.57.1",
-    "@pmmi-media-group/package-global": "^3.22.1",
+    "@pmmi-media-group/package-global": "^3.22.3",
     "graphql": "^14.5.4",
     "graphql-tag": "^2.10.1"
   }
