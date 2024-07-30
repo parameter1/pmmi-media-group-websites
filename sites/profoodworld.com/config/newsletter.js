@@ -29,11 +29,9 @@ module.exports = {
     name: 'You\'re Invited!',
     description: 'Don\'t miss your weekly dose of packaging intelligence and news with <strong>ProFood World\'s</strong> e-newsletter.',
   },
-  /*
-  socialShareReplacementBanner: {
+  contentRailBanner: {
     ...defaults,
     name: ' ',
     description: 'Thanks for stopping by! Get our top stories delivered daily by subscribing.',
   },
-  */
 };
