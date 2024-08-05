@@ -22,6 +22,15 @@ module.exports = (app) => {
     },
   })));
 
+  app.get('/ai-for-packaging-and-processing-oems', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'AI FOR OEMS: EXPLORING HOW PACKAGING AND PROCESSING OEMS CAN LEVERAGE GENERATIVE AI FOR THEIR EQUIPMENT',
+    description: 'Packaging and processing OEMs have many opportunities to incorporate AI into their equipment. This is a collection of articles exploring how these technologies might provide the equipment with more robust capabilities while allowing machines to be more forgiving with the operators and technicians that run them.',
+    queryParams: {
+      // AI for OEMs
+      includeTaxonomyIds: [3199762],
+    },
+  })));
+
   app.get('/events', asyncRoute(async (_, res) => res.marko(events, {
     alias: 'events',
     name: 'Events',
