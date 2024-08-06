@@ -5,7 +5,7 @@ import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql
 import handleContentTypePrimarySection from "@pmmi-media-group/package-global/utils/handle-content-type-primary-section";
 
 $ const { site, req, i18n, pagination: p } = out.global;
-$ const { name, description, editorImage, editorInfo, queryParams: paginationParams } = input;
+$ const { name, description, editorImage, queryParams: paginationParams } = input;
 $ const perPage = 12;
 $ const continueLabel = i18n("Sign Me Up!");
 $ const loginEmailLabel = i18n("Work Email");
@@ -39,16 +39,16 @@ $ const queryParams = {
               <else>${value}</else>
             </marko-web-website-section-name>
             <if(editorImage)>
-              <div>
-                <img src=`${editorImage}` style="height: 150px; width: 150px;" width="150" height="150" />
-                <if(editorInfo)>
-                  <p>
-                    $!{editorInfo}
-                  </p>
-                </if>
+              <div class="box">
+                <p style="text-wrap:wrap">
+                  <img src=`${editorImage}` style="float: left; margin-right: 20px;" width="150" height="150" />
+                  $!{description}
+                </p>
               </div>
             </if>
-            <marko-web-website-section-description obj={ description } attrs={ style: "margin-bottom: 20px" } />
+            <else>
+              <marko-web-website-section-description obj={ description } attrs={ style: "margin-bottom: 20px" } />
+            </else>
             <marko-web-query|{ nodes }| name=queryName params=queryParams>
               <marko-web-node-list
                 flush-x=true
