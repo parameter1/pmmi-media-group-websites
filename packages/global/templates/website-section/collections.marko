@@ -5,7 +5,7 @@ import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql
 import handleContentTypePrimarySection from "@pmmi-media-group/package-global/utils/handle-content-type-primary-section";
 
 $ const { site, req, i18n, pagination: p } = out.global;
-$ const { name, description, queryParams: paginationParams } = input;
+$ const { name, description, editorImage, editorTitle, queryParams: paginationParams } = input;
 $ const perPage = 12;
 $ const continueLabel = i18n("Sign Me Up!");
 $ const loginEmailLabel = i18n("Work Email");
@@ -38,6 +38,16 @@ $ const queryParams = {
               <if(p.page > 1)>${value}: ${i18n("Page")} ${p.page}</if>
               <else>${value}</else>
             </marko-web-website-section-name>
+            <if(editorImage)>
+              <div>
+                <img src=`${editorImage}` style="height: 150px; width: 150px;" />
+                <if(editorTitle)>
+                  <p>
+                    <i>${editorTitle}</i>
+                  </p>
+                </if>
+              </div>
+            </if>
             <marko-web-website-section-description obj={ description } attrs={ style: "margin-bottom: 20px" } />
             <marko-web-query|{ nodes }| name=queryName params=queryParams>
               <marko-web-node-list
