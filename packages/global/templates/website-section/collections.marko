@@ -38,12 +38,12 @@ $ const queryParams = {
               <if(p.page > 1)>${value}: ${i18n("Page")} ${p.page}</if>
               <else>${value}</else>
             </marko-web-website-section-name>
-            <if(editorImage || editorInfo)>
+            <if(editorImage)>
               <div class="box">
-                <p>$!{editorInfo}
+                <p style="text-wrap:wrap">
                   <img src=`${editorImage}` style="float: left; margin-right: 20px;" width="150" height="150" />
+                  $!{description}
                 </p>
-                $!{description}
               </div>
             </if>
             <else>
