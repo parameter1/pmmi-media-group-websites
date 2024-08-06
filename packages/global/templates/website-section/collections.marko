@@ -38,17 +38,17 @@ $ const queryParams = {
               <if(p.page > 1)>${value}: ${i18n("Page")} ${p.page}</if>
               <else>${value}</else>
             </marko-web-website-section-name>
-            <if(editorImage)>
-              <div>
-                <img src=`${editorImage}` style="height: 150px; width: 150px;" width="150" height="150" />
-                <if(editorInfo)>
-                  <p>
-                    $!{editorInfo}
-                  </p>
-                </if>
+            <if(editorImage || editorInfo)>
+              <div class="box">
+                <p>$!{editorInfo}
+                  <img src=`${editorImage}` style="float: left; margin-right: 20px;" width="150" height="150" />
+                </p>
+                $!{description}
               </div>
             </if>
-            <marko-web-website-section-description obj={ description } attrs={ style: "margin-bottom: 20px" } />
+            <else>
+              <marko-web-website-section-description obj={ description } attrs={ style: "margin-bottom: 20px" } />
+            </else>
             <marko-web-query|{ nodes }| name=queryName params=queryParams>
               <marko-web-node-list
                 flush-x=true
