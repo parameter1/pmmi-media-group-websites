@@ -138,7 +138,7 @@ module.exports = (app) => {
   app.get('/drupa-2024', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'drupa 2024 Report: How Package Printing’s Ongoing Digital Transformation will Impact Brands',
     editorImage: 'https://img.packworld.com/files/base/pmmi/all/image/static/Matt_Reynolds.png',
-    editorInfo: 'Matt Reynolds<br/>Editor-in-Chief<br/><i>Packaging World</i>',
+    editorInfo: 'Matt Reynolds | Editor-in-Chief | <i>Packaging World</i>',
     description: '<p>The pandemic caused an eight-year gap since the last drupa, the world’s largest paper and plastic printing expo. Packaging, including cartonboard, corrugated, labels, and flexible packaging, is becoming the preferred choice as traditional print materials like mailers and magazines shift to digital. The world has changed since 2016, highlighting the importance of digitalization in business. Digitalization speeds up time to market and offers flexibility, with AI playing a significant role in customization and equipment controls at the show.</p><p>Sustainability remains a key trend, with recyclable, monomaterial barrier films featured prominently. E-commerce and D2C have grown significantly since 2016. Companies like SEE and Packsize showcased innovations in digital printing and sustainable packaging for the e-commerce channel. Mass customization and embellishment capabilities have also advanced, with new techniques for high-end cosmetics and spirits packaging.</p><p>What follows is a series of conversations held at drupa about digital printing, digitalized packaging asset software, embellishment, e-comm/D2C/FC/DC, all anchored in how the trend will directly impact brand owners and CPGs.</p>',
     queryParams: {
       // drupa 2024
