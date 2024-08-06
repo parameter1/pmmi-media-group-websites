@@ -5,7 +5,7 @@ import queryFragment from "@parameter1/base-cms-marko-web-theme-monorail/graphql
 import handleContentTypePrimarySection from "@pmmi-media-group/package-global/utils/handle-content-type-primary-section";
 
 $ const { site, req, i18n, pagination: p } = out.global;
-$ const { name, description, editorImage, editorTitle, editorName, editorSite, queryParams: paginationParams } = input;
+$ const { name, description, editorImage, editorInfo, queryParams: paginationParams } = input;
 $ const perPage = 12;
 $ const continueLabel = i18n("Sign Me Up!");
 $ const loginEmailLabel = i18n("Work Email");
@@ -41,11 +41,9 @@ $ const queryParams = {
             <if(editorImage)>
               <div>
                 <img src=`${editorImage}` style="height: 150px; width: 150px;" />
-                <if(editorName)>
+                <if(editorInfo)>
                   <p>
-                    ${editorName}<br>
-                    ${editorTitle}<br>
-                    <i>${editorSite}</i>
+                    $!{editorInfo}
                   </p>
                 </if>
               </div>
