@@ -91,4 +91,6 @@ module.exports = {
   recommended: 'Recomendado',
   events: 'eventos',
   webinars: 'seminario-web',
+  'on demand': 'Por Demanda',
+  upcoming: 'próximamente',
 };

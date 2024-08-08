@@ -96,7 +96,7 @@ $ const countQueryParams = {
               primarySection: handleContentTypePrimarySection({ i18n, node })
             }));
             <theme-section-feed-flow nodes=finalNodes modifiers=["upcoming"]>
-              <@header>Upcoming</@header>
+              <@header>${i18n("Upcoming")}</@header>
             </theme-section-feed-flow>
             <theme-gam-define-display-ad
               name="rotation"
@@ -112,7 +112,7 @@ $ const countQueryParams = {
             primarySection: handleContentTypePrimarySection({ i18n, node })
           }));
           <theme-section-feed-flow nodes=finalNodes lazyload=false>
-            <@header>On Demand</@header>
+            <@header>${i18n("On Demand")}</@header>
           </theme-section-feed-flow>
         </marko-web-query>
         <theme-section-feed-block|{ totalCount }| count-only=true query-name="all-published-content">
