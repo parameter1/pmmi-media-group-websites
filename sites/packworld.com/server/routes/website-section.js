@@ -13,7 +13,6 @@ const { newsletterState } = require('@pmmi-media-group/package-global/middleware
 
 const section = require('../templates/website-section');
 const leaders = require('../templates/website-section/leaders');
-const description = require('@parameter1/base-cms-marko-web/utils/published-content/description');
 
 module.exports = (app) => {
   app.get('/advancedrecycling', asyncRoute(async (_, res) => res.marko(collections, {
