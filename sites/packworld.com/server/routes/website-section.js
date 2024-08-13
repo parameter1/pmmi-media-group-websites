@@ -13,6 +13,7 @@ const { newsletterState } = require('@pmmi-media-group/package-global/middleware
 
 const section = require('../templates/website-section');
 const leaders = require('../templates/website-section/leaders');
+const description = require('@parameter1/base-cms-marko-web/utils/published-content/description');
 
 module.exports = (app) => {
   app.get('/advancedrecycling', asyncRoute(async (_, res) => res.marko(collections, {
@@ -142,6 +143,14 @@ module.exports = (app) => {
     queryParams: {
       // drupa 2024
       includeTaxonomyIds: [3199812, 3199813, 3199814, 3199815],
+    },
+  })));
+
+  app.get('/packexpo', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'PACK EXPO',
+    description: '',
+    queryParams: {
+      includeLabels: ['PACK EXPO'],
     },
   })));
 
