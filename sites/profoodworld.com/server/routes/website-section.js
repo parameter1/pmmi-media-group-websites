@@ -23,6 +23,14 @@ module.exports = (app) => {
     },
   })));
 
+  app.get('/packexpo', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'PACK EXPO',
+    description: '',
+    queryParams: {
+      includeLabels: ['PACK EXPO'],
+    },
+  })));
+
   app.get('/:alias(global-250)', newsletterState(), (_, res) => { res.marko(global250); });
   app.get('/:alias(global-250/*)', newsletterState(), (_, res) => { res.marko(global250); });
   app.get('/:alias(global-50)', newsletterState(), (_, res) => { res.marko(global50); });
