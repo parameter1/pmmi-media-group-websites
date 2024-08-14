@@ -290,8 +290,14 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
             </div>
           </if>
           <if(type !== "document")>
-            <global-leaders-contextual content-id=id />
+            <div class="mb-block">
+              <global-leaders-contextual content-id=id />
+            </div>
           </if>
+          $ console.log(aliases);
+          <div class="mb-block">
+            <global-native-x-list-block aliases=aliases audience-only=true />
+          </div>
           <marko-web-identity-x-context|{ hasUser }|>
             <if(!hasUser && Object.keys(site.getAsObject(`newsletter.contentRailBanner`)).length)>
               <div class="newsletter-signup-banner-content-rail">
