@@ -21,6 +21,42 @@ config
     { name: 'super-category-flexible-packaging', id: '6564ab5be9037c00018a33a6' },
     { name: 'super-category-beverage', id: '6564ab79e9037c00018a33cf' },
     { name: 'default', id: '5da778d7d5766a00013c459d' },
+  ])
+  .setAliasPlacements('coding-printing-labeling', [
+    { name: 'audience', id: '66bcc0f64ed1da9f926a24e9' },
+  ])
+  .setAliasPlacements('flexibles', [
+    { name: 'audience', id: '66bcc10d4ed1da9f926a24eb' },
+  ])
+  .setAliasPlacements('rigid', [
+    { name: 'audience', id: '66bcc11b4ed1da9f926a24ed' },
+  ])
+  .setAliasPlacements('sustainable-packaging', [
+    { name: 'audience', id: '66bcc12e1a1dc2f0126279a2' },
+  ])
+  .setAliasPlacements('secondary-packaging', [
+    { name: 'audience', id: '66bcc13f2aefeaff78937dc5' },
+  ])
+  .setAliasPlacements('trends/contract-packaging', [
+    { name: 'audience', id: '66bcc14f2aefeaff78937dc7' },
+  ])
+  .setAliasPlacements('trends/digital-transformation', [
+    { name: 'audience', id: '66bcc1831a1dc2f0126279a4' },
+  ])
+  .setAliasPlacements('trends/logistics-supply-chain', [
+    { name: 'audience', id: '66bcc1942aefeaff78937dc9' },
+  ])
+  .setAliasPlacements('trends/ecommerce-d2c-packaging', [
+    { name: 'audience', id: '66bcc1a62aefeaff78937dcb' },
+  ])
+  .setAliasPlacements('trends/workforce', [
+    { name: 'audience', id: '66bcc1b04ed1da9f926a24ef' },
+  ])
+  .setAliasPlacements('trends/operational-excellence', [
+    { name: 'audience', id: '66bcc1bd1a1dc2f0126279a6' },
+  ])
+  .setAliasPlacements('trends/package-design', [
+    { name: 'audience', id: '66bcc1ca2aefeaff78937dcd' },
   ]);
 
 module.exports = config;
