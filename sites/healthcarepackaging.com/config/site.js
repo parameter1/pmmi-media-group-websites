@@ -99,4 +99,7 @@ module.exports = {
     event: 'website',
     target: '_blank',
   },
+  mindful: {
+    namespace: 'pmmi/default',
+  },
 };
