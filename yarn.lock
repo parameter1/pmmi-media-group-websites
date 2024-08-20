@@ -1304,10 +1304,10 @@
     graphql-tag "^2.12.6"
     object-path "^0.11.8"
 
-"@parameter1/base-cms-marko-web-theme-monorail@^4.63.0":
-  version "4.63.0"
-  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-theme-monorail/-/base-cms-marko-web-theme-monorail-4.63.0.tgz#d7b9554e54aa7a557bf82127db8e5791147108cf"
-  integrity sha512-Kh8mG96S6el89H71y1tWLvDAizMySRGw353JtCp2moauHIkSvsYcP34rhI3ui7Dp7e/dTKpbe2qHZlo1UMhKSA==
+"@parameter1/base-cms-marko-web-theme-monorail@^4.63.1":
+  version "4.63.1"
+  resolved "https://registry.yarnpkg.com/@parameter1/base-cms-marko-web-theme-monorail/-/base-cms-marko-web-theme-monorail-4.63.1.tgz#fed80d3ec76b2471c0a5924de9189be3cdad0738"
+  integrity sha512-o2pxTOStHuuNMUYwDvvOuw5P9NoQkAWQmWmlQCZx5SOSuiAAekq1gamuaooCAg9Tr1AXL4a2yd1rhgGhnIHSOw==
   dependencies:
     "@parameter1/base-cms-dayjs" "^4.5.12"
     "@parameter1/base-cms-image" "^4.47.1"
