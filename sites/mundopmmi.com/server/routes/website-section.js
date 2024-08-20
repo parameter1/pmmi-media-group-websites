@@ -59,6 +59,13 @@ module.exports = (app) => {
       includeTaxonomyIds: [3199683],
     },
   })));
+  app.get('/packexpo', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'PACK EXPO',
+    description: '',
+    queryParams: {
+      includeLabels: ['PACK EXPO'],
+    },
+  })));
 
   app.get('/eventos', asyncRoute(async (_, res) => res.marko(events, {
     alias: 'eventos',
