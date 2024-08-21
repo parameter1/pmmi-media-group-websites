@@ -59,6 +59,14 @@ module.exports = (app) => {
       includeTaxonomyIds: [3199683],
     },
   })));
+  app.get('/redisenodeempaques', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Rediseño Innovador: Casos de éxito en empaques que rompen esquemas',
+    description: 'Mundo EXPO PACK presenta una curaduría de casos sobresalientes en el rediseño de empaques, destacando soluciones que desafían las convenciones establecidas. Una nueva colección que ilustra cómo el enfoque creativo y funcional está transformando el mercado, introduciendo nuevas perspectivas y rompiendo con los esquemas tradicionales. Encuentre aquí procesos de innovación, estrategias exitosas, impactos en la experiencia del consumidor, lineamientos de sostenibilidad y la contribución a la diferenciación que aportan los procesos de rediseño de empaques en distintos mercados.',
+    queryParams: {
+      // Rediseño
+      includeTaxonomyIds: [3199942],
+    },
+  })));
   app.get('/packexpo', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'PACK EXPO',
     description: '',
