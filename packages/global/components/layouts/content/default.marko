@@ -127,8 +127,11 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                 <global-supplier-submitted-block labels=content.labels />
                 <marko-web-content-body block-name=blockName obj={ body } />
 
-                <div class="content-page-preview-overlay" />
-                <theme-content-page-gate
+                <div id="content-page-preview-overlay" class="content-page-preview-overlay" />
+                <marko-web-browser-component name="GlobalStoryContinuesButton" />
+                $ const bodyPartTwo = getContentPreview({ body: content.body, selector: "p:gt(5)" });
+                <marko-web-content-body block-name=blockName obj={ body: bodyPartTwo } attrs={ style: "display: none;", id: "content-body-part-two" }/>
+                <!--<theme-content-page-gate
                   can-access=context.canAccess
                   is-logged-in=context.isLoggedIn
                   has-required-access-level=context.hasRequiredAccessLevel
@@ -139,7 +142,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                   login-email-label=gateEmailLabel
                   title=gateTitle
                   action-text=actionText
-                />
+                /> -->
                 <!-- Hidden content body field for seo purposes when content is gated. -->
                 <marko-web-content-body block-name=blockName attrs={ style: "display: none;" } obj=content modifiers=["ld-json"] />
               </if>
