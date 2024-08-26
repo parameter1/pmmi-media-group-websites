@@ -56,7 +56,7 @@ const desktopMenu = {
       { href: '/leaders', label: 'Leaders in Packaging' },
       { href: '/page/packaging-associations', label: 'Packaging Associations' },
       { href: '/supplier-news', label: 'Supplier News' },
-      { href: '/WomenInPackaging', label: 'Women in Packaging' },
+      { href: '/magazine/50370', label: 'Women in Packaging' },
       { href: '/trends/operational-excellence', label: 'Operational Excellence' },
     ],
   },
