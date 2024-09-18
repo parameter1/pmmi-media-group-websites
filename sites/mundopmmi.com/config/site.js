@@ -36,9 +36,9 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.mundoexpopack.com/files/base/pmmi/mundo/Mundo-fullcolor.svg?h=75&auto=format,compress',
+      src: 'https://img.mundoexpopack.com/files/base/pmmi/mundo/Mundo-EXPO-PACK_new_WEB.svg?h=75&auto=format,compress',
       srcset: [
-        'https://img.mundoexpopack.com/files/base/pmmi/mundo/Mundo-fullcolor.svg?h=75&auto=format,compress&dpr=2 2x',
+        'https://img.mundoexpopack.com/files/base/pmmi/mundo/Mundo-EXPO-PACK_new_WEB.svg?h=75&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
