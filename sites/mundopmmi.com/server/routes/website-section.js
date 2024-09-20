@@ -9,6 +9,7 @@ const collections = require('@pmmi-media-group/package-global/templates/website-
 
 const section = require('../templates/website-section');
 const leaders = require('../templates/website-section/leaders');
+const description = require('@parameter1/base-cms-marko-web/utils/published-content/description');
 
 module.exports = (app) => {
   app.get('/reciclaje-quimico', asyncRoute(async (_, res) => res.marko(collections, {
@@ -65,6 +66,14 @@ module.exports = (app) => {
     queryParams: {
       // Rediseño
       includeTaxonomyIds: [3199942],
+    },
+  })));
+  app.get('/manodeobracalificada', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'RETOS DEL TALENTO HUMANO Y DISPONIBILIDAD DE MANO DE OBRA CALIFICADA EN NUESTRA INDUSTRIA',
+    description: '¿Cómo está enfrentando la industria de empaques la creciente escasez de mano de obra calificada y la alta rotación de empleados? En esta selección de Mundo EXPO PACK, profundizamos en los desafíos que estas tendencias imponen sobre la eficiencia operativa y las estrategias que las empresas están implementando para adaptarse. Acceda a informes, análisis detallados, estudios y casos que revelan la dinámica laboral actual en la industria y cómo las empresas están ajustando sus procesos de reclutamiento y capacitación para enfrentar uno de los desafíos más críticos que enfrenta la industria.',
+    queryParams: {
+      // escasez de mano de obra
+      includeTaxonomyIds: [3200134],
     },
   })));
   app.get('/packexpo', asyncRoute(async (_, res) => res.marko(collections, {
