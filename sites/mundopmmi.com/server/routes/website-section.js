@@ -59,6 +59,29 @@ module.exports = (app) => {
       includeTaxonomyIds: [3199683],
     },
   })));
+  app.get('/redisenodeempaques', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Rediseño Innovador: Casos de éxito en empaques que rompen esquemas',
+    description: 'Mundo EXPO PACK presenta una curaduría de casos sobresalientes en el rediseño de empaques, destacando soluciones que desafían las convenciones establecidas. Una nueva colección que ilustra cómo el enfoque creativo y funcional está transformando el mercado, introduciendo nuevas perspectivas y rompiendo con los esquemas tradicionales. Encuentre aquí procesos de innovación, estrategias exitosas, impactos en la experiencia del consumidor, lineamientos de sostenibilidad y la contribución a la diferenciación que aportan los procesos de rediseño de empaques en distintos mercados.',
+    queryParams: {
+      // Rediseño
+      includeTaxonomyIds: [3199942],
+    },
+  })));
+  app.get('/manodeobracalificada', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'RETOS DEL TALENTO HUMANO Y DISPONIBILIDAD DE MANO DE OBRA CALIFICADA EN NUESTRA INDUSTRIA',
+    description: '¿Cómo está enfrentando la industria de empaques la creciente escasez de mano de obra calificada y la alta rotación de empleados? En esta selección de Mundo EXPO PACK, profundizamos en los desafíos que estas tendencias imponen sobre la eficiencia operativa y las estrategias que las empresas están implementando para adaptarse. Acceda a informes, análisis detallados, estudios y casos que revelan la dinámica laboral actual en la industria y cómo las empresas están ajustando sus procesos de reclutamiento y capacitación para enfrentar uno de los desafíos más críticos que enfrenta la industria.',
+    queryParams: {
+      // escasez de mano de obra
+      includeTaxonomyIds: [3200134],
+    },
+  })));
+  app.get('/packexpo', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'PACK EXPO',
+    description: '',
+    queryParams: {
+      includeLabels: ['PACK EXPO'],
+    },
+  })));
 
   app.get('/eventos', asyncRoute(async (_, res) => res.marko(events, {
     alias: 'eventos',
