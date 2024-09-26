@@ -31,6 +31,14 @@ module.exports = (app) => {
     },
   })));
 
+  app.get('/researched-lists', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Researched Lists',
+    queryParams: {
+      // Researched List
+      includeTaxonomyIds: [3200288],
+    },
+  })));
+
   app.get('/packexpo', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'PACK EXPO',
     description: '',
