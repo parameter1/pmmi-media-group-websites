@@ -13,6 +13,7 @@ const resources = [
   { href: '/magazine', label: 'Magazine' },
   { href: '/page/oem-newsletter', label: 'Newsletters', target: '_blank' },
   { href: '/podcasts', label: 'Podcasts' },
+  { href: '/researched-lists', label: 'Researched Lists' },
   { href: '/videos', label: 'Videos' },
   { href: '/webinars', label: 'Webinars' },
 ];
