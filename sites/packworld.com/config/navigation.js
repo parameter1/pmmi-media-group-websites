@@ -18,6 +18,7 @@ const resources = [
   { href: '/page/pw-newsletters', label: 'Newsletters' },
   { href: '/podcasts', label: 'Podcasts' },
   { href: '/quizzes', label: 'Quizzes' },
+  { href: '/researched-lists', label: 'Researched Lists' },
   { href: '/videos', label: 'Videos' },
   { href: '/webinars', label: 'Webinars' },
 ];

@@ -58,6 +58,7 @@ const desktopMenu = {
       { href: '/magazine', label: 'Magazine' },
       { href: '/page/hcp-newsletters', label: 'Newsletters' },
       { href: '/podcasts', label: 'Podcasts' },
+      { href: '/researched-lists', label: 'Researched Lists' },
       { href: '/videos', label: 'Videos' },
       { href: '/webinars', label: 'Webinars' },
     ],
