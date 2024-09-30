@@ -2,7 +2,10 @@ import { get, getAsArray } from "@parameter1/base-cms-object-path";
 import contentIframe from "@pmmi-media-group/package-global/utils/content-iframe";
 import getContentPreview from "@parameter1/base-cms-marko-web-theme-monorail/utils/get-content-preview";
 import handleContentTypePrimarySection from "@pmmi-media-group/package-global/utils/handle-content-type-primary-section";
+import GlobalBodyWithInjection from "@pmmi-media-group/package-global/components/body-with-injection";
+import splitContentBody from "@pmmi-media-group/package-global/utils/split-content-body";
 
+$ const { global: $global } = out;
 $ const {
   site,
   config,
@@ -169,12 +172,23 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                 $ const bodyId = `content-body-${content.id}`;
 
                 <global-supplier-submitted-block labels=content.labels />
-                <theme-body-with-injection
-                  content=content
-                  aliases=aliases
+                $ const contentBodyWithInjections = GlobalBodyWithInjection.renderToString({
+                  content,
+                  aliases,
+                  blockName,
+                  selector: bodyId,
+                  preventHTMLInjection: !shouldInjectAds,
+                  $global
+                });
+                $ const { partOne, partTwo } = splitContentBody({ body: contentBodyWithInjections });
+                <marko-web-content-body block-name=blockName obj={ body: partOne } />
+                <div id="content-page-preview-overlay" class="content-page-preview-overlay" />
+                <marko-web-browser-component name="GlobalStoryContinuesButton" />
+                <marko-web-content-body
                   block-name=blockName
-                  selector=bodyId
-                  preventHTMLInjection=!shouldInjectAds
+                  obj={ body: partTwo }
+                  attrs={ style: "display: none;", id: "content-body-part-two" }
+                  modifiers=["ld-json"]
                 />
                 <if(content.transcript)>
                   $ const transcriptId = `content-transcript-${content.id}`;
