@@ -56,5 +56,8 @@
       "type": "number",
       "required": true
     }
+  },
+  "<global-body-with-injection>": {
+    "template": "./body-with-injection.marko"
   }
 }
