@@ -12,6 +12,15 @@ const section = require('../templates/website-section');
 const leaders = require('../templates/website-section/leaders');
 
 module.exports = (app) => {
+  app.get('/ai', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'A Curated Collection of AI Insights',
+    description: 'AI is everywhere, including packaging and processing equipment. Check our collection of columns, Business Intelligence, podcasts, and general AI coverage to find ways to add this constantly changing technology to your toolbox. Learn how AI works, its manufacturing capabilities, and what solutions it can offer your operation.',
+    queryParams: {
+      // AI
+      includeTaxonomyIds: [3150016],
+    },
+  })));
+
   app.get('/oem-profiles', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'Content Call-out: OEM Profiles',
     description: 'Read all our OEM profiles and get inspired by what these manufacturing companies are doing to stay competitive in today’s market. Read about their machinery innovation, successful equipment launches, and the family stories behind the companies that help to set them apart.',
