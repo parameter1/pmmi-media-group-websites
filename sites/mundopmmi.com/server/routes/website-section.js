@@ -78,6 +78,7 @@ module.exports = (app) => {
   app.get('/packexpo', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'PACK EXPO',
     description: '',
+    queryName: 'website-scheduled-content',
     queryParams: {
       includeLabels: ['PACK EXPO'],
     },
