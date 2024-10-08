@@ -49,6 +49,7 @@ module.exports = {
   'most popular': 'Los Más Populares ',
   'sponsored by': 'Auspiciado Por',
   'read next': 'Lee Próximo',
+  'read more': 'Lee Más',
   'related stories': 'Artículos Relacionados',
   featured: 'Destacado',
   'top stories': 'Artículos Principales',

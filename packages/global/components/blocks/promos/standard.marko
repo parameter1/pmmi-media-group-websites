@@ -1,9 +1,10 @@
 import { get } from "@parameter1/base-cms-object-path";
 import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
+$ const { i18n } = out.global;
 $ const { node } = input;
 
-$ const linkText = get(node, "linkText") || "Read More";
+$ const linkText = get(node, "linkText") || i18n("Read More");
 $ const blockName = defaultValue(input.blockName, "pib-page-card");
 
 <marko-web-block name=blockName>
