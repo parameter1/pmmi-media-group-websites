@@ -45,7 +45,7 @@ const desktopMenu = {
       { href: '/videos', label: 'Vídeos' },
       { href: '/downloads', label: 'Recursos Digitales' },
       { href: '/page/newsletterarchive', label: 'Archivo de boletines' },
-      { href: '/noticias-de-los-proveedores', label: 'Noticias de los proveedores' },
+      // { href: '/noticias-de-los-proveedores', label: 'Noticias de los proveedores' },
     ],
   },
 };
