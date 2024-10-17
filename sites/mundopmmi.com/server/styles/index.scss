@@ -101,3 +101,26 @@ $theme-site-navbar-secondary-font-size: 16px !default;
     width: 80px
   }
 }
+
+
+.section-feed-content-node {
+  $self: &;
+  &__content-start-date,
+  &__content-end-date {
+    &::before {
+      content: "Fecha: ";
+    }
+  }
+}
+
+.ad-container {
+  $self: &;
+  &--with-label {
+    > *:first-child {
+
+      &::before {
+        content: "Publicidad";
+      }
+    }
+  }
+}
