@@ -1,6 +1,6 @@
 import issueFragment from "@parameter1/base-cms-marko-web-theme-monorail-magazine/graphql/fragments/magazine-issue-archive";
 
-$ const { pagination: p, req, site } = out.global;
+$ const { pagination: p, req, site, i18n } = out.global;
 $ const { id, pageNode } = data;
 $ const perPage = 16;
 $ const description = site.get("magazines.description");
@@ -17,11 +17,11 @@ $ const description = site.get("magazines.description");
         <div class="row">
           <div class="col">
             <theme-breadcrumbs modifiers=["website-section"]>
-              <@item><marko-web-link href="/magazine">Magazine</marko-web-link></@item>
+              <@item><marko-web-link href="/magazine">${i18n("Magazine")}</marko-web-link></@item>
             </theme-breadcrumbs>
             <marko-web-resolve-page|{ data: publication }| node=pageNode>
               <h1 class="page-wrapper__title">
-                ${publication.name} Issue Archive
+                ${i18n(`${publication.name} Issue Archive`)}
                 <if(p.page > 1)>: Page ${p.page}</if>
               </h1>
               <if(description)>
