@@ -5,12 +5,18 @@
     style="margin-bottom: 10px"
     @click="handleClick"
   >
-    Story Continues
+    {{ label }}
   </button>
 </template>
 
 <script>
 export default {
+  props: {
+    label: {
+      type: String,
+      default: 'Story Continues',
+    },
+  },
   data: () => ({
     showButton: true,
   }),
