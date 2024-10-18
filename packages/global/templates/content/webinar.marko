@@ -2,7 +2,7 @@ import defaultValue from "@parameter1/base-cms-marko-core/utils/default-value";
 
 $ const { id, type, pageNode, ...rest } = input;
 
-$ const { site } = out.global;
+$ const { site, i18n } = out.global;
 
 <global-content-webinar-layout
   id=id
@@ -30,14 +30,14 @@ $ const { site } = out.global;
   $ const publicationIds = site.getAsArray("magazine.publicationIds");
   <if(publicationIds.length)>
     <@section>
-      <theme-magazine-issues-block publication-id=publicationIds[0] />
+      <theme-magazine-issues-block title=i18n("In Print") publication-id=publicationIds[0] />
     </@section>
   </if>
 
   <@section>
     <theme-content-card-deck-block
       query-params={ includeContentTypes: ["Document"], limit: 4 }
-      section={ name: "Downloads", canonicalPath: "/downloads" }
+      section={ name: `${i18n("Downloads")}`, canonicalPath: "/downloads" }
     />
   </@section>
 </global-content-webinar-layout>
