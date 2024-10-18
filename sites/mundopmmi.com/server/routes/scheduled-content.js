@@ -12,4 +12,15 @@ module.exports = (app) => {
       },
     );
   });
+  app.get('/noticias-de-los-proveedores', newsletterState(), (_, res) => {
+    res.marko(
+      scheduledContent,
+      {
+        alias: 'noticias-de-los-proveedores',
+        includeLabels: ['Supplier Submitted', 'Supplier News'],
+        title: 'Noticias de los proveedores',
+        withSection: true,
+      },
+    );
+  });
 };
