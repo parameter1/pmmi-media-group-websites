@@ -95,7 +95,10 @@ module.exports = {
   'on demand': 'Por Demanda',
   upcoming: 'próximamente',
   'mundo pmmi issue archive': 'Archivo de Mundo EXPO PACK',
+  'mundo expo pack issue archive': 'Archivo de Mundo EXPO PACK',
   magazine: 'Revista',
   'example@yourcompany.com': 'ejemplo@compañía.com',
   archives: 'Archivos',
+  'story continues': 'El Artículo Continúa',
+  'in print': 'Impresos',
 };

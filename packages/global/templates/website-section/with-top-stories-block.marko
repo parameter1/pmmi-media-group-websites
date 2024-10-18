@@ -236,7 +236,7 @@ $ const queryParams = {
   $ const publicationIds = site.getAsArray("magazine.publicationIds");
   <if(publicationIds.length)>
     <@section>
-      <theme-magazine-issues-block publication-id=publicationIds[0] />
+      <theme-magazine-issues-block title=i18n("In Print") publication-id=publicationIds[0] />
     </@section>
   </if>
 
