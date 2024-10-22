@@ -75,6 +75,14 @@ module.exports = (app) => {
       includeTaxonomyIds: [3200134],
     },
   })));
+  app.get('/IIoT', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Implementaciones exitosas con IIoT en plantas de fabricantes de productos de consumo',
+    description: 'La adopción de tecnologías de Internet Industrial de las Cosas (IIoT) en las instalaciones fabriles de las compañías fabricantes de productos de consumo empacados traza nuevos estándares en términos de eficiencia e innovación en la industria. A través de casos de éxito globales, esta selección de Mundo EXPO PACK muestra cómo la conectividad inteligente y el análisis de datos en tiempo real les permiten a las fábricas optimizar sus operaciones, reducir tiempos de inactividad y mejorar la calidad general de los productos. Vea a continuación resultados tangibles que plantas de producción de compañías fabricantes de bienes de consumo empacados han logrado gracias al IIoT.',
+    queryParams: {
+      // Casos IIoT
+      includeTaxonomyIds: [3200913],
+    },
+  })));
   app.get('/packexpo', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'PACK EXPO',
     description: '',
