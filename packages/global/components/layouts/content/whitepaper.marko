@@ -22,7 +22,7 @@ $ const { id, type, pageNode, ...rest } = input;
     $ const { primarySection } = content;
     $ const sectionHierarchy = getAsArray(primarySection, 'hierarchy');
     $ // If the section hierarchy contains a root Universal Taxonomy section
-    $ if (sectionHierarchy.filter((v) => [87044,87048,87052,87053].includes(v.id)).length) {
+    $ if (sectionHierarchy.filter((v) => [87044,87048,87052,87053,88580].includes(v.id)).length) {
       const replacedHierarchy = [sectionHierarchy.pop()]
       primarySection.hierarchy = replacedHierarchy;
     };
