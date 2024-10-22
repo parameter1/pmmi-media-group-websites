@@ -1,4 +1,4 @@
-$ const { config } = out.global;
+$ const { config, i18n } = out.global;
 
 $ const type = "register";
 $ const title = "Register";
@@ -14,7 +14,13 @@ $ const description = `Register on ${config.siteName()}`;
     <marko-web-page-wrapper>
       <@section>
         <h1 class="page-wrapper__title">${description}</h1>
-        <marko-web-identity-x-form-login />
+        <marko-web-identity-x-form-login
+          login-email-label=i18n("Email address")
+          button-labels={
+            continue: i18n("Continue"),
+            login: i18n("Log in"),
+          }
+        />
       </@section>
     </marko-web-page-wrapper>
   </@page>
