@@ -14,7 +14,13 @@ $ const description = `${i18n(`Log in to ${config.siteName()}`)}`;
     <marko-web-page-wrapper>
       <@section>
         <h1 class="page-wrapper__title">${description}</h1>
-        <marko-web-identity-x-form-login login-email-label=i18n("Email address") />
+        <marko-web-identity-x-form-login
+          login-email-label=i18n("Email address")
+          button-labels={
+            continue: i18n("Continue"),
+            login: i18n("Log in"),
+          }
+        />
       </@section>
     </marko-web-page-wrapper>
   </@page>
