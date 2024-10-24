@@ -2,6 +2,7 @@ module.exports = {
   'load more content': 'Descargue más contenido',
   'more in': 'Más en',
   'more from': 'Más de',
+  from: 'De',
   'companies in this article': 'Compañías en este artículo',
   'company details': 'Detalles de la compañía',
   'view all companies': 'Ver todas las compañías',
