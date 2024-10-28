@@ -92,6 +92,26 @@ module.exports = {
     ...sharedInquiryConfig,
     sendFrom: 'Mundo EXPO PACK <noreply@parameter1.com>',
     logo: 'https://img.mundoexpopack.com/files/base/pmmi/mundo/footerLogos_white.png?h=45&auto=format,compress',
+    consentCheckboxes: [
+      {
+        key: 'privacyConsent',
+        label: 'privacyConsent',
+        html: '<span class="small">Al enviar este formulario, doy mi consentimiento para que PMMI recopile y almacene mi información, también autorizo para recibir correos electrónicos, así como anuncios publicitarios patrocinados de PMMI Media Group. Confirmo que he leído <a href="https://www.pmmimediagroup.com/articles/privacy-policy" target="_blank" >la política de privacidad de PMMI Media Group </a> y entiendo que puedo cancelar la suscripción u optar por no recibir más informaciones de PMMI Media Group en cualquier momento, y que puedo enviarle a su Director responsable de la protección de la intimidad, al correo  <a href="mailto:dataprivacy@pmmi.org">dataprivacy@pmmi.org</a>, cualquier consulta acerca de políticas o prácticas de privacidad.</span>',
+        required: true,
+      },
+      {
+        key: 'notificationConsent',
+        label: 'notificationConsent',
+        html: '<span class="small">Estoy de acuerdo en compartir mi información con y recibir actualizaciones ocasionales de las compañías mencionadas en este artículo.</span>',
+        required: true,
+      },
+      {
+        key: 'thirdPartyConsent',
+        label: 'thirdPartyConsent',
+        html: '<span class="small">Tenga en cuenta que una vez compartida, futuras comunicaciones pueden proceder directamente del patrocinador y no están regidas bajo la política de privacidad de PMMI Media Group.</span>',
+        required: true,
+      },
+    ],
   },
   lang: 'es',
   productsParams: { alias: 'noticias-de-los-proveedores' },

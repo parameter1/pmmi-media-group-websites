@@ -11,6 +11,7 @@ module.exports = {
   'company news': 'Noticias de la compañía',
   'case studies': 'Estudios de caso',
   'request more information': 'Solicitar más información',
+  'request more info': 'Solicite mayor información',
   'key contact': 'Contacto clave',
   'key contacts': 'Contactos clave',
   'featured videos': 'Videos presentados',
@@ -103,4 +104,5 @@ module.exports = {
   archives: 'Archivos',
   'story continues': 'El Artículo Continúa',
   'in print': 'Impresos',
+  'fill out the form below to request more information about ': 'Llene la forma de abajo para solicitar mayor información de ',
 };
