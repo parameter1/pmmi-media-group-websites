@@ -220,7 +220,7 @@ $ const lang = site.config.lang || "en";
             />
           </if>
           <div class="content-page-latest-content">
-            $ const latestTitle = (p.page > 1) ? `${i18n("From")} ${content.name} - Page ${p.page}` : `${i18n("From")} ${content.name}`;
+            $ const latestTitle = (p.page > 1) ? `${i18n("From")} ${content.name} - ${i18n("Page")} ${p.page}` : `${i18n("From")} ${content.name}`;
             <theme-latest-content-list-block
               query-name="all-company-content"
               query-params={

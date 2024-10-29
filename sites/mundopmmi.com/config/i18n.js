@@ -2,6 +2,7 @@ module.exports = {
   'load more content': 'Descargue más contenido',
   'more in': 'Más en',
   'more from': 'Más de',
+  from: 'De',
   'companies in this article': 'Compañías en este artículo',
   'company details': 'Detalles de la compañía',
   'view all companies': 'Ver todas las compañías',
@@ -10,6 +11,7 @@ module.exports = {
   'company news': 'Noticias de la compañía',
   'case studies': 'Estudios de caso',
   'request more information': 'Solicitar más información',
+  'request more info': 'Solicite mayor información',
   'key contact': 'Contacto clave',
   'key contacts': 'Contactos clave',
   'featured videos': 'Videos presentados',
@@ -102,4 +104,5 @@ module.exports = {
   archives: 'Archivos',
   'story continues': 'El Artículo Continúa',
   'in print': 'Impresos',
+  'fill out the form below to request more information about ': 'Llene la forma de abajo para solicitar mayor información de ',
 };
