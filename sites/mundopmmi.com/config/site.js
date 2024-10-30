@@ -96,7 +96,7 @@ module.exports = {
       {
         key: 'privacyConsent',
         label: 'privacyConsent',
-        html: '<span class="small">Al enviar este formulario, doy mi consentimiento para que PMMI recopile y almacene mi información, también autorizo para recibir correos electrónicos, así como anuncios publicitarios patrocinados de PMMI Media Group. Confirmo que he leído <a href="https://www.pmmimediagroup.com/articles/privacy-policy" target="_blank" >la política de privacidad de PMMI Media Group </a> y entiendo que puedo cancelar la suscripción u optar por no recibir más informaciones de PMMI Media Group en cualquier momento, y que puedo enviarle a su Director responsable de la protección de la intimidad, al correo  <a href="mailto:dataprivacy@pmmi.org">dataprivacy@pmmi.org</a>, cualquier consulta acerca de políticas o prácticas de privacidad.</span>',
+        html: '<span class="small">Al enviar este formulario, doy mi consentimiento para que PMMI recopile y almacene mi información, también autorizo para recibir correos electrónicos, así como anuncios publicitarios patrocinados de PMMI Media Group. Confirmo que he leído <a href="https://www.pmmimediagroup.com/articles/privacy-policy" target="_blank" >la política de privacidad de PMMI Media Group </a> y entiendo que puedo cancelar la suscripción u optar por no recibir más informaciones de PMMI Media Group en cualquier momento, y que puedo enviarle a su Director responsable de la protección de la intimidad, al correo <a href="mailto:dataprivacy@pmmi.org">dataprivacy@pmmi.org</a>, cualquier consulta acerca de políticas o prácticas de privacidad.</span>',
         required: true,
       },
       {
