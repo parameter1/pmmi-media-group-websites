@@ -59,7 +59,7 @@ $ const queryParams = {
       obj=section
       modifiers=[section.alias]
     >
-      <if(p.page > 1)>${value}: Page ${p.page}</if>
+      <if(p.page > 1)>${value}: ${i18n("Page")} ${p.page}</if>
       <else>${value}</else>
     </marko-web-website-section-name>
 

@@ -22,7 +22,7 @@ $ const description = site.get("magazines.description");
             <marko-web-resolve-page|{ data: publication }| node=pageNode>
               <h1 class="page-wrapper__title">
                 ${i18n(`${publication.name} Issue Archive`)}
-                <if(p.page > 1)>: Page ${p.page}</if>
+                <if(p.page > 1)>: ${i18n("Page")} ${p.page}</if>
               </h1>
               <if(description)>
                 <p class="page-wrapper__deck">${description}</p>
