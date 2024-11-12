@@ -101,8 +101,8 @@ $ const queryParams = {
           obj={ name }
           attrs={ style: "padding-top: 20px" }
         >
-          <if(p.page > 1)>${value}: ${i18n("Page")} ${p.page}</if>
-          <else>${value}</else>
+          <if(p.page > 1)>$!{value}: ${i18n("Page")} ${p.page}</if>
+          <else>$!{value}</else>
         </marko-web-website-section-name>
         <marko-web-query|{ nodes }| name="website-scheduled-content" params=queryParams>
           <marko-web-node-list
