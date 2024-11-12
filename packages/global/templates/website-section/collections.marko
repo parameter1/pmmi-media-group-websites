@@ -35,8 +35,8 @@ $ const queryParams = {
         <div class="row">
           <div class="col-lg-12">
             <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj={ name }>
-              <if(p.page > 1)>${value}: ${i18n("Page")} ${p.page}</if>
-              <else>${value}</else>
+              <if(p.page > 1)>$!{value}: ${i18n("Page")} ${p.page}</if>
+              <else>$!{value}</else>
             </marko-web-website-section-name>
             <if(editorImage)>
               <div class="box">
