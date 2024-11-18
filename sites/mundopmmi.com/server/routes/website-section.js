@@ -91,6 +91,14 @@ module.exports = (app) => {
       includeLabels: ['PACK EXPO'],
     },
   })));
+  app.get('/packexpointernational2024', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'PACK EXPO INTERNATIONAL 2024: CONEXIONES Y SOLUCIONES PARA ENVASADO Y PROCESAMIENTO',
+    description: 'Acceda al cubrimiento editorial de PACK EXPO International 2024, presentado por Mundo EXPO PACK para toda su audiencia en América Latina. Con videos exclusivos, esta cobertura ofrece una selección editorial de innovaciones representativas de la feria más grande de la industria este año. Encuentre las principales tendencias clave y desarrollos de última generación en maquinaria y materiales presentados en McCormick Place, Chicago.',
+    queryParams: {
+      // PACK EXPO 2024
+      includeTaxonomyIds: [3201360],
+    },
+  })));
 
   app.get('/eventos', asyncRoute(async (_, res) => res.marko(events, {
     alias: 'eventos',
