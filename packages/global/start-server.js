@@ -6,6 +6,7 @@ const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitem
 const omedaIdentityX = require('@parameter1/base-cms-marko-web-omeda-identity-x');
 const i18n = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/i18n');
 const newsletterModalState = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/newsletter-modal-state');
+const MindfulMarkoWebService = require('@parameter1/base-cms-mindful/marko-web/middleware/service');
 
 const document = require('./components/document');
 const components = require('./components');
@@ -66,6 +67,9 @@ module.exports = (options = {}) => {
 
       // Use newsletterModalState middleware
       app.use(newsletterModalState());
+
+      const { namespace } = getAsObject(options, 'siteConfig.mindful');
+      app.use(MindfulMarkoWebService({ namespace }));
 
       // Setup GAM.
       const gamConfig = get(options, 'siteConfig.gam');
