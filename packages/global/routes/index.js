@@ -26,7 +26,15 @@ const publicationFragment = require('../graphql/fragments/magazine-publication-p
 module.exports = (app, siteConfig) => {
   // Mindful Preview Link
   const namespace = get(siteConfig, 'mindful.namespace');
-  mindfulPreview(app, namespace);
+  if (namespace) {
+    mindfulPreview(app, namespace);
+    // Mindful/NativeX (Story rendering)
+    getAdvertisingPostAsNativeStory(app, {
+      route: '/sponsored/:section/:slug/:id',
+      tenant: 'pmmi',
+      template: advertisingPostTemplate,
+    });
+  }
 
   // Taxonomy category pages
   taxonomyCategory(app);
@@ -41,13 +49,6 @@ module.exports = (app, siteConfig) => {
 
   // Omeda newsletter signup
   omedaNewsletters(app);
-
-  // Mindful/NativeX (Story rendering)
-  getAdvertisingPostAsNativeStory(app, {
-    route: '/sponsored/:section/:slug/:id',
-    tenant: 'diverse',
-    template: advertisingPostTemplate,
-  });
 
   // Shared Print Content
   printContent(app);

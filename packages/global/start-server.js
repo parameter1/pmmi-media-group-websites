@@ -68,8 +68,8 @@ module.exports = (options = {}) => {
       // Use newsletterModalState middleware
       app.use(newsletterModalState());
 
-      const { namespace } = getAsObject(options, 'siteConfig.mindful');
-      app.use(MindfulMarkoWebService({ namespace }));
+      const { namespace } = getAsObject(options, 'siteConfig.mindful') || { namespace: null };
+      if (namespace) app.use(MindfulMarkoWebService({ namespace }));
 
       // Setup GAM.
       const gamConfig = get(options, 'siteConfig.gam');
