@@ -6,14 +6,14 @@ const taxonomy = require('@parameter1/base-cms-marko-web-theme-monorail/routes/t
 const omedaNewsletters = require('@parameter1/base-cms-marko-web-omeda/routes/omeda-newsletters');
 const magazine = require('@parameter1/base-cms-marko-web-theme-monorail-magazine/routes');
 const mindfulPreview = require('@parameter1/base-cms-marko-web-theme-monorail/routes/ad-preview');
+const getAdvertisingPostAsNativeStory = require('@parameter1/base-cms-mindful/marko-web/middleware/get-advertising-post-as-native-story');
 
+const advertisingPostTemplate = require('../templates/content/advertising-post');
 const feed = require('./feed');
 const digitalEditionRedirects = require('./digital-edition-redirects');
 const content = require('./content');
 const scheduledContent = require('./scheduled-content');
 const dynamicPage = require('./dynamic-page');
-// const identityX = require('./identity-x');
-const nativeX = require('./native-x');
 
 const printContent = require('./print-content');
 const publicFiles = require('./public-files');
@@ -26,16 +26,21 @@ const publicationFragment = require('../graphql/fragments/magazine-publication-p
 module.exports = (app, siteConfig) => {
   // Mindful Preview Link
   const namespace = get(siteConfig, 'mindful.namespace');
-  mindfulPreview(app, namespace);
+  if (namespace) {
+    mindfulPreview(app, namespace);
+    // Mindful/NativeX (Story rendering)
+    getAdvertisingPostAsNativeStory(app, {
+      route: '/sponsored/:section/:slug/:id',
+      tenant: 'pmmi',
+      template: advertisingPostTemplate,
+    });
+  }
 
   // Taxonomy category pages
   taxonomyCategory(app);
 
   // Feed
   feed(app);
-
-  // IdentityX (user routing and app context)
-  // identityX(app);
 
   scheduledContent(app);
 
@@ -44,9 +49,6 @@ module.exports = (app, siteConfig) => {
 
   // Omeda newsletter signup
   omedaNewsletters(app);
-
-  // NativeX (Story rendering)
-  nativeX(app);
 
   // Shared Print Content
   printContent(app);
