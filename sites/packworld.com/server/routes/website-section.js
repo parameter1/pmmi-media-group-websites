@@ -153,6 +153,15 @@ module.exports = (app) => {
     },
   })));
 
+  app.get('/recycling', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Recycling',
+    description: 'Read up on the latest news, insights, and solutions that address the complex and timely issue of recycling. From topics surrounding advanced recycling to MRFs, recycle-ready packaging, and package circularity, dive into everything we cover in the vast topic of recycling.',
+    queryParams: {
+      // Recycling
+      includeTaxonomyIds: [3201419],
+    },
+  })));
+
   app.get('/packexpo', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'PACK EXPO',
     description: '',
