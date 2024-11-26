@@ -36,15 +36,15 @@ module.exports = {
   },
   logos: {
     navbar: {
-      src: 'https://img.mundoexpopack.com/files/base/pmmi/mundo/Mundo-EXPO-PACK_new_WEB.svg?h=75&auto=format,compress',
+      src: 'https://img.mundoexpopack.com/files/base/pmmi/mundo/Mundo-EXPO-PACK-R_WEB.svg?h=75&auto=format,compress',
       srcset: [
-        'https://img.mundoexpopack.com/files/base/pmmi/mundo/Mundo-EXPO-PACK_new_WEB.svg?h=75&auto=format,compress&dpr=2 2x',
+        'https://img.mundoexpopack.com/files/base/pmmi/mundo/Mundo-EXPO-PACK-R_WEB.svg?h=75&auto=format,compress&dpr=2 2x',
       ],
     },
     footer: {
-      src: 'https://img.mundoexpopack.com/files/base/pmmi/mundo/Mundo-EXPO-PACK_rev-white_WEB.svg?h=35&w=auto&auto=format,compress',
+      src: 'https://img.mundoexpopack.com/files/base/pmmi/mundo/Mundo-EXPO-PACK-R_Rev_WEB.svg?h=35&w=auto&auto=format,compress',
       srcset: [
-        'https://img.mundoexpopack.com/files/base/pmmi/mundo/Mundo-EXPO-PACK_rev-white_WEB.svg?h=35&w=auto&auto=format,compress&dpr=2 2x',
+        'https://img.mundoexpopack.com/files/base/pmmi/mundo/Mundo-EXPO-PACK-R_Rev_WEB.svg?h=35&w=auto&auto=format,compress&dpr=2 2x',
       ],
       width: '88',
       height: '35',
