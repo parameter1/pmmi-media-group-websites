@@ -78,7 +78,6 @@ module.exports = (app) => {
   const contentMeterEnable = cmConfig.enabled;
   // determin to use newsletterstate or contentMeter middleware
   routesList.forEach((route) => {
-    console.log('hitting: ', cmConfig)
     if (route.withContentMeter && contentMeterEnable) {
       app.get(
         route.regex,
