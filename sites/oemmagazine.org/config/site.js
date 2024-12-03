@@ -1,4 +1,5 @@
 const sharedInquiryConfig = require('@pmmi-media-group/package-global/config/inquiry');
+const contentMeter = require('@pmmi-media-group/package-global/config/content-meter');
 const gam = require('./gam');
 const identityX = require('./identity-x');
 const leaders = require('./leaders');
@@ -13,6 +14,7 @@ const subscribe = require('./subscribe');
 
 module.exports = {
   // module configs
+  contentMeter,
   gam,
   identityX,
   useLinkInjectedBody: process.env.USE_LINK_INJECTED_BODY === 'true',
