@@ -10,6 +10,7 @@ $ const {
   i18n,
   omedaConfig,
   config,
+  contentMeterState
 } = out.global;
 
 $ const gamDefer = defaultValue(req.query.gamDefer, "ready");
@@ -152,6 +153,15 @@ $ const buttonLabels = { continue: continueLabel };
         actionText: i18n("signing up to receive your email notifications") }
     />
     <identity-x-newsletter-modal />
+    <if(contentMeterState && !contentMeterState.isLoggedIn)>
+      <theme-content-meter-block
+        views=contentMeterState.views
+        view-limit=contentMeterState.viewLimit
+        display-overlay=contentMeterState.displayOverlay
+        display-gate=contentMeterState.displayGate
+        dynamic-title="We hope you’ve enjoyed your articles."
+      />
+    </if>
   </@below-container>
   <@below-wrapper>
     <marko-web-deferred-script-loader-load />

@@ -1,3 +1,4 @@
+const contentMetering = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/content-metering');
 const qf = require('@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/content-page');
 const companyQueryFragmentFn = require('../graphql/fragment-factories/content-company');
 const { factory: leadersContentQueryFactory } = require('../graphql/fragment-factories/content-page');
@@ -19,46 +20,82 @@ module.exports = (app) => {
   const useLinkInjectedBody = site.get('useLinkInjectedBody');
   const queryFragment = qf.factory ? qf.factory({ useLinkInjectedBody }) : qf;
 
-  app.get('/*?contact/:id(\\d{8})*', newsletterState({ setCookie: false }), withContent({
-    template: contact,
-    queryFragment,
-    formatResponse: formatContentResponse,
-  }));
-  app.get('/*?company/:id(\\d{8})*', newsletterState({ setCookie: false }), withContent({
-    template: company,
-    queryFragment: companyQueryFragmentFn(site.get('leaders.alias')),
-    formatResponse: formatContentResponse,
-  }));
-  app.get('/*?media-gallery/:id(\\d{8})*', newsletterState({ setCookie: false }), withContent({
-    template: mediaGallery,
-    queryFragment: leadersContentQueryFactory({
-      useLinkInjectedBody,
-      leadersAlias: site.get('leaders.alias'),
-    }),
-    formatResponse: formatContentResponse,
-  }));
-  app.get('/*?whitepaper/:id(\\d{8})*', newsletterState({ setCookie: false }), withContent({
-    template: whitepaper,
-    queryFragment: leadersContentQueryFactory({
-      useLinkInjectedBody,
-      leadersAlias: site.get('leaders.alias'),
-    }),
-    formatResponse: formatContentResponse,
-  }));
-  app.get('/*?webinar/:id(\\d{8})*', newsletterState({ setCookie: false }), withContent({
-    template: webinar,
-    queryFragment: leadersContentQueryFactory({
-      useLinkInjectedBody,
-      leadersAlias: site.get('leaders.alias'),
-    }),
-    formatResponse: formatContentResponse,
-  }));
-  app.get('/*?:id(\\d{8})*', newsletterState({ setCookie: false }), withContent({
-    template: contentTemplate,
-    queryFragment: leadersContentQueryFactory({
-      useLinkInjectedBody,
-      leadersAlias: site.get('leaders.alias'),
-    }),
-    formatResponse: formatContentResponse,
-  }));
+  const routesList = [
+    { // contact
+      regex: '/*?contact/:id(\\d{8})*',
+      template: contact,
+      queryFragment,
+    },
+    { // company
+      regex: '/*?company/:id(\\d{8})*',
+      template: company,
+      queryFragment: companyQueryFragmentFn(site.get('leaders.alias')),
+    },
+    { // document
+      regex: '/*?document/:id(\\d{8})*',
+      template: whitepaper,
+      queryFragment: leadersContentQueryFactory({
+        useLinkInjectedBody,
+        leadersAlias: site.get('leaders.alias'),
+      }),
+    },
+    { // product
+      regex: '/*?media-gallery/:id(\\d{8})*',
+      template: mediaGallery,
+      queryFragment: leadersContentQueryFactory({
+        useLinkInjectedBody,
+        leadersAlias: site.get('leaders.alias'),
+      }),
+    },
+    { // webinar
+      regex: '/*?webinar/:id(\\d{8})*',
+      template: webinar,
+      queryFragment: leadersContentQueryFactory({
+        useLinkInjectedBody,
+        leadersAlias: site.get('leaders.alias'),
+      }),
+    },
+    { // whitepaper
+      regex: '/*?whitepaper/:id(\\d{8})*',
+      template: whitepaper,
+      queryFragment: leadersContentQueryFactory({
+        useLinkInjectedBody,
+        leadersAlias: site.get('leaders.alias'),
+      }),
+    },
+    { // default
+      regex: '/*?/:id(\\d{8})/*|/:id(\\d{8})(/|$)*',
+      template: contentTemplate,
+      queryFragment: leadersContentQueryFactory({
+        useLinkInjectedBody,
+        leadersAlias: site.get('leaders.alias'),
+      }),
+      withContentMeter: true,
+    },
+  ];
+
+  const cmConfig = site.getAsObject('contentMeter');
+  const contentMeterEnable = cmConfig.enabled;
+  // determin to use newsletterstate or contentMeter middleware
+  routesList.forEach((route) => {
+    console.log('hitting: ', cmConfig)
+    if (route.withContentMeter && contentMeterEnable) {
+      app.get(
+        route.regex,
+        newsletterState({ setCookie: false }),
+        contentMetering(cmConfig),
+        withContent({
+          template: route.template,
+          queryFragment: route.queryFragment,
+          formatResponse: formatContentResponse,
+        }),
+      );
+    } else {
+      app.get(route.regex, newsletterState({ setCookie: false }), withContent({
+        template: route.template,
+        queryFragment: route.queryFragment,
+        formatResponse: formatContentResponse,
+      }));
+    }
+  });
 };
