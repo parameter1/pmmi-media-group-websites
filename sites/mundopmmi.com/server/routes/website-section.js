@@ -99,6 +99,14 @@ module.exports = (app) => {
       includeTaxonomyIds: [3201360],
     },
   })));
+  app.get('/transiciondemateriales', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Transición de materiales de empaques: Tendencias e innovaciones',
+    description: 'Esta selección editorial de Mundo EXPO PACK destaca transformaciones clave en el desarrollo y uso de materiales de empaque. Explore reportajes con análisis detallados, estudios y casos destacados como botellas de papel, envases con barreras avanzadas y materiales pioneros como el PETF híbrido, además de iniciativas que combinan funcionalidad, diseño y responsabilidad ambiental. Aprenda de empresas representativas de la industria de bienes de consumo empacados cómo adoptar materiales innovadores y estrategias sostenibles para satisfacer las demandas del mercado y adaptarse a las crecientes regulaciones ambientales.',
+    queryParams: {
+      // Transición de materiales
+      includeTaxonomyIds: [3201569],
+    },
+  })));
 
   app.get('/eventos', asyncRoute(async (_, res) => res.marko(events, {
     alias: 'eventos',
