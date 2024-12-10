@@ -31,14 +31,6 @@ module.exports = (app) => {
       template: company,
       queryFragment: companyQueryFragmentFn(site.get('leaders.alias')),
     },
-    { // document
-      regex: '/*?document/:id(\\d{8})*',
-      template: whitepaper,
-      queryFragment: leadersContentQueryFactory({
-        useLinkInjectedBody,
-        leadersAlias: site.get('leaders.alias'),
-      }),
-    },
     { // product
       regex: '/*?media-gallery/:id(\\d{8})*',
       template: mediaGallery,
