@@ -1,5 +1,5 @@
-const { asyncRoute } = require('@parameter1/base-cms-utils');
-const { websiteSection: loader } = require('@parameter1/base-cms-web-common/page-loaders');
+const { asyncRoute } = require('@mindful-web/utils');
+const { websiteSection: loader } = require('@mindful-web/web-common/page-loaders');
 
 module.exports = (app) => {
   app.get('/:alias(contact-us|about-us|contact-our-staff)', (req, res) => {

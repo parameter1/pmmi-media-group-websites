@@ -1,12 +1,12 @@
 const newrelic = require('newrelic');
-const { startServer } = require('@parameter1/base-cms-marko-web');
-const { set, get, getAsObject } = require('@parameter1/base-cms-object-path');
-const loadInquiry = require('@parameter1/base-cms-marko-web-inquiry');
-const htmlSitemapPagination = require('@parameter1/base-cms-marko-web-html-sitemap/middleware/paginated');
-const omedaIdentityX = require('@parameter1/base-cms-marko-web-omeda-identity-x');
-const i18n = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/i18n');
-const newsletterModalState = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/newsletter-modal-state');
-const MindfulMarkoWebService = require('@parameter1/base-cms-mindful/marko-web/middleware/service');
+const { startServer } = require('@mindful-web/marko-web');
+const { set, get, getAsObject } = require('@mindful-web/object-path');
+const loadInquiry = require('@mindful-web/marko-web-inquiry');
+const htmlSitemapPagination = require('@mindful-web/marko-web-html-sitemap/middleware/paginated');
+const omedaIdentityX = require('@mindful-web/marko-web-omeda-identity-x');
+const i18n = require('@mindful-web/marko-web-theme-monorail/middleware/i18n');
+const newsletterModalState = require('@mindful-web/marko-web-theme-monorail/middleware/newsletter-modal-state');
+const MindfulMarkoWebService = require('@mindful-web/mindful/marko-web/middleware/service');
 
 const document = require('./components/document');
 const components = require('./components');

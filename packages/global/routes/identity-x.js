@@ -1,8 +1,8 @@
 const gql = require('graphql-tag');
-const IdentityX = require('@parameter1/base-cms-marko-web-identity-x');
-const { getAsObject, get } = require('@parameter1/base-cms-object-path');
-const { asyncRoute } = require('@parameter1/base-cms-utils');
-const rapidIdentify = require('@parameter1/base-cms-marko-web-omeda-identity-x/routes/rapid-identify');
+const IdentityX = require('@mindful-web/marko-web-identity-x');
+const { getAsObject, get } = require('@mindful-web/object-path');
+const { asyncRoute } = require('@mindful-web/utils');
+const rapidIdentify = require('@mindful-web/marko-web-omeda-identity-x/routes/rapid-identify');
 const omedaConfig = require('../config/omeda');
 const authenticate = require('../templates/user/authenticate');
 const login = require('../templates/user/login');

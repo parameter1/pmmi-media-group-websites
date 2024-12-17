@@ -1,5 +1,5 @@
-const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middleware');
-const queryFragment = require('@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/website-section-page');
+const { withWebsiteSection } = require('@mindful-web/marko-web/middleware');
+const queryFragment = require('@mindful-web/marko-web-theme-monorail/graphql/fragments/website-section-page');
 const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');
 const events = require('@pmmi-media-group/package-global/templates/website-section/events');
 const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');

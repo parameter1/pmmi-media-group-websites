@@ -1,12 +1,12 @@
-const { get } = require('@parameter1/base-cms-object-path');
-const htmlSitemap = require('@parameter1/base-cms-marko-web-html-sitemap/routes');
-const renderBlock = require('@parameter1/base-cms-marko-web-theme-monorail/routes/render-block');
-const search = require('@parameter1/base-cms-marko-web-theme-monorail/routes/search');
-const taxonomy = require('@parameter1/base-cms-marko-web-theme-monorail/routes/taxonomy');
-const omedaNewsletters = require('@parameter1/base-cms-marko-web-omeda/routes/omeda-newsletters');
-const magazine = require('@parameter1/base-cms-marko-web-theme-monorail-magazine/routes');
-const mindfulPreview = require('@parameter1/base-cms-marko-web-theme-monorail/routes/ad-preview');
-const getAdvertisingPostAsNativeStory = require('@parameter1/base-cms-mindful/marko-web/middleware/get-advertising-post-as-native-story');
+const { get } = require('@mindful-web/object-path');
+const htmlSitemap = require('@mindful-web/marko-web-html-sitemap/routes');
+const renderBlock = require('@mindful-web/marko-web-theme-monorail/routes/render-block');
+const search = require('@mindful-web/marko-web-theme-monorail/routes/search');
+const taxonomy = require('@mindful-web/marko-web-theme-monorail/routes/taxonomy');
+const omedaNewsletters = require('@mindful-web/marko-web-omeda/routes/omeda-newsletters');
+const magazine = require('@mindful-web/marko-web-theme-monorail-magazine/routes');
+const mindfulPreview = require('@mindful-web/marko-web-theme-monorail/routes/ad-preview');
+const getAdvertisingPostAsNativeStory = require('@mindful-web/mindful/marko-web/middleware/get-advertising-post-as-native-story');
 
 const advertisingPostTemplate = require('../templates/content/advertising-post');
 const feed = require('./feed');

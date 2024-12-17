@@ -1,4 +1,4 @@
-const { cleanPath } = require('@parameter1/base-cms-utils');
+const { cleanPath } = require('@mindful-web/utils');
 
 module.exports = (app) => {
   // Programatic redirect for legacy digitial edition urls

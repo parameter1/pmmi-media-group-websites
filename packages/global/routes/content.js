@@ -1,5 +1,5 @@
-const contentMetering = require('@parameter1/base-cms-marko-web-theme-monorail/middleware/content-metering');
-const qf = require('@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/content-page');
+const contentMetering = require('@mindful-web/marko-web-theme-monorail/middleware/content-metering');
+const qf = require('@mindful-web/marko-web-theme-monorail/graphql/fragments/content-page');
 const companyQueryFragmentFn = require('../graphql/fragment-factories/content-company');
 const { factory: leadersContentQueryFactory } = require('../graphql/fragment-factories/content-page');
 
