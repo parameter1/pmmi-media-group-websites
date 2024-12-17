@@ -1,5 +1,5 @@
-import Browser from '@parameter1/base-cms-marko-web/browser';
-// import RevealAd from '@parameter1/base-cms-marko-web-reveal-ad/browser';
+import Browser from '@mindful-web/marko-web/browser';
+// import RevealAd from '@mindful-web/marko-web-reveal-ad/browser';
 import Global from '@pmmi-media-group/package-global/browser';
 
 // RevealAd(Browser);

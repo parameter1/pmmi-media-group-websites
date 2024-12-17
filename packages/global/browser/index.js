@@ -1,5 +1,5 @@
-import MonoRail from '@parameter1/base-cms-marko-web-theme-monorail/browser';
-import Leaders from '@parameter1/base-cms-marko-web-leaders/browser';
+import MonoRail from '@mindful-web/marko-web-theme-monorail/browser';
+import Leaders from '@mindful-web/marko-web-leaders/browser';
 
 const ImageSlider = () => import(/* webpackChunkName: "global-image-slider" */ './image-slider.vue');
 const DynamicSiteMenuPositioner = () => import(/* webpackChunkName: "dynamic-site-menu-positioner" */ './dynamic-site-menu-positioner.vue');

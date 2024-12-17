@@ -1,6 +1,6 @@
-const { withWebsiteSection } = require('@parameter1/base-cms-marko-web/middleware');
-const { asyncRoute } = require('@parameter1/base-cms-utils');
-const queryFragment = require('@parameter1/base-cms-marko-web-theme-monorail/graphql/fragments/website-section-page');
+const { withWebsiteSection } = require('@mindful-web/marko-web/middleware');
+const { asyncRoute } = require('@mindful-web/utils');
+const queryFragment = require('@mindful-web/marko-web-theme-monorail/graphql/fragments/website-section-page');
 const leadersFragment = require('@pmmi-media-group/package-global/graphql/fragments/leaders-section');
 const emergingBrandsFragment = require('@pmmi-media-group/package-global/graphql/fragments/emerging-brands-section-page');
 const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');

@@ -1,4 +1,4 @@
-const { getAsArray } = require('@parameter1/base-cms-object-path');
+const { getAsArray } = require('@mindful-web/object-path');
 
 // For more information on why this is being done please consult: https://support.google.com/admanager/answer/10020177?hl=en
 // Replace chars that aren't forward slash, space, letter, number, underscore or dash with nothing
