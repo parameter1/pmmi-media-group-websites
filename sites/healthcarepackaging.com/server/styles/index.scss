@@ -83,16 +83,6 @@ $theme-site-navbar-secondary-font-size: 16px !default;
 }
 
 .page {
-  &--website-section, &--content {
-    .hero-card {
-      &__header {
-        display: none;
-      }
-      &__description-wrapper {
-        display: none;
-      }
-    }
-  }
   &--website-section-33323 {
     .page-wrapper {
       &__section {
