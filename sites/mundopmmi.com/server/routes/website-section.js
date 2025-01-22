@@ -109,7 +109,7 @@ module.exports = (app) => {
   })));
   app.get('/empaquesinteligentes', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'EMPAQUES INTELIGENTES: FUSIÓN ENTRE TECNOLOGÍA, CONECTIVIDAD Y EXPERIENCIA DE USUARIO',
-    description: ' ¿Qué tendencias marcarán el desarrollo de empaques inteligentes en los próximos años y cómo evoluciona la integración entre tecnología y experiencia del usuario? Encuentre las respuestas en esta selección especializada de Mundo EXPO PACK, en donde reunimos innovaciones destacadas en empaques inteligentes y conectados. Navegue por casos prácticos, noticias y análisis en profundidad de empresas líderes del sector de bienes de consumo empacados que muestran aplicaciones exitosas de tecnologías como RFID, blockchain y NFC; y aprenda cómo los envases inteligentes impactan la trazabilidad, la transparencia y la interacción con los consumidores.',
+    description: '¿Qué tendencias marcarán el desarrollo de empaques inteligentes en los próximos años y cómo evoluciona la integración entre tecnología y experiencia del usuario? Encuentre las respuestas en esta selección especializada de Mundo EXPO PACK, en donde reunimos innovaciones destacadas en empaques inteligentes y conectados. Navegue por casos prácticos, noticias y análisis en profundidad de empresas líderes del sector de bienes de consumo empacados que muestran aplicaciones exitosas de tecnologías como RFID, blockchain y NFC; y aprenda cómo los envases inteligentes impactan la trazabilidad, la transparencia y la interacción con los consumidores.',
     queryParams: {
       // Empaques inteligentes
       includeTaxonomyIds: [3201808],
