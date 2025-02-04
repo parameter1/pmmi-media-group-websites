@@ -59,5 +59,8 @@
   },
   "<global-body-with-injection>": {
     "template": "./body-with-injection.marko"
+  },
+  "<global-directory-sort-by>": {
+    "template": "./directory-sort-by.marko"
   }
 }
