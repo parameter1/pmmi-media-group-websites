@@ -270,6 +270,9 @@
 /*! critical:start|website-section.webinars */
 @import "./components/webinars-feed";
 /*! critical:end */
+/*! critical:start|website-section.directory */
+@import "./components/directory-section-feed";
+/*! critical:end */
 
 /*! critical:start|website-section */
 .page-wrapper__website-section-name--emergingbrands {
