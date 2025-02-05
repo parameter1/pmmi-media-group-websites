@@ -1,5 +1,6 @@
 const privacyPolicy = require('./privacy-policy');
 const subscribe = require('./subscribe');
+const leaders = require('./leaders');
 
 const topics = [
   subscribe,
@@ -59,7 +60,7 @@ const desktopMenu = {
     items: [
       { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
       { href: '/emergingbrands', label: 'Emerging Brands' },
-      { href: '/leaders', label: 'Leaders in Processing' },
+      { href: `/${leaders.alias}`, label: 'Leaders in Processing' },
       { href: '/page/awards-mia', label: 'Manufacturing Awards' },
       { href: 'https://www.opxleadershipnetwork.org', label: 'OpX Leadership Network', target: '_blank' },
       { href: '/supplier-news', label: 'Supplier News' },

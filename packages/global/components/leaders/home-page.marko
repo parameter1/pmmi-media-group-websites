@@ -10,7 +10,7 @@ $ const { site } = out.global;
     headerImgAlt: site.get("leaders.title"),
     columns: 1,
     offsetTop: 50,
-    viewAllHref: '/leaders',
+    viewAllHref: `/${site.get("leaders.alias")}`,
     mediaQueries: [
       { prop: "open", value: "right", query: "(min-width: 1490px)" },
       { prop: "columns", value: 2, query: "(min-width: 700px)" },

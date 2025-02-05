@@ -1,18 +1,17 @@
 const { withWebsiteSection } = require('@mindful-web/marko-web/middleware');
 const { asyncRoute } = require('@mindful-web/utils');
 const queryFragment = require('@mindful-web/marko-web-theme-monorail/graphql/fragments/website-section-page');
-const leadersFragment = require('@pmmi-media-group/package-global/graphql/fragments/leaders-section');
 const emergingBrandsFragment = require('@pmmi-media-group/package-global/graphql/fragments/emerging-brands-section-page');
 const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');
 const events = require('@pmmi-media-group/package-global/templates/website-section/events');
 const collections = require('@pmmi-media-group/package-global/templates/website-section/collections');
 const withTopStoriesBlock = require('@pmmi-media-group/package-global/templates/website-section/with-top-stories-block');
 const superCategory = require('@pmmi-media-group/package-global/templates/website-section/super-category');
+const directory = require('@pmmi-media-group/package-global/routes/directory');
 
 const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');
 
 const section = require('../templates/website-section');
-const leaders = require('../templates/website-section/leaders');
 
 module.exports = (app) => {
   app.get('/advancedrecycling', asyncRoute(async (_, res) => res.marko(collections, {
@@ -183,10 +182,15 @@ module.exports = (app) => {
     description: 'Packaging webinars cover equipment, machinery, design, materials, sustainability, e-commerce, workforce, regulation, innovation, cannabis, & logistics.',
   })));
 
-  app.get('/:alias(leaders)', newsletterState(), withWebsiteSection({
-    template: leaders,
-    queryFragment: leadersFragment,
-  }));
+  directory(app, {
+    rootAlias: 'company-categories-2025',
+    contentTypes: ['Company'],
+    assignedToWebsiteSectionIds: [
+      88774,
+      88811,
+      88844,
+    ],
+  });
 
   app.get('/:alias(WomenInPackaging)', newsletterState(), withWebsiteSection({
     template: withTopStoriesBlock,
