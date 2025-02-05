@@ -1,14 +1,13 @@
 const { withWebsiteSection } = require('@mindful-web/marko-web/middleware');
 const { asyncRoute } = require('@mindful-web/utils');
 const queryFragment = require('@mindful-web/marko-web-theme-monorail/graphql/fragments/website-section-page');
-const leadersFragment = require('@pmmi-media-group/package-global/graphql/fragments/leaders-section');
 const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');
 const events = require('@pmmi-media-group/package-global/templates/website-section/events');
 const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');
 const collections = require('@pmmi-media-group/package-global/templates/website-section/collections');
+const directory = require('@pmmi-media-group/package-global/routes/directory');
 
 const section = require('../templates/website-section');
-const leaders = require('../templates/website-section/leaders');
 
 module.exports = (app) => {
   app.get('/reciclaje-quimico', asyncRoute(async (_, res) => res.marko(collections, {
@@ -128,10 +127,30 @@ module.exports = (app) => {
     description: 'Perspectivas y análisis de líderes de opinión sobre tecnologías y tendencias de mercado en las industrias de envasado, procesamiento de alimentos y bebidas, y automatización.',
   })));
 
-  app.get('/:alias(leaders)', newsletterState(), withWebsiteSection({
-    template: leaders,
-    queryFragment: leadersFragment,
-  }));
+  directory(app, {
+    rootAlias: 'company-categories-2025',
+    contentTypes: ['Company'],
+    assignedToWebsiteSectionIds: [
+      88983,
+      88981,
+      88995,
+      88982,
+      88984,
+      88980,
+      88987,
+      88992,
+      88991,
+      88986,
+      88988,
+      88989,
+      88990,
+      88994,
+      88993,
+      89082,
+      88996,
+      88985,
+    ],
+  });
 
   app.get('/:alias([a-z0-9-/]+)', newsletterState(), withWebsiteSection({
     template: section,
