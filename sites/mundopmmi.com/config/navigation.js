@@ -1,4 +1,5 @@
 const privacyPolicy = require('./privacy-policy');
+const leaders = require('./leaders');
 
 const topics = [
   { href: '/flexibles', label: 'Flexibles' },
@@ -41,7 +42,7 @@ const desktopMenu = {
     items: [
       { href: '/eventos', label: 'Eventos' },
       { href: '/seminario-web', label: 'Seminario Web' },
-      { href: '/leaders', label: 'Líderes' },
+      { href: `/${leaders.alias}`, label: 'Líderes' },
       { href: '/videos', label: 'Vídeos' },
       { href: '/downloads', label: 'Recursos Digitales' },
       { href: '/page/newsletterarchive', label: 'Archivo de boletines' },
@@ -66,7 +67,7 @@ module.exports = {
       { href: 'https://mundopmmi.dragonforms.com/perspectivas?pk=Mundo_NL_Nav', label: 'Suscríbase', target: '_blank' },
       ...topics,
       { href: '/eventos', label: 'Eventos' },
-      { href: '/leaders', label: 'Líderes' },
+      { href: `/${leaders.alias}`, label: 'Líderes' },
     ],
   },
   tertiary: {
