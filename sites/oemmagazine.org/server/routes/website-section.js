@@ -1,6 +1,7 @@
 const { withWebsiteSection } = require('@mindful-web/marko-web/middleware');
 const { asyncRoute } = require('@mindful-web/utils');
 const queryFragment = require('@mindful-web/marko-web-theme-monorail/graphql/fragments/website-section-page');
+const leadersFragment = require('@pmmi-media-group/package-global/graphql/fragments/leaders-section');
 const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');
 const events = require('@pmmi-media-group/package-global/templates/website-section/events');
 const collections = require('@pmmi-media-group/package-global/templates/website-section/collections');
@@ -9,6 +10,7 @@ const withTopStoriesBlock = require('@pmmi-media-group/package-global/templates/
 const directory = require('@pmmi-media-group/package-global/routes/directory');
 
 const section = require('../templates/website-section');
+const leaders = require('../templates/website-section/leaders');
 
 module.exports = (app) => {
   app.get('/ai', asyncRoute(async (_, res) => res.marko(collections, {
@@ -67,6 +69,11 @@ module.exports = (app) => {
     name: 'Webinars',
     description: '',
   })));
+
+  app.get('/:alias(leaders)', newsletterState(), withWebsiteSection({
+    template: leaders,
+    queryFragment: leadersFragment,
+  }));
 
   directory(app, {
     rootAlias: 'company-categories-2024',
