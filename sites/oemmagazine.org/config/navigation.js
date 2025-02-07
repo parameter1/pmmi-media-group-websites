@@ -1,6 +1,6 @@
 const privacyPolicy = require('./privacy-policy');
 const subscribe = require('./subscribe');
-const leaders = require('./leaders');
+// const leaders = require('./leaders');
 
 const topics = [
   { href: '/engineering', label: 'Engineering' },
@@ -56,7 +56,7 @@ const desktopMenu = {
     label: 'Extras',
     items: [
       { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
-      { href: `/${leaders.alias}`, label: 'OEM Partner Leaders' },
+      { href: '/leaders', label: 'OEM Partner Leaders' },
       { href: '/supplier-news', label: 'Supplier News' },
       { href: '/WomenInPackaging', label: 'Women in Packaging' },
     ],
@@ -66,7 +66,7 @@ const desktopMenu = {
 const primaryNavigationItems = [
   subscribe,
   ...topics,
-  { href: `/${leaders.alias}`, label: 'Partner Leaders' },
+  { href: '/leaders', label: 'Partner Leaders' },
   { href: '/downloads', label: 'Downloads' },
 ];
 

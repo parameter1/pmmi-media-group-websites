@@ -1,6 +1,7 @@
 const { withWebsiteSection } = require('@mindful-web/marko-web/middleware');
 const { asyncRoute } = require('@mindful-web/utils');
 const queryFragment = require('@mindful-web/marko-web-theme-monorail/graphql/fragments/website-section-page');
+const leadersFragment = require('@pmmi-media-group/package-global/graphql/fragments/leaders-section');
 const emergingBrandsFragment = require('@pmmi-media-group/package-global/graphql/fragments/emerging-brands-section-page');
 const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');
 const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');
@@ -9,6 +10,7 @@ const collections = require('@pmmi-media-group/package-global/templates/website-
 const superCategory = require('@pmmi-media-group/package-global/templates/website-section/super-category');
 const directory = require('@pmmi-media-group/package-global/routes/directory');
 const section = require('../templates/website-section');
+const leaders = require('../templates/website-section/leaders');
 const global250 = require('../templates/website-section/global-250');
 const global50 = require('../templates/website-section/global-50');
 
@@ -47,6 +49,11 @@ module.exports = (app) => {
     name: 'Webinars',
     description: 'Industry expert insights on technologies, equipment, and software for food and beverage manufacturing.',
   })));
+
+  app.get('/:alias(leaders)', newsletterState(), withWebsiteSection({
+    template: leaders,
+    queryFragment: leadersFragment,
+  }));
 
   directory(app, {
     rootAlias: 'company-categories-2024',

@@ -1,6 +1,6 @@
 const privacyPolicy = require('./privacy-policy');
 const subscribe = require('./subscribe');
-const leaders = require('./leaders');
+// const leaders = require('./leaders');
 
 const topics = [
   { href: '/sustainable-packaging', label: 'Sustainable Packaging' },
@@ -55,7 +55,7 @@ const desktopMenu = {
       { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
       { href: '/emergingbrands', label: 'Emerging Brands' },
       { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
-      { href: `/${leaders.alias}`, label: 'Leaders in Packaging' },
+      { href: '/leaders', label: 'Leaders in Packaging' },
       { href: '/page/packaging-associations', label: 'Packaging Associations' },
       { href: '/supplier-news', label: 'Supplier News' },
       { href: '/magazine/50370', label: 'Women in Packaging' },

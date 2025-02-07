@@ -1,6 +1,6 @@
 const privacyPolicy = require('./privacy-policy');
 const subscribe = require('./subscribe');
-const leaders = require('./leaders');
+// const leaders = require('./leaders');
 
 const topics = [
   subscribe,
@@ -29,7 +29,7 @@ const mobileMenu = {
     { href: '/downloads', label: 'Downloads' },
     { href: '/page/hcp-newsletters', label: 'Newsletters' },
     { href: '/magazine', label: 'Magazine' },
-    { href: `/${leaders.alias}`, label: 'Premier Suppliers' },
+    { href: '/leaders', label: 'Premier Suppliers' },
     { href: '/videos', label: 'Videos' },
     { href: '/podcasts', label: 'Podcasts' },
     { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
@@ -69,7 +69,7 @@ const desktopMenu = {
     items: [
       { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
       { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
-      { href: `/${leaders.alias}`, label: 'Leaders in Healthcare Packaging' },
+      { href: '/leaders', label: 'Leaders in Healthcare Packaging' },
       { href: '/supplier-news', label: 'Supplier News' },
     ],
   },
