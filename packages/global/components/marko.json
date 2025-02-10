@@ -62,5 +62,8 @@
   },
   "<global-directory-sort-by>": {
     "template": "./directory-sort-by.marko"
+  },
+  "<global-website-sections-by-alias-filter>": {
+    "template": "./website-sections-by-alias.marko"
   }
 }
