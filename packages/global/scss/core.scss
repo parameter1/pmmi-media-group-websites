@@ -269,6 +269,10 @@
 @import "./components/webinars-feed";
 /*! critical:end */
 
+/*! critical:start|content.company */
+@import "./components/company-booth";
+/*! critical:end */
+
 /*! critical:start|website-section */
 .page-wrapper__website-section-name--emergingbrands {
   display: none;
