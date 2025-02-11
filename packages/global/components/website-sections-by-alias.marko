@@ -1,0 +1,48 @@
+import { getAsArray } from "@mindful-web/object-path";
+import { isFunction } from '@mindful-web/utils';
+import loadWebsiteSections from "@mindful-web/marko-web-search/components/filters/load-website-sections";
+
+$ const { $markoWebSearch, apollo, i18n } = out.global;
+$ const filterKey = "assignedToWebsiteSectionIds";
+$ const title = isFunction(i18n) ? i18n("Website Sections") : "Website Sections";
+
+<marko-web-resolve|{ resolved }| promise=loadWebsiteSections({
+  $markoWebSearch,
+  apolloMindfulWebCMS: apollo,
+})>
+  $ const { selectedSection, configuredSections } = resolved;
+  <marko-web-search-filter-block filter-key=filterKey items=configuredSections>
+    <@title value=title />
+    <@item|{ node, blockName }|>
+      <if(selectedSection && selectedSection.hierarchyMap.has(node.id))>
+        $ // loop through hierarchy to create "breadcrumb" links
+        $ const { hierarchy } = selectedSection;
+        <marko-web-element block-name=blockName name="item" modifiers=["breadcrumbs"]>
+          <for|section, index| of=hierarchy>
+            <if(index)>
+              <marko-web-search-set-filter-value-link path=section.alias name=filterKey value=section.id reset-class=`${blockName}__clear-item`>
+                ${section.name}
+              </marko-web-search-set-filter-value-link>
+            </if>
+          </for>
+        </marko-web-element>
+
+        $ // then display children
+        $ const children = getAsArray(selectedSection, "children.edges").map(edge => edge.node);
+        <marko-web-search-filter-block filter-key=filterKey items=children modifiers=["children"]>
+          <@item|{ node: child, blockName }|>
+            <marko-web-search-set-filter-value-link path=child.alias name=filterKey reset-class=`${blockName}__clear-item`>
+              ${child.name}
+            </marko-web-search-set-filter-value-link>
+          </@item>
+        </marko-web-search-filter-block>
+      </if>
+      <else>
+        $ // display the "normal" section
+        <marko-web-search-set-filter-value-link path=node.alias name=filterKey>
+          ${node.name}
+        </marko-web-search-set-filter-value-link>
+      </else>
+    </@item>
+  </marko-web-search-filter-block>
+</marko-web-resolve>
