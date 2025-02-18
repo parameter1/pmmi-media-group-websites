@@ -116,6 +116,14 @@ module.exports = (app) => {
       includeTaxonomyIds: [3201808],
     },
   })));
+  app.get('/etiquetasavanzadas', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Etiquetas avanzadas que transforman la experiencia del consumidor',
+    description: 'En esta selección de Mundo EXPO PACK exploramos innovaciones como etiquetas dinámicas e inteligentes que proponen una nueva relación entre las marcas y los consumidores. Acceda a noticias, implementaciones y desarrollos originales que, a través de la etiqueta, optimizan la trazabilidad, mejoran la comunicación con el usuario y contribuyen a la sostenibilidad en la industria. Además, conozca avances recientes en codificación avanzada y sistemas de información en etiquetas que impulsan la transparencia y la responsabilidad ambiental.',
+    queryParams: {
+      // Etiquetas avanzadas
+      includeTaxonomyIds: [3201885],
+    },
+  })));
 
   app.get('/eventos', asyncRoute(async (_, res) => res.marko(events, {
     alias: 'eventos',
