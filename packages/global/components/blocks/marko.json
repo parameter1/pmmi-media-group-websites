@@ -50,5 +50,8 @@
   },
   "<global-client-side-most-popular-block>": {
     "template": "./client-side-most-popular.marko"
+  },
+  "<global-company-booth-block>": {
+    "template": "./company-booth.marko"
   }
 }

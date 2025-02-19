@@ -90,6 +90,8 @@ fragment LeadersWebsiteContentCompanyFragment on Content {
       label
     }
   }
+
+  salesforceAccountId: customAttribute(input: { path: "salesforceAccountId" })
 }
 
 `;

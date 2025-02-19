@@ -19,5 +19,8 @@ $ const { site } = out.global;
     viewAllText: site.get("leaders.viewAllText") || "View All Companies &gt;",
     lang: site.config.lang || 'en',
     collapseEmptyCategories: true,
+    boothShowIcon: process.env.BOOTH_SHOW_ICON || '',
+    boothShowId: process.env.BOOTH_SHOW_ID || '',
+    boothShowUrl: process.env.BOOTH_SHOW_URL || '',
   }/>
   </if>
