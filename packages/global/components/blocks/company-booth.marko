@@ -2,12 +2,13 @@ import fetch from "node-fetch";
 import { getAsArray } from "@mindful-web/object-path";
 
 $ const { salesforceAccountId } = input;
+$ const { BOOTH_SHOW_ID: boothShowId } = process.env;
 
-$ const query = ({ salesforceAccountId }) => `
+$ const query = ({ salesforceAccountId, boothShowId }) => `
   query {
     company: companyById(input: { id: "${salesforceAccountId}" }) {
       _id
-      booths(input: { showId: "a0QEX000000IgZ12AK" }) {
+      booths(input: { showId: "${boothShowId}" }) {
         id
         accountId
         boothNumber
@@ -15,9 +16,9 @@ $ const query = ({ salesforceAccountId }) => `
     }
   }
 `;
-$ const apiCall = async ({ salesforceAccountId }) => {
+$ const apiCall = async ({ salesforceAccountId, boothShowId }) => {
   const response = await fetch('https://www.prosource.org/graphql', {
-    body: JSON.stringify({ query: query({ salesforceAccountId }) }),
+    body: JSON.stringify({ query: query({ salesforceAccountId, boothShowId }) }),
      headers: { 'content-type': 'application/json' },
     method: 'POST',
   });
@@ -30,8 +31,8 @@ $ const apiCall = async ({ salesforceAccountId }) => {
   return [];
 };
 
-<if(salesforceAccountId)>
-  <marko-web-resolve|{ resolved }| promise=apiCall({ salesforceAccountId })>
+<if(salesforceAccountId && boothShowId)>
+  <marko-web-resolve|{ resolved }| promise=apiCall({ salesforceAccountId, boothShowId })>
     $ const booths = getAsArray(resolved, 'data.company.booths');
     <if(booths.length)>
       $ const [booth] = booths;
