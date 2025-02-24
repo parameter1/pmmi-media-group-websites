@@ -1,6 +1,7 @@
 const { withWebsiteSection } = require('@mindful-web/marko-web/middleware');
 const { asyncRoute } = require('@mindful-web/utils');
 const queryFragment = require('@mindful-web/marko-web-theme-monorail/graphql/fragments/website-section-page');
+const leadersFragment = require('@pmmi-media-group/package-global/graphql/fragments/leaders-section');
 const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');
 const events = require('@pmmi-media-group/package-global/templates/website-section/events');
 const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');
@@ -8,6 +9,7 @@ const collections = require('@pmmi-media-group/package-global/templates/website-
 const directory = require('@pmmi-media-group/package-global/routes/directory');
 
 const section = require('../templates/website-section');
+const leaders = require('../templates/website-section/leaders');
 const news = require('../templates/website-section/news');
 
 module.exports = (app) => {
@@ -61,6 +63,11 @@ module.exports = (app) => {
     name: 'Webinars',
     description: 'Industry experts talk medical packaging technologies, sustainability, and logistics, ranging from fill/finish, package design, automation, and temperature control.',
   })));
+
+  app.get('/:alias(leaders)', newsletterState(), withWebsiteSection({
+    template: leaders,
+    queryFragment: leadersFragment,
+  }));
 
   directory(app, {
     rootAlias: 'company-categories-2024',
