@@ -661,10 +661,10 @@
   dependencies:
     inflected "^2.1.0"
 
-"@mindful-web/leaders-program@^1.11.1":
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/@mindful-web/leaders-program/-/leaders-program-1.11.1.tgz#32c811b35ad3686aecf2afd2ffdf92b5996c36d8"
-  integrity sha512-vgsvi5GsnXj3ekHwOLlzQtciWtsENrDmeQxGVuykzQuEoP+KyOZJlyeRvqq7Y94vK6NpSG/hbYXBJdtm28CbTQ==
+"@mindful-web/leaders-program@^1.11.2":
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/leaders-program/-/leaders-program-1.11.2.tgz#744500d9137aeccfb8ebfc47ae93767567886f8a"
+  integrity sha512-m2wnBwfGrOKAD/j80Piacnk5vhhoFwhOjiGqsv/+PAQoZ88kpGZVCYvenRrn+Y4l99IPQybA6ybcI36oHR1RXw==
   dependencies:
     object-path "^0.11.8"
     portal-vue "^2.1.7"
@@ -798,12 +798,12 @@
     graphql "^14.7.0"
     graphql-tag "^2.12.6"
 
-"@mindful-web/marko-web-leaders@^1.11.1":
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-leaders/-/marko-web-leaders-1.11.1.tgz#3a2236a4dc59eabe798198e6f3dfca9322065f93"
-  integrity sha512-ne46Aaa0suNBfgFSx93YjOI/SBIv7yf0Yz4SCulZKucXxWKB5Yg6etdSauxvzxN6Q+JzCvzJ4IOtiDH1T9LTLg==
+"@mindful-web/marko-web-leaders@^1.11.2":
+  version "1.11.2"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-leaders/-/marko-web-leaders-1.11.2.tgz#6436cc35b007245372371da0ed3e6b32ae95eabd"
+  integrity sha512-Vh+bQx8JUmHyA7uJFirW7RfCq+UPGHS4rP9GdIi0GrEQ9oF74ldtB6MyvuHN64EcsRgJShUoBe0sSUwoLeVsaA==
   dependencies:
-    "@mindful-web/leaders-program" "^1.11.1"
+    "@mindful-web/leaders-program" "^1.11.2"
     "@mindful-web/marko-web-icons" "^1.0.0"
     "@mindful-web/object-path" "^1.0.0"
     object-path "^0.11.8"
