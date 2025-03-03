@@ -124,6 +124,14 @@ module.exports = (app) => {
       includeTaxonomyIds: [3201885],
     },
   })));
+  app.get('/empaques-ecommerce', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Empaques para e-commerce: Soluciones que protegen, optimizan y conectan con el consumidor',
+    description: '¿Cómo impactan los empaques para comercio electrónico en la protección de productos, la optimización de costos y la experiencia del consumidor? Encuentre respuestas en esta selección especializada de Mundo EXPO PACK, donde exploramos las tendencias más relevantes en empaques diseñados para e-commerce. A través de casos prácticos, reportajes y ejemplos de empresas líderes, explore diseños optimizados para la cadena de suministro digital y tecnologías avanzadas para la protección de productos. Además, conozca soluciones innovadoras que mejoran la eficiencia logística, reducen el desperdicio y fortalecen la conexión con los consumidores en el entorno digital.',
+    queryParams: {
+      // Empaques comercio electrónico
+      includeTaxonomyIds: [3201902],
+    },
+  })));
 
   app.get('/eventos', asyncRoute(async (_, res) => res.marko(events, {
     alias: 'eventos',
