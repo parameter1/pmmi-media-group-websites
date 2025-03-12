@@ -572,4 +572,10 @@ label {
     display: none;
   }
 }
+
+.site-newsletter-menu {
+  @media (max-width: 728px) {
+    display: none;
+  }
+}
 /*! critical:end */
