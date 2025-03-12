@@ -132,6 +132,14 @@ module.exports = (app) => {
       includeTaxonomyIds: [3201902],
     },
   })));
+  app.get('/inteligencia-mercados', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'INTELIGENCIA DE MERCADOS: INFORMES ESENCIALES PARA EMPAQUE Y PROCESAMIENTO EN AMÉRICA LATINA',
+    description: 'A través de su programa de Inteligencia de Mercados, la Asociación para Tecnologías de Empaque y Procesamiento – PMMI, ofrece informes periódicos que profundizan en la evolución de la industria. Encuentre en esta selección de Mundo EXPO PACK, análisis de algunos de los estudios con mayor impacto en la industria de América Latina, con enlaces directos a los informes originales –varios disponibles en español–. Acceda aquí a información exclusiva y estratégica para optimizar sus operaciones y tomar decisiones acertadas.',
+    queryParams: {
+      // Inteligencia de mercados
+      includeTaxonomyIds: [3201918],
+    },
+  })));
 
   app.get('/eventos', asyncRoute(async (_, res) => res.marko(events, {
     alias: 'eventos',
