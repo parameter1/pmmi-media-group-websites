@@ -32,11 +32,18 @@ $ const apiCall = async ({ salesforceAccountId, boothShowId }) => {
 };
 
 <if(salesforceAccountId && boothShowId)>
+  $ const modifiers = getAsArray(input, 'modifiers');
+  $ const wrapperClass = "booth-card";
+  $ const wrapperClasses = [wrapperClass];
+  $ modifiers.forEach((modifier) => {
+    wrapperClasses.push(`${wrapperClass}--${modifier}`)
+  });
+  $ const wrapperClassesAsString = wrapperClasses.join(' ');
   <marko-web-resolve|{ resolved }| promise=apiCall({ salesforceAccountId, boothShowId })>
     $ const booths = getAsArray(resolved, 'data.company.booths');
     <if(booths.length)>
       $ const [booth] = booths;
-      <div class="booth-card">
+      <div class=wrapperClassesAsString>
         <div class="booth-card-heading">See us At Booth ${booth.boothNumber}</div>
         <div class="booth-card-image-wrapper">
           <img
