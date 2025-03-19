@@ -15,6 +15,21 @@
   box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
   display: block;
   margin-top: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  &--main {
+    display: block;
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  }
+  &--rail {
+    display: none;
+    @media (min-width: 1024px) {
+      display: block;
+    }
+  }
 }
 .booth-card-heading {
   tab-size: 4;
@@ -36,7 +51,8 @@
   padding-right: 1rem;
 }
 .booth-card-image {
-  width: 100%
+  width: 308px;
+  height: 105px;
 }
 .booth-card-button-wrapper {
   tab-size: 4;
