@@ -1,8 +1,9 @@
-$ const { config, i18n } = out.global;
+$ const { config, i18n, site } = out.global;
 
 $ const type = "login";
 $ const title = "Log in";
 $ const description = `${i18n(`Log in to ${config.siteName()}`)}`;
+$ const lang = site.config.lang || "en";
 
 <marko-web-default-page-layout type=type title=title description=description>
   <@head>
@@ -20,6 +21,7 @@ $ const description = `${i18n(`Log in to ${config.siteName()}`)}`;
             continue: i18n("Continue"),
             login: i18n("Log in"),
           }
+          lang=lang
         />
       </@section>
     </marko-web-page-wrapper>
