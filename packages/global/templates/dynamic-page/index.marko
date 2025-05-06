@@ -1,6 +1,14 @@
 import { getAsArray } from "@mindful-web/object-path";
+import PageNode from "@mindful-web/marko-web/middleware/page-node";
+import { blockMagazinePublication } from "@mindful-web/web-common/query-factories";
+import publicationFragment from "@mindful-web/marko-web-theme-monorail-magazine/graphql/fragments/magazine-publication-page";
+import issueFragment from "@mindful-web/marko-web-theme-monorail-magazine/graphql/fragments/magazine-issue-archive";
 
 $ const { id, type, pageNode } = input;
+$ const { pagination: p, req, i18n, site } = out.global;
+$ const publicationId = id === 13356674 ? '5e32e57784d0b1a4088b4733' : null;
+$ const description = site.get("magazines.description");
+$ const perPage = 16;
 
 <global-content-wrapper-layout
   id=id
@@ -38,7 +46,49 @@ $ const { id, type, pageNode } = input;
 
         $ const bodyId = `content-body-${content.id}`;
         <marko-web-content-body block-name=blockName obj=content attrs={ id: bodyId } />
-
+        <if(publicationId)>
+          $ const publicationPageNode = new PageNode(req.apollo, {
+            queryFactory: blockMagazinePublication,
+            queryFragment: publicationFragment,
+            variables: { input: { id: publicationId } },
+            resultField: 'magazinePublication',
+          });
+          <marko-web-resolve-page|{ data: publication }| node=publicationPageNode>
+            <h1 class="page-wrapper__title">
+              ${i18n(`${publication.name} Issue Archive`)}
+              <if(p.page > 1)>: ${i18n("Page")} ${p.page}</if>
+            </h1>
+            <if(description)>
+              <p class="page-wrapper__deck">${description}</p>
+            </if>
+            $ const issue = { publication };
+            <div class="publication-button-wrapper">
+              <theme-magazine-publication-buttons issue=issue buttons=['subscribe', 'renewal', 'change-address', 'cancel'] />
+            </div>
+          </marko-web-resolve-page>
+          $ const params = {
+            publicationId,
+            limit: perPage,
+            skip:p.skip({ perPage }),
+            queryFragment: issueFragment,
+            requiresCoverImage: true,
+          };
+          <marko-web-query|{ nodes }|
+            name="magazine-active-issues"
+            params=params
+          >
+            <theme-magazine-issue-archive-flow nodes=nodes flush=true />
+          </marko-web-query>
+          <div class="mb-block">
+            <theme-query-total-count|{ totalCount }| name="magazine-active-issues" params={ publicationId }>
+              <theme-pagination-controls
+                per-page=perPage
+                total-count=totalCount
+                path=req.path
+              />
+            </theme-query-total-count>
+          </div>
+        </if>
       </theme-page-contents>
     </div>
   </@section>
