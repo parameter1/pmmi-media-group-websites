@@ -916,10 +916,10 @@
     graphql-tag "^2.12.6"
     object-path "^0.11.8"
 
-"@mindful-web/marko-web-theme-monorail@^1.20.0":
-  version "1.20.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-theme-monorail/-/marko-web-theme-monorail-1.20.0.tgz#d8a3cc9a8d13fa5129d7ffaa32e9ac2d35270c17"
-  integrity sha512-MlkvtfkPWB3jkIqC1oFKPBvVOPDPesHfRPWu9zwlYIq+J9HOinhOe9U+gRcNwBwla3e5vGK7EaxVn0iRZQu3ZQ==
+"@mindful-web/marko-web-theme-monorail@^1.20.1":
+  version "1.20.1"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-theme-monorail/-/marko-web-theme-monorail-1.20.1.tgz#806e62fb540fd57800071c8fe9bc19c6ee547371"
+  integrity sha512-w9b/Z63axMvMbDt1+rcgd5dy2JjAMGQ5LGawG571WnhmgKMqQ7a5Cyj13TtyJMZAvqzWF6oF2xI8bfj2/fuHTg==
   dependencies:
     "@mindful-web/dayjs" "^1.16.0"
     "@mindful-web/image" "^1.18.1"
@@ -6850,7 +6850,7 @@ postcss-convert-values@^5.1.3:
     browserslist "^4.21.4"
     postcss-value-parser "^4.2.0"
 
-"postcss-critical-split@github:mrnocreativity/postcss-critical-split#51bb6d62bc75d635e32dcce90f30ba3ef6299081":
+postcss-critical-split@mrnocreativity/postcss-critical-split#51bb6d62bc75d635e32dcce90f30ba3ef6299081:
   version "2.5.3"
   resolved "https://codeload.github.com/mrnocreativity/postcss-critical-split/tar.gz/51bb6d62bc75d635e32dcce90f30ba3ef6299081"
 
