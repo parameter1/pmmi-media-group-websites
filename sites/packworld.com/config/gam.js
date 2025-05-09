@@ -12,6 +12,25 @@ config.setAliasAdUnits('default', [
   { name: 'wallpaper-right', templateName: 'WALLPAPER', path: 'wallpaper-right' },
 ]);
 
+config.setTemplate('INLINE-CONTENT', {
+  size: [[300, 250], [300, 50]],
+  sizeMapping: [
+    { viewport: [0, 0], size: [[300, 250], [300, 50]] },
+  ],
+}).setTemplate('INLINE-CONTENT-MOBILE', {
+  size: [[300, 250], [300, 50]],
+  sizeMapping: [
+    { viewport: [980, 0], size: [] },
+    { viewport: [320, 0], size: [[300, 250], [300, 50]] },
+  ],
+}).setTemplate('INLINE-CONTENT-DESKTOP', {
+  size: [[300, 250], [300, 50]],
+  sizeMapping: [
+    { viewport: [980, 0], size: [[300, 250], [300, 50]] },
+    { viewport: [0, 0], size: [] },
+  ],
+});
+
 const aliases = [
   { alias: 'sustainable-packaging' },
   { alias: 'sustainable-packaging/recycling', prefix: 'recycling' },
