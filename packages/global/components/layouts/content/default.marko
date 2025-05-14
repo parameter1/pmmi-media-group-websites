@@ -300,8 +300,17 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                 </if>
 
                 <if(context.canAccess && !context.requiresUserInput)>
-                  $ const sidebars = getAsArray(content, "sidebars").map((sidebar) => sidebar.body);
-                  <marko-web-content-sidebars block-name=blockName obj={ sidebars } />
+                  <marko-web-content-sidebar-stubs|{ sidebar }|
+                    obj={ sidebarStubs: getAsArray(content, "sidebars") }
+                    block-name=blockName
+                  >
+                    <div id=sidebar.sequence class="page-contents__content-sidebar">
+                      <if(sidebar.name)>
+                        <p><b>${sidebar.name}</b></p>
+                      </if>
+                      <div>$!{sidebar.body}</div>
+                    </div>
+                  </marko-web-content-sidebar-stubs>
                 </if>
 
                 <if(site.get("leaders.enabled") && leadersContentTypes.includes(content.type))>
