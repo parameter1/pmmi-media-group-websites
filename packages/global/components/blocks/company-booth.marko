@@ -2,7 +2,11 @@ import fetch from "node-fetch";
 import { getAsArray } from "@mindful-web/object-path";
 
 $ const { salesforceAccountId } = input;
-$ const { BOOTH_SHOW_ID: boothShowId, BOOTH_SHOW_FULL_IMAGE: boothShowFullImage } = process.env;
+$ const {
+    BOOTH_SHOW_ID: boothShowId,
+    BOOTH_SHOW_FULL_IMAGE: boothShowFullImage
+    BOOTH_SHOW_URL: boothShowUrl
+  } = process.env;
 
 $ const query = ({ salesforceAccountId, boothShowId }) => `
   query {
@@ -30,7 +34,7 @@ $ const apiCall = async ({ salesforceAccountId, boothShowId }) => {
   return jsonResponse;
   return [];
 };
-<if(salesforceAccountId && boothShowId && boothShowFullImage)>
+<if(salesforceAccountId && boothShowId && boothShowFullImage && boothShowUrl)>
   $ const modifiers = getAsArray(input, 'modifiers');
   $ const wrapperClass = "booth-card";
   $ const wrapperClasses = [wrapperClass];
@@ -52,7 +56,7 @@ $ const apiCall = async ({ salesforceAccountId, boothShowId }) => {
           >
         </div>
         <div class="booth-card-button-wrapper">
-          <a href=`https://pxse25.mapyourshow.com/8_0/exhibitor/exhibitor-details.cfm?exhid=${booth.accountId}` target="_blank" class="booth-card-link">
+          <a href=`${boothShowUrl}${booth.accountId}` target="_blank" class="booth-card-link">
             <div class="booth-card-button">
               See Booth Preview
             </div>
