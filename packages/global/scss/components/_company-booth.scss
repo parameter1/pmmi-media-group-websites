@@ -1,0 +1,97 @@
+.booth-card {
+  tab-size: 4;
+  -webkit-text-size-adjust: 100%;
+  font-family: inherit;
+  line-height: inherit;
+  color: rgba(60, 60, 60, 1);
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: rgba(229, 231, 235, 1);
+  row-gap: 1.5rem;
+  border-radius: 0.25rem;
+  text-align: center;
+  font-weight: 700;
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+  display: block;
+  margin-top: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  &--main {
+    display: block;
+    @media (min-width: 1024px) {
+      display: none;
+    }
+  }
+  &--rail {
+    display: none;
+    @media (min-width: 1024px) {
+      display: block;
+    }
+  }
+}
+.booth-card-heading {
+  tab-size: 4;
+  -webkit-text-size-adjust: 100%;
+  font-family: inherit;
+  text-align: center;
+  font-weight: 700;
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: rgba(229, 231, 235, 1);
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: rgba(0, 104, 174, 1);
+}
+.booth-card-image-wrapper {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.booth-card-image {
+  width: 308px;
+  height: 105px;
+}
+.booth-card-button-wrapper {
+  tab-size: 4;
+  -webkit-text-size-adjust: 100%;
+  font-family: inherit;
+  line-height: inherit;
+  color: rgba(60, 60, 60, 1);
+  text-align: center;
+  font-weight: 700;
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: rgba(229, 231, 235, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+.booth-card-link {
+  width: 100%;
+}
+.booth-card-link:hover {
+  text-decoration: none;
+}
+.booth-card-button {
+      tab-size: 4;
+  -webkit-text-size-adjust: 100%;
+  font-family: inherit;
+  text-align: center;
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: rgba(229, 231, 235, 1);
+  border-radius: 0.25rem;
+  background-color: rgba(0, 104, 174, 1);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 1);
+}

@@ -1,0 +1,64 @@
+import fetch from "node-fetch";
+import { getAsArray } from "@mindful-web/object-path";
+
+$ const { salesforceAccountId } = input;
+$ const { BOOTH_SHOW_ID: boothShowId, BOOTH_SHOW_FULL_IMAGE: boothShowFullImage } = process.env;
+
+$ const query = ({ salesforceAccountId, boothShowId }) => `
+  query {
+    company: companyById(input: { id: "${salesforceAccountId}" }) {
+      _id
+      booths(input: { showId: "${boothShowId}" }) {
+        id
+        accountId
+        boothNumber
+      }
+    }
+  }
+`;
+$ const apiCall = async ({ salesforceAccountId, boothShowId }) => {
+  const response = await fetch('https://www.prosource.org/graphql', {
+    body: JSON.stringify({ query: query({ salesforceAccountId, boothShowId }) }),
+     headers: { 'content-type': 'application/json' },
+    method: 'POST',
+  });
+  const jsonResponse = await response.json();
+  if (!response.ok) {
+    console.log('Unsuccessful external API response!', jsonResponse);
+    return [];
+  }
+  return jsonResponse;
+  return [];
+};
+<if(salesforceAccountId && boothShowId && boothShowFullImage)>
+  $ const modifiers = getAsArray(input, 'modifiers');
+  $ const wrapperClass = "booth-card";
+  $ const wrapperClasses = [wrapperClass];
+  $ modifiers.forEach((modifier) => {
+    wrapperClasses.push(`${wrapperClass}--${modifier}`)
+  });
+  $ const wrapperClassesAsString = wrapperClasses.join(' ');
+  <marko-web-resolve|{ resolved }| promise=apiCall({ salesforceAccountId, boothShowId })>
+    $ const booths = getAsArray(resolved, 'data.company.booths');
+    <if(booths.length)>
+      $ const [booth] = booths;
+      <div class=wrapperClassesAsString>
+        <div class="booth-card-heading">See us At Booth ${booth.boothNumber}</div>
+        <div class="booth-card-image-wrapper">
+          <img
+            class="booth-card-image"
+            src=boothShowFullImage
+            alt="Expo Logo"
+          >
+        </div>
+        <div class="booth-card-button-wrapper">
+          <a href=`https://pxse25.mapyourshow.com/8_0/exhibitor/exhibitor-details.cfm?exhid=${booth.accountId}` target="_blank" class="booth-card-link">
+            <div class="booth-card-button">
+              See Booth Preview
+            </div>
+          </a>
+        </div>
+      </div>
+    </if>
+  </marko-web-resolve>
+</if>

@@ -257,6 +257,7 @@ $ const lang = site.config.lang || "en";
           $ const inquiry = site.getAsObject('inquiry');
           <if(content.isLeader)>
             <theme-company-inquiry-form-block content=content initially-expanded=false consent-checkboxes=getAsArray(site, 'config.inquiry.consentCheckboxes') />
+            <global-company-booth-block salesforce-account-id=content.salesforceAccountId modifiers=["rail"] />
             $ const contacts = getAsArray(content, "contacts.edges").map(({ node }) => node);
             <marko-web-node-list class="mt-block">
               <@header>
