@@ -149,6 +149,15 @@ module.exports = (app) => {
     },
   })));
 
+  app.get('/expopackguadalajara2025', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Rumbo a EXPO PACK Guadalajara 2025: Adelanto de productos, equipos Y tecnologías en exhibición',
+    description: 'Mundo EXPO PACK reúne en esta selección editorial los artículos más recientes y relevantes sobre inteligencia artificial; así como su impacto y alcance en la industria de empaque y procesamiento. Desde innovaciones en el diseño de empaques hasta avances en la optimización de la producción y la logística, estos análisis ofrecen una visión detallada de cómo la IA dinamiza la industria. Además, encontrará tendencias y casos de éxito en América Latina. Un panorama esencial para estar a la vanguardia en automatización y digitalización.',
+    queryParams: {
+      // EXPO PACK 2025
+      includeTaxonomyIds: [3202058],
+    },
+  })));
+
   app.get('/eventos', asyncRoute(async (_, res) => res.marko(events, {
     alias: 'eventos',
     name: 'Eventos',
