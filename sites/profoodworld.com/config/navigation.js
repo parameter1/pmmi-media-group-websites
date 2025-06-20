@@ -59,7 +59,6 @@ const desktopMenu = {
     label: 'Extras',
     items: [
       { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
-      { href: '/emergingbrands', label: 'Emerging Brands' },
       { href: '/leaders', label: 'Leaders in Processing' },
       { href: 'https://www.opxleadershipnetwork.org', label: 'OpX Leadership Network', target: '_blank' },
       { href: '/supplier-news', label: 'Supplier News' },

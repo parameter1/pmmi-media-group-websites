@@ -53,7 +53,6 @@ const desktopMenu = {
     label: 'Extras',
     items: [
       { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
-      { href: '/emergingbrands', label: 'Emerging Brands' },
       { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
       { href: '/leaders', label: 'Leaders in Packaging' },
       { href: '/page/packaging-associations', label: 'Packaging Associations' },
