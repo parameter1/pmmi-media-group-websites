@@ -1,0 +1,154 @@
+import defaultValue from "@mindful-web/marko-core/utils/default-value";
+import defaultDescription from "@mindful-web/marko-web/utils/published-content/description";
+import queryFragment from "@mindful-web/marko-web-theme-monorail/graphql/fragments/content-list";
+import { getAsArray } from "@mindful-web/object-path";
+
+$ const sections = getAsArray(input, "sections");
+$ const queryName = defaultValue(input.queryName, "website-scheduled-content");
+$ const title = "Podcasts";
+
+$ const { config, GAM, pagination: p, i18n, site } = out.global;
+$ const {
+  alias,
+  includeLabels,
+  includeContentTypes,
+  sortField,
+  sortOrder,
+  endingAfter,
+} = input;
+$ const perPage = 18;
+$ const withSection = defaultValue(input.withSection, false);
+
+$ const type = "scheduled-content";
+$ const description = defaultDescription(title, config);
+
+<theme-default-page title=title description=description>
+  <@head>
+    <theme-section-feed-block|{ totalCount }| with-section=withSection query-name=queryName count-only=true>
+      <@query-params include-labels=includeLabels include-content-types=includeContentTypes />
+      <theme-pagination-controls
+        per-page=perPage
+        total-count=totalCount
+        path=`/${alias}`
+        as-rels=true
+      />
+    </theme-section-feed-block>
+    <marko-web-gtm-default-context|{ context }| type=type>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-default-context>
+  </@head>
+  <@page>
+    <marko-web-page-wrapper>
+      <@section|{ aliases }| modifiers=["first"]>
+        <theme-gam-define-display-ad
+          name="leaderboard"
+          position="section_page"
+          aliases=aliases
+          modifiers=["inter-block"]
+        />
+        <theme-gam-wallpaper-ad aliases=aliases position="section_page" />
+      </@section>
+
+      <@section>
+        <div class="row">
+          <div class="col">
+            <theme-breadcrumbs-with-home>
+              <@item>${i18n(title)}</@item>
+            </theme-breadcrumbs-with-home>
+          </div>
+        </div>
+      </@section>
+
+      <@section>
+        <div class="row">
+          <div class="col">
+
+            $ const pageDetails = site.getAsObject("pageDetails");
+            <if(pageDetails[alias])>
+              $ const { feedDescription, ...rest } = pageDetails[alias];
+              $ const content = { ...rest, body: feedDescription };
+              <global-page-details-block content=content />
+            </if>
+            <else>
+              <theme-breadcrumbs-with-home>
+              <@item>${i18n(title)}</@item>
+            </theme-breadcrumbs-with-home>
+            </else>
+          </div>
+        </div>
+      </@section>
+      <!-- <@section>
+        <div class="row">
+          <div class="col-lg-8">
+            $ const pageDetails = site.getAsObject("pageDetails");
+            <div class="node-list node-list--section-authors">
+              <div class="node-list__nodes">
+                <for|key| in=pageDetails>
+                  <if(key.match(`^${alias}\/`))>
+                    <marko-web-query|{ nodes, section }|
+                      name="website-scheduled-content"
+                      params={
+                        alias: key,
+                        limit: 1,
+                        queryFragment,
+                        sectionAlias: key,
+                        sectionFragment,
+                      }
+                      collapsible=false
+                    >
+                      <div class="node-list__node">
+                        <marko-web-website-section-name tag="h2" obj=section link=true />
+                        <global-page-details-block content=pageDetails[key] />
+                      </div>
+                    </marko-web-query>
+                  </if>
+                </for>
+              </div>
+            </div>
+          </div>
+        </div>
+      </@section> -->
+      <@section|{ blockName }|>
+        <theme-section-feed-block with-section=withSection query-name=queryName lazyload=false>
+          <@query-params
+            limit=18
+            skip=p.skip({ perPage })
+            query-fragment=queryFragment
+            include-labels=includeLabels
+            include-content-types=includeContentTypes
+            sort-field=sortField
+            sort-order=sortOrder
+            ending-after=endingAfter
+          />
+        </theme-section-feed-block>
+        <theme-section-feed-block|{ totalCount }| query-name=queryName count-only=true>
+          <@query-params include-labels=includeLabels include-content-types=includeContentTypes />
+          <theme-pagination-controls
+            per-page=perPage
+            total-count=totalCount
+            path=`/${alias}`
+          />
+        </theme-section-feed-block>
+      </@section>
+      <@section|{ aliases }|>
+        <theme-gam-define-display-ad
+          name="rotation"
+          position="section_page"
+          aliases=aliases
+          modifiers=["inter-block"]
+        />
+      </@section>
+      <@section>
+        <global-client-side-most-popular-block />
+      </@section>
+      <@section|{ aliases }|>
+        <theme-gam-define-display-ad
+          name="rotation"
+          position="section_page"
+          aliases=aliases
+          modifiers=["inter-block"]
+        />
+      </@section>
+    </marko-web-page-wrapper>
+  </@page>
+</theme-default-page>
