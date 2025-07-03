@@ -53,5 +53,8 @@
   },
   "<global-company-booth-block>": {
     "template": "./company-booth.marko"
+  },
+  "<global-page-details-block>": {
+    "template": "./page-details.marko"
   }
 }

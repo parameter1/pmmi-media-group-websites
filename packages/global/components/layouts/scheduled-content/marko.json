@@ -10,5 +10,8 @@
     "@include-content-types": "array",
     "@sort-field": "string",
     "@sort-order": "string"
+  },
+  "<global-scheduled-content-podcast-layout>": {
+    "template": "./podcast.marko"
   }
 }

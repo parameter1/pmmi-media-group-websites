@@ -582,4 +582,46 @@ label {
     display: none;
   }
 }
+
+.section-feed-content-node {
+  &__content-sponsors {
+    font-weight: $theme-content-attribution-prefix-spacer-font-weight;
+  }
+}
+
+.page-wrapper {
+  &__scheduled-section-details {
+    .social-icon-link {
+      @include theme-toggle-button();
+      display: inline-flex;
+      justify-content: center;
+      height: 40px;
+      padding: map-get($spacers, 2);
+      background-color: $gray-100;
+      border-radius: 4px;
+      margin: map-get($spacers, 2);
+      .marko-web-icon {
+        &:after {
+          margin-left: map-get($spacers, 2);
+        }
+        &--applepodcasts:after {
+          content: "Apple";
+        }
+        &--prime:after {
+          content: "Amazon Prime";
+        }
+        &--buzzsprout:after {
+          content: "Buzzsprout"
+        }
+        &--spotify:after {
+          content: "Spotify";
+        }
+      }
+    }
+  }
+  &__scheduled-section-title {
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
 /*! critical:end */

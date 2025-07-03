@@ -65,5 +65,8 @@
   },
   "<global-website-sections-by-alias-filter>": {
     "template": "./website-sections-by-alias.marko"
+  },
+  "<global-social-icon-link>": {
+    "template": "./social-icon-link.marko"
   }
 }
