@@ -1,0 +1,45 @@
+import { buildImgixUrl } from "@mindful-web/image";
+$ const { content } = input;
+$ const { primaryImage, socialLinks, name, description } = content;
+$ const blockName = "contact-page";
+
+<marko-web-block name=blockName>
+  <marko-web-element block-name=blockName name="wrapper">
+    <if(primaryImage && primaryImage.src)>
+      $ const imgOpt = {
+        w: 160,
+        h: 160,
+        crop: "faces",
+        fit: "crop",
+        ...(primaryImage.imgOpt && { ...primaryImage.imgOpt }),
+      };
+      $ const src = buildImgixUrl(primaryImage.src, imgOpt);
+      $ const srcset = [`${buildImgixUrl(src, { dpr: 2 })} 2x`];
+      <marko-web-img
+        src=src
+        srcset=srcset
+        alt=primaryImage.alt
+        class=`${blockName}__image`
+      />
+    </if>
+    <div class="page-wrapper__scheduled-section-details">
+      <div class="page-wrapper__scheduled-section-title">$!{name}</div>
+      <div class="page-wrapper__scheduled-section-description">
+        <div>$!{description}</div>
+        <if(socialLinks && socialLinks.length)>
+          <theme-content-contact-details-section block-name=blockName modifiers=["social-links"]>
+            <!-- try to load site specific social share icons with svg loaded locally.  -->
+            <for|item| of=socialLinks>
+              <global-social-icon-link
+                label=item.label
+                provider=item.provider
+                href=item.url
+                modifiers=["dark", "lg"]
+              />
+            </for>
+          </theme-content-contact-details-section>
+        </if>
+      </div>
+    </div>
+  </marko-web-element>
+</marko-web-block>
