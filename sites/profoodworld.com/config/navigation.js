@@ -7,8 +7,8 @@ const topics = [
   { href: '/processing-equipment', label: 'Processing Equipment' },
   { href: '/automation', label: 'Automation' },
   { href: '/food-safety', label: 'Food Safety' },
-  { href: '/sustainability', label: 'Sustainability' },
   { href: '/downloads', label: 'Downloads' },
+  { href: '/workforce', label: 'Workforce' },
 ];
 
 const resources = [
@@ -62,6 +62,7 @@ const desktopMenu = {
       { href: '/leaders', label: 'Leaders in Processing' },
       { href: 'https://www.opxleadershipnetwork.org', label: 'OpX Leadership Network', target: '_blank' },
       { href: '/supplier-news', label: 'Supplier News' },
+      { href: '/sustainability', label: 'Sustainability' },
     ],
   },
 };
@@ -103,7 +104,6 @@ module.exports = {
           { href: '/automation/iiot', label: 'IIoT' },
           { href: '/automation/security', label: 'Security' },
           { href: '/automation/software', label: 'Software' },
-          { href: '/automation/workforce', label: 'Workforce' },
         ],
       },
       tertiary: { items: [] },
