@@ -10,7 +10,7 @@ $ const {
 
 $ const query = ({ salesforceAccountId, boothShowId }) => `
   query {
-    company: companyById(input: { id: "${salesforceAccountId}" }) {
+    company: companyById(input: { id: "${salesforceAccountId}", approved: false }) {
       _id
       booths(input: { showId: "${boothShowId}" }) {
         id
