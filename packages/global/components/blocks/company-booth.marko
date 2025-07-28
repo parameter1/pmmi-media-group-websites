@@ -10,7 +10,7 @@ $ const {
 
 $ const query = ({ salesforceAccountId, boothShowId }) => `
   query {
-    company: companyById(input: { id: "${salesforceAccountId}" }) {
+    company: companyById(input: { id: "${salesforceAccountId}", approved: false }) {
       _id
       booths(input: { showId: "${boothShowId}" }) {
         id
@@ -34,6 +34,7 @@ $ const apiCall = async ({ salesforceAccountId, boothShowId }) => {
   return jsonResponse;
   return [];
 };
+$ console.log(salesforceAccountId, boothShowId, boothShowFullImage, boothShowUrl);
 <if(salesforceAccountId && boothShowId && boothShowFullImage && boothShowUrl)>
   $ const modifiers = getAsArray(input, 'modifiers');
   $ const wrapperClass = "booth-card";
@@ -44,6 +45,7 @@ $ const apiCall = async ({ salesforceAccountId, boothShowId }) => {
   $ const wrapperClassesAsString = wrapperClasses.join(' ');
   <marko-web-resolve|{ resolved }| promise=apiCall({ salesforceAccountId, boothShowId })>
     $ const booths = getAsArray(resolved, 'data.company.booths');
+    $ console.log(resolved);
     <if(booths.length)>
       $ const [booth] = booths;
       <div class=wrapperClassesAsString>
