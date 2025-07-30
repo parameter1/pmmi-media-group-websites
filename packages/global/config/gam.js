@@ -66,6 +66,15 @@ module.exports = ({
       sizeMapping: [
         { viewport: [0, 0], size: ['fluid'] },
       ],
+    })
+    .setTemplate('TOP-ROTATION', {
+      size: [[300, 50], [300, 250], [320, 50], [970, 90], ['fluid']],
+      sizeMapping: [
+        { viewport: [0, 0], size: ['fluid'] },
+        { viewport: [980, 0], size: [[970, 250], [970, 90], [970, 66], [728, 90]] },
+        { viewport: [750, 0], size: [[728, 90], [300, 250]] },
+        { viewport: [300, 0], size: [[300, 50], [300, 250], [320, 100]] },
+      ],
     });
 
   return config;
