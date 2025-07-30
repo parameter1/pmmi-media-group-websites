@@ -10,6 +10,7 @@ config.setAliasAdUnits('default', [
   { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'rotation' },
   { name: 'wallpaper-left', templateName: 'WALLPAPER', path: 'wallpaper-left' },
   { name: 'wallpaper-right', templateName: 'WALLPAPER', path: 'wallpaper-right' },
+  { name: 'top-rotation', templateName: 'TOP-ROTATION', path: 'top-rotation' },
 ]);
 
 module.exports = config;
