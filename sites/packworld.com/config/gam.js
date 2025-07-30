@@ -4,6 +4,7 @@ const config = configureGAM({ basePath: 'pw' });
 
 config.setAliasAdUnits('default', [
   { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'rotation' },
+  { name: 'top-rotation', templateName: 'TOP-ROTATION', path: 'top-rotation' },
   { name: 'rotation', templateName: 'ROTATION', path: 'rotation' },
   { name: 'inline-content', templateName: 'INLINE-CONTENT', path: 'rotation' },
   { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'rotation' },
@@ -69,6 +70,7 @@ aliases.forEach(({ alias, prefix = alias }) => config.setAliasAdUnits(alias, [
   { name: 'rotation', templateName: 'ROTATION', path: `${prefix}_rotation` },
   { name: 'inline-content-left', templateName: 'NATIVE', path: `${prefix}_lrnative` },
   { name: 'inline-content-right', templateName: 'NATIVE', path: `${prefix}_rrnative` },
+  { name: 'top-rotation', templateName: 'TOP-ROTATION', path: `${prefix}_top-rotation` },
 ]));
 
 module.exports = config;
