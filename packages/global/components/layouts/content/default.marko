@@ -165,7 +165,8 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                     block-name=blockName
                     selector=bodyId
                     preventHTMLInjection=true
-                    desktop-ad-name="top-rotation"
+                    desktopLeaderboardAdName="top-rotation"
+                    mobileLeaderboardAdName="top-rotation"
                   />
                 </else>
               </if>
@@ -273,7 +274,8 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                     block-name=blockName
                     selector=bodyId
                     preventHTMLInjection=!shouldInjectAds
-                    desktop-ad-name="top-rotation"
+                    desktopLeaderboardAdName="top-rotation"
+                    mobileLeaderboardAdName="top-rotation"
                   />
                 </else>
                 <if(content.transcript)>
