@@ -56,10 +56,11 @@ aliases.forEach(({ alias, prefix = alias }) => config.setAliasAdUnits(alias, [
   { name: 'inline-content', templateName: 'INLINE-CONTENT', path: `${prefix}_rotation` },
   { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: `${prefix}_rotation` },
   { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: `${prefix}_rotation` },
+  { name: 'top-inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: `${prefix}_top-rotation` },
+  { name: 'top-inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: `${prefix}_top-rotation` },
   { name: 'rotation', templateName: 'ROTATION', path: `${prefix}_rotation` },
   { name: 'inline-content-left', templateName: 'NATIVE', path: `${prefix}_lrnative` },
   { name: 'inline-content-right', templateName: 'NATIVE', path: `${prefix}_rrnative` },
-  { name: 'top-rotation', templateName: 'TOP-ROTATION', path: `${prefix}_top-rotation` },
 ]));
 
 module.exports = config;
