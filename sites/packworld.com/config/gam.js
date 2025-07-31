@@ -8,27 +8,16 @@ config.setAliasAdUnits('default', [
   { name: 'inline-content', templateName: 'INLINE-CONTENT', path: 'rotation' },
   { name: 'inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'rotation' },
   { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'rotation' },
+  { name: 'top-inline-content-mobile', templateName: 'INLINE-CONTENT-MOBILE', path: 'top-rotation' },
+  { name: 'top-inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'top-rotation' },
   { name: 'wallpaper-left', templateName: 'WALLPAPER', path: 'wallpaper-left' },
   { name: 'wallpaper-right', templateName: 'WALLPAPER', path: 'wallpaper-right' },
-  { name: 'top-rotation', templateName: 'TOP-ROTATION', path: 'top-rotation' },
 ]);
 
 config.setTemplate('INLINE-CONTENT', {
   size: [[300, 250], [300, 50], [320, 50]],
   sizeMapping: [
     { viewport: [0, 0], size: [[300, 250], [300, 50], [320, 50]] },
-  ],
-}).setTemplate('INLINE-CONTENT-MOBILE', {
-  size: [[300, 250], [300, 50], [320, 50]],
-  sizeMapping: [
-    { viewport: [980, 0], size: [] },
-    { viewport: [320, 0], size: [[300, 250], [300, 50], [320, 50]] },
-  ],
-}).setTemplate('INLINE-CONTENT-DESKTOP', {
-  size: [[300, 250], [300, 50], [320, 50]],
-  sizeMapping: [
-    { viewport: [980, 0], size: [[300, 250], [300, 50], [320, 50]] },
-    { viewport: [0, 0], size: [] },
   ],
 });
 
