@@ -10,6 +10,7 @@ config.setAliasAdUnits('default', [
   { name: 'inline-content-desktop', templateName: 'INLINE-CONTENT-DESKTOP', path: 'rotation' },
   { name: 'wallpaper-left', templateName: 'WALLPAPER', path: 'wallpaper-left' },
   { name: 'wallpaper-right', templateName: 'WALLPAPER', path: 'wallpaper-right' },
+  { name: 'top-rotation', templateName: 'TOP-ROTATION', path: 'top-rotation' },
 ]);
 
 const aliases = [
@@ -43,6 +44,7 @@ aliases.forEach(({ alias, prefix = alias }) => config.setAliasAdUnits(alias, [
   { name: 'rotation', templateName: 'ROTATION', path: `${prefix}_rotation` },
   { name: 'inline-content-left', templateName: 'NATIVE', path: `${prefix}_lrnative` },
   { name: 'inline-content-right', templateName: 'NATIVE', path: `${prefix}_rrnative` },
+  { name: 'top-rotation', templateName: 'TOP-ROTATION', path: `${prefix}_top-rotation` },
 ]));
 
 module.exports = config;
