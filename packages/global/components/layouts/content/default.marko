@@ -249,6 +249,8 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
                     blockName,
                     selector: bodyId,
                     preventHTMLInjection: !shouldInjectAds,
+                    desktopLeaderboardAdName: "top-inline-content-desktop",
+                    mobileLeaderboardAdName: "top-inline-content-mobile",
                     $global
                   });
                   $ const { partOne, partTwo } = splitContentBody({ body: content.body, contentBodyWithInjections });
