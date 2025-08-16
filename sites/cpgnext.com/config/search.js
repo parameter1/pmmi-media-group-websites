@@ -3,5 +3,7 @@ module.exports = {
   assignedToWebsiteSectionIds: [
     86438,
   ],
+  defaultSortField: 'PUBLISHED',
   type: 'MATCH_PHRASE',
+  useMindful: true,
 };
