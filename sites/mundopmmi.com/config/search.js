@@ -7,5 +7,7 @@ module.exports = {
     32561,
     32562,
   ],
+  defaultSortField: 'PUBLISHED',
   type: 'MATCH_PHRASE',
+  useMindful: true,
 };
