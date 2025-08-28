@@ -7,7 +7,7 @@ import imageHeight from "@mindful-web/marko-web/components/node/utils/image-heig
 
 $ const { id, type, pageNode, ...rest } = input;
 $ const sections = getAsArray(input, "sections");
-$ const { site, pagination: p, i18n } = out.global;
+$ const { site, pagination: p, i18n, config } = out.global;
 $ const perPage = 12;
 $ const lang = site.config.lang || "en";
 
@@ -59,9 +59,22 @@ $ const lang = site.config.lang || "en";
               </div>
               <div class="col-md-3 col-lg-2 col-sm-12 justify-content-center d-flex flex-column px-3 py-3">
                 <div class="ldp__social">
+                  $ const siteNameDasherized = get(config, "websiteContext.name").toLowerCase().replace(' ', '-');
+                  $ try {
+                    const websiteAsUrl = new URL(content.website);
+                    websiteAsUrl.searchParams.set('utm_source', siteNameDasherized);
+                    websiteAsUrl.searchParams.set('utm_medium', 'website-link');
+                    content.website = websiteAsUrl.toString();
+                  } catch (e) {}
                   <marko-web-leaders-company-website-link company=content lang=lang/>
                   <div class="mt-2 d-flex justify-content-around">
                     <for|item| of=content.socialLinks>
+                    $ try {
+                      const itemUrl = new URL(item.url);
+                      itemUrl.searchParams.set('utm_source', siteNameDasherized);
+                      itemUrl.searchParams.set('utm_medium', 'website-link');
+                      item.url = itemUrl.toString();
+                    } catch (e) {}
                       <marko-web-leaders-company-social-link company=content item=item />
                     </for>
                   </div>
