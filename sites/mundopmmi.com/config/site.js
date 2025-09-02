@@ -126,5 +126,6 @@ module.exports = {
   },
   mindful: {
     namespace: 'pmmi/default',
+    view: 'mundo',
   },
 };
