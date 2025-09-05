@@ -71,6 +71,7 @@ const desktopMenu = {
       { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
       { href: '/leaders', label: 'Leaders in Healthcare Packaging' },
       { href: '/supplier-news', label: 'Supplier News' },
+      { href: '/manufacturing', label: 'Manufacturing' },
     ],
   },
 };
