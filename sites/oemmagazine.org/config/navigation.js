@@ -59,6 +59,7 @@ const desktopMenu = {
       { href: '/leaders', label: 'OEM Partner Leaders' },
       { href: '/supplier-news', label: 'Supplier News' },
       { href: '/WomenInPackaging', label: 'Women in Packaging' },
+      { href: '/packexpo', label: 'PACK EXPO News' },
     ],
   },
 };

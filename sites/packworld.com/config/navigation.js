@@ -59,6 +59,7 @@ const desktopMenu = {
       { href: '/supplier-news', label: 'Supplier News' },
       { href: '/magazine/50370', label: 'Women in Packaging' },
       { href: '/trends/operational-excellence', label: 'Operational Excellence' },
+      { href: '/packexpo', label: 'PACK EXPO News' },
     ],
   },
 };
