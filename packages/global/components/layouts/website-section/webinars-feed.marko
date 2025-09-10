@@ -45,7 +45,7 @@ $ const countQueryParams = {
 
 <theme-default-page title=name description=description>
   <@head>
-    <theme-section-feed-block|{ totalCount }| count-only=true query-name="all-published-content">
+    <theme-section-feed-block|{ totalCount }| count-only=true query-name="website-scheduled-content">
       <@query-params ...countQueryParams />
       <theme-pagination-controls
         per-page=perPage
@@ -90,7 +90,7 @@ $ const countQueryParams = {
           />
         </if>
         <if(p.page === 1)>
-          <marko-web-query|{ nodes }| name="all-published-content" params=upcomingQueryParams>
+          <marko-web-query|{ nodes }| name="website-scheduled-content" params=upcomingQueryParams>
             $ const finalNodes = nodes.map((node) => ({
               ...node,
               primarySection: handleContentTypePrimarySection({ i18n, node })
@@ -106,7 +106,7 @@ $ const countQueryParams = {
             />
           </marko-web-query>
         </if>
-        <marko-web-query|{ nodes }| name="all-published-content" params=archiveQueryParams>
+        <marko-web-query|{ nodes }| name="website-scheduled-content" params=archiveQueryParams>
           $ const finalNodes = nodes.map((node) => ({
             ...node,
             primarySection: handleContentTypePrimarySection({ i18n, node })
@@ -115,7 +115,7 @@ $ const countQueryParams = {
             <@header>${i18n("On Demand")}</@header>
           </theme-section-feed-flow>
         </marko-web-query>
-        <theme-section-feed-block|{ totalCount }| count-only=true query-name="all-published-content">
+        <theme-section-feed-block|{ totalCount }| count-only=true query-name="website-scheduled-content">
           <@query-params ...countQueryParams />
           <theme-pagination-controls
             per-page=perPage
