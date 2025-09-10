@@ -63,6 +63,7 @@ const desktopMenu = {
       { href: 'https://www.opxleadershipnetwork.org', label: 'OpX Leadership Network', target: '_blank' },
       { href: '/supplier-news', label: 'Supplier News' },
       { href: '/sustainability', label: 'Sustainability' },
+      { href: '/packexpo', label: 'PACK EXPO News' },
     ],
   },
 };
