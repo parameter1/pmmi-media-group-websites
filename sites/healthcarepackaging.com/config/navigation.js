@@ -72,6 +72,7 @@ const desktopMenu = {
       { href: '/leaders', label: 'Leaders in Healthcare Packaging' },
       { href: '/supplier-news', label: 'Supplier News' },
       { href: '/manufacturing', label: 'Manufacturing' },
+      { href: '/packexpo', label: 'PACK EXPO News' },
     ],
   },
 };
