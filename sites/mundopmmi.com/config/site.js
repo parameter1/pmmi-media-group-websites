@@ -11,6 +11,7 @@ const omeda = require('./omeda');
 const omedaIdentityX = require('./omeda-identity-x');
 const search = require('./search');
 const subscribe = require('./subscribe');
+const pageDetails = require('./page-details');
 
 module.exports = {
   // module configs
@@ -28,6 +29,7 @@ module.exports = {
   omedaIdentityX,
   search,
   subscribe,
+  pageDetails,
   // theme configs
   company: 'PMMI Media Group',
   copyrightNotice: 'Todos los derechos reservados.',
