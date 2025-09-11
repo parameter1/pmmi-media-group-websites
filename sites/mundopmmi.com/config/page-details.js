@@ -6,12 +6,5 @@ module.exports = {
       src: 'https://img.mundoexpopack.com/files/base/pmmi/all/image/static/2logo-voces-desde-la-linea-mundo-expo-pack.0kL2kj8IO3.png',
       alt: 'Voces desde la línea: Pódcast de Empaque y Procesamiento',
     },
-    socialLinks: [
-      {
-        label: 'Buzzsprout',
-        provider: 'buzzsprout',
-        url: 'https://www.buzzsprout.com/2464494',
-      },
-    ],
   },
 };
