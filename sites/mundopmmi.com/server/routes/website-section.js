@@ -158,6 +158,15 @@ module.exports = (app) => {
     },
   })));
 
+  app.get('/packexpolasvegas2025', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'INNOVACIÓN EN PRIMERA FILA: LO QUE VERÁ EN PACK EXPO LAS VEGAS 2025',
+    description: 'Anticípese a las tendencias que marcarán la agenda de la industria en el próximo año. Le presentamos una selección editorial de las innovaciones en tecnología, maquinaria y materiales que debutarán en PACK EXPO Las Vegas 2025: desde soluciones escalables para líneas de producción y sistemas automatizados de última generación, hasta materiales de empaque sustentables, sistemas avanzados de inspección y desarrollos para distintas aplicaciones en la industria de bienes de consumo empacados. Un vistazo estratégico de las innovaciones que destacarán en la cita más esperada del año.',
+    queryParams: {
+      // PELV 2025
+      includeTaxonomyIds: [3202092],
+    },
+  })));
+
   app.get('/eventos', asyncRoute(async (_, res) => res.marko(events, {
     alias: 'eventos',
     name: 'Eventos',
