@@ -89,20 +89,32 @@ $ const lang = site.config.lang || "en";
         <div class="col-lg-8">
           <if(p.page === 1)>
             <if(!content.isLeader)>
+              $ const { website, ...contentSansWebsite } = content;
               <div class="content-page-body">
                 <theme-content-contact-details
-                  obj=content
-                  website-link-attrs=eventLinkAttrs({
-                    category: "Company Profile Page",
-                    label: "Company Website",
-                    entity: eventEntity(content.id, "company"),
-                  })
+                  obj=contentSansWebsite
                   social-link-attrs=eventLinkAttrs({
                     category: "Company Profile Page",
                     label: "Company Social Link",
                     entity: eventEntity(content.id, "company"),
                   })
                 />
+                $ const websiteLinkAttrs = eventLinkAttrs({
+                    category: "Company Profile Page",
+                    label: "Company Website",
+                    entity: eventEntity(content.id, "company"),
+                  });
+                $ const displayedWebsiteLink = () => {
+                  const websiteAsUrl = new URL(website);
+                  return websiteAsUrl.origin;
+                }
+                <if(website)>
+                  <div class="page-contact-details__section">
+                    <div class="page-contact-details__content-website">
+                      <a ...websiteLinkAttrs href=`${website}`>${displayedWebsiteLink()}</a>
+                    </div>
+                  </div>
+                </if>
               </div>
             </if>
             <else>
@@ -157,16 +169,24 @@ $ const lang = site.config.lang || "en";
                     <global-leaders-details company=content lang=lang/>
 
                     <label class="content-section-header content-section-header--border">${i18n("Contact")}</label>
-                    $ const { socialLinks, ...contentSansSocial } = content;
-                    <theme-content-contact-details
-                      obj=contentSansSocial
-                      website-link-attrs=eventLinkAttrs({
+                    $ const { socialLinks, website, ...contentSansSocial } = content;
+                    <theme-content-contact-details obj=contentSansSocial lang=lang />
+                    $ const websiteLinkAttrs = eventLinkAttrs({
                         category: "Company Profile Page",
                         label: "Company Website",
                         entity: eventEntity(content.id, "company"),
-                      })
-                      lang=lang
-                    />
+                      });
+                    $ const displayedWebsiteLink = () => {
+                      const websiteAsUrl = new URL(website);
+                      return websiteAsUrl.origin;
+                    }
+                    <if(website)>
+                      <div class="page-contact-details__section">
+                        <div class="page-contact-details__content-website">
+                          <a ...websiteLinkAttrs href=`${website}`>${displayedWebsiteLink()}</a>
+                        </div>
+                      </div>
+                    </if>
 
                     <label class="content-section-header content-section-header--border">${i18n("More info on")} ${content.name}</label>
                     <global-content-body-with-tracking block-name="leaders-more-info" content=content />
