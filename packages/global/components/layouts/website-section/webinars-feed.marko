@@ -23,14 +23,12 @@ $ const upcomingQueryParams = {
   ...queryParams,
   beginningAfter: now,
   limit: 25,
-  sortField: "startDate",
-  sortOrder: "asc",
+  sort: { field: "startDate", order: "asc" },
 };
 $ const archiveQueryParams = {
   ...queryParams,
   beginningBefore: now,
-  sortField: "startDate",
-  sortOrder: "desc",
+  sort: { field: "startDate", order: "desc" },
   limit: perPage,
   skip: p.skip({ perPage })
 };
