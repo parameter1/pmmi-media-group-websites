@@ -28,7 +28,7 @@ $ const upcomingQueryParams = {
 $ const archiveQueryParams = {
   ...queryParams,
   beginningBefore: now,
-  sort: { field: "startDate", order: "asc" },
+  sort: { field: "startDate", order: "desc" },
   limit: perPage,
   skip: p.skip({ perPage })
 };
