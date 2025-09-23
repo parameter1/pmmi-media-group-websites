@@ -1,8 +1,9 @@
+import { get } from "@mindful-web/object-path";
 import eventLinkAttrs from "@mindful-web/marko-web-p1-events/utils/link-attrs";
 import eventEntity from "@mindful-web/marko-web-p1-events/utils/base-content-entity";
 import queryFragment from "../graphql/fragments/featured-companies";
 
-$ const { i18n } = out.global;
+$ const { i18n, config } = out.global;
 $ const { content } = input;
 
 <marko-web-query|{ nodes }|
@@ -17,6 +18,15 @@ $ const { content } = input;
         <marko-web-node type=`${node.type}-content` flush=true>
           <@body>
             <@title tag="h5">
+              $ const siteNameDasherized = get(config, "websiteContext.name").toLowerCase().replace(' ', '-');
+              $ if (node.website) {
+                try {
+                  const websiteAsUrl = new URL(node.website);
+                  websiteAsUrl.searchParams.set('utm_source', siteNameDasherized);
+                  websiteAsUrl.searchParams.set('utm_medium', 'website-link');
+                  node.website = websiteAsUrl.toString();
+                } catch (e) {}
+              }
               $ const link = {
                   ...(node.website && { href: node.website, target: "_blank" }),
                   attrs: eventLinkAttrs({
