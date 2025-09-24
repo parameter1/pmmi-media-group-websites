@@ -1,6 +1,10 @@
-$ const { site } = out.global;
+import { get } from "@mindful-web/object-path";
+
+$ const { site, config } = out.global;
 
 <if(site.get("leaders.enabled"))>
+  $ const siteNameDasherized = get(config, "websiteContext.name").toLowerCase().replace(' ', '-');
+  $ const utmMedium = "website-link";
   <marko-web-leaders props={
     sectionAlias: site.get("leaders.alias"),
     open: "auto",
@@ -21,5 +25,7 @@ $ const { site } = out.global;
     boothShowIcon: process.env.BOOTH_SHOW_ICON || '',
     boothShowId: process.env.BOOTH_SHOW_ID || '',
     boothShowUrl: process.env.BOOTH_SHOW_URL || '',
+    companyUrlUtmSource: siteNameDasherized,
+    companyUrlUtmMedium: utmMedium,
   }/>
   </if>
