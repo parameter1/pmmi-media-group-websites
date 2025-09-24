@@ -72,6 +72,8 @@ const primaryNavigationItems = [
   { href: '/coding-printing-labeling', label: 'Coding, Printing & Labeling' },
   { href: '/secondary-packaging', label: 'Secondary Packaging' },
   { href: '/trends', label: 'Trends' },
+  // eslint-disable-next-line no-script-url
+  { href: 'javascript:document.querySelector(".site-navbar__toggler").click()', label: 'Extras' },
 ];
 
 module.exports = {
