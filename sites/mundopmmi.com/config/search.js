@@ -1,11 +1,15 @@
 module.exports = {
   contentTypes: ['Article', 'Blog', 'Company', 'Document', 'MediaGallery', 'News', 'Page', 'Podcast', 'Product', 'Video', 'Webinar'],
   assignedToWebsiteSectionIds: [
-    63704,
-    74628,
     32560,
-    32561,
+    88505,
+    88509,
+    88494,
+    88498,
+    88523,
     32562,
+    88502,
+    88517,
   ],
   type: 'MATCH_PHRASE',
 };
