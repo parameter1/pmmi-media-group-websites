@@ -116,7 +116,7 @@ module.exports = {
     ],
   },
   lang: 'es',
-  productsParams: { alias: 'noticias-de-los-proveedores' },
+  // productsParams: { alias: 'noticias-de-los-proveedores' },
   completeYourProfileVerbiage: 'Completa tu perfil de Mundo EXPO PACK',
   profileSubmitButtonLabel: 'Enviar',
   linkOffsite: {
