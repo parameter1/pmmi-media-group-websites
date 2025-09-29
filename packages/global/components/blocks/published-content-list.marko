@@ -10,14 +10,8 @@ $ const blockName = "section-list";
 $ const params = {
   limit: 5,
   excludeContentIds,
-  ...(sectionId !== 87624 && {
-    sectionId,
-    excludeContentTypes: ["Contact", "Company", "Document", "Promotion"]
-  }),
-  ...(sectionId === 87624 && {
-    includeContentTypes: ["Document"],
-    excludeContentTypes: ["Contact", "Company", "Promotion"]
-  }),
+  sectionId,
+  excludeContentTypes: ["Contact", "Company", "Document", "Promotion", "Webinar"],
   excludeLabels: ["Quiz", "Supplier Submitted", "Webinar"],
   sectionBubbling: true,
   queryFragment
