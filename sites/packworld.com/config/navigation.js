@@ -22,6 +22,8 @@ const resources = [
   { href: '/researched-lists', label: 'Researched Lists' },
   { href: '/videos', label: 'Videos' },
   { href: '/webinars', label: 'Webinars' },
+  { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
+  { href: '/page/packaging-associations', label: 'Packaging Associations' },
 ];
 
 const utilities = [
@@ -52,14 +54,12 @@ const desktopMenu = {
   extraCol: {
     label: 'Extras',
     items: [
-      { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
-      { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
       { href: '/leaders', label: 'Leaders in Packaging' },
-      { href: '/page/packaging-associations', label: 'Packaging Associations' },
       { href: '/supplier-news', label: 'Supplier News' },
-      { href: '/magazine/50370', label: 'Women in Packaging' },
       { href: '/trends/operational-excellence', label: 'Operational Excellence' },
       { href: '/packexpo', label: 'PACK EXPO News' },
+      { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
+      { href: '/magazine/50370', label: 'Women in Packaging' },
     ],
   },
 };
