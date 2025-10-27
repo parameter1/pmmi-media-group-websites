@@ -11,6 +11,7 @@ $ const continueLabel = i18n("Sign Me Up!");
 $ const loginEmailLabel = i18n("Work Email");
 $ const buttonLabels = { continue: continueLabel };
 $ const perPage = 12;
+$ const pageDetails = site.getAsObject("pageDetails");
 $ const actionText = i18n("signing up to receive your email notifications");
 $ const queryParams = {
   sectionAlias: alias,
@@ -69,6 +70,12 @@ $ const queryParams = {
         block-name=blockName
         section=section
       />
+    </if>
+
+    <if(pageDetails[alias])>
+      $ const { feedDescription, ...rest } = pageDetails[alias];
+      $ const content = { ...rest, body: feedDescription };
+      <global-page-details-block content=content />
     </if>
 
     $ queryParams.skip = p.skip({ perPage });

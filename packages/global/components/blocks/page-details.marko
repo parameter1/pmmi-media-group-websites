@@ -1,0 +1,48 @@
+import { defaultValue } from "@mindful-web/marko-web/utils";
+import { buildImgixUrl } from "@mindful-web/image";
+
+$ const { content } = input;
+$ const { primaryImage, socialLinks, body, sectionIds } = content;
+$ const blockName = defaultValue(content.blockName, "section-page");
+
+<marko-web-block name=blockName>
+  <marko-web-element block-name=blockName name="wrapper">
+    <if(sectionIds && primaryImage && primaryImage.src)>
+      $ const imgOpt = {
+        w: 250,
+        h: 167,
+      };
+      $ const src = buildImgixUrl(primaryImage.src, imgOpt);
+      $ const srcset = [`${buildImgixUrl(src, { dpr: 2 })} 2x`];
+      <marko-web-img
+        src=src
+        srcset=srcset
+        alt=primaryImage.alt
+        class=`${blockName}__image`
+        attrs={style: "height=100%"}
+      />
+    </if>
+    <else-if(primaryImage && primaryImage.src)>
+      $ const imgOpt = {
+        w: 160,
+        h: 160,
+        crop: "faces",
+        fit: "crop",
+        ...(primaryImage.imgOpt && { ...primaryImage.imgOpt }),
+      };
+      $ const src = buildImgixUrl(primaryImage.src, imgOpt);
+      $ const srcset = [`${buildImgixUrl(src, { dpr: 2 })} 2x`];
+      <marko-web-img
+        src=src
+        srcset=srcset
+        alt=primaryImage.alt
+        class=`${blockName}__image`
+      />
+    </else-if>
+    <div class="page-wrapper__website-section-details">
+      <div class="page-wrapper__website-section-description">
+        $!{body}
+      </div>
+    </div>
+  </marko-web-element>
+</marko-web-block>
