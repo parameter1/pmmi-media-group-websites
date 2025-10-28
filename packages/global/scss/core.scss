@@ -307,6 +307,16 @@ label {
   @include skin-typography($style: "input-label");
 }
 
+.section-page {
+  &__image {
+    margin-right: 20px;
+    border-radius: 0;
+  }
+  &__wrapper {
+    display: flex;
+  }
+}
+
 .col-spacer {
   margin-bottom: 30px;
   @include media-breakpoint-up(md) {
