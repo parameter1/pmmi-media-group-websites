@@ -311,10 +311,14 @@ label {
   &__image {
     margin-right: 20px;
     border-radius: 0;
+    border-radius: 250px;
+    height: 250px;
+    width: 250px;
   }
   &__wrapper {
     display: flex;
     align-items: anchor-center;
+    padding-bottom: 30px;
   }
 }
 
