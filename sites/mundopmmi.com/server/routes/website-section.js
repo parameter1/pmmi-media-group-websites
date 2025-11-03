@@ -167,6 +167,15 @@ module.exports = (app) => {
     },
   })));
 
+  app.get('/liderazgofemenino', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'LIDERAZGO FEMENINO Y SU IMPACTO EN LA TRANSFORMACIÓN DE LA INDUSTRIA DEL EMPAQUE',
+    description: 'Esta selección editorial reúne historias, entrevistas y análisis donde la voz de las mujeres marca un nuevo rumbo a través de la innovación circular, IA, equidad de género y colaboración intersectorial. Encuentre contenidos diversos que trazan una mirada documentada sobre un cambio estructural en la gestión, innovación y cultura organizacional impulsado por el liderazgo femenino.',
+    queryParams: {
+      //
+      includeTaxonomyIds: [3202103],
+    },
+  })));
+
   app.get('/eventos', asyncRoute(async (_, res) => res.marko(events, {
     alias: 'eventos',
     name: 'Eventos',
