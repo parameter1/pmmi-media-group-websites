@@ -307,6 +307,26 @@ label {
   @include skin-typography($style: "input-label");
 }
 
+.section-page {
+  &__image {
+    margin-right: 20px;
+    border-radius: 0;
+    border-radius: 250px;
+    height: 250px;
+    width: 250px;
+  }
+  &__wrapper {
+    display: flex;
+    align-items: anchor-center;
+    padding-bottom: 30px;
+  }
+  .page-wrapper {
+    &__scheduled-section-description {
+      font-size: 20px;
+    }
+  }
+}
+
 .col-spacer {
   margin-bottom: 30px;
   @include media-breakpoint-up(md) {
