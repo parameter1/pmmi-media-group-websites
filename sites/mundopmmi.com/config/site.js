@@ -9,6 +9,7 @@ const navigation = require('./navigation');
 const newsletter = require('./newsletter');
 const omeda = require('./omeda');
 const omedaIdentityX = require('./omeda-identity-x');
+const identityXOptInHooks = require('./identity-x-opt-in-hooks');
 const search = require('./search');
 const subscribe = require('./subscribe');
 
@@ -26,6 +27,7 @@ module.exports = {
   newsletter,
   omeda,
   omedaIdentityX,
+  identityXOptInHooks,
   search,
   subscribe,
   // theme configs

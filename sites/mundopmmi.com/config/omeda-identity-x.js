@@ -7,8 +7,6 @@ module.exports = configure({
   idxConfig,
   rapidIdentProductId: 370,
   websiteBehaviorAttributeId: 199628,
-  onLoginLinkSentPromoCodes: {
-    newsletterSignup: 'MUNDO_NL_P1',
-    default: 'MUNDO_P1',
-  },
+  omedaPromoCodePrefix: 'MUNDO',
+  omedaPromoCodeDefault: 'P1',
 });
