@@ -74,8 +74,7 @@ module.exports = {
   },
   socialMediaLinks: [
     { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/mundo-pmmi' },
-    { provider: 'twitter', href: 'https://twitter.com/MundoPmmi' },
-    { provider: 'facebook', href: 'https://www.facebook.com/MundoPMMI' },
+    { provider: 'tiktok', href: 'https://www.tiktok.com/@mundo.expopack' },
     { provider: 'youtube', href: 'https://www.youtube.com/channel/UCM5Ldhqi4SFRIyoGxuJZV3w?utm_source=MundoWebsite&utm_campaign=MundoYouTube' },
   ],
   gtm: {
