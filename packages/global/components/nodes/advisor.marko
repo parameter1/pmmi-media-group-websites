@@ -1,0 +1,104 @@
+import { getAsObject, getAsArray, get } from "@mindful-web/object-path";
+import { buildImgixUrl } from "@mindful-web/image";
+import defaultValue from "@mindful-web/marko-core/utils/default-value";
+
+$ const { site, i18n } = out.global;
+
+$ const content = getAsObject(input, "node");
+$ const contentType = defaultValue(content.type, 'contact');
+$ const modifiers = [...getAsArray(input, "modifiers"), `${contentType}-content-type`, 'advisor']
+$ const primaryImage = getAsObject(content, "primaryImage");
+$ const containerAttrs = getAsObject(input, "containerAttrs");
+$ const linkAttrs = getAsObject(input, "linkAttrs");
+$ const lazyload = defaultValue(input.lazyload, true);
+
+$ const linkOffsite = getAsObject(site, "config.linkOffsite");
+$ const linkField = get(linkOffsite, contentType);
+$ const linkTarget = linkField && get(content, linkField) ? defaultValue(get(linkOffsite, "target"), "") : "";
+
+$ const imageOptions = {
+  w: 250,
+  h: 250,
+  fit: "faces",
+  // account for and apply fill & fill color of transparent if fit is fill.
+  ...(input.imageOptions && { ...getAsObject(input, "imageOptions") }),
+};
+$ const mobileImageOptions = {
+  ...imageOptions,
+  w: 112,
+  h: 112,
+  ...(input.mobileImageOptions && { ...getAsObject(input, "mobileImageOptions") }),
+}
+
+$ const blockName = "section-feed-content-node";
+
+<marko-web-block name=blockName modifiers=modifiers attrs=containerAttrs>
+  <marko-web-element block-name=blockName name="contents">
+    <marko-web-element block-name=blockName name="body">
+      <marko-web-content-short-name
+        tag="h5"
+        block-name=blockName
+        obj=content
+        link={ field: linkField, target: linkTarget, attrs: linkAttrs }
+      />
+      <marko-web-content-website-deck
+        block-name=blockName
+        obj=content
+        link={ field: linkField, target: linkTarget, attrs: linkAttrs }
+      />
+      <marko-web-content-city-state-zip block-name=blockName obj=content />
+      <marko-web-content-body
+        block-name=blockName
+        obj=content
+      />
+      <marko-web-content-website block-name=blockName obj=content link=true />
+      $ const schedules = getAsArray(content, "websiteSchedules");
+      $ const companyCategoryBlocks = getAsArray(site, 'config.companyCategoryBlocks');
+      <for|companyCategoryBlock| of=companyCategoryBlocks>
+        $ const rootCategoryAlias = defaultValue(companyCategoryBlock.rootAlias, 'directory');
+        $ const categoriesListedInTitle = defaultValue(companyCategoryBlock.title, 'Skills: ');
+        $ const fullNameFind = defaultValue(companyCategoryBlock.fullNameFind, "Advertisor Expert > ");
+        $ const fullNameReplace = defaultValue(companyCategoryBlock.fullNameReplace, "");
+        <if(rootCategoryAlias && schedules.length)>
+          $ const catSections = getSectionsFromSchedules(schedules, rootCategoryAlias);
+          <if(catSections.length)>
+            <marko-web-node-list flush-x=false flush-y=false modifiers=["section-feed", "leaders-categories-feed"] >
+              <@header>
+                ${categoriesListedInTitle}
+              </@header>
+              <@nodes nodes=catSections>
+                <@slot|{ node }|>
+                  $ const name = (fullNameFind) ? node.fullName.replace(fullNameFind, fullNameReplace) : node.fullName;
+                  ${name}
+                </@slot>
+              </@nodes>
+            </marko-web-node-list>
+          </if>
+        </if>
+      </for>
+    </marko-web-element>
+  </marko-web-element>
+  <if(primaryImage.src)>
+    <marko-web-element block-name=blockName name="image-wrapper">
+      $ const isLogo = content.type === "company" ? true : get(primaryImage, "isLogo");
+      $ const src = buildImgixUrl(primaryImage.src, imageOptions, null, isLogo);
+      $ const srcset = [src, `${buildImgixUrl(src, { dpr: 2 })} 2x`];
+
+      $ const srcMobile = buildImgixUrl(primaryImage.src, mobileImageOptions, null, isLogo);
+      $ const srcsetMobile = [srcMobile, `${buildImgixUrl(srcMobile, { dpr: 2 })} 2x`];
+      $ const link = linkField && get(content, linkField) ? get(content, linkField) : get(content, "siteContext.path");
+      <marko-web-picture>
+        <@link href=link target=linkTarget attrs=linkAttrs />
+        <@source srcset=srcset media="(min-width: 768px)" width=imageOptions.w height=imageOptions.h />
+        <@image
+          src=srcMobile
+          srcset=srcsetMobile
+          class=[`${blockName}__image`]
+          alt=primaryImage.alt
+          lazyload=lazyload
+          attrs={ width: mobileImageOptions.w, height: mobileImageOptions.h }
+        />
+      </marko-web-picture>
+    </marko-web-element>
+  </if>
+</marko-web-block>

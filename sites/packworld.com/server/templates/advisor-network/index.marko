@@ -1,0 +1,99 @@
+import hierarchyAliases from "@mindful-web/marko-web/utils/hierarchy-aliases";
+import { getAsArray } from "@mindful-web/object-path";
+import queryFragment from "@pmmi-media-group/package-global/graphql/fragments/advisor-contact";
+
+$ const { id, alias, name, pageNode } = input;
+$ const { $markoWebSearch: search } = out.global;
+$ const sortField = "NAME";
+$ const sortOrder = "ASC";
+$ const currentPage = search.getCurrentPage();
+
+<theme-website-section-page id=id alias=alias name=name>
+  <@head>
+    <marko-web-gtm-website-section-context|{ context }| alias=alias>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-website-section-context>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      <marko-web-p1-events-track-website-section node=section />
+    </marko-web-resolve-page>
+    <${input.head} />
+  </@head>
+  <@page>
+    <marko-web-resolve-page|{ data: section }| node=pageNode>
+      $ const aliases = hierarchyAliases(section);
+      <marko-web-page-wrapper>
+
+        <@section|{ blockName }|>
+          <theme-breadcrumbs modifiers=["directory", "content-page"]>
+            $ const children = getAsArray(section, "hierarchy");
+            <for|child| of=children>
+                <@item>
+                  $ const link = `/${child.alias}`;
+                  <marko-web-link title=child.name href=link>${child.name}</marko-web-link>
+                </@item>
+            </for>
+          </theme-breadcrumbs>
+          <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj=section>
+            <if(currentPage > 1)>$!{value}: Page ${currentPage}</if>
+            <else>$!{value}</else>
+          </marko-web-website-section-name>
+          <marko-web-website-section-description block-name=blockName obj=section />
+        </@section>
+        <@section>
+
+          <div class="row">
+            <div class="col-lg-3">
+              <marko-web-search-filter-container>
+                <global-website-sections-by-alias-filter title='Skills' />
+              </marko-web-search-filter-container>
+              <div class="mb-block">
+              </div>
+            </div>
+            <div class="col-lg-9">
+              <marko-web-search-query|{ nodes, pageInfo, totalCount }|
+                limit=search.getLimit()
+                skip=search.getSkip()
+                sortField=sortField
+                sortOrder=sortOrder
+                content-types=search.input.contentTypes
+                search-query=search.input.searchQuery
+                assigned-to-website-section-ids=[section.id]
+                query-fragment=queryFragment
+                cursor-direction=search.getCursorDirection()
+                cursor-value=search.getCursorValue()
+              >
+                <marko-web-page-wrapper modifiers=["no-padding-x"]>
+                  <if(nodes.length)>
+                    <@section>
+                      <div class="directory-featured-listing__item--wrapper directory-featured-listing__item--open">
+                        <marko-web-node-list
+                          inner-justified=false
+                          flush-x=false
+                          flush-y=false
+                          modifiers=["directory-section-feed", "featured-listings"]
+                        >
+                          <@header>
+                            Advisors
+                          </@header>
+                          <@nodes nodes=nodes>
+                            <@slot|{ node }|>
+                              <marko-web-advisor-node node=node />
+                            </@slot>
+                          </@nodes>
+                        </marko-web-node-list>
+                      </div>
+                      <marko-web-search-pagination-controls page-info=pageInfo total-count=totalCount>
+                        <@link class="btn btn-primary" />
+                      </marko-web-search-pagination-controls>
+                    </@section>
+                  </if>
+                </marko-web-page-wrapper>
+              </marko-web-search-query>
+            </div>
+          </div>
+
+        </@section>
+      </marko-web-page-wrapper>
+    </marko-web-resolve-page>
+  </@page>
+</theme-website-section-page>
