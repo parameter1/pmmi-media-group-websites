@@ -45,6 +45,7 @@
     "@mindful-web/marko-web-search": "^1.39.3",
     "@mindful-web/marko-web-theme-monorail": "^1.47.1",
     "@mindful-web/marko-web-theme-monorail-magazine": "^1.45.0",
+    "@mindful-web/mindful": "^1.45.1",
     "@mindful-web/object-path": "^1.11.9",
     "@mindful-web/utils": "^1.11.9",
     "@mindful-web/web-cli": "^1.11.9",
