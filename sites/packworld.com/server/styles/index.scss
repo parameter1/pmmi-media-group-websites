@@ -84,5 +84,8 @@ $theme-site-navbar-secondary-font-size: 16px !default;
     .marko-web-search-filter-container__title {
       display: none;
     }
+    .directory-featured-listing__item--wrapper {
+      margin-top: 0;
+    }
   }
 }

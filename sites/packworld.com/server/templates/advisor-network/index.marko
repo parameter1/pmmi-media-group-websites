@@ -39,10 +39,10 @@ $ const currentPage = search.getCurrentPage();
             </for>
           </theme-breadcrumbs>
           <marko-web-website-section-name|{ value: sectionName }| tag="h1" block-name=blockName obj=section>
-            <if(currentPage > 1)>$!{sectionName}: Page ${currentPage}</if>
-            <else>$!{sectionName}</else>
+            <if(currentPage > 1)>A Smarter Starting Point for Packaging and Processing Projects: Page ${currentPage}</if>
+            <else>A Smarter Starting Point for Packaging and Processing Projects</else>
           </marko-web-website-section-name>
-          <marko-web-website-section-description block-name=blockName obj=section />
+          <marko-web-website-section-description block-name=blockName obj={ description: 'Finding qualified packaging expertise shouldn’t slow down your project. This advisor directory is a curated list of experienced packaging and processing professionals who consult on packaging line engineering, machinery selection, package and materials development, and food processing operations. Browse advisor backgrounds and fill out the form to be connected.'} />
         </@section>
         <@section>
 
@@ -78,7 +78,7 @@ $ const currentPage = search.getCurrentPage();
                           modifiers=["directory-section-feed", "featured-listings"]
                         >
                           <@header>
-                            Advisors
+                            Advisors Network
                           </@header>
                           <@nodes nodes=nodes>
                             <@slot|{ node }|>
