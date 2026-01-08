@@ -39,6 +39,7 @@ x-env-defaults: &env
   BOOTH_SHOW_FULL_IMAGE: ${BOOTH_SHOW_FULL_IMAGE}
   BOOTH_SHOW_ID: ${BOOTH_SHOW_ID-}
   BOOTH_SHOW_URL: ${BOOTH_SHOW_URL-}
+  BOOTH_SHOW_INFO_GRAPHQL_URL: ${BOOTH_SHOW_INFO_GRAPHQL_URL-https://www.prosource.org/graphql}
 
 x-env-tauron: &env-tauron
   <<: *env
