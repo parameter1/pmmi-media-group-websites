@@ -9,6 +9,7 @@ const navigation = require('./navigation');
 const newsletter = require('./newsletter');
 const omeda = require('./omeda');
 const omedaIdentityX = require('./omeda-identity-x');
+const identityXOptInHooks = require('./identity-x-opt-in-hooks');
 const search = require('./search');
 const subscribe = require('./subscribe');
 const pageDetails = require('./page-details');
@@ -27,6 +28,7 @@ module.exports = {
   newsletter,
   omeda,
   omedaIdentityX,
+  identityXOptInHooks,
   search,
   subscribe,
   pageDetails,
@@ -72,8 +74,7 @@ module.exports = {
   },
   socialMediaLinks: [
     { provider: 'linkedin', href: 'https://www.linkedin.com/showcase/mundo-pmmi' },
-    { provider: 'twitter', href: 'https://twitter.com/MundoPmmi' },
-    { provider: 'facebook', href: 'https://www.facebook.com/MundoPMMI' },
+    { provider: 'tiktok', href: 'https://www.tiktok.com/@mundo.expopack' },
     { provider: 'youtube', href: 'https://www.youtube.com/channel/UCM5Ldhqi4SFRIyoGxuJZV3w?utm_source=MundoWebsite&utm_campaign=MundoYouTube' },
   ],
   gtm: {

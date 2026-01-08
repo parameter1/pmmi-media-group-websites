@@ -1,0 +1,42 @@
+import { defaultValue } from "@mindful-web/marko-web/utils";
+import { set, get } from "@mindful-web/object-path";
+import convertAdToNode from "@mindful-web/marko-web-native-x/utils/convert-ad-to-node";
+
+$ const { nativeX: nxConfig } = out.global;
+$ const placementName = defaultValue(input.placementName, "default");
+$ const aliases = defaultValue(input.aliases, []);
+$ const blockName = "callout-cards";
+$ const uri = nxConfig.getUri();
+$ const placement = nxConfig.getPlacement({ name: placementName, aliases });
+
+<marko-web-native-x-fetch-elements|{ ads }| uri=uri id=placement.id opts={ n: 2 }>
+  $ const hasAd = ads && ads.length && ads[0] && ads[0].hasCampaign;
+  <if(hasAd)>
+    <marko-web-block name=blockName>
+      <marko-web-element block-name=blockName name="row">
+        <marko-web-element block-name=blockName name="col">
+          <if(ads[0] && ads[0].hasCampaign)>
+            $ const convertedAd1 = convertAdToNode(ads[0]);
+            $ set(convertedAd1, 'node.primaryImage.src', `${get(convertedAd1, 'node.primaryImage.src')}&w=300&h=300&fit=crop`)
+            <theme-standard-promo-node
+              image-width=120
+              image-height=120
+              ...convertedAd1
+            />
+          </if>
+        </marko-web-element>
+        <marko-web-element block-name=blockName name="col" modifiers=["last"]>
+          <if(ads[1] && ads[1].hasCampaign)>
+            $ const convertedAd2 = convertAdToNode(ads[1]);
+            $ set(convertedAd2, 'node.primaryImage.src', `${get(convertedAd2, 'node.primaryImage.src')}&w=300&h=300&fit=crop`)
+            <theme-standard-promo-node
+              image-width=120
+              image-height=120
+              ...convertedAd2
+            />
+          </if>
+        </marko-web-element>
+      </marko-web-element>
+    </marko-web-block>
+  </if>
+</marko-web-native-x-fetch-elements>

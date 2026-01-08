@@ -12,6 +12,9 @@
   "<theme-content-card-list-block>": {
     "template": "./content-card-list.marko"
   },
+  "<global-native-x-promo-card-block>": {
+    "template": "./native-ad-promo.marko"
+  },
   "<global-gam-content-targeting>": {
     "template": "./gam-content-targeting.marko"
   },

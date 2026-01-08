@@ -209,6 +209,51 @@ module.exports = (app) => {
     queryFragment: emergingBrandsFragment,
   }));
 
+  app.get('/:alias(industries/beverage)', newsletterState(), withWebsiteSection({
+    template: section,
+    queryFragment,
+    assignedToWebsiteSectionIds: [
+      87582,
+      87585,
+      87586,
+      87587,
+      87588,
+      87589,
+      87590,
+      87591,
+      87592,
+    ],
+  }));
+
+  app.get('/:alias(industries/food)', newsletterState(), withWebsiteSection({
+    template: section,
+    queryFragment,
+    assignedToWebsiteSectionIds: [
+      87583,
+      87593,
+      87594,
+      87595,
+      87596,
+      87597,
+      87598,
+      87599,
+      87600,
+      87601,
+    ],
+  }));
+
+  app.get('/:alias(industries/other-packaged-goods)', newsletterState(), withWebsiteSection({
+    template: section,
+    queryFragment,
+    assignedToWebsiteSectionIds: [
+      87584,
+      87602,
+      87603,
+      87604,
+      87605,
+    ],
+  }));
+
   app.get('/:alias([a-z0-9-/]+)', newsletterState(), withWebsiteSection({
     template: superCategory,
     queryFragment,

@@ -67,7 +67,7 @@ $ const description = defaultDescription(title, config);
             <if(pageDetails[alias])>
               $ const { feedDescription, ...rest } = pageDetails[alias];
               $ const content = { ...rest, body: feedDescription };
-              <global-page-details-block content=content />
+              <global-page-details-block content=content blockName="contact-page" />
             </if>
             <else>
               <theme-breadcrumbs-with-home>
