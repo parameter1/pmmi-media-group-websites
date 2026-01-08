@@ -35,7 +35,7 @@ $ const apiCall = async ({ salesforceAccountId, boothShowId, boothShowInfoGraphQ
   return jsonResponse;
   return [];
 };
-<if(salesforceAccountId && boothShowId && boothShowFullImage && boothShowUrl)>
+<if(salesforceAccountId && boothShowId && boothShowFullImage && boothShowUrl && boothShowInfoGraphQLURL)>
   $ const modifiers = getAsArray(input, 'modifiers');
   $ const wrapperClass = "booth-card";
   $ const wrapperClasses = [wrapperClass];
