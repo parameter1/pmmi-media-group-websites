@@ -30,7 +30,7 @@ const routes = (siteRoutes, siteConfig) => (app) => {
   // Shared/global routes (all sites)
   sharedRoutes(app, siteConfig);
   // Load site routes
-  siteRoutes(app);
+  siteRoutes(app, siteConfig);
 };
 
 module.exports = (options = {}) => {

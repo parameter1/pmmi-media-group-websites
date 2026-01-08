@@ -71,3 +71,18 @@ $theme-site-navbar-secondary-font-size: 16px !default;
     background-color: $leaders-videocam-color !important;
   }
 }
+.page-wrapper {
+  &--advisor-network {
+    // .directory-featured-listing {
+    //   &__item--wrapper {
+    //     margin-top: 0;
+    //   }
+    // }
+    .breadcrumbs--advisor-network {
+      margin-top: map-get($spacers, block);
+    }
+    .marko-web-search-filter-container__title {
+      display: none;
+    }
+  }
+}

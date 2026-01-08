@@ -12,6 +12,7 @@
     #{ $self }__node {
       @include marko-web-node-list-border(border-bottom);
     }
+
     .section-feed-content-node {
       @include media-breakpoint-up(md) {
         flex-direction: row;
@@ -61,6 +62,19 @@
         a {
           font-weight: $font-weight-bold;
           color: $primary;
+        }
+      }
+      &--advisor {
+        .section-feed-content-node__content-city-state-zip {
+          &::before {
+            content: 'From: ';
+            font-weight: $font-weight-bold;;
+          }
+          font-size: 16px;
+          word-break: break-word;
+        }
+        &__body {
+          @include skin-typography($style: "teaser-text-1", $link-style: "primary", $breakpoint: sm);
         }
       }
     }

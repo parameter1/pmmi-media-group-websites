@@ -4,5 +4,11 @@
     "@node": "object",
     "@company-id": "number",
     "@link-attrs": "object"
+  },
+  "<marko-web-advisor-node>": {
+    "template": "./advisor.marko",
+    "@node": "object",
+    "@company-id": "number",
+    "@link-attrs": "object"
   }
 }

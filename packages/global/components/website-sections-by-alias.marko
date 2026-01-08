@@ -4,8 +4,8 @@ import loadWebsiteSections from "@mindful-web/marko-web-search/components/filter
 
 $ const { $markoWebSearch, apollo, i18n } = out.global;
 $ const filterKey = "assignedToWebsiteSectionIds";
-$ const title = isFunction(i18n) ? i18n("Website Sections") : "Website Sections";
-
+$ const titleText = input.title ? input.title : "Website Sections";
+$ const title = isFunction(i18n) ? i18n(titleText) : titleText;
 <marko-web-resolve|{ resolved }| promise=loadWebsiteSections({
   $markoWebSearch,
   apolloMindfulWebCMS: apollo,
