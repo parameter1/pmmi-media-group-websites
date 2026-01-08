@@ -21,21 +21,26 @@ $ const currentPage = search.getCurrentPage();
   <@page>
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ const aliases = hierarchyAliases(section);
-      <marko-web-page-wrapper>
+      <marko-web-page-wrapper modifiers=["advisor-network"]>
 
         <@section|{ blockName }|>
-          <theme-breadcrumbs modifiers=["directory", "content-page"]>
+          <theme-breadcrumbs modifiers=["advisor-network", "content-page"]>
             $ const children = getAsArray(section, "hierarchy");
             <for|child| of=children>
-                <@item>
-                  $ const link = `/${child.alias}`;
-                  <marko-web-link title=child.name href=link>${child.name}</marko-web-link>
-                </@item>
+
+                  <@item>
+                  <if(child.alias !== section.alias)>
+                  </if>
+                    $ const link = (child.alias !== section.alias) ? `/${child.alias}`: null;
+                    <marko-web-link title=child.name href=link>${child.name}</marko-web-link>
+
+                  </@item>
+
             </for>
           </theme-breadcrumbs>
-          <marko-web-website-section-name|{ value }| tag="h1" block-name=blockName obj=section>
-            <if(currentPage > 1)>$!{value}: Page ${currentPage}</if>
-            <else>$!{value}</else>
+          <marko-web-website-section-name|{ value: sectionName }| tag="h1" block-name=blockName obj=section>
+            <if(currentPage > 1)>$!{sectionName}: Page ${currentPage}</if>
+            <else>$!{sectionName}</else>
           </marko-web-website-section-name>
           <marko-web-website-section-description block-name=blockName obj=section />
         </@section>
