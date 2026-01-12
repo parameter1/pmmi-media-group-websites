@@ -20,6 +20,7 @@ $theme-site-navbar-logo-height: 75px !default;
 $theme-site-navbar-secondary-font-size: 16px !default;
 
 @import "@pmmi-media-group/package-global/scss/core";
+@import "./advisors.scss";
 
 .site-navbar {
   &__right {

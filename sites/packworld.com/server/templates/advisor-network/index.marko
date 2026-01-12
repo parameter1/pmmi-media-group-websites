@@ -21,7 +21,7 @@ $ const currentPage = search.getCurrentPage();
   <@page>
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ const aliases = hierarchyAliases(section);
-      <marko-web-page-wrapper modifiers=["advisor-network"]>
+      <marko-web-page-wrapper modifiers=["advisor-network", `${alias.replace('/', '-')}`]>
 
         <@section|{ blockName }|>
           <theme-breadcrumbs modifiers=["advisor-network", "content-page"]>
@@ -39,19 +39,35 @@ $ const currentPage = search.getCurrentPage();
             </for>
           </theme-breadcrumbs>
           <marko-web-website-section-name|{ value: sectionName }| tag="h1" block-name=blockName obj=section>
-            <if(currentPage > 1)>A Smarter Starting Point for Packaging and Processing Projects: Page ${currentPage}</if>
-            <else>A Smarter Starting Point for Packaging and Processing Projects</else>
+            <if(currentPage > 1)>A Smarter Starting Point for Your Packaging and Processing Projects: Page ${currentPage}</if>
+            <else>A Smarter Starting Point for Your Packaging and Processing Projects</else>
           </marko-web-website-section-name>
-          <marko-web-website-section-description block-name=blockName obj={ description: 'Finding qualified packaging expertise shouldn’t slow down your project. This advisor directory is a curated list of experienced packaging and processing professionals who consult on packaging line engineering, machinery selection, package and materials development, and food processing operations. Browse advisor backgrounds and fill out the form to be connected.'} />
+          <marko-web-website-section-description block-name=blockName obj={ description: 'Finding qualified packaging and processing consulting experts to help you deliver on your next project shouldn’t slow you down. The Packaging World Advisor Network is a curated list of experienced, trusted, and vetted independent packaging and processing professionals who consult on packaging line engineering, machinery selection, package and materials development, and food and beverage processing operations. Browse advisor backgrounds and fill out the form to be connected.'} />
         </@section>
         <@section>
 
           <div class="row">
             <div class="col-lg-3">
+              <!--
               <marko-web-search-filter-container>
-                <global-website-sections-by-alias-filter title='Skills' />
+                <global-website-sections-by-alias-filter title='Areas of Emphasis' />
               </marko-web-search-filter-container>
-              <div class="mb-block">
+              <if(alias !== 'advisor-network')>
+                <ul class="marko-web-search-filter__items marko-web-search-filter__items--open marko-web-search-filter__items--assigned-to-website-section-ids">
+                  <li class="marko-web-search-filter__item">
+                    <a class="btn btn-secondary" href="/advisor-network">Clear Filter</a>
+                  </li>
+                </ul>
+              </if>
+              -->
+              <div class="mb-block sticky-top">
+              <marko-web-link
+                class="btn btn-primary"
+                href='#CTA'
+                title='Connect with an Advisor'
+              >
+                Connect &raquo;
+              </marko-web-link>
               </div>
             </div>
             <div class="col-lg-9">
@@ -78,7 +94,7 @@ $ const currentPage = search.getCurrentPage();
                           modifiers=["directory-section-feed", "featured-listings"]
                         >
                           <@header>
-                            Advisors Network
+                            Advisor Network
                           </@header>
                           <@nodes nodes=nodes>
                             <@slot|{ node }|>

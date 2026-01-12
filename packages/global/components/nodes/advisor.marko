@@ -1,6 +1,7 @@
 import { getAsObject, getAsArray, get } from "@mindful-web/object-path";
 import { buildImgixUrl } from "@mindful-web/image";
 import defaultValue from "@mindful-web/marko-core/utils/default-value";
+import getSectionsFromSchedules from "@mindful-web/marko-web-theme-monorail/utils/get-sections-from-schedules";
 
 $ const { site, i18n } = out.global;
 
@@ -44,25 +45,32 @@ $ const blockName = "section-feed-content-node";
       <marko-web-content-website-deck
         block-name=blockName
         obj=content
-        link={ field: linkField, target: linkTarget, attrs: linkAttrs }
       />
       <marko-web-content-city-state-zip block-name=blockName obj=content />
+      <!--
       <marko-web-content-body
         block-name=blockName
         obj=content
       />
       <marko-web-content-website block-name=blockName obj=content link=true />
+      -->
       $ const schedules = getAsArray(content, "websiteSchedules");
-      $ const companyCategoryBlocks = getAsArray(site, 'config.companyCategoryBlocks');
+      $ const companyCategoryBlocks = [
+          {
+            title: 'Areas of Emphasis: ',
+            rootAlias: 'advisor-network',
+            fullNameFind: 'Advisor Network >',
+          },
+        ];
       <for|companyCategoryBlock| of=companyCategoryBlocks>
-        $ const rootCategoryAlias = defaultValue(companyCategoryBlock.rootAlias, 'directory');
-        $ const categoriesListedInTitle = defaultValue(companyCategoryBlock.title, 'Skills: ');
-        $ const fullNameFind = defaultValue(companyCategoryBlock.fullNameFind, "Advertisor Expert > ");
-        $ const fullNameReplace = defaultValue(companyCategoryBlock.fullNameReplace, "");
+        $ const rootCategoryAlias = defaultValue(companyCategoryBlock.rootAlias, 'advisor-network');
+        $ const categoriesListedInTitle = defaultValue(companyCategoryBlock.title, 'Individual’s Skills: ');
+        $ const fullNameFind = defaultValue(companyCategoryBlock.fullNameFind, "Advisor Network > ");
+        $ const fullNameReplace = defaultValue(companyCategoryBlock.fullNameReplace, "- ");
         <if(rootCategoryAlias && schedules.length)>
           $ const catSections = getSectionsFromSchedules(schedules, rootCategoryAlias);
           <if(catSections.length)>
-            <marko-web-node-list flush-x=false flush-y=false modifiers=["section-feed", "leaders-categories-feed"] >
+            <marko-web-node-list flush-x=false flush-y=false modifiers=["section-feed", "advisor-categories-feed"] >
               <@header>
                 ${categoriesListedInTitle}
               </@header>

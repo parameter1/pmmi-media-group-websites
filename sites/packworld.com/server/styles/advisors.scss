@@ -1,0 +1,55 @@
+.node-list {
+  $self: &;
+  &--directory-section-feed {
+    .section-feed-content-node__content-city-state-zip {
+      &::before {
+        content: 'From: ';
+        font-weight: $font-weight-bold;;
+      }
+      font-size: 16px;
+      word-break: break-word;
+    }
+  }
+}
+.node-list {
+  &--featured-listings {
+    .node-list--advisor-categories-feed {
+      .node-list__header {
+        background-color: $white;
+        padding: 0;
+        @include skin-typography($style: "teaser-text-1", $link-style: "primary", $breakpoint: sm);
+        font-weight: $font-weight-bold;
+        font-size: 16px;
+      }
+      .node-list__node {
+        margin: 0;
+        border-top: none;
+        border-bottom: none;
+        padding-top: map-get($spacers, 1);
+        padding-bottom: map-get($spacers, 1);
+      }
+    }
+  }
+}
+.page-wrapper {
+  &--advisor-network {
+    .page-wrapper__website-section-name {
+      text-transform: initial;
+    }
+  }
+  // specific seciton bold targeting
+  // &--advisor-network-packaging {
+  //   .marko-web-search-filter__item {
+  //     :has(a[href="/advisor-network/packaging"] {
+  //       font-weight: bold;
+  //     }
+  //   }
+  // }
+  // &--advisor-network-processing {
+  //   .marko-web-search-filter__item {
+  //     &:has(a[  ref="/advisor-network/processing"]) {
+  //       font-weight: bold;
+  //     }
+  //   }
+  // }
+}
