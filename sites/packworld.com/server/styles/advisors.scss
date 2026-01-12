@@ -3,7 +3,7 @@
   &--directory-section-feed {
     .section-feed-content-node__content-city-state-zip {
       &::before {
-        content: 'From: ';
+        content: 'Location: ';
         font-weight: $font-weight-bold;;
       }
       font-size: 16px;
@@ -37,19 +37,22 @@
       text-transform: initial;
     }
   }
+  .marko-web-search-toggle-filter {
+    font-size: 20px;
+  }
   // specific seciton bold targeting
-  // &--advisor-network-packaging {
-  //   .marko-web-search-filter__item {
-  //     :has(a[href="/advisor-network/packaging"] {
-  //       font-weight: bold;
-  //     }
-  //   }
-  // }
-  // &--advisor-network-processing {
-  //   .marko-web-search-filter__item {
-  //     &:has(a[  ref="/advisor-network/processing"]) {
-  //       font-weight: bold;
-  //     }
-  //   }
-  // }
+  &--advisor-network-packaging {
+    .marko-web-search-filter__item {
+      &:has([href^="/advisor-network/packaging"]) {
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+  &--advisor-network-processing {
+    .marko-web-search-filter__item {
+      &:has([href="/advisor-network/processing"]) {
+        font-weight: $font-weight-bold
+      }
+    }
+  }
 }
