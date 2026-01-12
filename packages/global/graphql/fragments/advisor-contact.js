@@ -21,6 +21,8 @@ fragment DirectorySectionMicroFeedBlockContentFragment on Content {
     section {
       id
       name
+      fullName
+      alias
     }
   }
   ... on Addressable {
