@@ -107,7 +107,9 @@ $ const buttonLabels = { continue: continueLabel };
       on="newsletter-form-subscription"
       clear-data=true
     />
-    <global-native-x-announcement-block />
+
+    <theme-header-announcement-block nativeX=nativeX />
+
     <marko-web-identity-x-context|{ hasUser, isEnabled }|>
       <if("navbar-b" === site.get("navigation.type"))>
         <global-site-header

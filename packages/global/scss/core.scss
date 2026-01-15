@@ -144,6 +144,7 @@
 
 // 6. selectively import theme _block_ items. mark as critical when necessary
 // @todo VERIFY ALL OF THESE - were all being included by monorail
+@import "@mindful-web/marko-web-theme-monorail/scss/components/blocks/header-announcement";
 @import "@mindful-web/marko-web-theme-monorail/scss/components/blocks/callout-cards";
 @import "@mindful-web/marko-web-theme-monorail/scss/components/blocks/content-card-deck";
 /*! critical:start|content.company */
@@ -264,7 +265,6 @@
 /*! critical:end */
 /*! critical:start */
 @import "./components/native-x-list";
-@import "./components/native-x-announcement";
 /*! critical:end */
 @import "./components/pmg-events";
 /*! critical:start|website-section.webinars */
