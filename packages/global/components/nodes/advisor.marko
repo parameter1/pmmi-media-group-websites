@@ -55,26 +55,29 @@ $ const blockName = "section-feed-content-node";
       <marko-web-content-website block-name=blockName obj=content link=true />
       -->
       $ const schedules = getAsArray(content, "websiteSchedules");
-      $ const companyCategoryBlocks = [
+      $ const contactEmphasises = [];
+      <!--
+        [
           {
             title: 'Areas of Emphasis: ',
             rootAlias: 'advisor-network',
             fullNameFind: 'Advisor Network >',
           },
         ];
-      <for|companyCategoryBlock| of=companyCategoryBlocks>
-        $ const rootCategoryAlias = defaultValue(companyCategoryBlock.rootAlias, 'advisor-network');
-        $ const categoriesListedInTitle = defaultValue(companyCategoryBlock.title, 'Individual’s Skills: ');
-        $ const fullNameFind = defaultValue(companyCategoryBlock.fullNameFind, "Advisor Network > ");
-        $ const fullNameReplace = defaultValue(companyCategoryBlock.fullNameReplace, "- ");
-        <if(rootCategoryAlias && schedules.length)>
-          $ const catSections = getSectionsFromSchedules(schedules, rootCategoryAlias);
-          <if(catSections.length)>
+      -->
+      <for|emphasisBlock| of=contactEmphasises>
+        $ const rootAlias = defaultValue(emphasisBlock.rootAlias, 'advisor-network');
+        $ const emphasisListTitle = defaultValue(emphasisBlock.title, 'Individual’s Skills: ');
+        $ const fullNameFind = defaultValue(emphasisBlock.fullNameFind, "Advisor Network > ");
+        $ const fullNameReplace = defaultValue(emphasisBlock.fullNameReplace, "- ");
+        <if(rootAlias && schedules.length)>
+          $ const emphasises = getSectionsFromSchedules(schedules, rootAlias);
+          <if(emphasises.length)>
             <marko-web-node-list flush-x=false flush-y=false modifiers=["section-feed", "advisor-categories-feed"] >
               <@header>
-                ${categoriesListedInTitle}
+                ${emphasisListTitle}
               </@header>
-              <@nodes nodes=catSections>
+              <@nodes nodes=emphasises>
                 <@slot|{ node }|>
                   $ const name = (fullNameFind) ? node.fullName.replace(fullNameFind, fullNameReplace) : node.fullName;
                   ${name}
