@@ -1,6 +1,6 @@
 const contentMetering = require('@mindful-web/marko-web-theme-monorail/middleware/content-metering');
-const qf = require('@mindful-web/marko-web-theme-monorail/graphql/fragments/content-page');
 const companyQueryFragmentFn = require('../graphql/fragment-factories/content-company');
+const { factory: contactQueryFragmentFn } = require('../graphql/fragment-factories/content-contact');
 const { factory: leadersContentQueryFactory } = require('../graphql/fragment-factories/content-page');
 
 const { newsletterState } = require('../middleware/newsletter-state');
@@ -18,13 +18,12 @@ module.exports = (app) => {
 
   // base on site config||USE_LINK_INJECTED_BODY to enable bcl
   const useLinkInjectedBody = site.get('useLinkInjectedBody');
-  const queryFragment = qf.factory ? qf.factory({ useLinkInjectedBody }) : qf;
 
   const routesList = [
     { // contact
       regex: '/*?contact/:id(\\d{8})*',
       template: contact,
-      queryFragment,
+      queryFragment: contactQueryFragmentFn(),
     },
     { // company
       regex: '/*?company/:id(\\d{8})*',

@@ -1,3 +1,4 @@
+import { getAsArray } from "@mindful-web/object-path";
 import { buildImgixUrl } from "@mindful-web/image";
 import queryFragment from "@mindful-web/marko-web-theme-monorail/graphql/fragments/section-feed-block";
 
@@ -43,6 +44,13 @@ $ const perPage = 10;
         </if>
 
         <theme-page-contents|{ blockName }| modifiers=["contact"]>
+          <marko-web-content-website-deck
+            block-name=blockName
+            obj=content
+          />
+          <marko-web-content-city-state-zip block-name=blockName obj=content />
+          $ const schedules = getAsArray(content, "websiteSchedules");
+          $ console.log(schedules)
           <marko-web-content-body block-name=blockName obj=content />
         </theme-page-contents>
 
