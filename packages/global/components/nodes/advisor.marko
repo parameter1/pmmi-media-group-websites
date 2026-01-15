@@ -73,7 +73,7 @@ $ const blockName = "section-feed-content-node";
         <if(rootAlias && schedules.length)>
           $ const emphasises = getSectionsFromSchedules(schedules, rootAlias);
           <if(emphasises.length)>
-            <marko-web-node-list flush-x=false flush-y=false modifiers=["section-feed", "advisor-categories-feed"] >
+            <marko-web-node-list flush-x=false flush-y=false modifiers=["section-feed", "advisor-emphasis-feed"] >
               <@header>
                 ${emphasisListTitle}
               </@header>
