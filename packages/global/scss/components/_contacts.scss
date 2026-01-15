@@ -1,0 +1,33 @@
+.page-contents {
+  .primary-image {
+    &__image-credit::before {
+      content: "Fuente: ";
+    }
+  }
+  [data-embed-type] .credit::before {
+    content: "Fuente: ";
+  }
+  &__content-body {
+    padding-top: map-get($spacers, 2);
+  }
+  &__content-city-state-zip {
+    padding-top: map-get($spacers, 2);
+    &::before {
+      content: 'Location: ';
+      @include skin-typography($style: "article-text", $link-style: "primary");
+      font-weight: $font-weight-bold;
+    }
+    word-break: break-word;
+  }
+  .node-list--advisor-categories-feed {
+    .node-list__header {
+      padding-left: 0;
+      @include skin-typography($style: "article-text", $link-style: "primary");
+      font-weight: $font-weight-bold;
+    }
+    .node-list__node {
+      padding-top: map-get($spacers,1);
+      padding: 0;
+    }
+  }
+}

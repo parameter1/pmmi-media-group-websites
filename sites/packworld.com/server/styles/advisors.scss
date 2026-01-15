@@ -2,6 +2,7 @@
   $self: &;
   &--directory-section-feed {
     .section-feed-content-node__content-city-state-zip {
+      margin-top: map-get($spacers, 2);
       &::before {
         content: 'Location: ';
         font-weight: $font-weight-bold;;
@@ -13,7 +14,8 @@
 }
 .node-list {
   &--featured-listings {
-    .node-list--advisor-categories-feed {
+    .node-list--advisor-emphasis-feed {
+      margin-top: map-get($spacers, 2);
       .node-list__header {
         background-color: $white;
         padding: 0;
