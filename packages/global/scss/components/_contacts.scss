@@ -1,12 +1,4 @@
 .page-contents {
-  .primary-image {
-    &__image-credit::before {
-      content: "Fuente: ";
-    }
-  }
-  [data-embed-type] .credit::before {
-    content: "Fuente: ";
-  }
   &__content-body {
     padding-top: map-get($spacers, 2);
   }
