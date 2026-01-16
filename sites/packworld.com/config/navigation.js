@@ -17,7 +17,6 @@ const resources = [
   { href: '/events', label: 'Events' },
   { href: '/magazine', label: 'Magazine' },
   { href: '/page/pw-newsletters', label: 'Newsletters' },
-  { href: '/podcasts', label: 'Podcasts' },
   { href: '/quizzes', label: 'Quizzes' },
   { href: '/researched-lists', label: 'Researched Lists' },
   { href: '/videos', label: 'Videos' },
@@ -62,6 +61,7 @@ const desktopMenu = {
       { href: '/industries/beverage', label: 'Industries - Beverage' },
       { href: '/industries/food', label: 'Industries - Food' },
       { href: '/industries/other-packaged-goods', label: 'Industries - Other Packaged Goods' },
+      { href: '/podcasts', label: 'Podcasts' },
     ],
   },
 };
