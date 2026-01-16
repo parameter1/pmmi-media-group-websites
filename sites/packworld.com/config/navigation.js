@@ -58,7 +58,6 @@ const desktopMenu = {
       { href: '/supplier-news', label: 'Supplier News' },
       { href: '/trends/operational-excellence', label: 'Operational Excellence' },
       { href: '/packexpo', label: 'PACK EXPO News' },
-      { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
       { href: '/magazine/50370', label: 'Women in Packaging' },
       { href: '/industries/beverage', label: 'Industries - Beverage' },
       { href: '/industries/food', label: 'Industries - Food' },
