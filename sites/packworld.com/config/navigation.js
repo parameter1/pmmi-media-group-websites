@@ -14,6 +14,7 @@ const topics = [
 ];
 
 const resources = [
+  { href: '/advisor-network', label: 'Advisor Network' },
   { href: '/events', label: 'Events' },
   { href: '/magazine', label: 'Magazine' },
   { href: '/page/pw-newsletters', label: 'Newsletters' },
