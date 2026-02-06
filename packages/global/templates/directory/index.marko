@@ -5,7 +5,7 @@ import queryFragment from "../../graphql/fragments/directory-section-featured-fe
 
 $ const { id, alias, name, pageNode } = input;
 
-$ const { $markoWebSearch: search, GAM, i18n } = out.global;
+$ const { $markoWebSearch: search, GAM, i18n, site } = out.global;
 $ if (alias !== get(search, "config.rootAlias")) {
   set(out.global.$markoWebSearch, 'input.assignedToWebsiteSectionIds', [id]);
   set(out.global.$markoWebSearch, 'query.assignedToWebsiteSectionIds', `${id}`);
@@ -48,6 +48,12 @@ $ const currentPage = search.getCurrentPage();
         <@section>
           <div class="row">
             <div class="col-lg-3">
+              <div class="leaders-index-page__logo">
+                <marko-web-img
+                  src=site.get("leaders.header.imgSrc")
+                  alt=site.get("leaders.title")
+                />
+              </div>
               <marko-web-search-filter-container title={ value: "Filters" }>
                 <global-website-sections-by-alias-filter>
                   <@title value="Categories" />
@@ -162,6 +168,14 @@ $ const currentPage = search.getCurrentPage();
               </else-if>
             </div>
           </div>
+        </@section>
+        <@section|{ alias }| modifiers=["leaders-full-width"]>
+          <global-leaders-all />
+          <style>
+            .site-footer {
+              z-index: 0 !important;
+            }
+          </style>
         </@section>
       </marko-web-page-wrapper>
     </marko-web-resolve-page>
