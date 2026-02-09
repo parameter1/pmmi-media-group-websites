@@ -8,6 +8,7 @@ const collections = require('@pmmi-media-group/package-global/templates/website-
 const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');
 const withTopStoriesBlock = require('@pmmi-media-group/package-global/templates/website-section/with-top-stories-block');
 const directory = require('@pmmi-media-group/package-global/routes/directory');
+const companySearch = require('@pmmi-media-group/package-global/company-search');
 
 const section = require('../templates/website-section');
 const leaders = require('../templates/website-section/leaders');
@@ -75,32 +76,35 @@ module.exports = (app) => {
     queryFragment: leadersFragment,
   }));
 
+  const assignedToWebsiteSectionIds = [
+    87209,
+    87210,
+    87211,
+    87212,
+    87213,
+    87214,
+    87215,
+    87216,
+    87217,
+    87223,
+    87224,
+    87225,
+    87226,
+    87227,
+    87228,
+    87229,
+    87295,
+    87296,
+    87297,
+    87298,
+    87299,
+  ];
+  companySearch(app, assignedToWebsiteSectionIds);
+
   directory(app, {
     rootAlias: 'company-categories-2024',
     contentTypes: ['Company'],
-    assignedToWebsiteSectionIds: [
-      87209,
-      87210,
-      87211,
-      87212,
-      87213,
-      87214,
-      87215,
-      87216,
-      87217,
-      87223,
-      87224,
-      87225,
-      87226,
-      87227,
-      87228,
-      87229,
-      87295,
-      87296,
-      87297,
-      87298,
-      87299,
-    ],
+    assignedToWebsiteSectionIds,
   });
 
   app.get('/:alias(WomenInPackaging)', newsletterState(), withWebsiteSection({

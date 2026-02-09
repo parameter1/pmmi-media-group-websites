@@ -7,6 +7,7 @@ const events = require('@pmmi-media-group/package-global/templates/website-secti
 const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');
 const collections = require('@pmmi-media-group/package-global/templates/website-section/collections');
 const directory = require('@pmmi-media-group/package-global/routes/directory');
+const companySearch = require('@pmmi-media-group/package-global/company-search');
 
 const section = require('../templates/website-section');
 const leaders = require('../templates/website-section/leaders');
@@ -69,27 +70,30 @@ module.exports = (app) => {
     queryFragment: leadersFragment,
   }));
 
+  const assignedToWebsiteSectionIds = [
+    87193,
+    87205,
+    87206,
+    87207,
+    87208,
+    87218,
+    87219,
+    87220,
+    87221,
+    87222,
+    87230,
+    87231,
+    87279,
+    87280,
+    87293,
+    87294,
+  ];
+  companySearch(app, assignedToWebsiteSectionIds);
+
   directory(app, {
     rootAlias: 'company-categories-2024',
     contentTypes: ['Company'],
-    assignedToWebsiteSectionIds: [
-      87193,
-      87205,
-      87206,
-      87207,
-      87208,
-      87218,
-      87219,
-      87220,
-      87221,
-      87222,
-      87230,
-      87231,
-      87279,
-      87280,
-      87293,
-      87294,
-    ],
+    assignedToWebsiteSectionIds,
   });
 
   app.get('/:alias(news)', newsletterState(), withWebsiteSection({

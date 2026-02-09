@@ -63,20 +63,10 @@ $ const currentPage = search.getCurrentPage();
               </div>
             </div>
             <div class="col-lg-9">
-              <marko-web-search-form>
-                <@block class="search-form" />
-                <div class="form-group search-form__group">
-                  <label for="search-phrase" class="sr-only">Enter search phrase</label>
-                  <marko-web-search-input
-                    id="search-phrase"
-                    class="form-control"
-                    placeholder="Enter search phrase..."
-                  />
-                </div>
-                <button type="submit" class="btn btn-primary search-form__btn">
-                  Search
-                </button>
-              </marko-web-search-form>
+              <div class="mt-block">
+                <div class="company-search__title"> Company Search:</div>
+                <global-company-search-block />
+              </div>
               <if(currentPage === 1)>
                 <!-- Set featured alias to directory or rootLevel Alias(directory/rootLevel) -->
                 $ const featuredAlias = alias.split('/').length >= 3 ? alias.split('/').slice(0,2).join('/') : alias;
