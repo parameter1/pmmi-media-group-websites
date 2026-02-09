@@ -191,14 +191,14 @@ module.exports = (app) => {
   }));
 
   const assignedToWebsiteSectionIds = [
-    88774,
-    88811,
-    88844,
+    89653,
+    89660,
+    89693,
   ];
   companySearch(app, assignedToWebsiteSectionIds);
 
   directory(app, {
-    rootAlias: 'company-categories-2025',
+    rootAlias: 'z-company-categories-2026',
     contentTypes: ['Company'],
     assignedToWebsiteSectionIds,
   });
