@@ -9,6 +9,7 @@ const events = require('@pmmi-media-group/package-global/templates/website-secti
 const collections = require('@pmmi-media-group/package-global/templates/website-section/collections');
 const superCategory = require('@pmmi-media-group/package-global/templates/website-section/super-category');
 const directory = require('@pmmi-media-group/package-global/routes/directory');
+const companySearch = require('@pmmi-media-group/package-global/company-search');
 const section = require('../templates/website-section');
 const leaders = require('../templates/website-section/leaders');
 const global250 = require('../templates/website-section/global-250');
@@ -55,14 +56,17 @@ module.exports = (app) => {
     queryFragment: leadersFragment,
   }));
 
+  const assignedToWebsiteSectionIds = [
+    89622,
+    89626,
+    89638,
+  ];
+  companySearch(app, assignedToWebsiteSectionIds);
+
   directory(app, {
-    rootAlias: 'company-categories-2024',
+    rootAlias: 'z-company-categories-2026',
     contentTypes: ['Company'],
-    assignedToWebsiteSectionIds: [
-      87194,
-      87281,
-      87300,
-    ],
+    assignedToWebsiteSectionIds,
   });
 
   app.get('/:alias(emergingbrands)', newsletterState(), withWebsiteSection({

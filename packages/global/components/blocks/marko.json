@@ -53,5 +53,8 @@
   },
   "<global-page-details-block>": {
     "template": "./page-details.marko"
+  },
+  "<global-company-search-block>": {
+    "template": "./company-search.marko"
   }
 }

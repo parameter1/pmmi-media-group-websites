@@ -9,6 +9,7 @@ const collections = require('@pmmi-media-group/package-global/templates/website-
 const withTopStoriesBlock = require('@pmmi-media-group/package-global/templates/website-section/with-top-stories-block');
 const superCategory = require('@pmmi-media-group/package-global/templates/website-section/super-category');
 const directory = require('@pmmi-media-group/package-global/routes/directory');
+const companySearch = require('@pmmi-media-group/package-global/company-search');
 
 const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');
 
@@ -189,14 +190,17 @@ module.exports = (app) => {
     queryFragment: leadersFragment,
   }));
 
+  const assignedToWebsiteSectionIds = [
+    89653,
+    89660,
+    89693,
+  ];
+  companySearch(app, assignedToWebsiteSectionIds);
+
   directory(app, {
-    rootAlias: 'company-categories-2025',
+    rootAlias: 'z-company-categories-2026',
     contentTypes: ['Company'],
-    assignedToWebsiteSectionIds: [
-      88774,
-      88811,
-      88844,
-    ],
+    assignedToWebsiteSectionIds,
   });
 
   app.get('/:alias(WomenInPackaging)', newsletterState(), withWebsiteSection({

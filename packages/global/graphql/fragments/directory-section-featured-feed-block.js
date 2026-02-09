@@ -41,6 +41,17 @@ fragment DirectorySectionMicroFeedBlockContentFragment on Content {
     tollfree
     website
   }
+  websiteSchedules {
+    section {
+      id
+      name
+      fullName
+      alias
+      site {
+        id
+      }
+    }
+  }
 }
 
 `;
