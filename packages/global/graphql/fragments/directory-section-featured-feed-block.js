@@ -47,6 +47,9 @@ fragment DirectorySectionMicroFeedBlockContentFragment on Content {
       name
       fullName
       alias
+      site {
+        id
+      }
     }
   }
 }

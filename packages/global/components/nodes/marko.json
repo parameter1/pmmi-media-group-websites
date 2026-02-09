@@ -10,5 +10,8 @@
     "@node": "object",
     "@company-id": "number",
     "@link-attrs": "object"
+  },
+  "<global-directory-section-feed-content-node>": {
+    "template": "./directory-section-feed-content.marko"
   }
 }

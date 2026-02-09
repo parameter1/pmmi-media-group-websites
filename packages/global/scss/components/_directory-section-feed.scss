@@ -47,6 +47,14 @@
       }
       &__content-teaser {
         margin-bottom: 15px;
+        margin-right: 5px;
+        a {
+          -webkit-line-clamp: none;
+          line-clamp: none;
+        }
+      }
+      &__content-categories-listed-in {
+        color: $primary;
       }
       &--listing-details,
       &--contact-info {

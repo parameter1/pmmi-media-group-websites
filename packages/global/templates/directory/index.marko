@@ -5,12 +5,19 @@ import queryFragment from "../../graphql/fragments/directory-section-featured-fe
 
 $ const { id, alias, name, pageNode } = input;
 
-$ const { $markoWebSearch: search, GAM, i18n, site } = out.global;
+$ const {
+  $markoWebSearch: search,
+  GAM,
+  i18n,
+  site,
+  config
+} = out.global;
 $ if (alias !== get(search, "config.rootAlias")) {
   set(out.global.$markoWebSearch, 'input.assignedToWebsiteSectionIds', [id]);
   set(out.global.$markoWebSearch, 'query.assignedToWebsiteSectionIds', `${id}`);
 }
 $ const currentPage = search.getCurrentPage();
+$ const siteID = get(config, "websiteContext.id");
 
 <theme-website-section-page id=id alias=alias name=name>
   <@head>
@@ -136,7 +143,8 @@ $ const currentPage = search.getCurrentPage();
                         >
                           <@nodes nodes=nodes>
                             <@slot|{ node }|>
-                              <theme-directory-section-feed-content-node node=node with-teaser=true display-image=true with-dates=false with-country=true />
+                              $ node.categoriesListedInString = node.websiteSchedules.filter((schedule) => String(schedule.section.site.id) === siteID && schedule.section.alias.match(alias) && schedule.section.alias !== alias).map((schedule) => schedule.section).map((category) => category.fullName.replace(/.+? \>/, '').trim()).join(', ');
+                              <global-directory-section-feed-content-node node=node with-teaser=true display-image=true with-dates=false with-country=true />
                             </@slot>
                           </@nodes>
                         </marko-web-node-list>
