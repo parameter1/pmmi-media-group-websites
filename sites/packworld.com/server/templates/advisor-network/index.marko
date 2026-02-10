@@ -72,11 +72,55 @@ $ const currentPage = search.getCurrentPage();
               </div>
             </div>
             <div class="col-lg-9">
+              <div class="directory-featured-listing__item--wrapper directory-featured-listing__item--open">
+              <marko-web-node-list
+                inner-justified=false
+                flush-x=false
+                flush-y=false
+                collapsible=false
+
+                modifiers=["directory-section-feed", "featured-listings"]
+              >
+                <@header>
+                  Advisor Network
+                </@header>
+              </marko-web-node-list>
+              <if(currentPage === 1)>
+                <!-- Set featured alias to directory or rootLevel Alias(directory/rootLevel) -->
+                $ const featuredQueryParams = {
+                  sectionAlias: alias,
+                  limit: 50,
+                  includeLabels: ["Active Advisor"],
+                  queryFragment,
+                  sort: {
+                    field: "name",
+                    order: "asc",
+                  }
+                }
+                <marko-web-query|{ nodes: featuredNodes }| name='website-scheduled-content' params=featuredQueryParams>
+                $ console.log('featured')
+                    <marko-web-node-list
+                      inner-justified=false
+                      flush-x=false
+                      flush-y=false
+                      collapsible=false
+
+                      modifiers=["directory-section-feed", "featured-listings"]
+                    >
+                      <@nodes nodes=featuredNodes>
+                        <@slot|{ node }|>
+                          <marko-web-advisor-node node=node />
+                        </@slot>
+                      </@nodes>
+                    </marko-web-node-list>
+                </marko-web-query>
+              </if>
               <marko-web-search-query|{ nodes, pageInfo, totalCount }|
                 limit=search.getLimit()
                 skip=search.getSkip()
                 sortField=sortField
                 sortOrder=sortOrder
+                enclude-labels=["Active Advisor"]
                 content-types=search.input.contentTypes
                 search-query=search.input.searchQuery
                 assigned-to-website-section-ids=[section.id]
@@ -87,23 +131,18 @@ $ const currentPage = search.getCurrentPage();
                 <marko-web-page-wrapper modifiers=["no-padding-x"]>
                   <if(nodes.length)>
                     <@section>
-                      <div class="directory-featured-listing__item--wrapper directory-featured-listing__item--open">
-                        <marko-web-node-list
-                          inner-justified=false
-                          flush-x=false
-                          flush-y=false
-                          modifiers=["directory-section-feed", "featured-listings"]
-                        >
-                          <@header>
-                            Advisor Network
-                          </@header>
-                          <@nodes nodes=nodes>
-                            <@slot|{ node }|>
-                              <marko-web-advisor-node node=node />
-                            </@slot>
-                          </@nodes>
-                        </marko-web-node-list>
-                      </div>
+                      <marko-web-node-list
+                        inner-justified=false
+                        flush-x=false
+                        flush-y=false
+                        modifiers=["directory-section-feed", "featured-listings"]
+                      >
+                        <@nodes nodes=nodes>
+                          <@slot|{ node }|>
+                            <marko-web-advisor-node node=node />
+                          </@slot>
+                        </@nodes>
+                      </marko-web-node-list>
                       <marko-web-search-pagination-controls page-info=pageInfo total-count=totalCount>
                         <@link class="btn btn-primary" />
                       </marko-web-search-pagination-controls>
@@ -113,7 +152,7 @@ $ const currentPage = search.getCurrentPage();
               </marko-web-search-query>
             </div>
           </div>
-
+          </div>
         </@section>
       </marko-web-page-wrapper>
     </marko-web-resolve-page>
