@@ -1,54 +1,69 @@
-import hierarchyAliases from "@mindful-web/marko-web/utils/hierarchy-aliases";
+import queryFragment from "@mindful-web/marko-web-theme-monorail/graphql/fragments/section-feed-block";
+import defaultValue from "@mindful-web/marko-core/utils/default-value";
 import { getAsArray } from "@mindful-web/object-path";
-import queryFragment from "@pmmi-media-group/package-global/graphql/fragments/advisor-contact";
-
+import handleContentTypePrimarySection from "@pmmi-media-group/package-global/utils/handle-content-type-primary-section";
 $ const { id, alias, name, pageNode } = input;
-$ const { $markoWebSearch: search } = out.global;
-$ const sortField = "NAME";
-$ const sortOrder = "ASC";
-$ const currentPage = search.getCurrentPage();
+$ const { pagination: p, i18n } = out.global;
+$ const perPage = 50;
+$ const queryParams = {
+  sectionAlias: alias,
+  limit: perPage,
+  excludeLabels: ["Active Advisor"],
+  queryFragment,
+  sort: {
+    field: "name",
+    order: "asc",
+  },
+};
 
-<theme-website-section-page id=id alias=alias name=name>
+<global-website-section-default-layout
+  id=id
+  alias=alias
+  name=name
+  page-node=pageNode>
   <@head>
-    <marko-web-gtm-website-section-context|{ context }| alias=alias>
-      <marko-web-gtm-push data=context />
-    </marko-web-gtm-website-section-context>
-    <marko-web-resolve-page|{ data: section }| node=pageNode>
-      <marko-web-p1-events-track-website-section node=section />
-    </marko-web-resolve-page>
-    <${input.head} />
+    <theme-section-feed-block|{ totalCount }| alias=alias count-only>
+      <theme-pagination-controls
+        per-page=perPage
+        total-count=totalCount
+        path=alias
+        as-rels/>
+    </theme-section-feed-block>
   </@head>
-  <@page>
-    <marko-web-resolve-page|{ data: section }| node=pageNode>
-      $ const aliases = hierarchyAliases(section);
-      <marko-web-page-wrapper modifiers=["advisor-network", `${alias.replace('/', '-')}`]>
 
-        <@section|{ blockName }|>
-          <theme-breadcrumbs modifiers=["advisor-network", "content-page"]>
-            $ const children = getAsArray(section, "hierarchy");
-            <for|child| of=children>
+  <@section|{ aliases }| modifiers=["break-container", "first"]>
+    <theme-gam-define-display-ad
+      name="leaderboard"
+      position="section_page"
+      aliases=aliases
+      modifiers=["inter-block"]/>
+  </@section>
+  <@section|{ blockName, section, aliases }|>
+    <marko-web-website-section-name|{ value: sectionName }|
+      tag="h1"
+      block-name=blockName
+      obj=section>
+      <if(p.page > 1)>
+        A Smarter Starting Point for Your Packaging and Processing Projects:
+        Page ${p.page}
+      </if>
+      <else>
+        A Smarter Starting Point for Your Packaging and Processing Projects
+      </else>
+    </marko-web-website-section-name>
+    <marko-web-website-section-description
+      block-name=blockName
+      obj={
+        description:
+          "Finding qualified packaging and processing consulting experts to help you deliver on your next project shouldn’t slow you down. The <em>Packaging World</em> Advisor Network is a curated list of experienced, trusted, and vetted independent packaging and processing professionals who consult on packaging line engineering, machinery selection, package and materials development, and food and beverage processing operations. Browse advisor backgrounds and fill out the form to be connected.",
+      }/>
+  </@section>
 
-                  <@item>
-                  <if(child.alias !== section.alias)>
-                  </if>
-                    $ const link = (child.alias !== section.alias) ? `/${child.alias}`: null;
-                    <marko-web-link title=child.name href=link>${child.name}</marko-web-link>
+  <@section|{ blockName, section, aliases }|>
 
-                  </@item>
-
-            </for>
-          </theme-breadcrumbs>
-          <marko-web-website-section-name|{ value: sectionName }| tag="h1" block-name=blockName obj=section>
-            <if(currentPage > 1)>A Smarter Starting Point for Your Packaging and Processing Projects: Page ${currentPage}</if>
-            <else>A Smarter Starting Point for Your Packaging and Processing Projects</else>
-          </marko-web-website-section-name>
-          <marko-web-website-section-description block-name=blockName obj={ description: 'Finding qualified packaging and processing consulting experts to help you deliver on your next project shouldn’t slow you down. The <em>Packaging World</em> Advisor Network is a curated list of experienced, trusted, and vetted independent packaging and processing professionals who consult on packaging line engineering, machinery selection, package and materials development, and food and beverage processing operations. Browse advisor backgrounds and fill out the form to be connected.'} />
-        </@section>
-        <@section>
-
-          <div class="row">
-            <div class="col-lg-3">
-              <!--
+    <div class="row">
+      <div class="col-lg-3">
+        <!--
               <marko-web-search-filter-container>
                 <global-website-sections-by-alias-filter title='Areas of Emphasis' />
               </marko-web-search-filter-container>
@@ -60,101 +75,80 @@ $ const currentPage = search.getCurrentPage();
                 </ul>
               </if>
               -->
-              <div class="mb-block sticky-top">
-              <marko-web-link
-                class="btn btn-primary"
-                href='https://pmmimediagroup.wufoo.com/forms/subz0ty0ncvx9s/'
-                title='Connect with an Advisor'
-                target="_blank"
-              >
-                Connect &raquo;
-              </marko-web-link>
-              </div>
-            </div>
-            <div class="col-lg-9">
-              <div class="directory-featured-listing__item--wrapper directory-featured-listing__item--open">
+        <div class="mb-block sticky-top">
+          <marko-web-link
+            class="btn btn-primary"
+            href="https://pmmimediagroup.wufoo.com/forms/subz0ty0ncvx9s/"
+            title="Connect with an Advisor"
+            target="_blank">
+            Connect &raquo;
+          </marko-web-link>
+        </div>
+      </div>
+      <div class="col-lg-9">
+        <div class="directory-featured-listing__item--wrapper directory-featured-listing__item--open">
+          <marko-web-node-list
+            inner-justified=false
+            flush-x=false
+            flush-y=false
+            collapsible=false
+            modifiers=["directory-section-feed", "featured-listings"]>
+            <@header>Advisor Network</@header>
+          </marko-web-node-list>
+          <if(p.page === 1)>
+            <!-- Set featured alias to directory or rootLevel Alias(directory/rootLevel) -->
+            $ const featuredQueryParams = {
+              sectionAlias: alias,
+              limit: 50,
+              includeLabels: ["Active Advisor"],
+              queryFragment,
+              sort: {
+                field: "name",
+                order: "asc",
+              },
+            };
+            <marko-web-query|{ nodes: featuredNodes }|
+              name="website-scheduled-content"
+              params=featuredQueryParams>
+              $ console.log("featured");
               <marko-web-node-list
                 inner-justified=false
                 flush-x=false
                 flush-y=false
                 collapsible=false
-
-                modifiers=["directory-section-feed", "featured-listings"]
-              >
-                <@header>
-                  Advisor Network
-                </@header>
+                modifiers=["directory-section-feed", "featured-listings"]>
+                <@nodes nodes=featuredNodes>
+                  <@slot|{ node }|>
+                    <marko-web-advisor-node node=node/>
+                  </@slot>
+                </@nodes>
               </marko-web-node-list>
-              <if(currentPage === 1)>
-                <!-- Set featured alias to directory or rootLevel Alias(directory/rootLevel) -->
-                $ const featuredQueryParams = {
-                  sectionAlias: alias,
-                  limit: 50,
-                  includeLabels: ["Active Advisor"],
-                  queryFragment,
-                  sort: {
-                    field: "name",
-                    order: "asc",
-                  }
-                }
-                <marko-web-query|{ nodes: featuredNodes }| name='website-scheduled-content' params=featuredQueryParams>
-                $ console.log('featured')
-                    <marko-web-node-list
-                      inner-justified=false
-                      flush-x=false
-                      flush-y=false
-                      collapsible=false
-
-                      modifiers=["directory-section-feed", "featured-listings"]
-                    >
-                      <@nodes nodes=featuredNodes>
-                        <@slot|{ node }|>
-                          <marko-web-advisor-node node=node />
-                        </@slot>
-                      </@nodes>
-                    </marko-web-node-list>
-                </marko-web-query>
-              </if>
-              <marko-web-search-query|{ nodes, pageInfo, totalCount }|
-                limit=search.getLimit()
-                skip=search.getSkip()
-                sortField=sortField
-                sortOrder=sortOrder
-                enclude-labels=["Active Advisor"]
-                content-types=search.input.contentTypes
-                search-query=search.input.searchQuery
-                assigned-to-website-section-ids=[section.id]
-                query-fragment=queryFragment
-                cursor-direction=search.getCursorDirection()
-                cursor-value=search.getCursorValue()
-              >
-                <marko-web-page-wrapper modifiers=["no-padding-x"]>
-                  <if(nodes.length)>
-                    <@section>
-                      <marko-web-node-list
-                        inner-justified=false
-                        flush-x=false
-                        flush-y=false
-                        modifiers=["directory-section-feed", "featured-listings"]
-                      >
-                        <@nodes nodes=nodes>
-                          <@slot|{ node }|>
-                            <marko-web-advisor-node node=node />
-                          </@slot>
-                        </@nodes>
-                      </marko-web-node-list>
-                      <marko-web-search-pagination-controls page-info=pageInfo total-count=totalCount>
-                        <@link class="btn btn-primary" />
-                      </marko-web-search-pagination-controls>
-                    </@section>
-                  </if>
-                </marko-web-page-wrapper>
-              </marko-web-search-query>
-            </div>
-          </div>
-          </div>
-        </@section>
-      </marko-web-page-wrapper>
-    </marko-web-resolve-page>
-  </@page>
-</theme-website-section-page>
+            </marko-web-query>
+          </if>
+          <marko-web-query|{ nodes }|
+            name="website-scheduled-content"
+            params=queryParams>
+            <marko-web-node-list
+              inner-justified=false
+              flush-x=false
+              flush-y=false
+              collapsible=false
+              modifiers=["directory-section-feed", "featured-listings"]>
+              <@nodes nodes=nodes>
+                <@slot|{ node }|>
+                  <marko-web-advisor-node node=node/>
+                </@slot>
+              </@nodes>
+            </marko-web-node-list>
+          </marko-web-query>
+          <theme-section-feed-block|{ totalCount }| alias=alias count-only>
+            // <theme-pagination-controls
+            //   per-page=perPage
+            //   total-count=totalCount
+            //   path=alias/>
+          </theme-section-feed-block>
+        </div>
+      </div>
+    </div>
+  </@section>
+</global-website-section-default-layout>
