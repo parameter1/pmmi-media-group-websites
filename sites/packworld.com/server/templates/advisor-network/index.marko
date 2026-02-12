@@ -1,3 +1,4 @@
+import { getAsArray } from "@mindful-web/object-path";
 import queryFragment from "@pmmi-media-group/package-global/graphql/fragments/advisor-contact";
 
 $ const { id, alias, name, pageNode } = input;
@@ -14,7 +15,7 @@ $ const queryParams = {
   },
 };
 
-<global-website-section-default-layout
+<global-website-section-advisor-network-layout
   id=id
   alias=alias
   name=name
@@ -29,14 +30,17 @@ $ const queryParams = {
     </theme-section-feed-block>
   </@head>
 
-  <@section|{ aliases }| modifiers=["break-container", "first"]>
-    <theme-gam-define-display-ad
-      name="leaderboard"
-      position="section_page"
-      aliases=aliases
-      modifiers=["inter-block"]/>
-  </@section>
-  <@section|{ blockName, section, aliases }|>
+  <@section|{ blockName, section }|>
+    <theme-breadcrumbs modifiers=["advisor-network", "content-page"]>
+      $ const children = getAsArray(section, "hierarchy");
+      <for|child| of=children>
+
+        <@item>
+          $ const link = (child.alias !== section.alias) ? `/${child.alias}`: null;
+          <marko-web-link title=child.name href=link>${child.name}</marko-web-link>
+        </@item>
+      </for>
+    </theme-breadcrumbs>
     <marko-web-website-section-name|{ value: sectionName }|
       tag="h1"
       block-name=blockName
@@ -148,4 +152,4 @@ $ const queryParams = {
       </div>
     </div>
   </@section>
-</global-website-section-default-layout>
+</global-website-section-advisor-network-layout>
