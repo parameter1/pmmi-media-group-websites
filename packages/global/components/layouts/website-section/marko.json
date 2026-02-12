@@ -1,4 +1,13 @@
 {
+  "<global-website-section-advisor-network-layout>": {
+    "template": "./advisor-network.marko",
+    "<head>": {},
+    "@sections <section>[]": {},
+    "@id": "number",
+    "@alias": "string",
+    "@name": "string",
+    "@page-node": "object"
+  },
   "<global-website-section-default-layout>": {
     "template": "./default.marko",
     "<head>": {},

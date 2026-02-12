@@ -14,6 +14,7 @@ const companySearch = require('@pmmi-media-group/package-global/company-search')
 const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');
 
 const section = require('../templates/website-section');
+const advisorNetwork = require('../templates/advisor-network');
 const leaders = require('../templates/website-section/leaders');
 
 module.exports = (app) => {
@@ -210,6 +211,11 @@ module.exports = (app) => {
 
   app.get('/:alias(emergingbrands)', newsletterState(), withWebsiteSection({
     template: section,
+    queryFragment: emergingBrandsFragment,
+  }));
+
+  app.get('/:alias(advisor-network)', newsletterState(), withWebsiteSection({
+    template: advisorNetwork,
     queryFragment: emergingBrandsFragment,
   }));
 
