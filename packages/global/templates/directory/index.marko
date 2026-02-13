@@ -34,6 +34,13 @@ $ const siteID = get(config, "websiteContext.id");
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ section.name = section.name.replace("Z_Company Categories", "Leaders");
       $ const aliases = hierarchyAliases(section);
+      $ const dropdownOptions = section.children.edges.map((edge) => {
+        return {
+          upperLevelSection: edge.node,
+          lowerLevelSections: edge.node.children.edges.map((edge) => edge.node),
+        };
+      });
+      $ console.log(dropdownOptions);
       $ const childAliases = section.children.edges.map((edge) => edge.node.alias).sort();
       <marko-web-page-wrapper modifiers=["directory"]>
         <@section|{ blockName }|>
@@ -61,11 +68,6 @@ $ const siteID = get(config, "websiteContext.id");
                   alt=site.get("leaders.title")
                 />
               </div>
-              <marko-web-search-filter-container title={ value: "Filters" }>
-                <global-website-sections-by-alias-filter>
-                  <@title value="Categories" />
-                </global-website-sections-by-alias-filter>
-              </marko-web-search-filter-container>
               <div class="mb-block">
               </div>
             </div>
@@ -118,6 +120,7 @@ $ const siteID = get(config, "websiteContext.id");
                 <!-- Enforce it this way to not mess with the config, changing at the config level will auto apply sort -->
                 $ const sortField = (search.input.sortField === "SCORE" && search.input.searchQuery === '') ? "NAME" : search.input.sortField;
                 $ const sortOrder = sortField === 'NAME' ? 'ASC' : search.input.sortOrder;
+                $ const assignedToWebsiteSectionIds = search.input.assignedToWebsiteSectionIds.length ? search.input.assignedToWebsiteSectionIds : [section.id];
                 <marko-web-search-query|{ nodes, totalCount }|
                   limit=search.getLimit()
                   skip=search.getSkip()
@@ -125,13 +128,12 @@ $ const siteID = get(config, "websiteContext.id");
                   sortOrder=sortOrder
                   content-types=search.input.contentTypes
                   search-query=search.input.searchQuery
-                  assigned-to-website-section-ids=[section.id]
+                  assigned-to-website-section-ids=assignedToWebsiteSectionIds
                   query-fragment=queryFragment
                 >
                   <marko-web-page-wrapper modifiers=["no-padding-x"]>
                     <@section modifiers=["search-results"]>
                       <div>${new Intl.NumberFormat().format(totalCount)} ${i18n("Results")}</div>
-                      <marko-web-search-selected-filters />
                     </@section>
                     <if(nodes.length)>
                       <@section>
