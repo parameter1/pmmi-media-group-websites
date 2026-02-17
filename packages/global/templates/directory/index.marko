@@ -69,7 +69,16 @@ $ const siteID = get(config, "websiteContext.id");
                 />
               </div>
               <div class="mb-block">
-                <form>
+                <form name="Category Filters" onsubmit="event.preventDefault()">
+                  <button type="submit" onclick="(() => {
+                    const checkboxes = document.forms['Category Filters']['category'];
+                    const checkedBoxes = Array.from(checkboxes).filter((category) => category.checked);
+                    const categoryIdStringsAsArray = checkedBoxes.map((category) => category.value);
+                    const categoryIdString = categoryIdStringsAsArray.join(',');
+                    if (categoryIdString) {
+                      window.location.href = window.location.origin + window.location.pathname + '?assignedToWebsiteSectionIds=' + categoryIdString;
+                    }
+                  })()">Apply Filters</button>
                   <for|{ upperLevelSection, lowerLevelSections }, index| of=dropdownOptions>
                     <if(lowerLevelSections && lowerLevelSections.length)>
                       <div onclick=`(() => {
@@ -84,8 +93,8 @@ $ const siteID = get(config, "websiteContext.id");
                         }
                       })()`><b>${upperLevelSection.name}</b></div>
                       <for|lowerLevelSection, interiorIndex| of=lowerLevelSections>
-                        <div class=`category_filter_${index}` id=`category_filter_${index}_${interiorIndex}` style="display: none; word-break: break-word;">
-                          <input type="checkbox" name="category" value=lowerLevelSection.id />
+                        <div class=`category_filter_${index}` id=`category_filter_${index}_${interiorIndex}_wrapper` style="display: none; word-break: break-word;">
+                          <input type="checkbox" name="category" id=`category_filter_${index}_${interiorIndex}` value=lowerLevelSection.id />
                           <label style="padding-top: 5px; padding-left: 5px" for=`category_filter_${index}_${interiorIndex}` >${lowerLevelSection.name}</label>
                         </div>
                       </for>
