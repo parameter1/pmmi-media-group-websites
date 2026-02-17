@@ -154,9 +154,11 @@ $ const siteID = get(config, "websiteContext.id");
                   $ const sortField = (search.input.sortField === "SCORE" && search.input.searchQuery === '') ? "NAME" : search.input.sortField;
                   $ const sortOrder = sortField === 'NAME' ? 'ASC' : search.input.sortOrder;
                   $ const assignedToWebsiteSectionIds = search.input.assignedToWebsiteSectionIds.length ? search.input.assignedToWebsiteSectionIds : [section.id];
-                  <marko-web-search-query|{ nodes, totalCount }|
+                  <marko-web-search-query|{ nodes, pageInfo }|
                     limit=(search.getLimit() - featuredNodes.length)
                     skip=search.getSkip()
+                    cursor-direction=search.getCursorDirection()
+                    cursor-value=search.getCursorValue()
                     sortField=sortField
                     sortOrder=sortOrder
                     content-types=search.input.contentTypes
@@ -166,7 +168,6 @@ $ const siteID = get(config, "websiteContext.id");
                   >
                     <marko-web-page-wrapper modifiers=["no-padding-x"]>
                       <@section modifiers=["search-results"]>
-                        <div>${new Intl.NumberFormat().format(totalCount)} ${i18n("Results")}</div>
                       </@section>
                       <if(nodes.length)>
                         <@section>
@@ -183,7 +184,7 @@ $ const siteID = get(config, "websiteContext.id");
                               </@slot>
                             </@nodes>
                           </marko-web-node-list>
-                          <marko-web-search-pagination-controls total-count=totalCount>
+                          <marko-web-search-pagination-controls page-info=pageInfo>
                             <@link class="btn btn-primary" />
                           </marko-web-search-pagination-controls>
                         </@section>
@@ -197,9 +198,11 @@ $ const siteID = get(config, "websiteContext.id");
                 $ const sortField = (search.input.sortField === "SCORE" && search.input.searchQuery === '') ? "NAME" : search.input.sortField;
                 $ const sortOrder = sortField === 'NAME' ? 'ASC' : search.input.sortOrder;
                 $ const assignedToWebsiteSectionIds = search.input.assignedToWebsiteSectionIds.length ? search.input.assignedToWebsiteSectionIds : [section.id];
-                <marko-web-search-query|{ nodes, totalCount }|
+                <marko-web-search-query|{ nodes, pageInfo }|
                   limit=search.getLimit()
                   skip=search.getSkip()
+                  cursor-direction=search.getCursorDirection()
+                  cursor-value=search.getCursorValue()
                   sortField=sortField
                   sortOrder=sortOrder
                   content-types=search.input.contentTypes
@@ -209,7 +212,6 @@ $ const siteID = get(config, "websiteContext.id");
                 >
                   <marko-web-page-wrapper modifiers=["no-padding-x"]>
                     <@section modifiers=["search-results"]>
-                      <div>${new Intl.NumberFormat().format(totalCount)} ${i18n("Results")}</div>
                     </@section>
                     <if(nodes.length)>
                       <@section>
@@ -226,7 +228,7 @@ $ const siteID = get(config, "websiteContext.id");
                             </@slot>
                           </@nodes>
                         </marko-web-node-list>
-                        <marko-web-search-pagination-controls total-count=totalCount>
+                        <marko-web-search-pagination-controls page-info=pageInfo>
                           <@link class="btn btn-primary" />
                         </marko-web-search-pagination-controls>
                       </@section>
