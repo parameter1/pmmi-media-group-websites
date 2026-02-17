@@ -14,7 +14,7 @@ module.exports = (
   },
 ) => {
   const config = new MarkoWebSearchConfig({
-    resultsPerPage: { default: 18 },
+    resultsPerPage: { default: 4 },
     contentTypes,
     assignedToWebsiteSectionIds,
     defaultSortField: 'NAME',
