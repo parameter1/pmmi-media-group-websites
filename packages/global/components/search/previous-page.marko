@@ -1,0 +1,36 @@
+import { isFunction } from '@mindful-web/utils';
+import defaultValue from "@mindful-web/marko-core/utils/default-value";
+
+$ const { $markoWebSearch: search, i18n } = out.global;
+$ const { useMindful } = search.config;
+$ const pageInfo = defaultValue(input.pageInfo, {});
+$ const { sortField, sortOrder } = search.input;
+
+$ const queryValues = useMindful ? {
+  cursorDirection: 'BEFORE',
+  cursorValue: pageInfo.startCursor,
+  sortField, sortOrder,
+} : {
+  page: search.getPrevPage(), sortField, sortOrder
+};
+
+$ const hasPreviousPage = useMindful ? pageInfo.hasPreviousPage : search.getPrevPage();
+
+
+<if(hasPreviousPage)>
+  <global-search-link
+    path=input.path
+    query-values=queryValues
+    class=input.class
+    target=input.target
+    rel=input.rel
+    attrs=input.attrs
+  >
+    <if(input.renderBody)>
+      <${input.renderBody} />
+    </if>
+    <else>
+      ${isFunction(i18n) ? i18n("Previous Page") : "Previous Page"}
+    </else>
+  </global-search-link>
+</if>

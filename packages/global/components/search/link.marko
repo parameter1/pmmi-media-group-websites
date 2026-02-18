@@ -1,0 +1,15 @@
+<global-search-build-href|{ href }|
+  path=input.path
+  query-values=input.queryValues
+>
+$ console.log(href);
+  <marko-web-link
+    class=input.class
+    href=href
+    target=input.target
+    rel=input.rel
+    attrs=input.attrs
+  >
+    <${input.renderBody} />
+  </marko-web-link>
+</global-search-build-href>

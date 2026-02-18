@@ -1,0 +1,23 @@
+{
+  "<global-search-link>": {
+    "template": "./link.marko"
+  },
+  "<global-search-next-page-link>": {
+    "template": "./next-page.marko"
+  },
+  "<global-search-previous-page-link>": {
+    "template": "./previous-page.marko"
+  },
+  "<global-search-build-href>": {
+    "template": "./build-href.marko",
+    "@path": "string",
+    "@query-values": "object"
+  },
+  "<global-search-pagination-controls>": {
+    "template": "./pagination-controls.marko",
+    "<block>": {},
+    "<link>": {},
+    "@page-info": "object",
+    "@total-count": "number"
+  }
+}

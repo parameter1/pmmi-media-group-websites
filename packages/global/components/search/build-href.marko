@@ -1,0 +1,11 @@
+import defaultValue from "@mindful-web/marko-core/utils/default-value";
+import { cleanPath } from "@mindful-web/utils";
+import { get } from "@mindful-web/object-path";
+
+$ const { req, $markoWebSearch: search } = out.global;
+$ const path = defaultValue(input.path, req.path);
+$ const rootAlias = get(search, "config.rootAlias");
+$ const queryString = search.buildQueryString(input.queryValues, {});
+$ const href = `/${cleanPath(path)}${queryString}`;
+
+<${input.renderBody} href=href />
