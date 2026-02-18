@@ -6,6 +6,7 @@ const DynamicSiteMenuPositioner = () => import(/* webpackChunkName: "dynamic-sit
 const ReadingProgressBar = () => import(/* webpackChunkName: "cpgnext-reading-progress-bar" */ './reading-progress-bar.vue');
 const StoryContinuesButton = () => import(/* webpackChunkName: "story-continues-button" */ './story-continues-button.vue');
 const CompanySearch = () => import(/* webpackChunkName: "company-search" */ './company-search.vue');
+const LeadersFilteringForm = () => import(/* webpackChunkName: "leaders-filtering-form */ './leaders-filtering/form.vue');
 
 export default (Browser) => {
   const { EventBus } = Browser;
@@ -19,4 +20,5 @@ export default (Browser) => {
   Browser.register('GlobalCompanySearch', CompanySearch, {
     provide: { EventBus },
   });
+  Browser.register('GlobalLeadersFilteringForm', LeadersFilteringForm);
 };

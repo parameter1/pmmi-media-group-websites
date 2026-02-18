@@ -4,7 +4,8 @@
     "./flows/marko.json",
     "./layouts/marko.json",
     "./nodes/marko.json",
-    "./leaders/marko.json"
+    "./leaders/marko.json",
+    "./search/marko.json"
   ],
   "<global-image-slider>": {
     "template": "./image-slider.marko"

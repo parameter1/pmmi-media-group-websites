@@ -23,6 +23,15 @@ fragment WebsiteDirectorySectionPageFragment on WebsiteSection {
         id
         alias
         name
+        children(input: { sort: { field: name, order: asc }, pagination: { limit: 50 } }) {
+          edges {
+            node {
+              id
+              alias
+              name
+            }
+          }
+        }
       }
     }
   }

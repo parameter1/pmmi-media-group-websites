@@ -34,6 +34,12 @@ $ const siteID = get(config, "websiteContext.id");
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ section.name = section.name.replace("Z_Company Categories", "Leaders");
       $ const aliases = hierarchyAliases(section);
+      $ const dropdownOptions = section.children.edges.map((edge) => {
+        return {
+          upperLevelSection: edge.node,
+          lowerLevelSections: edge.node.children.edges.map((edge) => edge.node),
+        };
+      });
       $ const childAliases = section.children.edges.map((edge) => edge.node.alias).sort();
       <marko-web-page-wrapper modifiers=["directory"]>
         <@section|{ blockName }|>
@@ -61,12 +67,11 @@ $ const siteID = get(config, "websiteContext.id");
                   alt=site.get("leaders.title")
                 />
               </div>
-              <marko-web-search-filter-container title={ value: "Filters" }>
-                <global-website-sections-by-alias-filter>
-                  <@title value="Categories" />
-                </global-website-sections-by-alias-filter>
-              </marko-web-search-filter-container>
               <div class="mb-block">
+                <marko-web-browser-component
+                  name="GlobalLeadersFilteringForm"
+                  props={ dropdownOptions }
+                />
               </div>
             </div>
             <div class="col-lg-9">
@@ -79,11 +84,11 @@ $ const siteID = get(config, "websiteContext.id");
                 $ const featuredAlias = alias.split('/').length >= 3 ? alias.split('/').slice(0,2).join('/') : alias;
                 $ const featuredQueryParams = {
                   sectionAlias: featuredAlias,
-                  limit: 25,
+                  limit: 4,
                   optionName: 'Pinned' ,
                   queryFragment,
                 }
-                <marko-web-query|{ nodes: featuredNodes }| name='website-scheduled-content' params=featuredQueryParams>
+                <marko-web-query|{ nodes: featuredNodes }| name='website-scheduled-content' params=featuredQueryParams collapsible=false>
                   <if(featuredNodes.length)>
                     <div class="directory-featured-listing__item--wrapper directory-featured-listing__item--open">
                       <marko-web-node-list
@@ -106,32 +111,74 @@ $ const siteID = get(config, "websiteContext.id");
                         </@header>
                         <@nodes nodes=featuredNodes>
                           <@slot|{ node }|>
-                            <theme-section-feed-content-node node=node />
+                            <global-directory-section-feed-content-node node=node with-teaser=true display-image=true with-dates=false with-country=true />
                           </@slot>
                         </@nodes>
                       </marko-web-node-list>
                     </div>
                   </if>
+                  <!-- Enforce it this way to not mess with the config, changing at the config level will auto apply sort -->
+                  $ const sortField = (search.input.sortField === "SCORE" && search.input.searchQuery === '') ? "NAME" : search.input.sortField;
+                  $ const sortOrder = sortField === 'NAME' ? 'ASC' : search.input.sortOrder;
+                  $ const assignedToWebsiteSectionIds = search.input.assignedToWebsiteSectionIds.length ? search.input.assignedToWebsiteSectionIds : [section.id];
+                  <marko-web-search-query|{ nodes, pageInfo }|
+                    limit=(search.getLimit() - featuredNodes.length)
+                    skip=search.getSkip()
+                    cursor-direction=search.getCursorDirection()
+                    cursor-value=search.getCursorValue()
+                    sortField=sortField
+                    sortOrder=sortOrder
+                    content-types=search.input.contentTypes
+                    search-query=search.input.searchQuery
+                    assigned-to-website-section-ids=assignedToWebsiteSectionIds
+                    query-fragment=queryFragment
+                  >
+                    <marko-web-page-wrapper modifiers=["no-padding-x"]>
+                      <@section modifiers=["search-results"]>
+                      </@section>
+                      <if(nodes.length)>
+                        <@section>
+                          <marko-web-node-list
+                            inner-justified=true
+                            flush-x=true
+                            flush-y=false
+                            modifiers=["directory-section-feed"]
+                          >
+                            <@nodes nodes=nodes>
+                              <@slot|{ node }|>
+                                $ node.categoriesListedInString = node.websiteSchedules.filter((schedule) => String(schedule.section.site.id) === siteID && schedule.section.alias.match(alias) && schedule.section.alias !== alias).map((schedule) => schedule.section).map((category) => category.fullName.replace(/.+? \>/, '').trim()).join(', ');
+                                <global-directory-section-feed-content-node node=node with-teaser=true display-image=true with-dates=false with-country=true />
+                              </@slot>
+                            </@nodes>
+                          </marko-web-node-list>
+                          <global-search-pagination-controls page-info=pageInfo>
+                            <@link class="btn btn-primary" />
+                          </global-search-pagination-controls>
+                        </@section>
+                      </if>
+                    </marko-web-page-wrapper>
+                  </marko-web-search-query>
                 </marko-web-query>
               </if>
-              <if(search.input.searchQuery || alias !== 'directory')>
+              <else-if(search.input.searchQuery || alias !== 'directory')>
                 <!-- Enforce it this way to not mess with the config, changing at the config level will auto apply sort -->
                 $ const sortField = (search.input.sortField === "SCORE" && search.input.searchQuery === '') ? "NAME" : search.input.sortField;
                 $ const sortOrder = sortField === 'NAME' ? 'ASC' : search.input.sortOrder;
-                <marko-web-search-query|{ nodes, totalCount }|
+                $ const assignedToWebsiteSectionIds = search.input.assignedToWebsiteSectionIds.length ? search.input.assignedToWebsiteSectionIds : [section.id];
+                <marko-web-search-query|{ nodes, pageInfo }|
                   limit=search.getLimit()
                   skip=search.getSkip()
+                  cursor-direction=search.getCursorDirection()
+                  cursor-value=search.getCursorValue()
                   sortField=sortField
                   sortOrder=sortOrder
                   content-types=search.input.contentTypes
                   search-query=search.input.searchQuery
-                  assigned-to-website-section-ids=[section.id]
+                  assigned-to-website-section-ids=assignedToWebsiteSectionIds
                   query-fragment=queryFragment
                 >
                   <marko-web-page-wrapper modifiers=["no-padding-x"]>
                     <@section modifiers=["search-results"]>
-                      <div>${new Intl.NumberFormat().format(totalCount)} ${i18n("Results")}</div>
-                      <marko-web-search-selected-filters />
                     </@section>
                     <if(nodes.length)>
                       <@section>
@@ -148,14 +195,14 @@ $ const siteID = get(config, "websiteContext.id");
                             </@slot>
                           </@nodes>
                         </marko-web-node-list>
-                        <marko-web-search-pagination-controls total-count=totalCount>
+                        <global-search-pagination-controls page-info=pageInfo>
                           <@link class="btn btn-primary" />
-                        </marko-web-search-pagination-controls>
+                        </global-search-pagination-controls>
                       </@section>
                     </if>
                   </marko-web-page-wrapper>
                 </marko-web-search-query>
-              </if>
+              </else-if>
               <else-if(alias === 'directory')>
                 <for|childAlias| of=childAliases>
                     <theme-content-card-deck-block

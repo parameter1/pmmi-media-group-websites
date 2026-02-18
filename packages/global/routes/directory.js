@@ -2,6 +2,8 @@ const { get } = require('@mindful-web/object-path');
 const { withWebsiteSection } = require('@mindful-web/marko-web/middleware');
 const MarkoWebSearchConfig = require('@mindful-web/marko-web-search/config');
 const MarkoWebSearch = require('@mindful-web/marko-web-search');
+const { MindfulApiClient } = require('@mindful-web/mindful/api-client');
+const { MindfulMarkoWebService } = require('@mindful-web/mindful/marko-web/service');
 const queryFragment = require('../graphql/fragments/website-directory-section-page');
 const directory = require('../templates/directory/index');
 
@@ -14,11 +16,15 @@ module.exports = (
   },
 ) => {
   const config = new MarkoWebSearchConfig({
-    resultsPerPage: { default: 18 },
+    resultsPerPage: { default: 4 },
     contentTypes,
     assignedToWebsiteSectionIds,
     defaultSortField: 'NAME',
     rootAlias,
+    useMindful: true,
+    mindful: new MindfulMarkoWebService({
+      client: new MindfulApiClient({ namespace: 'pmmi/default' }),
+    }),
   });
 
   const searchMiddleware = (req, res, next) => {
