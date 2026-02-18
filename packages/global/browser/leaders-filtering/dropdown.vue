@@ -72,6 +72,27 @@ export default {
       return `icon-${this.iconName}`;
     },
   },
+  mounted() {
+    if (window.location.search) {
+      const queryParams = new URLSearchParams(window.location.search);
+      const currentlyChecked = queryParams.get('assignedToWebsiteSectionIds');
+      if (currentlyChecked) {
+        const currentlyCheckedArray = currentlyChecked.split(',').map((v) => Number(v));
+        const elements = document.getElementsByName('category');
+        const elementsArray = Array.from(elements);
+        elementsArray.forEach((element) => {
+          const value = element.getAttribute('value');
+          if (currentlyCheckedArray.includes(Number(value))) {
+            element.setAttribute('checked', 'checked');
+            const lowerLevelSectionIds = this.lowerLevelSections.map((v) => Number(v.id));
+            if (lowerLevelSectionIds.includes(Number(value)) && !this.expanded) {
+              this.expand();
+            }
+          }
+        });
+      }
+    }
+  },
   methods: {
     expand() {
       const elements = document.getElementsByClassName(`category_filter_${this.index}`);
