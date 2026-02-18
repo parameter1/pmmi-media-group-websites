@@ -70,15 +70,25 @@ $ const siteID = get(config, "websiteContext.id");
               </div>
               <div class="mb-block">
                 <form name="Category Filters" onsubmit="event.preventDefault()">
-                  <button type="submit" onclick="(() => {
-                    const checkboxes = document.forms['Category Filters']['category'];
-                    const checkedBoxes = Array.from(checkboxes).filter((category) => category.checked);
-                    const categoryIdStringsAsArray = checkedBoxes.map((category) => category.value);
-                    const categoryIdString = categoryIdStringsAsArray.join(',');
-                    if (categoryIdString) {
-                      window.location.href = window.location.origin + window.location.pathname + '?assignedToWebsiteSectionIds=' + categoryIdString;
-                    }
-                  })()">Apply Filters</button>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <button class="btn btn-primary" type="submit" onclick="(() => {
+                        const checkboxes = document.forms['Category Filters']['category'];
+                        const checkedBoxes = Array.from(checkboxes).filter((category) => category.checked);
+                        const categoryIdStringsAsArray = checkedBoxes.map((category) => category.value);
+                        const categoryIdString = categoryIdStringsAsArray.join(',');
+                        if (categoryIdString) {
+                          window.location.href = window.location.origin + window.location.pathname + '?assignedToWebsiteSectionIds=' + categoryIdString;
+                        }
+                      })()">Apply Filters</button>
+                    </div>
+                    <div class="col-lg-6">
+                    <button class="btn btn-primary" type="submit" onclick="(() => { window.location.href = window.location.origin + window.location.pathname })()">Clear Filters</button>
+                    </div>
+                  </div>
+                  <div>
+                    <b style="font-size: 24px">Categories</b>
+                  </div>
                   <for|{ upperLevelSection, lowerLevelSections }, index| of=dropdownOptions>
                     <if(lowerLevelSections && lowerLevelSections.length)>
                       <div onclick=`(() => {
@@ -184,9 +194,9 @@ $ const siteID = get(config, "websiteContext.id");
                               </@slot>
                             </@nodes>
                           </marko-web-node-list>
-                          <marko-web-search-pagination-controls page-info=pageInfo>
+                          <global-search-pagination-controls page-info=pageInfo>
                             <@link class="btn btn-primary" />
-                          </marko-web-search-pagination-controls>
+                          </global-search-pagination-controls>
                         </@section>
                       </if>
                     </marko-web-page-wrapper>
@@ -228,9 +238,9 @@ $ const siteID = get(config, "websiteContext.id");
                             </@slot>
                           </@nodes>
                         </marko-web-node-list>
-                        <marko-web-search-pagination-controls page-info=pageInfo>
+                        <global-search-pagination-controls page-info=pageInfo>
                           <@link class="btn btn-primary" />
-                        </marko-web-search-pagination-controls>
+                        </global-search-pagination-controls>
                       </@section>
                     </if>
                   </marko-web-page-wrapper>
