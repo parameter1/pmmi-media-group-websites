@@ -1,7 +1,7 @@
 <template>
   <div v-if="lowerLevelSections && lowerLevelSections.length">
     <div @click="expand">
-      <b>{{ upperLevelSection.name }}</b>
+      <b>{{ upperLevelSection.name }}<component :is="icon" /></b>
     </div>
     <div
       v-for="lowerLevelSection, interiorIndex in lowerLevelSections"
@@ -36,7 +36,14 @@
 </template>
 
 <script>
+import IconChevronDown from '@mindful-web/marko-web-icons/browser/chevron-down.vue';
+import IconChevronUp from '@mindful-web/marko-web-icons/browser/chevron-up.vue';
+
 export default {
+  components: {
+    IconChevronDown,
+    IconChevronUp,
+  },
   props: {
     lowerLevelSections: {
       type: Array,
@@ -51,13 +58,19 @@ export default {
       required: true,
     },
   },
+  data: () => ({
+    expanded: false,
+    iconName: 'chevron-up',
+    expandedIconName: 'chevron-down',
+  }),
   computed: {
     categoryId() {
       return `category_filter_${this.index}`;
     },
-  },
-  mounted() {
-    console.log(this);
+    icon() {
+      if (this.expanded) return `icon-${this.expandedIconName}`;
+      return `icon-${this.iconName}`;
+    },
   },
   methods: {
     expand() {
@@ -66,8 +79,10 @@ export default {
       elementsArray.forEach((element) => {
         const currentValue = document.getElementById(element.id).style.getPropertyValue('display');
         if (currentValue === 'none') {
+          this.expanded = true;
           document.getElementById(element.id).style.setProperty('display', 'flex');
         } else {
+          this.expanded = false;
           document.getElementById(element.id).style.setProperty('display', 'none');
         }
       });
