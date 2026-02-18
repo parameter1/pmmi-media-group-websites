@@ -40,7 +40,6 @@ $ const siteID = get(config, "websiteContext.id");
           lowerLevelSections: edge.node.children.edges.map((edge) => edge.node),
         };
       });
-      $ // console.log(dropdownOptions);
       $ const childAliases = section.children.edges.map((edge) => edge.node.alias).sort();
       <marko-web-page-wrapper modifiers=["directory"]>
         <@section|{ blockName }|>
