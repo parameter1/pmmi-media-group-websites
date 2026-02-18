@@ -69,52 +69,10 @@ $ const siteID = get(config, "websiteContext.id");
                 />
               </div>
               <div class="mb-block">
-                <form name="Category Filters" onsubmit="event.preventDefault()">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <button class="btn btn-primary" type="submit" onclick="(() => {
-                        const checkboxes = document.forms['Category Filters']['category'];
-                        const checkedBoxes = Array.from(checkboxes).filter((category) => category.checked);
-                        const categoryIdStringsAsArray = checkedBoxes.map((category) => category.value);
-                        const categoryIdString = categoryIdStringsAsArray.join(',');
-                        if (categoryIdString) {
-                          window.location.href = window.location.origin + window.location.pathname + '?assignedToWebsiteSectionIds=' + categoryIdString;
-                        }
-                      })()">Apply Filters</button>
-                    </div>
-                    <div class="col-lg-6">
-                    <button class="btn btn-primary" type="submit" onclick="(() => { window.location.href = window.location.origin + window.location.pathname })()">Clear Filters</button>
-                    </div>
-                  </div>
-                  <div>
-                    <b style="font-size: 24px">Categories</b>
-                  </div>
-                  <for|{ upperLevelSection, lowerLevelSections }, index| of=dropdownOptions>
-                    <if(lowerLevelSections && lowerLevelSections.length)>
-                      <div onclick=`(() => {
-                        const elements = document.getElementsByClassName("category_filter_${index}");
-                        for (let element of elements) {
-                          const currentValue = document.getElementById(element.id).style.getPropertyValue('display');
-                          if (currentValue === 'none') {
-                            document.getElementById(element.id).style.setProperty('display', 'flex');
-                          } else {
-                            document.getElementById(element.id).style.setProperty('display', 'none');
-                          }
-                        }
-                      })()`><b>${upperLevelSection.name}</b></div>
-                      <for|lowerLevelSection, interiorIndex| of=lowerLevelSections>
-                        <div class=`category_filter_${index}` id=`category_filter_${index}_${interiorIndex}_wrapper` style="display: none; word-break: break-word;">
-                          <input type="checkbox" name="category" id=`category_filter_${index}_${interiorIndex}` value=lowerLevelSection.id />
-                          <label style="padding-top: 5px; padding-left: 5px" for=`category_filter_${index}_${interiorIndex}` >${lowerLevelSection.name}</label>
-                        </div>
-                      </for>
-                    </if>
-                    <else>
-                      <input type="checkbox" name="category" id=`category_filter_${index}` value=upperLevelSection.id />
-                      <label for=`category_filter_${index}` >${upperLevelSection.name}</label>
-                    </else>
-                  </for>
-                </form>
+                <marko-web-browser-component
+                  name="GlobalLeadersFilteringForm"
+                  props={ dropdownOptions }
+                />
               </div>
             </div>
             <div class="col-lg-9">
