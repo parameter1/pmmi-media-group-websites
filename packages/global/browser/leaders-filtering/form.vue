@@ -1,19 +1,21 @@
 <template>
   <form name="Category Filters" onsubmit="event.preventDefault()">
-    <div class="row">
-      <div class="col-lg-6">
+    <div class="row" style="padding-bottom: 5px">
+      <div class="col-6">
         <button
           class="btn btn-primary"
           type="submit"
+          style="text-wrap: nowrap; font-size: 12px; padding: 5px 12px"
           @click="applyFilters"
         >
           Apply Filters
         </button>
       </div>
-      <div class="col-lg-6">
+      <div class="col-6">
         <button
           class="btn btn-primary"
           type="submit"
+          style="text-wrap: nowrap; font-size: 12px; padding: 5px 12px"
           @click="clearFilters"
         >
           Clear Filters
