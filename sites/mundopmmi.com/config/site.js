@@ -32,6 +32,7 @@ module.exports = {
   search,
   subscribe,
   pageDetails,
+  partnerPerspectivesSectionId: 90223,
   // theme configs
   company: 'PMMI Media Group',
   copyrightNotice: 'Todos los derechos reservados.',
@@ -130,5 +131,6 @@ module.exports = {
   mindful: {
     namespace: 'pmmi/default',
     view: 'mundo',
+    websiteAdvertisingChannelId: '654917202e4a2921881de5fa',
   },
 };

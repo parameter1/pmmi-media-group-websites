@@ -20,6 +20,7 @@ const resources = [
   { href: '/quizzes', label: 'Quizzes' },
   { href: '/videos', label: 'Videos' },
   { href: '/webinars', label: 'Webinars' },
+  { href: '/partner-perspectives', label: 'Partner Perspectives' },
 ];
 
 const utilities = [
