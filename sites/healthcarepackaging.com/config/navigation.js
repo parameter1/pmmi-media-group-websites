@@ -35,6 +35,7 @@ const mobileMenu = {
     { href: 'https://www.pmmi.org/hall-of-fame', label: 'Hall of Fame', target: '_blank' },
     { href: '/webinars', label: 'Webinars' },
     { href: '/supplier-news', label: 'Supplier News' },
+    { href: '/partner-perspectives', label: 'Partner Perspectives' },
     // { href: '/page/digital-editions', label: 'Digital,
   ],
 };
@@ -62,6 +63,7 @@ const desktopMenu = {
       { href: '/researched-lists', label: 'Researched Lists' },
       { href: '/videos', label: 'Videos' },
       { href: '/webinars', label: 'Webinars' },
+      { href: '/partner-perspectives', label: 'Partner Perspectives' },
     ],
   },
   extraCol: {

@@ -24,6 +24,7 @@ const resources = [
   { href: '/webinars', label: 'Webinars' },
   { href: 'https://www.pmmi.org/workforce-development/education-partners', label: 'Education', target: '_blank' },
   { href: '/page/packaging-associations', label: 'Packaging Associations' },
+  { href: '/partner-perspectives', label: 'Partner Perspectives' },
 ];
 
 const utilities = [

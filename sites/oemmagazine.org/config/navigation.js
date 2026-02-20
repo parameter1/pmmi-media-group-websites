@@ -17,6 +17,7 @@ const resources = [
   { href: '/researched-lists', label: 'Researched Lists' },
   { href: '/videos', label: 'Videos' },
   { href: '/webinars', label: 'Webinars' },
+  { href: '/partner-perspectives', label: 'Partner Perspectives' },
 ];
 
 const utilities = [
