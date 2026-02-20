@@ -1,0 +1,91 @@
+import convert from "@mindful-web/marko-web-native-x/utils/convert-story-to-content";
+import { getAsArray } from "@mindful-web/object-path";
+import defaultValue from "@mindful-web/marko-core/utils/default-value";
+
+$ const { pagination: p, nativeX: nxConfig, site } = out.global;
+
+$ const { pageNode, stories, totalCount } = input;
+$ const withNativeX = defaultValue(input.withNativeX, true);
+$ const sections = getAsArray(input, "sections");
+$ const perPage = 25;
+$ const alias = 'partner-perspectives';
+$ const name = 'Partner Perspectives';
+$ const section = { id: site.config.partnerPerspectivesSectionId, name, alias, fullName: name };
+
+<theme-default-page title=name canonical-path="/partner-perspectives">
+  <@head>
+    <marko-web-gtm-website-section-context|{ context }| alias=alias>
+      <marko-web-gtm-push data=context />
+    </marko-web-gtm-website-section-context>
+    <marko-web-p1-events-track-website-section node=section />
+    <theme-pagination-controls
+      per-page=perPage
+      total-count=totalCount
+      path=alias
+      as-rels=true
+    />
+  </@head>
+
+  <@page|{ blockName, section, aliases }|>
+    <div class="page-wrapper">
+      <div class="page-wrapper__section">
+        <marko-web-website-section-name|{ value }| tag="h1" block-name="page-wrapper" obj={ name: 'Partner Perspectives' }>
+          <if(p.page > 1)>$!{value}: Page ${p.page}</if>
+          <else>$!{value}</else>
+        </marko-web-website-section-name>
+        <marko-web-website-section-description block-name=blockName obj=section />
+          <div class="row">
+            <div class="col-lg-8">
+              <marko-web-node-list
+                inner-justified=false
+                flush-x=true
+                flush-y=false
+                modifiers=["section-feed"]
+              >
+                $ // @todo Determine why some stories are returning null for value
+                <@nodes nodes=stories.filter((v) => v)>
+                  <@slot|{ node }|>
+                    $ const contentNode = convert(node);
+                    <theme-section-feed-content-node
+                      node=contentNode
+                      display-image=true
+                      with-section=false
+                      lazyload=false
+                      with-dates=true
+                      ...input.node
+                    >
+                      <@date>
+                        <theme-content-published-node
+                          block-name="section-feed-content-node"
+                          obj=contentNode
+                          display-updated-date=false
+                          format="MMMM D, YYYY"
+                          timezone="Etc/GMT"
+                        />
+                      </@date>
+                    </theme-section-feed-content-node>
+                  </@slot>
+                </@nodes>
+              </marko-web-node-list>
+              <theme-pagination-controls
+                per-page=perPage
+                total-count=totalCount
+                path=alias
+              />
+            </div>
+            <div class="col-lg-4">
+              <div class="mb-block">
+                <theme-gam-define-display-ad
+                  name="top-rotation"
+                  position="section_page"
+                  aliases=["partner-perspectives"]
+                  modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
+                  class="mb-0"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </@page>
+</theme-default-page>

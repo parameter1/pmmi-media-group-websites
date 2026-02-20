@@ -7,8 +7,11 @@ const omedaNewsletters = require('@mindful-web/marko-web-omeda/routes/omeda-news
 const magazine = require('@mindful-web/marko-web-theme-monorail-magazine/routes');
 const mindfulPreview = require('@mindful-web/marko-web-theme-monorail/routes/ad-preview');
 const getAdvertisingPostAsNativeStory = require('@mindful-web/mindful/marko-web/middleware/get-advertising-post-as-native-story');
+const getAdvertisingPostsAsNativeStories = require('@mindful-web/mindful/marko-web/middleware/advertising-post-connection');
 
 const advertisingPostTemplate = require('../templates/content/advertising-post');
+const partnerPerspectivesTemplate = require('../templates/website-section/partner-perspectives');
+
 const feed = require('./feed');
 const digitalEditionRedirects = require('./digital-edition-redirects');
 const content = require('./content');
@@ -30,9 +33,14 @@ module.exports = (app, siteConfig) => {
     mindfulPreview(app, namespace);
     // Mindful/NativeX (Story rendering)
     getAdvertisingPostAsNativeStory(app, {
-      route: '/sponsored/:section/:slug/:id',
+      route: '/partner-perspectives/:section/:slug/:id',
       tenant: 'pmmi',
       template: advertisingPostTemplate,
+    });
+    getAdvertisingPostsAsNativeStories(app, {
+      route: '/partner-perspectives',
+      queryParams: { websiteChannelEdgeNodeIds: [get(siteConfig, 'mindful.websiteAdvertisingChannelId')] },
+      template: partnerPerspectivesTemplate,
     });
   }
 

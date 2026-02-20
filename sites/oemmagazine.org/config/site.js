@@ -30,6 +30,7 @@ module.exports = {
   identityXOptInHooks,
   search,
   subscribe,
+  partnerPerspectivesSectionId: 90220,
   // theme configs
   disableNativeSlotTwo: true,
   company: 'PMMI Media Group',
@@ -106,5 +107,6 @@ module.exports = {
   },
   mindful: {
     namespace: 'pmmi/default',
+    websiteAdvertisingChannelId: '654917202e4a2921881de5f4',
   },
 };
