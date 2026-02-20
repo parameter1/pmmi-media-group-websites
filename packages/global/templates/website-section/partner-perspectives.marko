@@ -42,57 +42,42 @@ $ const section = { id: site.config.partnerPerspectivesSectionId, name, alias, f
           <else>$!{value}</else>
         </marko-web-website-section-name>
         <marko-web-website-section-description block-name=blockName obj={ description: 'Forward-thinking insights from our partners, highlighting emerging technologies, industry innovation, and real-world solutions.'} />
-          <div class="row">
-            <div class="col-lg-8">
-              <marko-web-node-list
-                inner-justified=false
-                flush-x=true
-                flush-y=false
-                modifiers=["section-feed"]
+        <marko-web-node-list
+          inner-justified=false
+          flush-x=true
+          flush-y=false
+          modifiers=["section-feed"]
+        >
+          $ // @todo Determine why some stories are returning null for value
+          <@nodes nodes=stories.filter((v) => v)>
+            <@slot|{ node }|>
+              $ const contentNode = convert(node);
+              <theme-section-feed-content-node
+                node=contentNode
+                display-image=true
+                with-section=false
+                lazyload=false
+                with-dates=true
+                ...input.node
               >
-                $ // @todo Determine why some stories are returning null for value
-                <@nodes nodes=stories.filter((v) => v)>
-                  <@slot|{ node }|>
-                    $ const contentNode = convert(node);
-                    <theme-section-feed-content-node
-                      node=contentNode
-                      display-image=true
-                      with-section=false
-                      lazyload=false
-                      with-dates=true
-                      ...input.node
-                    >
-                      <@date>
-                        <theme-content-published-node
-                          block-name="section-feed-content-node"
-                          obj=contentNode
-                          display-updated-date=false
-                          format="MMMM D, YYYY"
-                          timezone="Etc/GMT"
-                        />
-                      </@date>
-                    </theme-section-feed-content-node>
-                  </@slot>
-                </@nodes>
-              </marko-web-node-list>
-              <theme-pagination-controls
-                per-page=perPage
-                total-count=totalCount
-                path=alias
-              />
-            </div>
-            <div class="col-lg-4">
-              <div class="mb-block">
-                <theme-gam-define-display-ad
-                  name="top-rotation"
-                  position="section_page"
-                  aliases=["partner-perspectives"]
-                  modifiers=["max-width-300", "center", "margin-auto-x", "rail"]
-                  class="mb-0"
-                />
-              </div>
-            </div>
-          </div>
+                <@date>
+                  <theme-content-published-node
+                    block-name="section-feed-content-node"
+                    obj=contentNode
+                    display-updated-date=false
+                    format="MMMM D, YYYY"
+                    timezone="Etc/GMT"
+                  />
+                </@date>
+              </theme-section-feed-content-node>
+            </@slot>
+          </@nodes>
+        </marko-web-node-list>
+        <theme-pagination-controls
+          per-page=perPage
+          total-count=totalCount
+          path=alias
+        />
         </div>
       </div>
   </@page>
