@@ -31,6 +31,7 @@ module.exports = {
   identityXOptInHooks,
   search,
   subscribe,
+  partnerPerspectivesSectionId: 90219,
   // theme configs
   company: 'PMMI Media Group',
   p1events: {
@@ -106,6 +107,7 @@ module.exports = {
   },
   mindful: {
     namespace: 'pmmi/default',
+    websiteAdvertisingChannelId: '654917202e4a2921881de5f2',
   },
   pageDetails,
 };
