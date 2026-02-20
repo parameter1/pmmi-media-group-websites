@@ -26,14 +26,22 @@ $ const section = { id: site.config.partnerPerspectivesSectionId, name, alias, f
     />
   </@head>
 
-  <@page|{ blockName, section, aliases }|>
+  <@page|{ blockName }|>
     <div class="page-wrapper">
+      <div class="page-wrapper__section">
+        <theme-gam-define-display-ad
+          name="leaderboard"
+          position="section_page"
+          aliases=["partner-perspectives"]
+          modifiers=["inter-block"]
+        />
+      </div>
       <div class="page-wrapper__section">
         <marko-web-website-section-name|{ value }| tag="h1" block-name="page-wrapper" obj={ name: 'Partner Perspectives' }>
           <if(p.page > 1)>$!{value}: Page ${p.page}</if>
           <else>$!{value}</else>
         </marko-web-website-section-name>
-        <marko-web-website-section-description block-name=blockName obj=section />
+        <marko-web-website-section-description block-name=blockName obj={ description: 'Forward-thinking insights from our partners, highlighting emerging technologies, industry innovation, and real-world solutions.'} />
           <div class="row">
             <div class="col-lg-8">
               <marko-web-node-list
