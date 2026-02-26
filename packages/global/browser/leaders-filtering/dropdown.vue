@@ -31,7 +31,12 @@
       name="category"
       :value="upperLevelSection.id"
     >
-    <label :for="categoryId">{{ upperLevelSection.name }}</label>
+    <label
+      style="padding-top: 5px; padding-left: 5px"
+      :for="categoryId"
+    >
+      {{ upperLevelSection.name }}
+    </label>
   </div>
 </template>
 
