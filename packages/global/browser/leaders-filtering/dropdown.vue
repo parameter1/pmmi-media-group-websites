@@ -1,5 +1,5 @@
 <template>
-  <div v-if="lowerLevelSections && lowerLevelSections.length">
+  <div v-if="lowerLevelSections && lowerLevelSections.length" style="padding-bottom: 8px">
     <div @click="expand">
       <b>{{ upperLevelSection.name }}<component :is="icon" /></b>
     </div>
@@ -16,27 +16,31 @@
         name="category"
         :value="lowerLevelSection.id"
       >
-      <label
-        style="padding-top: 5px; padding-left: 5px"
-        :for="categoryFilterId(interiorIndex)"
-      >
-        {{ lowerLevelSection.name }}
-      </label>
+      <div style="padding-top: 5px; padding-left: 5px">
+        <label
+          :for="categoryFilterId(interiorIndex)"
+        >
+          {{ lowerLevelSection.name }}
+        </label>
+      </div>
     </div>
   </div>
   <div v-else>
-    <input
-      :id="categoryId"
-      type="checkbox"
-      name="category"
-      :value="upperLevelSection.id"
-    >
-    <label
-      style="padding-top: 5px; padding-left: 5px"
-      :for="categoryId"
-    >
-      {{ upperLevelSection.name }}
-    </label>
+    <div style="display: flex; word-break: break-word">
+      <input
+        :id="categoryId"
+        type="checkbox"
+        name="category"
+        :value="upperLevelSection.id"
+      >
+      <div style="padding-top: 5px; padding-left: 5px">
+        <label
+          :for="categoryId"
+        >
+          {{ upperLevelSection.name }}
+        </label>
+      </div>
+    </div>
   </div>
 </template>
 
