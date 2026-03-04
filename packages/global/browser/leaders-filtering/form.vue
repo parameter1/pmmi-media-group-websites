@@ -22,7 +22,7 @@
         </button>
       </div>
     </div>
-    <div>
+    <div style="padding-bottom: 8px">
       <b style="font-size: 24px">Categories</b>
     </div>
     <div v-for="dropdownOption, index in dropdownOptions" :key="index">
