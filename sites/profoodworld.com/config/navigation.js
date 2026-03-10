@@ -7,12 +7,12 @@ const topics = [
   { href: '/processing-equipment', label: 'Processing Equipment' },
   { href: '/automation', label: 'Automation' },
   { href: '/food-safety', label: 'Food Safety' },
-  { href: '/downloads', label: 'Downloads' },
+  { href: '/resources/downloads', label: 'Downloads' },
   { href: '/workforce', label: 'Workforce' },
 ];
 
 const resources = [
-  { href: '/downloads', label: 'Downloads' },
+  { href: '/resources/downloads', label: 'Downloads' },
   { href: '/events', label: 'Events' },
   { href: '/magazine', label: 'Magazine' },
   { href: '/page/pfw-newsletter', label: 'Newsletters' },

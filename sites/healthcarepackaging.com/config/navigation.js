@@ -9,7 +9,7 @@ const topics = [
   { href: '/machinery', label: 'Machinery' },
   { href: '/logistics', label: 'Logistics' },
   { href: '/industry-news', label: 'Industry News' },
-  { href: '/downloads', label: 'Downloads' },
+  { href: '/resources/downloads', label: 'Downloads' },
 ];
 
 const utilities = [
@@ -26,7 +26,7 @@ const mobileMenu = {
   secondary: [
     subscribe,
     { href: '/events', label: 'Events' },
-    { href: '/downloads', label: 'Downloads' },
+    { href: '/resources/downloads', label: 'Downloads' },
     { href: '/page/hcp-newsletters', label: 'Newsletters' },
     { href: '/magazine', label: 'Magazine' },
     { href: '/leaders', label: 'Premier Suppliers' },
@@ -55,7 +55,7 @@ const desktopMenu = {
   },
   rightCol: {
     items: [
-      { href: '/downloads', label: 'Downloads' },
+      { href: '/resources/downloads', label: 'Downloads' },
       { href: '/events', label: 'Events' },
       { href: '/magazine', label: 'Magazine' },
       { href: '/page/hcp-newsletters', label: 'Newsletters' },

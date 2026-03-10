@@ -3,6 +3,7 @@ const { asyncRoute } = require('@mindful-web/utils');
 const queryFragment = require('@mindful-web/marko-web-theme-monorail/graphql/fragments/website-section-page');
 const leadersFragment = require('@pmmi-media-group/package-global/graphql/fragments/leaders-section');
 const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');
+const downloads = require('@pmmi-media-group/package-global/templates/website-section/downloads');
 const events = require('@pmmi-media-group/package-global/templates/website-section/events');
 const collections = require('@pmmi-media-group/package-global/templates/website-section/collections');
 const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');
@@ -91,6 +92,11 @@ module.exports = (app) => {
 
   app.get('/:alias(WomenInPackaging)', newsletterState(), withWebsiteSection({
     template: withTopStoriesBlock,
+    queryFragment,
+  }));
+
+  app.get('/:alias(resources/downloads)', newsletterState(), withWebsiteSection({
+    template: downloads,
     queryFragment,
   }));
 
