@@ -10,7 +10,7 @@ const topics = [
   { href: '/secondary-packaging', label: 'Secondary Packaging' },
   { href: '/trends', label: 'Trends' },
   { href: '/trends/contract-packaging', label: 'Contract Manufacturing and Packaging' },
-  { href: '/downloads', label: 'Downloads' },
+  { href: '/resources/downloads', label: 'Downloads' },
 ];
 
 const resources = [

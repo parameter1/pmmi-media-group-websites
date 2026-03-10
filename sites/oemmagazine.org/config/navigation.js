@@ -9,7 +9,7 @@ const topics = [
 ];
 
 const resources = [
-  { href: '/downloads', label: 'Downloads' },
+  { href: '/resources/downloads', label: 'Downloads' },
   { href: '/events', label: 'Events' },
   { href: '/magazine', label: 'Magazine' },
   { href: '/page/oem-newsletter', label: 'Newsletters', target: '_blank' },
@@ -69,7 +69,7 @@ const primaryNavigationItems = [
   subscribe,
   ...topics,
   { href: '/leaders', label: 'Partner Leaders' },
-  { href: '/downloads', label: 'Downloads' },
+  { href: '/resources/downloads', label: 'Downloads' },
 ];
 
 module.exports = {

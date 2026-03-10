@@ -4,6 +4,7 @@ const queryFragment = require('@mindful-web/marko-web-theme-monorail/graphql/fra
 const leadersFragment = require('@pmmi-media-group/package-global/graphql/fragments/leaders-section');
 const emergingBrandsFragment = require('@pmmi-media-group/package-global/graphql/fragments/emerging-brands-section-page');
 const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');
+const downloads = require('@pmmi-media-group/package-global/templates/website-section/downloads');
 const webinars = require('@pmmi-media-group/package-global/templates/website-section/webinars');
 const events = require('@pmmi-media-group/package-global/templates/website-section/events');
 const collections = require('@pmmi-media-group/package-global/templates/website-section/collections');
@@ -72,6 +73,11 @@ module.exports = (app) => {
   app.get('/:alias(emergingbrands)', newsletterState(), withWebsiteSection({
     template: section,
     queryFragment: emergingBrandsFragment,
+  }));
+
+  app.get('/:alias(resources/downloads)', newsletterState(), withWebsiteSection({
+    template: downloads,
+    queryFragment,
   }));
 
   app.get('/:alias([a-z0-9-/]+)', newsletterState(), withWebsiteSection({

@@ -72,5 +72,8 @@
     "@alias": "string",
     "@name": "string",
     "@page-node": "object"
+  },
+  "<global-website-section-downloads-layout>": {
+    "template": "./downloads.marko"
   }
 }
