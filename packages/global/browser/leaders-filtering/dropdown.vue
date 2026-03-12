@@ -15,6 +15,7 @@
         type="checkbox"
         name="category"
         :value="lowerLevelSection.id"
+        @change="applyFilters"
       >
       <div style="padding-top: 5px; padding-left: 5px">
         <label
@@ -122,6 +123,15 @@ export default {
         return `category_filter_${this.index}_${interiorIndex}_wrapper`;
       }
       return `category_filter_${this.index}_${interiorIndex}`;
+    },
+    applyFilters() {
+      const checkboxes = document.forms['Category Filters'].category;
+      const checkedBoxes = Array.from(checkboxes).filter((category) => category.checked);
+      const categoryIdStringsAsArray = checkedBoxes.map((category) => category.value);
+      const categoryIdString = categoryIdStringsAsArray.join(',');
+      if (categoryIdString) {
+        window.location.href = `${window.location.origin + window.location.pathname}?assignedToWebsiteSectionIds=${categoryIdString}`;
+      }
     },
   },
 };
