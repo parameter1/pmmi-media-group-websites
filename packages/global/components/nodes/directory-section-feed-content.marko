@@ -126,7 +126,15 @@ $ const blockName = "section-feed-content-node";
               </marko-web-link>
             </if>
           </if>
-          <b class="section-feed-content-node__content-categories-listed-in">${content.categoriesListedInString}</b>
+          <if(content.categoriesListedIn && content.categoriesListedIn.length)>
+            <ul style="margin-left: -25px;">
+              <for|categoryName| of=content.categoriesListedIn>
+                <li>
+                  <b class="section-feed-content-node__content-categories-listed-in">${categoryName}</b>
+                </li>
+              </for>
+            </ul>
+          </if>
       </else>
     </marko-web-element>
   </marko-web-element>
