@@ -105,6 +105,7 @@ module.exports = {
   },
   mindful: {
     namespace: 'pmmi/default',
+    key: 'all',
     websiteAdvertisingChannelId: '654917202e4a2921881de5f8',
   },
   pageDetails,

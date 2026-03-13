@@ -131,6 +131,7 @@ module.exports = {
   mindful: {
     namespace: 'pmmi/default',
     view: 'mundo',
+    key: 'mundo',
     websiteAdvertisingChannelId: '654917202e4a2921881de5fa',
   },
 };
