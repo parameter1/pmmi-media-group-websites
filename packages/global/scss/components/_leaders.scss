@@ -100,6 +100,14 @@
       }
     }
   }
+  // utilized on leaders cat secitons like /z-company-categories-2026
+  &--directory {
+    form {
+      input[type="checkbox"] {
+        align-self: center;
+      }
+    }
+  }
 }
 
 .page--content-company {
