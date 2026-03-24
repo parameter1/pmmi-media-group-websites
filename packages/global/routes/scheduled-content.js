@@ -35,14 +35,4 @@ module.exports = (app) => {
       },
     );
   });
-  app.get('/downloads', newsletterState(), (_, res) => {
-    res.marko(
-      publishedContent,
-      {
-        alias: 'downloads',
-        includeContentTypes: ['Document'],
-        title: 'Downloads',
-      },
-    );
-  });
 };

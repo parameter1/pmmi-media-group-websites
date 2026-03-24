@@ -883,10 +883,10 @@
     "@mindful-web/object-path" "^1.57.0"
     "@mindful-web/utils" "^1.57.0"
 
-"@mindful-web/marko-web-search@^1.57.0":
-  version "1.57.0"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-search/-/marko-web-search-1.57.0.tgz#28e65f67983bece6bf0dfe130fbe40398a7da989"
-  integrity sha512-s9XxEcEcR4hcD9ldtbmE680Fc40mato1e7XAOYbvtnYVY+ruo3yd8xnBVZd/UEnD8/syDbApuluSaETJB5QRvQ==
+"@mindful-web/marko-web-search@^1.58.1":
+  version "1.58.1"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-search/-/marko-web-search-1.58.1.tgz#725089d284b7be7f63f89a049f0acf8a2f871931"
+  integrity sha512-YNpLZo/3tYnNBh99MSPEDQGsCtjNljlwpgPEgb5uVJxubH4sWnJlyOG+r+aYOvugHfWWzu9kv07zO7DtGZpAKA==
   dependencies:
     "@mindful-web/inflector" "^1.0.0"
     "@mindful-web/marko-web-icons" "^1.39.2"
@@ -918,10 +918,10 @@
     graphql-tag "^2.12.6"
     object-path "^0.11.8"
 
-"@mindful-web/marko-web-theme-monorail@^1.57.1":
-  version "1.57.1"
-  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-theme-monorail/-/marko-web-theme-monorail-1.57.1.tgz#f51ff2b2a9100b7b324fe299318a2228141d3112"
-  integrity sha512-n/fkSUyrFymR/n2NQn2uNT444u2DkvtJIztv6uBz6p/cTuPgYqr9yXbgEXHdk2itlXJWJO7+fkBOpNi2L5smag==
+"@mindful-web/marko-web-theme-monorail@^1.58.1":
+  version "1.58.1"
+  resolved "https://registry.yarnpkg.com/@mindful-web/marko-web-theme-monorail/-/marko-web-theme-monorail-1.58.1.tgz#0aed9efe7615a0c4b2732c78d987e9fbacf87c8d"
+  integrity sha512-TUY5PbJN2crU2dvG2iGRISQAXKKMdDJHHsmiDWARvU7xcSB9EPfxGlUAkR4TNCTO1QJbCgMo4/ICWNw1l7lSSg==
   dependencies:
     "@mindful-web/dayjs" "^1.49.2"
     "@mindful-web/image" "^1.57.0"
@@ -939,7 +939,7 @@
     "@mindful-web/marko-web-p1-events" "^1.57.0"
     "@mindful-web/marko-web-recaptcha" "^1.26.1"
     "@mindful-web/marko-web-reveal-ad" "^1.57.0"
-    "@mindful-web/marko-web-search" "^1.57.0"
+    "@mindful-web/marko-web-search" "^1.58.1"
     "@mindful-web/marko-web-social-sharing" "^1.57.0"
     "@mindful-web/mindful" "^1.57.0"
     "@mindful-web/object-path" "^1.57.0"
@@ -6854,7 +6854,7 @@ postcss-convert-values@^5.1.3:
     browserslist "^4.21.4"
     postcss-value-parser "^4.2.0"
 
-"postcss-critical-split@github:mrnocreativity/postcss-critical-split#51bb6d62bc75d635e32dcce90f30ba3ef6299081":
+postcss-critical-split@mrnocreativity/postcss-critical-split#51bb6d62bc75d635e32dcce90f30ba3ef6299081:
   version "2.5.3"
   resolved "https://codeload.github.com/mrnocreativity/postcss-critical-split/tar.gz/51bb6d62bc75d635e32dcce90f30ba3ef6299081"
 
