@@ -44,7 +44,7 @@ const desktopMenu = {
       { href: '/seminario-web', label: 'Seminario Web' },
       { href: '/leaders', label: 'Líderes' },
       { href: '/videos', label: 'Vídeos' },
-      { href: '/downloads', label: 'Recursos Digitales' },
+      { href: '/recursos-digitales', label: 'Recursos Digitales' },
       { href: '/page/newsletterarchive', label: 'Archivo de boletines' },
       // { href: '/noticias-de-los-proveedores', label: 'Noticias de los proveedores' },
     ],
