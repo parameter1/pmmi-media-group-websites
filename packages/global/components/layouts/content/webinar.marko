@@ -63,7 +63,7 @@ $ const actionText = i18n("signing up to receive your email notifications");
     $ const { primarySection } = content;
     <div class="content-page-body">
       <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
-        $ const requiresRegistration = (get(content, "userRegistration.isCurrentlyRequired") || contentGatingHandler({ content, req }));
+        $ const requiresRegistration = contentGatingHandler({ content, req });
         $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
         <marko-web-identity-x-access|context|
           enabled=requiresRegistration
