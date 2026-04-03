@@ -4,7 +4,7 @@ import getContentPreview from "@mindful-web/marko-web-theme-monorail/utils/get-c
 import handleContentTypePrimarySection from "@pmmi-media-group/package-global/utils/handle-content-type-primary-section";
 import GlobalBodyWithInjection from "@pmmi-media-group/package-global/components/body-with-injection";
 import splitContentBody from "@pmmi-media-group/package-global/utils/split-content-body";
-import { shouldOverlay, restrictContentByReg, shouldTruncate } from "@mindful-web/marko-web-theme-monorail/utils/content-meter-helpers";
+import { shouldOverlay, shouldTruncate } from "@mindful-web/marko-web-theme-monorail/utils/content-meter-helpers";
 
 $ const { global: $global } = out;
 $ const {
@@ -123,7 +123,7 @@ $ const shouldInjectAds = ["article", "blog", "news", "podcast", "press-release"
       $ const bodyClass = displayRail ? "content-page-body" : "";
         <div class=bodyClass>
           <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
-            $ const requiresRegistration = contentGatingHandler({ content, req }) || restrictContentByReg(contentMeterState, contentGatingHandler, content);
+            $ const requiresRegistration = contentGatingHandler({ content, req });
             $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
             <marko-web-identity-x-access|context|
               enabled=requiresRegistration
