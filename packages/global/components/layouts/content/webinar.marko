@@ -3,7 +3,7 @@ import contentIframe from "@pmmi-media-group/package-global/utils/content-iframe
 import getContentPreview from "@mindful-web/marko-web-theme-monorail/utils/get-content-preview";
 import handleContentTypePrimarySection from "@pmmi-media-group/package-global/utils/handle-content-type-primary-section";
 
-$ const { site, contentGatingHandler, req, i18n } = out.global;
+$ const { site, contentGatingHandler, i18n } = out.global;
 $ const { id, type, pageNode, showReadNextBlock, showBottomAdBlock, showTopStoryBlock, ...rest } = input;
 $ const sections = getAsArray(input, "sections");
 
@@ -63,7 +63,7 @@ $ const actionText = i18n("signing up to receive your email notifications");
     $ const { primarySection } = content;
     <div class="content-page-body">
       <theme-page-contents|{ blockName }| attrs={ "data-gallery-id": id }>
-        $ const requiresRegistration = contentGatingHandler({ content, req });
+        $ const requiresRegistration = contentGatingHandler({ content });
         $ const accessLevels = getAsArray(content, "userRegistration.accessLevels");
         <marko-web-identity-x-access|context|
           enabled=requiresRegistration
