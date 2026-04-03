@@ -1,16 +1,17 @@
-import createOmedaIdentityBuilder from "@mindful-web/marko-web-p1-events/utils/create-omeda-identity-builder";
+import createIdentityBuilder from "@mindful-web/marko-web-identity-x/utils/create-identity-builder";
 import { defaultValue } from "@mindful-web/marko-web/utils";
-import { get, getAsObject } from "@mindful-web/object-path";
+import { get } from "@mindful-web/object-path";
 
 $ const {
-  site,
-  req,
-  nativeX,
-  GAM,
-  i18n,
-  omedaConfig,
   config,
-  contentMeterState
+  contentMeterState,
+  i18n,
+  identityX,
+  nativeX,
+  omedaConfig,
+  req,
+  res,
+  site,
 } = out.global;
 
 $ const gamDefer = defaultValue(req.query.gamDefer, "ready");
@@ -33,13 +34,15 @@ $ const buttonLabels = { continue: continueLabel };
     <marko-web-deferred-script-loader-init />
 
     <!-- init p1 website events -->
-    <marko-web-p1-events-init
-      on="load"
-      request-frame=true
-      target-tag="body"
-      identity-query-builder=createOmedaIdentityBuilder(omedaConfig.brandKey)
-      enable-gam-plugin=true
-    />
+    <marko-web-identity-x-context|context|>
+      <marko-web-p1-events-init
+        enable-gam-plugin=true
+        identity-query-builder=createIdentityBuilder(context, identityX.getIdentity(res))
+        on="load"
+        request-frame=true
+        target-tag="body"
+      />
+    </marko-web-identity-x-context>
 
     <!-- init gam -->
     <marko-web-gam-init
