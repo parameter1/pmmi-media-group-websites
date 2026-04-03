@@ -12,7 +12,6 @@ module.exports = startServer({
   rootDir: __dirname,
   coreConfig,
   siteConfig,
-  contentGatingHandler: () => false,
   routes,
   redirectHandler,
   i18n: (v) => i18n[`${v}`.toLowerCase()] || v,
