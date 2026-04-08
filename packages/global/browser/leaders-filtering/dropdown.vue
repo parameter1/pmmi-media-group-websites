@@ -33,6 +33,7 @@
         type="checkbox"
         name="category"
         :value="upperLevelSection.id"
+        @change="applyFilters"
       >
       <div style="padding-top: 5px; padding-left: 5px">
         <label
@@ -131,6 +132,9 @@ export default {
       const categoryIdString = categoryIdStringsAsArray.join(',');
       if (categoryIdString) {
         window.location.href = `${window.location.origin + window.location.pathname}?assignedToWebsiteSectionIds=${categoryIdString}`;
+      } else {
+        // No categories are checked go back to "root page"
+        window.location.href = `${window.location.origin + window.location.pathname}`;
       }
     },
   },
