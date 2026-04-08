@@ -33,6 +33,7 @@
         type="checkbox"
         name="category"
         :value="upperLevelSection.id"
+        @change="applyFilters"
       >
       <div style="padding-top: 5px; padding-left: 5px">
         <label
