@@ -12,18 +12,11 @@ $ const { site } = out.global;
   page-node=pageNode
 >
   <@section>
-    <div class="row">
-      <div class="col-lg-8">
-        <global-leaders-home-page />
-      </div>
-      <div class="col-lg-4">
-        <global-native-x-list-block />
-      </div>
-    </div>
+    <global-published-content-list-deck-block section-ids=[33367, 33377] />
   </@section>
 
   <@section>
-    <global-published-content-list-deck-block section-ids=[33367, 33377, 33379] />
+    <global-published-content-list-deck-block section-ids=[33379, 87501] video-column=true />
   </@section>
 
   <@section|{ aliases }|>
@@ -43,7 +36,7 @@ $ const { site } = out.global;
   </@section>
 
   <@section>
-    <global-native-x-promo-card-block placement-name="marketing" />
+    <theme-native-x-promo-card-block placement-name="marketing" />
   </@section>
 
   <@section>
@@ -60,8 +53,8 @@ $ const { site } = out.global;
 
   <@section>
     <global-hero-card-block
-      query-params={ includeContentTypes: ["Video"] }
-      section={ name: "Videos", canonicalPath: "/videos"}
+      query-params={ includeContentTypes: ["Document"] }
+      section={ name: "Downloads", canonicalPath: "/downloads"}
     />
   </@section>
 
@@ -81,8 +74,8 @@ $ const { site } = out.global;
 
   <@section>
     <theme-content-card-deck-block
-      query-params={ includeContentTypes: ["Document"], limit: 4 }
-      section={ name: "Downloads", canonicalPath: "/downloads" }
+      query-params={ includeContentTypes: ["Podcast"], limit: 4 }
+      section={ name: "Podcasts", canonicalPath: "/podcasts" }
     />
   </@section>
 </global-website-section-home-layout>
