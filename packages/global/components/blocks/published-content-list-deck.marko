@@ -1,9 +1,12 @@
 import { getAsArray } from "@mindful-web/object-path";
 import queryFragment from "@mindful-web/marko-web-theme-monorail/graphql/fragments/top-stories-block";
+import queryFragmentForVideoBlock from "@mindful-web/marko-web-theme-monorail/graphql/fragments/section-feed-block";
+
 
 $ const blockName = "section-list-deck";
 $ const sectionIds = getAsArray(input, "sectionIds");
 $ const limit = input.excludeTopStoriesCount || 4;
+$ const { i18n } = out.global;
 
 // This will exclude whatever is in the top stories block from these subsequent blocks
 $ const excludeContentQueryParams = {
@@ -27,6 +30,68 @@ $ const excludeContentQueryParams = {
             <global-published-content-list-block section-id=sectionId exclude-content-ids=excludeContentIds />
           </marko-web-element>
         </for>
+        <if(sectionIds.length === 2 && !input.videoColumn)>
+          <marko-web-element block-name=blockName name="col">
+            <global-native-x-list-block />
+          </marko-web-element>
+        </if>
+        <if(input.videoColumn)>
+          <marko-web-query|{ nodes }|
+            name="all-published-content"
+            params={ limit: 5, includeContentTypes: ["Video"], excludeContentIds, queryFragment: queryFragmentForVideoBlock }
+          >
+            <marko-web-element block-name=blockName name="col">
+              <marko-web-node-list
+                inner-justified=true
+                flush-x=true
+                flush-y=true
+                modifiers=["section-list"]
+                ...input.nodeList
+              >
+                <@header>
+                  <marko-web-website-section-name obj={ name: 'VIDEOS', alias: '/videos'} link=true />
+                </@header>
+                <@nodes nodes=nodes>
+                  <@slot|{ node, index }|>
+                    $ if (["event", "podcast", "webinar"].includes(node.type)) {
+                      node.primarySection = handleContentTypePrimarySection({ i18n, node });
+                    }
+                    <if(index === 0)>
+                      <theme-content-node
+                        image-position="top"
+                        card=true
+                        flush=true
+                        modifiers=["section-list-card"]
+                        with-teaser=false
+                        with-dates=false
+                        with-section=true
+                        node=node
+                      >
+                        <@image fluid=true width=330 ar="3:2" />
+                      </theme-content-node>
+                    </if>
+                    <else>
+                      <theme-content-node
+                        display-image=false
+                        flush=true
+                        modifiers=["section-list-item"]
+                        with-teaser=false
+                        with-dates=false
+                        with-section=true
+                        node=node
+                      />
+                    </else>
+                  </@slot>
+                </@nodes>
+                <@footer modifiers=["view-more"]>
+                  <marko-web-website-section-name obj={ name: "VIDEOS", alias: "/videos" } link=true>
+                    ${i18n("View more")} &raquo;
+                  </marko-web-website-section-name>
+                </@footer>
+              </marko-web-node-list>
+            </marko-web-element>
+          </marko-web-query>
+        </if>
       </marko-web-element>
     </marko-web-block>
   </if>
@@ -38,6 +103,68 @@ $ const excludeContentQueryParams = {
             <global-published-content-list-block section-id=sectionId />
           </marko-web-element>
         </for>
+        <if(sectionIds.length === 2 && !input.videoColumn)>
+          <marko-web-element block-name=blockName name="col">
+            <global-native-x-list-block />
+          </marko-web-element>
+        </if>
+        <if(input.videoColumn)>
+          <marko-web-query|{ nodes }|
+            name="all-published-content"
+            params={ limit: 5, includeContentTypes: ["Video"], excludeContentIds, queryFragment: queryFragmentForVideoBlock }
+          >
+            <marko-web-element block-name=blockName name="col">
+              <marko-web-node-list
+                inner-justified=true
+                flush-x=true
+                flush-y=true
+                modifiers=["section-list"]
+                ...input.nodeList
+              >
+                <@header>
+                  <marko-web-website-section-name obj={ name: 'VIDEOS', alias: '/videos'} link=true />
+                </@header>
+                <@nodes nodes=nodes>
+                  <@slot|{ node, index }|>
+                    $ if (["event", "podcast", "webinar"].includes(node.type)) {
+                      node.primarySection = handleContentTypePrimarySection({ i18n, node });
+                    }
+                    <if(index === 0)>
+                      <theme-content-node
+                        image-position="top"
+                        card=true
+                        flush=true
+                        modifiers=["section-list-card"]
+                        with-teaser=false
+                        with-dates=false
+                        with-section=true
+                        node=node
+                      >
+                        <@image fluid=true width=330 ar="3:2" />
+                      </theme-content-node>
+                    </if>
+                    <else>
+                      <theme-content-node
+                        display-image=false
+                        flush=true
+                        modifiers=["section-list-item"]
+                        with-teaser=false
+                        with-dates=false
+                        with-section=true
+                        node=node
+                      />
+                    </else>
+                  </@slot>
+                </@nodes>
+                <@footer modifiers=["view-more"]>
+                  <marko-web-website-section-name obj={ name: "VIDEOS", alias: "/videos" } link=true>
+                    ${i18n("View more")} &raquo;
+                  </marko-web-website-section-name>
+                </@footer>
+              </marko-web-node-list>
+            </marko-web-element>
+          </marko-web-query>
+        </if>
       </marko-web-element>
     </marko-web-block>
   </else>
