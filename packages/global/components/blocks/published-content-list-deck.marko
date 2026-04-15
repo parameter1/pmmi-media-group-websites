@@ -49,7 +49,7 @@ $ const excludeContentQueryParams = {
                 ...input.nodeList
               >
                 <@header>
-                  <marko-web-website-section-name obj={ name: 'VIDEOS', alias: '/videos'} link=true />
+                  <marko-web-website-section-name obj={ name: 'VIDEOS', canonicalPath: '/videos'} link=true />
                 </@header>
                 <@nodes nodes=nodes>
                   <@slot|{ node, index }|>
@@ -84,7 +84,7 @@ $ const excludeContentQueryParams = {
                   </@slot>
                 </@nodes>
                 <@footer modifiers=["view-more"]>
-                  <marko-web-website-section-name obj={ name: "VIDEOS", alias: "/videos" } link=true>
+                  <marko-web-website-section-name obj={ name: "VIDEOS", canonicalPath: "/videos" } link=true>
                     ${i18n("View more")} &raquo;
                   </marko-web-website-section-name>
                 </@footer>
