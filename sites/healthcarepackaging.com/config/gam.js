@@ -2,6 +2,13 @@ const configureGAM = require('@pmmi-media-group/package-global/config/gam');
 
 const config = configureGAM({ basePath: 'hcp' });
 
+config.setTemplate('INLINE-CONTENT-DESKTOP', {
+  size: [[300, 250], [300, 50], [320, 50], ['fluid']],
+  sizeMapping: [
+    { viewport: [0, 0], size: [[300, 250], [300, 50], [320, 50], '[fluid]'] },
+  ],
+});
+
 config.setAliasAdUnits('default', [
   { name: 'leaderboard', templateName: 'LEADERBOARD', path: 'rotation' },
   { name: 'rotation', templateName: 'ROTATION', path: 'rotation' },
