@@ -1,4 +1,5 @@
 const configureIdentityX = require('@pmmi-media-group/package-global/config/identity-x');
+const formDefault = require('@pmmi-media-group/package-global/config/identity-x/default');
 
 module.exports = configureIdentityX({
   booleanQuestionsLabel: 'Elige tus suscripciones:',
@@ -15,5 +16,8 @@ module.exports = configureIdentityX({
   },
   gtmUserFields: {
     primary_business: '6297a1f0650fd84a97efed81',
+  },
+  forms: {
+    default: formDefault,
   },
 });

@@ -166,6 +166,14 @@ module.exports = (app) => {
     },
   })));
 
+  app.get('/packagethis', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Package This: Packaging Machinery Basics',
+    description: 'From primary packaging to end-of-line automation, these videos collectively trace the basics of how modern packaging lines transform raw materials into protected, shelf-ready products. These systems illustrate how integrated machinery delivers consistency, efficiency, and scalability across the entire packaging lifecycle.',
+    queryParams: {
+      includeLabels: ['Machinery Basics'],
+    },
+  })));
+
   app.get('/packexpo', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'PACK EXPO',
     description: '',
