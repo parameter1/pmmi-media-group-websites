@@ -38,8 +38,8 @@
                           .filter(
                             (schedule) =>
                               String(schedule.section.site.id) === siteId
-                              && schedule.section.alias.match('z-company-categories-2026')
-                              && schedule.section.alias !== 'z-company-categories-2026')
+                              && schedule.section.alias.match(leadersAlias)
+                              && schedule.section.alias !== leadersAlias)
                           .map((schedule) => schedule.section)
                           .map((category) => category.fullName.replace(/.+? \>/, '').trim())"
                         :key="scheduleIndex"
@@ -109,6 +109,10 @@ export default {
     incomingCursorValue: {
       type: String,
       default: '',
+    },
+    leadersAlias: {
+      type: String,
+      required: true,
     },
   },
   data: () => ({
