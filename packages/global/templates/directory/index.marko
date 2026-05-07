@@ -35,12 +35,22 @@ $ const siteID = get(config, "websiteContext.id");
     <marko-web-resolve-page|{ data: section }| node=pageNode>
       $ section.name = section.name.replace("Z_Company Categories", "Leaders");
       $ const aliases = hierarchyAliases(section);
-      $ const dropdownOptions = section.children.edges.map((edge) => {
-        return {
-          upperLevelSection: edge.node,
-          lowerLevelSections: edge.node.children.edges.map((edge) => edge.node),
-        };
-      });
+      $ const dropdownOptions = section.children.edges.reduce((prevArr, edge) => {
+        // This is to remove empty primary level categories from being filterable
+        if (![89594, 89564, 89571, 89572, 89574, 89576, 89578, 89580].includes(edge.node.id)) {
+          prevArr.push({
+            upperLevelSection: edge.node,
+            lowerLevelSections: edge.node.children.edges.reduce((prevArr, edge) => {
+            // This is to remove empty secondary level categories from being filterable
+            if (![89655, 89696, 89607, 89618, 89619].includes(edge.node.id)) {
+              prevArr.push(edge.node)
+            }
+            return prevArr;
+            }, []),
+          });
+        }
+        return prevArr;
+      }, []);
       $ const childAliases = section.children.edges.map((edge) => edge.node.alias).sort();
       <marko-web-page-wrapper modifiers=["directory"]>
         <@section|{ blockName }|>
