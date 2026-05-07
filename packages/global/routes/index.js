@@ -1,5 +1,6 @@
 const { get } = require('@mindful-web/object-path');
 const htmlSitemap = require('@mindful-web/marko-web-html-sitemap/routes');
+const companySearchHandler = require('@mindful-web/marko-web-theme-monorail/routes/company-search');
 const renderBlock = require('@mindful-web/marko-web-theme-monorail/routes/render-block');
 const search = require('@mindful-web/marko-web-theme-monorail/routes/search');
 const taxonomy = require('@mindful-web/marko-web-theme-monorail/routes/taxonomy');
@@ -12,6 +13,7 @@ const getAdvertisingPostsAsNativeStories = require('@mindful-web/mindful/marko-w
 const advertisingPostTemplate = require('../templates/content/advertising-post');
 const partnerPerspectivesTemplate = require('../templates/website-section/partner-perspectives');
 
+const directory = require('./directory');
 const feed = require('./feed');
 const digitalEditionRedirects = require('./digital-edition-redirects');
 const content = require('./content');
@@ -27,6 +29,16 @@ const publication = require('../templates/magazine/publication');
 const publicationFragment = require('../graphql/fragments/magazine-publication-page');
 
 module.exports = (app, siteConfig) => {
+  // Handle request on /__company-search?searchQuery=CompanyName
+  companySearchHandler(app);
+
+  // Company directory
+  directory(app, {
+    assignedToWebsiteSectionIds: get(siteConfig, 'search.companySearch.assignedToWebsiteSectionIds', []),
+    contentTypes: ['Company'],
+    rootAlias: get(siteConfig, 'search.companySearch.rootAlias', 'z-company-categories-2026'),
+  });
+
   // Mindful Preview Link
   const namespace = get(siteConfig, 'mindful.namespace');
   if (namespace) {

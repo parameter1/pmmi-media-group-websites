@@ -12,4 +12,11 @@ module.exports = {
   defaultSortField: 'PUBLISHED',
   type: 'MATCH_PHRASE',
   useMindful: true,
+  companySearch: {
+    assignedToWebsiteSectionIds: [
+      89600,
+      89609,
+      89616,
+    ],
+  },
 };
