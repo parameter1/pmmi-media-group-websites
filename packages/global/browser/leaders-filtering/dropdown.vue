@@ -131,10 +131,14 @@ export default {
       const categoryIdStringsAsArray = checkedBoxes.map((category) => category.value);
       const categoryIdString = categoryIdStringsAsArray.join(',');
       if (categoryIdString) {
-        window.location.href = `${window.location.origin + window.location.pathname}?assignedToWebsiteSectionIds=${categoryIdString}`;
+        const url = new URL(window.location.href);
+        url.searchParams.set('assignedToWebsiteSectionIds', categoryIdString);
+        // eslint-disable-next-line no-restricted-globals
+        history.pushState({}, '', url);
       } else {
         // No categories are checked go back to "root page"
-        window.location.href = `${window.location.origin + window.location.pathname}`;
+        // eslint-disable-next-line no-restricted-globals
+        history.pushState({}, '', `${window.location.origin + window.location.pathname}`);
       }
     },
   },

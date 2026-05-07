@@ -3,6 +3,7 @@
     <div class="row" style="padding-bottom: 5px">
       <div class="col-6">
         <button
+          id="clear-leaders-filters-button"
           class="btn btn-primary"
           type="submit"
           style="text-wrap: nowrap; font-size: 12px; padding: 5px 12px"
@@ -42,7 +43,8 @@ export default {
   },
   methods: {
     clearFilters() {
-      window.location.href = window.location.origin + window.location.pathname;
+      // eslint-disable-next-line no-restricted-globals
+      history.pushState({}, '', `${window.location.origin + window.location.pathname}`);
     },
   },
 };
