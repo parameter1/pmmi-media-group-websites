@@ -1,18 +1,12 @@
 import defaultValue from "@mindful-web/marko-core/utils/default-value";
 import { get } from "@mindful-web/object-path";
-import { isFunction } from '@mindful-web/utils';
 
-$ const { $markoWebSearch: search, i18n } = out.global;
-$ const { useMindful } = search.config;
 $ const totalCount = defaultValue(input.totalCount, 0);
 $ const pageInfo = defaultValue(input.pageInfo, {});
 $ const linkClasses = get(input.link, "class");
 
 $ const blockName = "marko-web-search-pagination-controls";
-$ const showControls = (() => {
-  if (useMindful) return true;
-  return Boolean(totalCount);
-})();
+$ const showControls = Boolean(pageInfo.hasNextPage || pageInfo.hasPreviousPage || totalCount);
 
 <if(showControls)>
   <marko-web-block ...input.block name=blockName>

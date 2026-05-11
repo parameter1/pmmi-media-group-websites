@@ -9,8 +9,6 @@ const events = require('@pmmi-media-group/package-global/templates/website-secti
 const collections = require('@pmmi-media-group/package-global/templates/website-section/collections');
 const withTopStoriesBlock = require('@pmmi-media-group/package-global/templates/website-section/with-top-stories-block');
 const superCategory = require('@pmmi-media-group/package-global/templates/website-section/super-category');
-const directory = require('@pmmi-media-group/package-global/routes/directory');
-const companySearch = require('@pmmi-media-group/package-global/company-search');
 
 const { newsletterState } = require('@pmmi-media-group/package-global/middleware/newsletter-state');
 
@@ -166,6 +164,14 @@ module.exports = (app) => {
     },
   })));
 
+  app.get('/packagethis', asyncRoute(async (_, res) => res.marko(collections, {
+    name: 'Package This: Packaging Machinery Basics',
+    description: 'From primary packaging to end-of-line automation, these videos collectively trace the basics of how modern packaging lines transform raw materials into protected, shelf-ready products. These systems illustrate how integrated machinery delivers consistency, efficiency, and scalability across the entire packaging lifecycle.',
+    queryParams: {
+      includeLabels: ['Machinery Basics'],
+    },
+  })));
+
   app.get('/packexpo', asyncRoute(async (_, res) => res.marko(collections, {
     name: 'PACK EXPO',
     description: '',
@@ -191,19 +197,6 @@ module.exports = (app) => {
     template: leaders,
     queryFragment: leadersFragment,
   }));
-
-  const assignedToWebsiteSectionIds = [
-    89653,
-    89660,
-    89693,
-  ];
-  companySearch(app, assignedToWebsiteSectionIds);
-
-  directory(app, {
-    rootAlias: 'z-company-categories-2026',
-    contentTypes: ['Company'],
-    assignedToWebsiteSectionIds,
-  });
 
   app.get('/:alias(WomenInPackaging)', newsletterState(), withWebsiteSection({
     template: withTopStoriesBlock,
