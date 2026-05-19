@@ -2,22 +2,17 @@ import { isFunction } from '@mindful-web/utils';
 import defaultValue from "@mindful-web/marko-core/utils/default-value";
 
 $ const { $markoWebSearch: search, i18n } = out.global;
-$ const { useMindful } = search.config;
 $ const pageInfo = defaultValue(input.pageInfo, {});
 $ const { sortField, sortOrder } = search.input;
 
-$ const queryValues = useMindful ? {
+$ const queryValues = {
   cursorDirection: 'AFTER',
   cursorValue: pageInfo.endCursor,
-  sortField, sortOrder,
-} : {
-  page: search.getNextPage(input.totalCount), sortField, sortOrder
+  sortField,
+  sortOrder,
 };
 
-$ const hasNextPage = useMindful ? pageInfo.hasNextPage : search.getNextPage(input.totalCount);
-
-
-<if(hasNextPage)>
+<if(pageInfo.hasNextPage)>
   <global-search-link
     path=input.path
     query-values=queryValues
